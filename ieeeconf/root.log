@@ -1,10 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.8.13)  16 AUG 2018 15:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.8.13)  21 AUG 2018 10:33
 entering extended mode
 **root.tex
-(C:\Users\Lenovo\Downloads\ieeeconf\root.tex
+
+("E:\DATA\BCNs\Observability and Input Strategy of Boolean Control Networks\Obs
+ervability-and-Input-Strategy-of-Boolean-Control-Networks\ieeeconf\root.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(C:\Users\Lenovo\Downloads\ieeeconf\ieeeconf.cls
+
+("E:\DATA\BCNs\Observability and Input Strategy of Boolean Control Networks\Obs
+ervability-and-Input-Strategy-of-Boolean-Control-Networks\ieeeconf\ieeeconf.cls
+"
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
@@ -97,7 +102,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 9).
 ** ATTENTION: Overriding IEEE standard margins (line 12).
-(C:\Users\Lenovo\Downloads\ieeeconf\root.aux)
+
+("E:\DATA\BCNs\Observability and Input Strategy of Boolean Control Networks\Obs
+ervability-and-Input-Strategy-of-Boolean-Control-Networks\ieeeconf\root.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
@@ -659,25 +666,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[3] (C:\Users\Lenovo\Downloads\ieeeconf\root.aux) ) 
+[3]
+("E:\DATA\BCNs\Observability and Input Strategy of Boolean Control Networks\Obs
+ervability-and-Input-Strategy-of-Boolean-Control-Networks\ieeeconf\root.aux") )
+ 
 Here is how much of TeX's memory you used:
  886 strings out of 495354
- 14422 string characters out of 3183859
+ 15403 string characters out of 3183859
  68471 words of memory out of 3000000
  4115 multiletter control sequences out of 15000+200000
  39844 words of font info for 78 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  26i,9n,20p,914b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/CTEX/MiKTeX/fonts/enc/dv
-ips/fontname/8r.enc}<D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/CTEX/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/CTEX/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/c
-ourier/ucrr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/CTEX/MiK
-TeX/fonts/type1/urw/times/utmbi8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utm
-r8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (3 pages, 126302 bytes).
+{D:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/CTEX/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/CTEX/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/C
+TEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/t
+imes/utmb8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><D:/CTEX/MiKT
+eX/fonts/type1/urw/times/utmr8a.pfb><D:/CTEX/MiKTeX/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on root.pdf (3 pages, 126205 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
