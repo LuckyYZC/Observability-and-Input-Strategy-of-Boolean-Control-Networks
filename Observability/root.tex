@@ -22,7 +22,7 @@
 % See the \addtolength command later in the file to balance the column lengths
 % on the last page of the document
 
-% The following packages can be found on http:\\www.ctan.org
+% ==================================================================================
 \usepackage{graphics} % for pdf, bitmapped graphics files
 \usepackage{epsfig} % for postscript graphics files
 %\usepackage{mathptmx} % assumes new font selection scheme installed
@@ -31,10 +31,28 @@
 \usepackage{amssymb}  % assumes amsmath package installed
 \usepackage{amsfonts} % assumes amsfonts package installed
 \usepackage{epstopdf}
+\usepackage{color}
+
+%===================================================================================
+
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{\bf Proposition}
+
+%============================================================================
 \def \BN {{\bf BN}}
 \def \BNs {{\bf BNs}}
 \def \BCN {{\bf BCN}}
 \def \BCNs {{\bf BCNs}}
+
+%=======================================================================
+\newcommand{\tl}[1]{\textcolor{blue} {TL: #1 :TL} }
+
+%========================================================================
+
 \title{\LARGE \bf
 Online Observability of Boolean Control Networks*
 }
@@ -78,16 +96,44 @@ Boolean control networks, online observability, supertree, directed graph, find 
 
 In 1960s, Jacob and Monod found that  ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.''  Inspired by these Boolean-type actions in genetic circuits, the Boolean networks ({\bf BNs}) was firstly proposed by Kauffman for modeling nonlinear and complex biological systems. Some general descriptions of the \BNs\ and its applications to biological systems can be found in Kauffman. Since then research interestes in {\bf BNs} have been motivated by the large number of natural and artificial systems whose describing variables display only two distinct configurations, and hence take only two values.
 
-When extenal regualtion or perturbation is considered, \BNs\ are naturally extended to Boolean control networks ({\bf BCNs}). The study on control-theoretic problems of \BCNs\ can date back to 2007 in which the problem of determining the controllability of \BCNs\ is proved {\bf NP}-hard in the number of nodes, and point out that ``One of the major goals of systems biology is to develop a control theory for complex biological systems.'' Since then, the study on control-theoretic problems in the areas of \BNs\ and \BCNs\ has drawn great attention. Controllability and observability are basic control-theoretic problems. In 2009 Cheng et al. have developed an algebraic framework to deal with both \BNs\ and \BCNs\ by using new tool, called \emph{semi-tensor product} (STP) of matrices proposed in 2001, and give equivalent conditions for controllability of \BCNs\ and observability of controllable {\bf BCNs}. This type of observability means that every initial state can be determined by an input sequence. Important results on other types of observability of \BCNs\ came up hereafter. To date, there are four types of observability have been proposed. Another observability, proposed in 2010, stands for that for every two distinct initial states, there exists an input sequence which can distinguish them. A third observability stating that there is an input sequence that determines the initial state, is proposed to study the identifiability problem of {\bf BCNs}. A fourth observability is determined in 2013, which is essentially the observability of linear control systems, i.e., every sufficient long input sequence can determine the initial state.
+When extenal regualtion or perturbation is considered, \BNs\ are naturally extended to Boolean control networks ({\bf BCNs}). The study on control-theoretic problems of \BCNs\ can date back to 2007 \tl{should be much much earlier} in which the problem of determining the controllability of \BCNs\ is proved {\bf NP}-hard in the number of nodes, and point out that ``One of the major goals of systems biology is to develop a control theory for complex biological systems.'' Since then, the study on control-theoretic problems in the areas of \BNs\ and \BCNs\ has drawn great attention. Controllability and observability are basic control-theoretic problems. In 2009 Cheng et al. have developed an algebraic framework to deal with both \BNs\ and \BCNs\ by using new tool, called \emph{semi-tensor product} (STP) of matrices proposed in 2001, and give equivalent conditions for controllability of \BCNs\ and observability of controllable {\bf BCNs}. This type of observability means that every initial state can be determined by an input sequence. Important results on other types of observability of \BCNs\ came up hereafter. To date, there are four types of observability have been proposed. 
+
+\begin{enumerate}
+	\item This type of observability means that every initial state can be determined by an input sequence.
+	
+	\item 
+	Another observability, proposed in 2010, stands for that for every two distinct initial states, there exists an input sequence which can distinguish them.
+	
+	\item A third observability stating that there is an input sequence that determines the initial state, is proposed to study the identifiability problem of {\bf BCNs}.
+	
+	\item  A fourth observability is determined in 2013, which is essentially the observability of linear control systems, i.e., every sufficient long input sequence can determine the initial state.
+\end{enumerate}
+ 
+
+\tl{can you state the four types observability clearly and formally here?}
 
 But all the four types of observability of \BCNs\ is offline observability that you can't adjust the input sequence by observing the output sequence when you determining the initial state of {\bf BCNs}. So we proposed the online observability that we can determine the initial state of \BCNs\ by deciding input sequence and observing out sequence step by step. To this end, we firstly define the deduce function and $K$ steps deterministic for {\bf BCNs}, which is the basis of definition of online observability of {\bf BCNs}. Secondly, we use the supertree and directed graph to determine the online observability of {\bf BCNs}, which are built by the definition of online observability. Finally, we use the online observability of \BCNs\ to find the shortes path and avoid entering critical states when we determining the initial state of {\bf BCNs}. 
 
 The remainder of this paper is organized as follows. {\bf Section II} introduces necessary preliminaries about {\bf BCNs}, algebraic forms of \BCNs\ and the online observability of {\bf BCNs}. {\bf Section III} presents how to determine the online observability of \BCNs\ by super tree and directed graph. {\bf Section IV} introduces some applications of the online observability of {\bf BCNs}. {\bf Section V} end up  with the introduction of some future works.
+
+\tl{I will try to rewrite the intro.}
+
+%==============================================================================================================
 \section{PRELIMINARIES}
 In this section we introduce the \BCNs\ and its algebraic form, then define the online observability of {\bf BCNs}.
+
+
+
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be described as a network graph wich is a directed graph, and the logical equatoins to describe the updating rules of the nodes in the network graph. A \BCN\ consists of input nodes, state nodes, output nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time 0, 1, 2,\ldots. For one directed edge from node $v_i$ to node $v_j$ means that the logic value of $v_j$ at time step $t+1$ is affected by the value of $v_i$ at time step $t$. Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of {\bf BCN}.
+A Boolean control network can be described as a network graph \tl{network graph? is this from the literature?} which is a directed graph, and the logical equations to describe the updating rules of the nodes in the network graph. 
+
+\begin{definition}
+A \BCN\ consists of input nodes, state nodes, output nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time 0, 1, 2,\ldots. For one directed edge from node $v_i$ to node $v_j$ means that the logic value of $v_j$ at time step $t+1$ is affected by the value of $v_i$ at time step $t$. 
+\end{definition}
+
+
+Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of {\bf BCN}.
 
  
  \begin{figure}[thpb]
@@ -100,7 +146,10 @@ A Boolean control network can be described as a network graph wich is a directed
       \label{fig:1}
   \end{figure}
 
-We give a simple example to describe {\bf BCN}: Example 1. In {\bf Fig.\ref{fig:1}} we have a Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. The dynamics of the \BCN\ shown in {\bf Fig.\ref{fig:1}} is described as truth table ({\bf Fig.\ref{fig:2}}).
+We give a simple example to describe {\bf BCN}.
+
+\begin{example}
+	In {\bf Fig.\ref{fig:1}} we have a Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. The dynamics of the \BCN\ shown in {\bf Fig.\ref{fig:1}} is described as truth table ({\bf Fig.\ref{fig:2}}).
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
@@ -109,8 +158,12 @@ We give a simple example to describe {\bf BCN}: Example 1. In {\bf Fig.\ref{fig:
       
       \caption{The truth table which describe the updating rules of the \BCN\ shown in {\bf Fig.\ref{fig:1}}.}
       \label{fig:2}
-   \end{figure}   
+   \end{figure}
+\end{example}   
 For convenience, we will use this example in the whole paper to explain various concepts we introduce.
+
+
+%==============================================================================================================
 \subsection{The Algebraic Forms of BCNs}
 In this paper, we investigate the following \BCN\ with $n$ state nodes, $m$ input nodes and $q$ output nodes:
 \begin{equation}
@@ -119,9 +172,11 @@ s(t+1)=&f(i(t),s(t))\\
 o(t)=&h(s(t))
 \end{split}
 \end{equation}
-where $D$ : the set $\{0,1\}$; $t=0,1,...$ represents the discrete time; $s\in D^n$; $i\in D^m$; $o\in D^q$; $f:D^{n+m}\mapsto D^n$ and $h:D^n\mapsto D^q$ are logical functions. So in the previously mentioned example, we have $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\bf Fig.\ref{fig:2}}). Then using the \emph{semi-tensor product}  (STP) of matrices to define the algebraic form of {\bf BCNs}. \\
-\\
-Definition of STP : Let $A\in\mathbb{R}_{m\times n}$, $B\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $A$ and $B$ is defined as $A\ltimes B=(A\otimes I_{\alpha/n})(B\otimes I_{\alpha/p})$, where $\otimes$ denotes the Kronecker product. 
+where $D$ : the set $\{0,1\}$; $t=0,1,...$ represents the discrete time; $s\in D^n$; $i\in D^m$; $o\in D^q$; $f:D^{n+m}\mapsto D^n$ and $h:D^n\mapsto D^q$ are logical functions. So in the previously mentioned example, we have $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\bf Fig.\ref{fig:2}}). Then using the \emph{semi-tensor product}  (STP) of matrices to define the algebraic form of {\bf BCNs}. 
+
+\begin{definition}[STP] 
+	Let $A\in\mathbb{R}_{m\times n}$, $B\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $A$ and $B$ is defined as $A\ltimes B=(A\otimes I_{\alpha/n})(B\otimes I_{\alpha/p})$, where $\otimes$ denotes the Kronecker product. 
+\end{definition}
 
 Since STP keeps most properties of the conventional product, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. Before introducing algebraic form, we introduce some related notations at first. $\delta^i_n$: the $i$-th column of the identity matrix $I_n$; $\Delta_n$: the set $\{\delta^1_n,...,\delta^n_n \}$; $\delta_n \left[i_1,...,i_s\right]$: the logical matrix $\left[\delta^{i_1}_n,...,\delta^{i_s}_n\right]\left(i_1,...,i_s\in\left\{1,2,...,n\right\}\right)$; $L_{n\times s}$: the set of $n\times s$ logical matrices. So (1) can be quivalently represented in the following algebraic form:
 \begin{equation}
@@ -144,8 +199,18 @@ o(t) =&\delta_4[\beta]s(t)\\
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$ and $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$; $t\in \mathbb{N}$; $s\in \Delta_{16}$; $i\in \Delta_4$; $o\in \Delta_4$.
 
 
-\subsection{The Online Observability of BCNs}
-In this paper we propose the online observability: A {\bf BCN} is called online observable, if for every initial state $x_0 \in \Delta_N$, there exists a way that the initial state $x_0 $ can be determined by the deciding input sequence and observing output sequence step by step. Different from existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\bf BCNs}, so we can infer the possible values of state nodes and treat them as possible states set. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j\in \Delta_N$) will not turn into the same state ($Ls_i i_0=Ls_j i_0$) after affected by input. After decided input, we can observe the new outputs, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. The mathematical definition of online observability is given below:
+\section{The Online Observability of BCNs}
+In this paper we propose the online observability: 
+
+\begin{definition}
+	
+\end{definition}
+
+A {\bf BCN} is called online observable, if for every initial state $x_0 \in \Delta_N$, there exists a way \tl{be precise!} that the initial state $x_0 $ can be determined by the deciding input sequence and observing output sequence step by step. 
+
+\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
+
+Different from existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\bf BCNs}, so we can infer the possible values of state nodes and treat them as possible states set. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j\in \Delta_N$) will not turn into the same state ($Ls_i i_0=Ls_j i_0$) after affected by input. After decided input, we can observe the new outputs, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. The mathematical definition of online observability is given below:
 
 First, we define the deduce function  which simulate the deduction process :
 $$D\left(S, I, O\right)$$
@@ -194,9 +259,11 @@ When $K>0$:\\
 
 From the definition of deterministic, if $S_i$ is $K_1$ steps deterministic and $K_1\leq K_2$, then $S_i$ is $K_2$ steps deterministic. But if $S_i$ is $K_1$ steps deterministic and $K_1\geq K_2$, we can not make sure that $S_i$ is $K_2$ steps deterministic. So you can consider the mean of ``$S_i$ is $K_i$ steps deterministic'' as ``whether we can determine the state of a \BCN\ with possible states set $S_i$ by deciding input sequence and observing out sequence step by step in $K_i$ steps''.\\
 
-{\bf Online Observability of  BCNs}:
+\begin{definition}[Online Observability of  BCNs]
 If $\forall  O_i\in \Delta_Q$ and $|D\left(\Delta_N,\varepsilon, O_i\right)|\neq 0$, $\exists K_i \ge 0$ implies $D\left(\Delta_N,\varepsilon,O_i\right)$ is $K_i$ stepes deterministic, then this \BCN\ is online observable. Even simpler, if $\exists K_i \ge 0$ implies $\Delta_N$ is $K_i$ stepes deterministic, then this \BCN\ is online observable. The difference is that whether we observe the initial output of the \BCN\ at first, for better performance the former definition would be better.
+\end{definition}
 
+%==============================================================================================================
 \section{DETERMINING THE OBSERVABILITY OF BCNs}
 
 In this paper we proposed two ways to determine the observability of {\bf BCNs}, the first one is by supertree, the second one is by directed graph. The construction process of supertree simulates deduction process mentioned before. Then we check the tree based on the definition of online observability of \BCNs\ depth first or breadth first. When we used the super tree to determine the observability of {\bf BCNs}, we need to check the existence of loops, and many nodes in the tree are repeated, which will take a lot of time overhead and space overhead. So we proposed the second way which determine the online observability by directed graph,   in this way we can avoid checking the existence of loop and avoid checking repeated nodes. There are also other advantages like determining observability earlier and select the input smarter, which will reduce time and space overhead.    

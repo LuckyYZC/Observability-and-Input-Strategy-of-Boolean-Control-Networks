@@ -1,10 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  11 SEP 2018 16:21
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  11 SEP 2018 18:54
 entering extended mode
 **root.tex
-("C:\Data\Model checking\Boolean Network\Observability\root.tex"
+
+("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
+olean-Control-Networks\Observability\root.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-("C:\Data\Model checking\Boolean Network\Observability\ieeeconf.cls"
+
+("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
+olean-Control-Networks\Observability\ieeeconf.cls"
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
@@ -250,56 +254,72 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
-("C:\Data\Model checking\Boolean Network\Observability\root.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+(C:\CTEX\MiKTeX\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(C:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\c@example=\count104
+\c@remark=\count105
+\c@definition=\count106
+\c@theorem=\count107
+\c@lemma=\count108
+\c@proposition=\count109
+
+("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
+olean-Control-Networks\Observability\root.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 
 (C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
+\scratchcounter=\count110
 \scratchdimen=\dimen126
 \scratchbox=\box29
-\nofMPsegments=\count105
-\nofMParguments=\count106
+\nofMPsegments=\count111
+\nofMParguments=\count112
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count107
+\MPscratchCnt=\count113
 \MPscratchDim=\dimen127
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks22
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 58.
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 76.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
  (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 58.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 76.
 
 (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 [][][]$[]$\OT1/ptm/m/n/8 Bernard D. Re-searcheris with the De-part-men-t of Ele
 c-tri-cal
  []
 
 
-Underfull \hbox (badness 8075) in paragraph at lines 58--58
+Underfull \hbox (badness 8075) in paragraph at lines 76--76
 \OT1/ptm/m/n/8 En-gi-neer-ing, Wright S-tate U-ni-ver-si-ty, Day-ton, O-H 45435
 , US-A
  []
@@ -308,24 +328,19 @@ Underfull \hbox (badness 8075) in paragraph at lines 58--58
 
 
 ]
-<figures/Fig1.png, id=17, 933.4875pt x 845.1575pt>
+<figures/Fig1.png, id=14, 933.4875pt x 845.1575pt>
 File: figures/Fig1.png Graphic file (type png)
  <use figures/Fig1.png>
-Package pdftex.def Info: figures/Fig1.png used on input line 97.
+Package pdftex.def Info: figures/Fig1.png used on input line 143.
 (pdftex.def)             Requested size: 214.6976pt x 194.38213pt.
 
-<figures/Fig2.png, id=19, 845.1575pt x 833.1125pt>
+<figures/Fig2.png, id=16, 845.1575pt x 833.1125pt>
 File: figures/Fig2.png Graphic file (type png)
  <use figures/Fig2.png>
-Package pdftex.def Info: figures/Fig2.png used on input line 108.
+Package pdftex.def Info: figures/Fig2.png used on input line 157.
 (pdftex.def)             Requested size: 218.04639pt x 214.93883pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--125
-
- []
-
-
-Overfull \hbox (5.77872pt too wide) in paragraph at lines 143--145
+Overfull \hbox (5.77872pt too wide) in paragraph at lines 198--200
 \OT1/ptm/m/n/10 where $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\
 OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cm
 r/m/n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n
@@ -339,7 +354,7 @@ m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
  []
 
 
-Overfull \hbox (7.05943pt too wide) in paragraph at lines 143--145
+Overfull \hbox (7.05943pt too wide) in paragraph at lines 198--200
 $\OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1
 /cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m
 /n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
@@ -354,7 +369,7 @@ m/m/it/10 ; [] $
  []
 
 
-Overfull \hbox (7.61504pt too wide) in paragraph at lines 143--145
+Overfull \hbox (7.61504pt too wide) in paragraph at lines 198--200
 $\OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1
 /cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m
 /n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
@@ -367,124 +382,135 @@ $\OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1
 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; [] $
  []
 
-[2 <C:/Data/Model checking/Boolean Network/Observability/figures/Fig1.png> <C:/
-Data/Model checking/Boolean Network/Observability/figures/Fig2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+[2 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
+Boolean-Control-Networks/Observability/figures/Fig1.png> <C:/Data/Model checkin
+g/Boolean Network/Observability-and-Input-Strategy-of-Boolean-Control-Networks/
+Observability/figures/Fig2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
 
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 187--194
+Underfull \hbox (badness 1642) in paragraph at lines 252--259
 \OT1/ptm/m/n/10 ste-pes de-ter-min-is-tic'', then $\OML/cmm/m/it/10 S[]$ \OT1/p
 tm/m/n/10 is $\OML/cmm/m/it/10 K$ \OT1/ptm/m/n/10 ($\OML/cmm/m/it/10 K > \OT1/c
 mr/m/n/10 0$\OT1/ptm/m/n/10 ) step-s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
 
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 195--196
+Underfull \hbox (badness 2980) in paragraph at lines 260--261
 []\OT1/ptm/m/n/10 From the def-i-ni-tion of de-ter-min-is-tic, if $\OML/cmm/m/i
 t/10 S[]$ \OT1/ptm/m/n/10 is $\OML/cmm/m/it/10 K[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
-<figures/Fig3.png, id=32, 3271.6629pt x 2280.8412pt>
+
+Underfull \hbox (badness 2564) in paragraph at lines 263--264
+$\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 D
+ [] \OMS/cmsy/m/n/10 j 6\OT1/cmr/m/n/10 = 0$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10
+ 9\OML/cmm/m/it/10 K[] \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$ \OT1/ptm/m/n/10 im
+-plies
+ []
+
+[3] <figures/Fig3.png, id=35, 3271.6629pt x 2280.8412pt>
 File: figures/Fig3.png Graphic file (type png)
- <use figures/Fig3.png>
-Package pdftex.def Info: figures/Fig3.png used on input line 209.
+
+<use figures/Fig3.png>
+Package pdftex.def Info: figures/Fig3.png used on input line 276.
 (pdftex.def)             Requested size: 219.20526pt x 152.81905pt.
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 217--228
+Underfull \hbox (badness 10000) in paragraph at lines 284--295
 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 217--228
+Underfull \hbox (badness 1776) in paragraph at lines 284--295
 \OT1/ptm/b/n/10 Step1: \OT1/ptm/m/n/10 Use a vari-able $\OML/cmm/m/it/10 k$ \OT
 1/ptm/m/n/10 ($\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$\OT1/ptm
 /m/n/10 ) to rep-re-sen-t the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--228
+Underfull \hbox (badness 10000) in paragraph at lines 284--295
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 217--228
+Underfull \hbox (badness 1735) in paragraph at lines 284--295
 \OT1/ptm/b/n/10 Step2: \OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 k$ \OT1/ptm/m/n/10
  be ($\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1$\OT1/ptm/m/n/10 ), then try to bui
 ld al-l the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--228
+Underfull \hbox (badness 10000) in paragraph at lines 284--295
 
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 217--228
+Underfull \hbox (badness 1931) in paragraph at lines 284--295
 \OT1/ptm/b/n/10 Step3: \OT1/ptm/m/n/10 We make $\OT1/cmr/m/n/10 []$ \OT1/ptm/m
 /n/10 as the suit-able in-put-s set for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--228
+Underfull \hbox (badness 10000) in paragraph at lines 284--295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--228
+Underfull \hbox (badness 10000) in paragraph at lines 284--295
 
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 217--228
+Underfull \hbox (badness 2698) in paragraph at lines 284--295
 \OT1/ptm/b/n/10 Step5: \OT1/ptm/m/n/10 Ac-cord-ing to the or-der de-ter-mined i
 n \OT1/ptm/b/n/10 Step2\OT1/ptm/m/n/10 ,
  []
 
-<figures/Fig4.png, id=36, 2462.44969pt x 1720.17656pt>
+[4 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
+Boolean-Control-Networks/Observability/figures/Fig3.png>]
+<figures/Fig4.png, id=41, 2462.44969pt x 1720.17656pt>
 File: figures/Fig4.png Graphic file (type png)
  <use figures/Fig4.png>
-Package pdftex.def Info: figures/Fig4.png used on input line 233.
+Package pdftex.def Info: figures/Fig4.png used on input line 300.
 (pdftex.def)             Requested size: 221.61092pt x 154.8092pt.
 
-[4 <C:/Data/Model checking/Boolean Network/Observability/figures/Fig3.png>]
 <figures/Fig5.png, id=42, 1111.15125pt x 779.91376pt>
 File: figures/Fig5.png Graphic file (type png)
  <use figures/Fig5.png>
-Package pdftex.def Info: figures/Fig5.png used on input line 252.
+Package pdftex.def Info: figures/Fig5.png used on input line 319.
 (pdftex.def)             Requested size: 221.12425pt x 155.20645pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--264
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--264
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 SPE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = 1 +$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--264
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
 $\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\O
 T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cm
 r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
@@ -494,29 +520,33 @@ r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--272
+Underfull \hbox (badness 10000) in paragraph at lines 332--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--272
+Underfull \hbox (badness 10000) in paragraph at lines 332--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--272
+Underfull \hbox (badness 10000) in paragraph at lines 332--339
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 4913) in paragraph at lines 265--272
+Underfull \hbox (badness 4913) in paragraph at lines 332--339
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 LCE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S
 [] \OMS/cmsy/m/n/10 \$
  []
 
+[5 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
+Boolean-Control-Networks/Observability/figures/Fig4.png> <C:/Data/Model checkin
+g/Boolean Network/Observability-and-Input-Strategy-of-Boolean-Control-Networks/
+Observability/figures/Fig5.png>]
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -547,8 +577,6 @@ Missing character: There is no ½ in font ptmr7t!
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
-[5 <C:/Data/Model checking/Boolean Network/Observability/figures/Fig4.png> <C:/
-Data/Model checking/Boolean Network/Observability/figures/Fig5.png>]
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -696,32 +724,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[6] ("C:\Data\Model checking\Boolean Network\Observability\root.aux") ) 
+[6]
+("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
+olean-Control-Networks\Observability\root.aux") ) 
 Here is how much of TeX's memory you used:
- 3075 strings out of 495354
- 42717 string characters out of 3183859
- 110779 words of memory out of 3000000
- 6189 multiletter control sequences out of 15000+200000
+ 3157 strings out of 495354
+ 44259 string characters out of 3183859
+ 112167 words of memory out of 3000000
+ 6266 multiletter control sequences out of 15000+200000
  45667 words of font info for 106 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,16n,27p,1688b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/CTEX
-/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/CTEX/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/publ
-ic/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.p
-fb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1
-/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTE
-X/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (6 pages, 1955537 bytes).
+ 42i,16n,27p,1278b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/CTEX/MiKTeX/fonts/enc/dvip
+s/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/CTEX/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/CTEX/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/CTEX/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb
+><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/CTEX/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fon
+ts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb
+><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on root.pdf (6 pages, 1958735 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
