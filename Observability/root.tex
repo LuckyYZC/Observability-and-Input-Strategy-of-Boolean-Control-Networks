@@ -197,22 +197,46 @@ o(t) =&\delta_4[\beta]s(t)\\
 \end{split}
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$ and $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$; $t\in \mathbb{N}$; $s\in \Delta_{16}$; $i\in \Delta_4$; $o\in \Delta_4$.
+\subsection{Existed Four Kinds of Observability of BCNs}
+In order to introduce existed four kinds of observability of BCNs, we define the mappings: Let $\Delta_N$, $\Delta_M$, $\Delta_P$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$,
+\begin{equation}
+\begin{split}
+L^p_{x_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, u_0 . . . u_{p-1} \mapsto x_1 . . .\, x_p\\
+L^{\mathbb{N}}_{x_0} &: (\Delta_M)^{\mathbb{N}}\mapsto(\Delta_N)^{\mathbb{N}}, u_0 u_1 . . .  \mapsto x_1 x_2 . . .
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+(HL)^p_{x_0} &: (\Delta_M)^p\mapsto(\Delta_Q)^p, u_0 . . . u_{p-1} \mapsto y_1 . . .\, y_p\\
+(HL)^{\mathbb{N}}_{x_0} &: (\Delta_M)^{\mathbb{N}}\mapsto(\Delta_Q)^{\mathbb{N}}, u_0 u_1 . . .  \mapsto y_1 y_2 . . .
+\end{split}
+\end{equation}
 
+For all  $p\in \mathbb{Z}_+$, all $U=u_1 ... u_p \in(\Delta_M)^p$, and all $1\ge i \ge j \ge |U|$, we use U[i,j] to denote the word $u_i ... u_j$. Then existed four kinds of observability of BCNs can be define as: 
+\begin{definition}
+The first kind of observability is that, \BCN\ is called observable, if for every initial state $x_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $x_0\neq x^i_0\in \Delta_N$, $Hx_0=Hx^i_0$ implies $(HL)^p_{x_0}(U)\neq (HL)^p_{x^i_0}(U)$.
+\end{definition}
+\begin{definition}
+	The second kind of observability is that, \BCN\ is called observable, if for any distinct states $x_0$, $x^i_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hx_0=Hx^i_0$ implies $(HL)^p_{x_0}(U)\neq (HL)^p_{x^i_0}(U)$.
+\end{definition}
+\begin{definition}
+	The third kind of observability is that, \BCN\ is called observable, if there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $x_0$, $x^i_0 \in \Delta_N$, $Hx_0=Hx^i_0$ implies $(HL)^p_{x_0}(U)\neq (HL)^p_{x^i_0}(U)$.
+\end{definition}
+\begin{definition}
+	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $x_0$, $x^i_0 \in \Delta_N$, for any input sequence $U\in(\Delta_M)^{\mathbb{N}}$, $Hx_0=Hx^i_0$ implies $(HL)^{\mathbb{N}}_{x_0}(U)\neq (HL)^{\mathbb{N}}_{x^i_0}(U)$.
+\end{definition}
 
+And we have the fourth one implies the third one, second one and first one; the third one implies the second one and first one; the first one implies the second one. 
 \section{The Online Observability of BCNs}
 In this paper we propose the online observability: 
 
 \begin{definition}
-	
+	A {\bf BCN} is called online observable, if for every initial state $x_0 \in \Delta_N$ can be determined by the deciding input sequence and observing output sequence step by step in finite steps without presuppose the  initial state.
 \end{definition}
 
-A {\bf BCN} is called online observable, if for every initial state $x_0 \in \Delta_N$, there exists a way \tl{be precise!} that the initial state $x_0 $ can be determined by the deciding input sequence and observing output sequence step by step. 
-
 \tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
-
-Different from existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\bf BCNs}, so we can infer the possible values of state nodes and treat them as possible states set. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j\in \Delta_N$) will not turn into the same state ($Ls_i i_0=Ls_j i_0$) after affected by input. After decided input, we can observe the new outputs, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. The mathematical definition of online observability is given below:
-
-First, we define the deduce function  which simulate the deduction process :
+\subsection{Deduce Function}
+Different from existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\bf BCNs}, so we can infer the possible values of state nodes and treat them as possible states set. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j\in \Delta_N$) will not turn into the same state ($Ls_i i_0=Ls_j i_0$) after affected by input. After decided input, we can observe the new outputs, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. First, we define the deduce function  which simulate the deduction process :
 $$D\left(S, I, O\right)$$
 where $S\in 2^{\Delta_N}$ is the possible states set before deduction; $I\in\Delta_M$ represents the input; $O\in\Delta_Q$ represents the output; $D\left(S, I, O\right)$ is the possible states set after deduction. Based on deduction process, we have for any $s_i(t+1)\in D\left(S, I, O\right)$, there exists $s_i\in S$ that $s_i(t+1)=LIs_i(t)$ and $O=Hs_i(t+1)$.
 
@@ -247,8 +271,9 @@ D\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\delta_4^3\right
 D\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^9,\delta_{16}^{13}\}
 \end{split}
 \end{equation}
-(4) represents that if the possible states set is $\varnothing$, no matter what you do you can only deduce $\varnothing$; if the possible states set is $\S_i$ and we don't input anything and don't observe the output, we can only deduce that the possible states set is $\S_i$ which shown in (5); when the possible states set is $\Delta_N$ we observe that the outputs is $\delta_4^1$ we can deduce that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$ which shown in (6) ; and then we input $\delta_4^1$, before observe the output we can only deduce the possible states would be   $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ which shown in (7); but if we observe that the output is $\delta_4^3$, we can deduce that the possible state values can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ which shown in (8); then if the set of states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$, before observe we can infer that the possible state values can be $\delta_{16}^9$ or  $\delta_{16}^{19}$ shown in (9), as you can see the number of the possible state decreased, so we may can't deduce the initial state any more. 
+(6) represents that if the possible states set is $\varnothing$, no matter what you do you can only deduce $\varnothing$; if the possible states set is $\S_i$ and we don't input anything and don't observe the output, we can only deduce that the possible states set is $\S_i$ which shown in (7); when the possible states set is $\Delta_N$ we observe that the outputs is $\delta_4^1$ we can deduce that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$ which shown in (8) ; and then we input $\delta_4^1$, before observe the output we can only deduce the possible states would be   $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ which shown in (9); but if we observe that the output is $\delta_4^3$, we can deduce that the possible state values can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ which shown in (10); then if the set of states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$, before observe we can infer that the possible state values can be $\delta_{16}^9$ or  $\delta_{16}^{19}$ shown in (11), as you can see the number of the possible state decreased, so we may can't deduce the initial state any more. 
 
+\subsection{$K$ Steps Deterministic}
 After difined the deduce function, we can introduce the mathematical definition of the observability of {\bf BCNs}. It may easier to be difined by programming language recursively, but we can also define its mathematical form by natural induction. Before define the observability of {\bf BCNs}, we need to difine the  {\bf  $K$ ($K\ge0$) steps deterministic} of the states set of {\bf BCNs}:\\
 \\
 When $K=0$:\\
@@ -257,11 +282,13 @@ When $K=0$:\\
 When $K>0$:\\
  If for a set of states $S_i$ and $|S_i|\ge1$, $\exists I_i \in \Delta_M$ implies $|D\left(S_i,I_i,\varepsilon\right)|=|S_i|$, and implies ``$\forall O_i\in \Delta_Q$, $|D\left(S_i,I_i,O_i\right)|\neq 0$ implies $D\left(S_i,I_i,O_i\right)$ is $K_i$ ($K_i<K$) stepes deterministic'', then $S_i$ is $K$ ($K>0$) steps deterministic.\\
 
-From the definition of deterministic, if $S_i$ is $K_1$ steps deterministic and $K_1\leq K_2$, then $S_i$ is $K_2$ steps deterministic. But if $S_i$ is $K_1$ steps deterministic and $K_1\geq K_2$, we can not make sure that $S_i$ is $K_2$ steps deterministic. So you can consider the mean of ``$S_i$ is $K_i$ steps deterministic'' as ``whether we can determine the state of a \BCN\ with possible states set $S_i$ by deciding input sequence and observing out sequence step by step in $K_i$ steps''.\\
-
+From the definition of deterministic, if $S_i$ is $K_1$ steps deterministic and $K_1\leq K_2$, then $S_i$ is $K_2$ steps deterministic. But if $S_i$ is $K_1$ steps deterministic and $K_1\geq K_2$, we can not make sure that $S_i$ is $K_2$ steps deterministic. So you can consider the mean of ``$S_i$ is $K_i$ steps deterministic'' as ``whether we can determine the state of a \BCN\ with possible states set $S_i$ by deciding input sequence and observing out sequence step by step in $K_i$ steps''.
+\subsection{Online Observability}
 \begin{definition}[Online Observability of  BCNs]
 If $\forall  O_i\in \Delta_Q$ and $|D\left(\Delta_N,\varepsilon, O_i\right)|\neq 0$, $\exists K_i \ge 0$ implies $D\left(\Delta_N,\varepsilon,O_i\right)$ is $K_i$ stepes deterministic, then this \BCN\ is online observable. Even simpler, if $\exists K_i \ge 0$ implies $\Delta_N$ is $K_i$ stepes deterministic, then this \BCN\ is online observable. The difference is that whether we observe the initial output of the \BCN\ at first, for better performance the former definition would be better.
 \end{definition}
+
+Because in the existed second kind of observability, we presuppose the initial state of BCNs, and then find the input sequence to distinguish it from other states, but this input sequence may make other states turn into be the same state that other states can't be distinguished anymore. But this problem has to be considered in the online obervability of {\bf BCNs}, so the online observability implies the existed first kind of observability, and then implies the existed second kind of observability. In the existed third kind of observability, there exists an input sequence that can distinguish any distinct states, but in online observability we can use different input sequences to distinguish different classes of distinct states by observing the output of {\bf BCNs}. So we have the existed third kind of observability implies the online observability of {\bf BCNs}, then the existed fourth kind of observability implies the online observability.
 
 %==============================================================================================================
 \section{DETERMINING THE OBSERVABILITY OF BCNs}

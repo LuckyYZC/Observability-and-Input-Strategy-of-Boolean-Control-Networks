@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  11 SEP 2018 18:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  12 SEP 2018 20:32
 entering extended mode
 **root.tex
 
@@ -386,131 +386,122 @@ $\OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1
 Boolean-Control-Networks/Observability/figures/Fig1.png> <C:/Data/Model checkin
 g/Boolean Network/Observability-and-Input-Strategy-of-Boolean-Control-Networks/
 Observability/figures/Fig2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 252--259
+Underfull \hbox (badness 10000) in paragraph at lines 277--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--259
+Underfull \hbox (badness 10000) in paragraph at lines 277--284
 
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 252--259
+Underfull \hbox (badness 1642) in paragraph at lines 277--284
 \OT1/ptm/m/n/10 ste-pes de-ter-min-is-tic'', then $\OML/cmm/m/it/10 S[]$ \OT1/p
 tm/m/n/10 is $\OML/cmm/m/it/10 K$ \OT1/ptm/m/n/10 ($\OML/cmm/m/it/10 K > \OT1/c
 mr/m/n/10 0$\OT1/ptm/m/n/10 ) step-s
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--259
+Underfull \hbox (badness 10000) in paragraph at lines 277--284
 
  []
 
-
-Underfull \hbox (badness 2980) in paragraph at lines 260--261
-[]\OT1/ptm/m/n/10 From the def-i-ni-tion of de-ter-min-is-tic, if $\OML/cmm/m/i
-t/10 S[]$ \OT1/ptm/m/n/10 is $\OML/cmm/m/it/10 K[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
-
- []
-
-
-Underfull \hbox (badness 2564) in paragraph at lines 263--264
+[3]
+Underfull \hbox (badness 2564) in paragraph at lines 288--289
 $\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 D
  [] \OMS/cmsy/m/n/10 j 6\OT1/cmr/m/n/10 = 0$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10
  9\OML/cmm/m/it/10 K[] \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$ \OT1/ptm/m/n/10 im
 -plies
  []
 
-[3] <figures/Fig3.png, id=35, 3271.6629pt x 2280.8412pt>
+<figures/Fig3.png, id=36, 3271.6629pt x 2280.8412pt>
 File: figures/Fig3.png Graphic file (type png)
-
-<use figures/Fig3.png>
-Package pdftex.def Info: figures/Fig3.png used on input line 276.
+ <use figures/Fig3.png>
+Package pdftex.def Info: figures/Fig3.png used on input line 303.
 (pdftex.def)             Requested size: 219.20526pt x 152.81905pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--295
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 284--295
+Underfull \hbox (badness 1776) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step1: \OT1/ptm/m/n/10 Use a vari-able $\OML/cmm/m/it/10 k$ \OT
 1/ptm/m/n/10 ($\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$\OT1/ptm
 /m/n/10 ) to rep-re-sen-t the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--295
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 284--295
+Underfull \hbox (badness 1735) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step2: \OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 k$ \OT1/ptm/m/n/10
  be ($\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1$\OT1/ptm/m/n/10 ), then try to bui
 ld al-l the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--295
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 284--295
+Underfull \hbox (badness 1931) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step3: \OT1/ptm/m/n/10 We make $\OT1/cmr/m/n/10 []$ \OT1/ptm/m
 /n/10 as the suit-able in-put-s set for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--295
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--295
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 284--295
+Underfull \hbox (badness 2698) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step5: \OT1/ptm/m/n/10 Ac-cord-ing to the or-der de-ter-mined i
 n \OT1/ptm/b/n/10 Step2\OT1/ptm/m/n/10 ,
  []
 
 [4 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
 Boolean-Control-Networks/Observability/figures/Fig3.png>]
-<figures/Fig4.png, id=41, 2462.44969pt x 1720.17656pt>
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+
+<figures/Fig4.png, id=42, 2462.44969pt x 1720.17656pt>
 File: figures/Fig4.png Graphic file (type png)
  <use figures/Fig4.png>
-Package pdftex.def Info: figures/Fig4.png used on input line 300.
+Package pdftex.def Info: figures/Fig4.png used on input line 327.
 (pdftex.def)             Requested size: 221.61092pt x 154.8092pt.
 
-<figures/Fig5.png, id=42, 1111.15125pt x 779.91376pt>
+<figures/Fig5.png, id=43, 1111.15125pt x 779.91376pt>
 File: figures/Fig5.png Graphic file (type png)
  <use figures/Fig5.png>
-Package pdftex.def Info: figures/Fig5.png used on input line 319.
+Package pdftex.def Info: figures/Fig5.png used on input line 346.
 (pdftex.def)             Requested size: 221.12425pt x 155.20645pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--331
+Underfull \hbox (badness 10000) in paragraph at lines 353--358
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--331
+Underfull \hbox (badness 10000) in paragraph at lines 353--358
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 SPE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = 1 +$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--331
+Underfull \hbox (badness 10000) in paragraph at lines 353--358
 $\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\O
 T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cm
 r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
@@ -519,34 +510,31 @@ r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
  S[]\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ;
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--339
+[5 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
+Boolean-Control-Networks/Observability/figures/Fig4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 359--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--339
+Underfull \hbox (badness 10000) in paragraph at lines 359--366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--366
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 4913) in paragraph at lines 332--339
+Underfull \hbox (badness 4913) in paragraph at lines 359--366
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 LCE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S
 [] \OMS/cmsy/m/n/10 \$
  []
 
-[5 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
-Boolean-Control-Networks/Observability/figures/Fig4.png> <C:/Data/Model checkin
-g/Boolean Network/Observability-and-Input-Strategy-of-Boolean-Control-Networks/
-Observability/figures/Fig5.png>]
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -694,6 +682,8 @@ Missing character: There is no ½ in font ptmr7t!
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
+[6 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
+Boolean-Control-Networks/Observability/figures/Fig5.png>]
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -724,13 +714,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[6]
+[7
+
+]
 ("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
 olean-Control-Networks\Observability\root.aux") ) 
 Here is how much of TeX's memory you used:
  3157 strings out of 495354
  44259 string characters out of 3183859
- 112167 words of memory out of 3000000
+ 117167 words of memory out of 3000000
  6266 multiletter control sequences out of 15000+200000
  45667 words of font info for 106 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -747,13 +739,14 @@ type1/public/amsfonts/cm/cmr7.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmr8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/CTEX/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fon
-ts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb
-><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/u
-rw/times/utmri8a.pfb>
-Output written on root.pdf (6 pages, 1958735 bytes).
+bm10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/CTEX
+/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/time
+s/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/
+fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on root.pdf (7 pages, 1968666 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
