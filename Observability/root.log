@@ -1,14 +1,14 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  12 SEP 2018 20:32
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.19)  11 SEP 2018 10:54
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
 entering extended mode
-**root.tex
-
-("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
-olean-Control-Networks\Observability\root.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for loaded.
-
-("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
-olean-Control-Networks\Observability\ieeeconf.cls"
+**./root.tex
+(root.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+(ieeeconf.cls
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
@@ -17,7 +17,7 @@ Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 794.
 
-(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \@IEEEnormalsizefontbaselineskip=\skip41
@@ -101,36 +101,36 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 9).
 ** ATTENTION: Overriding IEEE standard margins (line 12).
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(C:\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
-(C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 \Gin@req@height=\dimen113
@@ -139,41 +139,41 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \epsfxsize=\dimen115
 \epsfysize=\dimen116
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
-Package: amstext 2000/06/29 v2.01
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen117
 ))
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen118
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count92
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count93
 \leftroot@=\count94
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count95
 \DOTSCASE@=\count96
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count97
 \c@MaxMatrixCols=\count98
 \dotsspace@=\muskip10
@@ -194,42 +194,42 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip48
 \multlinetaggap=\skip49
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf.sty
-Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\grfext.sty
-Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-(C:\CTEX\MiKTeX\tex\latex\oberdiek\kvoptions.sty
-Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty
-Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 Package etexcmds Info: Could not find \expanded.
@@ -237,30 +237,32 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\pdftexcmds.sty
-Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
 
-(C:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 ))
-(C:\CTEX\MiKTeX\tex\latex\graphics\color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(C:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 147.
 )
 \c@example=\count104
 \c@remark=\count105
@@ -268,9 +270,9 @@ Package color Info: Driver file: pdftex.def on input line 130.
 \c@theorem=\count107
 \c@lemma=\count108
 \c@proposition=\count109
+ (root.aux)
+\openout1 = `root.aux'.
 
-("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
-olean-Control-Networks\Observability\root.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
@@ -284,7 +286,7 @@ LaTeX Font Info:    ... okay on input line 72.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
 
-(C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
 \scratchdimen=\dimen126
@@ -300,31 +302,31 @@ LaTeX Font Info:    ... okay on input line 72.
 )
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 76.
 LaTeX Font Info:    Try loading font information for U+msa on input line 76.
- (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 76.
 
-(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 76--76
-[][][]$[]$\OT1/ptm/m/n/8 Bernard D. Re-searcheris with the De-part-men-t of Ele
-c-tri-cal
+[][][]$[]$\OT1/ptm/m/n/8 Bernard D. Re-searcheris with the De-part-ment of Elec
+-tri-cal
  []
 
 
 Underfull \hbox (badness 8075) in paragraph at lines 76--76
-\OT1/ptm/m/n/8 En-gi-neer-ing, Wright S-tate U-ni-ver-si-ty, Day-ton, O-H 45435
-, US-A
+\OT1/ptm/m/n/8 En-gi-neer-ing, Wright State Uni-ver-sity, Day-ton, OH 45435, US
+A
  []
 
-[1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
@@ -350,43 +352,48 @@ ML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 15\OML/cmm
 0 ; \OT1/cmr/m/n/10 12\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \O
 T1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/
 m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
- 9\OML/cmm/m/it/10 ; [] $
+ 9\OML/cmm/m/it/10 ; [] 
  []
 
 
 Overfull \hbox (7.05943pt too wide) in paragraph at lines 198--200
-$\OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1
-/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m
-/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
-1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 12\OML
-/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m
-/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 
-; \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/
-cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n
-/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 9
-\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cm
-m/m/it/10 ; [] $
+\OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/
+cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1
+\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 12\OML/
+cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/
+it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/it/10 ; \OT1/c
+mr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/
+10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 9\
+OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm
+/m/it/10 ; [] 
  []
 
 
 Overfull \hbox (7.61504pt too wide) in paragraph at lines 198--200
-$\OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1
-/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m
-/n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10
- 4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML
-/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m
-/it/10 ; \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 9\OML/cmm/m/it/10 
-; \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 ; \OT1
-/cmr/m/n/10 12\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m
-/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
-3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; [] $
+\OT1/cmr/m/n/10 16\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/
+cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 11\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 
+4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 15\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/
+cmm/m/it/10 ; \OT1/cmr/m/n/10 14\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 7\OML/cmm/m/
+it/10 ; \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 9\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 ; \OT1/
+cmr/m/n/10 12\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 13\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3
+\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; [] 
  []
 
+<<<<<<< HEAD
 [2 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
 Boolean-Control-Networks/Observability/figures/Fig1.png> <C:/Data/Model checkin
 g/Boolean Network/Observability-and-Input-Strategy-of-Boolean-Control-Networks/
 Observability/figures/Fig2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 277--284
+=======
+[2 <./figures/Fig1.png> <./figures/Fig2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--259
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
 
  []
 
@@ -399,7 +406,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--284
 Underfull \hbox (badness 1642) in paragraph at lines 277--284
 \OT1/ptm/m/n/10 ste-pes de-ter-min-is-tic'', then $\OML/cmm/m/it/10 S[]$ \OT1/p
 tm/m/n/10 is $\OML/cmm/m/it/10 K$ \OT1/ptm/m/n/10 ($\OML/cmm/m/it/10 K > \OT1/c
-mr/m/n/10 0$\OT1/ptm/m/n/10 ) step-s
+mr/m/n/10 0$\OT1/ptm/m/n/10 ) steps
  []
 
 
@@ -407,12 +414,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--284
 
  []
 
+<<<<<<< HEAD
 [3]
 Underfull \hbox (badness 2564) in paragraph at lines 288--289
 $\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 D
  [] \OMS/cmsy/m/n/10 j 6\OT1/cmr/m/n/10 = 0$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10
  9\OML/cmm/m/it/10 K[] \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$ \OT1/ptm/m/n/10 im
 -plies
+=======
+
+Underfull \hbox (badness 2980) in paragraph at lines 260--261
+[]\OT1/ptm/m/n/10 From the def-i-ni-tion of de-ter-min-is-tic, if $\OML/cmm/m/i
+t/10 S[]$ \OT1/ptm/m/n/10 is $\OML/cmm/m/it/10 K[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 263--264
+\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 D 
+[] \OMS/cmsy/m/n/10 j 6\OT1/cmr/m/n/10 = 0$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10 
+9\OML/cmm/m/it/10 K[] \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$ \OT1/ptm/m/n/10 im-
+plies
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
  []
 
 <figures/Fig3.png, id=36, 3271.6629pt x 2280.8412pt>
@@ -429,7 +456,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 311--322
 Underfull \hbox (badness 1776) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step1: \OT1/ptm/m/n/10 Use a vari-able $\OML/cmm/m/it/10 k$ \OT
 1/ptm/m/n/10 ($\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$\OT1/ptm
-/m/n/10 ) to rep-re-sen-t the
+/m/n/10 ) to rep-re-sent the
  []
 
 
@@ -441,7 +468,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 311--322
 Underfull \hbox (badness 1735) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step2: \OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 k$ \OT1/ptm/m/n/10
  be ($\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1$\OT1/ptm/m/n/10 ), then try to bui
-ld al-l the
+ld all the
  []
 
 
@@ -452,7 +479,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 311--322
 
 Underfull \hbox (badness 1931) in paragraph at lines 311--322
 \OT1/ptm/b/n/10 Step3: \OT1/ptm/m/n/10 We make $\OT1/cmr/m/n/10 []$ \OT1/ptm/m
-/n/10 as the suit-able in-put-s set for
+/n/10 as the suit-able in-puts set for
  []
 
 
@@ -471,12 +498,17 @@ Underfull \hbox (badness 2698) in paragraph at lines 311--322
 n \OT1/ptm/b/n/10 Step2\OT1/ptm/m/n/10 ,
  []
 
+<<<<<<< HEAD
 [4 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
 Boolean-Control-Networks/Observability/figures/Fig3.png>]
 Underfull \vbox (badness 2213) has occurred while \output is active []
 
 
 <figures/Fig4.png, id=42, 2462.44969pt x 1720.17656pt>
+=======
+[4 <./figures/Fig3.png>]
+<figures/Fig4.png, id=41, 2462.44969pt x 1720.17656pt>
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
 File: figures/Fig4.png Graphic file (type png)
  <use figures/Fig4.png>
 Package pdftex.def Info: figures/Fig4.png used on input line 327.
@@ -490,17 +522,18 @@ Package pdftex.def Info: figures/Fig5.png used on input line 346.
 
 Underfull \hbox (badness 10000) in paragraph at lines 353--358
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
-/m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
+/m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to all pos-si-ble
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 353--358
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 SPE\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = 1 +$
+L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = 1 +
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 353--358
 $\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\O
 T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cm
@@ -508,6 +541,15 @@ r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
 /n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10
  + \OML/cmm/m/it/10 ::::\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10
  S[]\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ;
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
+\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT
+1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cmr
+/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m/
+n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 
++ \OML/cmm/m/it/10 ::::\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 
+S[]\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ;
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
  []
 
 [5 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
@@ -524,7 +566,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--366
 
 Underfull \hbox (badness 10000) in paragraph at lines 359--366
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
-/m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
+/m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to all pos-si-ble
  []
 
 
@@ -532,9 +574,13 @@ Underfull \hbox (badness 4913) in paragraph at lines 359--366
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 LCE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S
-[] \OMS/cmsy/m/n/10 \$
+[] \OMS/cmsy/m/n/10 \
  []
 
+<<<<<<< HEAD
+=======
+[5 <./figures/Fig4.png> <./figures/Fig5.png>]
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -714,6 +760,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
+<<<<<<< HEAD
 [7
 
 ]
@@ -745,6 +792,37 @@ s/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/
 fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.
 pfb>
 Output written on root.pdf (7 pages, 1968666 bytes).
+=======
+[6] (root.aux) ) 
+Here is how much of TeX's memory you used:
+ 3207 strings out of 493323
+ 45113 string characters out of 3139063
+ 120991 words of memory out of 3000000
+ 6687 multiletter control sequences out of 15000+200000
+ 45667 words of font info for 106 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,16n,27p,1280b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on root.pdf (6 pages, 1935216 bytes).
+>>>>>>> 660ba299c34a4004ea1dc6b8c7add4884f7cf3a5
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
