@@ -175,7 +175,7 @@ o(t)=&h(s(t))
 where $D$ : the set $\{0,1\}$; $t=0,1,...$ represents the discrete time; $s\in D^n$; $i\in D^m$; $o\in D^q$; $f:D^{n+m}\mapsto D^n$ and $h:D^n\mapsto D^q$ are logical functions. So in the previously mentioned example, we have $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\bf Fig.\ref{fig:2}}). Then using the \emph{semi-tensor product}  (STP) of matrices to define the algebraic form of {\bf BCNs}. 
 
 \begin{definition}[STP] 
-	Let $A\in\mathbb{R}_{m\times n}$, $B\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $A$ and $B$ is defined as $A\ltimes B=(A\otimes I_{\alpha/n})(B\otimes I_{\alpha/p})$, where $\otimes$ denotes the Kronecker product. 
+	Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $X$ and $Y$ is defined as $X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p})$, where $\otimes$ denotes the Kronecker product. 
 \end{definition}
 
 Since STP keeps most properties of the conventional product, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. Before introducing algebraic form, we introduce some related notations at first. $\delta^i_n$: the $i$-th column of the identity matrix $I_n$; $\Delta_n$: the set $\{\delta^1_n,...,\delta^n_n \}$; $\delta_n \left[i_1,...,i_s\right]$: the logical matrix $\left[\delta^{i_1}_n,...,\delta^{i_s}_n\right]\left(i_1,...,i_s\in\left\{1,2,...,n\right\}\right)$; $L_{n\times s}$: the set of $n\times s$ logical matrices. So (1) can be quivalently represented in the following algebraic form:
@@ -231,7 +231,7 @@ And we have the fourth one implies the third one, second one and first one; the 
 In this paper we propose the online observability: 
 
 \begin{definition}
-	A {\bf BCN} is called online observable, if for every initial state $x_0 \in \Delta_N$ can be determined by the deciding input sequence and observing output sequence step by step in finite steps without presuppose the  initial state.
+	A {\bf BCN} is called online observable, if for every initial state $s_0 \in \Delta_N$ can be determined by the deciding input sequence and observing output sequence step by step in finite steps without presuppose the  initial state.
 \end{definition}
 
 \tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
@@ -295,7 +295,7 @@ When I learn the existed four kinds of observability of {\bf BCNs}, I find that 
 
 In this paper we proposed two ways to determine the online observability of {\bf BCNs}, the first one is by supertree, the second one is by directed graph. The construction process of supertree simulates deduction process mentioned before. Then we check the tree based on the definition of online observability of \BCNs\ depth first or breadth first. When we used the super tree to determine the observability of {\bf BCNs}, we need to check the existence of loops, and many nodes in the tree are repeated, which will take a lot of time overhead and space overhead. So we proposed the second way which determine the online observability by directed graph,   in this way we can avoid checking the existence of loop and avoid checking repeated nodes. There are also other advantages like determining observability earlier and select the input smarter, which will reduce time and space overhead.    
 
-\subsection{Supertree} As we mentioned before when we want to determine the initial state of {\bf BCNs}, we can use the deduce function. So the root node of the supertree should be the $\Delta_N$, and then according to the definition of online observability we will alternately observing the output and deciding the input. So the son nodes of $S_i$ will be $D\left(\Delta_N,\varepsilon, O_i\right)$ and $D\left(\Delta_N,I_i,\varepsilon\right)$ alternately. Finally, when the  cardinal number of the states set is $1$ we can determine the initial state, so the leave nodes should be the nodes which containt only one state.
+\subsection{Supertree} As we mentioned before when we want to determine the initial state of {\bf BCNs}, we can use the deduce function. So the root node of the supertree should be the $\Delta_N$, and then according to the definition of online observability we will alternately observing the output and deciding the input. So the son nodes of $S_i$ will be $D\left(S_i,\varepsilon, O_i\right)$ and $D\left(S_i,I_i,\varepsilon\right)$ alternately. Finally, when the  cardinal number of the states set is $1$ we can determine the initial state, so the leave nodes should be the nodes which containt only one state.
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
