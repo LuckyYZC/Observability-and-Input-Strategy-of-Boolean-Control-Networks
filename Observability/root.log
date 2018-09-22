@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  16 SEP 2018 15:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.6.19)  22 SEP 2018 15:05
 entering extended mode
 **root.tex
 
@@ -401,57 +401,57 @@ $\OT1/cmr/m/n/10 []$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 D
 <figures/Fig3.png, id=36, 3271.6629pt x 2280.8412pt>
 File: figures/Fig3.png Graphic file (type png)
  <use figures/Fig3.png>
-Package pdftex.def Info: figures/Fig3.png used on input line 303.
+Package pdftex.def Info: figures/Fig3.png used on input line 305.
 (pdftex.def)             Requested size: 219.20526pt x 152.81905pt.
 
 [4 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
 Boolean-Control-Networks/Observability/figures/Fig3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--324
 
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 311--322
+Underfull \hbox (badness 1776) in paragraph at lines 313--324
 \OT1/ptm/b/n/10 Step1: \OT1/ptm/m/n/10 Use a vari-able $\OML/cmm/m/it/10 k$ \OT
 1/ptm/m/n/10 ($\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0$\OT1/ptm
 /m/n/10 ) to rep-re-sen-t the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--324
 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 311--322
+Underfull \hbox (badness 1735) in paragraph at lines 313--324
 \OT1/ptm/b/n/10 Step2: \OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 k$ \OT1/ptm/m/n/10
  be ($\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1$\OT1/ptm/m/n/10 ), then try to bui
 ld al-l the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--324
 
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 311--322
+Underfull \hbox (badness 1931) in paragraph at lines 313--324
 \OT1/ptm/b/n/10 Step3: \OT1/ptm/m/n/10 We make $\OT1/cmr/m/n/10 []$ \OT1/ptm/m
 /n/10 as the suit-able in-put-s set for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--324
 
  []
 
 
-Underfull \hbox (badness 2698) in paragraph at lines 311--322
+Underfull \hbox (badness 2698) in paragraph at lines 313--324
 \OT1/ptm/b/n/10 Step5: \OT1/ptm/m/n/10 Ac-cord-ing to the or-der de-ter-mined i
 n \OT1/ptm/b/n/10 Step2\OT1/ptm/m/n/10 ,
  []
@@ -459,31 +459,31 @@ n \OT1/ptm/b/n/10 Step2\OT1/ptm/m/n/10 ,
 <figures/Fig4.png, id=42, 2462.44969pt x 1720.17656pt>
 File: figures/Fig4.png Graphic file (type png)
  <use figures/Fig4.png>
-Package pdftex.def Info: figures/Fig4.png used on input line 327.
+Package pdftex.def Info: figures/Fig4.png used on input line 330.
 (pdftex.def)             Requested size: 221.61092pt x 154.8092pt.
-
-<figures/Fig5.png, id=43, 1111.15125pt x 779.91376pt>
-File: figures/Fig5.png Graphic file (type png)
- <use figures/Fig5.png>
-Package pdftex.def Info: figures/Fig5.png used on input line 346.
-(pdftex.def)             Requested size: 221.12425pt x 155.20645pt.
 
 [5 <C:/Data/Model checking/Boolean Network/Observability-and-Input-Strategy-of-
 Boolean-Control-Networks/Observability/figures/Fig4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 353--358
+<figures/Fig5.png, id=47, 1111.15125pt x 779.91376pt>
+File: figures/Fig5.png Graphic file (type png)
+ <use figures/Fig5.png>
+Package pdftex.def Info: figures/Fig5.png used on input line 350.
+(pdftex.def)             Requested size: 221.12425pt x 155.20645pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--362
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--358
+Underfull \hbox (badness 10000) in paragraph at lines 357--362
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 SPE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = 1 +$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--358
+Underfull \hbox (badness 10000) in paragraph at lines 357--362
 $\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\O
 T1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S[]\OMS/cmsy/m/n/10 j \OT1/cm
 r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
@@ -493,92 +493,29 @@ r/m/n/10 + \OML/cmm/m/it/10 LSPE\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S[]\OT1/cmr/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--366
+Underfull \hbox (badness 10000) in paragraph at lines 363--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--366
+Underfull \hbox (badness 10000) in paragraph at lines 363--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--366
+Underfull \hbox (badness 10000) in paragraph at lines 363--370
 \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 S[]; S[]; ::::\OMS/cmsy
 /m/n/10 g$ \OT1/ptm/m/n/10 is cor-re-spond-ing to al-l pos-si-ble
  []
 
 
-Underfull \hbox (badness 4913) in paragraph at lines 359--366
+Underfull \hbox (badness 4913) in paragraph at lines 363--370
 \OT1/ptm/m/n/10 out-put $\OML/cmm/m/it/10 O[]$ \OT1/ptm/m/n/10 af-ter in-put $\
 OML/cmm/m/it/10 I[]$\OT1/ptm/m/n/10 ; $\OML/cmm/m/it/10 LCE\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 S[]; I[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 S
 [] \OMS/cmsy/m/n/10 \$
  []
 
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
-Missing character: There is no ï in font ptmr7t!
-Missing character: There is no ¿ in font ptmr7t!
-Missing character: There is no ½ in font ptmr7t!
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
@@ -683,6 +620,69 @@ Missing character: There is no ½ in font ptmr7t!
 Missing character: There is no ï in font ptmr7t!
 Missing character: There is no ¿ in font ptmr7t!
 Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
 
 
 ** Conference Paper **
@@ -695,9 +695,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7
-
-]
+[7]
 ("C:\Data\Model checking\Boolean Network\Observability-and-Input-Strategy-of-Bo
 olean-Control-Networks\Observability\root.aux") ) 
 Here is how much of TeX's memory you used:
@@ -725,7 +723,7 @@ bm10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/CTEX
 s/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/
 fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on root.pdf (7 pages, 1969499 bytes).
+Output written on root.pdf (7 pages, 1970246 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
