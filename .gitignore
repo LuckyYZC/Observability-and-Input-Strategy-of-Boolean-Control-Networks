@@ -22,3 +22,8 @@ Observability/root.aux
 Observability/root.log
 Observability/root.pdf
 Observability/root.synctex.gz
+*.log
+*.pdf
+Observability/root.pdf
+*.gz(busy)
+*.pdf
