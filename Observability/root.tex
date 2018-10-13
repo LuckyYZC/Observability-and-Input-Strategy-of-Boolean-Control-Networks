@@ -152,38 +152,64 @@ The remainder of this paper is organized as follows. {\em Section II} introduces
 
 %==============================================================================================================
 \section{PRELIMINARIES}
+<<<<<<< HEAD
 In this section we introduce the definition of \BCNs\ and its algebraic form, then the existed four kinds of observability of {\em BCNs}.
+=======
+In this section we introduce \BCNs\ and their algebraic forms, and  the existing four kinds of observability of {\bf BCNs}.
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 
 
 
 \subsection{Boolean Control Networks}
 
+<<<<<<< HEAD
 A Boolean control network can be described as a directed graph, and the logical equations to describe the updating rules of the nodes in the network graph, the definition of {\em BCN} is as follows. 
+=======
+A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes in the   graph. 
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 
+\tl{can i suggest make the def a bit more formal?}
+\tl{in particular, formally define the logical rules.}
 \begin{definition}
 (\cite{Ideker2001A}) A \BCN\ consists of input nodes, state nodes, output nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time 0, 1, 2,\ldots. For one directed edge from node $v_i$ to node $v_j$ means that the logic value of $v_j$ at time step $t+1$ is affected by the value of $v_i$ at time step $t$ or $t+1$. 
 \end{definition}
 
 
+<<<<<<< HEAD
 Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of {\em BCNs}.
+=======
+%Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of {\bf BCN}.
 
- 
- \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
-	}}
-      
-      \caption{A Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. We use blue, black and orange, to distinguish three kinds of nodes and three kinds of edges.}
-      \label{fig:1}
-  \end{figure}
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 
+
+<<<<<<< HEAD
 Firstly, we give a simple example to describe {\em BCN}.
+=======
+%We give a simple example to describe {\bf BCN}.
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 
+%===============================================================================
 \begin{example}
+<<<<<<< HEAD
 	In {\em  Fig.\ref{fig:1}} we have a \BCN\ with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. The updating rules of the \BCN\ shown in the edges of {\em Fig.\ref{fig:1}}, and they are also described as truth table ({\em Fig.\ref{fig:2}}). 
 	
 	For convenience, we will use this example in the whole paper to explain various concepts we introduce.
+=======
+	In {\bf Fig.\ref{fig:1}} we have a Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. The dynamics of the \BCN\ shown in {\bf Fig.\ref{fig:1}} is described as truth table ({\bf Fig.\ref{fig:2}}).
+ 
+  
+ \begin{figure}[thpb]
+ 	\centering
+ 	\framebox{\parbox{3in}{
+ 			\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
+ 	}}
+ 	
+ 	\caption{A Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. We use blue, black and orange, to distinguish three kinds of nodes and three kinds of edges.}
+ 	\label{fig:1}
+ \end{figure}
+ 
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
@@ -194,11 +220,20 @@ Firstly, we give a simple example to describe {\em BCN}.
       \label{fig:2}
    \end{figure}
 \end{example}   
+<<<<<<< HEAD
+=======
+%====================================================================================
+For convenience, we will use this example in the whole paper to explain various concepts we introduce.
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 
 
 %==============================================================================================================
 \subsection{The Algebraic Forms of BCNs}
+<<<<<<< HEAD
 In this paper, we investigate the following \BCN\ with $n$ state nodes, $m$ input nodes and $q$ output nodes. The updating rules of the \BCN\ can be described as following formulas:
+=======
+In this paper, we investigate the following \BCN\ with $n$ state nodes, $m$ input nodes and $q$ output nodes:\tl{what is the relationship between the previous def and this one?}
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
@@ -242,8 +277,15 @@ o(t) =&\delta_4[\beta]s(t)\\
 \end{split}
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$ and $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$; $t\in \mathbb{N}$; $s\in \Delta_{16}$; $i\in \Delta_4$; $o\in \Delta_4$.
+<<<<<<< HEAD
 \subsection{Existed Four Kinds of Observability of BCNs}
 In order to introduce existed four kinds of observability of BCNs, we define the mappings: Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\mathbb{N}$ is the set of natural numbers \cite{Zhang2016Observability},
+=======
+
+%===============================================================================================
+\subsection{Four Existing Observability of BCNs}
+In order to introduce existed four kinds of observability of BCNs, we define the mappings: Let $\Delta_N$, $\Delta_M$, $\Delta_P$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$,
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 \begin{equation}
 \begin{split}
 L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, u_0 . . . u_{p-1} \mapsto s_1 . . .\, s_p\\
@@ -258,9 +300,12 @@ L^{\mathbb{N}}_{s_0} &: (\Delta_M)^{\mathbb{N}}\mapsto(\Delta_N)^{\mathbb{N}}, u
 \end{equation}
 
 For all  $p\in \mathbb{Z}_+$, all $U=u_1 ... u_p \in(\Delta_M)^p$, and all $1\ge i \ge j \ge |U|$, we use U[i,j] to denote the word $u_i ... u_j$. Then existed four kinds of observability of BCNs can be define as: 
+\tl{put them  into one def, and name them by, e.g., type I, II, ...}
+
 \begin{definition}
 The first kind of observability is that, \BCN\ is called observable, if for every initial state $s_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $s_0\neq s^i_0\in \Delta_N$, $Hs_0=Hs^i_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{s^i_0}(U)$ \cite{cheng2009controllability}.
 \end{definition}
+
 \begin{definition}
 	The second kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, $s^i_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=Hs^i_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{s^i_0}(U)$ \cite{Zhao2010Input}.
 \end{definition}
@@ -271,17 +316,34 @@ The first kind of observability is that, \BCN\ is called observable, if for ever
 	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, $s^i_0 \in \Delta_N$, for any input sequence $U\in(\Delta_M)^{\mathbb{N}}$, $Hs_0=Hs^i_0$ implies $(HL)^{\mathbb{N}}_{s_0}(U)\neq (HL)^{\mathbb{N}}_{s^i_0}(U)$ \cite{Fornasini2013Observability}.
 \end{definition}
 
+<<<<<<< HEAD
 We know that the fourth one implies the third one, second one and first one; the third one implies the second one and first one; the first one implies the second one \cite{Zhang2016Observability}.  And we may can't use the first one and second one to determine the initial state of \BCNs\ without presupposing the initial state of {\em BCNs}, we can use the third one and fourth to determine the initial state of {\em BCNs}, but the requirements are very harsh. So we proposed the online observability of {\em BCNs} to solve this problem.
 \section{The Online Observability of BCNs}
 In this paper we propose the online observability, the informal definition of it is as follows. 
 
 \begin{definition}
 	A {\em BCN} is called online observable, if for every initial state $s_0 \in \Delta_N$ can be determined by the deciding input sequence and observing output sequence step by step in finite steps without presuppose the  initial state.
+=======
+And we have the fourth one implies the third one, second one and first one; the third one implies the second one and first one; the first one implies the second one. 
+
+%=============================================================================
+\section{The Online Observability of BCNs}
+%============================================================================
+In this paper we propose the online observability: 
+
+\begin{definition}
+	A {\bf BCN} is called online observable, if every initial state $s_0 \in \Delta_N$ can be determined by   deciding input sequence \tl{what does it mean by deciding input sequence?} and observing output sequence step by step in finite steps without presuppose the  initial state.
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 \end{definition}
 
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
+<<<<<<< HEAD
 In this section we introduce the definition of deduce function and $K$ steps deterministic which are the preparations of defining online observability, then the formal definition of online observability of {\em BCNs}. 
+=======
+\tl{deduce function -> deduction function?} 
+
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 \subsection{Deduce Function}
 Different from existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\em BCNs}, so we can infer the possible values of state nodes and treat them as possible states set $S_0$. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j \in S_0$) will not turn into the same state after affected by input ($Ls_i i_0=Ls_j i_0$). After decided input, we can observe the new output, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. To simulate the deduction process, we define the deduce function  at first:
 \begin{definition}[Deduce Function] The deduce function defined as $D\left(S, I, O\right)$, where $S\in 2^{\Delta_N}$ is the possible states set; $I\in\Delta_M$ represents the input; $O\in\Delta_Q$ represents the output; $S'=D\left(S, I, O\right)\in 2^{\Delta_N}$ is the possible states set after deduction. Based on deduction process, we have for any $s_i(t+1)\in D\left(S, I, O\right)$, there exists $s_i\in S$ that $s_i(t+1)=LIs_i(t)$ and $O=Hs_i(t+1)$.
@@ -327,7 +389,11 @@ D\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\righ
 {\em (\ref{equ:7})} represents that if the possible states set is $\varnothing$, no matter what you do you can only deduce $\varnothing$; if the possible states set is $S_i$ and we don't input anything and don't observe the output, we can only deduce that the possible states set is $S_i$ which shown in {\em (\ref{equ:8})}; when the possible states set is $\Delta_N$ we observe that the outputs is $\delta_4^1$ we can deduce that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$ which shown in {\em (\ref{equ:9})} ; and then we input $\delta_4^1$, before observe the output we can only deduce the possible states would be   $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ which shown in {\em (\ref{equ:10})}; but if we observe that the output is $\delta_4^3$, we can deduce that the possible state values can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ which shown in {\em (\ref{equ:11})}; then if the set of states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$, before observe we can deduce that the possible state values can be $\delta_{16}^9$ or  $\delta_{16}^{13}$ shown in {\em (\ref{equ:12})}, as  the number of the possible state decreased, we may can't deduce the initial state any more. 
 
 \subsection{$K$ Steps Deterministic}
+<<<<<<< HEAD
 After difined the deduce function, we can introduce the mathematical definition of online observability of {\em BCNs}. It may easier to be difined by programming language recursively, but we can also define its mathematical form. Before define the observability of {\em BCNs}, we need to difine the  {\em  $K$ ($K\ge0$) steps deterministic} of the states set of {\em BCNs}:\\
+=======
+After defining the deduce function, we can introduce the mathematical definition of the observability of {\bf BCNs}. It may easier to be difined by programming language recursively, but we can also define its mathematical form by natural induction. Before define the observability of {\bf BCNs}, we need to difine the  {\bf  $K$ ($K\ge0$) steps deterministic} of the states set of {\bf BCNs}:\\
+>>>>>>> d897cfa52b9304fda51c20f4ee4b7bd279c8116d
 \begin{definition}[$K$ Steps Deterministic] 
 When $K=0$, 
  If for a set of states $S_i$ and $|S_i|=1$, then $S_i$ is $0$ step deterministic. It means that we can determine the state without any input and observing output if we have the cardinality of possible states set is 1. When $K>0$, 
