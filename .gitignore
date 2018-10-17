@@ -7,7 +7,6 @@ Observability/root.log
 Observability/root.blg
 Observability/root.bbl
 Observability/root.aux
-Observability/bcn.bib
 Observability/root.aux
 Observability/root.synctex.gz
 Observability/sec/test.tex
@@ -27,3 +26,5 @@ Observability/root.synctex.gz
 Observability/root.pdf
 *.gz(busy)
 *.pdf
+Observability/root.pdf
+Observability/root.synctex.gz
