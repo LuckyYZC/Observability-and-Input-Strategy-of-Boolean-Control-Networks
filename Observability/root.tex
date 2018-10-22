@@ -114,7 +114,7 @@ h.qu@sheffield.ac.uk}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
-Four types of observability of Boolean control networks ({\em BCNs}) have been proposed to solve different problems. But all of them are offline observabilities, that we can't adjust the input sequence by observing the output sequence in the process of determining the initial state of BCNs. In this paper, we firstly propose online observability that it can determine the initial state of BCNs dynamically without presupposing its initial state. The online observability do this task by deciding input sequence and observing out sequence step by step. Compare with offline observabilities, the online obsevability has batter performance in the biological systems which can be checked at most once. %We define the concepts of deduce function, $K$ steps deterministic and the formal definition of online observability of BCNs. We also define the supertree and directed graph to determine online observability for BCNs. 
+Four types of observability of Boolean control networks ({\em BCNs}) have been proposed to solve different problems. However, all of them are offline observabilities that we can't adjust the input sequence by observing the output sequence in the process of determining the initial state of BCNs. In this paper, we firstly propose the online observability that it can determine the initial state of BCNs dynamically without presupposing its initial state. The online observability accomplishes this task by deciding input sequence and observing out sequence in every time step. The node values of {\em BCNs} update at discrete time, then we use the time step to represent the discrete time. Compare with offline observabilities, the online obsevability can determine the initial state of some biological systems which can be checked at most once. %We define the concepts of deduce function, $K$ steps deterministic and the formal definition of online observability of BCNs. We also define the supertree and directed graph to determine online observability for BCNs. 
 \end{abstract}
 
 
@@ -129,30 +129,30 @@ Boolean control networks, online observability, directed graph, supertree%, find
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
 
-In 1960s, Nobel Prize winners Jacob and Monod found that  ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.'' \cite{Waldrop1992Complexity,cheng2009controllability}. Inspired by these Boolean-type actions in genetic circuits, the Boolean networks ({\em BNs}) was firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. Some general descriptions of the \BNs\ and its applications to biological systems can be found in Kauffman. Since then research interestes in  \BNs\ have been motivated by the large number of natural and artificial systems whose describing variables display only two distinct configurations, and hence these describing variables take only two values, i.e. $\{0,1\}$  \cite{Fornasini2013Observability,Green2007The, Lou2010Multi, Shmulevich2002From, Akutsu2000Inferring,  Faur2006Dynamical}.
+In 1960s, Nobel Prize winners Jacob and Monod found that  ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.'' \cite{Waldrop1992Complexity,cheng2009controllability}. Inspired by these Boolean-type actions in genetic circuits, the Boolean networks ({\em BNs}) is firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. Some general descriptions of the \BNs\ and its applications to biological systems can be found in Kauffman. Since then research interests in  \BNs\ have been motivated by the large number of natural and artificial systems. These natural and artificial systems describing variables display only two distinct configurations, and hence these describing variables take only two values, i.e., $\{0,1\}$  \cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi,Fornasini2013Observability}.
 
-When extenal regulation or perturbation is considered, \BNs\ are naturally extended to Boolean control networks ({\em BCNs}) \cite{Ideker2001A}. The study on control-theoretic problems of \BCNs\ can date back to 2007 \cite{Akutsu2007Control}. In which the problem of determining the controllability of \BCNs\ is proved {\bf NP}-hard in the number of nodes. And moreover it points out that ``One of the major goals of systems biology is to develop a control theory for complex biological systems.'' Since then, the study on control-theoretic problems in the areas of \BNs\ and \BCNs\ has drawn great attention \cite{Fornasini2013Observability, Zhao2010Input, Cheng2011Identification, Cheng2011Analysis, cheng2009controllability}. Furthermore controllability and observability are basic control-theoretic problems. In 2009 Cheng et. al.   have developed an algebraic framework to deal with both \BNs\ and \BCNs\ by using \emph{semi-tensor product} (STP) of matrices \cite{cheng2009controllability}. And moreover they give equivalent conditions for controllability of \BCNs\ and observability of controllable {\em BCNs}. To date, there are four types of observability have been proposed. 
+When extenal regulation or perturbation is considered, \BNs\ are naturally extended to Boolean control networks ({\em BCNs}) \cite{Ideker2001A}. The study on control-theoretic problems of \BCNs\ can date back to 2007 \cite{Akutsu2007Control}. The work above also proves that the problem of determining the controllability of \BCNs\ is {\em NP}-hard in the number of nodes. Furthermore, it points out that ``One of the major goals of systems biology is to develop a control theory for complex biological systems.'' Since then, the study on control-theoretic problems in the areas of \BNs\ and \BCNs\ has drawn great attention \cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Cheng2011Analysis,Fornasini2013Observability}. Furthermore, controllability and observability are basic control-theoretic problems. In 2009, an algebraic framework to deal with both \BNs\ and \BCNs\ by using \emph{semi-tensor product} (STP) of matrices has been developed in \cite{cheng2009controllability}. Moreover they give equivalent conditions for controllability of \BCNs\ and observability of controllable {\em BCNs}. To date, there are four types of observability have been proposed. 
 
 \begin{enumerate}
-	\item The first type of observability, proposed in 2009 \cite{cheng2009controllability}, means that every initial state can be determined by an input sequence.
+	\item The first type of observability proposed in 2009 \cite{cheng2009controllability} means that every initial state can be determined by an input sequence.
 	
 	\item 
-	A second observability, proposed in 2010 \cite{Zhao2010Input}, stands for that for every two distinct initial states, there exists an input sequence which can distinguish them, and this observability is determined in \cite{Li2015Controllability}.
+	The second observability proposed in 2010 \cite{Zhao2010Input} stands for that for every two distinct initial states, there exists an input sequence which can distinguish them, and this observability is determined in \cite{Li2015Controllability}.
 	
-	\item A third observability is proposed in 2011 \cite{Cheng2011Identification}, stating that there is an input sequence that determines the initial state.
+	\item The third observability proposed in 2011 \cite{Cheng2011Identification} states that there is an input sequence that determines the initial state.
 	
-	\item  A fourth observability is determined in 2013 \cite{Fornasini2013Observability}, which is essentially the observability of linear control systems, i.e., every sufficient long input sequence can determine the initial state.
+	\item  The fourth observability proposed in 2013 \cite{Fornasini2013Observability} is essentially the observability of linear control systems, i.e., every sufficient long input sequence can determine the initial state.
 \end{enumerate}
  
 
 %\tl{can you state the four types observability clearly and formally here?}
 
 %\rev{****input sequence***}
-That, an input is the values of all input nodes of the \BCN\ on a time step, several inputs in sequential time steps make up an input sequence. We will give the formal definition of four observables in the following pages. And all the four existing types of observability of \BCNs\ are offline observabilities that they can't adjust the input sequence by observing the output sequence in the process of determining the initial state of {\em BCNs}. Therefore we proposed the online observability that we can determine the initial state of \BCNs\ dynamically. The online observability decides input sequence and observes out sequence step by step.
+In abovementioned definitions an input is not the value of an input-node, but it represents the values of all input-nodes of the \BCN\ on a time step. Therefore an input is a vector of the values of all input-nodes of the \BCN\ on a time step. An input sequence consists of several inputs in sequential time steps. We will give the formal definition of four observabilities in the following pages. All of four existing types of observability of \BCNs\ are offline observabilities which means that they can't adjust the input sequence by observing the output sequence in the process of determining the initial state of {\em BCNs}. Therefore, we propose the online observability that we can determine the initial state of \BCNs\ dynamically. The online observability decides the input sequence and observes the out sequence step by step.
 \subsubsection*{Contribution}
-To this end, firstly we give the formal definition of online observability of {\em BCNs}. Secondly, we raise two algorithms to determine the online observability for {\em BCNs}, which stem from the formal definition of online observability. Finally, we introduce some applications of the online observability of {\em BCNs}, and the advantages of online observability compares with offline observabilities. %\rev{***Compare with offline observabilities****} 
+Firstly, we give the formal definition of online observability of {\em BCNs}. Secondly, we provide two algorithms to determine the online observability for {\em BCNs}. Finally, we introduce some applications of the online observability of {\em BCNs} and advantages of online observability compared with offline observabilities. %\rev{***Compare with offline observabilities****} 
 \subsubsection*{Structure}
-The remainder of this paper is organized as follows. {\em Section II} introduces necessary preliminaries about {\em BCNs}, algebraic forms of \BCNs\ and the four existing kinds of observability of {\em BCNs}. {\em Section III} represents the definition of deduce function, $K$ steps deterministic and online observability of {\em BCNs}. {\em Section IV} represents how to determine the online observability of \BCNs\ by super tree and directed graph. {\em Section V} introduces some applications of the online observability of {\em BCNs}, and compare it with offline observabilities. {\em Section VI} end up  with the introduction of some future works.
+The remainder of this paper is organized as follows. {\em Section II} introduces necessary preliminaries about {\em BCNs}, algebraic forms of \BCNs\ and the four existing kinds of observability of {\em BCNs}. {\em Section III} presents the definition of deduce function, $K$ steps deterministic and online observability of {\em BCNs}. {\em Section IV} presents how to determine the online observability of \BCNs\ by super tree and directed graph. {\em Section V} talks about some applications of the online observability of {\em BCNs}. We also compare the online observability with offline observabilities in this section. {\em Section VI} ends up  with the introduction of some future works.
 
 %\tl{I will try to rewrite the intro.}
 
@@ -167,7 +167,7 @@ In this section we introduce the definition of \BCNs\ and their algebraic form, 
 A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes in the graph, the definition of {\em BCN} is as follows. 
 
 \begin{definition}
-(\cite{Ideker2001A}) A \BCN\ consists of input nodes, state nodes, output nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time 0, 1, 2,\ldots. For one directed edge from node $v_i$ to node $v_j$ means that the logic value of $v_j$ at time step $t+1$ is affected by the value of $v_i$ at time step $t$ or $t+1$. 
+(\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time 0, 1, 2,\ldots. For one directed edge from node $v_i$ to node $v_j$ means that the logic value of $v_j$ at time step $t+1$ is affected by the value of $v_i$ at time step $t$ or $t+1$. 
 \end{definition}
 
 
@@ -180,14 +180,14 @@ Note that one can only know whether or not a node is affected by another node fr
 		\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
 	}}
       
-      \caption{A Boolean control network with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. We use blue, black and orange, to distinguish three kinds of nodes and three kinds of edges.}
+      \caption{A Boolean control network with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. We use blue, black and orange, to distinguish three kinds of nodes and three kinds of edges.}
       \label{fig:1}
   \end{figure}
 
 Firstly, we give a simple example to describe {\em BCN}.
 
 \begin{example}
-	In {\em  Fig.\ref{fig:1}} we have a \BCN\ with two input nodes $A$ and $B$, four state nodes $C$, $D$, $E$ and $F$, and two output nodes $G$, $W$. The updating rules of the \BCN\ shown in the edges of {\em Fig.\ref{fig:1}}, and they are also described as truth table ({\em Fig.\ref{fig:2}}). The reason why we use truth table to describe the updating rules of the \BCN\ is that,  this form will be more convenient for \BCN\ to convert into its aglebraic form.
+	In {\em  Fig.\ref{fig:1}} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. The updating rules of the \BCN\ shown in the edges of {\em Fig.\ref{fig:1}}, and they are also described as truth table ({\em Fig.\ref{fig:2}}). The reason why we use truth table to describe the updating rules of the \BCN\ is that,  this form will be more convenient for \BCN\ to convert into its aglebraic form.
 	
 	For convenience, we will use this example in the whole paper to explain various concepts we introduce.
   \begin{figure}[thpb]
@@ -204,7 +204,7 @@ Firstly, we give a simple example to describe {\em BCN}.
 
 %==============================================================================================================
 \subsection{The Algebraic Forms of BCNs}
-To better illustrate the concept of algebraic forms, in this paper, we investigate the following \BCN\ assumes to has $n$ state nodes, $m$ input nodes and $q$ output nodes. Then the updating rules of the \BCN\ can be described as following formulas:
+To better illustrate the concept of algebraic forms, in this paper, we investigate the following \BCN\ assumes to has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
@@ -212,7 +212,7 @@ o(t)=&h(s(t))
 \end{split}
 \label{equ:1}
 \end{equation}
-$s(t)\in \mathbb{B}^n$ are state nodes; $i(t)\in \mathbb{B}^m$ are input nodes; $o(t)\in \mathbb{B}^q$ are output nodes; $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of {\em BCNs}. Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,...$ represents the discrete time. 
+$s(t)\in \mathbb{B}^n$ are state-nodes; $i(t)\in \mathbb{B}^m$ are input-nodes; $o(t)\in \mathbb{B}^q$ are output-nodes; $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of {\em BCNs}. Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,...$ represents the discrete time. 
 
 Therefore in the previously mentioned example, we have $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\em Fig.\ref{fig:2}}). 
 
@@ -241,13 +241,13 @@ o(t)=&H\ltimes{s(t)}
 \end{equation}
 where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in {\em (\ref{equ:1})}, but they are with vector forms; $L\in L_{N\times\left(NM\right)}$; $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter.
 
-To construct {\em (\ref{equ:2})} we give each logical value a vector form as: $T = 1 \scriptsize{\sim} \delta_2^1$, $F = 0 \scriptsize{\sim} \delta_2^2$, therefore the logical variable $A(t)$ takes value from thiese two vectors, i.e., $A(t)\in D=\{\delta_2^1, \delta_2^2\}$. Using the {\em STP} of matrices, $i(t)=i_1(t)...i_m(t)$; $s(t)=s_1(t)...s_n(t)$; $o(t)=o_1(t)...o_q(t)$. And according to \cite{Cheng2003Semi}, for each logical function of state nodes $f_p(i_1(t),...,i_m(t),s_1(t),...,s_n(t))$ there exists a structure matrix $L_p\in L_{2\times {NM}}$, that
+To construct {\em (\ref{equ:2})} we give each logical value a vector form as: $T = 1 \scriptsize{\sim} \delta_2^1$, $F = 0 \scriptsize{\sim} \delta_2^2$, therefore the logical variable $A(t)$ takes value from thiese two vectors, i.e., $A(t)\in D=\{\delta_2^1, \delta_2^2\}$. Using the {\em STP} of matrices, $i(t)=i_1(t)...i_m(t)$; $s(t)=s_1(t)...s_n(t)$; $o(t)=o_1(t)...o_q(t)$. And according to \cite{Cheng2003Semi}, for each logical function of state-nodes $f_p(i_1(t),...,i_m(t),s_1(t),...,s_n(t))$ there exists a structure matrix $L_p\in L_{2\times {NM}}$, that
 \begin{equation}
 \begin{split}
 f_p(i_1(t),...,i_m(t),s_1(t),...,s_n(t))=L_pi(t)s(t)
 \end{split}
 \end{equation}
-for $n$ state nodes, we have $n$ logical matrices for all of the state nodes $L_1,...,L_n$. If for each state node ($s_p(t)$) the logical matrix $L_p=[\delta_2^{p_1},...,\delta_2^{p_{NM}}]$, and for all state nodes ($s(t)$) the logical matrix $L=[\delta_N^{R_1},...,\delta_N^{R_{NM}}]$, then we have $\delta_N^{R_1}=\delta_2^{1_1}...\delta_2^{n_1}$;...; $\delta_N^{R_{NM}}=\delta_2^{1_{NM}}...\delta_2^{n_{NM}}$. We can construct the logical matrix $H$ in the similar way.
+for $n$ state-nodes, we have $n$ logical matrices for all of the state-nodes $L_1,...,L_n$. If for each state-node ($s_p(t)$) the logical matrix $L_p=[\delta_2^{p_1},...,\delta_2^{p_{NM}}]$, and for all state-nodes ($s(t)$) the logical matrix $L=[\delta_N^{R_1},...,\delta_N^{R_{NM}}]$, then we have $\delta_N^{R_1}=\delta_2^{1_1}...\delta_2^{n_1}$;...; $\delta_N^{R_{NM}}=\delta_2^{1_{NM}}...\delta_2^{n_{NM}}$. We can construct the logical matrix $H$ in the similar way.
 
 Then the \BCN\ whose structure is depicted in {\em Fig.\ref{fig:1}}, and whose updating rules is described as truth table in {\em Fig.\ref{fig:2}}, can be represented with the algebraic form:
 \begin{equation}
@@ -276,21 +276,29 @@ For all  $p\in \mathbb{Z}_+$, all $U=u_1 ... u_p \in(\Delta_M)^p$, and all $1\ge
 \begin{definition}
 The first kind of observability is that, \BCN\ is called observable, if for every initial state $s_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $s_0\neq {s'}_0\in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{cheng2009controllability}.
 \end{definition}
+
+So the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence. But we can only use the corresponding input sequence of a state to check whether this state is the initial state of the {\em BCN} or not.
 \begin{definition}
-	The second kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Zhao2010Input}.
+	The second kind of observability is that a \BCN\ is called observable if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Zhao2010Input}.
 \end{definition}
+
+The second observability means that a \BCN\ is called observable if for every two distinct initial states of the {\em BCN}, there exists an input sequence which can distinguish them. 
 \begin{definition}
-	The third kind of observability is that, \BCN\ is called observable, if there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Cheng2011Identification}.
+	The third kind of observability is that, a \BCN\ is called observable, if there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Cheng2011Identification}.
 \end{definition}
+
+The third observability means that a \BCN\ is called observable if there is an input sequence that determines the initial state of the {\em BCN}.
 \begin{definition}
 	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, for any input sequence $U\in(\Delta_M)^{\infty}$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(U)\neq (HL)^{\infty}_{{s'}_0}(U)$ \cite{Fornasini2013Observability}.
 \end{definition}
 
-From the definitions of  four existing kinds of observability, we know that \cite{Zhang2016Observability}:
+The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence can determine the initial state of the {\em BCN}.
+
+Then from the definitions of  four existing kinds of observability, we know that \cite{Zhang2016Observability}:
 \begin{itemize}
-  \item the fourth one implies the third one, second one and first one;
+  \item the first one implies the second one;
   \item the third one implies the second one and first one;
-  \item the first one implies the second one.
+  \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 
  And we can't use the first one and second one to determine the initial state of {\em BCNs}, when we don't presuppose the initial state of {\em BCNs}. For example, in the first kind observability we need to assume the initial state of a {\em BCN}, and then check it by an input sequence. If the assuming is correct, we can determine the initial state. But if the the assuming is not correct, we can't determine the initial state of the {\em BCN}. We can use the third one and fourth to determine the initial state of {\em BCNs} without presupposing the initial state of {\em BCNs}, but the requirements for {\em BCNs} are very harsh. With these disadvantages of four existing observabilities, we proposed the online observability of {\em BCNs} to solve this problem:
@@ -308,7 +316,7 @@ In this paper we propose the online observability, the informal definition of it
 
 In this section we introduce the definition of deduce function and $K$ steps deterministic as the preparations for defining online observability. After that, we introduce the formal definition of online observability of {\em BCNs}. 
 \subsection{Deduce Function}
-Different with existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\em BCNs}, so we can infer the possible values of state nodes and treat them as possible states set $S_0$. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j \in S_0$) will not turn into the same state after affected by input ($Ls_i i_0=Ls_j i_0$). After decided input, we can observe the new output, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. To simulate the deduction process, we define the deduce function  at first:
+Different with existed four types, the observability we proposed can determine the initial state online that every input in the input sequence is decided step by step as we observe the output sequence. At the beginning, we can observe the output of {\em BCNs}, so we can infer the possible values of state-nodes and treat them as possible states set $S_0$. Then as we can know the possible states set, we need to decide the input ($i_0$) that it will make sure any different possible states ($s_i, s_j \in S_0$) will not turn into the same state after affected by input ($Ls_i i_0=Ls_j i_0$). After decided input, we can observe the new output, and then we can infer the new possible states set, the cardinality of possible states set after input will not lager than the cardinality of possible states set before input. If the cardinality of possible states set turn into be 1, we can determine the initial state of BCN. To simulate the deduction process, we define the deduce function  at first:
 \begin{definition}[Deduce Function] The deduce function defined as $D\left(S, I, O\right)$, where $S\in 2^{\Delta_N}$ is the possible states set; $I\in\Delta_M$ represents the input; $O\in\Delta_Q$ represents the output; $S'=D\left(S, I, O\right)\in 2^{\Delta_N}$ is the possible states set after deduction. Based on deduction process, we have for any $s_i(t+1)\in D\left(S, I, O\right)$, there exists $s_i\in S$ that $s_i(t+1)=LIs_i(t)$ and $O=Hs_i(t+1)$.
 \end{definition}
 
@@ -370,7 +378,7 @@ Because in the existed second kind of observability, we presuppose the initial s
 
 When I learn the existed four kinds of observability of {\em BCNs}, I find that if we want determine the initial state of a \BCNs\ by first kind of observability, we need to guess the initial state of the \BCN\ and then check it by its corresponding input sequence, if the initial state we guess is right, we can determine it, but if not, we need to guess again and input the corresponding input sequence untill we determine the initial state of the {\em BCN}. But if we can't repeat this process, we may can't determine the initial state of the {\em BCN} any more. Then I turn my gaze to the third observability, this kind of observability makes we can determine the initial state without presupposing the initial state. But I think if we can determine the possible states set of the {\em BCN} by observing the output at first, why can't we try to find corresponding input sequence for them? And then my teacher and I talk about this thinkness and expand it into the original idea of the online observability of {\em BCNs}. 
 
-From the informal definition and formal definition of online observability, we can know that the necessary and sufficient condition of determine the initial state of \BCNs\ without presuppose the initial state is the online observability of {\em BCNs}. By this definition we can build \BCNs\ with least output nodes when we want to determine the initial state of {\em BCNs}.
+From the informal definition and formal definition of online observability, we can know that the necessary and sufficient condition of determine the initial state of \BCNs\ without presuppose the initial state is the online observability of {\em BCNs}. By this definition we can build \BCNs\ with least output-nodes when we want to determine the initial state of {\em BCNs}.
 %==============================================================================================================
 \section{DETERMINING THE ONLINE OBSERVABILITY OF BCNs}
 
@@ -498,7 +506,7 @@ The nodes with $p$ states
 
 According the construction process, we have the definition of directed graph.
 \begin{definition}[Directed Graph]
-For every node $S_i$ in the directed graph, $\exists K \ge 0$ implies $S_i$ is $K$ stepes deterministic; for every distinct two $s_a, s_b \in S_i$ we have $Hs_a=Hs_b$; if $|S_i|=1$ there are not edge from it to other nodes, else if there are exist one edge contains $I_i$ from it to other nodes then there exist $p$ ($p\ge 1)$ edges contain $I_i$ from it to nodes $S_1,...,S_p$ that $|S_i|= |S_1|+,...,|S_p|$ and $D\left(S_i,I_i,\varepsilon\right)=S_1\vee,...,\vee S_p$.
+For every node $S_i$ in the directed graph, there exists $ K \ge 0$ implies $S_i$ is $K$ stepes deterministic; for every distinct two $s_a, s_b \in S_i$ we have $Hs_a=Hs_b$; if $|S_i|=1$ there are not edge from it to other nodes, else if there are exist one edge contains $I_i$ from it to other nodes then there exist $p$ ($p\ge 1)$ edges contain $I_i$ from it to nodes $S_1,...,S_p$ that $|S_i|= |S_1|+,...,|S_p|$ and $D\left(S_i,I_i,\varepsilon\right)=S_1\vee,...,\vee S_p$.
 \end{definition}
 
 We can also use the directed graph to determine the existed second and fourth kinds of observability. When we trying to build bottom layer and penultimate layer of the directed graph, and if there are exist some nodes in penultimate layer has no edges from it to other nodes, then this BCN is not satisfied existed second observability. When we trying to build edges for every layer, and is there exist one node whose right inputs set is not $\Delta_M$, then this BCN is not satisfied existed fourth observability.
@@ -554,25 +562,30 @@ After we build the directed graph of the {\em BCN}, we can use it to determine t
       \label{fig:5}
    \end{figure}
 \subsection{Less Observation Costs}
-Some biological systems, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input nodes, and $37$ states nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of the {\em BCN}, one must select some state nodes to be observe at first. 
+Some biological systems, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input-nodes, and $37$ state-nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of the {\em BCN}, one must select some state-nodes to be observe at first. 
 
-And if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it will needs less observation costs. Compares with the existed third and fourth kind of observabilities which can also determine the initial state, the online observability need weaker preconditions. Then the online observability needs less output nodes to be observe and less observation costs. In addition to this, there are also some other advantages, when we use the online observability of {\em BCNs}.
+And if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it will needs less observation costs. Compares with the existed third and fourth kind of observabilities which can also determine the initial state, the online observability need weaker preconditions. Then the online observability needs less output-nodes to be observe and less observation costs. In addition to this, there are also some other advantages, when we use the online observability of {\em BCNs}.
+
 \subsection{Find Shortest Path}
-When we need to determine the initial state of a {\em BCN}, an important aspect that we will consider is to find the shortest path. Maybe we can't find the shortest path definitely, but we can use the directed graph to make the best decision. We introduce two functions $SPE(S_i, I_i)$ and $SPV(S_i, I_i)$ to describe the shortest path expected value and shortest path variance, $S_i$ is the possible states set and $I_i$ is the input we chose, the definition of $SPE(S_i, I_i)$ is as follows:\\
-When $|S_i|=1$:\\ 
-For all $I_i \in \Delta_M$, we have $SPE(S_i, I_i)=0$, then the least shortest path  expected value $LLCE(S_i)= 0$. \\
-When $|S_i|>1$:\\ 
-$\{I_1,I_2,....\}$:\,the right inputs set of $S_i$; $\forall I_i \in \{I_1,I_2,....\}$, and $\{S_i^1,S_i^2,....\}$ is corresponding to all possible output $O_i$ after input $I_i$; $SPE(S_i, I_i)=1 +( (LSPE(S_i^1)|S_i^1|+LSPE(S_i^2)|S_i^2|+....)\left. \right/ |S_i|)$; $LSPE(S_i)= Min(SPE(S_i, I_1),SPE(S_i, I_2),...)$.
-\subsection{Avoid Entering Critical States}
-In biological systems, some states of the genes may corresponding to unfavorable or dangerous situations \cite{Li2014Controllability}. So another important aspect that we will consider is to avoid entering critical states. We can also construct two functions $LCE(S_i, I_i)$ and $LCV(S_i, I_i)$ to describe least expected value and variance of the times of entering critical states, the definition of $LCE(S_i, I_i)$ is as follows:\\
-\\$CS$: the critical states set of the {\em BCN} we research.\\
-When $|S_i|=1$:\\ 
-For all $I_i \in \Delta_M$, we have $LCE(S_i, I_i)=|S_i \cap CS |$, then the least shortest path  expected value $LLCE(S_i)=|S_i \cap CS |$. \\
-\\
-When $|S_i|>1$:\\ 
-$\{I_1,I_2,....\}$: the right inputs set of $S_i$; $\forall I_i \in \{I_1,I_2,....\}$, and $\{S_i^1,S_i^2,....\}$ is corresponding to all possible output $O_i$ after input $I_i$; $LCE(S_i, I_i)=(|S_i \cap CS | + (LLCE(S_i^1)|S_i^1|+LLCE(S_i^2)|S_i^2|+....)\left. \right/ |S_i|)$; $LLCE(S_i)= Min(LCE(S_i, I_1),LCE(S_i, I_2),...)$.
+When we need to determine the initial state of a {\em BCN}, an important aspect that we will consider is to find the shortest path. Maybe we can't find the shortest path definitely, but we can use the directed graph to make the best decision. We introduce two functions $Spe(S_i, I_i)$ and $Spv(S_i, I_i)$ to describe the shortest path expected value and shortest path variance, $S_i$ is the possible states set and $I_i$ is the input we chose, the definition of $Spe(S_i, I_i)$ is as follows:\\
 
-Then we can get the definitions of $SPV(S_i, I_i)$ and $LCV(S_i, I_i)$ in similar ways, and use them to make the best decision we like. When we choos an input with least $SPE(S_i, I_i)$, we may find the shortes path to determine the initial state. But the output of \BCNs\ is uncertain, so selected the least $SPE(S_i, I_i)$ may leads to a very long path. For better performce, we the can also use the $SPV(S_i, I_i)$ to avoiding risks. The uses of $LCE(S_i, I_i)$ and $LCV(S_i, I_i)$ are similar to $SPE(S_i, I_i)$ and $SPV(S_i, I_i)$, when we trying to avoid entering critical states of {\em BCNs}.
+\begin{definition}[$Spe(S_i, I_i)$] 
+When the $|S_i|=1$, and for every $I_i$ in $\Delta_M$, we have $Spe(S_i, I_i)=0$, then the least shortest path  expected value $Lspe(S_i)= 0$. 
+But when the $|S_i|>1$,
+ the $\{I_1,I_2,....\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,....\}$ the $\{S_i^1,S_i^2,....\}$ is a set of state sets whose elements corresponding to all possible output $O_i$ after input $I_i$, then we have that the $Spe(S_i, I_i)=1 +( (Lspe(S_i^1)|S_i^1|+Lspe(S_i^2)|S_i^2|+....)\left. \right/ |S_i|)$ and $Lspe(S_i)= Min(Spe(S_i, I_1),Spe(S_i, I_2),...)$.
+\end{definition}
+\subsection{Avoid Entering Critical States}
+In biological systems, some states of the genes may corresponding to unfavorable or dangerous situations \cite{Li2014Controllability}. So another important aspect that we will consider is to avoid entering critical states. We can also construct two functions $Lce(S_i, I_i)$ and $Lcv(S_i, I_i)$ to describe least expected value and variance of the times of entering critical states, the definition of $Lce(S_i, I_i)$ is as follows:\\
+
+\begin{definition}[$Lce(S_i, I_i)$] 
+When the $|S_i|=1$, and for every $I_i \in \Delta_M$, we have $Lce(S_i, I_i)=|S_i \cap CS |$, then the least shortest path  expected value $Llce(S_i)=|S_i \cap CS |$. 
+But when the $|S_i|>1$, 
+the $\{I_1,I_2,....\}$ is the right inputs set of $S_i$. For every $ I_i$ in $\{I_1,I_2,....\}$ the $\{S_i^1,S_i^2,....\}$ is a set of state sets whose elements corresponding to all possible output $O_i$ after input $I_i$, then we have $Lce(S_i, I_i)=(|S_i \cap CS | + (Llce(S_i^1)|S_i^1|+Llce(S_i^2)|S_i^2|+....)\left. \right/ |S_i|)$ and $Llce(S_i)= Min(Lce(S_i, I_1),Lce(S_i, I_2),...)$.
+\end{definition}
+
+Where the $CS$ is the critical states set of the {\em BCN} we research.\\
+
+Then we can get the definitions of $Spv(S_i, I_i)$ and $Lcv(S_i, I_i)$ in similar ways, and use them to make the best decision we like. When we choos an input with least $Spe(S_i, I_i)$, we may find the shortes path to determine the initial state. But the output of \BCNs\ is uncertain, so selected the least $Spe(S_i, I_i)$ may leads to a very long path. For better performce, we the can also use the $Spv(S_i, I_i)$ to avoiding risks. The uses of $Lce(S_i, I_i)$ and $Lcv(S_i, I_i)$ are similar to $Spe(S_i, I_i)$ and $Spv(S_i, I_i)$, when we trying to avoid entering critical states of {\em BCNs}.
 
 In the existed four kinds of observability, we can not analyze the state of \BCNs\ dynamically, maybe it would be a little hard to find the best way we like to determine the initial state of {\em BCNs}.
 \section{CONCLUSIONS}
