@@ -56,7 +56,7 @@ The function shortest path  expected value {\tt Spe}$(S)$ is to find the $I_z$ f
 
 \subsection{Avoid Entering Critical States}
 In biological systems, some states of the genes may corresponding to unfavorable or dangerous situations \cite{Li2014Controllability}. So another important aspect that we will consider is to avoid entering critical states. We can also construct two functions {\tt Ce}$(S, I_z)$ and {\tt Cv}$(S, I_z)$ to describe expected value and variance of the times of entering critical states, the definition of {\tt Ce}$(S, I_z)$ is as follows:\\
-\begin{definition}[{\tt Lce}$(S, I_z)$] \label{lce}
+\begin{definition}[{\tt Lce}$(S)$] \label{lce}
 \[{\tt Lce}(S)= \min({\tt Ce}(S, I_1),{\tt Ce}(S, I_2),\cdots,){\tt Ce}(S, I_p)\]
 \end{definition}
 \begin{definition}[{\tt Ce}$(S, I_z)$] 
@@ -73,6 +73,6 @@ we have that
 
 Where $S_{cri}$ is the critical states set of the {\em BCN} we research. The definition of {\tt Ce}$(S, I_z)$ has some difference with {\tt Pe}$(S, I_z)$, because we need to use the critical states set $S_{cri}$. So that  we can analyze the possibility of entering the  critical states when we infer the possible states set of {\em BCNs}.
 
-We can get the definitions of {\tt Cv}$(S, I_z)$ in similar ways, and use all of these four functions to make the best decision we like. When we choose an input $I_z$ with least {\tt Pe}$(S, I_z)$, we may find the shortes path to determine the initial state. But the output of \BCNs\ after input $I_i$ is uncertain, so selecting the least $Pe(S, I_z)$ may leads to a very long path. For better performce, we the can also use the {\tt Pv}$(S, I_z)$ to avoiding risks. The uses of {\tt Ce}$(S, I_z)$ and {\tt Cv}$(S, I_z)$ are similar to {\tt Pe}$(S, I_z)$ and {\tt Pv}$(S, I_z)$, when we trying to avoid entering critical states of {\em BCNs}.
+We can get the definitions of {\tt Cv}$(S, I_z)$ in similar ways, and use all of these four functions to make the best decision we like. When we choose an input $I_z$ with least {\tt Pe}$(S, I_z)$, we may find the shortes path to determine the initial state. But the output of \BCNs\ after input $I_i$ is uncertain, so selecting the least $Pe(S, I_z)$ may leads to a very long path to determine the initial state of {\em BCNs}. For better performce, we the can also use the {\tt Pv}$(S, I_z)$ to avoiding risks. The uses of {\tt Ce}$(S, I_z)$ and {\tt Cv}$(S, I_z)$ are similar to {\tt Pe}$(S, I_z)$ and {\tt Pv}$(S, I_z)$, when we trying to avoid entering critical states of {\em BCNs}.
 
 In the four existing kinds of observability, we can not analyze the state of \BCNs\ dynamically, so it would be hard to find the best way we like when we determine the initial state of {\em BCNs}. But this problem can be solved by the online observability of {\em BCNs}.
