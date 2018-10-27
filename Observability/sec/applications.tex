@@ -34,12 +34,12 @@ When we need to determine the initial state of a {\em BCN}, an important aspect 
 
 Some statements before definitions:
 \begin{itemize}
-  \item $\{I_1,I_2,\cdots, I_p\}$ : the right inputs set of $S$;
-  \item $\{S_z^1,S_z^2,\cdots, S_z^k\}$ : the set of state sets, and its elements corresponding to the possible outputs $\{O_1,O_2,\cdots,O_k\}$ after input $I_z$, for every $I_z$ in $\{I_1,I_2,\cdots, I_p\}$.
+  \item $\{I_1,I_2,\ldots, I_p\}$ : the right inputs set of $S$;
+  \item $\{S_z^1,S_z^2,\ldots, S_z^k\}$ : the set of state sets, and its elements corresponding to the possible outputs $\{O_1,O_2,\ldots,O_k\}$ after input $I_z$, for every $I_z$ in $\{I_1,I_2,\ldots, I_p\}$.
  % \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 \begin{definition}[{\tt Spe}$(S)$] \label{lspe}
- \[{\tt Spe}(S)= \min({\tt Pe}(S, I_1),{\tt Pe}(S, I_2),\cdots,{\tt Pe}(S, I_p)).\] 
+ \[{\tt Spe}(S)= \min({\tt Pe}(S, I_1),{\tt Pe}(S, I_2),\ldots,{\tt Pe}(S, I_p)).\] 
 \end{definition}
 
 \begin{definition}[{\tt Pe}$(S, I_z)$] 
@@ -57,7 +57,7 @@ The function shortest path  expected value {\tt Spe}$(S)$ is to find the $I_z$ f
 \subsection{Avoid Entering Critical States}
 In biological systems, some states of the genes may corresponding to unfavorable or dangerous situations \cite{Li2014Controllability}. So another important aspect that we will consider is to avoid entering critical states. We can also construct two functions {\tt Ce}$(S, I_z)$ and {\tt Cv}$(S, I_z)$ to describe expected value and variance of the times of entering critical states, the definition of {\tt Ce}$(S, I_z)$ is as follows:\\
 \begin{definition}[{\tt Lce}$(S)$] \label{lce}
-\[{\tt Lce}(S)= \min({\tt Ce}(S, I_1),{\tt Ce}(S, I_2),\cdots,){\tt Ce}(S, I_p)\]
+\[{\tt Lce}(S)= \min({\tt Ce}(S, I_1),{\tt Ce}(S, I_2),\ldots,){\tt Ce}(S, I_p)\]
 \end{definition}
 \begin{definition}[{\tt Ce}$(S, I_z)$] 
 When the $|S|=1$, and for every $I_z$ in $\Delta_M$, we have: \[{\tt Ce}(S, I_z)=|S \cap S_{cri} |\] 
