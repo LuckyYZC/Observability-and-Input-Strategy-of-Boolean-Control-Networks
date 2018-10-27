@@ -94,7 +94,7 @@ Some details in Algorithm.\ref{alg:1} and Algorithm.\ref{alg:2} are as follows:
 
 According the construction process, we have the definition of directed graph.
 \begin{definition}[Directed Graph]
-For every node $S_j$ in the directed graph, the $S_j$ is $k$ stepes deterministic. For every distinct two $s_a, s_b \in S_j$ we have $Hs_a=Hs_b$. If $|S_i|=1$ there are not edge from it to other nodes, else if there are exist one edge $I'$ from it to one nodes then there exist $p$ ($p\ge 1)$ edges contain $I'$ from it to nodes $S_1,\cdots,S_p$ that \[|S_j|= |S_1|+,\cdots,|S_p|\] and \[D\left(S_j,I',\varepsilon\right)=S_1\vee,\cdots,\vee S_p.\]
+For every node $S_j$ in the directed graph, the $S_j$ is $k$ stepes deterministic. For every distinct two $s_a, s_b \in S_j$ we have $Hs_a=Hs_b$. If $|S_i|=1$ there are not edge from it to other nodes, else if there are exist one edge $I'$ from it to one nodes then there exist $p$ ($p\ge 1)$ edges contain $I'$ from it to nodes $S_1,\ldots,S_p$ that \[|S_j|= |S_1|+,\ldots,|S_p|\] and \[D\left(S_j,I',\varepsilon\right)=S_1\vee,\ldots,\vee S_p.\]
 \end{definition}
 
 When we trying to build the directed graph for a {\BCN}, we check whether the nodes with less states are $k$ stepes deterministic first and then check whether the nodes with more states are $k$ stepes deterministic.  As the the nodes with less states are not $k$ stepes deterministic, the nodes with more states would not be $k$ stepes deterministic.Therefore, once we can find a node is not $k$ stepes deterministic we can know that $\Delta_N$ is not $k$ stepes deterministic and this \BCN\ is not online observable. Moreover, we can use the nodes with less states that are $k$ stepes deterministic to help us check the nodes with more states. For instance, if the node $S$ has two edges from it to two nodes $S_1$ and $S_2$, and we have $S_1$ and $S_2$ are $k$ stepes deterministic. In this case, we can make sure that the node $S$ is $k$ stepes deterministic.
@@ -110,27 +110,27 @@ Based on the definitions of existing four kinds of observability, we can also us
       \label{fig:4}
    \end{figure}
 \subsection{Complexity Analysis}
-The way by the directed graph is better than by supertree, thus we analyze the complexity of it. We classify the states with their corresponding output. After that form the set of states set $\{S_1, S_2,\cdots,S_M\}$,  and every element in a states set has the same corresponding output. That is to say for each $S_j\in\{S_1, S_2,\cdots,S_M\}$ then for every $s_k\in S_j$ we have $Hs_k=\delta_{M}^j$.
+The way by the directed graph is better than by supertree, thus we analyze the complexity of it. We classify the states with their corresponding output. After that form the set of states set $\{S_1, S_2,\ldots,S_M\}$,  and every element in a states set has the same corresponding output. That is to say for each $S_j\in\{S_1, S_2,\ldots,S_M\}$ then for every $s_k\in S_j$ we have $Hs_k=\delta_{M}^j$.
 
 Firstly, we need to calculate the upper bound of the number of the states in the directed graph nodes $k$ we have.
 \begin{equation}
 \begin{split}
-k_{upb}= Max(|S_1|,|S_2|,\cdots,|S_M|)
+k_{upb}= Max(|S_1|,|S_2|,\ldots,|S_M|)
 \end{split}
 \end{equation}
-The$ k_{upb}$ is the maximum value of $|S_1|,|S_2|,\cdots,|S_M|$, because the states in the directed graph nodes should have the same corresponding output.
+The$ k_{upb}$ is the maximum value of $|S_1|,|S_2|,\ldots,|S_M|$, because the states in the directed graph nodes should have the same corresponding output.
 
 Secondly, we need to calculate the number of nodes with $k$ states:
 \begin{equation}
 \begin{split}
-k_{non}= C_{|S_i|}^k+\cdots +C_{|S_p|}^k
+k_{non}= C_{|S_i|}^k+\ldots +C_{|S_p|}^k
 \end{split}
 \end{equation}
-where $S_i\cdots,S_p\in\{S_1, S_2,\cdots,S_M\}$ and $|S_i|,\cdots,|S_p|\ge k$.
+where $S_i\ldots,S_p\in\{S_1, S_2,\ldots,S_M\}$ and $|S_i|,\ldots,|S_p|\ge k$.
 
 Thirdly we need to calculate the cardinal number of suitable inputs set of each node. Finally we need to calculate the time used to check each input is a right input for a node.
 
-After completing the previous steps, calculate the complexity by layer by layer. But the cardinal number of suitable inputs set of a node depends on the cardinal number of it and the other three nodes used to find the suitable inputs set for it. And the time used to check whether an input is a right input for a node also depends on the update rules of {\em BCNs}.
+After completing the previous steps, calculate the complexity by layer by layer. But the cardinal number of suitable inputs set of a node depends on the cardinal number of it and the other three nodes used to find the suitable inputs set for it. And the time used to check whether an input is a right input for a node also depends on the updating rules of {\em BCNs}.
 
 Moreover, instead of taking $\Delta_M$ as the suitable inputs set for every node in thedirected graph. We would use the other three nodes like $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ and $\{\delta_{16}^4,\delta_{16}^7\}$ that are $k$ steps deterministic to find the suitable inputs set for a node $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ with more than $2$ states. By this way we can  reduce the cardinal number of the suitable inputs set for every nodes with more than 2 states, and then reduce the time cost. 
 
