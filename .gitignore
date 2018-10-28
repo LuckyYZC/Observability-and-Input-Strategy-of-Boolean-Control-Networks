@@ -43,6 +43,9 @@ Observability/root.pdf
 *.gz
 *.pdf
 *.gz
+<<<<<<< HEAD
 *.gz
 *.gz
 *.gz
+=======
+>>>>>>> parent of 90f6377... Merge branch 'master' of https://github.com/LuckyYZC/Observability-and-Input-Strategy-of-Boolean-Control-Networks
