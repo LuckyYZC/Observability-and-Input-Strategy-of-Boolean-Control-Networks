@@ -1,18 +1,21 @@
-\section{PRELIMINARIES}
+% !Mode\dots ``TeX:UTF-8''
+% !TEX root = ../root.tex
+\section{Preliminaries} 
+\label{sec:pre}
 In this section we introduce the definition of \BCNs\ and their algebraic form as well as the four existing kinds of observability of {\em BCNs}.
 
 
 
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes in the graph, the definition of {\em BCN} is as follows. 
+A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes in the graph, the definition of \BCN\ is as follows. 
 
 \begin{definition}
 (\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $0, 1, 2,\ldots$. For one directed edge from a state node (or an input node) $s_1$ (or $i$) to a state node $s_2$ means that the logic value of $s_2$ at time step $t+1$ is affected by the value of $s_1$ (or $i$)  at time step $t$. For one directed edge from a state node $s_1$ to a output node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the value of $s_1$  at time step $t$. 
 \end{definition}
 
 
-Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of {\em BCNs}.
+Note that one can only know whether or not a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, logical equations are also needed to describe the specific updating rules of \BCNs.
 
  
  \begin{figure}[thpb]
@@ -45,7 +48,7 @@ To better illustrate the concept of {\em BCNs}, we give a simple example to desc
 
 
 %==============================================================================================================
-\subsection{The Algebraic Forms of BCNs}
+\subsection{The algebraic forms of \BCNs}
 To better illustrate the concept of algebraic forms, in this paper, we investigate the following \BCN\ assumes to has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
@@ -58,7 +61,7 @@ $s(t)\in \mathbb{B}^n$ are state-nodes; $i(t)\in \mathbb{B}^m$ are input-nodes; 
 
 Therefore in the previously mentioned example, we have $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\em Fig.\ref{fig:2}}). 
 
-The {\em STP} of matrices can be used to represent the algebraic forms of {\em BCNs} \cite{cheng2009controllability}, the definition of {\em STP} is as follows.
+The {\em STP} of matrices can be used to represent the algebraic forms of \BCNs\ \cite{cheng2009controllability}, the definition of {\em STP} is as follows.
 
 \begin{definition}[STP] 
 	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the Kronecker product. 
@@ -108,7 +111,7 @@ then we have that %for the set of all state-nodes $s(t)$ the logical matrix
 \[L=[\delta_N^{R_1},\ldots,\delta_N^{R_{NM}}]\]  where 
 \[\delta_N^{R_1}=\delta_2^{1_1}\ldots\delta_2^{n_1};\ldots; \delta_N^{R_{NM}}=\delta_2^{1_{NM}}\ldots\delta_2^{n_{NM}}.\] 
 %then 
-By this relationship we can construct the $L$ for the algebraic forms of {\em BCNs}. What's more we can also construct the logical matrix $H$ in the similar way.
+By this relationship we can construct the $L$ for the algebraic forms of \BCNs. What's more we can also construct the logical matrix $H$ in the similar way.
 
 For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. We have that the updating rules of this \BCN\ can be represented with the algebraic form:
 \begin{equation}
@@ -118,8 +121,8 @@ o(t) =&\delta_4[\beta]s(t)\\
 \end{split}
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $s\in \Delta_{16}$, $i\in \Delta_4$ and $o\in \Delta_4$.
-\subsection{Four Existing Observability of BCNs}
-In this section we introduce four existing kinds of observability of {\em BCNs}. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
+\subsection{Four existing observability of \BCNs}
+In this section we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, u_0\ldots u_{p-1} \mapsto s_1 \ldots\, s_p\\
@@ -153,7 +156,7 @@ The third observability means that a \BCN\ is called observable if there is an i
 	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, for any input sequence $U\in(\Delta_M)^{\infty}$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(U)\neq (HL)^{\infty}_{{s'}_0}(U)$ \cite{Fornasini2013Observability}.
 \end{definition}
 
-The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence can determine the initial state of the {\em BCN}.
+The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence can determine the initial state of the \BCN.
 
 Then from the definitions of  four existing kinds of observability, we know that \cite{Zhang2016Observability}:
 \begin{itemize}
@@ -162,6 +165,6 @@ Then from the definitions of  four existing kinds of observability, we know that
   \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 %, when we don't presuppose the initial state of {\em BCNs}
- And we can't use the first one and second one to determine the initial state of {\em BCNs} which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a {\em BCN}, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can't determine the initial state of the {\em BCN}. Therefore we need to check the \BCN\ again and again untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of {\em BCNs} in one time. And we need not to presuppose the initial state of {\em BCNs} when we use the third observability and fourth observability. But the requirements for {\em BCNs} are very harsh when we use the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of {\em BCNs} to solve this problem.
+ And we can't use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can't determine the initial state of the \BCN. Therefore we need to check the \BCN\ again and again untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ in one time. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs are very harsh when we use the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}
-Finding the necessary and sufficient condition of determine the initial state of {\em BCNs} in one time and without presupposing the range of its initial state.
+Finding the necessary and sufficient condition of determine the initial state of \BCNs\ in one time and without presupposing the range of its initial state.
