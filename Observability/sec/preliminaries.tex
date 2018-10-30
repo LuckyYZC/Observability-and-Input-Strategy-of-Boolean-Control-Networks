@@ -67,7 +67,7 @@ The {\em STP} of matrices can be used to represent the algebraic forms of \BCNs\
 	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the Kronecker product. 
 \end{definition}
 
-After introduce the definition of {\em STP} of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
+After introducing the definition of {\em STP} of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
 \begin{itemize}
   \item $\delta^i_n$: the $i$-th column of the identity matrix $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
@@ -84,7 +84,7 @@ o(t)=&H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
-where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in {\em (\ref{equ:1})}, but they are with vector forms; $L\in L_{N\times\left(NM\right)}$; $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
+where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} are with vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
 formula ``$s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}$'' can be written as ``$s(t+1)=L{i(t)}{s(t)}$''.
 
 To construct algebraic form (\ref{equ:2}) we give a mapping $\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\}$ where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
@@ -122,7 +122,7 @@ o(t) =&\delta_4[\beta]s(t)\\
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $s\in \Delta_{16}$, $i\in \Delta_4$ and $o\in \Delta_4$.
 \subsection{Four existing observability of \BCNs}
-In this section we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
+In this subsection we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, u_0\ldots u_{p-1} \mapsto s_1 \ldots\, s_p\\
@@ -165,6 +165,8 @@ Then from the definitions of  four existing kinds of observability, we know that
   \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 %, when we don't presuppose the initial state of {\em BCNs}
- And we can't use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can't determine the initial state of the \BCN. Therefore we need to check the \BCN\ again and again untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ in one time. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs are very harsh when we use the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
+ And we can't use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can't determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
+ 
+In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for each of them. And in some biological systems, it would takes many costs to check these biological systems. Therefore, we can not use the first observability and second observability to determine the initial states of them. Or we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of them when they can't satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}
-Finding the necessary and sufficient condition of determine the initial state of \BCNs\ in one time and without presupposing the range of its initial state.
+Finding the necessary and sufficient condition of determine the initial state of \BCNs\ which can be checked at most once.

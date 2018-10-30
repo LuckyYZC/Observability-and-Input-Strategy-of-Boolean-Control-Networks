@@ -54,3 +54,6 @@ Observability/root.pdf
 *.gz
 *.eps
 *.eps
+*.pdf
+*.gz
+*.gz

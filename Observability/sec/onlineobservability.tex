@@ -2,18 +2,25 @@
 % !TEX root = ../root.tex
 \section{The online observability of \BCNs}
 \label{sec:online}
-In this paper we propose the online observability, the informal definition of it is as follows. 
+In this section we propose the online observability. We give a informal definition of it at first. 
 
-\begin{definition}
-	A \BCN\ is called online observable, if every initial state $s_0 \in \Delta_N$ can be determined in one time by dynamically deciding input sequence and observing output sequence at every step without presupposing the  initial state of \BCN. And this process can be accomplished in finite steps.
-\end{definition}
+%\begin{definition}
+	A \BCN\ has online observability, if every initial state $s_0 \in \Delta_N$ can be determined in one time. In the online observability we determine the state of \BCN\ by dynamically deciding input sequence and observing output sequence at every time step. And this process can be accomplished in finite time steps.
+%\end{definition}  without presupposing the initial state of \BCN
 
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
-In this section, firstly we present the definition of deduce function, secondly we present the definition of $K$ steps deterministic. We take them as the preparations for defining online observability. Finally, we give the formal definition of online observability of \BCNs. 
+In the left of this section, firstly we present the definition of deduce function. Secondly we present the definition of $K$ steps deterministic. We take them as the preparations for defining online observability. Finally, we give the formal definition of online observability of \BCNs. 
 \subsection{Deduce function}
-Different from four existing types, the observability we propose can determine the initial state online. Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. At the beginning, we can observe the output of \BCNs, so that we can infer the possible values of state-nodes and treat them as possible states set $S_0$. Then as we can know the possible states set, we need to decide the input $i_0$. The input $i_0$ will make sure any different possible states $s_i, s_j \in S_0$ will not turn into the same state after affected by input $Ls_i i_0\neq Ls_j i_0$. After decided input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set after we inputted will not lager than the cardinal number of possible states set before we input. If the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. To simulate this deduction process, we give the definition of deduce function that.
-\begin{definition}[Deduce Function] The deduce function can be defined as $D\left(S, I, O\right)$. Based on deduction process, we have for any \[s_i(t+1)\in D\left(S, I, O\right)\] there exists the corresponding $s_i(t)\in S$ of $s_i(t+1)$ that \[s_i(t+1)=LIs_i(t)\] and \[O=Hs_i(t+1).\]
+%Different from four existing observabilities, t
+The observability we propose can determine the initial state online.
+ %Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. 
+ The time setp $k$, we observe the output of \BCNs\ at first. Through this we can infer the possible values of state-nodes and denote them by possible states set $S_k$. %Then as we can know the possible states set, 
+ At the next step, we need to decide the input $i_k$ which satisfies that % will make sure any different possible states 
+$s_i, s_j$ 
+ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for distinct $s_i, s_j\in S_k$. By deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set after we inputted will not lager than the cardinal number of possible states set before we input. If the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. To simulate this deduction process, we give the definition of deduce function that.
+\begin{definition}[Deduce Function] The deduce function can be defined as $D\left(S, I, O\right)$. Using this function we can get a states set $D\left(S, I, O\right)$ for $S$ after inputing $I$ and observing $O$. Therefore, based on deduction process mentioned before, we have that there exists the corresponding $s(t)\in S$ of $s(t+1)$ such that \[s(t+1)=LIs(t)\] and \[O=Hs(t+1),\]
+for each element \[s(t+1)\in D\left(S, I, O\right)\]
 \end{definition}
 where   
 \begin{itemize}
