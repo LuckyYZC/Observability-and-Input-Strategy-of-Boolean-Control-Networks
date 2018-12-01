@@ -11,7 +11,7 @@ In this section we introduce the definition of \BCNs\ and their algebraic form a
 A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes in the graph, the definition of \BCN\ is as follows. 
 
 \begin{definition}
-(\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $0, 1, 2,\ldots$. For one directed edge from a state node (or an input node) $s_1$ (or $i$) to a state node $s_2$ means that the logic value of $s_2$ at time step $t+1$ is affected by the value of $s_1$ (or $i$)  at time step $t$. For one directed edge from a state node $s_1$ to a output node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the value of $s_1$  at time step $t$. 
+(\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $0, 1, 2,\ldots$. For one directed edge from a state node $s_1$ (or an input node $i_1$) to a state node $s_2$ means that the logic value of $s_2$ at time step $t+1$ is affected by the value of $s_1$ (or $i_1$)  at time step $t$. For one directed edge from a state node $s_1$ to a output node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the value of $s_1$  at time step $t$. 
 \end{definition}
 
 
@@ -84,8 +84,8 @@ o(t)=&H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
-where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} are with vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
-formula ``$s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}$'' can be written as ``$s(t+1)=L{i(t)}{s(t)}$''.
+where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} would be written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
+formula ``$s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}$'' will be written as ``$s(t+1)=L{i(t)}{s(t)}$'' in the following pages.
 
 To construct algebraic form (\ref{equ:2}) we give a mapping $\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\}$ where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
@@ -105,22 +105,24 @@ and there exists a structure matrix $L_p\in L_{2\times {NM}}$ such that
 For state-nodes $s_1,\ldots,s_n$, we have $n$ logical matrices $L_1,\ldots,L_n$ for them, respectively. 
 %We have that
 %when\\
-If for each state-node $s_p$ the logical matrix has form
+If for each state-node $s_p$ the logical matrix has its form
 \[L_p=[\delta_2^{p_1},\ldots,\delta_2^{p_{NM}}],\] 
 then we have that %for the set of all state-nodes $s(t)$ the logical matrix 
 \[L=[\delta_N^{R_1},\ldots,\delta_N^{R_{NM}}]\]  where 
 \[\delta_N^{R_1}=\delta_2^{1_1}\ldots\delta_2^{n_1};\ldots; \delta_N^{R_{NM}}=\delta_2^{1_{NM}}\ldots\delta_2^{n_{NM}}.\] 
 %then 
-By this relationship we can construct the $L$ for the algebraic forms of \BCNs. What's more we can also construct the logical matrix $H$ in the similar way.
-
+By this relationship we can construct the $L$ for the algebraic forms of \BCNs. What's more we can also construct the logical matrix $H$ in the similar way. To better illustrate the concept of algebraic forms, we give a simple example to describe it.
+\begin{example}
 For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. We have that the updating rules of this \BCN\ can be represented with the algebraic form:
 \begin{equation}
 \begin{split}
 s(t+1) =&\delta_{16}[\alpha]i(t)s(t)\\
 o(t) =&\delta_4[\beta]s(t)\\
 \end{split}
+\label{equ:4}
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $s\in \Delta_{16}$, $i\in \Delta_4$ and $o\in \Delta_4$.
+\end{example}   
 \subsection{Four existing observability of \BCNs}
 In this subsection we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
@@ -165,8 +167,9 @@ Then from the definitions of  four existing kinds of observability, we know that
   \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 %, when we don't presuppose the initial state of {\em BCNs}
- And we can't use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can't determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
  
-In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for each of them. Therefore, we can not use the first observability and second observability to determine the initial states of them. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of them when they can't satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
+We can not use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
+ 
+In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for them. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}
-Finding the necessary and sufficient condition of determine the initial state of \BCNs\ which can be checked at most once.
+Finding the necessary and sufficient condition of determine the initial state of \BCNs\ in real time.
