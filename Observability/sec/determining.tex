@@ -75,16 +75,16 @@ The directed graph of \BCN
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
-
-\begin{algorithm}[h]
-\caption{Algorithm to build nodes with $k$ states}
+ The algorithm to build nodes used in the Algorithm.\ref{alg:1} is shown in the Algorithm.\ref{alg:2}.
+\begin{algorithm}[h!]
+\caption{{\sf buildnode}(int p)}
 \begin{algorithmic}[1]
 \REQUIRE 
 The number of states in the nodes $p$
 \ENSURE  
 The nodes with $p$ states whose corresponding outputs are the same%, and the outputs of $p$ states inside one node are the same.
-\STATE {\sf buildnode}(int p)
-\STATE  \{ 
+%\STATE {\sf buildnode}(int p)
+%\STATE  \{ 
 %\dfSTATE $p=p+1$\
 \STATE  Build all nodes with $p$ states %(whose outputs are the same)\
 
@@ -96,7 +96,7 @@ The nodes with $p$ states whose corresponding outputs are the same%, and the out
 \STATE Sort these nodes%(For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in {\em Fig.\ref{fig:4}}. )
 \STATE return nodes
 \ENDIF 
-\STATE \}
+%\STATE \}
 \end{algorithmic}
  \label{alg:2}
 \end{algorithm}

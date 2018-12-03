@@ -6,7 +6,7 @@ If the \BCNs\ we research is online observable, and we have built the directed g
 
 \subsection{Determine the initial state}
 
-After we build the directed graph of the \BCN, we can use it to determine the initial state of \BCNs.
+If a \BCN is online observable and we have built the directed graph of a \BCN, we can use it to determine the initial state of this \BCN.
 \begin{example}
 For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. The process of determining its initial state is as {\em Fig.\ref{fig:5}} shows. 
 \begin{itemize}
@@ -27,11 +27,11 @@ For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the u
       \label{fig:5}
    \end{figure}
 \subsection{Less observation costs}
-Some biological systems, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input-nodes, and $37$ state-nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of this {\em BCN}, we must select some state-nodes to be observe at first. 
+Some biological systems can be depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input-nodes, and $37$ state-nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of this {\em BCN}, we must select some state-nodes to be observe at first, and it would take many costs for us to observe the state-node values.
 
-If we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it needs less observation costs. Because compare with the existing third and fourth kind of observabilities the online observability need weakest preconditions to determine the initial state of {\ BCNs} without any presupposition. In other words, the \BCNs\ needs less output-nodes to determine its initial state. As we can select less state-nodes to be observe, it will takes less ovservation costs in this example. In addition to this, there are also some other advantages, when we use the online observability of \BCNs.
+However if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it needs less observation costs. Because compare with the existing third and fourth kind of observabilities the online observability need weakest preconditions to determine the initial state of {\ BCNs} without any presupposition. In other words, the \BCNs\ needs less output-nodes to determine its initial state. As we can select less state-nodes to be observe, it will takes less ovservation costs in this example. In addition to this, there are also some other advantages, when we use the online observability of \BCNs.
 
-\subsection{Find shortest path}
+\subsection{Finding shortest path}
 When we need to determine the initial state of a \BCN, an important aspect that we will consider is to find the shortest path. In general, we can not find the shortest path definitely.  Fortunately, we can use the directed graph to make the best decision. For the path, we introduce two functions $\Pe(S, I_z)$ and $\Pv(S, I_z)$ to describe its expected value and variance, respectively. For better explain our idea, we list some definitions in the following.
 
 %We introduce two functions $Spe(S_i, I_i)$ and $Spv(S_i, I_i)$ to describe the expected value of the shortest path and variance of shortest path , $S_i$ is the possible states set and $I_i$ is the input we chose, the definition of $Spe(S_i, I_i)$ is as follows:\\
@@ -60,7 +60,7 @@ we have that
 
 The function shortest path  expected value $\Spe(S)$ is to find the $I_z$ from $\{I_1,I_2,\ldots, I_p\}$ to calculat least $\Pe(S, I_z)$ for $S$. From the definition of $\Pe(S, I_z)$ we can know that if $|S|=1$ then we can make sure the state of \BCNs, and we need not input anymore to determine the state of \BCNs. Therefore, for any input the path expected value $\Pe(S, I_z)$ would be $0$ and so do the shortest path  expected value $\Spe(S_i)$. But if $|S|>1$ we still need more input and observe the output. Only by this way we can determine the state of of \BCNs. Therefore,  we can recursively define the $\Pe(S, I_z)$ and $\Spe(S)$ for each input $I_z$ in the right inputs set.  The $\Pv(S, I_z)$ can be defined in the similar way. Hence we omit the details in this paper. 
 
-\subsection{Avoid entering critical states}
+\subsection{Avoiding entering critical states}
 In biological systems, some states of the genes may corresponding to unfavorable or dangerous situations \cite{Li2014Controllability}. So another important aspect that we will consider is to avoid entering critical states. We can also construct two functions $\Ce(S, I_z)$ and $\Cv(S, I_z)$ to describe expected value and variance of the times of entering critical states, the definition of $\Ce(S, I_z)$ is as follows:\\
 \begin{definition}[$\Lce(S)$] \label{lce}
 \[\Lce(S)= \min(\Ce(S, I_1),\Ce(S, I_2),\ldots,)\Ce(S, I_p)\]
