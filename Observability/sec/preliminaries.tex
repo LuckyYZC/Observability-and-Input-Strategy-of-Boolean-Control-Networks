@@ -127,35 +127,35 @@ where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,1
 In this subsection we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
-L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, u_0\ldots u_{p-1} \mapsto s_1 \ldots\, s_p\\
-L^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty}, u_0 u_1 \ldots  \mapsto s_1 s_2 \ldots
+L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, i_0\ldots i_{p-1} \mapsto s_1 \ldots\, s_p\\
+L^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty}, i_0 i_1 \ldots  \mapsto s_1 s_2 \ldots
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
-(HL)^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_Q)^p, u_0\ldots u_{p-1} \mapsto o_1\ldots\, o_p\\
-(HL)^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty}, u_0 u_1 \ldots  \mapsto o_1 o_2\ldots
+(HL)^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_Q)^p, i_0\ldots i_{p-1} \mapsto o_1\ldots\, o_p\\
+(HL)^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty}, i_0 i_1 \ldots  \mapsto o_1 o_2\ldots
 \end{split}
 \end{equation}
 
-For all  $p\in \mathbb{Z}_+$, all $U=u_1 \ldots u_p \in(\Delta_M)^p$, and all $1\ge i \ge j \ge |U|$, we use U[i,j] to denote the word $u_i \ldots u_j$ as a input sequence. Then four existing kinds of observability of BCNs can be define as: 
+For all  $p\in \mathbb{Z}_+$, all $I=i_1 \ldots i_p \in(\Delta_M)^p$, and all $1\ge p \ge j \ge |I|$, we use I[p,j] to denote the word $i_p \ldots i_j$ as a input sequence. Then four existing kinds of observability of BCNs can be define as: 
 \begin{definition}
-The first kind of observability is that, \BCN\ is called observable, if for every initial state $s_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $s_0\neq {s'}_0\in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{cheng2009controllability}.
+The first kind of observability is that, \BCN\ is called observable, if for every initial state $s_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $s_0\neq {s'}_0\in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{cheng2009controllability}.
 \end{definition}
 
 Hence the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence. But we can only use the corresponding input sequence of a state to check whether this state is the initial state of the {\em BCN} or not.
 \begin{definition}
-	The second kind of observability is that a \BCN\ is called observable if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Zhao2010Input}.
+	The second kind of observability is that a \BCN\ is called observable if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{Zhao2010Input}.
 \end{definition}
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states of the {\em BCN}, there exists an input sequence which can distinguish them. 
 \begin{definition}
-	The third kind of observability is that, a \BCN\ is called observable, if there exists an input sequence $U\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(U)\neq (HL)^p_{{s'}_0}(U)$ \cite{Cheng2011Identification}.
+	The third kind of observability is that, a \BCN\ is called observable, if there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{Cheng2011Identification}.
 \end{definition}
 
 The third observability means that a \BCN\ is called observable if there is an input sequence that determines the initial state of the {\em BCN}.
 \begin{definition}
-	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, for any input sequence $U\in(\Delta_M)^{\infty}$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(U)\neq (HL)^{\infty}_{{s'}_0}(U)$ \cite{Fornasini2013Observability}.
+	The fourth kind of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, for any input sequence $I\in(\Delta_M)^{\infty}$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(I)\neq (HL)^{\infty}_{{s'}_0}(I)$ \cite{Fornasini2013Observability}.
 \end{definition}
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence can determine the initial state of the \BCN.

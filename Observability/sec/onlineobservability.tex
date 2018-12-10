@@ -25,24 +25,24 @@ The observability we propose can determine the initial state online.
  In the time setp $k$, we observe the output of \BCNs\ at first. Through this we can infer the possible values of state-nodes and denote them by possible states set $S_k$. %Then as we can know the possible states set, 
  At the next step, we need to decide the input $i_k$ which satisfies that % will make sure any different possible states 
 $s_i, s_j$ 
- will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for distinct $s_i, s_j\in S_k$. After deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set after we inputted will not lager than the cardinal number of possible states set before we input. If the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. And the reason why the cardinal number of the possible states set would decrease is shown in equation (\ref{equ:10}) and (\ref{equ:11}). 
+ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. After deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set after we inputted will not lager than the cardinal number of possible states set before we input. If the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. And the reason why the cardinal number of the possible states set would decrease is shown in equation (\ref{equ:10}) and (\ref{equ:11}). 
  
 To better describe the deduction process of \BCN\ initial state we mentioned before, we give a deduction function for it. The definition of this function is as follows.
-\begin{definition}[Deduction Function] The deduction function can be defined as $\Ded\left(S, I, O\right)$. Using this function we can get a states set $\Ded\left(S, I, O\right)$ for $S$ after inputing $I$ and observing $O$. Therefore, based on deduction process mentioned before, we have that there exists the corresponding $s(t)\in S$ of $s(t+1)$ such that \[s(t+1)=LIs(t)\ when\ I\neq \varepsilon, \] and \[O=Hs(t+1)\ when\ O\neq \varepsilon, \]
-for each element \[s(t+1)\in \Ded\left(S, I, O\right)\]
+\begin{definition}[Deduction Function] The deduction function can be defined as $\Ded\left(S, i, o\right)$. Using this function we can get a states set $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$. Therefore, based on deduction process mentioned before, we have that there exists the corresponding $s(t)\in S$ of $s(t+1)$ such that \[s(t+1)=Lis(t)\ when\ i\neq \varepsilon, \] and \[o=Hs(t+1)\ when\ o\neq \varepsilon, \]
+for each element \[s(t+1)\in \Ded\left(S, i, o\right)\]
 \end{definition}
 where   
 \begin{itemize}
   \item $S\in 2^{\Delta_N}$ is the possible states set;
-  \item $I\in (\Delta_M\cup\varepsilon)$ represents the input;
-  \item $O\in(\Delta_Q\cup\varepsilon)$ represents the output; 
-  \item $\Ded\left(S, I, O\right)\in 2^{\Delta_N}$ is the possible states set after deduction.
+  \item $i\in (\Delta_M\cup\varepsilon)$ represents the input;
+  \item $o\in(\Delta_Q\cup\varepsilon)$ represents the output; 
+  \item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the possible states set after deduction.
 \end{itemize} 
  
  From the definition of deduction function, we have some equations for this function. By researching these equations, we can know the details of this function better.
 \begin{equation}
 \begin{split}
-\Ded\left(\emptyset,I,O\right)=\emptyset\\
+\Ded\left(\emptyset,i,o\right)=\emptyset\\
 %D\left(\varnothing,I_i,O_i\right)=D\left(\varnothing,\varepsilon,O_i\right)= &D\left(\varnothing,\varepsilon,\varepsilon\right)=\varnothing\\
 \end{split}
 \label{equ:7}
@@ -94,12 +94,12 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 After we difined the deduction function, we can present the definition of $k$-step determinability of the states set of \BCNs\ and the range of $k$ is the set of natural numbers. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
 When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardinal number of this states set $|S|=1$. When $k>0$, a set of states $S$ is $k$-step deterministic
- if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $I$ in $\Delta_M$ such that
+ if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(S,I,\varepsilon\right)|=|S|, $ and 
- \item  for each $O$ in $\Delta_Q$ such that $|\Ded\left(S,I,O\right)|\neq 0$ and $\Ded\left(S,I,O\right)$ is $k'$-step deterministic with  ${k'}<k$.
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|, $ and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k$.
  \end{itemize}
- And we default $k\ge0$ when we talk whether a states set of \BCNs\ is $k$-step deterministic or not.
+ And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
 
 From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
@@ -109,7 +109,7 @@ Furthermore, if a states set $S$ is $k_1$-step deterministic and $k_1\leq k_2$, 
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
 \begin{definition}[Online Observability of  BCNs]
  A \BCN\ is called online observable,
-if for every  $O$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, O\right)|\neq 0$ and $\Ded\left(\Delta_N,\varepsilon,O\right)$ is $k$-step deterministic.
+if for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|\neq 0$ and $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $k$-step deterministic.
 % We even can define the online observability simpler, if there exists $k \ge 0$ implies $\Delta_N$ is $k$ stepes deterministic, then this \BCN\ is online observable. 
 \end{definition}
 

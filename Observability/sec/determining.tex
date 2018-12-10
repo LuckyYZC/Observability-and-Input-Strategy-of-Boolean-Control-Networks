@@ -6,11 +6,11 @@ In this paper, we propose two approaches to determine the online observability o
 
 \subsection{Supertree} As we mentioned before, we can use the deduction function to determine the initial state of \BCNs. According to the definition of online observability we will alternately observe the output and decide the input. When the  cardinal number of the states set comes into be $1$ we can determine the initial state, and stop deducing the initial state of \BCNs. According to this process, we can define the supertree for \BCNs. For convenience, we use the states set inside the node to represent the node, and output in the edge to represent the edge.
 \begin{definition}[Super Tree]
-The root node of the super tree is $\Delta_N$, the leaf nodes of the super tree are the nodes with cardinal number $1$ ($|S'|=1$). In addition to the leaf nodes, if a node $S'$ in the $2k + 1$ ($k\in \mathbb{N}$) layer of the supertree and 
-\[|\Ded\left(S',\varepsilon, O'\right)|>0,\]
- then $\Ded\left(S',\varepsilon, O'\right)$ is one of its son nodes, and $O_i$ is the edge from $S_i$ to $\Ded\left(S,\varepsilon, O_i\right)$. If a node $S'$ in the $2k+2$ layer of the supertree and  
-\[|\Ded\left(S',I',\varepsilon\right)|=|S'|,\] 
-then $\Ded\left(S',I',\varepsilon\right)$ is the son node of $S'$ and $I'$ is the edge from $S'$ to $\Ded\left(S',I',\varepsilon\right)$. 
+The root node of the super tree is $\Delta_N$, the leaf nodes of the super tree are the nodes with cardinal number $1$ ($|S_i|=1$). In addition to the leaf nodes, if a node $S_i$ in the $2k + 1$ ($k\in \mathbb{N}$) layer of the supertree and 
+\[|\Ded\left(S_i,\varepsilon, o_j\right)|>0,\]
+ then $\Ded\left(S_i,\varepsilon, o_j\right)$ is one of its son nodes, and $o_j$ is the edge from $S_i$ to $\Ded\left(S_i,\varepsilon, o_j\right)$. If a node $S_i$ in the $2k+2$ layer of the supertree and  
+\[|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|,\] 
+then $\Ded\left(S_i,i_p,\varepsilon\right)$ is the son node of $S_i$ and $i_p$ is the edge from $S_i$ to $\Ded\left(S_i,i_p,\varepsilon\right)$. 
 \end{definition}
 
   \begin{figure}[thpb]
@@ -23,7 +23,7 @@ then $\Ded\left(S',I',\varepsilon\right)$ is the son node of $S'$ and $I'$ is th
       \label{fig:3}
    \end{figure}
 
-At the beginning we infer that the possible states set is $\Delta_N$, thus the root node of the super tree is $\Delta_N$. When the cardinal number of the possible states set turns into $1$, we can determine the state of \BCN. Therefore, the leaf nodes of the super tree are the nodes with cadinal number $1$. We observe the output of \BCN\ to infer the possible states set of \BCN\ at first. After that, we decide the input and infer the new possible states set. We alternately observe the output and decide the input untill we can determine the state of {\em BCN}. Therefore we use $\Ded\left(S_i,\varepsilon, O_j\right)$ to find son nodes for every $S_i$ in $2k+1$ layer, and using $\Ded\left(S_i,I_p,\varepsilon\right)$ to find son nodes for every $S_i$ in $2k+2$ layer. The formula $|\Ded\left(S_i,\varepsilon, O_j\right)|>0$ ensures the node $\Ded\left(S_i,\varepsilon, O_j\right)$ has meaning. The formula $|\Ded\left(S_i,I_p,\varepsilon\right)|=|S_i|$ guarantee we can determine the state of \BCN\ in the end. 
+At the beginning we infer that the possible states set is $\Delta_N$, thus the root node of the super tree is $\Delta_N$. When the cardinal number of the possible states set turns into $1$, we can determine the state of \BCN. Therefore, the leaf nodes of the super tree are the nodes with cadinal number $1$. We observe the output of \BCN\ to infer the possible states set of \BCN\ at first. After that, we decide the input and infer the new possible states set. We alternately observe the output and decide the input untill we can determine the state of {\em BCN}. Therefore we use $\Ded\left(S_i,\varepsilon, o_j\right)$ to find son nodes for every $S_i$ in $2k+1$ layer, and using $\Ded\left(S_i,i_p,\varepsilon\right)$ to find son nodes for every $S_i$ in $2k+2$ layer. The formula $|\Ded\left(S_i,\varepsilon, o_j\right)|>0$ ensures the node $\Ded\left(S_i,\varepsilon, o_j\right)$ has meaning. The formula $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$ guarantee we can determine the state of \BCN\ in the end. 
 \begin{example}
 For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. The Fig.\ref{fig:3} show branch of the tree which represents $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ and its deduction process. The nodes represent the states sets, the blue edges represent the observing output processes, and the orange edges represent the deciding input processes. This branch is not completed, because only the yellow nodes are the leaf nodes. If we want to find all of the ways to determine the initial state of \BCN, we have to build the complete tree for \BCN. This process takes many additional time and space overhead. Especially when there are loops in the tree, like the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^2,\delta_{16}^3\}$ in fifth layer that will form a loop. In this case we can never build the complete tree, thus we need to check the existence of loops and omit it. There are also some nodes take the same states set which will also take additional overhead. For instance there are two nodes take the same states set $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fifth layer. However, it would be a lot easier if we only need to find a way to determine the initial state. For instance, when we find the leaf nodes $\delta_{16}^1$, $\delta_{16}^7$ and  $\delta_{16}^{14}$ in third layer by breadth-first algorithm, we can make sure that the states set $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is 1 step deterministic. After that, we use this conclusion to determine the initial state of \BCN. 
 \end{example}   
@@ -42,7 +42,7 @@ The directed graph of \BCN
 \STATE  $k=1$ (The number of states in the nodes)\
 \STATE  $Ob=$ false (The online observability of \BCN)\
 \STATE  $N_i$ (Node)\
-\STATE  $I_i$ (Input)\
+\STATE  $i_p$ (Input)\
 \STATE  $NodesArray$ (Nodes array)\
 \STATE  $Sis$ (The suitable inputs set of $N_i$)\
 \STATE {\sf buildnode}(k)
@@ -57,8 +57,8 @@ The directed graph of \BCN
 \STATE Find $Sis$ by other nodes
 
 \ENDIF
-\FOR{each $I_j \in Sis$}
-\STATE Check $N_i$ by $I_j$
+\FOR{each $i_p \in Sis$}
+\STATE Check $N_i$ by $i_p$
 \STATE Build edges for $N_i$ 
 \ENDFOR
 \IF {$N_i$ has not any edge.}
@@ -77,12 +77,12 @@ The directed graph of \BCN
 \end{algorithm}
  The algorithm to build nodes used in the Algorithm.\ref{alg:1} is shown in the Algorithm.\ref{alg:2}.
 \begin{algorithm}[h!]
-\caption{{\sf buildnode}(int p)}
+\caption{{\sf buildnode}(int k)}
 \begin{algorithmic}[1]
 \REQUIRE 
-The number of states in the nodes $p$
+The number of states in the nodes $k$
 \ENSURE  
-The nodes with $p$ states whose corresponding outputs are the same%, and the outputs of $p$ states inside one node are the same.
+The nodes with $k$ states whose corresponding outputs are the same%, and the outputs of $p$ states inside one node are the same.
 %\STATE {\sf buildnode}(int p)
 %\STATE  \{ 
 %\dfSTATE $p=p+1$\
@@ -103,15 +103,15 @@ The nodes with $p$ states whose corresponding outputs are the same%, and the out
 
 Some details in Algorithm.\ref{alg:1} and Algorithm.\ref{alg:2} are as follows:
 \begin{itemize}
-\item Build all nodes with $p$ states: Firstly, we classify all states by their corresponding outputs, then we have all of states sets. The states set contains all states have the same corresponding outputs. Secondly, we compare $p$ with the cardinal number $Car$ of each states set $S_i$ we built before. If $p$ greater than $Car$, then we could not get $p$ states from this states set $S_i$. Else we can get $C_{Car}^p$ sets with $p$ states from this states set. Finally, we use all of states sets to build nodes we need. 
+\item Build all nodes with $k$ states: Firstly, we classify all states by their corresponding outputs, then we have all of states sets. The states set contains all states have the same corresponding outputs. Secondly, we compare $k$ with the cardinal number $Car$ of each states set $S_i$ we built before. If $k$ greater than $Car$, then we could not get $k$ states from this states set $S_i$. Else we can get $C_{Car}^k$ sets with $k$ states from this states set. Finally, we use all of states sets to build nodes we need. 
  \item Sort the states in these nodes and sort these nodes: For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in Fig.\ref{fig:4}. 
   \item Find $Sis$ by other nodes: The node $N_i$ with $k$ sorted states inside it, then we can use the first $k-1$ states, the last $k-1$ states and the first and last two states to find the nodes we need. And then use these three nodes to find $Sis$ for $N_i$. For example, we can search right inputs sets which make $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ and $\{\delta_{16}^4,\delta_{16}^7\}$ $k$-step deterministic at first. After that, take the intersection of these sets to be the suitable inputs set of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. 
-  \item Check $N_i$ (with states set $S_i$ in it) by $I_j$: According to the order determined in previous steps, we check every node in order. If for one input $I_j$ (which belongs to suitable inputs set $Sis$) implies $|\Ded\left(S_i,I_j,\varepsilon\right)|<|S_i|$, we can make sure the $I_j$ is a wrong input. Else if for each $O_p \in \Delta_Q$, $|\Ded\left(S_i,I_j,O_p\right)|>0$ and $\Ded\left(S_i,I_j,O_p\right)$ is $k$-step deterministic then $I_j$ is a right input. Therefore, we can connect the node $S_i$ to each node $\Ded\left(S_i,I_j,O_p\right)$ with directed edge. The colour of directed edges represent its corresponding input. Else if there exist $O_p \in \Delta_Q$ and we can not make sure whether $\Ded\left(S_i,I_j,O_p\right)$ is $k$-step deterministic, we check it in the next round. 
+  \item Check $N_i$ (with states set $S_i$ in it) by $i_p$: According to the order determined in previous steps, we check every node in order. If for one input $i_p$ (which belongs to suitable inputs set $Sis$) implies $|\Ded\left(S_i,i_p,\varepsilon\right)|<|S_i|$, we can make sure the $i_p$ is a wrong input. Else if for each $O_j \in \Delta_Q$, $|\Ded\left(S_i,i_p,o_j\right)|>0$ and $\Ded\left(S_i,i_p,o_j\right)$ is $k$-step deterministic then $I_j$ is a right input. Therefore, we can connect the node $S_i$ to each node $\Ded\left(S_i,i_p,o_j\right)$ with directed edge. The colour of directed edges represent its corresponding input. Else if there exist $o_j \in \Delta_Q$ and we can not make sure whether $\Ded\left(S_i,i_p,o_j\right)$ is $k$-step deterministic, we check it in the next round. 
 \end{itemize} 
 
 According the construction process, we have the definition of directed graph.
 \begin{definition}[Directed Graph]
-Every node $S_j$ in the directed graph is $k$-step deterministic, and there are no duplicate nodes in the graph. For every distinct two $s_a, s_b \in S_j$ we have $Hs_a=Hs_b$. If $|S_j|=1$, then there are not edge from it to other nodes, else if there are exist one edge $I_i$ from it to one nodes then there exist $p$ ($p\ge 1)$ edges contain $I_i$ from it to nodes $S_1,\ldots,S_p$ that \[|S_j|= |S_1|+,\ldots,|S_p|\] and \[\Ded\left(S_j,I_i,\varepsilon\right)=S_1\vee,\ldots,\vee S_p.\]
+Every node $S_i$ in the directed graph is $k$-step deterministic, and there are no duplicate nodes in the graph. For every distinct two $s_a, s_b \in S_i$ we have $Hs_a=Hs_b$. If $|S_i|=1$, then there are not edge from it to other nodes, else if there are exist one edge $i_p$ from it to one nodes then there exist $z$ ($z\ge 1)$ edges contain $i_p$ from it to nodes $S_1,\ldots,S_z$ that \[|S_i|= |S_1|+,\ldots,|S_z|\] and \[\Ded\left(S_i,i_p,\varepsilon\right)=S_1\vee,\ldots,\vee S_z.\]
 \end{definition}
 
 When we trying to build the directed graph for a \BCN, we check whether the nodes with less states are $k$-step deterministic first and then check whether the nodes with more states are $k$-step deterministic.  As the the nodes with less states are not $k$-step deterministic, the nodes with more states would not be $k$-step deterministic. Therefore, once we can find a node is not $k$-step deterministic we can know that $\Delta_N$ is not $k$-step deterministic and this \BCN\ is not online observable. Moreover, we can use the nodes with less states that are $k$-step deterministic to help us check the nodes with more states. For instance, if the node $S$ has two edges from it to two nodes $S_1$ and $S_2$, and we have $S_1$ and $S_2$ are $k$-step deterministic. In this case, we can make sure that the node $S$ is $k$-step deterministic.
@@ -127,7 +127,7 @@ Based on the definitions of existing four kinds of observability, we can also us
       \label{fig:4}
    \end{figure}
 \subsection{Complexity analysis}
-The way by the directed graph is better than by supertree, thus we analyze the complexity of it. We classify the states with their corresponding output. After that form the set of states set $\{S_1, S_2,\ldots,S_M\}$,  and every element in a states set has the same corresponding output. That is to say for each $S_j\in\{S_1, S_2,\ldots,S_M\}$ then for every $s_k\in S_j$ we have $Hs_k=\delta_{M}^j$.
+The way by the directed graph is better than by supertree, thus we analyze the complexity of it. We classify the states with their corresponding output. After that form the set of states set $\{S_1, S_2,\ldots,S_M\}$,  and every element in a states set has the same corresponding output. That is to say, for each $S_i\in\{S_1, S_2,\ldots,S_M\}$ then for every $s_k\in S_i$ we have $Hs_k=\delta_{M}^i$.
 
 Firstly, we need to calculate the upper bound of the number of the states in the directed graph nodes $k$ we have.
 \begin{equation}
