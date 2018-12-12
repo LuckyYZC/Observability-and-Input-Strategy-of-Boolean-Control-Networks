@@ -11,7 +11,7 @@ In this section we introduce the definition of \BCNs\ and their algebraic form a
 A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes of this directed graph, the definition of \BCN\ is as follows. 
 
 \begin{definition}
-(\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $0, 1, 2,\ldots$. For one directed edge from a state-node $s_1$ (or an input-node $i_1$) to a state-node $s_2$ means that the logic value of $s_2$ at time step $t+1$ is affected by the value of $s_1$ (or $i_1$)  at time step $t$. For one directed edge from a state-node $s_1$ to a output-node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the value of $s_1$  at time step $t$. 
+(\cite{Ideker2001A}) A \BCN\ consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. A node in \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $0, 1, 2,\ldots$ For one directed edge from a state-node $s_1$ (or an input-node $i_1$) to a state-node $s_2$ means that the logic value of $s_2$ at time step $t+1$ is affected by the value of $s_1$ (or $i_1$)  at time step $t$. For one directed edge from a state-node $s_1$ to a output-node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the value of $s_1$  at time step $t$. 
 \end{definition}
 
 
@@ -31,7 +31,7 @@ Note that one can only know that whether a node is affected by another node from
 To better illustrate the concept of {\em BCNs}, we give a simple example to describe it.
 
 \begin{example}
-	In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. The \BCN\ is shown in Fig.\ref{fig:1}, and the updating rules of this \BCN\ are described as truth table Fig.\ref{fig:2}. The reason why we use truth table to describe the updating rules of the \BCN\ is that this form of updating rules will be more convenient for \BCN\ to be converted into its aglebraic form. What's more, for instance, we can know the updating rule of state-node $G$ from the truth table,
+	In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. The \BCN\ is shown in Fig.\ref{fig:1}, and the updating rules of this \BCN\ are described as truth table Fig.\ref{fig:2}. The reason why we use truth table to describe the updating rules of the \BCN\ is that this form of updating rules will be more convenient for \BCN\ to be converted into its aglebraic form. What's more, for instance, the updating rule of state-node $G$ is that,
 	\[G(t)=C(t)\wedge \neg(\neg{D(t)}\wedge \neg E(t)\wedge \neg F(t))\]
 	
 	For convenience, we will use this example in the whole paper to explain various concepts we introduce.
@@ -49,7 +49,7 @@ To better illustrate the concept of {\em BCNs}, we give a simple example to desc
 
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
-To better illustrate the concept of algebraic forms, in this paper, we investigate the following \BCN. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
+To better illustrate the concept of algebraic forms, in this paper, we investigate the \BCN\ in the following. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
