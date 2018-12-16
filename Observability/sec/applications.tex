@@ -2,17 +2,17 @@
 % !TEX root = ../root.tex
 \section{Applications}
 \label{sec:app}
-If the \BCNs\ we research is online observable, and we have built the directed graph for them, then we can use the online observability to determine the initial states of these \BCNs. Using the the online observability, it will need less observation costs to determine the initial state of these \BCNs. Furthermore we can also use it to try to find the shortest path or avoid entering critical states when we determine the initial state of \BCNs. %Because the output we observe is not sure, we use expected value and variance of the length of path and the times of entering critical states to help us to choose the input.
+If we research the systems described by \BCNs,  and they are online observable. As we have built the corresponding directed graphs for them, we can use the online observability to determine the initial states of these \BCNs. Using the the online observability, it will need less observation costs to determine the initial state of these \BCNs. Furthermore we can also use it to find the shortest path or avoid entering critical states in the process of determining the initial state of \BCNs. %Because the output we observe is not sure, we use expected value and variance of the length of path and the times of entering critical states to help us to choose the input.
 
 \subsection{Determine the initial state}
 
-If a \BCN is online observable and we have built the directed graph of a \BCN, we can use it to determine the initial state of this \BCN.
+If a system described by \BCN\ is online observable but not satisfy the existing third and fourth observability. And the directed graph of a it has been built, then we can determine the initial state of this system (or \BCN) in real time by online observability. The process of determining the initial state is as follows.
 \begin{example}
-For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. The process of determining its initial state is as {\em Fig.\ref{fig:5}} shows. 
+The \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. The process of determining its initial state is as {\em Fig.\ref{fig:5}} shows. 
 \begin{itemize}
   \item Firstly, we observe the output of the \BCN\ mentioned before. If we observe the output is $\delta_4^1$ then we can infer that the possible states set should be $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, and we record them as initial states and current states in the table. 
   \item After that we input  $\delta_4^1$ and observe the output is $\delta_4^3$ then we can infer that the possible states set should be $\{\delta_{16}^{10},\delta_{16}^{11}\}$, and we record them as current states set in the corresponding position. 
- \item Repeat the second step untill the cardinal number of the possible states set turns into $1$. In that time we can determine the current state and the corresponding initial state of the {\em BCN}.
+ \item Repeat the second step untill the cardinal number of the possible states set turns into $1$. In that time we can determine the current state ($\delta_{16}^{6}$) and the corresponding initial state  ($\delta_{16}^{3}$) of the {\em BCN}.
 \end{itemize} 
 \end{example}   
 %Input and output again and again 
@@ -26,10 +26,8 @@ For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the u
       \caption{The process of determing the initial state of BCNs, we change the values of current states by input and the output we observe. }
       \label{fig:5}
    \end{figure}
-\subsection{Less observation costs}
-Some biological systems can be depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input-nodes, and $37$ state-nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of this {\em BCN}, we must select some state-nodes to be observe at first, and it would take many costs for us to observe the state-node values.
-
-However if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it needs less observation costs. Because compare with the existing third and fourth kind of observabilities the online observability need weakest preconditions to determine the initial state of {\ BCNs} without any presupposition. In other words, the \BCNs\ needs less output-nodes to determine its initial state. As we can select less state-nodes to be observe, it will takes less ovservation costs in this example. In addition to this, there are also some other advantages, when we use the online observability of \BCNs.
+%\subsection{Less observation costs}
+In addition, it takes less observation costs for us to determine the initial state of some systems described by \BCNs. Some biological systems can be depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. There exist $3$ input-nodes, and $37$ state-nodes in this model, therefore the model has $2^3$ inputs and $2^{37}$ states. For the purpose of obtain the initial state of this {\em BCN}, we must select some state-nodes to be observe at first, and it would take many costs for us to observe the state-node values. However, if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model, it needs less observation costs. Because compare with the existing third and fourth kind of observabilities the online observability need weakest preconditions to determine the initial state of {\ BCNs} without any presupposition. In other words, the \BCNs\ needs less output-nodes to determine its initial state. As we can select less state-nodes to be observe, it will takes less ovservation costs in this example. In addition to this, there are also some other advantages, when we use the online observability of \BCNs.
 
 \subsection{Finding shortest path}
 When we need to determine the initial state of a \BCN, an important aspect that we will consider is to find the shortest path. In general, we can not find the shortest path definitely.  Fortunately, we can use the directed graph to make the best decision. For the path, we introduce two functions $\Pe(S, i_p)$ and $\Pv(S, i_p)$ to describe its expected value and variance, respectively. For better explain our idea, we list some definitions in the following.
