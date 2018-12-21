@@ -91,3 +91,4 @@ Observability/root.pdf
 *.gz
 *.pdf
 *.gz
+*.aux
