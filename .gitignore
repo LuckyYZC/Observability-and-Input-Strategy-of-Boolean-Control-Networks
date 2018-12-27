@@ -94,3 +94,5 @@ Observability/root.pdf
 *.aux
 *.aux
 *.aux
+*.bbl
+*.blg
