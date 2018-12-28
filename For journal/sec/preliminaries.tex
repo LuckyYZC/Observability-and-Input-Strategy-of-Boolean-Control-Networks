@@ -83,8 +83,8 @@ After introducing the definition of {\em STP} of matrices,  we introduce some re
 Using {\em STP} of matrices, the formula (\ref{equ:1}) can be quivalently represented in the following algebraic form:
 \begin{equation}
 \begin{split}
-s(t+1)=&L\ltimes{i(t)}\ltimes{s(t)}\\
-o(t)=&H\ltimes{s(t)}
+s(t+1)=&\ L\ltimes{i(t)}\ltimes{s(t)}\\
+o(t)=&\ H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
@@ -174,6 +174,6 @@ Then from the definitions of  four existing kinds of observability, we know that
  
 We can not use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
  
-In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for them. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observabilities, we propose the online observability of \BCNs\ to solve this problem.
+In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for them. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}
 Finding the necessary and sufficient condition of determine the initial state of \BCNs\ in real time.
