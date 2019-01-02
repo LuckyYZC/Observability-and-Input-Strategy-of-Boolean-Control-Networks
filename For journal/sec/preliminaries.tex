@@ -53,7 +53,7 @@ For convenience, we will use this example throughout the
 
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
-To better illustrate the concept of algebraic forms, in this paper, we investigate the \BCN\ in the following. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
+As mentioned in the {\em Section \ref{sec:intro}}, \STP\ is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. To better illustrate the concept of algebraic forms, in this paper, we investigate the \BCN\ in the following. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
@@ -65,13 +65,13 @@ $s(t)\in \mathbb{B}^n$ are state-nodes; $i(t)\in \mathbb{B}^m$ are input-nodes; 
 
 Therefore in the previously mentioned example, we have that $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\em Fig.\ref{fig:2}}). 
 
-Furthermore, the {\em STP} of matrices can be used to represent the algebraic forms of \BCNs\ \cite{cheng2009controllability}, the definition of {\em STP} is as follows.
+Furthermore, the \STP\ of matrices can be used to represent the algebraic forms of \BCNs\ \cite{cheng2009controllability}, the definition of \STP\ is as follows.
 
 \begin{definition}[STP] 
-	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the Kronecker product. 
+	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the Kronecker product. 
 \end{definition}
 
-After introducing the definition of {\em STP} of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
+After introducing the definition of \STP\ of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
 \begin{itemize}
   \item $\delta^i_n$: the $i$-th column of the identity matrix $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
@@ -80,7 +80,7 @@ After introducing the definition of {\em STP} of matrices,  we introduce some re
 \end{itemize}
 
 
-Using {\em STP} of matrices, the formula (\ref{equ:1}) can be quivalently represented in the following algebraic form:
+Using \STP\ of matrices, the formula (\ref{equ:1}) can be quivalently represented in the following algebraic form:
 \begin{equation}
 \begin{split}
 s(t+1)=&\ L\ltimes{i(t)}\ltimes{s(t)}\\
@@ -88,12 +88,12 @@ o(t)=&\ H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
-where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} would be written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
+where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} would be written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
 formula ``$s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}$'' will be written as ``$s(t+1)=L{i(t)}{s(t)}$'' in the following pages.
 
 To construct algebraic form (\ref{equ:2}) we give a mapping $\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\}$ where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
-Therefore, the logical variable $A(t)$ takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the {\em STP} of matrices, we have 
+Therefore, the logical variable $A(t)$ takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the \STP\ of matrices, we have 
 \[i(t)=i_1(t){\ldots}i_m(t);\] 
 \[s(t)=s_1(t){\ldots}s_n(t);\] 
 \[o(t)=o_1(t){\ldots}o_q(t).\] 
