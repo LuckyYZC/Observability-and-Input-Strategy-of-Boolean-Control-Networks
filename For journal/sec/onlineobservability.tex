@@ -2,7 +2,7 @@
 % !TEX root = ../root.tex
 \section{The online observability of \BCNs}
 \label{sec:online}
-In this section we propose the online observability. We give the informal definition of it at first. 
+In this section we propose the online observability, and introduced its related information in detail. We give the informal definition of it at first. 
 
 %\begin{definition}
 	A \BCN\ has online observability, if every initial state $s_0 \in \Delta_N$ can be determined in real time. In the online observability we determine the state of \BCN\ by dynamically deciding input sequence and observing output sequence at every time step. And this process can be accomplished in finite time steps.
@@ -10,14 +10,14 @@ In this section we propose the online observability. We give the informal defini
 
 The reason why we called this kind of observability online observability is that:
 \begin{itemize}
-  \item In this kind of observability, we determine the initial state of \BCNs\ in real time. In other words, we can use one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
-  \item In online observability, we use the outputs we observe to adjust the input sequence at every time step. By this way, we can make full use of the outputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
+  \item First in this kind of observability, we determine the initial state of \BCNs\ in real time. In other words, we can use one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
+  \item  Secondly in online observability, we use the outputs we observe to adjust the input sequence at every time step. By this way, we can make full use of the outputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
 \end{itemize} 
 
-We can determine the initial state of any test case of a \BCN\ when we can use one test case to determine the initial state of it. We need {\em real-time} property to help us avoid repeating biological experiments. And the {\em interactivity} would help us to find the necessary and sufficient condition of determine the initial state of \BCNs\ in real time. With the  {\em real-time} and {\em interactivity}, we called this kind of observability online observability.
+We can determine the initial state of a biological system (depicted by \BCN) in real time unless we need only one test case to determine the initial state of it. We need the {\em real-time} property to help us avoid repeating biological experiments. And the {\em interactivity} would help us to find the necessary and sufficient condition of determine the initial state of \BCNs\ in real time. With the  {\em real-time} and {\em interactivity}, we called this kind of observability online observability.
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
-In the left of this section, firstly we present the definition of deduction function. Secondly we present the definition of $K$ steps determinability. We take them as the preparations for defining the online observability. Finally, we give the formal definition of the online observability of \BCNs. 
+In order to make online observability satisfy real-time property and interactivity. In the left of this section, firstly we present the definition of deduction function. Secondly we present the definition of $k$-step determinability. We take them as the preparations for defining the online observability. Finally, we give the formal definition of the online observability of \BCNs. 
 \subsection{Deduction function}
 %Different from four existing observabilities, t
 The observability we propose can determine the initial state online.
@@ -25,9 +25,9 @@ The observability we propose can determine the initial state online.
  In the time setp $k$, we observe the output of \BCNs\ at first. Through this we can infer the possible values of state-nodes and denote them by possible states set $S_k$. %Then as we can know the possible states set, 
  At the next step, we need to decide the input $i_k$ which satisfies that % will make sure any different possible states 
 $s_i, s_j$ 
- will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. After deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set after we inputted will not lager than the cardinal number of possible states set before we input. If the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. And the reason why the cardinal number of the possible states set would decrease is shown in equation (\ref{equ:10}) and (\ref{equ:11}). 
+ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. After deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set does not change or decrease in this process. We repeat the above process, if the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. And the reason why the cardinal number of the possible states set would decrease will be shown in equation (\ref{equ:10}) and (\ref{equ:11}). 
  
-To better describe the deduction process of \BCN\ initial state we mentioned before, we give a deduction function for it. The definition of this function is as follows.
+To better describe the deduction process of a \BCN\'s initial state at every time step we mentioned above, we give a deduction function for it. The definition of this function is as follows.
 \begin{definition}[Deduction Function] The deduction function can be defined as $\Ded\left(S, i, o\right)$. Using this function we can get a states set $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$. Therefore, based on deduction process mentioned before, we have that there exists the corresponding $s(t)\in S$ of $s(t+1)$ such that \[s(t+1)=L\ltimes i\ltimes s(t)\ when\ i\neq \varepsilon, \] and \[H\ltimes s(t+1)=o\ when\ o\neq \varepsilon, \]
 for each element \[s(t+1)\in \Ded\left(S, i, o\right)\]
 \end{definition}
@@ -80,7 +80,7 @@ And then, if the possible states set $S=\{\delta_{16}^1$, $\delta_{16}^2$, $\del
 \label{equ:11}
 \end{equation}
 
-But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:11}). Such that the cardinal number of the possible states set may decrease after observing the output of \BCN.
+But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:11}). Such that the cardinal number of the possible states set may decrease after observing the output of \BCN. Therefore, the deduction function helps the online obervability satisfy the {\em interactivity}.
 \begin{equation}
 \begin{split}
 \Ded\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^9,\delta_{16}^{13}\}
@@ -88,23 +88,27 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 \label{equ:12}
 \end{equation}
 
- Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible state values can be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the initial state of the \BCN\ is one of them then we can not determine the initial state any more. If the cardinality number of the possible states set of one \BCN\ decreased before observing its output the deduction process, then we can not deduce its initial state any more. 
+ Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible state values can be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the initial state of the \BCN\ is one of them then we can not determine the initial state any more. If the cardinality number of the possible states set of one \BCN\ decreased before observing its output the deduction process, then we can not deduce its initial state any more i.e., we can not determine the initial state of this \BCN\ any more. Therefore, the deduction function helps the online obervability satisfy the {\em real-time} property. 
 
+As the deduction function can only describe the deduction process of a \BCN\'s initial state at every time step. But we always need more than one time step to determine the initial state, thus we propose the $k$-step determinability to describe the whole process of determining a \BCN\'s initial state.
 \subsection{$k$-step determinability}
-After we difined the deduction function, we can present the definition of $k$-step determinability of the states set of \BCNs\ and the range of $k$ is the set of natural numbers. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
+After we difined the deduction function, we can present the definition of $k$-step determinability of the states set of \BCNs, where the range of $k$ is the set of natural numbers. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
-When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardinal number of this states set $|S|=1$. When $k>0$, a set of states $S$ is $k$-step deterministic
+
+When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardinal number of this states set $|S|=1$. 
+
+When $k>0$, a set of states $S$ is $k$-step deterministic
  if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|, $ and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k$.
  \end{itemize}
- And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
+ %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
 
 From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
 
-Furthermore, if a states set $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not make sure whether $S$ is $k_2$-step deterministic or not. Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step''. However, we say a possible states set $S$ is $k$-step deterministic ($k$ has no specific value) means that we can determine the state of a \BCN\ by this possible states set $S$ in finite steps in the following pages of this paper.
+What is more, if a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step''. However, we consider ``a set of possible states $S$ is $k$-step deterministic ($k$ has no specific value)'' as ``we can determine the state of a \BCN\ by this possible states set $S$ in finite steps'' in the rest of this paper.
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
 \begin{definition}[Online Observability of  BCNs]

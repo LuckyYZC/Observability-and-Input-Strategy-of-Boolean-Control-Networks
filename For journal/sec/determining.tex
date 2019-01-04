@@ -100,8 +100,8 @@ The nodes with $k$ states whose corresponding outputs are the same%, and the out
 \end{algorithmic}
  \label{alg:2}
 \end{algorithm}
-
-Some details in {\em Algorithm.\ref{alg:1}} and {\em Algorithm.\ref{alg:2}} are as follows:
+%%\newpage
+There are some details in {\em Algorithm.\ref{alg:1}} and {\em Algorithm.\ref{alg:2}} are as follows:
 \begin{itemize}
 \item Build all nodes with $k$ states: Firstly, we classify all states by their corresponding outputs, then we have all of states sets. The states set contains all states have the same corresponding outputs. Secondly, we compare $k$ with the cardinal number $Car$ of each states set $S_i$ we built before. If $k$ greater than $Car$, then we could not get $k$ states from this states set $S_i$. Else we can get $C_{Car}^k$ sets with $k$ states from this states set. Finally, we use all of states sets to build nodes we need. 
  \item Sort the states in these nodes and sort these nodes: For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in Fig.\ref{fig:4}. 
