@@ -45,7 +45,7 @@ For convenience, we will use this example throughout the
 		\centerline{\includegraphics[scale=0.26]{figures/Fig2.png}}
 	}}
       
-      \caption{The truth table which describe the updating rules of the \BCN\ shown in {\em Fig.\ref{fig:1}}.}
+      \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.\ref{fig:1}.}
       \label{fig:2}
    \end{figure}
 \end{example}   
@@ -53,7 +53,7 @@ For convenience, we will use this example throughout the
 
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
-To better illustrate the concept of algebraic forms, in this paper, we investigate the \BCN\ in the following. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
+As mentioned in the {\em Section \ref{sec:intro}}, \STP\ is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. To better illustrate the concept of algebraic forms, in this paper, we investigate the \BCN\ in the following. And we suppose that this \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
@@ -63,15 +63,15 @@ o(t)=&h(s(t))
 \end{equation}
 $s(t)\in \mathbb{B}^n$ are state-nodes; $i(t)\in \mathbb{B}^m$ are input-nodes; $o(t)\in \mathbb{B}^q$ are output-nodes; $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of {\em BCNs}. Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
 
-Therefore in the previously mentioned example, we have that $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ({\em Fig.\ref{fig:2}}). 
+Therefore in the previously mentioned example, we have that $C(t), D(t), E(t), F(t)\in s(t)$; $A(t), B(t)\in i(t)$ and $G(t), W(t)\in o(t)$; $n=4$, $m=2$ and $q=2$; $f$ and $h$ are described in the truth table ( Fig.\ref{fig:2}). 
 
-Furthermore, the {\em STP} of matrices can be used to represent the algebraic forms of \BCNs\ \cite{cheng2009controllability}, the definition of {\em STP} is as follows.
+Furthermore, the \STP\ of matrices can be used to represent the algebraic forms of \BCNs\ \cite{cheng2009controllability}, the definition of \STP\ is as follows.
 
 \begin{definition}[STP] 
-	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The STP of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the Kronecker product. 
+	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the {\em Kronecker product}. 
 \end{definition}
 
-After introducing the definition of {\em STP} of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
+After introducing the definition of \STP\ of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
 \begin{itemize}
   \item $\delta^i_n$: the $i$-th column of the identity matrix $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
@@ -80,7 +80,7 @@ After introducing the definition of {\em STP} of matrices,  we introduce some re
 \end{itemize}
 
 
-Using {\em STP} of matrices, the formula (\ref{equ:1}) can be quivalently represented in the following algebraic form:
+Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be quivalently represented in the following algebraic form:
 \begin{equation}
 \begin{split}
 s(t+1)=&\ L\ltimes{i(t)}\ltimes{s(t)}\\
@@ -88,25 +88,25 @@ o(t)=&\ H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
-where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula {\em (\ref{equ:1})}, but $s(t)$, $i(t)$ and $o(t)$ in formula {\em (\ref{equ:2})} would be written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices; that $N=2^n$, $M=2^m$, and $Q=2^q$. Since {\em STP} keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
-formula ``$s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}$'' will be written as ``$s(t+1)=L{i(t)}{s(t)}$'' in the following pages.
+where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula (\ref{equ:1}), but $s(t)$, $i(t)$ and $o(t)$ in formula (\ref{equ:2}) would be written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices, where $N=2^n$, $M=2^m$, and $Q=2^q$. Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
+formula \[s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}\] will be written as  \[s(t+1)=L{i(t)}{s(t)}\] in the following pages.
 
-To construct algebraic form (\ref{equ:2}) we give a mapping $\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\}$ where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
+To construct algebraic the form of \BCN\ (\ref{equ:2}) we give a mapping $\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\}$ where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
-Therefore, the logical variable $A(t)$ takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the {\em STP} of matrices, we have 
+Therefore, the logical variable $A(t)$ takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the \STP\ of matrices, we have 
 \[i(t)=i_1(t){\ldots}i_m(t);\] 
 \[s(t)=s_1(t){\ldots}s_n(t);\] 
 \[o(t)=o_1(t){\ldots}o_q(t).\] 
-And according to \cite{Cheng2003Semi}, each logical function $f_p$ of state-nodes can be found in the updating rules (\ref{equ:1}). The form of  $f_p$ as:
+And according to \cite{Cheng2003Semi}, for the logical function of each state-node $f_p$ which can be found in the updating rules (\ref{equ:1}). The form of  $f_p$ as:
 \[f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t))\] 
-and there exists a structure matrix $L_p\in L_{2\times {NM}}$ such that
+there exists a structure matrix $L_p\in L_{2\times {NM}}$ such that
 \begin{equation}
 \begin{split}
 \tau(f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t)))= L_pi(t)s(t)
 \end{split}
 \end{equation}
 %where the left side of equation calculate the truth value and the  right side of equation calculate the vector in $\{\delta_2^1, \delta_2^2\}$. 
-For state-nodes $s_1,\ldots,s_n$, we have $n$ logical matrices $L_1,\ldots,L_n$ for them, respectively. 
+Therefore for state-nodes $s_1,\ldots,s_n$, we have $n$ logical matrices $L_1,\ldots,L_n$ for them, respectively. 
 %We have that
 %when\\
 If for each state-node $s_p$ the logical matrix has its form
@@ -128,28 +128,31 @@ o(t) =&\delta_4[\beta]s(t)\\
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $s\in \Delta_{16}$, $i\in \Delta_4$ and $o\in \Delta_4$.
 \end{example}   
 \subsection{Four existing observability of \BCNs}
-In this subsection we introduce four existing kinds of observability of \BCNs. Let $\Delta_N$, $\Delta_M$, $\Delta_Q$ be three alphabets, for all $s_0\in \Delta_N$ and all $p\in \mathbb{Z}_+$; $\infty$ is the infinite natural numbers. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
+After introducing the algebraic forms of \BCNs, we introduce four existing kinds of observability of \BCNs\ in this subsection. In order to introduce four existing kinds of observability of {\em BCNs}, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 L^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_N)^p, i_0\ldots i_{p-1} \mapsto s_1 \ldots\, s_p\\
 L^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty}, i_0 i_1 \ldots  \mapsto s_1 s_2 \ldots
 \end{split}
+\label{equ:5}
 \end{equation}
 \begin{equation}
 \begin{split}
 (HL)^p_{s_0} &: (\Delta_M)^p\mapsto(\Delta_Q)^p, i_0\ldots i_{p-1} \mapsto o_1\ldots\, o_p\\
 (HL)^{\infty}_{s_0} &: (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty}, i_0 i_1 \ldots  \mapsto o_1 o_2\ldots
 \end{split}
+\label{equ:6}
 \end{equation}
 
-For all  $p\in \mathbb{Z}_+$, all $I=i_1 \ldots i_p \in(\Delta_M)^p$, and all $1\ge p \ge j \ge |I|$, we use I[p,j] to denote the word $i_p \ldots i_j$ as a input sequence. Then four existing kinds of observability of BCNs can be define as: 
+Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_N$, $p\in \mathbb{Z}_+$ and $\infty$ is the infinite natural numbers. For all  $p\in \mathbb{Z}_+$, \[I=i_0 \ldots i_{p-1} \in(\Delta_M)^p\] is an input sequence, \[L^p_{s_0}(I)=s_1 \ldots s_{p} \in(\Delta_N)^p\] is a state sequence and \[(HL)^p_{s_0}=o_1 \ldots o_{p} \in(\Delta_N)^p\] is a output sequence. For the $\infty$, \[I=i_0 \ldots  \in(\Delta_M)^{\infty}\] is an infinitely long input sequence, \[L^{\infty}_{s_0}(I)=s_1 \ldots  \in(\Delta_N)^{\infty}\] is an infinitely long state sequence and \[(HL)^{\infty}_{s_0}(I)=o_1 \ldots \in(\Delta_N)^{\infty}\] is an infinitely long output sequence. In the formula (\ref{equ:5}), for any $1\le k \le |I|$ we have \[s_k=Li_{k-1}s_{k-1}.\] In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le k \le |I|$ we have  \[o_k=Hs_k=HLi_{k-1}s_{k-1}.\] Then four existing kinds of observability of BCNs can be define as: 
+%And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 \begin{definition}
 The first kind of observability is that, \BCN\ is called observable, if for every initial state $s_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $s_0\neq {s'}_0\in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{cheng2009controllability}.
 \end{definition}
 
-Hence the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence. But we can only use the corresponding input sequence of a state to check whether this state is the initial state of the {\em BCN} or not.
+Hence the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence. But we can only use the corresponding input sequence of a state to check whether this state is the initial state of this {\em BCN} or not.
 \begin{definition}
-	The second kind of observability is that a \BCN\ is called observable if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{Zhao2010Input}.
+	The second kind of observability is that, a \BCN\ is called observable if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{Zhao2010Input}.
 \end{definition}
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states of the {\em BCN}, there exists an input sequence which can distinguish them. 
@@ -172,8 +175,8 @@ Then from the definitions of  four existing kinds of observability, we know that
 \end{itemize} 
 %, when we don't presuppose the initial state of {\em BCNs}
  
-We can not use the first one and second one to determine the initial state of \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
+We can not use the first one and second one to determine the initial state of some \BCNs\ which can be checked at most once. For example, in the first kind observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the initial state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
  
-In some biological systems, the initial states of them can be checked at most once, i.e., we have only one test case for them. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
+In some biological systems, the initial state of them can be checked at most once, i.e., we can only check the initial state of some biological systems (depicted by \BCNs) in real time. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}
 Finding the necessary and sufficient condition of determine the initial state of \BCNs\ in real time.
