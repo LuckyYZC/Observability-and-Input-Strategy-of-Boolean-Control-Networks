@@ -39,7 +39,7 @@ where
   \item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the possible states set after deduction.
 \end{itemize} 
  
- From the definition of deduction function, we have some equations for this function. By researching these equations, we can know the details of this function better.
+ From the definition of deduction function, we have some equations for this function. For better illustration, we use the \BCN\ mentione earlier as an example. By researching these equations, we can know the details of this function better.
 \begin{equation}
 \begin{split}
 \Ded\left(\emptyset,i,o\right)=\emptyset\\
@@ -107,6 +107,17 @@ When $k>0$, a set of states $S$ is $k$-step deterministic
 \end{definition}
 
 From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
+\begin{example}
+In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, the cardinality number of this set $|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|=3>1$, and for this set there exists $\delta_{4}^4$ such that 
+ \begin{itemize}
+ \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\varepsilon\right)|=|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|$;
+ \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^1\right)|=|\{\delta_{16}^1\}|=1$, and $\{\delta_{16}^1\}$ is $0$-step deterministic;
+ \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^2\right)|=|\{\delta_{16}^7\}|=1$, and $\{\delta_{16}^7\}$ is $0$-step deterministic;
+  \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^4\right)|=|\{\delta_{16}^14\}|=1$, and $\{\delta_{16}^14\}$ is $0$-step deterministic.
+ \end{itemize}
+ 
+Therefore the set of states $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic.
+\end{example}  
 
 What is more, if a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step''. However, we consider ``a set of possible states $S$ is $k$-step deterministic ($k$ has no specific value)'' as ``we can determine the state of a \BCN\ by this possible states set $S$ in finite steps'' in the rest of this paper.
 \subsection{Online observability}
@@ -119,15 +130,25 @@ if for every  $o_j$ in $\Delta_Q$ and $|\Ded\left(\Delta_N,\varepsilon, o_j\righ
 
 %The difference between the second definition and the first definition is that whether we observe the corresponding output of the initial state of \BCN\ at first. For better performance, we use the first definition of online observability.
 
-
+\begin{example}
+In the previously mentioned \BCN. We have:
+ \begin{itemize}
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)|=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\neq 0$, and it is $1$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)|=\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}\neq 0$, and it is $1$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)|=\{\delta_{16}^8,\delta_{16}^9,\delta_{16}^{10},\delta_{16}^{11}\}\neq 0$, and it is $2$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^4\right)|=\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15},\delta_{16}^{16}\}\neq 0$, and it is $2$-step deterministic.
+ \end{itemize}
+ 
+Therefore we have this \BCN\ satisfies the online observability.
+\end{example}  
 
 From the informal definition and formal definition of online observability, we can know that the necessary and sufficient condition of determine the initial state of \BCNs\ in real time is the online observability of \BCNs. With the online observability we can find the best way we like to determine the initial state of some biological systems which represented by \BCNs.
 
 \subsection{Online observability and existing observability}
 After defining online observability of \BCNs, we discuss the comparison of online observability with the four existing observability. In the existing second type of observability, we presuppose the initial state of a \BCN, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some of other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence the online observability implies the existing first type of observability, and then the online observability implies the second existing type of observability. In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states. However in online observability we can use different input sequences to distinguish any distinct states in different sets of state. Where these different sets of state are classified by their corresponding outputs. Therefore, we have the existing third type of observability implies the online observability of \BCNs, then the existing fourth type of observability implies the online observability too. The implication relationships graph between four existing observability and online observability is shown in Fig.\ref{fig:7}.
-\begin{example}
-For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. This \BCN\ satisfies the existing first, second, third observability, but it is not satisfy the existing fourth observability. Therefore, we have this \BCN\ satisfies the online observability from the implication relationship between the existing third observability and online observability.
-\end{example}   
+%\begin{example}
+%For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. This \BCN\ satisfies the existing first, second, third observability, but it is not satisfy the existing fourth observability. Therefore, we have this \BCN\ satisfies the online observability from the implication relationship between the existing third observability and online observability.
+%\end{example}   
 
 \begin{figure}[thpb]
       \centering

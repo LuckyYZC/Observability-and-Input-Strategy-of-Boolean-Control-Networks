@@ -160,7 +160,7 @@ The first type of observability is that, \BCN\ is called observable, if for ever
 
 Hence the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence. But we can only use the corresponding input sequence of a state to check whether it is the initial state of this {\em BCN} or not.
 \begin{example}
-For example, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}.  We have for every initial state of this \BCN\ can be determined by an input sequence.  For instance,
+For example, in the previously mentioned \BCN. For every initial state of this \BCN\ can be determined by an input sequence.  For instance,
 \begin{itemize}
   \item the state $\delta_{16}^1$ can be determined by any input sequence which with the prefix $\delta_{4}^4$, $\delta_{4}^1 \delta_{4}^3$ and $\delta_{4}^1 \delta_{4}^4$, etc;
   \item the state $\delta_{16}^2$ can be determined by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^3$ and $\delta_{4}^4$, etc;
@@ -175,7 +175,7 @@ Therefore we have this \BCN\ satisfies the existing first observability.
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states of the  \BCN, there exists an input sequence which can distinguish them. 
 \begin{example}
-The \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}.  We have for every two distinct initial states of the \BCN, there exists an input sequence which can distinguish them.  For instance,
+In the previously mentioned \BCN. For every two distinct initial states of the \BCN, there exists an input sequence which can distinguish them.  For instance,
 \begin{itemize}
   \item the states $\delta_{16}^1$ and $\delta_{16}^2$ can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2 \delta_{4}^1$ and $\delta_{4}^2 \delta_{4}^2$, etc;
   \item the states $\delta_{16}^1$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^3$ and $\delta_{4}^4$, etc;
@@ -187,16 +187,12 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 	The third type of observability is that, a \BCN\ is called observable, if there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The third observability means that a \BCN\ is called observable if there is an input sequence that determines the initial state of the {\em BCN}.
+The third observability means that a \BCN\ is called observable if there is an input sequence that determines the initial state of the \BCN.
 
 \begin{example}
-The \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}.  We have for every two distinct initial states of the \BCN, there exists an input sequence which can distinguish them.  For instance,
-\begin{itemize}
-  \item the states $\delta_{16}^1$ and $\delta_{16}^2$ can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2 \delta_{4}^1$ and $\delta_{4}^2 \delta_{4}^2$, etc;
-  \item the states $\delta_{16}^1$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^3$ and $\delta_{4}^4$, etc;
-  \item the states $\delta_{16}^2$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2$and $\delta_{4}^4$, etc.
-\end{itemize} 
-Therefore we have this \BCN\ satisfies the existing second observability.
+In the previously mentioned \BCN. There is an input sequence that determines the initial state of this \BCN.  For instance, any input sequence which with the prefix $\delta_{4}^1\delta_{4}^4\delta_{4}^1$ can determine the initial state of it.
+
+Therefore we have this \BCN\ satisfies the existing third observability.
 \end{example}  
 \begin{definition}
 	The fourth type of observability is that, \BCN\ is called observable, if for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, for any input sequence $I\in(\Delta_M)^{\infty}$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(I)\neq (HL)^{\infty}_{{s'}_0}(I)$ \cite{Fornasini2013Observability}.
@@ -204,14 +200,11 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence can determine the initial state of the \BCN.
 \begin{example}
-The \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}.  We have for every two distinct initial states of the \BCN, there exists an input sequence which can distinguish them.  For instance,
-\begin{itemize}
-  \item the states $\delta_{16}^1$ and $\delta_{16}^2$ can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2 \delta_{4}^1$ and $\delta_{4}^2 \delta_{4}^2$, etc;
-  \item the states $\delta_{16}^1$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^3$ and $\delta_{4}^4$, etc;
-  \item the states $\delta_{16}^2$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2$and $\delta_{4}^4$, etc.
-\end{itemize} 
-Therefore we have this \BCN\ satisfies the existing second observability.
+In the previously mentioned \BCN. There is at least one sufficient long input sequence can not determine the initial state of this \BCN. For instance, the states $\delta_{16}^4$ and $\delta_{16}^5$  will convert into $\delta_{16}^{13}$ affected by $\delta_{4}^3$, therefore any input sequence which with the prefix $\delta_{4}^3$ can not determine the initial state of the \BCN.
+
+Therefore we have this \BCN\ satisfies the existing fourth observability.
 \end{example}  
+
 Then from the definitions of  four existing types of observability, we know that \cite{Zhang2016Observability}:
 \begin{itemize}
   \item the first one implies the second one;
