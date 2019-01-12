@@ -205,15 +205,23 @@ In the previously mentioned \BCN. There is at least one sufficient long input se
 Therefore we have this \BCN\ satisfies the existing fourth observability.
 \end{example}  
 
-Then from the definitions of  four existing types of observability, we know that \cite{Zhang2016Observability}:
+What is more, we know the implication relationships of four existing types of observability from the definitions of them. 
+\begin{proposition}
+The implication relationships of four existing types of observability.
 \begin{itemize}
-  \item the first one implies the second one;
-  \item the third one implies the second one and first one;
-  \item the fourth one implies the third one, second one and first one.
+\item The first observability implies the second observability, but the second observability does not imply the first observability.\\
+\item The third observability implies the second observability, but the second observability does not imply the third observability.\\
+\item The third observability implies the first observability, but the first observability does not imply the third observability.\\
+\item The fourth observability implies the third observability, but the third observability does not imply the fourth observability.\\
+\item The fourth observability implies the second observability, but the second observability does not imply the fourth observability.\\
+\item The fourth observability implies the first observability, but the first observability does not imply the fourth observability. \\
 \end{itemize} 
+\end{proposition}
+
+Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
 %, when we don't presuppose the initial state of {\em BCNs}
  
-We can not use the first one and second one to determine the initial state of some \BCNs\ which can be checked at most once. For example, in the first type observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the initial state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
+When we want to determine the initial state of some \BCNs\ by four existing types of observability. The first and second observability can not help us to determine the initial state of some \BCNs\ which can be checked at most once. For example, in the first type observability we need to assume the initial state of a \BCN, and then check it by corresponding input sequence of this state. If the initial state we assume is correct, then we can determine the initial state. But if the the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state) of this \BCN\ untill we can determine the initial state of it. However we can use the third existing observability and fourth existing observability to determine the initial state of \BCNs\ through one test case. And we need not to presuppose the initial state of \BCNs\ when we use the third observability and fourth observability. But the requirements for \BCNs\ are very harsh when we use the third observability and fourth observability.
  
 In some biological systems, the initial state of them can be checked at most once, i.e., we can only check the initial state of some biological systems (depicted by \BCNs) in real time. Therefore, we can not use the first observability and second observability to determine the initial states of them in real time. And in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems when they can not satify the requirements of the third observability and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
  \subsubsection*{Problem}

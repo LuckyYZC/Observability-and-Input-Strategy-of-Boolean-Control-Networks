@@ -100,13 +100,13 @@ When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardina
 When $k>0$, a set of states $S$ is $k$-step deterministic
  if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|, $ and 
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k$.
  \end{itemize}
  %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
 
-From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
+From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. The formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ ensures that no different states will become the same state after being affected by the input $i_p$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
 \begin{example}
 In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, the cardinality number of this set $|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|=3>1$, and for this set there exists $\delta_{4}^4$ such that 
  \begin{itemize}
@@ -119,7 +119,24 @@ In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{
 Therefore the set of states $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic.
 \end{example}  
 
-What is more, if a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step''. However, we consider ``a set of possible states $S$ is $k$-step deterministic ($k$ has no specific value)'' as ``we can determine the state of a \BCN\ by this possible states set $S$ in finite steps'' in the rest of this paper.
+What is more, we have a theorem for the $k$-step determinability.
+\begin{theorem}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{theorem}
+
+\begin{proof}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{proof}
+
+Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step.'' However, we consider ``a set of possible states $S$ is $k$-step deterministic ($k$ has no specific value)'' as ``we can determine the state of a \BCN\ by this possible states set $S$ in finite steps'' in the rest of this paper. Therefore we have another theorem for the $k$-step determinability.
+
+\begin{theorem}
+ If a set of states $S_i$ is not $k$-step deterministic and $S_i\subseteq S_j$, then $S_j$ is not $k$-step deterministic. But if a set of states $S_j$ is $k$-step deterministic and $S_i\subseteq S_j$, then $S_i$ is $k$-step deterministic
+\end{theorem}
+
+\begin{proof}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{proof}
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
 \begin{definition}[Online Observability of  BCNs]
@@ -142,10 +159,34 @@ In the previously mentioned \BCN. We have:
 Therefore we have this \BCN\ satisfies the online observability.
 \end{example}  
 
-From the informal definition and formal definition of online observability, we can know that the necessary and sufficient condition of determine the initial state of \BCNs\ in real time is the online observability of \BCNs. With the online observability we can find the best way we like to determine the initial state of some biological systems which represented by \BCNs.
+From the informal definition and formal definition of online observability, we have a theorem for it. 
+\begin{theorem}
+The necessary and sufficient condition of determine the initial state of \BCNs\ in real time is the online observability of \BCNs. 
+\end{theorem}
+\begin{proof}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{proof}
+%With the online observability we can find the best way we like to determine the initial state of \BCNs.
 
 \subsection{Online observability and existing observability}
-After defining online observability of \BCNs, we discuss the comparison of online observability with the four existing observability. In the existing second type of observability, we presuppose the initial state of a \BCN, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some of other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence the online observability implies the existing first type of observability, and then the online observability implies the second existing type of observability. In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states. However in online observability we can use different input sequences to distinguish any distinct states in different sets of state. Where these different sets of state are classified by their corresponding outputs. Therefore, we have the existing third type of observability implies the online observability of \BCNs, then the existing fourth type of observability implies the online observability too. The implication relationships graph between four existing observability and online observability is shown in Fig.\ref{fig:7}.
+After defining online observability of \BCNs, we discuss the comparison of online observability with the four existing observability. In the existing second type of observability, we presuppose the initial state of a \BCN, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence we have a theorem for online observability and the existing first and second observability.
+\begin{theorem}
+If a \BCN\ satisfies the online obervability then it satisfies the existing first and second observability. If a \BCN\ satisfies the existing first or second observability we can not deduce that it satisfies the online obervability.
+\end{theorem}
+\begin{proof}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{proof}
+
+In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states. However in online observability we can use different input sequences to distinguish any distinct states in different sets of state. 
+%Where these different sets of state are classified by their corresponding outputs. Therefore, we have the existing third type of observability implies the online observability of \BCNs, then the existing fourth type of observability implies the online observability too. 
+\begin{theorem}
+If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
+\end{theorem}
+\begin{proof}
+ If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+\end{proof}
+
+The implication relationships graph between four existing observability and online observability is shown in Fig.\ref{fig:7}.
 %\begin{example}
 %For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. This \BCN\ satisfies the existing first, second, third observability, but it is not satisfy the existing fourth observability. Therefore, we have this \BCN\ satisfies the online observability from the implication relationship between the existing third observability and online observability.
 %\end{example}   
