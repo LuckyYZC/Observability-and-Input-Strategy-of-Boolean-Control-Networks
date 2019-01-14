@@ -92,7 +92,7 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 
 As the deduction function can only describe the deduction process of a \BCN\'s initial state at every time step. But we need more than one time step to determine the initial state in general, thus we propose the $k$-step determinability to describe the whole process of determining a \BCN\'s initial state.
 \subsection{$k$-step determinability}
-After we difined the deduction function, we can present the definition of $k$-step determinability of the states set of \BCNs, where the range of $k$ is the set of natural numbers. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
+After we difined the deduction function, we can present the definition of $k$-step determinability of the states set of \BCNs, where the $k\in \mathbb{N}$. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
 
 When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardinal number of this states set $|S|=1$. 
@@ -106,7 +106,7 @@ When $k>0$, a set of states $S$ is $k$-step deterministic
  %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
 
-From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without choosing any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. The formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ ensures that no different states will become the same state after being affected by the input $i_p$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
+From the definition of {\em$k$}-stepdeterminability we know that ``$k=0$'' means that we can determine the state without deciding any input and observing output. Because if we know the cardinality number of possible states set is $1$, then we can know the state of \BCNs. Therefore, we can only discuss the case of $k=0$ when $|S|=1$. If $k>0$, we have $|S|>1$. The formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ ensures that no different states will become the same state after being affected by the input $i_p$. Furthermore, the definition of $k$ steps deterministic is defined recursively, and it need to use the definition of $k$ ($k=0$) steps. 
 \begin{example}
 In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, the cardinality number of this set $|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|=3>1$, and for this set there exists $\delta_{4}^4$ such that 
  \begin{itemize}
@@ -115,27 +115,97 @@ In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{
  \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^2\right)|=|\{\delta_{16}^7\}|=1$, and $\{\delta_{16}^7\}$ is $0$-step deterministic;
   \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^4\right)|=|\{\delta_{16}^14\}|=1$, and $\{\delta_{16}^14\}$ is $0$-step deterministic.
  \end{itemize}
- 
-Therefore the set of states $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic.
+ Therefore the set of states $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic.
 \end{example}  
 
-What is more, we have a theorem for the $k$-step determinability.
+What is more, we have some theorems for the $k$-step determinability.
 \begin{theorem}
- If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+ If a set of states $S$ is $k_1$-step deterministic and $k_1< k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+ \label{theo:1}
 \end{theorem}
 
 \begin{proof}
- If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+ A set of states $S$ is $k_1$-step deterministic and the $k_1< k_2$. 
+ 
+ If $k_1=0$ then $|S|=1$. Therefore for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|=1$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}=0=k_1< k_2$.
+ \end{itemize}
+ Therefore the set of states $S$ is $k_2$-step deterministic.
+ 
+ If $k_1>0$, then $|S|>1$. Therefore for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k_1< k_2$.
+ \end{itemize}
+ Therefore the set of states $S$ is $k_2$-step deterministic.
+
+ But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$. What is more, for this set of states $S$ there is no such $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k_2<k_1$.
+ \end{itemize}
+ Therefore the set of states $S$ is not $k_2$-step deterministic.
 \end{proof}
 
-Therefore you can consider the ``$S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps. And we finish this determination process by deciding input sequence and observing out sequence at each time step.'' However, we consider ``a set of possible states $S$ is $k$-step deterministic ($k$ has no specific value)'' as ``we can determine the state of a \BCN\ by this possible states set $S$ in finite steps'' in the rest of this paper. Therefore we have another theorem for the $k$-step determinability.
+We can consider the ``A $S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps, and we finish this determination process by deciding input sequence and observing out sequence at each time step.'' Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
+\begin{definition}[$k_{inf}(S)$] 
+If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic but $S$ is not $(k_{i}-1)$-step deterministic, then $k_{i}$ is the $k_{inf}(S)$.
+\end{definition}
+
+In {\em Section \ref{sec:app}}, we will present the details on selecting the shortest path when we use the online observability to determine the initial state of a \BCN. 
+
+But since we don't need to find the the specific value of $k$ when we define the online observability by $k$-step determinability, we defined the concept of $K$-Step Determinability for convenience.
+\begin{definition}[$K$-Step Determinability] 
+If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic, then it is $K$-step deterministic.
+\end{definition}
+
+
+We can consider ``A set of possible states $S$ is $K$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in finite steps''. Therefore we have some other theorems for the $K$-step determinability.
 
 \begin{theorem}
- If a set of states $S_i$ is not $k$-step deterministic and $S_i\subseteq S_j$, then $S_j$ is not $k$-step deterministic. But if a set of states $S_j$ is $k$-step deterministic and $S_i\subseteq S_j$, then $S_i$ is $k$-step deterministic
+ If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
 \end{theorem}
 
+We prove the {\em Theorem \ref{theo:3}} at first.
+\begin{theorem}
+ If a set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, then $S_i$ is $k$-step deterministic, where $|S_j|>1$.
+ \label{theo:3}
+\end{theorem}
 \begin{proof}
- If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+A set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, where $|S_j|>1$. Therefore we have $k>0$ in this precondition.
+
+If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S_j,i_p,\varepsilon\right)|=|S_j|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_j,i_p,o_j\right)|=1\neq 0$ and $\Ded\left(S_j,i_p,o_j\right)$ is $0$-step deterministic.
+ \end{itemize}
+ Then we have for the set of states $S_i$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)|=1\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)$ is $0$-step deterministic.
+ \end{itemize} And then $S_i$ is $k$-step deterministic, we have the {\em Theorem \ref{theo:3}} is right when $k=1$.
+ 
+ If for $k=1,\ldots k=p$ the {\em Theorem \ref{theo:3}} is right. When $k=p+1$, we have  for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S_j,i_p,\varepsilon\right)|=|S_j|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_j,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<(p+1)$.
+ \end{itemize}
+ Then we have for the set of states $S_i$ there exists $i_p$ in $\Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)| \le |\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)\subset \Ded\left(S_j,i_p,o_j\right)$ is  $k'$-step deterministic with  ${k'}<(p+1)$.
+ \end{itemize}  And then $S_i$ is $k$-step deterministic. Therefore we have if for $k=1,\ldots k=p$ the {\em Theorem \ref{theo:3}} is right, then the {\em Theorem \ref{theo:3}} is right when $k=p+1$. What is more, we have the {\em Theorem \ref{theo:3}} is right when $k=1$, thus the {\em Theorem \ref{theo:3}} is right for any $k\in\mathbb{N}$
+\end{proof}
+\begin{proof}
+A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic, then it is $K$-step deterministic. By the {\em Theorem \ref{theo:3}}, we have $S_i$ is $k_i$-step deterministic too. And then we have the $S_i$ is $K$-step deterministic as well.
+\end{proof}
+\begin{theorem}
+ If a set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. 
+\end{theorem}
+\begin{proof}
+A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic, then it is $K$-step deterministic. By the {\em Theorem \ref{theo:3}}, we have $S_i$ is $k_i$-step deterministic too. And then we have $S_i$ is $K_i$-step deterministic.
 \end{proof}
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
