@@ -99,16 +99,21 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 \label{equ:12}
 \end{equation}
 
- Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the current state any more. Therefore we have the theorem for this rule.
+ Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the current state any more. We give a lemma to illustrate this rule.
 \begin{lemma}
  In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. If we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$, then we have 
  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
- \label{theo:1}
+ \label{lemm:1}
 \end{lemma}
 
 \begin{proof}
- A set of states $S$ is $k_1$-step deterministic and the $k_1< k_2$. 
- 
+In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. And we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$. We assume that $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$, then we have there exist $s_i(t), s_j(t)\in S$, $s_i(t)\neq s_j(t)$ that 
+\[s_i(t+1)=L\ltimes i_p\ltimes s_i(t)=L\ltimes i_p\ltimes s_j(t)=s_j(t+1).\]
+And then for any $p\in \mathbb{N}^*$ and fore any input sequence we chose, we have 
+\[s_i(t+p)=s_j(t+p);\]
+\[o_i(t+p)= H\ltimes{s_i(t+p)}= H\ltimes{s_j(t+p)}=o_j(t+p).\]
+ Therefore we can not distinguish between $s_i(t)$ and $s_j(t)$ any more.
+ If the current state is the $s_i(t)$ or $s_j(t)$, we can not determine it. But we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$, then the presumption $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$ is wrong. So we have $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
 \end{proof}
  
 % If the cardinality number of the possible states set of one \BCN\ decreased before observing its output the derivation process, then we can not deduce its initial state any more i.e., we can not determine the initial state of this \BCN\ any more. Therefore, the derivation function helps the online obervability satisfy the {\em real-time} property. 
@@ -144,7 +149,7 @@ In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{
 What is more, we have some theorems for the $k$-step determinability.
 \begin{lemma}
  If a set of states $S$ is $k_1$-step deterministic and $k_1< k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
- \label{theo:2}
+  \label{lemm:2}
 \end{lemma}
 
 \begin{proof}
@@ -170,6 +175,8 @@ What is more, we have some theorems for the $k$-step determinability.
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k_2<k_1$.
  \end{itemize}
  Therefore the set of states $S$ is not $k_2$-step deterministic.
+ 
+ So we have the {\em Lemma \ref{lemm:2}} is right.
 \end{proof}
 
 We can consider the ``A $S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps, and we finish this determination process by deciding input sequence and observing out sequence at each time step.'' Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
@@ -183,19 +190,19 @@ But since we don't need to find the the specific value of $k$ when we define the
 \begin{definition}[$K$-Step Determinability] 
 If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic, then it is $K$-step deterministic.
 \end{definition}
-
+%{\em Theorem \ref{theo:4}}
 
 We can consider ``A set of possible states $S$ is $K$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in finite steps''. Therefore we have some other theorems for the $K$-step determinability.
 
 \begin{lemma}
  If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
-  \label{theo:3}
+\label{lemm:3}
 \end{lemma}
 
-We prove the {\em Theorem \ref{theo:4}} at first.
+We prove the {\em Lemma \ref{lemm:4}} at first.
 \begin{lemma}
  If a set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, then $S_i$ is $k$-step deterministic, where $|S_j|>1$.
- \label{theo:4}
+  \label{lemm:4}
 \end{lemma}
 \begin{proof}
 A set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, where $|S_j|>1$. Therefore we have $k>0$ in this precondition.
@@ -209,9 +216,9 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
  \begin{itemize}
  \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)|=1\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)$ is $0$-step deterministic.
- \end{itemize} And then $S_i$ is $k$-step deterministic, we have the {\em Theorem \ref{theo:3}} is right when $k=1$.
+ \end{itemize} And then $S_i$ is $k$-step deterministic, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$.
  
- If for $k=1,\ldots k=p$ the {\em Theorem \ref{theo:3}} is right. When $k=p+1$, we have  for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ such that
+ If for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right. When $k=p+1$, we have  for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S_j,i_p,\varepsilon\right)|=|S_j|$, and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_j,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<(p+1)$.
@@ -220,14 +227,15 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
  \begin{itemize}
  \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)| \le |\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)\subset \Ded\left(S_j,i_p,o_j\right)$ is  $k'$-step deterministic with  ${k'}<(p+1)$.
- \end{itemize}  And then $S_i$ is $k$-step deterministic. Therefore we have if for $k=1,\ldots k=p$ the {\em Theorem \ref{theo:3}} is right, then the {\em Theorem \ref{theo:3}} is right when $k=p+1$. What is more, we have the {\em Theorem \ref{theo:3}} is right when $k=1$, thus the {\em Theorem \ref{theo:3}} is right for any $k\in\mathbb{N}$
+ \end{itemize}  And then $S_i$ is $k$-step deterministic. Therefore we have if for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right, then the {\em Lemma \ref{lemm:4}} is right when $k=p+1$. What is more, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$, thus the {\em Lemma \ref{lemm:4}} is right for any $k\in\mathbb{N}$
 \end{proof}
-\begin{proof}A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic. By the {\em Theorem \ref{theo:3}}, we have $S_i$ is $k_i$-step deterministic too. And then we have the $S_i$ is $K$-step deterministic as well.
+\begin{proof}A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic. By the {\em Lemma \ref{lemm:4}}, we have $S_i$ is $k_i$-step deterministic too. And then we have the $S_i$ is $K$-step deterministic as well.
 \end{proof}
 
-With the {\em Theorem \ref{theo:3}}, we would have its equivalent proposition is right as well.
+With the {\em Lemma \ref{lemm:3}}, we would have its equivalent proposition is right as well.
 \begin{lemma}
  If a set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. 
+  \label{lemm:5}
 \end{lemma}
 \begin{proof}
 A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. If the set of states $S_j$ is $K$-step deterministic we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have $S_j$ is not $K$-step deterministic.
