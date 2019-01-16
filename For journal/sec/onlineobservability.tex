@@ -100,11 +100,11 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 \end{equation}
 
  Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the current state any more. Therefore we have the theorem for this rule.
-\begin{theorem}
+\begin{lemma}
  In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. If we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$, then we have 
  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
  \label{theo:1}
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
  A set of states $S$ is $k_1$-step deterministic and the $k_1< k_2$. 
@@ -113,7 +113,7 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
  
 % If the cardinality number of the possible states set of one \BCN\ decreased before observing its output the derivation process, then we can not deduce its initial state any more i.e., we can not determine the initial state of this \BCN\ any more. Therefore, the derivation function helps the online obervability satisfy the {\em real-time} property. 
 
-As the derivation function can only describe the derivation process of a \BCN\'s initial state at every time step. But we need more than one time step to determine the initial state in general, thus we propose the $k$-step determinability to describe the whole process of determining a \BCN\'s initial state.
+As the derivation function can only describe the derivation process of a \BCN's initial state at every time step. But we need more than one time step to determine the initial state in general, thus we propose the $k$-step determinability to describe the whole process of determining a \BCN's initial state.
 \subsection{$k$-step determinability}
 After we difined the derivation function, we can present the definition of $k$-step determinability of the states set of \BCNs, where the $k\in \mathbb{N}$. It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
@@ -142,10 +142,10 @@ In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{
 \end{example}  
 
 What is more, we have some theorems for the $k$-step determinability.
-\begin{theorem}
+\begin{lemma}
  If a set of states $S$ is $k_1$-step deterministic and $k_1< k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
  \label{theo:2}
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
  A set of states $S$ is $k_1$-step deterministic and the $k_1< k_2$. 
@@ -187,16 +187,16 @@ If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is 
 
 We can consider ``A set of possible states $S$ is $K$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in finite steps''. Therefore we have some other theorems for the $K$-step determinability.
 
-\begin{theorem}
+\begin{lemma}
  If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
   \label{theo:3}
-\end{theorem}
+\end{lemma}
 
 We prove the {\em Theorem \ref{theo:4}} at first.
-\begin{theorem}
+\begin{lemma}
  If a set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, then $S_i$ is $k$-step deterministic, where $|S_j|>1$.
  \label{theo:4}
-\end{theorem}
+\end{lemma}
 \begin{proof}
 A set of states $S_j$ is $k$-step deterministic and $S_i\subset S_j$, where $|S_j|>1$. Therefore we have $k>0$ in this precondition.
 
@@ -226,9 +226,9 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
 \end{proof}
 
 With the {\em Theorem \ref{theo:3}}, we would have its equivalent proposition is right as well.
-\begin{theorem}
+\begin{lemma}
  If a set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. 
-\end{theorem}
+\end{lemma}
 \begin{proof}
 A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. If the set of states $S_j$ is $K$-step deterministic we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have $S_j$ is not $K$-step deterministic.
 \end{proof}
