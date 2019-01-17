@@ -126,10 +126,10 @@ After we difined the derivation function, we can present the definition of $k$-s
 When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic if the cardinal number of this states set $|S|=1$. 
 
 When $k>0$, a set of states $S$ is $k$-step deterministic
- if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
+ if the cardinal number of this states set $|S|>1$, and for this set of states $S$ there exists $i_p \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k$.
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<k$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
  \end{itemize}
  %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
@@ -147,6 +147,32 @@ In the previously mentioned \BCN. For the set of state $\{\delta_{16}^1,\delta_{
 \end{example}  
 
 What is more, we have some theorems for the $k$-step determinability.
+\begin{lemma}
+ In the time step $t$ and $S$ is the set of current possible states we derived. If $S$ is $k$-step deterministic, then we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t+k$.
+  \label{lemm:6}
+\end{lemma}
+\begin{proof} If $k=0$, then we have $|S|=1$ that we can determine the current state $s(t)$ of this \BCN\ in time step $t$. Therefore the {\em Lemma \ref{lemm:6}} is right. If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right. When $k=p+1$ we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<k$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
+ \end{itemize}
+ Therefore we can determine the state $s(t+1)$ of this \BCN\ for every $s(t+1)\in \Ded\left(S,i_p,\varepsilon\right)$ in time step $t+k$. What is more, $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ then for every $s(t+1)\in \Ded\left(S,i_p,\varepsilon\right)$ we can find the corresponding one $s(t)$ for it. So we can determine the state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t+k$. And then we have if for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right then the {\em Lemma \ref{lemm:6}} is right too when $k=p+1$. Moreover, the lemma is right when $k=0$, so we have for any $k\in \mathbb{N}$ the {\em Lemma \ref{lemm:6}} is right.
+\end{proof}
+\begin{lemma}
+ In the time step $t$ and $S$ is the set of current possible states we derived. If we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t+k$, then $S$ is $k$-step deterministic.
+  \label{lemm:7}
+\end{lemma}
+
+\begin{proof}
+In the time step $t$ and $S$ is the set of current possible states we derived. 
+When $k=0$ and we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t$, then we have $|S|=1$, $S$ is $0$-step deterministic. Therefore, we have the {\em Lemma \ref{lemm:7}} is right when $k=0$. If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right. When $k=p+1$, from the {\em Lemma \ref{lemm:1}} we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<(p+1)$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
+ \end{itemize} Therefore, we have $S$ is $p+1$-step deterministic. And then have if for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right then the {\em Lemma \ref{lemm:7}} is right too when $k=p+1$. Moreover, the lemma is right when $k=0$, so we have for any $k\in \mathbb{N}$ the {\em Lemma \ref{lemm:7}} is right.
+\end{proof}
+
+We can consider the ``A $S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps, and we finish this determination process by deciding input sequence and observing out sequence at each time step.'' Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
 \begin{lemma}
  If a set of states $S$ is $k_1$-step deterministic and $k_1< k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
   \label{lemm:2}
@@ -179,25 +205,18 @@ What is more, we have some theorems for the $k$-step determinability.
  So we have the {\em Lemma \ref{lemm:2}} is right.
 \end{proof}
 
-We can consider the ``A $S$ is $k$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in $k$ steps, and we finish this determination process by deciding input sequence and observing out sequence at each time step.'' Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
 \begin{definition}[$k_{inf}(S)$] 
 If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic but $S$ is not $(k_{i}-1)$-step deterministic, then $k_{i}$ is the $k_{inf}(S)$.
 \end{definition}
 
 In {\em Section \ref{sec:app}}, we will present the details on selecting the shortest path when we use the online observability to determine the initial state of a \BCN. 
 
-But since we don't need to find the the specific value of $k$ when we define the online observability by $k$-step determinability, we defined the concept of $K$-Step Determinability for convenience.
-\begin{definition}[$K$-Step Determinability] 
-If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic, then it is $K$-step deterministic.
-\end{definition}
+
 %{\em Theorem \ref{theo:4}}
 
 We can consider ``A set of possible states $S$ is $K$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in finite steps''. Therefore we have some other theorems for the $K$-step determinability.
 
-\begin{lemma}
- If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
-\label{lemm:3}
-\end{lemma}
+
 
 We prove the {\em Lemma \ref{lemm:4}} at first.
 \begin{lemma}
@@ -229,22 +248,17 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)| \le |\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)\subset \Ded\left(S_j,i_p,o_j\right)$ is  $k'$-step deterministic with  ${k'}<(p+1)$.
  \end{itemize}  And then $S_i$ is $k$-step deterministic. Therefore we have if for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right, then the {\em Lemma \ref{lemm:4}} is right when $k=p+1$. What is more, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$, thus the {\em Lemma \ref{lemm:4}} is right for any $k\in\mathbb{N}$
 \end{proof}
-\begin{proof}A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic. By the {\em Lemma \ref{lemm:4}}, we have $S_i$ is $k_i$-step deterministic too. And then we have the $S_i$ is $K$-step deterministic as well.
-\end{proof}
 
-With the {\em Lemma \ref{lemm:3}}, we would have its equivalent proposition is right as well.
-\begin{lemma}
- If a set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. 
-  \label{lemm:5}
-\end{lemma}
-\begin{proof}
-A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. If the set of states $S_j$ is $K$-step deterministic we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have $S_j$ is not $K$-step deterministic.
-\end{proof}
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
+Since we don't need to find the the specific value of $k$ when we define the online observability by $k$-step determinability, we defined the concept of $K$-Step Determinability for convenience.
+\begin{definition}[$K$-Step Determinability] 
+If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic, then it is $K$-step deterministic.
+\end{definition}
+
 \begin{definition}[Online Observability of  BCNs]
- A \BCN\ is called online observable,
-if for every  $o_j$ in $\Delta_Q$ and $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|\neq 0$ such that $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $k$-step deterministic.
+ A \BCN\ is online observable,
+if for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|\neq 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic.
 % We even can define the online observability simpler, if there exists $k \ge 0$ implies $\Delta_N$ is $k$ stepes deterministic, then this \BCN\ is online observable. 
 \end{definition}
 
@@ -264,13 +278,33 @@ Therefore we have this \BCN\ satisfies the online observability.
 
 From the informal definition and formal definition of online observability, we have a theorem for it. 
 \begin{theorem}
-The necessary and sufficient condition of determine the initial state of \BCNs\ in real time is the online observability of \BCNs. 
+The necessary and sufficient condition of determine the initial state $s_0$ of \BCNs\ for every $s_0\in \Delta_N$ in real time is the online observability of \BCNs. 
+\label{theo:1}
 \end{theorem}
 \begin{proof}
- If a set of states $S$ is $k_1$-step deterministic and $k_1\leq k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1\geq k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
+ A \BCN\ is online observable,
+then for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|\neq 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic. From the {\em Lemma \ref{lemm:6}} and the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic, then we have there exists a $k_i$ such that we can determine the $s_o$ in time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$.  What is more for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|\neq 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic, then we have there exists a $k_i$ such that we can determine the $s_o$ in time step $k_i$ for every $s_0\in \Delta_N$. Therefore we can determine the initial state $s_0$ of \BCNs\ for every $s_0\in \Delta_N$ in real time.
+
+If we can determine the initial state $s_0$ of \BCNs\ for every $s_0\in \Delta_N$ in real time. From the {\em Lemma \ref{lemm:7}}, and for any set of initial possible states $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ we derived, there exists a $k_i$ such that we can determine the $s_o$ in time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$, we have  $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $k_i$-step deterministic and then $K$-step deterministic, therefore this \BCN\ is online observable.
+
+So we have the {\em Theorem \ref{theo:1}} is right.
 \end{proof}
 %With the online observability we can find the best way we like to determine the initial state of \BCNs.
+\begin{lemma}
+ If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
+\label{lemm:3}
+\end{lemma}
+\begin{proof}A set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$. Then there exists a $k_i\in \mathbb{N}$ such that $S_j$ is $k_i$-step deterministic. By the {\em Lemma \ref{lemm:4}}, we have $S_i$ is $k_i$-step deterministic too. And then we have the $S_i$ is $K$-step deterministic as well.
+\end{proof}
 
+With the {\em Lemma \ref{lemm:3}}, we would have its equivalent proposition is right as well.
+\begin{lemma}
+ If a set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. 
+  \label{lemm:5}
+\end{lemma}
+\begin{proof}
+A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. If the set of states $S_j$ is $K$-step deterministic we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have $S_j$ is not $K$-step deterministic.
+\end{proof}
 \subsection{Online observability and existing observability}
 After defining online observability of \BCNs, we discuss the comparison of online observability with the four existing observability. In the existing second type of observability, we presuppose the initial state of a \BCN, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence we have a theorem for online observability and the existing first and second observability.
 \begin{theorem}
