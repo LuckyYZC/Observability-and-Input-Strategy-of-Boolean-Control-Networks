@@ -5,19 +5,19 @@
 In this section we propose the online observability, and introduced its related information in detail. We give the informal definition of it at first. 
 
 %\begin{definition}
-	A \BCN\ has online observability, iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$. In the online observability we determine the state of \BCN\ by dynamically observing its output sequence and then deriving and deciding the input sequence at every time step. And this process can be accomplished in finite time steps.
+	A \BCN\ has online observability, iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$. %In the online observability we determine the state of \BCN\ by observing its output sequence and then deriving and deciding the input sequence at every time step. What is more, this process can be accomplished in finite time steps.
 %\end{definition}  without presupposing the initial state of \BCN
 
-The reason why we called this type of observability online observability is that:
+The reason why we called this type of observability online observability is as follows.
 \begin{itemize}
-  \item First in this type of observability, we determine the initial state of \BCNs\ in real time. In other words, we can use one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
-  \item  Secondly in online observability, we use the outputs we observe to derive and decide the input sequence at every time step. By this way, we can make full use of the outputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
+  \item Firstly, in this type of observability, we determine the initial state of \BCNs\ in real time. In other words, we can use one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
+  \item  Secondly, in online observability, we use the outputs we observe to derive and decide the input sequence at every time step. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
 \end{itemize} 
 
-If we can determine the initial state of a biological system (depicted by \BCN) in real time, then we need only one test case to determine the initial state of it. Therefore we need the {\em real-time} property to help us avoid repeating biological experiments. And the {\em interactivity} would help us to find the necessary condition of determine the initial state of \BCNs\ in real time. With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
+If we can determine the initial state of a biological system (depicted by \BCN) in real time, then we need only one test case to determine the initial state of it. Therefore we need the {\em real-time} property to help us avoid repeating biological experiments and make the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
-In order to make online observability satisfy real-time property and interactivity. In the left of this section, firstly we present the definition of derivation function. Secondly we present the definition of $k$-step determinability. We take them as the preparations for defining the online observability. Finally, we give the formal definition of the online observability of \BCNs. 
+In order to make online observability satisfy real-time property and interactivity. In the left of this section, we present the definition of derivation function ar first. Secondly we present the definition of $k$-step determinability. We take them as the preparations for defining the online observability. Thirdly, we give the formal definition of the online observability of \BCNs. Finally, we compare the online observability with four existing observability.
 \subsection{Derivation function}
 %Different from four existing observabilities, t
 The observability we propose can determine the initial state online.
