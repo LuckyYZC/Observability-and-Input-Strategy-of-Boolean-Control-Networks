@@ -2,7 +2,7 @@
 % !TEX root = ../root.tex
 \section{The online observability of \BCNs}
 \label{sec:online}
-In this section we propose the online observability, and introduced its related information in detail. We give the informal definition of it at first. 
+In this section we propose the online observability, and introduce its related information in detail. We give the informal definition of it at first. 
 
 %\begin{definition}
 	A \BCN\ has online observability, iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$. %In the online observability we determine the state of \BCN\ by observing its output sequence and then deriving and deciding the input sequence at every time step. What is more, this process can be accomplished in finite time steps.
@@ -17,18 +17,19 @@ The reason why we called this type of observability online observability is as f
 If we can determine the initial state of a biological system (depicted by \BCN) in real time, then we need only one test case to determine the initial state of it. Therefore we need the {\em real-time} property to help us avoid repeating biological experiments and make the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
-In order to make online observability satisfy real-time property and interactivity. In the left of this section, we present the definition of derivation function ar first. Secondly we present the definition of $k$-step determinability. We take them as the preparations for defining the online observability. Thirdly, we give the formal definition of the online observability of \BCNs. Finally, we compare the online observability with four existing observability.
-\subsection{Derivation function}
-%Different from four existing observabilities, t
 The observability we propose can determine the initial state online.
  %Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. 
- In the time setp $k$, we observe the output of \BCNs\ at first. Through this we can infer the possible values of state-nodes and denote them by possible states set $S_k$. %Then as we can know the possible states set, 
- At the next step, we need to decide the input $i_k$ which satisfies that % will make sure any different possible states 
-$s_i, s_j$ 
- will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. After deciding input, we can observe the new output, and then we can infer the new possible states set. The cardinal number of possible states set does not change or decrease in this process. We repeat the above process, if the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. And the reason why the cardinal number of the possible states set would decrease will be shown in equation (\ref{equ:10}) and (\ref{equ:11}). 
+ In the process of determining the initial state of \BCNs, at every time setp $k$, we observe the output of \BCNs. Through the output we can infer the possible values of state-nodes and denote them by possible states set $S_k$. %Then as we can know the possible states set, 
+With the set of possible states we can derive the set of possible inputs $I_k$ , for every $i\in I_k$ we have that $s_i, s_j$ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$ shown in equation (\ref{equ:12}) . And then, we can decide the input by choosing it from the $S_k$ that this input will help us determine the initial state in real time. The cardinal number $|S_k|$ of possible states set does not change or decrease in this process. The reason why the cardinal number of the possible states set would decrease will be shown in equation (\ref{equ:9}) and (\ref{equ:10}). We repeat the above process, if the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. 
+
+ In the left of this section, firstly we define derivation function to describe the derivation process of input at every time step. Secondly we present the definition of $k$-step determinability to help us decide input. Thirdly, we give the formal definition of the online observability of \BCNs. Finally, we compare the online observability with four existing observability.
+\subsection{Derivation function}
+%Different from four existing observabilities, t
+
  
-To better describe the derivation process of a \BCN\'s initial state at every time step we mentioned above, we give a derivation function for it. The definition of this function is as follows.
-\begin{definition}[Derivation Function] The derivation function can be defined as $\Ded\left(S, i, o\right)$. Using this function we can get a states set $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$. Therefore, based on derivation process mentioned before, we have that there exists the corresponding $s'\in S$ of $s$ such that 
+ % After deciding input, we can observe the new output, and then we can infer the new possible states set.
+To better describe how to derive the set of possible states $S_k$ and the set of possible inputs $I_k$ at every time step, we propose the derivation function. The definition of this function is as follows.
+\begin{definition}[Derivation Function] The derivation function can be defined as $\Ded\left(S, i, o\right)$. Based on derivation process mentioned before, we have that there exists the corresponding $s'\in S$ of $s$ such that 
 %\[s=L\ltimes i\ltimes s'\ when\ i\neq \varepsilon, \] 
 
 \[s=\left\{
@@ -50,7 +51,7 @@ where
   \item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the possible states set after derivation.
 \end{itemize} 
  
- From the definition of derivation function, we have some equations for this function. For better illustration, we use the \BCN\ mentione earlier as an example. By researching these equations, we can know the details of this function better.
+ Using this function we can get a states set $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$. From the definition of derivation function, we have some equations for this function. For better illustration, we use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example. By researching these equations, we can know the details of this function better.
 \begin{equation}
 \begin{split}
 \Ded\left(\emptyset,i,o\right)=\emptyset\\
@@ -67,7 +68,7 @@ Equation (\ref{equ:7}) represents that if the possible states set is an empty se
 \label{equ:8}
 \end{equation}
 
-For any possible states set $S$ and we neither input anything and nor observe the output. In this case we can only deduce that the possible states set is $S$ shown in equation (\ref{equ:8}). It means that before inputing and observing the output of \BCN\ we can not know more information about this \BCN\ than we used to knew.
+ In equation (\ref{equ:8}), we have that for any possible states set $S$ and we neither input anything nor observe the output. In this case we can only deduce that the possible states set is $S$. It means that before inputing and observing the output of \BCN\ we can not know more information about this \BCN\ than what I knew before.
 \begin{equation}
 \begin{split}
 \Ded\left(\Delta_N,\varepsilon,\delta_4^1\right)=&\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\\
@@ -75,7 +76,7 @@ For any possible states set $S$ and we neither input anything and nor observe th
 \label{equ:9}
 \end{equation}
  
- Using the example mentioned before (\ref{equ:4}), when the possible states set $S=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide input. In this case we can deduce that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$ shown in equation (\ref{equ:9}).
+In equation (\ref{equ:9}). When the possible states set $S=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide input. In this case we can deduce that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states at every time step. So we have that the cardinal number of the possible states set may decrease after we observing the output of \BCN. As the cardinal number of the possible states set decreases, we can further determine the range of values for the initial state. Therefore, the derivation function helps the online obervability satisfy the {\em interactivity}.
 \begin{equation}
 \begin{split}
 \Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\varepsilon\right)=&\{\delta_{16}^{10},\delta_{16}^4,\delta_{16}^{11}\}\\
@@ -83,15 +84,8 @@ For any possible states set $S$ and we neither input anything and nor observe th
 \label{equ:10}
 \end{equation}
 
-And then, if the possible states set $S=\{\delta_{16}^1$, $\delta_{16}^2$, $\delta_{16}^3\}$ we input $\delta_4^1$. Before we observe the output of \BCN\ we can only deduce the possible states would be $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:10}). In other words, the cardinal number of the possible states set did not decrease before observing the output of this \BCN.
-\begin{equation}
-\begin{split}
-\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\delta_4^3\right)=&\{\delta_{16}^{10},\delta_{16}^{11}\}\\
-\end{split}
-\label{equ:11}
-\end{equation}
+And then, if the possible states set $S=\{\delta_{16}^1$, $\delta_{16}^2$, $\delta_{16}^3\}$ and we input $\delta_4^1$. Before we observe the output of \BCN\ we can only deduce the possible states would be $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:10}). In other words, the cardinal number of the possible states set did not decrease before observing the output of this \BCN. Therefore the input $\delta_4^1$ is a suitable input, this equation shows how to derive the set of possible inputs.
 
-But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:11}). Such that the cardinal number of the possible states set may decrease after observing the output of \BCN. Therefore, the derivation function helps the online obervability satisfy the {\em interactivity}.
 \begin{equation}
 \begin{split}
 \Ded\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^9,\delta_{16}^{13}\}
@@ -99,21 +93,27 @@ But if we observe that the output of \BCN\ is $\delta_4^3$, then we can deduce t
 \label{equ:12}
 \end{equation}
 
- Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the current state any more. We give a lemma to illustrate this rule.
+ Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can deduce that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the current state any more. Therefore, the derivation function helps the online obervability satisfy the {\em real-time} property. 
+ 
+ We give a lemma to to better illustrate this problem.
 \begin{lemma}
- In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. If we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time, then we have 
+ In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. If we can determine the current state $s(t)$ of this \BCN\ in real time for every $s(t)\in S$, then we have 
  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
  \label{lemm:1}
 \end{lemma}
 
 \begin{proof}
-In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. And we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$. We assume that $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$, then we have there exist $s_i(t), s_j(t)\in S$, $s_i(t)\neq s_j(t)$ that 
+In the time step $t$, $S$ is the set of current possible states we derived and $i(t)$ is the input we chose. And we can determine the current state $s(t)$ of this \BCN\ in real time for every $s(t)\in S$. 
+
+Firstly, we assume that $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$. Then we have there are two states $s_i(t), s_j(t)\in S$, $s_i(t)\neq s_j(t)$ such that 
 \[s_i(t+1)=L\ltimes i_p\ltimes s_i(t)=L\ltimes i_p\ltimes s_j(t)=s_j(t+1).\]
-And then for any $p\in \mathbb{N}^*$ and fore any input sequence we chose, we have 
+And then for any $p\in \mathbb{N}^*$ we have 
 \[s_i(t+p)=s_j(t+p);\]
 \[o_i(t+p)= H\ltimes{s_i(t+p)}= H\ltimes{s_j(t+p)}=o_j(t+p).\]
  Therefore we can not distinguish between $s_i(t)$ and $s_j(t)$ any more.
- If the current state is one of $s_i(t)$ and $s_j(t)$, then we can not determine it. But we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time, then the presumption $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$ is wrong, thus $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
+ If the current state $s(t)$ is one of $s_i(t)$ and $s_j(t)$, then we can not determine the $s(t)$ in real time. 
+ 
+ But we have that we can determine the current state $s(t)$ of this \BCN\ in real time for every $s(t)\in S$, then the presumption $|\Ded\left(S,i_p,\varepsilon\right)|<|S|$ is wrong, thus $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$.
 \end{proof}
  
 % If the cardinality number of the possible states set of one \BCN\ decreased before observing its output the derivation process, then we can not deduce its initial state any more i.e., we can not determine the initial state of this \BCN\ any more. Therefore, the derivation function helps the online obervability satisfy the {\em real-time} property. 
