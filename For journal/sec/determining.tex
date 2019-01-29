@@ -116,7 +116,7 @@ The directed graph of \BCN
 \STATE $NodesArray=${\sf buildnode}(k)
 \WHILE {$NodesArray!=$Null}
 
-\FOR{each $N_i\in NodesArray$}
+\FOR{each $S_i\in NodesArray$}
 \IF{$k==2$}
 \STATE $Sis$ = $\Delta_M$ 
 \ELSE
@@ -125,10 +125,10 @@ The directed graph of \BCN
 
 \ENDIF
 \FOR{each $i_p \in Sis$}
-\STATE Check $N_i$ by $i_p$
-\STATE Build edges for $N_i$ 
+\STATE Check $S_i$ by $i_p$
+\STATE Build edges for $S_i$ 
 \ENDFOR
-\IF {$N_i$ has not any edge.}
+\IF {$S_i$ has not any edge.}
 \STATE  $Ob=$ false 
 \STATE return Null
 \ENDIF
@@ -170,15 +170,24 @@ The nodes with $k$ states which with the same corresponding outputs %, and the o
 %%\newpage
 There are some details in {\em Algorithm.\ref{alg:1}} and {\em Algorithm.\ref{alg:2}} are as follows:
 \begin{itemize}
-\item Build all nodes with $k$ states: Firstly, we classify all states by their corresponding outputs, then we have all of states sets. The states set contains all states have the same corresponding outputs. Secondly, we compare $k$ with the cardinal number $Car$ of each states set $S_i$ we built before. If $k$ greater than $Car$, then we could not get $k$ states from this states set $S_i$. Else we can get $C_{Car}^k$ sets with $k$ states from this states set. Finally, we use all of states sets to build nodes we need. 
- \item Sort the states in these nodes and sort these nodes: For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in Fig.\ref{fig:4}. 
-  \item Find $Sis$ by other nodes: From the {\em Lemma \ref{lemm:4}} and {\em Lemma \ref{lemm:3}} in the {\em Section \ref{sec:online}}, we have for the node $N_i$ with $k$ sorted states inside it, then we can use the node with the first $k-1$ states and the node with the last $k-1$ states to find $Sis$ for $N_i$. For example, we can search right inputs sets which make $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $K$-step deterministic at first. After that, take the intersection of these sets to be the suitable inputs set of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. 
-  \item Check $N_i$ (with states set $S_i$ in it) by $i_p$: According to the order determined in previous steps, we check every node in order. If for one input $i_p$ (which belongs to suitable inputs set $Sis$) implies $|\Ded\left(S_i,i_p,\varepsilon\right)|<|S_i|$, we can make sure the $i_p$ is a wrong input. Else if for each $O_j \in \Delta_Q$, $|\Ded\left(S_i,i_p,o_j\right)|>0$ and $\Ded\left(S_i,i_p,o_j\right)$ is $k$-step deterministic then $I_j$ is a right input. Therefore, we can connect the node $S_i$ to each node $\Ded\left(S_i,i_p,o_j\right)$ with directed edge. The colour of directed edges represent its corresponding input. Else if there exist $o_j \in \Delta_Q$ and we can not make sure whether $\Ded\left(S_i,i_p,o_j\right)$ is $k$-step deterministic, we check it in the next round. 
+\item Build all nodes with $k$ states: Firstly, we classify all states by their corresponding outputs, then we have all of states sets. The states set contains all states have the same corresponding outputs. Secondly, we compare $k$ with the cardinal number $|S_i|$ of each states set $S_i$ we built before. If $k$ greater than $|S_i|$, then we could not get $k$ states from this states set $S_i$. Else we can get $C_{|S_i|}^k$ sets with $k$ states from this states set. Finally, we use all of sets of states found in second step to build nodes we need. 
+ \item Sort the states in these nodes and sort these nodes: For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in Fig.\ref{fig:4}. We sort the states inside the nodes at first, and then sort the nodes by the states of them.
+  \item Find $Sis$ by other nodes: From the {\em Lemma \ref{lemm:4}} and {\em Lemma \ref{lemm:3}} in the {\em Section \ref{sec:online}}, we have if $S_i\subset S_j$ then for any input $i$ can not make $S_i$ $K$-step deterministic it can not make $S_j$ $K$-step deterministic too. Therefor, for the node $S_i$ with $k$ sorted states inside it, we can use the node with the first $k-1$ states of $S_i$ and the node with the last $k-1$ states of $S_i$ to find the suitable inputs set $Sis$ for $S_i$. For example, we can search correct inputs sets which make $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $K$-step deterministic at first. After that, take the intersection of these sets to be the suitable inputs set of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. 
+  \item Check $S_i$ by $i_p$: According to the order determined in previous steps, we check every node in order. If for one input $i_p\in Sis$ implies $|\Ded\left(S_i,i_p,\varepsilon\right)|<|S_i|$, we can make sure the $i_p$ is a wrong input. Else if for each $O_j \in \Delta_Q$, $|\Ded\left(S_i,i_p,o_j\right)|>0$ and $\Ded\left(S_i,i_p,o_j\right)$ is $K$-step deterministic then $I_j$ is a correct input. Therefore, we can connect the node $S_i$ to each node $\Ded\left(S_i,i_p,o_j\right)$ with directed edge. The colour of directed edges represent its corresponding input. Else if there exist $o_j \in \Delta_Q$ and we can not make sure whether $\Ded\left(S_i,i_p,o_j\right)$ is $K$-step deterministic or not, then we check it in the next round. 
 \end{itemize} 
 
 
 
-Based on the definitions of existing four types of observability, we can also use the directed graph to determine the existing second and fourth type of observability. When we try to build bottom layer and penultimate layer of the directed graph, and there are exist some nodes in penultimate layer has no edges from it to other nodes. In this case this \BCN\ does not satisfy existing second observability. When we try to build edges for every layer, and if there exist one node whose right inputs set is not $\Delta_M$, then this \BCN\ does not satisfy existing fourth observability.
+What is more, based on the definitions of existing four types of observability, we can also use the directed graph to determine the existing second and fourth type of observability for \BCNs. 
+\begin{itemize}
+ \item When we try to build bottom layer and penultimate layer of the directed graph, and there are exist some nodes in penultimate layer has no edges from it to other nodes. 
+ Therefore, there are distinct states $s_0$, ${s'}_0 \in \Delta_N$, and there does not exist any input sequence $I\in(\Delta_M)^p$ for any $p\in \mathbb{Z}_+$, such that $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$.
+ And then, this \BCN\ does not satisfy existing second observability.
+ \item  When we try to build edges for every layer, and if there exist one node whose right inputs set is not $\Delta_M$, 
+ then there exists an input sequence $I\in(\Delta_M)^{\infty}$ does not satisfy that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^{\infty}_{s_0}(I)\neq (HL)^{\infty}_{{s'}_0}(I)$. And then this \BCN\ does not satisfy existing fourth observability.
+ \end{itemize}
+
+
 \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
