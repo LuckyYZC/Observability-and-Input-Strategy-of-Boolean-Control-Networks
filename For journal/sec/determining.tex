@@ -201,47 +201,49 @@ What is more, based on the definitions of existing four types of observability, 
 
 
 \subsection{Complexity analysis}
-The algorithm by the directed graph is better than by supertree when we want to find all paths to determine the initial state of \BCNs. Therefore we analyze the complexity of this algorithm in this paper. 
+As the algorithm by the directed graph is better than by supertree when we want to find all paths to determine the initial state of \BCNs. We analyze the complexity of this algorithm briefly in this paper. 
 %We classify the states with their corresponding output . After that form the set of states set $\{\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right), \Ded\left(\Delta_N,\varepsilon,\delta_M^2\right),\ldots,\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)\}$, then every element in a states set has the same corresponding output. For each \[S_i\in\{\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right), \Ded\left(\Delta_N,\varepsilon,\delta_M^2\right),\ldots,\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)\}\] we have $Hs_k=\delta_{M}^i$ for every $s_k\in S_i$.
-
-Firstly, we need to calculate the number of layers in the directed graph i.e. the upper bound of the number ($k$) of the states of the nodes in the directed graph. We have that 
+\begin{itemize}
+\item Firstly, we need to calculate the number of layers in the directed graph i.e. the upper bound of the number ($k$) of the states of the nodes in the directed graph. We have that 
 \begin{equation}
 \begin{split}
-k_{upb}= \max(|\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right)|,\ldots,|\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)|)
+k_{upb}= \max(|\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right)|,\ldots,|\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)|).
 \end{split}
 \end{equation}
-The $k_{upb}$ is the maximum value of \[|\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right)|,|\Ded\left(\Delta_N,\varepsilon,\delta_M^2\right)|,\ldots,|\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)|,\] because the states of the nodes in the directed graph should have the same corresponding output. Therefore, the $k_{upb}$ indicates the number of layers in the directed graph.
+%The upper bound of the number of the states of the nodes in the directed graph $k_{upb}$ is the maximum value of $|\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right)|,\ldots,|\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)|$, 
+Because the states of the same nodes in the directed graph should have the same corresponding output. Therefore, the $k_{upb}$ indicates the number of layers in the directed graph, and it depends on the relationship between states and outputs of the \BCNs.
 
-Secondly, we need to calculate the number of nodes which with $k$ states:
+\item Secondly, we need to calculate the number of nodes which with $k$ states, we have that
 \begin{equation}
 \begin{split}
-Non(k)= C_{|S_i|}^k+\ldots +C_{|S_p|}^k
+Non(k)= C_{|S_i|}^k+\ldots +C_{|S_p|}^k,
 \end{split}
 \end{equation}
-where $S_i\ldots,S_p\in\{\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right),\ldots,\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)\}$ and $|S_i|,\ldots,|S_p|\ge k$. The $Non(k)$ indicates the number of nodes which built by the {\sf buildnode}(k) function.
+where \[S_i\ldots,S_p\in\{\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right),\ldots,\Ded\left(\Delta_N,\varepsilon,\delta_M^M\right)\}\] and $|S_i|,\ldots,|S_p|\ge k$. The $Non(k)$ indicates the number of nodes which built by the {\sf buildnode}(k) function, and it also depends on the relationship between states and outputs of the \BCNs.
 
-Thirdly we need to calculate the cardinal number of suitable inputs set of each node $|Sis(S_i)|$. If $|S_i|=2$ then $Sis(S_i)=\Delta_M$. If $|S_i|>2$ then $Sis(S_i)$ is derived by other nodes. 
+\item Thirdly, we need to calculate the cardinal number of suitable inputs set of each node $|Sis(S_i)|$. If $|S_i|=2$ then $Sis(S_i)=\Delta_M$. If $|S_i|>2$ then $Sis(S_i)$ is derived by other nodes, therefore it depends on the updating rules of the \BCNs.
 
-Finally we need to calculate the time used to check whether a input which in the suitable inputs set of a node is a right input for this node $T(S_i, i_p)$.
+\item Finally, we need to calculate the time used to check whether a input which in the suitable inputs set of a node is a right input for this node $T(S_i, i_p)$, and it depends on the updating rules of the \BCNs\ as well.
+ \end{itemize}
 
-After completing the previous steps, we calculate the complexity by layer by layer, then we have the time we need to determine the online observability.  
+After completing the previous analysis, we calculate the complexity by layer by layer, then we have the time we need to determine the online observability.  
 \[T=\sum_{k=1}^{k_{upg}}\sum_{i=1}^{Non(k)}\sum_{p=1}^{Sis(S_i)}T(S_i, i_p)\]
 %The cardinal number of suitable inputs set of a node depends on the cardinal number of this node and the other three nodes used to find the suitable inputs set for it. And the time used to check whether an input is a right input for a node also depends on the updating rules of {\em BCNs}.
 
-What is more, instead of taking $\Delta_M$ as the suitable inputs set for every node in thedirected graph, we use the other three nodes like $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ and $\{\delta_{16}^4,\delta_{16}^7\}$ that are $k$-step deterministic to find the suitable inputs set for a node $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ which with more than $2$ states. By this way we can  reduce the cardinal number of the suitable inputs set for every nodes with more than 2 states, and then reduce the time cost. 
+%What is more, instead of taking $\Delta_M$ as the suitable inputs set for every node in thedirected graph, we use the other three nodes like $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ and $\{\delta_{16}^4,\delta_{16}^7\}$ that are $k$-step deterministic to find the suitable inputs set for a node $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ which with more than $2$ states. By this way we can  reduce the cardinal number of the suitable inputs set for every nodes with more than 2 states, and then reduce the time cost. 
 
-The reason why we can use this method is that only the input which make the subset of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $k$-step deterministic will make the $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $k$-step deterministic. Furthermore, using these three nodes will be a good way to cover all the 2-state subsets (which with cardinal number $2$) of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. For every subset $s_i$ with cardinal number $2$ included in $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ will included in $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ or $\{\delta_{16}^4,\delta_{16}^7\}$. This conclusion can help us to select the nodes we need when we seek the suitable inputs set for a node. But it is hard to analyze the complexity of this method, and it makes the complexity analysis of the algorithm by directed graph harder.
+%The reason why we can use this method is that only the input which make the subset of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $k$-step deterministic will make the $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ $k$-step deterministic. Furthermore, using these three nodes will be a good way to cover all the 2-state subsets (which with cardinal number $2$) of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. For every subset $s_i$ with cardinal number $2$ included in $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ will included in $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ or $\{\delta_{16}^4,\delta_{16}^7\}$. This conclusion can help us to select the nodes we need when we seek the suitable inputs set for a node. But it is hard to analyze the complexity of this method, and it makes the complexity analysis of the algorithm by directed graph harder.
 
-Therefore, it is hard to give a accurate complexity of the algorithm without the complete imformation of \BCNs. We just give a short introduction of complexity analysis in this paper, we may finish this work in the furture.
+From the definition, we know that the $k_{upb}$ and the $Non(k)$ are depend on the relationship between states and outputs of the \BCNs, and the $|Sis(S_i)|$ and $T(S_i, i_p)$ are depend on the updating rules of the \BCNs. Therefore, it is hard to give an accurate complexity of the algorithm by the number of the nodes of the \BCNs\ without the complete imformation of their updating rules. We just give a brief introduction of complexity analysis in this paper, and we would do more research about this problem in the furture.
 %Because the states in a nodes will have the same corresponding output, so we have the upper bound of the number of the states in a directed graph nodes $k$: We classify the states with their corresponding output and form the set of states with the same corresponding output, the greatest cardinal number of these set would be the upper bound of $k$. 
 \subsection{Determining initial state}
 
-If a system described by \BCN\ is online observable, and the directed graph of it has been built, then we can determine the initial state of this system (or \BCN) in real time by online observability. In order to illustrate the process of determining the initial state of a \BCN, we give one example is as follows.
+After introducing the algorithms to determine the online observability of the \BCNs, we present the way of determine the initial state of a \BCN\ by the directed graph. If a system described by \BCN\ is online observable, and the directed graph of it has been built, then we can determine the initial state of this system (or \BCN) in real time. In order to illustrate the process of determining the initial state of a \BCN, we give one example is as follows.
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}. The process of determining its initial state is as Fig.\ref{fig:5} shows. 
 \begin{itemize}
   \item Firstly, we observe the output of the \BCN\ mentioned before. If the output we observe is $\delta_4^1$ then we can derive that the set of possible initial states should be $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, and we record them as initial states and current states in the table. 
-  \item Secondly, we decide the input ($\delta_4^1$) and observe the output ($\delta_4^3$) then we can derive that the set possible current states ($\{\delta_{16}^{10},\delta_{16}^{11}\}$), and then we record them as current states set in their corresponding positions. 
+  \item Secondly, we derive and decide the input ($\delta_4^1$) and observe the output ($\delta_4^3$), then we can derive that the set possible current states ($\{\delta_{16}^{10},\delta_{16}^{11}\}$), and then we record them as current states set in their corresponding positions. 
  \item Repeat the second step untill the cardinal number of the possible states set turns into $1$. In that time we can determine the current state ($\delta_{16}^{6}$) and the corresponding initial state  ($\delta_{16}^{3}$) of the {\em BCN}.
 \end{itemize} 
 \end{example}   
@@ -258,4 +260,5 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}. The process of determining 
    \end{figure}
 %\subsection{Less observation costs}
 
+Although the way of determine the initial state of a \BCN\ by the directed graph is very brief, but it would help us present how to do some optimization in the process of determining the initial state of the \BCNs.
 
