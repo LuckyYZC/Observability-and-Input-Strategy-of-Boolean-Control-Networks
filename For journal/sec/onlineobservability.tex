@@ -154,7 +154,7 @@ In addition, we propose some lemma for the $k$-step determinability.
 \end{lemma}
 \begin{proof} If $k=0$, then we have $|S|=1$. Therefore, we can determine the current state $s(t)$ of this \BCN\ in real time at time step $t$, and then the {\em Lemma \ref{lemm:6}} is right. 
 
-If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right. When $k=p+1$ we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that
+If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right. When $k=p+1$ and the $S$ is $k$-step deterministic, then we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
  \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<(p+1)$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
@@ -164,22 +164,22 @@ If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right. When $k=p+1$ we h
 The {\em Lemma \ref{lemm:6}} is right when $k=0$, and if for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:6}} is right then the {\em Lemma \ref{lemm:6}} is right too when $k=p+1$. Thus we have the {\em Lemma \ref{lemm:6}} is right for any $k\in \mathbb{N}$.
 \end{proof}
 
-The {\em Lemma \ref{lemm:6}} indicates that for the set of current possible states $S$, $S$ is $k$-step deterministic is the sufficient condition of determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$). Therefore, the $k$-step determinability helps the online obervability further satisfy the {\em real-time} property. 
+The {\em Lemma \ref{lemm:6}} indicates that for the set of current possible states $S$ we derived, $S$ is $k$-step deterministic is the sufficient condition of determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$). Therefore, the $k$-step determinability helps us define the online obervability to satisfy the {\em real-time} property. 
 \begin{lemma}
  In the time step $t$ and $S$ is the set of current possible states we derived. If we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time in time step $t+k$, then $S$ is $k$-step deterministic. 
   \label{lemm:7}
 \end{lemma}
 
 \begin{proof}
-If $k=0$ and we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t+k$. So we have $|S|=1$, and then $S$ is $0$-step deterministic. Therefore, we have the {\em Lemma \ref{lemm:7}} is right when $k=0$. 
+If $k=0$ and we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in time step $t$. So we have $|S|=1$, and then $S$ is $0$-step deterministic. Therefore, we have the {\em Lemma \ref{lemm:7}} is right when $k=0$. 
 
-If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right. When $k=p+1$, from the {\em Lemma \ref{lemm:1}} we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$. And $s(t+1)$ can be determined in time step $(t+1+p)$ for every $s(t+1)\in \Ded\left(S,i_p,\varepsilon\right)$, then we have that for each $o_j$ in $\Delta_Q$such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<(p+1)$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
+If for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right. When $k=p+1$ and we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time in time step $t+k$, then from the {\em Lemma \ref{lemm:1}} we have for this set of states $S$ there exists $i_p \in \Delta_M$ such that $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$. And $s(t+1)$ can be determined in time step $(t+1+p)$ for every $s(t+1)\in \Ded\left(S,i_p,\varepsilon\right)$. Then we have that for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<(p+1)$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
 Therefore, we have $S$ is $(p+1)$-step deterministic. And then have if for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right then the {\em Lemma \ref{lemm:7}} is right too when $k=p+1$. 
 
 The {\em Lemma \ref{lemm:7}} is right when $k=0$, and if for $k=0,\ldots k=p$ the {\em Lemma \ref{lemm:7}} is right then the {\em Lemma \ref{lemm:7}} is right too when $k=p+1$. Thus we have the {\em Lemma \ref{lemm:7}} is right for any $k\in \mathbb{N}$.
 \end{proof}
 
-The {\em Lemma \ref{lemm:7}} indicates that for the set of current possible states $S$, $S$ is $k$-step deterministic is the necessary condition of determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$). Therefore, the {\em Lemma \ref{lemm:7}} helps us prove that online obervability is the necessary and sufficient condition of determine the initial state $s_0$ of \BCNs\ in real time for every $s_0\in \Delta_N$.
+The {\em Lemma \ref{lemm:7}} indicates that for the set of current possible states $S$ we derived, $S$ is $k$-step deterministic is the necessary condition of determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$). Therefore, the {\em Lemma \ref{lemm:7}} will help us prove that online obervability is the necessary and sufficient condition of determine the initial state $s_0$ of \BCNs\ in real time for every $s_0\in \Delta_N$.
 %Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
 \begin{lemma}
  If a set of states $S$ is $k_1$-step deterministic and $k_1< k_2$, then $S$ is $k_2$-step deterministic. But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
@@ -192,14 +192,14 @@ The {\em Lemma \ref{lemm:7}} indicates that for the set of current possible stat
  If $k_1=0$ then $|S|=1$. Therefore for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|=1$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}=0=k_1< k_2$.
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic and ${k'}=0=k_1< k_2$.
  \end{itemize}
  Therefore the set of states $S$ is $k_2$-step deterministic.
  
  If $k_1>0$, then $|S|>1$. Therefore for this set of states $S$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic with  ${k'}<k_1< k_2$.
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ and $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic and ${k'}<k_1< k_2$.
  \end{itemize}
  Therefore the set of states $S$ is $k_2$-step deterministic.
 
@@ -212,9 +212,9 @@ The {\em Lemma \ref{lemm:7}} indicates that for the set of current possible stat
  
  So we have the {\em Lemma \ref{lemm:2}} is right.
 \end{proof}
-From the {\em Lemma \ref{lemm:2}}, we know that the exists the infimum of $k$ for a set of states $S$, which indicate the shortest path to determine the state of a \BCN\ by this possible states set $S$.
+From the {\em Lemma \ref{lemm:2}}, we know that the exists the infimum of $k$ for a set of states $S$, which indicate the shortest path to definitely determine the state of a \BCN\ by this possible states set $S$ in real time.
 \begin{definition}[$k_{inf}(S)$] 
-If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic but $S$ is not $(k_{i}-1)$-step deterministic, then $k_{i}$ is the $k_{inf}(S)$.
+If for a set of states $S$, there exists a $k_i\in \mathbb{N}$ such that $S$ is $k_i$-step deterministic but $S$ is not $(k_{i}-1)$-step deterministic, then $k_{i}$ is the $k_{inf}(S)$ of $S$.
 \end{definition}
 
 In {\em Section \ref{sec:app}}, we will represent the details on selecting the shortest path when we use the online observability to determine the initial state of a \BCN. And some other some other advantages of the online observability.
@@ -241,8 +241,8 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
  Then we have for the set of states $S_i$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)|=|\Ded\left(S_j,i_p,o_j\right)|=1$ and $\Ded\left(S_i,i_p,o_j\right)$ is $0$-step deterministic.
- \end{itemize} And then $S_i$ is $1$-step deterministic, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$.
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)|=|\Ded\left(S_j,i_p,o_j\right)|=1$, and then $\Ded\left(S_i,i_p,o_j\right)$ is $0$-step deterministic.
+ \end{itemize} And then $S_i$ is $1$-step deterministic, thus we have the {\em Lemma \ref{lemm:4}} is right when $k=1$.
  
  If for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right. When $k=p+1$, we have  for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
@@ -252,7 +252,7 @@ If $k=1$, we have for this set of states $S_j$ there exists $i_p$ in $\Delta_M$ 
  Then we have for the set of states $S_i$ there exists $i_p$ in $\Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S_i,i_p,o_j\right)| \le |\Ded\left(S_j,i_p,o_j\right)|\neq 0$ and $\Ded\left(S_i,i_p,o_j\right)\subset \Ded\left(S_j,i_p,o_j\right)$ is  $k'$-step deterministic with  ${k'}<(p+1)$.
+ \item  for each $o_j$ in $\Delta_Q$ such that $0\neq |\Ded\left(S_i,i_p,o_j\right)| \le |\Ded\left(S_j,i_p,o_j\right)|$ and $\Ded\left(S_i,i_p,o_j\right)\subset \Ded\left(S_j,i_p,o_j\right)$ is  $k'$-step deterministic with  ${k'}<(p+1)$.
  \end{itemize}  And then $S_i$ is $(p+1)$-step deterministic. Therefore we have if for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right, then the {\em Lemma \ref{lemm:4}} is right when $k=p+1$. 
 
 The {\em Lemma \ref{lemm:4}} is right when $k=1$, and if for $k=1,\ldots k=p$ the {\em Lemma \ref{lemm:4}} is right then the {\em Lemma \ref{lemm:4}} is right too when $k=p+1$. Thus we have the {\em Lemma \ref{lemm:4}} is right for any $k\in \mathbb{N}^*$.
@@ -260,13 +260,13 @@ The {\em Lemma \ref{lemm:4}} is right when $k=1$, and if for $k=1,\ldots k=p$ th
 % What is more, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$, thus the {\em Lemma \ref{lemm:4}} is right for every $k\in\mathbb{N}$
 \end{proof}
 
-The {\em Lemma \ref{lemm:4}} helps us to determine whether a \BCN\ is online observable or not, we will represent the details in the {\em Section \ref{sec:deter}}.
+The {\em Lemma \ref{lemm:4}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
 
 \begin{definition}[Online Observability of  BCNs]
  A \BCN\ is online observable,
-if for every  $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic.
+iff for every  $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic.
 % We even can define the online observability simpler, if there exists $k \ge 0$ implies $\Delta_N$ is $k$ stepes deterministic, then this \BCN\ is online observable. 
 \end{definition}
 
@@ -281,10 +281,10 @@ However, since we don not need to find the the specific value of $k$ when we def
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  We have that:
  \begin{itemize}
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)|=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\neq 0$, and it is $1$-step deterministic;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)|=\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}\neq 0$, and it is $1$-step deterministic;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)|=\{\delta_{16}^8,\delta_{16}^9,\delta_{16}^{10},\delta_{16}^{11}\}\neq 0$, and it is $2$-step deterministic;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^4\right)|=\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15},\delta_{16}^{16}\}\neq 0$, and it is $2$-step deterministic.
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)|=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\neq 0$, and this set of states is $1$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)|=\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}\neq 0$, and this set of states is $1$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)|=\{\delta_{16}^8,\delta_{16}^9,\delta_{16}^{10},\delta_{16}^{11}\}\neq 0$, and this set of states is $2$-step deterministic;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^4\right)|=\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15},\delta_{16}^{16}\}\neq 0$, and this set of states is $2$-step deterministic.
  \end{itemize}
  
 Therefore we have this \BCN\ satisfies the online observability.
@@ -299,13 +299,13 @@ The necessary and sufficient condition of determine the initial state $s_0$ of a
  A \BCN\ is online observable,
 then for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic. From the {\em Lemma \ref{lemm:6}} we have if the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic, then we have there exists a $k_i$ such that we can determine the $s_o$ in real time at time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$.  What is more for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic. Then we have there exists a $k_i$ such that we can determine the $s_0$ in time step $k_i$ for every $s_0\in \Delta_N$. Therefore we can determine the initial state $s_0$ of \BCNs\ in real time for every $s_0\in \Delta_N$.
 
-If we can determine the initial state $s_0$ of \BCNs\ for every $s_0\in \Delta_N$ in real time, and $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is the set of possible states we derived at time step $0$. From the {\em Lemma \ref{lemm:7}}, we have for any set of initial possible states $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ we derived, there exists a $k_i$ such that we can determine the $s_o$ in real time at time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$. Thus we have  $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $k_i$-step deterministic and then it is $K$-step deterministic for every  $o_j$ in $\Delta_Q$. Therefore this \BCN\ is online observable.
+If we can determine the initial state $s_0$ of \BCNs\ for every $s_0\in \Delta_N$ in real time, and $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is the set of possible states we derived at time step $0$. From the {\em Lemma \ref{lemm:7}}, we have for any set of initial possible states $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ we derived, there exists a $k_i$ such that we can determine the $s_o$ in real time at time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$. Thus we have  $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $k_i$-step deterministic and then  $K$-step deterministic for every  $o_j$ in $\Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$. Therefore this \BCN\ is online observable.
 
 So we have the necessary and sufficient condition of determine the initial state $s_0$ of a \BCN\ for every $s_0\in \Delta_N$ in real time is the online observability of this \BCN. 
 \end{proof}
 %With the online observability we can find the best way we like to determine the initial state of \BCNs.
 
-We propose some lemma for the $K$-step determinability as well.
+What is more, we propose some lemma for the $K$-step determinability as well.
 \begin{lemma}
  If a set of states $S_j$ is $K$-step deterministic and $S_i\subset S_j$, then $S_i$ is $K$-step deterministic, where $|S_j|>1$.
 \label{lemm:3}
@@ -319,12 +319,12 @@ With the {\em Lemma \ref{lemm:3}}, we would have its equivalent proposition is r
   \label{lemm:5}
 \end{lemma}
 \begin{proof}
-A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. We assume that the set of states $S_j$ is $K$-step deterministic, then we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have the assumption is wrong, and then the $S_j$ is not $K$-step deterministic.
+A set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$. We assume that the set of states $S_j$ is $K$-step deterministic ar first, then we have $S_i$ is $K$-step deterministic too. But $S_i$ is not $K$-step deterministic, therefore we have the assumption is wrong, and then the $S_j$ is not $K$-step deterministic.
 \end{proof}
 
-The {\em Lemma \ref{lemm:3}} and {\em Lemma \ref{lemm:5}} help us to determine whether a \BCN\ is online observable or not in the {\em Section \ref{sec:deter}}.
+The {\em Lemma \ref{lemm:3}} and {\em Lemma \ref{lemm:5}} help us to determine whether a \BCN\ is online observable in the {\em Section \ref{sec:deter}}.
 \subsection{Online observability and existing observability}
-After defining online observability of \BCNs, we discuss the implication relationships between four existing observability and online observability. The implication relationship is about the conditions that need to meet these observability. For instance, in the {\em Theorem \ref{theo:2}}, ``The online obervability implies the existing first observability'' means that ``If a \BCN\ satisfies the online obervability then it satisfies the existing first observability''. However,``The existing first observability does not imply the online obervability'' means that ```A \BCN\ that satisfies the existing first observability does not have to satisfy the online obervability''.
+After defining online observability of \BCNs, we discuss the implication relationships between four existing observability and online observability. The implication relationship is about the conditions that need to meet these observability. For instance, in the {\em Theorem \ref{theo:2}}, ``The online obervability implies the existing first observability.'' means that ``If a \BCN\ satisfies the online obervability then it satisfies the existing first observability.'' However, ``The existing first observability does not imply the online obervability.'' means that ```A \BCN\ that satisfies the existing first observability does not have to satisfy the online obervability.''
 
 %In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence we have a theorem for online observability and the existing first and second observability.
 \begin{theorem}
@@ -338,7 +338,7 @@ A \BCN\ satisfies the online obervability. From the {\em Theorem \ref{theo:1}} w
 However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $I$ is the corresponding one unique input sequences to determine $s$, the $I'$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in {s,s'}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
 
-In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then try to find the input sequence to distinguish it from other types of initial state. In other words, we do not consider the {\em real-time} property in the existing first observability. Moreover, from the implication relationships between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the second observability
+In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then we use its corresponding input sequence to distinguish it from other types of initial state. In other words, we do not consider the {\em real-time} property in the existing first observability. Moreover, from the implication relationships between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the second observability
 \begin{theorem}
 %If a \BCN\ satisfies the online obervability then it satisfies the existing first and second observability. If a \BCN\ satisfies the existing first or second observability we can not deduce that it satisfies the online obervability.
 The online obervability implies the existing second observability, but the existing second observability does not imply the online obervability.
@@ -353,10 +353,10 @@ The online obervability does not imply the existing third observability, but the
 \begin{proof}
 A \BCN\ is online observable. What is more there are $o,o'\in\Delta_Q$, such that there does not exist $i_p \in \Delta_M$ such that $|\Ded\left(\Ded\left(\Delta_N,\varepsilon, o\right),i_p,\varepsilon\right)|=|\Ded\left(\Delta_N,\varepsilon, o\right)|$ and $|\Ded\left(\Ded\left(\Delta_N,\varepsilon, o'\right),i_p,\varepsilon\right)|=|\Ded\left(\Delta_N,\varepsilon, o'\right)|$. Therefore there does not exist an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$. So we have this \BCN\ does not satisfy the existing third observability.
 
-If a \BCN\ satisfies the existing third observability, then there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$. And then we can use the input sequence $I$ to determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \Delta_N$. So this \BCN\ satisfies the online observability.
+If a \BCN\ satisfies the existing third observability, then there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$. And then we can use the input sequence $I$ to determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \Delta_N$. So we have this \BCN\ satisfies the online observability.
 \end{proof}
 
-In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states. In other words, we do not consider the {\em interactivity} in the existing third observability. Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
+In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states of the \BCN. In other words, we do not consider the {\em interactivity} in the existing third observability. Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
 \begin{theorem}
 The online obervability does not imply the existing fourth observability, but the existing fourth observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
@@ -380,11 +380,11 @@ Therefore, the implication relationships graph between four existing observabili
 
 From the implication relationships between online observability and existing observability we know that the online observability can help us solve some problem which can not be solved by existing observability. 
  \begin{itemize}
- \item Firstly, if the systems described by \BCNs\ are online observable but not satisfy the existing third and fourth observability, then the online observability can help us to determine their initial state in real time. 
+ \item Firstly, if the systems described by \BCNs\ are online observable but not satisfy the existing third and fourth observability, then the online observability can help us determine their initial state in real time. 
  \item Secondly, it takes least observation costs for us to determine the initial state of some systems described in real time by \BCNs. There are some biological systems depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. And there exist input-nodes and state-nodes in this model, for the purpose of obtain the initial state of this \BCN, we must select some state-nodes to be observe at first. However, if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model in real time., then we need least observation costs. 
  \end{itemize}
 
-What is more, through online observability, we can make some optimizations in the process of determining the initial state. We will represent them in the {\em Section \ref{sec:app}}.
+What is more, with the online observability, we can make some optimizations in the process of determining the initial state. We will represent them in the {\em Section \ref{sec:app}}.
    
    
 %When I learned the four existing kinds of observability of \BCNs, I found that if we want to determine the initial state of a \BCN\ by first kind of observability, we need to guess the initial state of the \BCN\ and then check it by its corresponding input sequence. If the initial state we guess is right then we can determine the initial state of this \BCN. But if what we guess is incorrect, we need to guess the initial state again and use its corresponding input sequence to determine the initial state of this \BCN. We repeat this process untll we determine the initial state of this \BCN. But if we can not repeat this process, we can not determine the initial state of the \BCN\ too. Then I turned my gaze to the third observability, this kind of observability makes we can determine the initial state without presupposing the initial state. But I thought if we can determine the possible states set of the \BCN\ by observing the output at first, why do not we find corresponding input sequences for these possible states sets when we determine the initial state of \BCN? Compared with the existing third observability this method needs weaker preconditions of \BCNs\ for us to determine their initial state. Then I talked about this thinkness with my teacher, and we expand it into the original idea of the online observability of \BCNs. 
