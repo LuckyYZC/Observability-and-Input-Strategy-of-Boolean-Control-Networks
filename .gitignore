@@ -97,3 +97,4 @@ Observability/root.pdf
 /For journal/*.aux
 /For journal/*.bbl
 /*.gitignore
+*.blg
