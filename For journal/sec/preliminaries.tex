@@ -3,13 +3,14 @@
 \section{Preliminaries} 
 \label{sec:pre}
 In this section we introduce the definition of \BCNs\ and their algebraic forms, as well as the four existing types of observability. 
+
+$\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
+
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be described as a directed graph together with logical equations to describe the updating rules of the nodes. The formal definition of \BCN\ is given as follows. 
+A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes of the directed graph. The formal definition of \BCN\ is given as follows. 
 
-\begin{definition}[Boolean Control Networks] A \BCN\ consists of its topology and its updating rules.\cite{Ideker2001A}
-\begin{itemize}
-  \item Topology:  A directed graph consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. 
+\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of the  topology and the associated updating rules. The topology is captured by a directed graph which consists of input-nodes, state-nodes, output-nodes, and directed edges which connect nodes. 
 	\begin{itemize}
 	\item Every node in a \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
 	
@@ -17,7 +18,8 @@ A Boolean control network can be described as a directed graph together with log
 	
 	\item Every directed edge from a state-node $s_1$ to an output-node $o_1$ means that the logic value of $o_1$ at time step $t$ is affected by the logic value of $s_1$  at time step $t$.  
 	\end{itemize}
-  \item Updating rules: We suppose that a \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
+
+Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
 s(t+1)=&f(i(t),s(t))\\
@@ -25,15 +27,15 @@ o(t)=&h(s(t))
 \end{split}
 \label{equ:1}
 \end{equation}
-that 
+where
 \begin{itemize}
 	\item $s(t)\in \mathbb{B}^n$ is a state which represent the logic value of all state-nodes at time step $t$; 	
 	\item $i(t)\in \mathbb{B}^m$ is a input which represent the logic value of all input-nodes at time step $t$; 	
 	\item $o(t)\in \mathbb{B}^q$ is a output which represent the logic value of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 	\end{itemize}
-Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
-\end{itemize}
+%Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
+ 
 
 \end{definition}
 
