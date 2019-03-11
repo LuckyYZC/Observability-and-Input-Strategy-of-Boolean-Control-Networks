@@ -2,11 +2,12 @@
 % !TEX root = ../root.tex
 \section{The online observability of \BCNs}
 \label{sec:online}
-In this section we propose the online observability to solve the problem mentioned before, and we will introduce its related information in detail. We give the informal definition of it at first. 
-
+In this section we propose the online observability to solve the problem mentioned before, and we will introduce its related information in detail. 
 %\begin{definition}
-	A \BCN\ satisfies the online observability iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$. %In the online observability we determine the state of \BCN\ by observing its output sequence and then deriving and deciding the input sequence at every time step. What is more, this process can be accomplished in finite time steps.
+	 %In the online observability we determine the state of \BCN\ by observing its output sequence and then deriving and deciding the input sequence at every time step. What is more, this process can be accomplished in finite time steps.
 %\end{definition}  without presupposing the initial state of \BCN
+
+In the existing third and fourth observability, there has to exist an input sequence that determines its initial state $s_0$ if a \BCN\ satisfies the observability. But we can use different input sequences to determine initial state ($s_0\in S_0$) for different sets of possible initial states, where $S_0$ the set of possible initial states derived by initial output $o_1$ we observe. In this case, the requirements for \BCNs\ to determine the initail state would be less harsh since we utilize the set of possible initial states $S_0$ to find the input sequence. Furthermore, if we utilize the sets of possible initial states $S_0$ and $S_1$ to find the input sequence to determine the initail state, the requirements for \BCNs\ would further less harsh. Therefore, in the online observability we find input sequence by the $S_k$ we derive at every time step $k$, such that the requirements would be least harsh. Therefore, a \BCN\ satisfies the online observability iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$.
 
 The reason why we called this type of observability online observability is as follows.
 \begin{itemize}
@@ -14,15 +15,18 @@ The reason why we called this type of observability online observability is as f
   \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
 \end{itemize} 
 
-We need the {\em real-time} property to help us avoid repeating biological experiments, and the {\em real-time} property makes the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
+%We need the {\em real-time} property to help us avoid repeating biological experiments, and the {\em real-time} property makes the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. 
+With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
 %The observability we propose can determine the initial state online.
  %Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. 
-After introducing the properties of the online observability, we present the process of determining the initial state of \BCNs\ by online observability briefly. We observe the output of \BCNs\ at every time setp $k$ in the process of determining the initial state of \BCNs. Then, we can infer the possible values of state-nodes through the output and denote them by possible states set $S_k$. %Then as we can know the possible states set
-With the set of possible states we can derive the set of possible inputs $I_k$, such that for every $i\in I_k$ we have that $s_i, s_j$ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. This principle will be shown in the equation (\ref{equ:12}). And then, we can decide the input by choosing it from the $I_k$ that this input will help us determine the initial state in real time. The way to decide the input will be presented in subsequent subsections. The cardinal number $|S_k|$ of possible states set does not change or decrease in this process. This principle will be shown in the equations (\ref{equ:9}) and (\ref{equ:10}). We repeat the above process, if the cardinal number of possible states set turn into be $1$ then we can determine the state and the initial state of {\em BCN}. 
+After introducing the properties of the online observability, we briefly present how to determine the initial state of \BCNs\ in real time. At every time setp $k$, we observe the output $o_k$ of \BCNs, then we can infer the set of possible states $S_k$ by the output $o_k$ at first. %Then as we can know the possible states set
+Secondly, with the set of possible states $S_k$ we can derive the set of possible inputs $I_k$, such that for every $i\in I_k$ we have that $s_i, s_j$ will not turn into the same state after being affected by the input $i_k$ i.e., $Ls_i i_k\neq Ls_j i_k$ for any distinct $s_i, s_j\in S_k$. This principle will be shown in the equation (\ref{equ:12}). And then, we can decide the input by choosing it from $I_k$. Thirdly, the set of possible initial states $S_{k+1}$ of next time step is derived by the input $i_k$ we chose and the new output $o_{k+1}$ we observe. The cardinal number of possible states set $|S_{k+1}|$ does not change or decrease in this process shown in the equations (\ref{equ:9}) and (\ref{equ:10}). If the cardinal number of new possible states set $|S_{k+1}|$ turn into be $1$ then we can determine the state and the initial state of {\em BCN}. 
 
- In the left of this section, firstly we define derivation function to describe the derivation process of the input and state of \BCNs\ at every time step. Secondly we present the definition of $k$-step determinability to help us decide the input. Thirdly, we give the formal definition of the online observability of \BCNs. Finally, we compare the online observability with four existing observability.
+Therefore, in the definition of online observability, firstly we need to describe how to derive the set of possible states of the \BCN\ by the output and input in every time step. So we define the derivation function to solve this problem. Secondly, we need to describe whether we can use a set of possible states determine the inistial state  in real time for every $s_0 \in \Delta_N$ by the above mentioned process, then we define the $K$-step determinability. Therefore, we have the definition of the online observability that for every set possible states we derived at time step $0$, it satisfies $K$-step determinability.
+
+ In the left of this section, firstly we define derivation function. Secondly we present the definition of $k$-step determinability (before $K$-step determinability). Thirdly, we give the formal definition of the online observability of \BCNs\ by derivation function and $K$-step determinability. Finally, we compare the online observability with four existing observability.
 \subsection{Derivation function}
 %Different from four existing observabilities, t
 
@@ -374,7 +378,7 @@ Therefore, the implication relationships graph between four existing observabili
 		\centerline{\includegraphics[scale=0.28]{figures/Fig8.png}}
 	}}
       
-      \caption{The implication relationships graph between existing observability 1, 2, 3, 4, and online observability where ``+" means ``implies".}
+      \caption{The implication relationships graph between existing observability 1, 2, 3, 4, and online observability where ``$\rightarrow$" means ``implies".}
       \label{fig:7}
    \end{figure}
 

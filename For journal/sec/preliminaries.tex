@@ -222,20 +222,31 @@ Therefore we have this \BCN\ does not satisfy the existing fourth observability.
 \end{example}  
 
 What is more, we know the implication relationships of four existing types of observability from the definitions of them \cite{Zhang2016Observability}. 
-\begin{proposition}
-The implication relationships of four existing types of observability.
-\begin{itemize}
-\item The first observability implies the second observability, but the second observability does not imply the first observability.\\
-\item The third observability implies the second observability, but the second observability does not imply the third observability.\\
-\item The third observability implies the first observability, but the first observability does not imply the third observability.\\
-\item The fourth observability implies the third observability, but the third observability does not imply the fourth observability.\\
-\item The fourth observability implies the second observability, but the second observability does not imply the fourth observability.\\
-\item The fourth observability implies the first observability, but the first observability does not imply the fourth observability. \\
-\end{itemize} 
-\end{proposition}
+
+ \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.27]{figures/Fig9.png}}
+	}}
+      
+      \caption{The implication relationships graph between existing observability 1, 2, 3, 4, where ``$\rightarrow$" means ``implies".}
+      \label{fig:9}
+   \end{figure}
+%\begin{proposition}
+%The implication relationships of four existing types of observability.
+%\begin{itemize}
+%\item The first observability implies the second observability, but the second observability does not imply the first observability.\\
+%\item The third observability implies the second observability, but the second observability does not imply the third observability.\\
+%\item The third observability implies the first observability, but the first observability does not imply the third observability.\\
+%\item The fourth observability implies the third observability, but the third observability does not imply the fourth observability.\\
+%\item The fourth observability implies the second observability, but the second observability does not imply the fourth observability.\\
+%\item The fourth observability implies the first observability, but the first observability does not imply the fourth observability. \\
+%\end{itemize} 
+%\end{proposition}
+
 Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
 %, when we don't presuppose the initial state of {\em BCNs}
- 
+   
 After introducing the definition of four existing observability and their implication relationship, we discuss how to determine the initial state of some \BCNs\ in real time by four existing types of observability. 
 \begin{itemize}
 \item The first and second observability can not help us to determine the initial state of some \BCNs\ in real time. Because in the first observability we need to assume that the initial state $s_0$ of a \BCN\ is $s_i$, and then check it by corresponding input sequence $I_i$ of this state. If the initial state we assume is correct, then we can determine the initial state $s_0=s_i$. But if the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (with the same initial state $s_0$) of this \BCN\ untill we can determine the initial state of them. So do the existing second observability of \BCNs.
