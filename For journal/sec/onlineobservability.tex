@@ -1,5 +1,5 @@
 % !Mode\dots ``TeX:UTF-8''
-% !TEX root = ../root.tex
+% !TEX root = ../bare_jrnl.tex
 \section{The online observability of \BCNs}
 \label{sec:online}
 In this section we propose the online observability to solve the problem mentioned before, and we will introduce its related information in detail. 
@@ -9,13 +9,19 @@ In this section we propose the online observability to solve the problem mention
 
 In the existing third and fourth observability, there has to exist an input sequence that determines its initial state $s_0$ if a \BCN\ satisfies the observability. 
 But we can derive the set of possible initial states $S_0$ by initial output $o_1$ we observe at time step $0$, and then we find input sequence to determine initial state ($s_0\in S_0$) for different sets of possible initial states. These input sequences can be different, and we can also determine the initial state of the \BCN.
-In this case, the requirements for the \BCN\ to determine the initail state would be less harsh since we utilize the set of possible initial states $S_0$ to find the input sequence. Furthermore, if we utilize the sets of possible initial states $S_0$ and $S_1$ derived in time step $0$ and $1$ to find the input sequence to determine the initail state, the requirements for \BCNs\ would further less harsh. According to this law, in the online observability we find input sequence by the $S_t$ we derive at every time step, such that the requirements would be least harsh. Thus, a \BCN\ satisfies the online observability iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$.
+In this case, the requirements for the \BCN\ to determine the initial state would be less harsh since we utilize the set of possible initial states $S_0$ to find the input sequence. Furthermore, if we utilize the sets of possible initial states $S_0$ and $S_1$ derived in time step $0$ and $1$ to find the input sequence to determine the initial state, the requirements for \BCNs\ would further less harsh. 
+
+According to this law, in the online observability we find input sequence by the $S_t$ we derive at every time step, such that the requirements would be least harsh. Thus, a \BCN\ satisfies the online observability iff its initial state $s_0$ can be determined in real time for every $s_0 \in \Delta_N$.
+
+\tl{do not understand this at all, what does it mean by harsh?}
 
 The reason why we called this type of observability online observability is as follows.
 \begin{itemize}
   \item Firstly, in the online observability, we determine the initial state of \BCNs\ in real time. In other words, we only need one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
   \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
 \end{itemize} 
+
+\tl{basically this is to say that the selection of the input string is adaptive?}
 
 %We need the {\em real-time} property to help us avoid repeating biological experiments, and the {\em real-time} property makes the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. 
 With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
@@ -30,14 +36,17 @@ Therefore, in the definition of online observability, firstly we need to describ
 
 Therefore, we have the definition of the online observability that if for a \BCN\ every set possible states we derived at time step $0$ satisfies $K$-step determinability, then it is online observable.
 
- In the left of this section, firstly we define derivation function. Secondly we present the definition of $k$-step determinability (before $K$-step determinability). Thirdly, we give the formal definition of the online observability of \BCNs\ by derivation function and $K$-step determinability. Finally, we compare the online observability with four existing observability.
+ In the rest of this section, firstly we define derivation function. Secondly we present the definition of $k$-step determinability (before $K$-step determinability). Thirdly, we give the formal definition of the online observability of \BCNs\ by derivation function and $K$-step determinability. Finally, we compare the online observability with four existing observability.
 \subsection{Derivation function}
 %Different from four existing observabilities, t
 
  
  % After deciding input, we can observe the new output, and then we can infer the new possible states set.
 In order to better describe how to derive the set of possible states $S_k$ and the set of possible inputs $I_k$ at every time step $k$, we propose the derivation function. The definition of this function is as follows.
-\begin{definition}[Derivation Function] The derivation function can be defined as $\Ded\left(S, i, o\right)$. Based on derivation process mentioned before, we have that there exists the corresponding $s'\in S$ of $s$ such that 
+\begin{definition}[Derivation Function] The derivation function can be defined as $\Ded\left(S, i, o\right)$. Based on derivation process mentioned before, 
+	\tl{it is quite unusual that a def depends on the process...}
+	we have that there exists the corresponding $s'\in S$ of $s$ such that 
+	\tl{but here you are defining something?!}
 %\[s=L\ltimes i\ltimes s'\ when\ i\neq \varepsilon, \] 
 
 \[s=\left\{
@@ -58,6 +67,8 @@ where
   \item $o\in(\Delta_Q\cup\varepsilon)$ represents the output; 
   \item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the possible states set determined by derivation function.
 \end{itemize} 
+
+\tl{for me this def is well-defined, so I could not really understand the rest}
  
  We can get the set of states $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$ by this function. Moreover, we have some equations for this function. For better illustration, we will use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example. And we can know the details of this function better by researching these equations.
 \begin{equation}
@@ -83,6 +94,7 @@ Equation (\ref{equ:7}) represents that if the possible states set is an empty se
 \end{split}
 \label{equ:9}
 \end{equation}
+\tl{is this an example?}
  
 In equation (\ref{equ:9}). When the possible states set $S=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide input. In this case we can derive that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observing the output of \BCN. As the cardinal number of the set possible states decreases, we can further determine the range of values for the initial state. And it would help us derive the set possible inputs. Therefore, the derivation function would make the online obervability satisfy the {\em interactivity}.
 \begin{equation}
@@ -270,12 +282,14 @@ The {\em Lemma \ref{lemm:4}} is right when $k=1$, and if for $k=1,\ldots k=p$ th
 
 The {\em Lemma \ref{lemm:4}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
 
+%==========================================================================================
+
 \subsection{Online observability}
 After the previous preparation, we present the formal definition of the online observability. The formal definition of the online observability of {\em BCNs} is as follows.
 
 \begin{definition}[Online Observability of  BCNs]
  A \BCN\ is online observable,
-iff for every  $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic.
+iff for every  $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$,  $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic.
 % We even can define the online observability simpler, if there exists $k \ge 0$ implies $\Delta_N$ is $k$ stepes deterministic, then this \BCN\ is online observable. 
 \end{definition}
 
