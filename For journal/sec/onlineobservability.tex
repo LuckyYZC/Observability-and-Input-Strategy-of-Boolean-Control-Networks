@@ -49,9 +49,20 @@ Therefore, we have the definition of the online observability that if for a \BCN
  
  % After deciding input, we can observe the new output, and then we can infer the new possible states set.
 In order to better describe how to derive the set of possible states $S_k$ and the set of possible inputs $I_k$ at every time step $k$, we propose the derivation function. The definition of this function is as follows.
-\begin{definition}[Derivation Function] The derivation function can be defined as $\Ded\left(S, i, o\right)$. Based on derivation process mentioned before, 
+%$\Ded\left(S, i, o\right)$
+\begin{definition}[Derivation Function] 
+In a Boolean control network, let $2^{\Delta_N}$ be the power set of states; $(\Delta_M\cup\varepsilon)$ be the set of input behaviors and $\varepsilon$ means empty input; $(\Delta_Q\cup\varepsilon)$ be the set output observation behaviors and $\varepsilon$ means empty output.
+%\begin{itemize}
+ % \item $2^{\Delta_N}$ be the power set of states ;
+ % \item $(\Delta_M\cup\varepsilon)$ be the set of input behavior and $\varepsilon$ means before inputing;
+ % \item $o\in(\Delta_Q\cup\varepsilon)$ be the set output observation behavior and $\varepsilon$ means before oberving; 
+  %\item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the set of possible states determined by derivation function.
+%\end{itemize} 
+A derivation function \[\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}\] %Based on derivation process mentioned before, 
+with the following properties. 
 	\tl{it is quite unusual that a def depends on the process...}
-	we have that there exists the corresponding $s'\in S$ of $s$ such that 
+	%for every $S\in 2^{\Delta_N}$ 
+	That for each element $s\in \Ded\left(S, i, o\right)$ there exists a corresponding $s'\in S$ of $s$ such that 
 	\tl{but here you are defining something?!}
 %\[s=L\ltimes i\ltimes s'\ when\ i\neq \varepsilon, \] 
 
@@ -63,20 +74,22 @@ s'       &      & {i= \varepsilon}
 
 and 
 
-\[H\ltimes s=o\ when\ o\neq \varepsilon, \]
-for each element \[s\in \Ded\left(S, i, o\right)\]
+\[H\ltimes s=o\ when\ o\neq \varepsilon.\]
+
 \end{definition}
-where   
-\begin{itemize}
-  \item $S\in 2^{\Delta_N}$ is the possible states set;
-  \item $i\in (\Delta_M\cup\varepsilon)$ represents the input;
-  \item $o\in(\Delta_Q\cup\varepsilon)$ represents the output; 
-  \item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the possible states set determined by derivation function.
-\end{itemize} 
+%where   
+%\begin{itemize}
+ % \item $S\in 2^{\Delta_N}$ is a set of possible states ;
+%  \item $i\in (\Delta_M\cup\varepsilon)$ represents the input;
+ % \item $o\in(\Delta_Q\cup\varepsilon)$ represents the output; 
+  %\item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the set of possible states determined by derivation function.
+%\end{itemize} 
 
 \tl{for me this def is well-defined, so I could not really understand the rest}
  
- We can get the set of states $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$ by this function. Moreover, we have some equations for this function. For better illustration, we will use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example. And we can know the details of this function better by researching these equations.
+ We can get the set of states $\Ded\left(S, i, o\right)$ for $S$ after inputing $i$ and observing $o$ by this function. 
+\begin{example}
+ Moreover, for better illustration, we will use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example. We can know the details of the derivation function better by researching this example.
 \begin{equation}
 \begin{split}
 \Ded\left(\emptyset,i,o\right)=\emptyset\\
@@ -119,8 +132,9 @@ And then, if the possible states set $S=\{\delta_{16}^1$, $\delta_{16}^2$, $\del
 \end{equation}
 
  Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. And if the current state of the \BCN\ is one of them then we can not determine the  state any more. Therefore, the derivation function helps us define the online obervability to satisfy the {\em real-time} property. 
+ \end{example}   
  
- We give a lemma to to better illustrate the {\em real-time} property.
+ And then, we give a lemma to better illustrate the {\em real-time} property.
 \begin{lemma}
  At time step $k$, $S$ is the set of current possible states we derived and $i(k)$ is the input we chose. If we can determine the current state $s(k)$ of this \BCN\ in real time for every $s(k)\in S$, then we have 
  $|\Ded\left(S,i(k),\varepsilon\right)|=|S|$.
@@ -148,18 +162,18 @@ And then for any $p\in \mathbb{N}^*$ we have
 After we difined the derivation function, we present the definition of $k$-step determinability for the set of states $S$, where the $k\in \mathbb{N}$.% It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
 
-When $k=0$, a set of states $S$ the $S$ is $0$-step deterministic iff the cardinal number of this states set $|S|=1$. 
+For $k=0$, a set of states $S$ is $0$-step determinable iff $|S|=1$. 
 
-When $k>0$, a set of states $S$ is $k$-step deterministic
- iff the cardinal number of this states set $|S|>1$ and for this set of states $S$ there exists $i_p \in \Delta_M$ such that
+For $k>0$, a set of states $S$ is $k$-step determinable
+ iff $|S|>0$ and for $S$ there exists an input $i_p \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$, and 
- \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$, there exists a ${k'}<k$ such that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic.
+ \item  for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$, there exists a ${k'}<k$ such that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step determinable.
  \end{itemize}
  %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
 
- In the time step $t$ and $S$ is the set of current possible states we derived. If $k=0$, from the definition of {\em$k$}-step determinability we know that the cardinality number of possible states set  $|S|=1$, then we can determine the current state of the \BCN. Therefore we can determine the state without deriving and deciding any input and observing output in ``$k=0$'' step. If $k>0$, we have $|S|>1$. Guided by the {\em Lemma \ref{lemm:1}}, we use the formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ to ensure that no different states will turn into be the same state after being affected by the input $i_p$. Without this formula, we can not guarantee that the current state $s(t)$ can be determined in real time for every $s(t)\in S$. Furthermore, for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<k$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic, it make sure that we can can determine the initial state in real time. The $k$-step deterministic ( $k>0$) is defined recursively, and it requires the definition of $0$-step deterministic.
+ In the time step $t$ and $S$ is the set of current possible states we derived. If $k=0$, from the definition of {\em$k$}-step determinability we know that the cardinality number of possible states set  $|S|=1$, then we can determine the current state of the \BCN. Therefore we can determine the state without deriving and deciding any input and observing output in ``$k=0$'' step. If $k>0$, we have $|S|>1$. Guided by the {\em Lemma \ref{lemm:1}}, we use the formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ to ensure that no different states will become the same state after being affected by the input $i_p$. Without this formula, we can not guarantee that the current state $s(t)$ can be determined in real time for every $s(t)\in S$. Furthermore, for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<k$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic, it make sure that we can can determine the initial state in real time. The $k$-step deterministic ( $k>0$) is defined recursively, and it requires the definition of $0$-step deterministic.
 
  In order to better illustrate this definition, we give the following example.
 \begin{example}

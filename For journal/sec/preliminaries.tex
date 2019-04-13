@@ -30,8 +30,8 @@ o(t)=&h(s(t))
 where
 \begin{itemize}
 	\item $s(t)\in \mathbb{B}^n$ is a state which represent the logic value of all state-nodes at time step $t$; 	
-	\item $i(t)\in \mathbb{B}^m$ is a input which represent the logic value of all input-nodes at time step $t$; 	
-	\item $o(t)\in \mathbb{B}^q$ is a output which represent the logic value of all output-nodes at time step $t$;  
+	\item $i(t)\in \mathbb{B}^m$ is an input which represent the logic value of all input-nodes at time step $t$; 	
+	\item $o(t)\in \mathbb{B}^q$ is an output which represent the logic value of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 	\end{itemize}
 %Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
@@ -60,14 +60,22 @@ In order to better illustrate the definition of BCN, we give an example as follo
 In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$ and the directed edges which connect them. And we have the updating rules of this \BCN\ that \[C(t), D(t), E(t), F(t)\in s(t)\] denote the value of state-nodes at time step $t$;
 \[A(t), B(t)\in i(t)\] denote the value of input-nodes at time step $t$;
 \[G(t), W(t)\in o(t)\] denote the value of output-nodes at time step $t$;
-$f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  For instance, the updating rule of output-node $G$ is 
-\[G(t)=C(t)\wedge \neg(\neg{D(t)}\wedge \neg E(t)\wedge \neg F(t)).\]
+The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  For instance, the updating rule of output-node $G$ is 
+\[G(t)=C(t)\overline{(\overline{D}(t)\overline{ E}(t)\overline{F}(t))}.\]
+And the updating rule of state-node $C$ is 
+
+$C(t+1)=
+(\overline{A}(t)D(t) (\overline{B}(t) \overline{F}(t) (\overline{C}(t) + \overline{E}(t)) + C(t)(B(t)E(t)+F(t)))
++(A(t)(\overline{D}(t)(\overline{B}(t)\overline{C}(t)+\overline{E}(t)F(t)+\overline{C}(t)F(t))+B(t)E(t)\overline{F}(t)))
++(\overline{B}(t)E(t)(C(t)\overline{D}(t)\overline{F}(t)+D(t)F(t)))
+(B(t)\overline{E}(t)(\overline{C}(t)F(t)+C(t)\overline{D}(t)))$.
+
 %\[C(t+1)=(A(t)\wedge B(t))\vee (C(t)\wedge D(t))\vee (E(t)\wedge F(t))\]
-The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be will be more convenient for a \BCN\ to be converted into its aglebraic form. What's more, for convenience, we will use this example to explain various concepts throughout this paper.
+The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be will be more convenient for a \BCN\ to be converted into its aglebraic form. And we will use this example to explain various concepts throughout this paper.
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.26]{figures/Fig2.png}}
+		\centerline{\includegraphics[scale=0.261]{figures/Fig2.png}}
 	}}
       
       \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.\ref{fig:1}.}
@@ -85,7 +93,7 @@ As mentioned in the {\em Section \ref{sec:intro}}, \STP\ is one of useful tools 
 	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the {\em Kronecker product}. 
 \end{definition}
 
-After introducing the definition of \STP\ of matrices,  we introduce some related notations at first \cite{Zhang2016Observability}:
+After introducing the definition of \STP\ of matrices,  we introduce some related notations \cite{Zhang2016Observability}:
 \begin{itemize}
   \item $\delta^i_n$: the $i$-th column of the identity matrix $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
@@ -103,7 +111,7 @@ o(t)=&\ H\ltimes{s(t)}
 \end{split}
 \label{equ:2}
 \end{equation}
-where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively the same as in formula (\ref{equ:1}), but $s(t)$, $i(t)$ and $o(t)$ in formula (\ref{equ:2}) written with the special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices, where $N=2^n$, $M=2^m$, and $Q=2^q$. 
+where $s(t)\in\Delta_N$, $i(t)\in\Delta_M$, and  $o(t)\in\Delta_Q$ denote the states, inputs and outputs respectively similar to those in formula (\ref{equ:1}), but $s(t)$, $i(t)$ and $o(t)$ in formula (\ref{equ:2}) written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices, where $N=2^n$, $M=2^m$, and $Q=2^q$. 
 \end{definition}
 
 Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
@@ -111,31 +119,31 @@ formula \[s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}\] will be written as  \[s(t+1)=L{i(
 
 After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN\' s algebraic form. In order to construct the algebraic form of \BCN\ (\ref{equ:2}) we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
-Therefore, the logical variable $A(t)$ takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the \STP\ of matrices, we have 
-\[i(t)=i_1(t){\ldots}i_m(t);\] 
-\[s(t)=s_1(t){\ldots}s_n(t);\] 
-\[o(t)=o_1(t){\ldots}o_q(t).\] 
-And according to \cite{Cheng2003Semi}, for the logical function of each state-node $f_p$ which can be found in the updating rules (\ref{equ:1}) that
-\[f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t)),\] 
+Therefore, a logical variable of a node e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}} takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the \STP\ of matrices, we have 
+\[i(t)=i_1(t)\ltimes {\ldots}\ltimes i_m(t);\] 
+\[s(t)=s_1(t)\ltimes {\ldots}\ltimes s_n(t);\] 
+\[o(t)=o_1(t)\ltimes {\ldots}\ltimes o_q(t).\] 
+And according to \cite{Cheng2003Semi}, for the logical function $f_p$ of each state-node which can be found in the updating rules (\ref{equ:1}) that
+\[s_p(t+1)=f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t)),\] 
 there exists a logical matrix $L_p\in L_{2\times {NM}}$ such that
-\begin{equation}
-\begin{split}
-\tau(f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t)))= L_pi(t)s(t)
-\end{split}
-\end{equation}
+%\begin{equation}
+%\begin{split}
+\[\tau(f_p(i_1(t),\ldots,i_m(t),s_1(t),\ldots,s_n(t)))= L_pi(t)s(t)\]
+%\end{split}
+%\end{equation}
 %where the left side of equation calculate the truth value and the  right side of equation calculate the vector in $\{\delta_2^1, \delta_2^2\}$. 
-Therefore for state-nodes $s_1,\ldots,s_n$, we have $n$ logical matrices $L_1,\ldots,L_n$ for them, respectively. 
+Therefore for state-nodes $s_1,\ldots,s_n$, we have $n$ corresponding logical matrices $L_1,\ldots,L_n$ for them, respectively. 
 %We have that
 %when\\
 If for each state-node $s_p$ the logical matrix has its form
 \[L_p=[\delta_2^{p_1},\ldots,\delta_2^{p_{NM}}],\] 
 then we have that %for the set of all state-nodes $s(t)$ the logical matrix 
 \[L=[\delta_N^{R_1},\ldots,\delta_N^{R_{NM}}]\]  where 
-\[\delta_N^{R_1}=\delta_2^{1_1}\ldots\delta_2^{n_1};\]\[\vdots\] \[\delta_N^{R_{NM}}=\delta_2^{1_{NM}}\ldots\delta_2^{n_{NM}}.\] 
+\[\delta_N^{R_1}=\delta_2^{1_1}\ltimes \ldots \ltimes \delta_2^{n_1};\]\[\vdots\] \[\delta_N^{R_{NM}}=\delta_2^{1_{NM}}\ltimes \ldots \ltimes \delta_2^{n_{NM}}.\] 
 
 %then 
 
-By this relationship we can construct the $L$ for the algebraic forms of \BCNs. What's more we can also construct the logical matrix $H$ in the similar way. To better illustrate the concept of algebraic forms, we give a simple example to describe it.
+By this relationship we can construct the $L$ for the algebraic forms of \BCNs. And then we can construct the logical matrix $H$ in the similar way. To better illustrate the concept of algebraic forms, we give a simple example to describe it.
 \begin{example}
 For instance, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have that the updating rules of this \BCN\ can be represented with the algebraic form:
 \begin{equation}
@@ -146,7 +154,20 @@ o(t) =&\delta_4[\beta]s(t)\\
 \label{equ:4}
 \end{equation}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $s\in \Delta_{16}$, $i\in \Delta_4$ and $o\in \Delta_4$.
+
+And then we have its algebraic form shown by table (Fig.\ref{fig:6}) that the unit of $i(t)$ and $o(t)$ is $\delta_{4}^i$ and the unit of $s(t)$ is $\delta_{16}^i$. For instance, when $s(t)=\delta_{16}^1$ and  $i(t)=\delta_{4}^1$, it means that the values of all state-nodes and all input-nodes in time step $t$ are $1$,  from the true table (Fig.\ref{fig:2}) we have $C(t+1)=0$, $D(t+1)=1$, $E(t+1)=1$ and $F(t+1)=0$. Thus we have \[s(t+1)=\delta_{2}^2 \ltimes \delta_{2}^1 \ltimes \delta_{2}^1 \ltimes \delta_{2}^2=\delta_{16}^{10}.\]
+ \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.126]{figures/Fig7.png}}
+	}}
+      
+      \caption{The algebraic form of the \BCN\ shown in Fig.\ref{fig:1}.}
+      \label{fig:6}
+   \end{figure}
 \end{example}   
+
+
 \subsection{Four existing observability of \BCNs}
 After introducing the algebraic forms of \BCNs, we introduce four existing types of observability of \BCNs\ in this subsection. In order to introduce four existing types of observability of \BCNs, we define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
