@@ -4,7 +4,9 @@
 \label{sec:online}
 
 
-In this section we propose the online observability to solve the problem mentioned before, and we will introduce its related information in detail. 
+In this section we propose the online observability to solve the problem mentioned in {\em Section \ref{sec:pre}}, and we will introduce its related information in detail. 
+
+In the rest of this section, firstly we introduce the inspiration for the online observability. Secondly we define derivation function. Thirdly we present the definition of $k$-step determinability. Fourthlywe give the formal definition of the online observability of \BCNs\ by derivation function and $k$-step determinability. Finally, we compare the online observability with four existing observability.
 %\begin{definition}
 	 %In the online observability we determine the state of \BCN\ by observing its output sequence and then deriving and deciding the input sequence at every time step. What is more, this process can be accomplished in finite time steps.
 %\end{definition}  without presupposing the initial state of \BCN
@@ -13,42 +15,66 @@ In this section we propose the online observability to solve the problem mention
 \subsection{Inspiration}
 
 
-\ly{In the existing third observability, there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$ if a \BCN\ satisfies the observability. }
-But we can derive the set of possible initial states $\mathsf{S}(0)$ by initial output $\mathsf{o}(0)$ we observe at time step $0$. For every $\mathsf{S}(0)$ we derived, if we can find an input sequence to determine initial state ($\mathsf{s}(0)\in \mathsf{S}(0)$), we can determine the initial state too. The corresponding input sequences of the sets of possible initial states can be different. 
-In this case, the requirements for the \BCN\ to determine the initial state would be easier to meet. Furthermore, if we utilize the sets of possible initial states $\mathsf{S}(0)$ and $\mathsf{S}(1)$ derived at time step $0$ and $1$ to find the input sequence to determine the initial state, the requirements for \BCNs\ would be further easier to meet. 
+As we mentioned in {\em Section \ref{sec:pre}}, we use the third existing observability to determine the initial state of \BCN. \ly{But for the \BCN, there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. }
 
-According to this law, in the online observability we find input sequence one by one according to the $\mathsf{S}(t)$ we derive at every time step, such that the requirements would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined in real time for every $\mathsf{s}(0) \in \Delta_N$.
+But we can derive the set of possible initial states $\mathsf{S}^{i}(0)$ by initial output $\mathsf{o}(0)$ we observe at time step $0$:
+\[\mathsf{S}(0)=\{\mathsf{s}(0)|\mathsf{s}(0)\in \Delta_N\ and\ H\ltimes \mathsf{s}(0)=\mathsf{o}(0)\}.\]
+
+For every $\mathsf{S}^{i}(0)$ (corresponding to every $\mathsf{o}^{i}(0)\in \Delta_Q$) we derived, if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HL)^p_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HL)^p_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$. 
+Then we can determine the initial state too. 
+In this case, the requirements for the \BCN\ to determine the initial state would be easier to meet. Because the input sequences of different sets of possible initial states can be different. 
+
+Furthermore, we can derive the set of possible states $\mathsf{S}(1)$ by the outputs $\mathsf{o}(0)$ and $\mathsf{o}(1)$ we observe at time step $0$ and $1$ respectively and the input $\mathsf{i}(0)$:
+\[\mathsf{S}(1)=\{\mathsf{s}(1)|\mathsf{s}(0)\in \mathsf{S}(0),\ \mathsf{s}(1)=L{\mathsf{i}(0)}{\mathsf{s}(0)},\ H \mathsf{s}(1)=\mathsf{o}(1)\}.\]
+
+For every $\mathsf{S}^{i}(1)$ we derived, 
+\begin{itemize}
+  \item if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{x}(1)$, $\mathsf{s}^{y}(1) \in \mathsf{S}^{i}(1)$ implies $(HL)^p_{\mathsf{s}^{x}(1)}(\mathsf{I^i})\neq (HL)^p_{\mathsf{s}^{y}(1)}(\mathsf{I^i})$;
+  \item  and for every $\mathsf{s}^{i}(1)$ $\in \mathsf{S}^{i}(1)$ there are only one corresponding $\mathsf{s}^{i}(0)$ $\in \mathsf{S}^{i}(0)$ such that $\mathsf{s}^{i}(1)=L{\mathsf{i}(0)}{\mathsf{s}^{i}(0)}$.
+\end{itemize} 
+Then we can determine the initial state too. And in this case, the requirements for the \BCN\ to determine the initial state would be further easier to meet.
+
+Therefore, we have that if we utilize more sets of possible states we derived, it is easier for \BCNs\ to meet the requirements of determine their initial state. According to this rule, in the online observability we use the $\mathsf{S}(t)$ we derive at every time step to find input sequence one by one to determine the initial state of a \BCN, such that the requirement would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$.
 
 \tl{do not understand this at all, what does it mean by harsh?}
 
-The reason why we called this type of observability online observability is as follows.
-\begin{itemize}
-  \item Firstly, in the online observability, we determine the initial state of \BCNs\ in real time. In other words, we only need one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
-  \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
-\end{itemize} 
+The reason why we called this type of observability online observability because in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. Thus the selection of the input sequence is adaptive. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}. With the {\em interactivity}, we called this type of observability online observability.
+%\begin{itemize}
+ % \item Firstly, in the online observability, we determine the initial state of \BCNs\ in real time. In other words, we only need one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
+%  \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
+%\end{itemize} 
 
 \tl{basically this is to say that the selection of the input string is adaptive?}
 
 %We need the {\em real-time} property to help us avoid repeating biological experiments, and the {\em real-time} property makes the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. 
-With the  {\em real-time} and {\em interactivity}, we called this type of observability online observability.
+
 %\tl{maybe I did not understand this, but I think you are confusing two things: the observability and the algorithm (approach) to determine the initial state. It seems to me that you are describing a new approach (the online approach), but does this change the observability? if yes, how? Is this a stronger notion or a weaker notion or incomparable?}
 
 %The observability we propose can determine the initial state online.
  %Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. 
-After introducing the properties of the online observability, we briefly present how to determine the initial state of \BCNs\ in real time. At every time setp $t$, we observe the output $o_t$ of \BCNs, then we can infer the set of possible states $S_t$ by the output $o_t$ at first. %Then as we can know the possible states set
-Secondly, with the set of possible states $S_t$ we can derive the set of possible inputs $I_t$, such that for every $i_t\in I_t$ we have that $s_i, s_j$ will not turn into the same state after being affected by the input $i_t$ i.e., $Ls_i i_t\neq Ls_j i_t$ for any distinct $s_i, s_j\in S_t$. This principle will be shown in the equation (\ref{equ:12}). And then, we choose an input from $I_t$. Thirdly, the set of possible initial states $S_{t+1}$ of next time step is derived by the input $i_t$ we chose and the new output $o_{t+1}$ we observe. The cardinal number of possible states set $|S_{t+1}|$ does not change or decrease in this process shown in the equations (\ref{equ:9}) and (\ref{equ:10}). If the cardinal number of new possible states set $|S_{t+1}|$ turn into be $1$ then we can determine the state and the initial state of \BCN. 
+After introducing the properties of the online observability, we briefly present how to determine the initial state of \BCNs. At every time setp $t$, 
+\begin{itemize}
+\item firstly, we observe the output $\mathsf{o}(t)$ of \BCNs, then we can infer the set of possible states $\mathsf{S}(t)$ by the output $\mathsf{o}(t)$.
+\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\mathsf{I}(t)$, such that for every $\mathsf{i}^{i}(t)\in \mathsf{I}(t)$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $\mathsf{s}^{x}(t)$ and $\mathsf{s}^{y}(t)$ will not turn into the same state after being affected by the input $\mathsf{i}^{i}(t)$ i.e., $L\mathsf{s}^{x}(t) \mathsf{i}^{i}(t)\neq L\mathsf{s}^{y}(t) \mathsf{i}^{i}(t)$. (This principle will be shown in the equation (\ref{equ:12}).) And then, we choose the input $\mathsf{i}(t)$ from $\mathsf{I}(t)$.
+\item Thirdly, the set of possible initial states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived by the input $\mathsf{i}(t)$ we chose. 
+\end{itemize} 
+ %Then as we can know the possible states set
+ The cardinal number of possible states set $|\mathsf{S}(t)|$ does not change or decrease in the determining process (shown in the equations (\ref{equ:9}) and (\ref{equ:10})). If the cardinal number of possible states set $|\mathsf{S}(t)|$ becomes $1$ then we can determine the state, and then determine the initial state of \BCN. 
 
-Therefore, in the definition of online observability, firstly we need to describe how to derive the set of possible states of the \BCN\ by the output and input in every time step. So we define the derivation function to solve this problem. Secondly, we need to describe whether we can use a set of possible states determine the inistial state  in real time for every $s_0 \in \Delta_N$ by the above mentioned process, then we define the $K$-step determinability. 
+Therefore, in the definition of online observability, 
+\begin{itemize}
+\item firstly we need to describe how to derive the set of possible states of the \BCN\ by the output and input in every time step. So we define the derivation function to solve this problem.
+\item  Secondly, we need to describe whether we can use a set of possible initial states $\mathsf{S}(0)$ to determine the initial state $\mathsf{s}(0)$ for every $s_0 \in \mathsf{S}(0)$ by the above mentioned process in $k$ time steps, then we define the $k$-step determinability for $\mathsf{S}(t)$. 
+\end{itemize} 
+Thus, we have the definition of the online observability that if for a \BCN\ every set possible states $\mathsf{S}^{i}(0)$ we derived at time step $0$ there exists a $k_p\in \mathbb{N}$ such that the $\mathsf{S}^{i}(0)$ is $k_p$-step determinable, then the \BCN\ is online observable.
 
-Therefore, we have the definition of the online observability that if for a \BCN\ every set possible states we derived at time step $0$ satisfies $K$-step determinability, then it is online observable.
-
- In the rest of this section, firstly we define derivation function. Secondly we present the definition of $k$-step determinability (before $K$-step determinability). Thirdly, we give the formal definition of the online observability of \BCNs\ by derivation function and $K$-step determinability. Finally, we compare the online observability with four existing observability.
+% In the rest of this section, firstly we define derivation function. Secondly we present the definition of $k$-step determinability (before $K$-step determinability). Thirdly, we give the formal definition of the online observability of \BCNs\ by derivation function and $K$-step determinability. Finally, we compare the online observability with four existing observability.
 \subsection{Derivation function}
 %Different from four existing observabilities, t
 
  
  % After deciding input, we can observe the new output, and then we can infer the new possible states set.
-In order to better describe how to derive the set of possible states $S_k$ and the set of possible inputs $I_k$ at every time step $k$, we propose the derivation function. The definition of this function is as follows.
+In order to better describe how to derive the set of possible states $\mathsf{S}(t)$ and the set of possible inputs $\mathsf{I}(t)$ at every time step $t$, we propose the derivation function. The definition of this function is as follows.
 %$\Ded\left(S, i, o\right)$
 \begin{definition}[Derivation Function] 
 In a Boolean control network, let $2^{\Delta_N}$ be the power set of states; $(\Delta_M\cup\varepsilon)$ be the set of input behaviors and $\varepsilon$ means empty input; $(\Delta_Q\cup\varepsilon)$ be the set output observation behaviors and $\varepsilon$ means empty output.

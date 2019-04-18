@@ -39,6 +39,16 @@ where
 
 \end{definition}
 
+ \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.125]{figures/Fig10.png}}
+	}}
+      
+      \caption{The relationship of input, state and output.}
+      \label{fig:10}
+  \end{figure}
+
 In order to better illustrate the definition of BCN, we give an example as follows.
 
 %Note that one can only know that whether a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, 
@@ -119,7 +129,7 @@ where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t
 \end{definition}
 
 Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
-formula \[s(t+1)=L\ltimes{i(t)}\ltimes{s(t)}\] will be written as  \[s(t+1)=L{i(t)}{s(t)}.\]
+formula \[\mathsf{s}(t+1)=L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\] will be written as  \[\mathsf{s}(t+1)=L{\mathsf{i}(t)}{\mathsf{s}(t)}.\]
 
 After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN\' s algebraic form. In order to construct the algebraic form of \BCN\ (\ref{equ:2}) we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
