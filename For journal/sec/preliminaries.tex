@@ -116,7 +116,7 @@ After introducing the definition of \STP\ of matrices,  we introduce some relate
 \end{itemize}
 
 Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be quivalently represented in the following algebraic form:
-\begin{definition}
+\begin{definition}[Algebraic Forms]
 
 \begin{equation}
 \begin{split}
@@ -218,7 +218,7 @@ is an input sequence,
 
 Then four existing types of observability of BCNs can be defined as follows.
 %And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
-\begin{definition}
+\begin{definition} [First Observability]
 The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
@@ -234,7 +234,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for e
 Therefore we have this \BCN\ satisfies the existing first observability.
 \end{example}   
 
-\begin{definition}
+\begin{definition}[Second Observability]
 	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
 \end{definition}
 
@@ -249,7 +249,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for e
 
 Therefore we have this \BCN\ satisfies the existing second observability.
 \end{example}   
-\begin{definition}
+\begin{definition}[Third Observability]
 The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
@@ -260,7 +260,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there
 
 Therefore we have this \BCN\ satisfies the existing third observability.
 \end{example}  
-\begin{definition}
+\begin{definition}[Fourth Observability]
 	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
@@ -271,7 +271,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there
 Therefore we have this \BCN\ does not satisfy the existing fourth observability.
 \end{example}  
 
-What is more, we know the implication relationships of four existing types of observability from the definitions of them \cite{Zhang2016Observability}. 
+What is more, we know the implication relationships of four existing types of observability from the definitions of them shown in Fig.\ref{fig:9} \cite{Zhang2016Observability}. 
 
  \begin{figure}[thpb]
       \centering
