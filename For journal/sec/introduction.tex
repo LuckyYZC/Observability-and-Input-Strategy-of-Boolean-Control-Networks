@@ -57,9 +57,9 @@ For convenience, we use the vectors input \Input$(t)$, state \State$(t)$, and ou
 \Input$(p-1)$,  \State$(0) $\State$(1)\ldots$\State$(p)$, and   \Output$(0)$\Output$(1)\ldots$\Output$(p)$ 
  consists of several inputs, states and outputs  in sequential time steps,  respectively. 
  Such that, for a initial state \State$(0)$ of a \BCN\ and a sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$, we have a corresponding  sequence 
-\State$(0) $\State$(1)\ldots $\State$(p)$ and a corresponding  sequence \Output$(0) $\Output$(1)\ldots$ \Output$(p)$ for a \BCN.  For a given  \BCN\  $A$,  \Output$(0) $\Output$(1)\ldots$ \Output$(p)$ is decide by
-\State$(0)$ and sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$, in other words, $A() $ \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$ . 
-
+\State$(0) $\State$(1)\ldots $\State$(p)$ and a corresponding  sequence \Output$(0) $\Output$(1)\ldots$ \Output$(p)$ for a \BCN.  
+For a given  \BCN\  $A$,  \Output$(0) $\Output$(1)\ldots$ \Output$(p)$ is decide by
+\State$(0)$ and sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$.
 The observability problem is that:
 \begin{problem}
 \label{pro:1}
@@ -69,10 +69,12 @@ For a Given  \BCN, how to   construct  \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$
 As we mentioned before, there are four types of observability have been proposed. The four existing observability of \BCNs\ are as follows. The \State$^{i}(t)$ and \State$^{j}(t)$ represent different valuations of \State$(t)$, so do input and output. 
 %A output can be seen as a vector of the values of all output-nodes of the \BCN\ in a time step as well. Therefore a output sequence also consists of several outputs in sequential time steps. 
 %Moreover,  \cite{cheng2009controllability} gives equivalent conditions for controllability of \BCNs\ and observability of controllable \BCNs. 
+
+\ly{I suggest that using formulas to represent for existing observabilities.}
+
 \begin{enumerate}
 	\item The first type of observability proposed in 2009 \cite{cheng2009controllability}, and it means that there is a sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$
-\Input$(0)$\Input$(1)\ldots$\Input$(p-1)$ does not equal to . 
-	
+\Input$(0)$\Input$(1)\ldots$\Input$(p-1)$ such that
 	every initial state \State$^{i}(0)$ can be determined by an input sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$. That, as we inputing \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$, the corresponding output sequence \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(p)$ of \State$^{i}(0)$ is different from the corresponding output sequence \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(p)$ of initial state \State$^{j}(0)$ for every $j\ne i$. Therefore, we can distinguish the \State$^{i}(0)$ from other types of initial state by this input sequence, and then we can determine whether the initial state \State$(0)$ is \State$^{i}(0)$ by this input sequence.
 	\item 
 	The second observability proposed in 2010 \cite{Zhao2010Input}, and it is determined in \cite{Li2015Controllability}. It stands that for every two distinct initial states \State$^{i}(0)$ and \State$^{j}(0)$, there exists an input sequence \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$ which can distinguish them. That, as we inputing \Input$(0)$\Input$(1)\ldots$\Input$(p-1)$, the corresponding output sequences \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(p)$ and \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(p)$ of them are different from each other. Therefore, we can distinguish between these two types of initial state \State$^{i}(0)$ and \State$^{j}(0)$ by the corresponding input sequence.	
@@ -86,8 +88,9 @@ As we mentioned before, there are four types of observability have been proposed
 %\rev{****input s equence***}
 
 In {\em Section \ref{sec:pre}}, we will present the formal definition of four observabilities completely and introduce their implication relationship% in the following pages. What's more, there is an approach to study large-scale \BCNs\ via network aggregations \cite{Zhang2017Observability}. In order to further improve the performance of the \BCN\ model, we make some optimizations about the definition of observability of \BCNs.     which can be checked at most once
-
+\begin{comment}
 \ly{In the four existing observability, we can not determine the initail state of \BCNs\ by the first and second observability.} Although we can determine the initail state of \BCNs\ by the third and fourth observability, the requirements for \BCNs\ to determine the initail state are difficult to meet. Thus, we consider that whether we can determine the initial state of some \BCNs\ which can not be determined by the third and fourth observability.
+\end{comment}
 
 In the process of determining the initial state, we infer the set of possible initial states \Ustate$(t)$ by observing the output of \BCN\ at every time step $t$. The input \Input$(t)$ we chose should make every two distinct states \State$^{i}(t)$ , \State$^{j}(t)$$\in$ \Ustate$(k)$ will not turn into be the same state after affected by \Input$(t)$. And the new set of possible initial states \Ustate$(t+1)$ is derived by the input \Input$(t)$ we chose and the new output \Output$(t+1)$ we observe at the time step $(k+1)$, and we have $|$\Ustate$(t+1)$$|\le|$\Ustate$(t)$$|$. If $|$\Ustate$(t+1)$$|=1$, we can determine the initial state \State$(0)$ of the \BCN.
 
