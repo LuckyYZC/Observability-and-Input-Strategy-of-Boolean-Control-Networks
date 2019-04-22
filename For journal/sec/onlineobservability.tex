@@ -183,16 +183,16 @@ And then if we observe that the output of \BCN\ is $\delta_4^3$, we can deduce t
  
  As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step $t$. But we need to know how to choose the input at every time step to determine the initial state of \BCNs. Thus we propose the $k$-step determinability for the set of possible states $\mathsf{S}(t)$ to depicted whether we can determine the state $\mathsf{s^{i}}(t)$ in $k$ time steps for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$.
 \subsection{$k$-step determinability}
-After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\in \mathbb{N}$.% It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
+After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\in \mathbb{N}$. The $k$-step determinability depict whether we can determine $\mathsf{s}(t)$ by the the set of possible states $\mathsf{S}(t)$ in $k$ time steps for every $\mathsf{s}(t) \in \mathsf{S}(t)$.% It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
 
 For $k=0$, a set of possible states $\mathsf{S}(t)$ is $0$-step determinable iff $|\mathsf{S}(t)|=1$. 
 
 For $k>0$, a set of states $\mathsf{S}(t)$ is $k$-step determinable
- iff $|\mathsf{S}(t)|>0$ and for $\mathsf{S}(t)$ there exists an input $\mathsf{i}^{i} \in \Delta_M$ such that
+ iff $|\mathsf{S}(t)|>0$ and for $\mathsf{S}(t)$ there exists an input $\mathsf{i}^{i}(t) \in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each $\mathsf{o}^{j}\in \Delta_Q$ such that $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i},\mathsf{o}^{j}\right)|\neq 0$, there exists a ${k'}<k$ such that $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i},\mathsf{o}^{j}\right)$ is $k'$-step determinable.
+ \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for each $\mathsf{o}^{j}(t)\in \Delta_Q$ such that $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)|\neq 0$, there exists a ${k'}<k$ such that $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)$ is $k'$-step determinable.
  \end{itemize}
  %And we default $k\ge0$ when we talk about whether a states set of \BCNs\ $S$ is $k$-step deterministic or not.
 \end{definition}
@@ -200,18 +200,21 @@ For $k>0$, a set of states $\mathsf{S}(t)$ is $k$-step determinable
 % In the time step $t$ and $S$ is the set of current possible states we derived.
 Then we illustrate why the definition of the $k$-step determinability is right.
 \begin{itemize}
-\item If $k=0$, then for $\mathsf{S}(t)$ we can determine the state $\mathsf{s^{i}}(t)$ at time step $t$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$. Thus, we have that $|\mathsf{S}(t)|=1$. Only in this case we can determine the state $\mathsf{s}(t)$ at time step $t$. So we have the definition is right.
+\item When $k=0$, for $\mathsf{S}(t)$ we can determine the state $\mathsf{s^{i}}(t)$ at time step $t$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$. Thus, we have that $|\mathsf{S}(t)|=1$. Only in this case we can determine the state $\mathsf{s}(t)$ at time step $t$. So we have the definition is right.
  
-\item If $k=1$, then for $\mathsf{S}(t)$ we can determine the state $\mathsf{s^{i}}(t)$ at time step $t+1$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$.
+\item When $k=1$, for $\mathsf{S}(t)$ we can determine the state $\mathsf{s^{i}}(t)$ at time step $t+1$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$. Thus we need to guarantee that
 \begin{itemize}
-\item If $|\mathsf{S}(t)|=1$. , we use the formula $|\Ded\left(S,i_p,\varepsilon\right)|=|S|$ to ensure that no different states will become the same state after being affected by the input $i_p$. Without this formula, we can not guarantee that the current state $s(t)$ can be determined in real time for every $s(t)\in S$. Furthermore, for each $o_j$ in $\Delta_Q$ such that $|\Ded\left(S,i_p,o_j\right)|\neq 0$ there exists a ${k'}<k$ that $\Ded\left(S,i_p,o_j\right)$ is $k'$-step deterministic, it make sure that we can can determine the initial state in real time. The $k$-step determinable ( $k>0$) is defined recursively, and it requires the definition of $0$-step determinability.
-\item If $|\mathsf{S}(t)|>1$
+\item $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, only in this case we can determine the state $\mathsf{s^{i}}(t)$ at time step $t+1$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$ when we can determine the state $\mathsf{s^{i}}(t+1)$ at time step $t+1$ for every $\mathsf{s}^{i}(t+1)\in \Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)$;
+\item And we can determine the state $\mathsf{s^{i}}(t+1)$ at time step $t+1$ for every $\mathsf{s}^{i}(t+1)\in \Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)$. To guarantee this we have for each $\mathsf{o}^{j}(t)\in \Delta_Q$ such that $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)|=1\neq 0$, there exists a ${k'}=0<k=1$ such that $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)$ is $k'$-step determinable.
  \end{itemize}
-\item  If for $k=0,\ldots k=p$ the definition is right.
+So we have the definition is right.
+
+\item  If for $k=0,\ldots k=p$ the definition is right. When $k=p+1$, for $\mathsf{S}(t)$ we can determine the state $\mathsf{s^{i}}(t)$ at time step $t+p+1$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$. Thus we need to guarantee that
 \begin{itemize}
-\item If $|\mathsf{S}(t)|=1$.
-\item If $|\mathsf{S}(t)|>1$
+\item $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, only in this case we can determine the state $\mathsf{s^{i}}(t)$ at time step $t+p+1$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$ when we can determine the state $\mathsf{s^{i}}(t+1)$ at time step $t+p+1$ for every $\mathsf{s}^{i}(t+1)\in \Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)$;
+\item And we can determine the state $\mathsf{s^{i}}(t+1)$ at time step $t+p+1$ for every $\mathsf{s}^{i}(t+1)\in \Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)$. To guarantee this we have for each $\mathsf{o}^{j}(t)\in \Delta_Q$ such that $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)|\neq 0$, there exists a ${k'}<k$ such that $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t)\right)$ is $k'$-step determinable.
  \end{itemize}
+So we have the definition is right.
  \end{itemize}
  In order to better illustrate this definition, we give the following example.
 \begin{example}
