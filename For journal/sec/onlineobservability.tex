@@ -323,7 +323,7 @@ If $k=0$, we have $\mathsf{S}^{x}(t) = \mathsf{S}^{y}(t)$, then \[|\mathsf{S}^{x
  If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:4}} is right, where $p\in\mathbb{N}$. When $k=p+1$, we have for $\mathsf{S}^{y}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}^{y}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}^{y}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{y}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0\] and $\Ded(\mathsf{S}^{y}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step deterministic where ${k'}<(p+1)$.
+ \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{y}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0\] and $\Ded(\mathsf{S}^{y}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(p+1)$.
  \end{itemize}
  Then we have for $\mathsf{S}^{x}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
  \begin{itemize}
@@ -375,7 +375,7 @@ The necessary and sufficient condition of determine the initial state $\mathsf{s
 then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. From the definition of $k$-step determinability we have that if the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k$-step determinable, then we can determine the $\mathsf{s}(0)$ at time step $k$ for every $\mathsf{s}(0) \in \Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$. Therefore we can determine the initial state $\mathsf{s}(0)$ of \BCNs\ for every $\mathsf{s}(0)\in \Delta_N$.
 
 If we can determine the initial state $\mathsf{s}(0)$ of \BCNs\ for every $\mathsf{s}(0)\in \Delta_N$, and $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}(0)\right)$ is the set of possible initial states we derived. Then we can determine the $\mathsf{s}(0)$ for every $\mathsf{s}(0) \in \Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ for every $\mathsf{o}^{j}(0)\in \Delta_Q$. Therefore, we have for any set of possible initial states $\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)$ we derived, there exists a $k_i$ such that we can determine the $\mathsf{s}(0)$ at time step $k_i$ for every $s_0\in \Ded\left(\Delta_N,\varepsilon,o_j\right)$. And from the definition of $k$-step determinability we have that if we can determine the $\mathsf{s}(0)$ at time step $k$ for every $\mathsf{s}(0) \in \Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$, then the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k$-step determinable.
- Thus, we have for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. Therefore this \BCN\ is online observable.
+ Thus, we have for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. Therefore this \BCN\ is online observable.
 
 So we have the necessary and sufficient condition of determine the initial state $\mathsf{s}(0)$ of a \BCN\ for every $\mathsf{s}(0)\in \Delta_N$ is the online observability of this \BCN. 
 \end{proof}
@@ -403,13 +403,29 @@ After defining online observability of \BCNs, we discuss the implication relatio
 The online obervability implies the existing first observability.%, but the existing first observability does not imply the online obervability.
 \label{theo:2}
 \end{theorem}
-\begin{proof}
-A \BCN\ satisfies the online obervability. From the {\em Theorem \ref{theo:1}} we have that we can determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \Delta_N$. Therefore for every initial state $s_0 \in \Delta_N$, there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that the $s_o$ can be determined by the input sequence $I$, and then this \BCN\ satisfies the existing first observability.
+\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{i}\in \mathbb{N}$ that $\mathsf{S}(t)$ is $k^{i}$-step determinable, then for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HL)^p_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HL)^p_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
+\begin{itemize}
+\item When $k^{i}=0$, we have $|\mathsf{S}(t)|=1$, then for every state \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any state $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$. Therefore, we have that for any $p\in \mathbb{Z}_+$ for every input sequence $\mathsf{I}\in(\Delta_M)^p$ the propostion is right. 
+\item If for $k^{i}=0,\ldots, w$ the propostion is right, where $w\in\mathbb{N}$. When $k^{i}=w+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0\] and $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(w+1)$.
+ \end{itemize}
+ Then we have $(HL)^p_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HL)^p_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$, $\mathsf{I}'$ is the input sequence that for $\mathsf{s}^{x}(t+1)=L\mathsf{s}^{x}(t)\mathsf{i}^{i}(t)$ for all states \[\mathsf{s}^{x}(t+1)\neq \mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),HL\mathsf{s}^{x}(t)\mathsf{i}^{i}(t))\] implies $(HL)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HL)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}')$.
+Then we have the propostion is right when $k^{i}=w+1$.
+% And $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$ 
+\end{itemize}
+Therefore, we have the propostion is right for any $k^{i}\in \mathbb{N}$.
 
-However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
+Secondly, we have that if a \BCN\ is online observable,
+then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
+
+Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$
+
+%However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
 
-In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then we use its corresponding input sequence to distinguish it from other types of initial state. In other words, we do not consider the {\em real-time} property in the existing first observability which would make the condition more harsh. So we have the online obervability implies the existing first observability, but the existing first observability does not imply the online obervability. Moreover, from the implication relationships between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
+In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then we use its corresponding input sequence to distinguish it from other types of initial state. While in the online obervability, we do not need to presuppose theinitial state and we can still distinguish it from other types of initial state. Thus the online obervability implies the existing first observability, but the existing first observability does not imply the online obervability. Moreover, from the implication relationships between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
 \begin{theorem}
 %If a \BCN\ satisfies the online obervability then it satisfies the existing first and second observability. If a \BCN\ satisfies the existing first or second observability we can not deduce that it satisfies the online obervability.
 The online obervability implies the existing second observability.%, but the existing second observability does not imply the online obervability.
@@ -422,12 +438,30 @@ The existing third observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
 \end{theorem}
 \begin{proof}
-A \BCN\ is online observable. What is more there are $o,o'\in\Delta_Q$, such that there does not exist $i_p \in \Delta_M$ satisfy that $|\Ded\left(\Ded\left(\Delta_N,\varepsilon, o\right),i_p,\varepsilon\right)|=|\Ded\left(\Delta_N,\varepsilon, o\right)|$ and $|\Ded\left(\Ded\left(\Delta_N,\varepsilon, o'\right),i_p,\varepsilon\right)|=|\Ded\left(\Delta_N,\varepsilon, o'\right)|$. Therefore there does not exist an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$. So we have this \BCN\ does not satisfy the existing third observability.
+If a \BCN\ satisfies the existing third observability, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{\mathsf{s}^{j}(0)}(\mathsf{I})$.
+\begin{itemize}
+\item When $p=1$, that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^p_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^p_{\mathsf{s}^{j}(0)}(\mathsf{I})$. Then we have for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne\emptyset.\] 
+ There exists an input $\mathsf{I}=\mathsf{i}^{i}(0) \in \Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\varepsilon\right)|=\mathsf{S}(0)|$, and 
+ \item  for each \[\mathsf{o}^{z}(1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)|=1,\] such that $\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)$ is $0$-step determinable.
+ \end{itemize}
+Thus the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $1$-step determinable, then the \BCN\ is online observable.
 
-If a \BCN\ satisfies the existing third observability, then there exists an input sequence $I\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $s_0$, ${s'}_0 \in \Delta_N$, $Hs_0=H{s'}_0$ implies $(HL)^p_{s_0}(I)\neq (HL)^p_{{s'}_0}(I)$. And then we can use the input sequence $I$ to determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \Delta_N$. So we have this \BCN\ satisfies the online observability.
+Therefore, we have the {\em Theorem \ref{theo:4}} is right when $p=1$.
+\item If for $p=0,\ldots, w$ the propostion is right, where $w\in\mathbb{N}$. Then when $p=w+1$ we have for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne\emptyset.\] 
+ There exists an input $\mathsf{i}^{i}(0) \in \Delta_M$ equal to the first input of $\mathsf{I}$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\varepsilon\right)|=\mathsf{S}(0)|$, and 
+ \item  for each \[\mathsf{o}^{z}(1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)|>0,\] such that $\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)$ is $w$-step determinable.
+ \end{itemize}
+Thus the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $w+1$-step determinable, then the \BCN\ is online observable.
+
+Therefore, we have the {\em Theorem \ref{theo:4}} is right when $p=w+1$. Then the {\em Theorem \ref{theo:4}} is right for every $p \in \mathbb{N}$
+ \end{itemize}
 \end{proof}
 
-In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states of the \BCN. In other words, we do not consider the {\em interactivity} in the existing third observability which would make the condition less harsh. So we have the online obervability does not imply the existing third observability, but the existing third observability implies the online obervability. Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
+In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states of the \BCN. In other words, we do not consider the {\em interactivity} in the existing third observability. Thus we have the online obervability does not imply the existing third observability, but the existing third observability implies the online obervability. Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
 \begin{theorem}
 The existing fourth observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
@@ -451,8 +485,8 @@ Therefore, the implication relationships graph between four existing observabili
 
 From the implication relationships between online observability and existing observability we know that the online observability can help us solve some problem which can not be solved by existing observability. 
  \begin{itemize}
- \item Firstly, if the systems described by \BCNs\ are online observable but not satisfy the existing third and fourth observability, then the online observability can help us determine their initial state in real time. 
- \item Secondly, it takes least observation costs for us to determine the initial state of some systems described in real time by \BCNs. There are some biological systems depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. And there exist input-nodes and state-nodes in this model, for the purpose of obtain the initial state of this \BCN, we must select some state-nodes to be observe at first. However, if we use the online observability of \BCNs\ to determine the initial state of the \BCN\ T-cell receptor kinetics model in real time., then we need least observation costs. 
+ \item Firstly, if the \BCNs\ are online observable but not satisfy the existing third and fourth observability, then the online observability can help us determine their initial state. 
+ \item Secondly, it takes least observation costs for us to determine the initial state of some systems described by \BCNs. There are some biological systems depicted by \BCNs, such as the immune systems which can be depicted as the \BCN\ T-cell receptor kinetics model \cite{Klamt2006A}. And there exist input-nodes and state-nodes in this model, for the purpose of obtain the initial state of this \BCN, we must select some state-nodes to be observed at first. If we use the online observability to determine the initial state of the \BCN\ T-cell receptor kinetics model, then we need less output-nodes and then least observation costs. 
  \end{itemize}
 
 What is more, with the online observability, we can make some optimizations in the process of determining the initial state. We will represent them in the {\em Section \ref{sec:app}}.
