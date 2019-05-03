@@ -3,80 +3,84 @@
 \section{Optimization}
 \label{sec:app}
 
-In the {\em Section \ref{sec:online}}, we present that the online observability is the the necessary and sufficient condition of determine the initial state $s_0$ of the \BCNs\ in real time. Therefore, it can help us determine the initial state of some \BCNs\ in real time which can not be determined by the existing third and fourth observability. In addition, we can also use the online observability to some optimization, including finding the shortest path and avoid entering critical states in the process of determining the initial state of the \BCNs. %Because the output we observe is not sure, we use expected value and variance of the length of path and the times of entering critical states to help us to choose the input.If we research the systems described by \BCNs\ which are online observable but not satisfy the existing third and fourth observability, we can only use the online observability to determine their initial state in real time. If we have built the corresponding directed graphs for them, we can use the online observability to determine the initial state of these \BCNs. In addition, online observibility requires less observation costs for us to determine the initial state of some systems described by  \BCNs\ in real time. 
+In the {\em Section \ref{sec:online}}, we present that the online observability is the the necessary and sufficient condition of determine the initial state $\mathsf{s}(0)$ of the \BCNs. Therefore, it can help us determine the initial state of some \BCNs\ which can not be determined by the existing third and fourth observability. In addition, we can also use the online observability to some optimization, including finding the shortest path and avoid entering critical states in the process of determining the initial state of the \BCNs. %Because the output we observe is not sure, we use expected value and variance of the length of path and the times of entering critical states to help us to choose the input.If we research the systems described by \BCNs\ which are online observable but not satisfy the existing third and fourth observability, we can only use the online observability to determine their initial state in real time. If we have built the corresponding directed graphs for them, we can use the online observability to determine the initial state of these \BCNs. In addition, online observibility requires less observation costs for us to determine the initial state of some systems described by  \BCNs\ in real time. 
 
 
 \subsection{Finding shortest path}
-When we need to determine the initial state of a \BCN, an important aspect that we will consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely. Fortunately, we can use the directed graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(S, i_p)$ and $\Pv(S, i_p)$ to describe its expected value and variance, respectively. The definition of them are as follows.
+When we need to determine the initial state of a \BCN, an important aspect that we would consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely. Fortunately, we can use the directed graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(\mathsf{S}(t),\mathsf{ i}^{i}(t))$ and $\Pv(\mathsf{S}(t),\mathsf{ i}^{i}(t))$ to describe its expected value and variance, respectively. The definition of them are as follows.
 
 %We introduce two functions $Spe(S_i, I_i)$ and $Spv(S_i, I_i)$ to describe the expected value of the shortest path and variance of shortest path , $S_i$ is the possible states set and $I_i$ is the input we chose, the definition of $Spe(S_i, I_i)$ is as follows:\\
 %With the $Spe(S_i, I_i)$ and $Spv(S_i, I_i)$ we can make the decision we like.
 
 
-Some necessary statements before defining the functions $\Pe(S, i_p)$ and $\Pv(S, i_p)$:
+Some necessary statements before defining the functions $\Pe(\mathsf{S}(t),\mathsf{ i}^{i}(t))$ and $\Pv(\mathsf{S}(t),\mathsf{ i}^{i}(t))$:
 \begin{itemize}
-  \item $S$: the set of states.
-  \item $\{i_1,i_2,\ldots, i_z\}$ : the right inputs set of $S$;
-  \item $\{S_p^1,S_p^2,\ldots, S_p^k\}$ : the set of state sets, and its elements corresponding to the possible outputs $\{o_1,o_2,\ldots,o_k\}$. As we choose the input $i_p$ to determine initial state the \BCN\ by $S$, for each $i_p$ in $\{i_1,i_2,\ldots, i_z\}$.
+  \item $\mathsf{S}(t)$: the set of possible states.
+  \item $\{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}$ : the right inputs set of $\mathsf{S}(t)$;
+  \item $\{\mathsf{S}^{1}(t+1),\mathsf{S}^{2}(t+1),\ldots, \mathsf{S}^{k}(t+1)\}$ : the set of state sets, and its elements corresponding to the possible outputs $\{\mathsf{o}^1(t+1),\mathsf{o}^2(t+1),\ldots,\mathsf{o}^k(t+1)\}$. As we choose the input $\mathsf{ i}^{i}(t)$ to determine the state $\mathsf{s}(t)$ of \BCN\ by $\mathsf{S}(t)$, where $\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}$.
  % \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
-\begin{definition}[$\Spe(S)$] \label{lspe}
- \[\Spe(S)= \min(\Pe(S, i_1),\Pe(S, i_2),\ldots,\Pe(S, i_z)).\] 
+\begin{definition}[$\Spe(\mathsf{S}(t))$] \label{lspe}
+ \[\Spe(\mathsf{S}(t))= \min(\Pe(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Pe(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\] 
 \end{definition}
 
-\begin{definition}[$\Pe(S, i_p)$] 
-When the $|S|=1$, we have that
-$\Pe(S, i_p)=0$  for every $i_p$ in $\{i_1,i_2,\ldots, i_z\}$. According to {\em Definition \ref{lspe}}, $\Spe(S)=0$ if $|S|=1$. When the $|S|>1$, 
+\begin{definition}[$\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] \label{spe}
+
+When the $|\mathsf{S}(t)|=1$,
+\[\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))=0\]  for every \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\] According to {\em Definition \ref{lspe}}, $\Spe(\mathsf{S}(t))=0$ if $|\mathsf{S}(t)|=1$. 
+
+When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
 we have that  
-\[\Pe(S, i_p)=1 +\frac{\sum_{j=1}^k \Spe(S_p^j)|S_p^j|}{ |S|}\] 
+\[\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}\] 
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}
 
-In the definition of $\Spe(S)$, the function shortest path  expected value $\Spe(S)$ is to find the $i_p$ from $\{i_1,i_2,\ldots, i_z\}$ to calculat least $\Pe(S, i_p)$ for $S$. From the definition of $\Pe(S, i_p)$, we have that if $|S|=1$ then we can make sure the state of \BCNs. Thus we need not choose the input anymore to determine the state of \BCNs. Therefore, for any input the path expected value $\Pe(S, i_p)$ would be $0$ and the shortest path expected value $\Spe(S)$ also would be $0$. But if $|S|>1$ we still need to choose input and observe the output. Only by this way we can determine the state of of \BCNs. And we recursively define the $\Pe(S, i_p)$ and $\Spe(S)$ for each input $i_p$ in the right inputs set. 
+The function $\Spe(\mathsf{S}(t))$ to find the $\mathsf{ i}^{i}(t)$ from $\{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}$ to calculat least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ for $\mathsf{S}(t)$. From the definition of $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, we have that if $|\mathsf{S}(t)|=1$ then we can make sure the state of \BCNs. Thus we need not choose the input anymore to determine the state $\mathsf{s}(t)$ of \BCNs. Therefore, for any input the path expected value $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ would be $0$ and the shortest path expected value $\Spe(\mathsf{S}(t))$ also would be $0$. But if $|\mathsf{S}(t)|>1$ we still need to choose input and observe the output. Only by this way we can determine the state of of \BCNs. Thus we recursively define the $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Spe(\mathsf{S}(t))$ for each input $\mathsf{ i}^{i}(t)$ in the right inputs set. 
 
-If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $i_p$ with least $\Pe(S, i_p)$ by the function $\Spe(S)$. This input $i_p$ may help us find the shortes path to determine the initial state. But the output of \BCNs\ we observe is uncertain after we choose the input $i_p$, hence selecting the $i_p$ which with least $\Pe(S, i_p)$ may leads to a very long path to determine the initial state of \BCNs. For better performce, we define the $\Pv(S, i_p)$ to avoid this risk.% The $\Pv(S, i_p)$ is defined in the similar way. %Hence we omit the details of the definition of $\Pv(S, i_p)$ in this paper. \\
-\begin{definition}[$\Pv(S, i_p)$] 
-When the $|S|=1$, we have that
-$\Pv(S, i_p)=0$  for every $i_p$ in $\{i_1,i_2,\ldots, i_z\}$. But when the $|S|>1$, 
+If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}(t)$ with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ by the function $\Spe(\mathsf{S}(t))$. This input $\mathsf{ i}^{i}(t)$ may help us find the shortes path to determine the state. But the output of \BCNs\ we observe is uncertain after we choose the input $i_p$, hence selecting the $\mathsf{ i}^{i}(t)$ which with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ may leads to a very long path to determine the initial state of \BCNs. For better performce, we define the $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ to avoid risks.% The $\Pv(S, i_p)$ is defined in the similar way. %Hence we omit the details of the definition of $\Pv(S, i_p)$ in this paper. \\
+\begin{definition}[$\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] 
+When the $|\mathsf{S}(t)|=1$, we have that
+\[\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=0\]  for every \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]  When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
-we have that  
-\[\Pv(S, i_p)=\frac{\sum_{j=1}^k (\Spe(S_p^j)-\Pe(S, i_p)+1)^2 |S_p^j|}{ |S|}\] 
+we have that\\ $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=$
+\[\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j}(t+1))-\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))+1)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}\]
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}
 
-From the definition of the $\Pv(S, i_p)$, we have that if the $\Pv(S, i_p)$ of input $i_p$ is not very large, the risk of choosing $i_p$ would be not great either.
+From the definition of the $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, we have that if the $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ of input $\mathsf{ i}^{i}(t)$ is not very large, the risk of choosing $\mathsf{ i}^{i}(t)$ would be not great either.
 \subsection{Avoiding entering critical states}
-In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(S, i_p)$ and $\Cv(S, i_p)$ to describe expected value and variance of the times of entering critical states in the process determine the intial state of the \BCNs. The definition of $\Ce(S, i_p)$ is as follows.\\
+In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ to describe expected value and variance of the times of entering critical states in the process determine the intial state of the \BCNs. The definition of $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ is as follows.\\
 \begin{definition}[$\Lce(S)$] \label{lce}
-\[\Lce(S)= \min(\Ce(S, i_1),\Ce(S, i_2),\ldots,)\Ce(S, i_z)\]
+\[\Lce(\mathsf{S}(t))= \min(\Ce(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Ce(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\]
 \end{definition}
-\begin{definition}[$\Ce(S, i_p)$] 
-When the $|S|=1$, and for every $i_p$ in $\Delta_M$, we have: \[\Ce(S, i_p)=|S \cap S_{cri} |\] 
+\begin{definition}[$\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] 
+When the $|S|=1$, we have \[\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri} |,\]  for every \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]  
 According {\em Definition \ref{lce}}, %{\tt Spe}$(S_i)=0$ if $|S_i|=1$ 
-\[\Lce(S)=\Ce(S, i_p)=|S \cap S_{cri} |\] 
+\[\Lce(\mathsf{S}(t))=\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri} |\] 
 But when the $|S|>1$ 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $ I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
 we have that 
-\[\Ce(S, i_p)=|S \cap S_{cri}| +\frac{\sum_{j=1}^k \Lce(S_p^j)|S_p^j|}{ |S|} \] 
+\[\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|} \] 
 %and 
 %\[{\tt Lce}(S_i)= \min({\tt Ce}(S_i, I_1),{\tt Ce}(S_i, I_2),\cdots,){\tt Ce}(S_i, I_p)\]
 \end{definition}
 
-Where $S_{cri}$ is the critical states set of the \BCN\ we research. The definition of $\Ce(S, i_p)$ has some difference with $\Pe(S, i_p)$, because of the critical states set $S_{cri}$. So that  we can analyze the possibility of entering the  critical states after we derived the possible states set of \BCNs, and we can get the definitions of $\Cv(S, i_p)$ in the similar way. %We omit the details of the definition of $\Cv(S, i_p)$ in this paper as well. 
+Where $\mathsf{S}_{cri}$ is the critical states set of the \BCN\ we research. The definition of $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ has some difference with $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, because of the critical states set $\mathsf{S}_{cri}$. So that we can analyze the possibility of entering the critical states after we derived the possible states set of \BCNs, and we can get the definitions of $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ in the similar way. %We omit the details of the definition of $\Cv(S, i_p)$ in this paper as well. 
 
-\begin{definition}[$\Cv(S, i_p)$] 
+\begin{definition}[$\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] 
 When the $|S|=1$, we have that
-$\Cv(S, i_p)=0$  for every $i_p$ in $\{i_1,i_2,\ldots, i_z\}$. But when the $|S|>1$, 
+$\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=0$ for every  \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]   When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
-we have that  
-\[\Cv(S, i_p)=\frac{\sum_{j=1}^k (\Lce(S_p^j)-\Ce(S, i_p)+|S \cap S_{cri}|)^2 |S_p^j|}{ |S|}\] 
+we have that  \\
+$\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=$
+$$\frac{\sum_{j=1}^k (\Lce(\mathsf{S}^{j}(t+1))-\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))+|\mathsf{S}(t) \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}$$
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}
 
-The use of $\Ce(S, i_p)$ and $\Cv(S, i_p)$ are similar to $\Pe(S, i_p)$ and $\Pv(S, i_p)$ respectively. They help us avoid entering critical states of \BCNs\ in the process of determining the initial state of \BCNs. With these four functions $\Pe(S, i_p)$, $\Pv(S, i_p)$, $\Ce(S, i_p)$ and $\Cv(S, i_p)$, we can make the best decision we like. 
+The use of $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ are similar to $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ respectively. They help us avoid entering critical states of \BCNs\ in the process of determining the initial state of \BCNs. With these four functions $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, we can make the best decision we like. 
 
 In the four existing types of observability, they have not property {\em interactivity}. This leads to we can not analyze the state of the \BCNs\ dynamically, hence it would be hard to do some optimation in the process of determining the initial state of the \BCNs. However, this problem can be solved by the online observability of the \BCNs\ better.
