@@ -2,17 +2,23 @@
 % !TEX root = ../root.tex
 \section{Determining the online observability of \BCNs}
 \label{sec:deter}
-After defining the online observability and comparing it with the existing four observability, we propose two algorithms to determine the online observability of \BCNs. The first one is the supertree-based algorithm, and the second one is the algorithm based on directed graph. Based on the definition of online observability, we propose the supertree to describe the process of determining the initial state of a \BCN. And then, we propose the algorithm to determine the online observability of \BCNs\ based on the supertree. But the supertree-based algorithm can not help us find all paths to determine the initial state of a \BCN. In order to improve the shortcomings of the supertree-based algorithm, we propose the algorithm based on directed graph. The algorithm based on directed graph may take longer time for us to determine its online observability. But if we want do some optimizationin in the process of determining the initial state of a \BCN, this algorithm would be better. What is more, we also analyze the complexity of the algorithm based on directed graph in this section. Finally, we represent how to determine the initial state of a \BCN\ by the directed graph.
+After defining the online observability and comparing it with the existing four observability, we propose two algorithms to determine the online observability of \BCNs. The first one is the supertree-based algorithm, and the second one is the algorithm based on directed graph. Based on the definition of online observability, we propose the supertree to describe the process of determining the initial state of a \BCN. And then, we propose the algorithm to determine the online observability of \BCNs\ based on the supertree. But the supertree-based algorithm can not help us find all paths to determine the initial state of some \BCNs. In order to improve the shortcomings of the supertree-based algorithm, we propose the algorithm based on directed graph. The algorithm based on directed graph may take longer time for us to determine online observability. But if we want do some optimizationin in the process of determining the initial state of a \BCN, this algorithm would be better. What is more, we also analyze the complexity of the algorithm based on directed graph in this section. Finally, we represent how to determine the initial state of a \BCN\ by the directed graph.
 %The construction processes of supertree and directed graph simulate derivation process of the initial state mentioned before. We check the super tree based on the definition of online observability of \BCNs\ depth first or breadth first. When we find enough leaf nodes, we can make sure the \BCN\ is online observable. But when we use the super tree to find all paths to determine the initial state of a \BCN, we need to check the existence of loops when we build the super tree. And many nodes in the tree are repeated, these nodes will take a lot of time overhead and space overhead for us to build and check the super tree for \BCNs. Therefore, we proposed the second way to determine the online observability of \BCNs\ by using directed graph. By this way we can avoid checking the existence of loop and avoid checking repeated nodes. There are also other advantages which help us select the input better in the process of determining the initial state of a \BCN\ by the second way. All of these advantages will reduce time and space overhead to determine the initial state of a \BCN. In conclusion if a \BCN\ seems to be online observable we would check it earlier by using supertree. But if a  \BCN\ does not seem to be online observable we prefer to check it earlier by using directed graph. If we just want to find a path to determine the initial state of a \BCN\ we would check it by using supertree. But if we want find all paths to determine the initial state of a \BCN\ and make some optimizations in the process of determine the initial state we prefer to check tthe \BCN\ by using directed graph.
 
 \subsection{Supertree-based algorithm} %As we mentioned before, we can use the derivation function to determine the initial state of \BCNs. 
-According to the definition of online observability, we alternately observe the output and then derive and decide the input in the process of determining the initial state of a \BCN. When the  cardinal number of the set of possible states comes into be $1$, we can determine the current state of this \BCN\ and then its initial state. We define the supertree for \BCNs\ to describe this process, and then propose the supertree-based algorithm to determine the online observability for \BCNs. For convenience, we use the set of state $S_i$ inside a node to represent this node, and the input $i_p$ or output $o_j$ in an edge to represent the edge.
+According to the definition of online observability, we alternately observe the output and decide the input in the process of determining the initial state of a \BCN. When the  cardinal number of the set of possible states becomes $1$, we can determine the current state of this \BCN\ and then its initial state. We define the supertree for \BCNs\ to describe this process, and then propose the supertree-based algorithm to determine the online observability for \BCNs. For convenience, we use the set of state $\mathsf{S}^i$ inside a node to represent this node, and the input $\mathsf{i}^p$ or output $\mathsf{o}^j$ in an edge to represent the edge.
 \begin{definition}[Supertree]
-For a \BCN, every node $S_i$ in the supertree is $K$-step deterministic. The root node of its supertree is $\Delta_N$, while the leaf nodes of the supertree are the nodes with cardinal number $1$ ($|S_i|=1$). In addition to the leaf nodes, if a node $S_i$ in the $2k + 1$ ($k\in \mathbb{N}$) layer of the supertree and 
-\[|\Ded\left(S_i,\varepsilon, o_j\right)|>0,\]
- then $\Ded\left(S_i,\varepsilon, o_j\right)$ is one of its son nodes, and $o_j$ is the edge from $S_i$ to $\Ded\left(S_i,\varepsilon, o_j\right)$ for each $o_j \in \Delta_Q$. If a node $S_i$ in the $2k+2$ layer of the supertree and  
-\[|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|,\] 
-then $\Ded\left(S_i,i_p,\varepsilon\right)$ is the son node of $S_i$ and $i_p$ is the edge from $S_i$ to $\Ded\left(S_i,i_p,\varepsilon\right)$ for each $i_p \in \Delta_M$. 
+For the supertree of a online observable \BCN.   
+\begin{itemize}
+ \item  For every node $\mathsf{S}^i$ of it there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable.
+ \item  The root node of its supertree is $\Delta_N$, while the leaf nodes of the supertree are the nodes with cardinal number $1$.% ($|\mathsf{S}^i|=1$).
+ \item In addition to the leaf nodes, if a node $\mathsf{S}^i$ in the $2k + 1$ layer of the supertree where $k\in \mathbb{N}$ and 
+\[|\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)|>0,\]
+ then $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ is one of its son nodes, and $\mathsf{o}^j$ is the edge from $\mathsf{S}^i$ to $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ for each $\mathsf{o}^j\in \Delta_Q$.
+ \item  If a node $\mathsf{S}^i$ in the $2k+2$ layer of the supertree and  
+\[|\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)|=|\mathsf{S}^i|,\] 
+then $\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)$ is the son node of $\mathsf{S}^i$ and $\mathsf{i}^p$ is the edge from $\mathsf{S}^i$ to $\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)$ for each $\mathsf{i}^p \in \Delta_M$. 
+ \end{itemize}
 \label{def:super-tree}
 \end{definition}
 
@@ -26,10 +32,10 @@ then $\Ded\left(S_i,i_p,\varepsilon\right)$ is the son node of $S_i$ and $i_p$ i
       \label{fig:3}
    \end{figure}
 
-In the {\em Definition \ref{def:super-tree}}. For a \BCN, we can only infer that the possible states set is $\Delta_N$ at the beginning, thus the root node of the super tree is $\Delta_N$. And then,  we can determine the state of the \BCN\ when the cardinal number of the possible states set turns into $1$. Therefore, the leaf nodes of the supertree are the nodes with cadinal number $1$. In the process of determining the initial state of a \BCN, we observe the output of the \BCN\ to derive the set of possible states at first. After that, we derive and decide the input and then derive the new possible states set of the \BCN. We alternately observe the output and then derive and decide the input untill we can determine the state of {\em BCN}. Therefore we use $\Ded\left(S_i,\varepsilon, o_j\right)$ to find child nodes for every $S_i$ in $2k+1$ layer, and using $\Ded\left(S_i,i_p,\varepsilon\right)$ to find child nodes for every $S_i$ in $2k+2$ layer. The formula 
-\[|\Ded\left(S_i,\varepsilon, o_j\right)|>0\]
- ensures the node $\Ded\left(S_i,\varepsilon, o_j\right)$ is not empty. The formula 
- \[|\Ded\left(S_i,i_p,\varepsilon\right)|=|S_i|\] 
+In the {\em Definition \ref{def:super-tree}}. For a \BCN, we can only infer that the possible states set is $\Delta_N$ at the beginning, thus the root node of the super tree is $\Delta_N$. And then,  we can determine the state of the \BCN\ when the cardinal number of the possible states set turns into $1$. Therefore, the leaf nodes of the supertree are the nodes with cadinal number $1$. In the process of determining the initial state of a \BCN, we observe the output of the \BCN\ to derive the set of possible states at first. After that, we derive and decide the input and then derive the new possible states set of the \BCN. We alternately observe the output and then derive and decide the input untill we can determine the state of {\em BCN}. Therefore we use $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ to find child nodes for every $\mathsf{S}^i$ in $2k+1$ layer, and using $\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)$ to find child nodes for every $\mathsf{S}^i$ in $2k+2$ layer. The formula 
+\[|\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)|>0\]
+ ensures the node $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ is not empty. The formula 
+ \[|\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)|=|\mathsf{S}^i|\] 
  guarantee we can determine the state of \BCN\ in the end ({\em Section \ref{sec:online}} {\em Equation \ref{equ:12}}). Therefore, the paths to determine the initial state of a \BCN\ are described in the supertree, and then we can use it to determine the online observability for a \BCN.
 
 Based on the definition of the supertree, we propose the supertree-based algorithm ({\em Algorithm.\ref{alg:3}}) to determine the online observability for \BCNs. 
@@ -50,13 +56,13 @@ The super tree of \BCN
 %\STATE {\sf buildnode}(k)
 %\STATE $k= k+1$
 \WHILE {$Ob==$ false}
-\STATE Build child nodes for $NodesArray$ by $\Ded\left(S_i,\varepsilon, o_j\right)$
+\STATE Build child nodes for $NodesArray$ by $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$
 \STATE $NodesArray=$ Child nodes of $NodeArray$ except leaf nodes
 \STATE Check this \BCN\ by the super tree
 \IF{\BCN\ is online observable}
 \STATE $Ob=$ true
 \ELSE
-\STATE Build child nodes for $NodesArray$ by $\Ded\left(S_i,i_p,\varepsilon\right)$
+\STATE Build child nodes for $NodesArray$ by $\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)$
 \STATE $NodesArray=$ Child nodes of $NodeArray$
 \ENDIF
 \ENDWHILE
@@ -73,7 +79,7 @@ In the supertree-based algorithm we build trees by breadth first. We check the o
 In order to better illustrate how to use the super tree to determine the online observability, we give the following example.
   
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}. From the definition of online observability we need to determine whether the $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is $K$-step deterministic for every  $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$. Therefore, we build child nodes for $\Delta_N$ by the $\Ded\left(S_i,\varepsilon, o_j\right)$. For instance, \[\Ded\left(\Delta_N,\varepsilon,\delta_{4}^1\right)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\] and we can not determine whether $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic or not, and then we can not determine the online observability of this \BCN\ by the supertree now. Therefore we build child nodes for it, and then build child nodes for its child nodes as shown in the Fig.\ref{fig:3}. Then we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $K$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic. We use the same method to check other nodes, and then determine the online observability for the \BCN. Finally, we delete uncertain branches except the branches which can help us to determine online observability, such as the first branch ($\{\delta_{16}^{4},\delta_{16}^{10},\delta_{16}^{11}\}$). And then, the supertree can help us to determine the initial state of the \BCN.%We can also determine the initial state of this \BCN\ by this branch.The nodes represent the sets of possible states, the blue edges represent the processes of observing output, and the orange edges represent the processes of deriving and deciding input. Only the yellow nodes are the leaf nodes, thus this branch is not completed. %When we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $K$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic. We can also determine the initial state of this \BCN\ by this branch.
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}. From the definition of online observability we need to determine whether the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^j\right)$ is $K$-step deterministic for every  $\mathsf{o}^j\in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^j\right)|> 0$. Therefore, we build child nodes for $\Delta_N$ by the $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$. For instance, \[\Ded\left(\Delta_N,\varepsilon,\delta_{4}^1\right)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\] and we can not determine whether $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic or not at the beginning, and then we can not determine the online observability of this \BCN\ by the supertree now. Therefore we build child nodes for it, and then build child nodes for its child nodes as shown in the Fig.\ref{fig:3}. Then we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $0$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic. We use the same method to check other nodes, and then determine the online observability for the \BCN. Finally, we delete uncertain branches except the branches which can help us to determine online observability, such as the first branch ($\{\delta_{16}^{4},\delta_{16}^{10},\delta_{16}^{11}\}$). And then, the supertree can help us to determine the initial state of the \BCN.%We can also determine the initial state of this \BCN\ by this branch.The nodes represent the sets of possible states, the blue edges represent the processes of observing output, and the orange edges represent the processes of deriving and deciding input. Only the yellow nodes are the leaf nodes, thus this branch is not completed. %When we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $K$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic. We can also determine the initial state of this \BCN\ by this branch.
 
 \end{example}   
 
@@ -83,14 +89,14 @@ In order to improve the shortcomings of the supertree-based algorithm, we propos
 
 Therefore, we have the definition of directed graph for \BCNs.
 \begin{definition}[Directed Graph]
-Firstly, every node $S_i$ in the directed graph is $K$-step deterministic, and there are no duplicate nodes in the graph. 
+Firstly, every node $\mathsf{S}^i$ in the directed graph is $K$-step deterministic, and there are no duplicate nodes in the graph. 
 
-Secondly, for every node $S_i$  and $|S_i|>1$, we have that for every distinct two $s_a, s_b \in S_i$, $Hs_a=Hs_b$. 
+Secondly, for every node $\mathsf{S}^i$  and $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
 
 Finally, fot the edges of the directed graph. 
 \begin{itemize}
- \item If $|S_i|=1$, then there are not edge from it to other nodes.
- \item  If $|S_i|>1$, and there are exist one edge $i_p$ from it to one nodes, then there exist $z\ge 1$ such that there are $z$ edges contain $i_p$ from it to nodes $S_1,\ldots,S_z$ that \[|S_i|= |S_1|+,\ldots,|S_z|\] and \[\Ded\left(S_i,i_p,\varepsilon\right)=S_1\vee,\ldots,\vee S_z.\]
+ \item If $|\mathsf{S}^i|=1$, then there are not edge from it to other nodes.
+ \item  If $|\mathsf{S}^i|>1$, and there are exist one edge $i_p$ from it to one nodes, then there exist $z\ge 1$ such that there are $z$ edges contain $i_p$ from it to nodes $\mathsf{S}^1,\ldots,\mathsf{S}^z$ that \[|\mathsf{S}^i|= |\mathsf{S}^1|+,\ldots,|\mathsf{S}^z|\] and \[\Ded\left(\mathsf{S}^i,i_p,\varepsilon\right)=\mathsf{S}^1\vee,\ldots,\vee \mathsf{S}^z.\]
  \end{itemize}
 
 \end{definition}
@@ -226,7 +232,12 @@ where \[S_i\ldots,S_p\in\{\Ded\left(\Delta_N,\varepsilon,\delta_M^1\right),\ldot
  \end{itemize}
 
 After completing the previous analysis, we calculate the complexity by layer by layer, then we have the time we need to determine the online observability.  
-\[T=\sum_{k=1}^{k_{upg}}\sum_{i=1}^{Non(k)}\sum_{p=1}^{Sis(S_i)}T(S_i, i_p)\]
+\begin{equation}
+\begin{split}
+T=\sum_{k=1}^{k_{upg}}\sum_{i=1}^{Non(k)}\sum_{p=1}^{Sis(S_i)}T(S_i, i_p)
+\end{split}
+\end{equation}
+%\[T=\sum_{k=1}^{k_{upg}}\sum_{i=1}^{Non(k)}\sum_{p=1}^{Sis(S_i)}T(S_i, i_p)\]
 %The cardinal number of suitable inputs set of a node depends on the cardinal number of this node and the other three nodes used to find the suitable inputs set for it. And the time used to check whether an input is a right input for a node also depends on the updating rules of {\em BCNs}.
 
 %What is more, instead of taking $\Delta_M$ as the suitable inputs set for every node in thedirected graph, we use the other three nodes like $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$, $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ and $\{\delta_{16}^4,\delta_{16}^7\}$ that are $k$-step deterministic to find the suitable inputs set for a node $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ which with more than $2$ states. By this way we can  reduce the cardinal number of the suitable inputs set for every nodes with more than 2 states, and then reduce the time cost. 

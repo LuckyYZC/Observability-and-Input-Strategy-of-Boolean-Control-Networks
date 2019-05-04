@@ -15,10 +15,10 @@ In the rest of this section, firstly we introduce the inspiration for the online
 \subsection{Inspiration}
 
 
-As we mentioned in {\em Section \ref{sec:pre}}, we can use the third existing observability to determine the initial state of \BCN. \ly{But for the \BCN, there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. }
+As we mentioned in {\em Section \ref{sec:pre}}, we can use the third existing observability to determine the initial state of \BCN. \ly{But for a \BCN, there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. }
 
 However, we can derive the set of possible initial states $\mathsf{S}(0)$ by initial output $\mathsf{o}(0)$ we observe at time step $0$:
-\[\mathsf{S}(0)=\{\mathsf{s}(0)|\mathsf{s}(0)\in \Delta_N\ and\ H\ltimes \mathsf{s}(0)=\mathsf{o}(0)\}.\]
+\[\mathsf{S}(0)=\{\mathsf{s}(0)|\mathsf{s}(0)\in \Delta_N\ ,\ H\ltimes \mathsf{s}(0)=\mathsf{o}(0)\}.\]
 
 For every $\mathsf{S}^{i}(0)$ (corresponding to every $\mathsf{o}^{i}(0)\in \Delta_Q$) we derived, if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^p$ for some $p\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HL)^p_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HL)^p_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$. 
 Then we can determine the initial state too. 

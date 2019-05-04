@@ -21,7 +21,12 @@ Some necessary statements before defining the functions $\Pe(\mathsf{S}(t),\math
  % \item the fourth one implies the third one, second one and first one.
 \end{itemize} 
 \begin{definition}[$\Spe(\mathsf{S}(t))$] \label{lspe}
- \[\Spe(\mathsf{S}(t))= \min(\Pe(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Pe(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\] 
+\begin{equation}
+\begin{split}
+\Spe(\mathsf{S}(t))= \min(\Pe(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Pe(\mathsf{S}(t), \mathsf{ i}^{z}(t))).
+\end{split}
+\end{equation}
+ %\[\Spe(\mathsf{S}(t))= \min(\Pe(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Pe(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\] 
 \end{definition}
 
 \begin{definition}[$\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] \label{spe}
@@ -32,7 +37,12 @@ When the $|\mathsf{S}(t)|=1$,
 When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
 we have that  
-\[\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}\] 
+\begin{equation}
+\begin{split}
+\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}
+\end{split}
+\end{equation}
+%\[\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}\] 
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}
@@ -44,8 +54,14 @@ If we want to find the shortest path to determine the initial state of a \BCN, w
 When the $|\mathsf{S}(t)|=1$, we have that
 \[\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=0\]  for every \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]  When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
-we have that\\ $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=$
-\[\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j}(t+1))-\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))+1)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}\]
+we have that\\ 
+\begin{equation}
+\begin{split}
+&\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=\\
+&\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j}(t+1))-\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))+1)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}
+\end{split}
+\end{equation}%$\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=
+%\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j}(t+1))-\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))+1)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}$
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}
@@ -54,7 +70,12 @@ From the definition of the $\Pv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$, we have tha
 \subsection{Avoiding entering critical states}
 In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ to describe expected value and variance of the times of entering critical states in the process determine the intial state of the \BCNs. The definition of $\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$ is as follows.\\
 \begin{definition}[$\Lce(S)$] \label{lce}
-\[\Lce(\mathsf{S}(t))= \min(\Ce(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Ce(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\]
+\begin{equation}
+\begin{split}
+\Lce(\mathsf{S}(t))= \min(\Ce(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Ce(\mathsf{S}(t), \mathsf{ i}^{z}(t))).
+\end{split}
+\end{equation}
+%\[\Lce(\mathsf{S}(t))= \min(\Ce(\mathsf{S}(t), \mathsf{ i}^{1}(t)),\ldots,\Ce(\mathsf{S}(t), \mathsf{ i}^{z}(t))).\]
 \end{definition}
 \begin{definition}[$\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))$] 
 When the $|S|=1$, we have \[\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri} |,\]  for every \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]  
@@ -63,7 +84,13 @@ According {\em Definition \ref{lce}}, %{\tt Spe}$(S_i)=0$ if $|S_i|=1$
 But when the $|S|>1$ 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $ I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
 we have that 
-\[\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|} \] 
+\begin{equation}
+\begin{split}
+&\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=\\
+&|\mathsf{S}(t) \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|} 
+\end{split}
+\end{equation}
+%\[\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))=|\mathsf{S}(t) \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j}(t+1))|\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|} \] 
 %and 
 %\[{\tt Lce}(S_i)= \min({\tt Ce}(S_i, I_1),{\tt Ce}(S_i, I_2),\cdots,){\tt Ce}(S_i, I_p)\]
 \end{definition}
@@ -75,8 +102,14 @@ When the $|S|=1$, we have that
 $\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=0$ for every  \[\mathsf{ i}^{i}(t) \in \{\mathsf{ i}^{1}(t),\mathsf{ i}^{2}(t),\ldots, \mathsf{ i}^{z}(t)\}.\]   When the $|\mathsf{S}(t)|>1$, 
 %and the $\{I_1,I_2,\cdots, I_p\}$ is the right inputs set of $S_i$. For every $I_i$ in $\{I_1,I_2,\cdots, I_p\}$ the $\{S_i^1,S_i^2,\cdots, S_i^k\}$ is a set of state sets whose elements corresponding to the possible outputs after input $I_i$, then 
 we have that  \\
-$\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=$
-$$\frac{\sum_{j=1}^k (\Lce(\mathsf{S}^{j}(t+1))-\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))+|\mathsf{S}(t) \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}$$
+\begin{equation}
+\begin{split}
+&\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=\sum_{j=1}^k\\
+&\frac{ (\Lce(\mathsf{S}^{j}(t+1))-\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))+|\mathsf{S}(t) \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}
+\end{split}
+\end{equation}
+%$\Cv(\mathsf{S}(t), \mathsf{ i}^{i}(t))=
+      %     \frac{\sum_{j=1}^k (\Lce(\mathsf{S}^{j}(t+1))-\Ce(\mathsf{S}(t), \mathsf{ i}^{i}(t))+|\mathsf{S}(t) \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}(t+1)|}{ |\mathsf{S}(t)|}$
 %and 
 %\[{\tt Spe}(S_i)= \min({\tt Pe}(S_i, I_1),{\tt Pe}(S_i, I_2),\cdots,{\tt Pe}(S_i, I_p))\]
 \end{definition}

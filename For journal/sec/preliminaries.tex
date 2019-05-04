@@ -79,10 +79,10 @@ The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\ma
 And the updating rule of state-node $C$ is 
 
 $C(t+1)=
-(\overline{A}(t)D(t) (\overline{B}(t) \overline{F}(t) (\overline{C}(t) + \overline{E}(t)) + C(t)(B(t)E(t)+F(t)))
-+(A(t)(\overline{D}(t)(\overline{B}(t)\overline{C}(t)+\overline{E}(t)F(t)+\overline{C}(t)F(t))+B(t)E(t)\overline{F}(t)))
-+(\overline{B}(t)E(t)(C(t)\overline{D}(t)\overline{F}(t)+D(t)F(t)))
-(B(t)\overline{E}(t)(\overline{C}(t)F(t)+C(t)\overline{D}(t)))$.
+(\overline{A}(t)D(t) (\overline{B}(t) \overline{F}(t) (\overline{C}(t) + \overline{E}(t)) + 
+C(t)(B(t)E(t)+F(t)))+(A(t)(\overline{D}(t)(\overline{B}(t)\overline{C}(t)+\overline{E}(t)F(t)+
+\overline{C}(t)F(t))+B(t)E(t)\overline{F}(t)))+(\overline{B}(t)E(t)(C(t)\overline{D}(t)\overline{F}(t)+
+D(t)F(t)))(B(t)\overline{E}(t)(\overline{C}(t)F(t)+C(t)\overline{D}(t)))$.
 
 %\[C(t+1)=(A(t)\wedge B(t))\vee (C(t)\wedge D(t))\vee (E(t)\wedge F(t))\]
 The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be will be more convenient for a \BCN\ to be converted into its aglebraic form. And we will use this example to explain various concepts throughout this paper.
@@ -160,13 +160,13 @@ then we have that %for the set of all state-nodes $s(t)$ the logical matrix
 By this relationship we can construct the $L$ for the algebraic forms of \BCNs. And then we can construct the logical matrix $H$ in the similar way. To better illustrate the concept of algebraic forms, we give a simple example to describe it.
 \begin{example}
 For instance, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have that the updating rules of this \BCN\ can be represented with the algebraic form:
-\begin{equation}
+\begin{equation*}
 \begin{split}
 \mathsf{s}(t+1) =&\delta_{16}[\alpha]\mathsf{i}(t)\mathsf{s}(t)\\
 \mathsf{o}(t) =&\delta_4[\beta]\mathsf{s}(t)\\
 \end{split}
 \label{equ:4}
-\end{equation}
+\end{equation*}
 where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $\mathsf{s}(t)\in \Delta_{16}$, $\mathsf{i}(t)\in \Delta_4$ and $\mathsf{o}(t)\in \Delta_4$.
 
 And then we have its algebraic form shown by table (Fig.\ref{fig:6}) that $\mathsf{s}(t)\in \Delta_{16}$, $\mathsf{i}(t)\in \Delta_4$ and $\mathsf{o}(t)\in \Delta_4$. For instance, when $\mathsf{s}(t)=\delta_{16}^1$ and  $\mathsf{i}(t)=\delta_{4}^1$, it means that the values of all state-nodes and all input-nodes in time step $t$ are $1$,  from the true table (Fig.\ref{fig:2}) we have $C(t+1)=0$, $D(t+1)=1$, $E(t+1)=1$ and $F(t+1)=0$. Thus we have \[\mathsf{s}(t+1)=\delta_{2}^2 \ltimes \delta_{2}^1 \ltimes \delta_{2}^1 \ltimes \delta_{2}^2=\delta_{16}^{10}.\]
