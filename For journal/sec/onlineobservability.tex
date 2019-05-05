@@ -424,7 +424,7 @@ As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p
 Secondly, we have that if a \BCN\ is online observable,
 then for every  \[|\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
 
-Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$
+Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability.
 
 %However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
@@ -442,26 +442,33 @@ The existing third observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
 \end{theorem}
 \begin{proof}
-If a \BCN\ satisfies the existing third observability, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$.
+Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$, then for the $\mathsf{S}(t)$ there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}(t)$ is $k^{i}$-step determinable.
+
+
+%If a \BCN\ satisfies the existing third observability, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$.
 \begin{itemize}
-\item When $k=1$, that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. Then we have for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne\emptyset.\] 
- There exists an input $\mathsf{I}=\mathsf{i}^{i}(0) \in \Delta_M$ such that
+\item When $k=1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
+ there exists an input $\mathsf{I}=\mathsf{i}^{i}(t) \in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\varepsilon\right)|=|\mathsf{S}(0)|$, and 
- \item  for each \[\mathsf{o}^{z}(1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)|=1,\] the $\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)$ is $0$-step determinable.
+ \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)|=1,\] the $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{z}(t+1)\right)$ is $0$-step determinable.
  \end{itemize}
-Thus the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $1$-step determinable, then the \BCN\ is online observable.
+Thus the $\mathsf{S}(t)$ is $1$-step determinable, then the propostion is right when $k=1$.
 
-Therefore, we have the {\em Theorem \ref{theo:4}} is right when $k=1$.
-\item If for $k=0,\ldots, p$ the {\em Theorem \ref{theo:4}} is right. Then when $k=p+1$ we have for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne\emptyset.\] 
- There exists an input $\mathsf{i}^{i}(0) \in \Delta_M$ equal to the first input of $\mathsf{I}$ such that
+%Therefore, we have the {\em Theorem \ref{theo:4}} is right when $k=1$.
+\item If for $k=0,\ldots, p$ the propostion is right. Then when $k=p+1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
+ there exists an input $\mathsf{i}^{i}(t) \in \Delta_M$ equal to the first input of $\mathsf{I}$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\varepsilon\right)|=|\mathsf{S}(0)|$, and 
- \item  for each \[\mathsf{o}^{z}(1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)|>0,\] the $\Ded\left(\mathsf{S}(0),\mathsf{i}^{i}(0),\mathsf{o}^{z}(1)\right)$ is $p$-step determinable.
+\item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)|>0,\]  the $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{z}(t+1)\right)$ is $p$-step determinable.
  \end{itemize}
-Thus the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $p+1$-step determinable, then the \BCN\ is online observable.
+Thus the $\mathsf{S}(t)$ is $p+1$-step determinable, then the propostion is right when $k=p+1$.
 
-Therefore, we have the {\em Theorem \ref{theo:4}} is right when $k=p+1$. Then the {\em Theorem \ref{theo:4}} is right for every $p \in \mathbb{N}$
+As the propostion is right when $k=0$, and we have if for $k=0,\ldots, p$ the propostion is right, then the propostion is right when $k=p+1$. Thus the propostion is right for any $k\in \mathbb{N}$.
+
+Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. 
+
+Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0.\] There exists a $k^{i}\in \mathbb{N}$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. Thus the \BCN\ is online observable.
  \end{itemize}
 \end{proof}
 
