@@ -43,7 +43,12 @@ As mentioned in the {\em Section \ref{sec:online}}, for a \BCN, we can only infe
  \[|\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)|=|\mathsf{S}^i|\] 
  guarantee we can determine the state of \BCN\ in the end. Therefore, the paths to determine the initial state of a \BCN\ are described in the supertree, and then we can use the supertree to determine the online observability for a \BCN.
 
-Based on the definition of the supertree, we propose the supertree-based algorithm ({\em Algorithm.\ref{alg:3}}) to determine the online observability for \BCNs. 
+Based on the definition of the supertree, we propose the supertree-based algorithm ({\em Algorithm.\ref{alg:3}}) to determine the online observability for \BCNs. There are some details of {\em Algorithm.\ref{alg:3}} are as follows:
+\begin{itemize}
+\item In the supertree-based algorithm we build trees by breadth first. The $NodesArray$ and $NewArray$ represents the non-leaf nodes in layer $2k+1$ and $2k+2$ respectively. Then, the child nodes of $NodesArray$ are built by $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ and the child nodes of $NewArray$ are built by $\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)$. And we use the $TemArray$ to store the child nodes of each in $NewArray$ or $NodesArray$.
+\item We check the online observability of the \BCN\ by the definition of online observability and the supertree after $2k+2$ layer of the supertree was built for every $k\in  \mathbb{N}$. If the \BCN\ is online observable, then we stop building the supertree and delete the uncertain branches. 
+\item Finally, we return the $\Delta_N$ which is the root node of the supertree, and then we can determine the initial state of the \BCN\ by the supertree.
+ \end{itemize}
 %If we want to find all of the ways to determine the initial state of a \BCN, we have to build all leaf nodes for the super tree of this \BCN. This process takes many additional time and space overhead. Especially when there are loops in the tree such as the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^2,\delta_{16}^3\}$ in fifth layer which will form a loop. In this case we can never build the complete tree, thus we need to check the existence of loops and omit them. There are also some nodes take the same set of state, that they will take some additional overhead as well. For instance there are two nodes take the same states set $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fifth layer. However, using super tree would be a lot easier than using directed graph if we only need to find a way to determine the initial state. For instance, when we find the leaf nodes $\delta_{16}^1$, $\delta_{16}^7$ and  $\delta_{16}^{14}$ in third layer by breadth-first algorithm, we can make sure that the states set $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is 1 step deterministic. Therefore, we could use this conclusion to determine the initial state of this \BCN. 
 \begin{algorithm}[h]
 \caption{Supertree-based algorithm}
@@ -67,9 +72,9 @@ The super tree of \BCN
 %\STATE $k= k+1$
 \WHILE {$Ob==$ false}
 \STATE  $j=0$ \
-\FOR{$i=0$; $i<arraysize(NodesArray)$; $i++$}
-\STATE  $TemArray= $Child nodes of $NodesArray[i]$ 
-\FOR{$k=0$; $k<arraysize(TemArray)$; $k++$}
+\FOR{($i=0$; $i<arraysize(NodesArray)$; $i++$)}
+\STATE  $TemArray= $ Child nodes of $NodesArray[i]$ 
+\FOR{($k=0$; $k<arraysize(TemArray)$; $k++$)}
 \STATE$NewArray[j+k]=TemArray[k]$
 \ENDFOR
 \STATE$j=j+k$
@@ -81,8 +86,11 @@ The super tree of \BCN
 \STATE  $i=0$ \
 \FOR{$j=0$; $j<arraysize(NewArray)$; $j++$}
 \IF{NewArray[j] is not leaf node}
-\STATE $NodesArray[i]=$ Child node of $NewArray[j]$
-\STATE $i++$
+\STATE  $TemArray= $ Child nodes of $NewArray[j]$ 
+\FOR{($k=0$; $k<arraysize(TemArray)$; $k++$)}
+\STATE$NewArray[i+k]=TemArray[k]$
+\ENDFOR
+\STATE$i=i+k$
 \ENDIF
 \ENDFOR
 \ENDIF
@@ -95,31 +103,37 @@ The super tree of \BCN
  \label{alg:3}
 \end{algorithm}
 
-In the supertree-based algorithm we build trees by breadth first. We check the online observability of the \BCN\ by the supertree after $2k+2$ layer of the supertree was built for every $k\in  \mathbb{N}$. If the \BCN\ is online observable, then we stop building the supertree and delete the uncertain branches. Finally, we return the $NodesArray$ which is the root node of the supertree, and then we can determine the initial state of the \BCN\ by the supertree.
-
 In order to better illustrate how to use the super tree to determine the online observability, we give the following example.
   
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}. From the definition of online observability we need to determine whether the $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^j\right)$ is $K$-step deterministic for every  $\mathsf{o}^j\in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^j\right)|> 0$. Therefore, we build child nodes for $\Delta_N$ by the $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$. For instance, \[\Ded\left(\Delta_N,\varepsilon,\delta_{4}^1\right)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\] and we can not determine whether $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic or not at the beginning, and then we can not determine the online observability of this \BCN\ by the supertree now. Therefore we build child nodes for it, and then build child nodes for its child nodes as shown in the Fig.\ref{fig:3}. Then we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $0$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic. We use the same method to check other nodes, and then determine the online observability for the \BCN. Finally, we delete uncertain branches except the branches which can help us to determine online observability, such as the first branch ($\{\delta_{16}^{4},\delta_{16}^{10},\delta_{16}^{11}\}$). And then, the supertree can help us to determine the initial state of the \BCN.%We can also determine the initial state of this \BCN\ by this branch.The nodes represent the sets of possible states, the blue edges represent the processes of observing output, and the orange edges represent the processes of deriving and deciding input. Only the yellow nodes are the leaf nodes, thus this branch is not completed. %When we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $K$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic. We can also determine the initial state of this \BCN\ by this branch.
+For the \BCN\ mentioned in {\em Example \ref{exa:2}}. We need to determine for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] whether there exists a $k^{i}\in \mathbb{N}$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable.
+
+Therefore, firstly we build child nodes for $\Delta_N$ by the $\Ded\left(\mathsf{S}^i,\varepsilon, \mathsf{o}^j\right)$ for every $\mathsf{o}^{j}(0)\in \Delta_Q$. For instance, \[\Ded\left(\Delta_N,\varepsilon,\delta_{4}^1\right)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\] and we can not determine for $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ whether there exists a $k^{i}\in \mathbb{N}$ such that $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $k^{i}$-step determinable. Thus we can not determine the online observability of this \BCN\ by the supertree now. Therefore we build $2$ more layers for the \BCN\ as shown in the Fig.\ref{fig:3}. After that, as we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $0$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic. Using the same way to check other nodes, we can determine the online observability. Finally, we delete uncertain branches except the branches which can help us to determine online observability e.g. the first branch ($\{\delta_{16}^{4},\delta_{16}^{10},\delta_{16}^{11}\}$). Therefore, the supertree can help us to determine the initial state of the \BCN.%We can also determine the initial state of this \BCN\ by this branch.The nodes represent the sets of possible states, the blue edges represent the processes of observing output, and the orange edges represent the processes of deriving and deciding input. Only the yellow nodes are the leaf nodes, thus this branch is not completed. %When we check the second and third layer of this branch, we have the nodes $\{\delta_{16}^1\}$, $\{\delta_{16}^7\}$ and $\{\delta_{16}^{14}\}$ are $K$-step deterministic, and then we have the node $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $K$-step deterministic. We can also determine the initial state of this \BCN\ by this branch.
 \label{exa:11}
 \end{example}   
 
-However, if we want use the supertree-based algorithm to find all paths to determine the initial state of a \BCN. In this case, we need to check the nodes that appear multiple times in the supertree, and this nodes would take many additional time and space overhead. For instance, in the Fig.\ref{fig:3} there are two nodes take $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fourth layer. Moreover, the same nodes in a path will form a loop, the loops in the supertree will prevent us from building a complete tree. For example, there are the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^2,\delta_{16}^3\}$ in fifth layer, and they would form a loop. With the shortcomings of the supertree, we propose the algorithm based on directed graph to help us find all paths to determine the initial state of a \BCN.
+However, if we want use the supertree-based algorithm to find all paths to determine the initial state of a \BCN\ we need to build all leaf nodes of its supertree. It would take many additional time and space overhead. Because 
+\begin{itemize}
+ \item there are many nodes with the same set of states in the supertree.
+ \item And the same nodes in a path will form a loop, the loops in the supertree will prevent us from building a complete tree.
+ \end{itemize}
+For instance, in the Fig.\ref{fig:3} there are two nodes take $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fourth layer. And there are the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^2,\delta_{16}^3\}$ in fifth layer would form a loop. With the shortcomings of the supertree, we propose the algorithm based on directed graph to help us find all paths to determine the initial state of a \BCN.
 \subsection{Algorithm based on directed graph}
 In order to improve the shortcomings of the supertree-based algorithm, we proposed the algorithm based on directed graph. The biggest difference of these two algorithms is the way how the  supertree and derected graph constructed. That supertree is built from the root node ($\Delta_N$) to leaf nodes (contain 1 state), while the derected graph is built from smallest nodes (contain 1 state) to largest node (contain largest number of states). In addition, there is not any repeated node in the derected graph because every node appears only once in the directed graph. What is more, even there are some loops in the derected graph, the loops would not prevent us from building the directed graph completely.
 
 Therefore, we have the definition of directed graph for \BCNs.
 \begin{definition}[Directed Graph]
-Firstly, every node $\mathsf{S}^i$ in the directed graph is $K$-step deterministic, and there are no duplicate nodes in the graph. 
+For the supertree of a \BCN.   
+\begin{itemize}
+\item Firstly, for every node $\mathsf{S}^i$ and $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$, and there are no duplicate nodes in the graph. 
+\item Secondly, every node $\mathsf{S}^i$ in the directed graph there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. 
 
-Secondly, for every node $\mathsf{S}^i$  and $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
-
-Finally, fot the edges of the directed graph. 
+\item Finally, fot the edges of the directed graph. 
 \begin{itemize}
  \item If $|\mathsf{S}^i|=1$, then there are not edge from it to other nodes.
  \item  If $|\mathsf{S}^i|>1$, and there are exist one edge $i_p$ from it to one nodes, then there exist $z\ge 1$ such that there are $z$ edges contain $i_p$ from it to nodes $\mathsf{S}^1,\ldots,\mathsf{S}^z$ that \[|\mathsf{S}^i|= |\mathsf{S}^1|+,\ldots,|\mathsf{S}^z|\] and \[\Ded\left(\mathsf{S}^i,i_p,\varepsilon\right)=\mathsf{S}^1\vee,\ldots,\vee \mathsf{S}^z.\]
  \end{itemize}
-
+ \end{itemize}
 \end{definition}
 
 From the {\em Lemma \ref{lemm:5}} in the {\em Section \ref{sec:online}}, we have that if the set of states $S_i$ is not $K$-step deterministic and $S_i\subset S_j$, then $S_j$ is not $K$-step deterministic. Therefore, we check whether the nodes with fewer states are $K$-step deterministic at first, and then we check whether the nodes with more states are $K$-step deterministic in the process of building the directed graph for a \BCN. Once we can find a node $S_i$ is not $K$-step deterministic, then we make sure that there exists $o_j \in \Delta_Q$ such that $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$ and $S_i\subset \Ded\left(\Delta_N,\varepsilon, o_j\right)$, then $\Ded\left(\Delta_N,\varepsilon,o_j\right)$ is not $K$-step deterministic, and then this \BCN\ is not online observable. %Moreover, we can use the nodes with fewer states that are $k$-step deterministic to help us check the nodes with more states. For instance, if the node $S$ has two edges from it to two nodes $S_1$ and $S_2$, and we have $S_1$ and $S_2$ are $k$-step deterministic. In this case, we can make sure that the node $S$ is $k$-step deterministic.
