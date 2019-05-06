@@ -387,14 +387,14 @@ Thus we have the initial state $\mathsf{s}(0)$ of a \BCN\ can be determined for 
 
 In order to better illustrate the online observability, we propose its related lemma as follows.
 \begin{lemma}
-For the sets of states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there are exists a $k^{j}\in \mathbb{N}$ that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable.
+For the sets of states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there exists a $k^{j}\in \mathbb{N}$ that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable.
 \label{lemm:3}
 \end{lemma}
 \begin{proof}For the set of states $\mathsf{S}^{y}(t)$, there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$. From the {\em Lemma \ref{lemm:4}}, we have $\mathsf{S}^{x}(t)$ is $k_i$-step deterministic too, thus for the $\mathsf{S}^{x}(t)$ there exists a $k^{j}=k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable..
 \end{proof}
 
 With the {\em Lemma \ref{lemm:3}}, we have its equivalent proposition.
-For the sets of states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there does not exist a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{x}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there does not exist a $k^{j}\in \mathbb{N}$ that make $\mathsf{S}^{y}(t)$ $k^{j}$-step determinable.
+For the sets of states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there does not exist any $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{x}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there does not exist a $k^{j}\in \mathbb{N}$ that make $\mathsf{S}^{y}(t)$ $k^{j}$-step determinable.
 
 
 The {\em Lemma \ref{lemm:3}} will help us to determine whether a \BCN\ is online observable in the {\em Section \ref{sec:deter}}.
@@ -422,7 +422,7 @@ The online obervability implies the existing first observability.%, but the exis
 As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p$ the propostion is right, then the propostion is right when $k^{i}=p+1$. Thus the propostion is right for any $k^{i}\in \mathbb{N}$.
 
 Secondly, we have that if a \BCN\ is online observable,
-then for every  \[|\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
+then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
 
 Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability.
 
