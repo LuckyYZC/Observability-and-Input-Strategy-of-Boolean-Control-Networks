@@ -7,12 +7,12 @@
 Before introducing the Boolean control networks, we introduce the Boolean networks at first. In 1960s, Nobel Prize winners Jacob and Monod found that ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.'' \cite{Jacob1961Genetic}. Inspired by these Boolean-type actions in genetic circuits, the Boolean networks (\BNs) is firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. \BNs\ is a type of discrete systems which based on a directed graph. In a Boolean network, each node has only two states ``0" and ``1", and
 the node's state     can change in different  time step.  For a node $n_i$, we use $n_i(t)$ to denote the state of $n_i$ at time step $t$.
 
-The value of each node $n_i(t+1)$ is decided by logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.% We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
+The value of each node $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.% We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
 The logical operators used in  logical function include: AND, OR, NO, XOR\ly{, and so on, "delete"}. Some general descriptions of the \BNs\ and their applications to biological systems can be found in \cite{Kauffman1968Metabolic}.
 There are many natural and artificial systems works \cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi} related to \BNs.
  
 
-         \BNs\ can been naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. Different from \BNs, there are three kinds of nodes in \BCNs, \ly{they are input-nodes (\Input), state-nodes (\State) and output-nodes (\Output).} In \BCNs, we can only control the value of the input-nodes and observe the value of the output-nodes. While, in \BCNs, there is no edge with target in input-nodes, and no edge starts from the output-nodes. The value of each node $s_i(t+1)$ is decided by logical function of set of  values  $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t),\mathsf{i}_x(t),\ldots,\mathsf{i}_y(t)\}$ and if there are directed edges from $\mathsf{s}_j,\ldots,\mathsf{s}_p,\mathsf{i}_x,\ldots,\mathsf{i}_y$ to $\mathsf{s}_i$. And the value of each node $\mathsf{o}_i(t)$ is decided by logical function of  set of  values  $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t)\}$ if  there are directed edges from $\mathsf{s}_j,\ldots,\mathsf{s}_p$ to $\mathsf{o}_i$.
+         \BNs\ can been naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. Different from \BNs, there are three kinds of nodes in \BCNs, \ly{including input-nodes (\Input), state-nodes (\State) and output-nodes (\Output).} In \BCNs, we can only control the value of the input-nodes and observe the value of the output-nodes. While, there is no edge with target in input-nodes, and no edge starts from the output-nodes. The value of each node $s_i(t+1)$ is decided by a logical function of set of  values  $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t),\mathsf{i}_x(t),\ldots,\mathsf{i}_y(t)\}$ and if there are directed edges from $\mathsf{s}_j,\ldots,\mathsf{s}_p,\mathsf{i}_x,\ldots,\mathsf{i}_y$ to $\mathsf{s}_i$. And the value of each node $\mathsf{o}_i(t)$ is decided by a logical function of  set of  values  $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t)\}$ if  there are directed edges from $\mathsf{s}_j,\ldots,\mathsf{s}_p$ to $\mathsf{o}_i$.
 %However,  the value of node $n_i$ can be reflected by the value of  node $n_j$ if there exists a 
 %path from $n_j$ to $n_i$. Therefore,  the value of node $n_i(k)$  is decided by initial state of state nodes and the value of input-nodes  at time step $0,\cdots, k$.
 
@@ -55,33 +55,32 @@ In this paper we research the observability of the \BCNs. The concept of observa
 %If there are multipal type of initial state $s_0$ of a \BCN\ with the same output $o_0$, then we can not determine the initial state by the initial output. 
 % Then, we can use the input to control the state of \BCNs, and then get more information about the new state by the new output we observed. So that, we can get more information about the initial state of \BCN\ by controlling the input.
 
-For convenience, we use the vectors input \Input$(t)$, state \State$(t)$, and output \Output$(t)$ to represent the value of the input-nodes, state-nodes and output-nodes, respectively.
- Then the sequences \Input$(0)$\Input$(1)\ldots$
+For convenience, we use the vectors input \Input$(t)$, state \State$(t)$, and output \Output$(t)$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively. Then we have \State$(t+1)$ is decided by \Input$(t)$ and \State$(t)$, and \Output$(t)$ is decided by \State$(t)$.
+ The sequences \Input$(0)$\Input$(1)\ldots$
 \Input$(k-1)$,  \State$(0) $\State$(1)\ldots$\State$(k)$, and \Output$(0)$\Output$(1)\ldots$\Output$(k)$ 
  consists of several inputs, states and outputs  in sequential time steps,  respectively. 
- Such that, for a initial state \State$(0)$ of a \BCN\ and a sequence \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$, we have a corresponding  sequence 
-\State$(0) $\State$(1)\ldots $\State$(k)$ and a corresponding  sequence \Output$(0) $\Output$(1)\ldots$ \Output$(k)$ for a \BCN.  
-For a given  \BCN\  $\BB$,  \Output$(0) $\Output$(1)\ldots$ \Output$(k)$ is decide by
+ Such that, for a initial state \State$(0)$ of and a \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$ a \BCN, we have their corresponding 
+\State$(0) $\State$(1)\ldots $\State$(k)$ and \Output$(0) $\Output$(1)\ldots$ \Output$(k)$.  
+Then for a given  \BCN\  $\BB$,  \Output$(0) $\Output$(1)\ldots$ \Output$(k)$ is decide by
 \State$(0)$ and sequence \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$. 
  
- 
-Main problem  of observability can been described as: 
+ Thus the main problem of observability can been described as: 
 \begin{problem}
 \label{pro:1}
 For a given  \BCN, how to construct \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$ so that we can determine the initial state \State$(0)$?
 \end{problem}
-In this paper, we are focus on this problem.
+%In this paper, we are focus on this problem.
 
-As we mentioned before, there are four types of observability have been proposed. The four existing observability of \BCNs\ are as follows. The \State$^{i}(t)$ and \State$^{j}(t)$ represent different valuations of \State$(t)$, so do input and output. 
+As we mentioned before, there are four types of observability have been proposed. The \State$^{i}(t)$ and \State$^{j}(t)$ represent different valuations of state-nodes, so do input-nodes and output-nodes. Then four existing observability of \BCNs\ are as follows. 
 %A output can be seen as a vector of the values of all output-nodes of the \BCN\ in a time step as well. Therefore a output sequence also consists of several outputs in sequential time steps. 
 %Moreover,  \cite{cheng2009controllability} gives equivalent conditions for controllability of \BCNs\ and observability of controllable \BCNs. 
 
 \ly{I suggest that using formulas to represent for existing observabilities.}
 
 \begin{enumerate}
-	\item The first type of observability proposed in 2009 \cite{cheng2009controllability}, and it means that every \State$^{i}(0)$ can be determined by an \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$. Because the corresponding \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(k)$ of \State$^{i}(0)$ is different from the corresponding \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(k)$ of \State$^{j}(0)$ for every $j\ne i$. %Therefore, we can distinguish the \State$^{i}(0)$  by this input sequence, and then we can determine whether \State$(0)=$\State$^{i}(0)$.
+	\item The first type of observability proposed in 2009 \cite{cheng2009controllability}, and it states that every \State$^{i}(0)$ can be determined by an \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$. Because for every \State$^{j}(0)\ne$\State$^{i}(0)$, the corresponding \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(k)$ of \State$^{i}(0)$ is different from the corresponding \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(k)$ of \State$^{j}(0)$. %Therefore, we can distinguish the \State$^{i}(0)$  by this input sequence, and then we can determine whether \State$(0)=$\State$^{i}(0)$.
 	\item 
-	The second observability proposed in 2010 \cite{Zhao2010Input}, and it is determined in \cite{Li2015Controllability}. It stands that for every two distinct \State$^{i}(0)$ and \State$^{j}(0)$, there exists an \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$ which can distinguish them. Because their corresponding \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(k)$ and \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(k)$ are different. %Therefore, we can distinguish \State$^{i}(0)$ and \State$^{j}(0)$ by this input sequence, and then we can determine whether the initial state \State$(0)$ is \State$^{i}(0)$ or \State$^{j}(0)$.	
+	The second observability proposed in 2010 \cite{Zhao2010Input}, and it is determined in \cite{Li2015Controllability}. It stands that for every two distinct \State$^{i}(0)$ and \State$^{j}(0)$, there exists an \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$ that can distinguish them. Because their corresponding \Output$^{i}(0)$\Output$^{i}(1)\ldots$\Output$^{i}(k)$ and \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(k)$ are different. %Therefore, we can distinguish \State$^{i}(0)$ and \State$^{j}(0)$ by this input sequence, and then we can determine whether the initial state \State$(0)$ is \State$^{i}(0)$ or \State$^{j}(0)$.	
 	\item The third observability proposed in 2011 \cite{Cheng2011Identification}, and it states that there is an \Input$(0)$\Input$(1)\ldots$\Input$(k-1)$ that determines \State$(0)$. Because for every two distinct \State$^{i}(0)$ and \State$^{j}(0)$, their corresponding \Output$^{i}(0)$ \Output$^{i}(1)\ldots$\Output$^{i}(k)$ and \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(k)$ are different.
 	
 	\item  The fourth observability proposed in 2013 \cite{Fornasini2013Observability} is essentially the observability of linear control systems, i.e., that every sufficient long \Input$^{i}(0),$ \Input$^{i}(1),\ldots,$ \Input$^{i}(k-1)$ can determine \State$(0)$. Because for every two distinct \State$^{i}(0)$ and \State$^{j}(0)$, their corresponding \Output$^{i}(0)$ \Output$^{i}(1)\ldots$\Output$^{i}(k)$ and \Output$^{j}(0)$\Output$^{j}(1)\ldots$\Output$^{j}(k)$ are different. %Therefore, we can determine the initial state of the \BCN\ by every sufficient long input sequence for every initial state \State$(0)$.
@@ -91,7 +90,7 @@ As we mentioned before, there are four types of observability have been proposed
 
 %\rev{****input s equence***}
 
-In {\em Section \ref{sec:pre}}, we will present the formal definition of four observability completely and introduce their implication relationship. % in the following pages. What's more, there is an approach to study large-scale \BCNs\ via network aggregations \cite{Zhang2017Observability}. In order to further improve the performance of the \BCN\ model, we make some optimizations about the definition of observability of \BCNs.     which can be checked at most once
+Their formal definition will presented completely in {\em Section \ref{sec:pre}}. % in the following pages. What's more, there is an approach to study large-scale \BCNs\ via network aggregations \cite{Zhang2017Observability}. In order to further improve the performance of the \BCN\ model, we make some optimizations about the definition of observability of \BCNs.     which can be checked at most once
 \begin{comment}
 \ly{In the four existing observability, we can not determine the initial state of \BCNs\ by the first and second observability.} Although we can determine the initail state of \BCNs\ by the third and fourth observability, the requirements for \BCNs\ to determine the initail state are difficult to meet. Thus, we consider that whether we can determine the initial state of some \BCNs\ which can not be determined by the third and fourth observability.
 \end{comment}
