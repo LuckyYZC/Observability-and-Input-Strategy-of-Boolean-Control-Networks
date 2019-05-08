@@ -121,18 +121,23 @@ However, if we want use the supertree-based algorithm to find all paths to deter
  \end{itemize}
 For instance, in the Fig.\ref{fig:3} there are two nodes take $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fourth layer. And there are the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^2,\delta_{16}^3\}$ in fifth layer would form a loop. With the shortcomings of the supertree, we propose the algorithm based on directed graph to help us find all paths to determine the initial state of a \BCN.
 \subsection{Algorithm based on directed graph}
-In order to improve the shortcomings of the supertree-based algorithm, we proposed the algorithm based on directed graph. The biggest difference between these two algorithms is the way the are constructed. The supertree is constructed from the root node ($\Delta_N$) to leaf nodes (contain 1 state), while the derected graph is constructed from smallest nodes (contain 1 state) to largest node (contain largest number of states). In addition, every node appears only once in the directed graph. What is more, the loops in the derected graph would not prevent us from building the directed graph completely.
+In order to improve the shortcomings of the supertree-based algorithm, we proposed the algorithm based on directed graph. The biggest difference between these two algorithms is the way the are constructed. The supertree is constructed from the root node ($\Delta_N$) to leaf nodes (contain 1 state), while the derected graph is constructed from smallest nodes (contain 1 state) to largest node (contain largest number of states). In addition, every node appears only once in the directed graph. What is more, the loops in the derected graph would not prevent us from building the directed graph completely. For convenience, we use the set of states ($\mathsf{S}^i$) inside a node to represent this node, and the input ($\mathsf{i}^p$) in an edge to represent the edge.
 Therefore, we have the definition of directed graph for \BCNs.
 \begin{definition}[Directed Graph]
-For the supertree of a \BCN.   
+For the directed graph of a \BCN.   
 \begin{itemize}
-\item Firstly, for every node $\mathsf{S}^i$ that $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$, and there are no duplicate nodes in the graph. 
-\item Secondly, every node $\mathsf{S}^i$ in the directed graph there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. 
+\item The nodes of the directed graph are the nodes which satisfy that.
+\begin{itemize}
+\item  The node $\mathsf{S}^i$ that there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable.
+\item And, for any node $\mathsf{S}^i$ that $|\mathsf{S}^i|>1$, for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
+ \end{itemize}
+%For every node $\mathsf{S}^i$ in the directed graph, there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. And, for every node $\mathsf{S}^i$ that $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
+%\item Secondly, every node $\mathsf{S}^i$ in the directed graph there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. 
 
-\item Finally, every edge of directed graph is labelled with an input ($\mathsf{i}^p$). 
+\item The edges of directed graph satisfy that.
 \begin{itemize}
  \item If $|\mathsf{S}^i|=1$, then there are not edge from $\mathsf{S}^i$ to other nodes.
- \item  If $|\mathsf{S}^i|>1$, if for a $\mathsf{i}^p$ we have \[|\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)|=|\mathsf{S}^i|.\] And every $\Ded\left(\mathsf{S}^i,\mathsf{i}^{p},\mathsf{o}^{j}\right)\ne\emptyset$ is a node of the graph, then there exists an edge each $\mathsf{i}^p$ from $\mathsf{S}^i$ to each $\Ded\left(\mathsf{S}^i,\mathsf{i}^{p},\mathsf{o}^{j}\right)$.
+ \item  If $|\mathsf{S}^i|>1$, then if for a $\mathsf{i}^p$ we have \[|\Ded\left(\mathsf{S}^i,\mathsf{i}^p,\varepsilon\right)|=|\mathsf{S}^i|,\] and every $\Ded\left(\mathsf{S}^i,\mathsf{i}^{p},\mathsf{o}^{j}\right)\ne\emptyset$ is a node of the graph. Then there exists an edge $\mathsf{i}^p$ from $\mathsf{S}^i$ to every $\Ded\left(\mathsf{S}^i,\mathsf{i}^{p},\mathsf{o}^{j}\right)$.
  
  %from it to one nodes, then there exist $z\ge 1$ such that there are $z$ edges contain $i_p$ from it to nodes $\mathsf{S}^1,\ldots,\mathsf{S}^z$ that \[|\mathsf{S}^i|= |\mathsf{S}^1|+,\ldots,|\mathsf{S}^z|\] and \[\Ded\left(\mathsf{S}^i,i_p,\varepsilon\right)=\mathsf{S}^1\vee,\ldots,\vee \mathsf{S}^z.\]
  \end{itemize}
