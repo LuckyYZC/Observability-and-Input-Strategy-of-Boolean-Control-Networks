@@ -116,59 +116,59 @@ and
  For better illustrate the derivation functon $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$, we use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply this function. We can know the details of the derivation function better by researching this example.
  
  For all $\mathsf{i}^{i}\in \Delta_M$ and for all $\mathsf{o}^{j}\in \Delta_Q$ we have 
-\begin{equation}
+\begin{equation*}
 \begin{split}
 \Ded\left(\emptyset,\mathsf{i}^{i},\mathsf{o}^{j}\right)=\emptyset\\
 %D\left(\varnothing,I_i,O_i\right)=D\left(\varnothing,\varepsilon,O_i\right)= &D\left(\varnothing,\varepsilon,\varepsilon\right)=\varnothing\\
 \end{split}
 \label{equ:7}
-\end{equation}
+\end{equation*}
 
-Equation (\ref{equ:7}) represents that if the possible states set is an empty set of states $\emptyset$, then no matter what we input and observe we can only deduce the possible set is the empty set $\emptyset$. It means that if we don't know any information about the state of a \BCN, then we can not deduce anything no matter what we do.
+This equation represents that if the possible states set is an empty set of states $\emptyset$, then no matter what we input and observe we can only deduce the possible set is the empty set $\emptyset$. It means that if we don't know any information about the state of a \BCN, then we can not deduce anything no matter what we do.
 
 For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have 
-\begin{equation}
+\begin{equation*}
 \begin{split}
 \Ded\left(\mathsf{S}^{i},\varepsilon,\varepsilon\right)=\mathsf{S}^{i}\\
 \end{split}
 \label{equ:8}
-\end{equation}
+\end{equation*}
 
- In equation (\ref{equ:8}), we have that for any possible states set $\mathsf{S}^{i}$, and we neither input anything nor observe the output of \BCN. In this case we can only deduce that the possible states set is $\mathsf{S}^{i}$. It means that we can not know more information about a \BCN\ than what we knew before before observing the output and deciding which input to enter.
-\begin{equation}
+ This equation, we have that for any possible states set $\mathsf{S}^{i}$, and we neither input anything nor observe the output of \BCN. In this case we can only deduce that the possible states set is $\mathsf{S}^{i}$. It means that we can not know more information about a \BCN\ than what we knew before before observing the output and deciding which input to enter.
+\begin{equation*}
 \begin{split}
 \Ded\left(\Delta_N,\varepsilon,\delta_4^1\right)=&\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\\
 \end{split}
 \label{equ:9}
-\end{equation}
+\end{equation*}
 \tl{is this an example?}
  
-In equation (\ref{equ:9}). When the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide which input to enter. In this case we can derive that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observing the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
-\begin{equation}
+In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide which input to enter. In this case we can derive that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observing the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
+\begin{equation*}
 \begin{split}
 \Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\varepsilon\right)=&\{\delta_{16}^{10},\delta_{16}^4,\delta_{16}^{11}\}\\
 \end{split}
 \label{equ:10}
-\end{equation}
+\end{equation*}
 
-And then, if the possible states set $\mathsf{S}=\{\delta_{16}^1$, $\delta_{16}^2$, $\delta_{16}^3\}$ and we input $\delta_4^1$. Before we observe the output of the \BCN\ we can only derive that the possible states would be $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:10}). The cardinal number of the possible states set does not decrease before observing the output of this \BCN. %That for every $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, \varepsilon \right)$, there exists only one corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that $\mathsf{s}'=L\ltimes \mathsf{i}\ltimes \mathsf{s}$. 
+And then, if the possible states set $\mathsf{S}=\{\delta_{16}^1$, $\delta_{16}^2$, $\delta_{16}^3\}$ and we input $\delta_4^1$. Before we observe the output of the \BCN\ we can only derive that the possible states would be $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ shown in this equation. The cardinal number of the possible states set does not decrease before observing the output of this \BCN. %That for every $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, \varepsilon \right)$, there exists only one corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that $\mathsf{s}'=L\ltimes \mathsf{i}\ltimes \mathsf{s}$. 
 %Therefore the input $\delta_4^1$ is a suitable input, this equation shows how to derive the set of possible inputs. And it would help us derive the set possible inputs $\mathsf{I}(t)$. Therefore, the derivation function would make the online obervability satisfy the {\em interactivity}.
-\begin{equation}
+\begin{equation*}
 \begin{split}
 D\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\delta_4^3\right)=&\{\delta_{16}^{10},\delta_{16}^{11}\}\\
 \end{split}
 \label{equ:11}
-\end{equation}
+\end{equation*}
 
-And then if we observe that the output of \BCN\ is $\delta_4^3$, we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in equation (\ref{equ:11}). 
-\begin{equation}
+And then if we observe that the output of \BCN\ is $\delta_4^3$, we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in this equation. 
+\begin{equation*}
 \begin{split}
 \Ded\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^9,\delta_{16}^{13}\}
 \end{split}
 \label{equ:12}
-\end{equation}
+\end{equation*}
 
- Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in equation (\ref{equ:12}). Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. The cardinal number of the possible states set decrease before observing the output of this \BCN.% And if the current state of the \BCN\ is one of them then we can not determine the  state any more. Therefore, the derivation function helps us define the online obervability to satisfy the {\em real-time} property. 
+ Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in this equation. Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$. The cardinal number of the possible states set decrease before observing the output of this \BCN.% And if the current state of the \BCN\ is one of them then we can not determine the  state any more. Therefore, the derivation function helps us define the online obervability to satisfy the {\em real-time} property. 
  \label{exa:8}
  \end{example}   
  
