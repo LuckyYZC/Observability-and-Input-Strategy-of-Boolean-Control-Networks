@@ -67,7 +67,7 @@ In order to better illustrate the definition of BCN, we give an example as follo
 %To better illustrate the concept of {\em BCNs}, we give a simple example to describe it.
 
 \begin{example}
-In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$ and the directed edges which connect them. And we have the updating rules of this \BCN\ that 
+In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$ and the directed edges which connect them. The node categories  as follows.  
 \[C(t), D(t), E(t), F(t)\in \mathsf{s}(t)\] 
 denote the value of state-nodes at time step $t$;
 \[A(t), B(t)\in \mathsf{i}(t)\]
@@ -75,7 +75,9 @@ denote the value of state-nodes at time step $t$;
 \[G(t), W(t)\in \mathsf{o}(t)\] 
 denote the value of output-nodes at time step $t$.
 The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  For instance, the updating rule of output-node $G$ is 
-\[G(t)=C(t)\overline{(\overline{D}(t)\overline{ E}(t)\overline{F}(t))}.\]
+\[G(t)=C(t)\wedge \neg {(\neg {D}(t)\wedge \neg{ E}(t)\wedge \neg{F}(t))}.\]
+Without confusion, we short  logical formula $A\wedge B$ as $AB$. We also use $A+B$ to denote logical formula $A\vee B$  Hence, 
+\[G(t)=C(t) \neg\left((\neg{D}(t))(\neg{ E}(t))(\neg{F}(t))\right).\]
 And the updating rule of state-node $C$ is 
 
 $C(t+1)=
@@ -101,17 +103,17 @@ The reason why we use the truth table to describe the updating rules of the \BCN
 
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
-As mentioned in the {\em Section \ref{sec:intro}}, \STP\ is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. The algebraic form of \BCN\ helps us to introduce four existing observability of \BCN\ and define the online observability of \BCN. The definition of \STP\ is as follows.
+\ly{ As mentioned in the {\em Section \ref{sec:intro}}, \STP\ is one} of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. We use \STP\ to introduce four existing observability of \BCN\ and define the online observability of \BCN. The definition of \STP\ is as follows.
 
 \begin{definition}[STP] 
-	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the least common multiple of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\alpha/n})(Y\otimes I_{\alpha/p}),\] where $\otimes$ denotes the {\em Kronecker product}. 
+	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the {\em least common multiple} of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{\frac{\alpha}{n}})(Y\otimes I_{\frac{\alpha}{p}}),\] where $\otimes$ denotes the {\em Kronecker product}. 
 \end{definition}
 
 After introducing the definition of \STP\ of matrices,  we introduce some related notations \cite{Zhang2016Observability}:
 \begin{itemize}
-  \item $\delta^i_n$: the $i$-th column of the identity matrix $I_n$;
+  \item $\delta^i_n$: the $i$-th column of the {\em identity matrix} $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
-  \item $\delta_n \left[i_1,\ldots,i_s\right]$: $\left[\delta^{i_1}_n,\ldots,\delta^{i_s}_n\right]\left(i_1,\ldots,i_s\in\left\{1,2,\ldots,n\right\}\right)$ the logical matrix;
+  \item $\delta_n \left[i_1,\ldots,i_s\right]$: $\left[\delta^{i_1}_n,\ldots,\delta^{i_s}_n\right]$ the logical matrix where $i_1,\ldots,i_s\in\left\{1,2,\ldots,n\right\}$;
   \item  $L_{n\times s}$: the set of $n\times s$ logical matrices.
 \end{itemize}
 
@@ -125,13 +127,13 @@ Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be qu
 \end{split}
 \label{equ:2}
 \end{equation}
-where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively similar to those in formula (\ref{equ:1}), but $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formula (\ref{equ:2}) written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices, where $N=2^n$, $M=2^m$, and $Q=2^q$. 
+where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs \ly{ respectively similar to those in formula (\ref{equ:1})}, but $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formula (\ref{equ:2}) written in special vector forms; $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices, where $N=2^n$, $M=2^m$, and $Q=2^q$. 
 \end{definition}
 
 Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
 formula \[\mathsf{s}(t+1)=L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\] will be written as  \[\mathsf{s}(t+1)=L{\mathsf{i}(t)}{\mathsf{s}(t)}.\]
 
-After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN\' s algebraic form. In order to construct the algebraic form of \BCN\ (\ref{equ:2}) we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
+After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN\ \ly{as described in formula} (\ref{equ:2}) we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] where $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
 Therefore, a logical variable of a node e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}} takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Using the \STP\ of matrices, we have 
 \[\mathsf{i}(t)=\mathsf{i}_1(t)\ltimes {\ldots}\ltimes \mathsf{i}_m(t);\] 
@@ -139,7 +141,7 @@ Therefore, a logical variable of a node e.g. the input-node $A$ of \BCN\ in {\em
 \[\mathsf{o}(t)=\mathsf{o}_1(t)\ltimes {\ldots}\ltimes \mathsf{o}_q(t).\] 
 And according to \cite{Cheng2003Semi}, for the logical function $f_i$ of each state-node \State$_i$ which can be found in the updating rules (\ref{equ:1}) that
 \[\mathsf{s}_i(t+1)=f_i(\mathsf{i}_1(t),\ldots,\mathsf{i}_m(t),\mathsf{s}_1(t),\ldots,\mathsf{s}_n(t)),\] 
-there exists a logical matrix $L_i\in L_{2\times {NM}}$ such that
+there exists a logical matrix $L_i\in L_{2\times {N M}}$ such that
 %\begin{equation}
 %\begin{split}
 \[\tau(f_i(\mathsf{i}_1(t),\ldots,\mathsf{i}_m(t),\mathsf{s}_1(t),\ldots,\mathsf{s}_n(t)))= L_i\mathsf{i}(t)\mathsf{s}(t)\]
@@ -203,9 +205,9 @@ L^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \m
 Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_N$, $p\in \mathbb{Z}_+$ and $\infty$ is the infinite natural numbers. For all  $k\in \mathbb{Z}_+$, 
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
-\[L^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(p) \in(\Delta_N)^k\]
+\[L^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
  is a state sequence and 
- \[(HL)^k_{\mathsf{s}(0)}=\mathsf{o}(1)\ldots\, \mathsf{o}(k) \in(\Delta_Q)^k\] 
+ \[(HL)^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1)\ldots\, \mathsf{o}(k) \in(\Delta_Q)^k\] 
  is a output sequence. For the $\infty$, 
  \[\mathsf{I}=\mathsf{i}(0) \mathsf{i}(1)\ldots  \in(\Delta_M)^{\infty}\] 
  is an infinitely long input sequence, 
@@ -227,7 +229,7 @@ Hence the first observability means that if a \BCN\ is observable then every ini
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every initial state of this \BCN\ can be determined by an input sequence $\mathsf{I}\in(\Delta_M)^k$.  For instance,
 \begin{itemize}
-  \item the state $\delta_{16}^1$ can be determined by any input sequence which with the prefix $\delta_{4}^4$, $\delta_{4}^1 \delta_{4}^3$ or $\delta_{4}^1 \delta_{4}^4$, etc;
+  \item the state $\delta_{16}^1$ can be determined by any input sequence which with the prefix $\delta_{4}^4$, $\delta_{4}^1  \delta_{4}^3$ or $\delta_{4}^1 \delta_{4}^4$, etc;
   \item the state $\delta_{16}^2$ can be determined by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^3$ or $\delta_{4}^4$, etc;
   \item the state $\delta_{16}^3$ can be determined by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^4$ or $\delta_{4}^1 \delta_{4}^4$, etc.
 \end{itemize} 
