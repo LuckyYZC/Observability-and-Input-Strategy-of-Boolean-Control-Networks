@@ -131,7 +131,7 @@ Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be qu
 where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively. They equal to those in formula (\ref{equ:1}), but $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formula (\ref{equ:2}) written in different vector forms. $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. Where $N=2^n$, $M=2^m$, and $Q=2^q$, and $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
 \end{definition}
 
-After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN\ \ly{which described in formula} (\ref{equ:2}) we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
+After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN\ \ly{which described in formula} (\ref{equ:2}), we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
 Therefore, a logical variable of a node e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}} takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Then using the \STP\ of matrices, we have 
 \[\mathsf{i}(t)=\mathsf{i}_1(t)\ltimes {\ldots}\ltimes \mathsf{i}_m(t);\] 
@@ -219,17 +219,17 @@ Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
 \[L^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
- is a state sequence and 
+ is a state sequence, and 
  \[(HL)^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1)\ldots\, \mathsf{o}(k) \in(\Delta_Q)^k\] 
  is a output sequence. For the $\infty$, 
  \[\mathsf{I}=\mathsf{i}(0) \mathsf{i}(1)\ldots  \in(\Delta_M)^{\infty}\] 
  is an infinitely long input sequence, 
  \[L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \mathsf{s}(2)\ldots  \in(\Delta_N)^{\infty}\] 
- is an infinitely long state sequence and 
+ is an infinitely long state sequence, and 
  \[(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1) \mathsf{o}(2)\ldots \in(\Delta_Q)^{\infty}\]
-  is an infinitely long output sequence. From the algebraic forms of \BCNs, in the formula (\ref{equ:5}), for any $1\le t \le |I|$ we have 
+  is an infinitely long output sequence. From the algebraic forms of \BCNs, in the formula (\ref{equ:5}), for any $1\le t \le |\mathsf{I}|$ we have 
  \[\mathsf{s}(t)=L\ltimes\mathsf{i}({t-1})\ltimes\mathsf{s}({t-1}).\] 
- In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le t \le |I|$ we have  
+ In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le t \le |\mathsf{I}|$ we have  
  \[\mathsf{o}(t)=H\ltimes\mathsf{s}(t)=H\ltimes L\ltimes\mathsf{i}({t-1})\ltimes\mathsf{s}({t-1}).\] 
 
 These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($L^k_{\mathsf{s}(0)}(\mathsf{I})$ and $L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HL)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). Such that, four existing types of observability of BCNs can be defined as follows.
@@ -238,7 +238,7 @@ These mappings describe the relations of initial state ($\mathsf{s}(0)$), input 
 The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
-Hence the first observability means that if a \BCN\ is observable then every initial state of the \BCN\ can be determined by an input sequence $\mathsf{I}\in(\Delta_M)^k$. But we can only use the corresponding input sequence $\mathsf{I}^i$ of an initial state $\mathsf{s}^{i}(0)$ to check whether the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
+Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{i}(0)$ of the \BCN\ can be determined by an input sequence $\mathsf{I}\in(\Delta_M)^k$. But we can only use the corresponding input sequence $\mathsf{I}$ of an initial state $\mathsf{s}^{i}(0)$ to check whether the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every initial state of this \BCN\ can be determined by an input sequence $\mathsf{I}\in(\Delta_M)^k$.  For instance,
 \begin{itemize}
@@ -271,10 +271,10 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}^{i}(0)$ of the \BCN\ for every $\mathsf{s}^{i}(0)\in\Delta_N$.
+The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there is an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. For instance, any input sequence which with the prefix $\delta_{4}^1\delta_{4}^4\delta_{4}^1$ can determine the initial state $\mathsf{s}^{i}(0)$ of the \BCN\ for every $\mathsf{s}^{i}(0)\in\Delta_N$.
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there is an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. For instance, any input sequence which with the prefix $\delta_{4}^1\delta_{4}^4\delta_{4}^1$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 
 Therefore we have this \BCN\ satisfies the existing third observability.
 \label{exa:6}
@@ -283,9 +283,9 @@ Therefore we have this \BCN\ satisfies the existing third observability.
 	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
-The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}^{i}(0)$ of the \BCN\ for every $\mathsf{s}^{i}(0)\in\Delta_N$.
+The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, the states $\delta_{16}^4$ and $\delta_{16}^5$  will convert into $\delta_{16}^{13}$ after being affected by $\delta_{4}^3$, therefore any input sequence which with the prefix $\delta_{4}^3$, they can not determine the initial state $\mathsf{s}^{i}(0)$ of the \BCN\ for every $\mathsf{s}^{i}(0)\in\Delta_N$.
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, the states $\delta_{16}^4$ and $\delta_{16}^5$  will convert into $\delta_{16}^{13}$ after being affected by $\delta_{4}^3$, therefore any input sequence which with the prefix $\delta_{4}^3$, they can not determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 
 Therefore we have this \BCN\ does not satisfy the existing fourth observability.
 \label{exa:7}
@@ -314,18 +314,19 @@ What is more, we know the implication relationships of four existing types of ob
 %\end{itemize} 
 %\end{proposition}
 
-Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
+Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability, then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
 %, when we don't presuppose the initial state of {\em BCNs}
    
 After introducing the definition of four existing observability and their implication relationship, we discuss how to determine the initial state of some \BCNs\ by four existing types of observability. 
 \begin{itemize}
-\item The first and second observability can not help us to determine the initial state of some \BCNs. Because in the first observability we need to assume that the initial state $\mathsf{s}(0)$ of a \BCN\ is $\mathsf{s}^{i}(0)$, and then check it by corresponding input sequence $\mathsf{I}^{i}$ of this state. If the initial state we assume is correct, then we can determine the initial state $\mathsf{s}(0)=\mathsf{s}^{i}(0)$. But if the assumption is not correct, we can not determine the initial state of the \BCN. Therefore we need to check several test cases (which with the same initial state $\mathsf{s}(0)$) of this \BCN\ untill we can determine the initial state of them. So do the existing second observability of \BCNs.
-\item We can use the third existing observability and fourth existing observability to determine the initial state $\mathsf{s}(0)$ of \BCNs, because we do not need to presuppose the initial state. But the requirements for \BCNs\ are very difficult to meet when we use the third observability and fourth observability. Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observed at every time step can help us further determine the range of the initial state. Then we can use different input sequence to determine the initial state based on the range of the initial state. However, in the third and fourth existing observability, we have to use the same input sequence to determine the initial state.
+\item The first and second observability can not help us to determine the initial state of some \BCNs. Because in the first observability, firstly, we need to assume that the initial state $\mathsf{s}(0)$ of a \BCN\ is $\mathsf{s}^{i}(0)$. Secondly, we check it by corresponding input sequence $\mathsf{I}$ of $\mathsf{s}^{i}(0)$. If $\mathsf{s}(0)=\mathsf{s}^{i}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{i}(0)$, then we can not determine the initial state of the \BCN. Therefore we need to repeat this determining procedure untill we can determine the initial state. %check several test cases (which with the same initial state $\mathsf{s}(0)$) of this \BCN\  of them. 
+So do the existing second observability of \BCNs.
+\item We can use the third existing observability and fourth existing observability to determine the initial state $\mathsf{s}(0)$ of \BCNs. But the requirements for \BCNs\ are very difficult to meet when we use the third observability and fourth observability. Because we do not make full use of the output and input in the process of determining the initial state. As the output of \BCNs\ we observed at every time step can help us further determine the range of the initial state. We can use different input sequence to determine the initial state based on the range of the initial state. However, in the third and fourth existing observability, we use the same input sequence to determine the initial state.
 \end{itemize} 
  
-In some biological systems (depicted by \BCNs), the initial state of them can be checked at most once, i.e., we can only check the initial state of some biological systems in real time. Therefore, we can not use the first observability and second observability to determine the initial states of them. Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence we will spend a lot of overhead to determine the initial states of them by the first observability and second observability. Furthermore, we also can not use the third observability and fourth observability to determine the initial states of some biological systems if they do not satify the requirements of the third and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
+In some biological systems (depicted by \BCNs), the initial state of them can be checked at most once. Therefore, we can not use the first observability and second observability to determine the initial states of them. Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability. Furthermore, we can not use the third observability and fourth observability to determine the initial states of some biological systems if they do not satify the requirements of the third and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
 
  \begin{problem}
 \label{pro:2}
-What is the necessary and sufficient condition of determine the initial state $\mathsf{s}^{i}(0)$ of the \BCN\ for every $\mathsf{s}^{i}(0)\in\Delta_N$.
+What is the necessary and sufficient condition of determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$?
 \end{problem}
