@@ -8,15 +8,15 @@ $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time.
 
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes of the directed graph. The formal definition of \BCN\ is given as follows. 
+A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' state of the directed graph. The formal definition of \BCN\ is given as follows. 
 
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of the  topology and the associated updating rules. The topology is captured by a directed graph which consists of input-nodes (\Input), state-nodes (\State), output-nodes (\Output), and directed edges which connect nodes. 
 	\begin{itemize}
-	\item Every node in a \BCN\ can take a logic value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
+	\item Every node in a \BCN\ can take a state from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
 	
-	\item Every directed edge from a state-node \State$_i$ (or an input-node \Input$_i$) to a state-node \State$_j$ means that the logic value of \State$_j$ at time step $t+1$ is affected by the logic value of \State$_i$ (or \Input$_i$)  at time step $t$. 
+	\item Every directed edge from a state-node \State$_i$ (or an input-node \Input$_i$) to a state-node \State$_j$ means that  \State$_j(t+1)$ is affected by  \State$_i(t)$ (or \Input$_i(t)$). 
 	
-	\item Every directed edge from a state-node \State$_i$ to an output-node \Output$_i$ means that the logic value of \Output$_i$ at time step $t$ is affected by the logic value of \State$_i$ at time step $t$.  
+	\item Every directed edge from a state-node \State$_i$ to an output-node \Output$_i$ means that   \Output$_i(t)$  is affected by   \State$_i(t)$.  
 	\end{itemize}
 
 Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
@@ -29,9 +29,9 @@ Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-node
 \end{equation}
 where
 \begin{itemize}
-	\item $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the logic value of all state-nodes at time step $t$; 	
-	\item $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the logic value of all input-nodes at time step $t$; 	
-	\item $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the logic value of all output-nodes at time step $t$;  
+	\item $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the state of all state-nodes at time step $t$; 	
+	\item $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the state of all input-nodes at time step $t$; 	
+	\item $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the state of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 \end{itemize}
 %Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
@@ -67,16 +67,19 @@ In order to better illustrate the definition of BCN, we give an example as follo
 %To better illustrate the concept of {\em BCNs}, we give a simple example to describe it.
 
 \begin{example}
-In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$ and the directed edges which connect them. The node categories  as follows.  
-\[C(t), D(t), E(t), F(t)\in \mathsf{s}(t)\] 
-denote the value of state-nodes at time step $t$;
-\[A(t), B(t)\in \mathsf{i}(t)\]
- denote the value of input-nodes at time step $t$;
-\[G(t), W(t)\in \mathsf{o}(t)\] 
-denote the value of output-nodes at time step $t$.
+In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. The node categories  as follows.  
+\begin{equation*}
+\begin{split}
+&A(t), B(t)\in \mathsf{i}(t),\\
+&C(t), D(t), E(t), F(t)\in \mathsf{s}(t),\\
+&G(t), W(t)\in \mathsf{o}(t)
+\end{split}
+\label{equ:20}
+\end{equation*}
+ denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
 The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  For instance, the updating rule of output-node $G$ is 
 \[G(t)=C(t)\wedge \neg {(\neg {D}(t)\wedge \neg{ E}(t)\wedge \neg{F}(t))}.\]
-Without confusion, we short  logical formula $A\wedge B$ as $AB$. We also use $A+B$ to denote logical formula $A\vee B$  Hence, 
+Without confusion, we short  logical formula $A\wedge B$ as $AB$. We also use $A+B$ to denote logical formula $A\vee B$.  Hence, 
 \[G(t)=C(t) \neg {(\neg {D}(t) \neg{ E}(t) \neg{F}(t))}.\]
 %\[G(t)=C(t) \neg\left((\neg{D}(t))(\neg{ E}(t))(\neg{F}(t))\right).\]
 And the updating rule of state-node $C$ is 
@@ -104,15 +107,15 @@ The reason why we use the truth table to describe the updating rules of the \BCN
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
 %\ly{ As mentioned in the {\em Section \ref{sec:intro}}, 
-The \emph{semi-tensor product} (\STP) of matrices is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. With the algebraic form, we can introduce four existing observability of \BCN\ and define the online observability of \BCN\ more conveniently. The definition of \STP\ is as follows.
+The \emph{semi-tensor product} (\STP) of matrices is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. With the algebraic form, we can introduce four existing observability of \BCN. The definition of \STP\ is as follows.
 
 \begin{definition}[STP] 
-	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha=lcm(n,p)$ be the {\em least common multiple} of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{(\frac{\alpha}{n})})(Y\otimes I_{(\frac{\alpha}{p})}),\] where $\otimes$ denotes the {\em Kronecker product}. 
+	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha={\tt lcm}(n,p)$ be the {\em least common multiple} of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{(\frac{\alpha}{n})})(Y\otimes I_{(\frac{\alpha}{p})}),\] where $\otimes$ denotes the {\em Kronecker product}. 
 \end{definition}
 
 After introducing the definition of \STP\ of matrices,  we introduce some related notations \cite{Zhang2016Observability}:
 \begin{itemize}
-  \item $\delta^i_n$: the $i$-th column of the {\em identity matrix} $I_n$;
+  \item $\delta^i_n$: the $i$-th column of the $n\times n $ {\em identity matrix} $I_n$;
   \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
   \item $\delta_n \left[i_1,\ldots,i_s\right]$: $\left[\delta^{i_1}_n,\ldots,\delta^{i_s}_n\right]$ the logical matrix where $i_1,\ldots,i_s\in\left\{1,2,\ldots,n\right\}$;
   \item  $L_{n\times s}$: the set of $n\times s$ logical matrices.
@@ -128,12 +131,13 @@ Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be qu
 \end{split}
 \label{equ:2}
 \end{equation}
-where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively. They equal to those in formula (\ref{equ:1}), but $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formula (\ref{equ:2}) written in different vector forms. $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. Where $N=2^n$, $M=2^m$, and $Q=2^q$, and $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
+where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively. For convenience, we use same notations $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$
+in formulas (\ref{equ:1}) and (\ref{equ:2}), but they  are written in different vector forms. $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. That $N=2^n$, $M=2^m$, and $Q=2^q$, and $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
 \end{definition}
 
-After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN\ \ly{which described in formula} (\ref{equ:2}), we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
+After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN, we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
-Therefore, a logical variable of a node e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}} takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Then using the \STP\ of matrices, we have 
+Therefore, the value of a node e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}} takes value from these two vectors, i.e., $A(t)\in \{\delta_2^1, \delta_2^2\}$. Then using the \STP\ of matrices, we have 
 \[\mathsf{i}(t)=\mathsf{i}_1(t)\ltimes {\ldots}\ltimes \mathsf{i}_m(t);\] 
 \[\mathsf{s}(t)=\mathsf{s}_1(t)\ltimes {\ldots}\ltimes \mathsf{s}_n(t);\] 
 \[\mathsf{o}(t)=\mathsf{o}_1(t)\ltimes {\ldots}\ltimes \mathsf{o}_q(t).\] 
@@ -168,8 +172,9 @@ then we have that %for the set of all state-nodes $s(t)$ the logical matrix
 
 By this relationship we can construct the $L$ for the algebraic forms of \BCNs. And then we can construct the logical matrix $H$ in the similar way. 
 
-Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc., we usually omit the symbol ``$\ltimes$'' hereinafter. For instance, the 
-formula \[\mathsf{s}(t+1)=L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\] will be written as  \[\mathsf{s}(t+1)=L{\mathsf{i}(t)}{\mathsf{s}(t)}.\]
+%Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc. % We usually omit the symbol ``$\ltimes$'' hereinafter. 
+
+%\ly{For instance, the formula \[\mathsf{s}(t+1)=L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\] will be written as  \[\mathsf{s}(t+1)=L{\mathsf{i}(t)}{\mathsf{s}(t)}.\]}
 
 
 To better illustrate the concept of algebraic forms, we give a simple example to describe it.
