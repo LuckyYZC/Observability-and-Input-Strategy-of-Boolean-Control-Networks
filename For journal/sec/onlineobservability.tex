@@ -24,12 +24,12 @@ Then we can determine the initial state too.
 In this case, the requirements for a \BCN\ to determine its initial state would be easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible initial states ($\mathsf{S}^{i}(0)$) can be different. 
 
 Furthermore, we can derive the set of possible states $\mathsf{S}(1)$ by the outputs $\mathsf{o}(0)$ and $\mathsf{o}(1)$ we observe at time step $0$ and $1$ respectively and the input $\mathsf{i}(0)$ that
-\[\mathsf{S}(1)=\{\mathsf{s}(1)|\mathsf{s}(0)\in \mathsf{S}(0),\ \mathsf{s}(1)=L{\mathsf{i}(0)}{\mathsf{s}(0)},\ H \mathsf{s}(1)=\mathsf{o}(1)\}.\]
+\[\mathsf{S}(1)=\{\mathsf{s}(1)|\mathsf{s}(0)\in \mathsf{S}(0),\ \mathsf{s}(1)=L\ltimes{\mathsf{i}(0)}\ltimes{\mathsf{s}(0)},\ H \ltimes\mathsf{s}(1)=\mathsf{o}(1)\}.\]
 
 And for every $\mathsf{S}^{i}(1)$ we derived, 
 \begin{itemize}
   \item if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{x}(1)$, $\mathsf{s}^{y}(1) \in \mathsf{S}^{i}(1)$ implies $(HL)^k_{\mathsf{s}^{x}(1)}(\mathsf{I^i})\neq (HL)^k_{\mathsf{s}^{y}(1)}(\mathsf{I^i})$;
-  \item  and for every $\mathsf{s}^{x}(1)$ $\in \mathsf{S}^{i}(1)$ there exists only one corresponding $\mathsf{s}^{x}(0)$ $\in \mathsf{S}^{i}(0)$ such that $\mathsf{s}^{x}(1)=L{\mathsf{i}(0)}{\mathsf{s}^{x}(0)}$,
+  \item  and for every $\mathsf{s}^{x}(1)$ $\in \mathsf{S}^{i}(1)$ there exists only one corresponding $\mathsf{s}^{x}(0)$ $\in \mathsf{S}^{i}(0)$ such that $\mathsf{s}^{x}(1)=L\ltimes{\mathsf{i}(0)}\ltimes{\mathsf{s}^{x}(0)}$,
 \end{itemize} 
 then we can determine the initial state too. And in this case, the requirements for the \BCN\ to determine the initial state would be further easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible states $\mathsf{S}^{i}(1)$ which derived by the same $\mathsf{S}(0)$ can be different. 
 
@@ -54,8 +54,8 @@ The reason why we called this type of observability online observability because
 After introducing the property of the online observability, we briefly present how to determine the initial state of a \BCN. At every time setp $t$, 
 \begin{itemize}
 \item firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on the relation $\mathsf{o}(t)= H\ltimes{\mathsf{s}(t)}$ between output and state of \BCN\ we can infer the set of possible states $\mathsf{S}(t)$ by the output $\mathsf{o}(t)$.
-\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\mathsf{I}(t)$, such that for every $\mathsf{i}^{i}(t)\in \mathsf{I}(t)$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, they will not become the same state after being affected by the input $\mathsf{i}^{i}(t)$ i.e., $L\mathsf{s}^{x}(t) \mathsf{i}^{i}(t)\neq L\mathsf{s}^{y}(t) \mathsf{i}^{i}(t)$. This principle will be shown in the third subsection.  And then, we choose an input $\mathsf{i}(t)$ from $\mathsf{I}(t)$.
-\item Thirdly, based on the relation $\mathsf{s}(t+1)= L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}$ between input and state of \BCN, the set of possible states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived by the input $\mathsf{i}(t)$ we chose. 
+\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\mathsf{I}(t)$, such that for every $\mathsf{i}^{i}(t)\in \mathsf{I}(t)$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, they will not become the same state after being affected by the input $\mathsf{i}^{i}(t)$ i.e., $L\ltimes\mathsf{s}^{x}(t)\ltimes \mathsf{i}^{i}(t)\neq L\ltimes\mathsf{s}^{y}(t) \ltimes\mathsf{i}^{i}(t)$. This principle will be shown in the third subsection.  And then, we choose an input $\mathsf{i}(t)$ from $\mathsf{I}(t)$.
+\item Thirdly, based on the relation between input and state of \BCN\ $\mathsf{s}(t+1)= L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}$, the set of possible states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived by the input $\mathsf{i}(t)$ we chose. 
 \end{itemize} 
  %Then as we can know the possible states set
  The cardinal number of possible states set does not change or decrease in the determining process i.e., $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$ (will be shown in {\em Example \ref{exa:8}}). If the cardinal number of possible states set $|\mathsf{S}(t)|=1$, then we can determine the state, and then determine the initial state of \BCN. 
@@ -421,7 +421,7 @@ The online obervability implies the existing first observability.%, but the exis
  \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0\] and $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(p+1)$.
  \end{itemize}
  Then we have for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HL)^k_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$. Where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. And the input sequence $\mathsf{I}'$ satisfies the following properties, %for every state \State$^{x}(t)$$\in \mathsf{S}(t)$
-  for all states \[\mathsf{s}^{x}(t+1)\neq \mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),H\mathsf{s}^{x}(t+1))\] implies \[(HL)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HL)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}').\] Where $\mathsf{s}^{x}(t+1)=L\mathsf{s}^{x}(t)\mathsf{i}^{i}(t)$. Then we have the propostion is right when $k^{i}=p+1$. 
+  for all states \[\mathsf{s}^{x}(t+1)\neq \mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),H\ltimes\mathsf{s}^{x}(t+1))\] implies \[(HL)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HL)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}').\] Where $\mathsf{s}^{x}(t+1)=L\ltimes\mathsf{s}^{x}(t)\ltimes\mathsf{i}^{i}(t)$. Then we have the propostion is right when $k^{i}=p+1$. 
 % And $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$ 
 \end{itemize}
 As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p$ the propostion is right, then the propostion is right when $k^{i}=p+1$. Thus the propostion is right for any $k^{i}\in \mathbb{N}$.
@@ -429,7 +429,7 @@ As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p
 Secondly, we have that if a \BCN\ is online observable,
 then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
 
-Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
+Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
 
 %However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
@@ -471,7 +471,7 @@ Thus the $\mathsf{S}(t)$ is $p+1$-step determinable, then the propostion is righ
 
 As the propostion is right when $k=1$, and we have if for $k=1,\ldots, p$ the propostion is right, then the propostion is right when $k=p+1$. Thus the propostion is right for any $k\in \mathbb{N}$.
 
-Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. 
+Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. 
 
 Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0.\] There exists a $k^{i}\in \mathbb{N}$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. Thus the \BCN\ is online observable.
  \end{itemize}

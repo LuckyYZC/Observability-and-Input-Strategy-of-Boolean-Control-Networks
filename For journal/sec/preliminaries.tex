@@ -10,28 +10,28 @@ $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time.
 
 A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' state of the directed graph. The formal definition of \BCN\ is given as follows. 
 
-\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of the  topology and the associated updating rules. The topology is captured by a directed graph which consists of input-nodes (\Input), state-nodes (\State), output-nodes (\Output), and directed edges which connect nodes. 
+\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of the  topology and the associated updating rules. The topology is captured by a directed graph which consists of input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$), output-nodes ($\mathfrak{o}$), and directed edges which connect nodes. 
 	\begin{itemize}
-	\item Every node in a \BCN\ can take a state from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
+	\item Every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
 	
-	\item Every directed edge from a state-node \State$_i$ (or an input-node \Input$_i$) to a state-node \State$_j$ means that  \State$_j(t+1)$ is affected by  \State$_i(t)$ (or \Input$_i(t)$). 
+	\item Every directed edge from a state-node $\mathfrak{s}_i$ (or an input-node $\mathfrak{i}_k$) to a state-node $\mathfrak{s}_j$ means that  $\mathfrak{s}_j(t+1)$ is affected by  $\mathfrak{s}_i(t)$ (or $\mathfrak{i}_k(t)$). 
 	
-	\item Every directed edge from a state-node \State$_i$ to an output-node \Output$_i$ means that   \Output$_i(t)$  is affected by   \State$_i(t)$.  
+	\item Every directed edge from a state-node $\mathfrak{s}_i$ to an output-node $\mathfrak{o}_j$ means that   $\mathfrak{o}_j(t)$  is affected by   $\mathfrak{s}_i(t)$.  
 	\end{itemize}
 
 Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. Then the updating rules of the \BCN\ can be described as following formulas:
 \begin{equation}
 \begin{split}
-\mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
-\mathsf{o}(t)=&h(\mathsf{s}(t))
+\mathfrak{s}(t+1)=&f(\mathfrak{i}(t),\mathfrak{s}(t))\\
+\mathfrak{o}(t)=&h(\mathfrak{s}(t))
 \end{split}
 \label{equ:1}
 \end{equation}
 where
 \begin{itemize}
-	\item $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the state of all state-nodes at time step $t$; 	
-	\item $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the state of all input-nodes at time step $t$; 	
-	\item $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the state of all output-nodes at time step $t$;  
+	\item $\mathfrak{s}(t)\in \mathbb{B}^n$ is a state which represent the value of all state-nodes at time step $t$; 	
+	\item $\mathfrak{i}(t)\in \mathbb{B}^m$ is an input which represent the value of all input-nodes at time step $t$; 	
+	\item $\mathfrak{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 \end{itemize}
 %Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
@@ -70,9 +70,9 @@ In order to better illustrate the definition of BCN, we give an example as follo
 In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. The node categories  as follows.  
 \begin{equation*}
 \begin{split}
-&A(t), B(t)\in \mathsf{i}(t),\\
-&C(t), D(t), E(t), F(t)\in \mathsf{s}(t),\\
-&G(t), W(t)\in \mathsf{o}(t)
+&A(t), B(t)\in \mathfrak{i}(t),\\
+&C(t), D(t), E(t), F(t)\in \mathfrak{s}(t),\\
+&G(t), W(t)\in \mathfrak{o}(t)
 \end{split}
 \label{equ:20}
 \end{equation*}
@@ -131,8 +131,9 @@ Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be qu
 \end{split}
 \label{equ:2}
 \end{equation}
-where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively. For convenience, we use same notations $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$
-in formulas (\ref{equ:1}) and (\ref{equ:2}), but they  are written in different vector forms. $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. That $N=2^n$, $M=2^m$, and $Q=2^q$, and $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
+where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively.
+% For convenience, we use same notations $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formulas (\ref{equ:1}) and (\ref{equ:2}), but they  are written in different vector forms. 
+$L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. And $N=2^n$, $M=2^m$, $Q=2^q$, $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
 \end{definition}
 
 After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN, we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
@@ -150,12 +151,12 @@ For instance, in the {\em Example \ref{exa:2}}, when $C(t+1)=0$, $D(t+1)=1$, $E(
 \end{split}
 \end{equation*}
 
-And according to \cite{Cheng2003Semi}, for the logical function $f_i$ of each state-node \State$_i$ which can be found in the updating rules ( fomula (\ref{equ:1})) that
-\[\mathsf{s}_i(t+1)=f_i(\mathsf{i}_1(t),\ldots,\mathsf{i}_m(t),\mathsf{s}_1(t),\ldots,\mathsf{s}_n(t)),\] 
+And according to \cite{Cheng2003Semi}, for the logical function $f_i$ of each state-node $\mathfrak{s}_i$ which can be found in the updating rules ( fomula (\ref{equ:1})) that
+\[\mathfrak{s}_i(t+1)=f_i(\mathfrak{i}_1(t),\ldots,\mathfrak{i}_m(t),\mathfrak{s}_1(t),\ldots,\mathfrak{s}_n(t)),\] 
 there exists a logical matrix $L_i\in L_{2\times {N M}}$ such that
 %\begin{equation}
 %\begin{split}
-\[\tau(f_i(\mathsf{i}_1(t),\ldots,\mathsf{i}_m(t),\mathsf{s}_1(t),\ldots,\mathsf{s}_n(t)))= L_i\ltimes\mathsf{i}(t)\ltimes\mathsf{s}(t)\]
+\[\tau(\mathfrak{s}_i(t+1))= L_i\ltimes\mathsf{i}(t)\ltimes\mathsf{s}(t)\]
 %\end{split}
 %\end{equation}
 %where the left side of equation calculate the truth value and the  right side of equation calculate the vector in $\{\delta_2^1, \delta_2^2\}$. 
@@ -182,8 +183,8 @@ To better illustrate the concept of algebraic forms, we give a simple example to
 For instance, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have that the updating rules of this \BCN\ can be represented with the algebraic form:
 \begin{equation*}
 \begin{split}
-\mathsf{s}(t+1) =&\delta_{16}[\alpha]\mathsf{i}(t)\mathsf{s}(t)\\
-\mathsf{o}(t) =&\delta_4[\beta]\mathsf{s}(t)\\
+\mathsf{s}(t+1) =&\delta_{16}[\alpha]\ltimes\mathsf{i}(t)\ltimes\mathsf{s}(t)\\
+\mathsf{o}(t) =&\delta_4[\beta]\ltimes\mathsf{s}(t)\\
 \end{split}
 \label{equ:4}
 \end{equation*}
@@ -240,7 +241,7 @@ is an input sequence,
 These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($L^k_{\mathsf{s}(0)}(\mathsf{I})$ and $L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HL)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). Such that, four existing types of observability of BCNs can be defined as follows.
 %And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 \begin{definition} [First Observability]
-The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
+The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
 Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{i}(0)$ of the \BCN\ can be determined by an input sequence $\mathsf{I}\in(\Delta_M)^k$. But we can only use the corresponding input sequence $\mathsf{I}$ of an initial state $\mathsf{s}^{i}(0)$ to check whether the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
@@ -257,7 +258,7 @@ Therefore we have this \BCN\ satisfies the existing first observability.
 \end{example}   
 
 \begin{definition}[Second Observability]
-	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
+	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
 \end{definition}
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{i}(0), \mathsf{s}^{j}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can distinguish them. 
@@ -273,7 +274,7 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 \label{exa:5}
 \end{example}   
 \begin{definition}[Third Observability]
-The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
+The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
 The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
@@ -285,7 +286,7 @@ Therefore we have this \BCN\ satisfies the existing third observability.
 \label{exa:6}
 \end{example}  
 \begin{definition}[Fourth Observability]
-	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
+	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.

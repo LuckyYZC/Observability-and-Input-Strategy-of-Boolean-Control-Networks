@@ -129,7 +129,7 @@ For the directed graph of a \BCN.
 \item The nodes of the directed graph are the nodes which satisfy that.
 \begin{itemize}
 \item  The node $\mathsf{S}^i$ that there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable.
-\item When $|\mathsf{S}^i|>1$, for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
+\item When $|\mathsf{S}^i|>1$, for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\ltimes\mathsf{s}^a=H\ltimes\mathsf{s}^b$. 
  \end{itemize}
 %For every node $\mathsf{S}^i$ in the directed graph, there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. And, for every node $\mathsf{S}^i$ that $|\mathsf{S}^i|>1$, we have that for every distinct two $\mathsf{s}^a, \mathsf{s}^b \in \mathsf{S}^i$, $H\mathsf{s}^a=H\mathsf{s}^b$. 
 %\item Secondly, every node $\mathsf{S}^i$ in the directed graph there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^i$ is $k^{i}$-step determinable. 
@@ -257,10 +257,10 @@ There are some details in {\em Algorithm.\ref{alg:1}} and {\em Algorithm.\ref{al
 What is more, based on the definitions of existing four types of observability, we can also use the directed graph to determine the existing second and fourth type of observability for \BCNs. 
 \begin{itemize}
  \item Checking the existing second observability. When we try to build bottom layer and penultimate layer of the directed graph, if some nodes in penultimate layer has no edges from it to other nodes. 
- Then, there are two distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\mathsf{s}^x=H\mathsf{s}^y$, such that for any $k\in \mathbb{Z}_+$ there does not exist any input sequence $\mathsf{I}\in(\Delta_M)^k$ implies $(HL)^k_{\mathsf{s}^x}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^y}(\mathsf{I})$.
+ Then, there are two distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\ltimes\mathsf{s}^x=H\ltimes\mathsf{s}^y$, such that for any $k\in \mathbb{Z}_+$ there does not exist any input sequence $\mathsf{I}\in(\Delta_M)^k$ implies $(HL)^k_{\mathsf{s}^x}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^y}(\mathsf{I})$.
  And then, this \BCN\ does not satisfy existing second observability.
  \item  Checking the existing fourth observability. When we try to build the graph, if there exists $\mathsf{i}^p \in \Delta_M$ that there exist one node in the graph that no edge labelled with $\mathsf{i}^p$ from it.
- Then there exists an input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ does not satisfy for any distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\mathsf{s}^x=H\mathsf{s}^y$ implies $(HL)^{\infty}_{\mathsf{s}^x}(I)\neq (HL)^{\infty}_{\mathsf{s}^y}(I)$. And then this \BCN\ does not satisfy existing fourth observability.
+ Then there exists an input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ does not satisfy for any distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\ltimes\mathsf{s}^x=H\ltimes\mathsf{s}^y$ implies $(HL)^{\infty}_{\mathsf{s}^x}(I)\neq (HL)^{\infty}_{\mathsf{s}^y}(I)$. And then this \BCN\ does not satisfy existing fourth observability.
  \end{itemize}
 
 \begin{comment}
