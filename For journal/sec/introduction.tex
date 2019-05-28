@@ -7,12 +7,13 @@
 Before introducing the Boolean control networks, we introduce the Boolean networks at first. In 1960s, Nobel Prize winners Jacob and Monod found that ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.'' \cite{Jacob1961Genetic}. Inspired by these Boolean-type actions in genetic circuits, the Boolean networks (\BNs) is firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. \BNs\ is a type of discrete systems which based on a directed graph. In a Boolean network, each node has only two states ``0" and ``1", and
 the node's state     can change in different  time step.  For a node $n_i$, we use $n_i(t)$ to denote the state of $n_i$ at time step $t$.
 
-The value of each node $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.% We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
-The logical operators used in  logical function include: AND, OR, NO, XOR\ly{, and so on, "delete"}. Some general descriptions of the \BNs\ and their applications to biological systems can be found in \cite{Kauffman1968Metabolic}.
+The value of each node $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.  % We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
+ The logical operators used in  logical function include: AND, OR, NO, XOR. %\ly{, and so on, "delete"}. 
+Some general descriptions of the \BNs\ and their applications to biological systems can be found in \cite{Kauffman1968Metabolic}.
 There are many natural and artificial systems works \cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi} related to \BNs.
  
 
-         \BNs\ can been naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. Different from \BNs, there are three kinds of nodes in \BCNs, \ly{including input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$) and output-nodes ($\mathfrak{o}$).} In \BCNs, we can only control the value of the input-nodes and observe the value of the output-nodes. While, there is no edge with target in input-nodes, and no edge starts from the output-nodes. The value of each node $\mathfrak{s}_i(t+1)$ is decided by a logical function of set of  values  $\{\mathfrak{s}_j(t),\ldots,\mathfrak{s}_p(t),\mathfrak{i}_x(t),\ldots,\mathfrak{i}_y(t)\}$ and if there are directed edges from $\mathfrak{s}_j,\ldots,\mathfrak{s}_p,\mathfrak{i}_x,\ldots,\mathfrak{i}_y$ to $\mathfrak{s}_i$. And the value of each node $\mathfrak{o}_i(t)$ is decided by a logical function of  set of  values  $\{\mathfrak{s}_j(t),\ldots,\mathfrak{s}_p(t)\}$ if  there are directed edges from $\mathfrak{s}_j,\ldots,\mathfrak{s}_p$ to $\mathfrak{o}_i$.
+         \BNs\ can be naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. Different from \BNs, there are three kinds of nodes in \BCNs, \ly{including input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$) and output-nodes ($\mathfrak{o}$).} In \BCNs, we can only control the value of the input-nodes and observe the value of the output-nodes. While, there is no edge with target in input-nodes, and no edge starts from the output-nodes. The value of each node $\mathfrak{s}_i(t+1)$ is decided by a logical function of set of  values  $\{\mathfrak{s}_j(t),\ldots,\mathfrak{s}_p(t),\mathfrak{i}_x(t),\ldots,\mathfrak{i}_y(t)\}$ and if there are directed edges from $\mathfrak{s}_j,\ldots,\mathfrak{s}_p,\mathfrak{i}_x,\ldots,\mathfrak{i}_y$ to $\mathfrak{s}_i$. And the value of each node $\mathfrak{o}_i(t)$ is decided by a logical function of  set of  values  $\{\mathfrak{s}_j(t),\ldots,\mathfrak{s}_p(t)\}$ if  there are directed edges from $\mathfrak{s}_j,\ldots,\mathfrak{s}_p$ to $\mathfrak{o}_i$.
 %However,  the value of node $n_i$ can be reflected by the value of  node $n_j$ if there exists a 
 %path from $n_j$ to $n_i$. Therefore,  the value of node $n_i(k)$  is decided by initial state of state nodes and the value of input-nodes  at time step $0,\cdots, k$.
 
@@ -55,13 +56,24 @@ In this paper we research the observability of the \BCNs. The concept of observa
 %If there are multipal type of initial state $s_0$ of a \BCN\ with the same output $o_0$, then we can not determine the initial state by the initial output. 
 % Then, we can use the input to control the state of \BCNs, and then get more information about the new state by the new output we observed. So that, we can get more information about the initial state of \BCN\ by controlling the input.
 
-For convenience, we use the vectors input $\mathfrak{i}(t)$, state $\mathfrak{s}(t)$, and output $\mathfrak{o}(t)$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively. Then we have $\mathfrak{s}(t+1)$ is decided by $\mathfrak{i}(t)$ and $\mathfrak{s}(t)$, and $\mathfrak{o}(t)$ is decided by $\mathfrak{o}(t)$.
- The sequences $\mathfrak{i}(0)$$\mathfrak{i}(1)\ldots$
+For convenience, we use the vectors input $\mathfrak{i}(t)$, state $\mathfrak{s}(t)$, and output $\mathfrak{o}(t)$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively. Then we have $\mathfrak{s}(t+1)$ is decided by $\mathfrak{i}(t)$ and $\mathfrak{s}(t)$, and $\mathfrak{o}(t)$ is decided by $\mathfrak{o}(t)$ as shown in Fig.\ref{fig:10}.
+
+
+ \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.28]{figures/Fig10.png}}
+	}}
+      
+      \caption{The relationship of input, state and output.}
+      \label{fig:10}
+  \end{figure}
+   The sequences $\mathfrak{i}(0)$$\mathfrak{i}(1)\ldots$
 $\mathfrak{i}(k-1)$,  $\mathfrak{s}(0) $$\mathfrak{s}(1)\ldots$$\mathfrak{s}(k)$, and $\mathfrak{o}(0)$$\mathfrak{o}(1)\ldots$$\mathfrak{o}(k)$ 
  consists of several inputs, states and outputs  in sequential time steps,  respectively. 
  Such that, for a initial state $\mathfrak{s}(0)$ and a $\mathfrak{i}(0)$$\mathfrak{i}(1)\ldots$$\mathfrak{i}(k-1)$ of a \BCN, we have their corresponding 
-$\mathfrak{s}(0) $$\mathfrak{s}(1)\ldots $$\mathfrak{s}(k)$ and $\mathfrak{o}(0) $$\mathfrak{o}(1)\ldots$ $\mathfrak{o}(k)$.  
-Then for a given  \BCN\  $\BB$,  $\mathfrak{o}(0) $$\mathfrak{o}(1)\ldots$ $\mathfrak{o}(k)$ is decide by
+$\mathfrak{s}(0)$$\mathfrak{s}(1)\ldots $$\mathfrak{s}(k)$ and $\mathfrak{o}(0) $$\mathfrak{o}(1)\ldots$ $\mathfrak{o}(k)$.  
+Then for a given  \BCN\  $\BB$,  $\mathfrak{o}(0)$$\mathfrak{o}(1)\ldots$ $\mathfrak{o}(k)$ is decide by
 $\mathfrak{s}(0)$ and sequence $\mathfrak{i}(0)$$\mathfrak{i}(1)\ldots$$\mathfrak{i}(k-1)$. 
  
  Thus the main problem of observability can been described as: 
@@ -94,15 +106,15 @@ As we mentioned before, there are four types of observability have been proposed
 \begin{comment}
 \ly{In the four existing observability, we can not determine the initial state of \BCNs\ by the first and second observability.} Although we can determine the initail state of \BCNs\ by the third and fourth observability, the requirements for \BCNs\ to determine the initail state are difficult to meet. Thus, we consider that whether we can determine the initial state of some \BCNs\ which can not be determined by the third and fourth observability.
 \end{comment}
-Although, four existing observability can help us study some information about $\mathfrak{s}(0)$ we need. \ly{But when the determining procedure can do at most once, only third and fourth in above observability  can  determine the $\mathfrak{s}(0)$ of \BCNs.}%{\color{blue}{Not clear}} And conditions of third and fourth in above observability are strong.
+Although, four existing observability can help us study some information about $\mathfrak{s}(0)$ we need. \ly{But when the determining procedure can do at most once, only third and fourth observability  can  determine the $\mathfrak{s}(0)$ of \BCNs.}%{\color{blue}{Not clear}} And conditions of third and fourth in above observability are strong.
 What's more, in the third observability, if a \BCN\ is observable, then there has to exist an input sequence that determines its initial state $\mathfrak{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger. However, we foud that to determine $\mathfrak{s}(0)$, we only need to complete the following procedure.
 
 %Informly, the procedure of our  online observability as follows. 
 For a given \BCN\  $\BB$.  We use $\mathcal{S}(t)$ to denote the set of potential valuations of $\mathfrak{s}(t)$.
 \begin{itemize}
 	\item  Firstly, we infer $\mathcal{S}(t+1)$ by all the $\mathfrak{i}(t)$, $\mathcal{S}(t)$ and $\mathfrak{o}(t+1)$ of $\BB$.
-	\item Secondly, the $\mathfrak{i}(t)$ we chose should not make every two distinct $\mathfrak{s}^{i}(t)$ , $\mathfrak{s}^{j}(t)$$\in$ $\mathcal{S}(t)$ become the same state i.e. $\mathfrak{s}^{i}(t+1)=$$\mathfrak{s}^{j}(t)$ after affected by $\mathfrak{i}(t)$.  \ly{Therefore, for every $\mathfrak{s}^{i}(t+1)\in $ $\mathcal{S}(t+1)$ there is exact one corresponding $\mathfrak{s}^{i}(t)\in $ $\mathcal{S}(t)$.}
-	\item Thirdly, we have $|$$\mathcal{S}(t+1)$$|\le|$$\mathcal{S}(t)$$|$, and we can determine $\mathfrak{s}(t+1)$ when $|$$\mathcal{S}(t+1)$$|=1$.
+	\item Secondly, the $\mathfrak{i}(t)$ we chose should not make every two distinct $\mathfrak{s}^{i}(t)$ , $\mathfrak{s}^{j}(t)$$\in$ $\mathcal{S}(t)$ become the same state i.e. $\mathfrak{s}^{i}(t+1)=$$\mathfrak{s}^{j}(t+1)$ after affected by $\mathfrak{i}(t)$.  \ly{Therefore, for every $\mathfrak{s}^{i}(t+1)\in $ $\mathcal{S}(t+1)$ there is exact one corresponding $\mathfrak{s}^{i}(t)\in $ $\mathcal{S}(t)$.}
+	\item Thirdly, we have $|$$\mathcal{S}(t+k)$$|\le|$$\mathcal{S}(t+k-1)$$|$, and we can determine $\mathfrak{s}(t+k)$ when $|$$\mathcal{S}(t+k)$$|=1$. And then, we can determine the $\mathfrak{s}(t)$.
 \end{itemize}
 
 \begin{comment}
