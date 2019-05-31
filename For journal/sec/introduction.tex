@@ -112,9 +112,9 @@ What's more, in the third observability, if a \BCN\ is observable, then there ha
 %Informly, the procedure of our  online observability as follows. 
 For a given \BCN\  $\BB$.  We use $\mathcal{S}(t)$ to denote the set of potential valuations of $\mathfrak{s}(t)$.
 \begin{itemize}
-	\item  Firstly, we infer $\mathcal{S}(t+1)$ by all the $\mathfrak{i}(t)$, $\mathcal{S}(t)$ and $\mathfrak{o}(t+1)$ of $\BB$.
+	\item  Firstly, at every time step we infer $\mathcal{S}(t)$ by the $\mathfrak{i}(t-1)$, $\mathcal{S}(t-1)$ and $\mathfrak{o}(t)$ of $\BB$.
 	\item Secondly, the $\mathfrak{i}(t)$ we chose should not make every two distinct $\mathfrak{s}^{i}(t)$ , $\mathfrak{s}^{j}(t)$$\in$ $\mathcal{S}(t)$ become the same state i.e. $\mathfrak{s}^{i}(t+1)=$$\mathfrak{s}^{j}(t+1)$ after affected by $\mathfrak{i}(t)$.  \ly{Therefore, for every $\mathfrak{s}^{i}(t+1)\in $ $\mathcal{S}(t+1)$ there is exact one corresponding $\mathfrak{s}^{i}(t)\in $ $\mathcal{S}(t)$.}
-	\item Thirdly, we have $|$$\mathcal{S}(t+k)$$|\le|$$\mathcal{S}(t+k-1)$$|$, and we can determine $\mathfrak{s}(t+k)$ when $|$$\mathcal{S}(t+k)$$|=1$. And then, we can determine the $\mathfrak{s}(t)$.
+	\item Thirdly, we have $|$$\mathcal{S}(t)$$|\le|$$\mathcal{S}(t-1)$$|$, and we can determine $\mathfrak{s}(t)$ when $|$$\mathcal{S}(t)$$|=1$. And then, we can determine the $\mathfrak{s}(0)$.
 \end{itemize}
 
 \begin{comment}
