@@ -151,7 +151,7 @@ With the definition of directed graph and the way to construct the derected grap
 \begin{itemize}
 \item  Firstly, we try to build nodes with $k$ states for every $k\in \mathbb{N}^*$.
 \item Secondly, if the nodes are built successfully, when $k>1$ we check every node, if we can not build any edge for it then we have the \BCN\ is not online observable.
-\item Fianlly, if the nodes can not be built, then we have the \BCN\ is online observable.
+\item Fianlly, if the nodes can not be built, then we have the \BCN\ is online observable, and we return the $\Delta_N$.
  \end{itemize}
 
 \begin{algorithm}[h]
@@ -240,12 +240,12 @@ There are some details in {\em Algorithm.\ref{alg:1}} and {\em Algorithm.\ref{al
 \end{itemize} 
   %Finally, we use all of the sets of states found in second step to build nodes we need. 
  \item Sort the states in these nodes and sort these nodes: We sort the states inside the nodes at first, and then sort the nodes by the states of them. For example, the nodes $\{\delta_{16}^1,\delta_{16}^2\}$, $\{\delta_{16}^1,\delta_{16}^3\}$ and $\{\delta_{16}^2,\delta_{16}^3\}$ shown in Fig.\ref{fig:4}. 
-  \item Find $InputArray$ by other nodes: From the {\em Lemma \ref{lemm:4}} in the {\em Section \ref{sec:online}}, we have if $\mathsf{S}^{x}\subset \mathsf{S}^{y}$ then for any input $\mathsf{i}^p\in \Delta_M$ for every $k^{i}\in \mathbb{N}$, if $\mathsf{i}^p$ can not make $\mathsf{S}^{x}$ $k^i$-step determinable, then $\mathsf{i}^p$ can not make $\mathsf{S}^{y}$ $k^i$-step determinable either. Therefor, for the node $NodeArray[i]$ contains $k$ sorted states, we can use the node with the first $(k-1)$ states of $\mathsf{S}^i$ and the node with the last $(k-1)$ states of $\mathsf{S}^i$ to find $InputArray$ for $NodeArray[i]$. For example, we can search the edges which from $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ at first. And then, take the intersection of this two sets of edges to be $InputArray$ of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. 
+  \item Find $InputArray$ by other nodes: From the {\em Lemma \ref{lemm:4}} in the {\em Section \ref{sec:online}}, we have if $\mathsf{S}^{x}\subset \mathsf{S}^{y}$ then for any input $\mathsf{i}^p\in \Delta_M$ for every $k^{i}\in \mathbb{N}$, if $\mathsf{i}^p$ can not make $\mathsf{S}^{x}$ $k^i$-step determinable, then $\mathsf{i}^p$ can not make $\mathsf{S}^{y}$ $k^i$-step determinable either. Therefor, for the node $NodeArray[i]$ contains $k$ sorted states, we can use the node with the first $(k-1)$ states of $\mathsf{S}^i$ and the node with the last $(k-1)$ states of $\mathsf{S}^i$ in the directed graph to find $InputArray$ for $NodeArray[i]$. For example, we can search the edges which from $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and $\{\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$ at first. And then, take the intersection of this two sets of edges to be $InputArray$ of $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}$. 
   \item Check $NodeArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
 \item If the input $InputArray[j]$ implies \[|\Ded\left(NodeArray[i],InputArray[j],\varepsilon\right)|<|NodeArray[i]|,\] then we can make sure the $InputArray[j]$ is a wrong input.
-\item Else if every \[\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] already exists, then we contruct $NodeArray[i]$ if it does not exist in the graph, and connect it to $\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)$ with edge $InputArray[j]$.
+\item Else if every \[\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] already exists in the directed graph, then if $NodeArray[i]$ does not exist in the graph yet, we contruct it, and then connect it to every $\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)$ with the edge $InputArray[j]$.
 \item Else if there exist a node \[\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)\] has not been constructed yet, then we check it latter. 
 \end{itemize} 
 \end{itemize} 
@@ -264,9 +264,9 @@ What is more, based on the definitions of existing four types of observability, 
 \begin{itemize}
  \item Checking the existing second observability. When we try to build bottom layer and penultimate layer of the directed graph, if some nodes in penultimate layer has no edges from it to other nodes. 
  Then, there are two distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\ltimes\mathsf{s}^x=H\ltimes\mathsf{s}^y$, such that for any $k\in \mathbb{Z}_+$ there does not exist any input sequence $\mathsf{I}\in(\Delta_M)^k$ implies $(HL)^k_{\mathsf{s}^x}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^y}(\mathsf{I})$.
- And then, this \BCN\ does not satisfy existing second observability.
+ Therefore, this \BCN\ does not satisfy existing second observability.
  \item  Checking the existing fourth observability. When we try to build the graph, if there exists $\mathsf{i}^p \in \Delta_M$ that there exist one node in the graph that no edge labelled with $\mathsf{i}^p$ from it.
- Then there exists an input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ does not satisfy for any distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\ltimes\mathsf{s}^x=H\ltimes\mathsf{s}^y$ implies $(HL)^{\infty}_{\mathsf{s}^x}(I)\neq (HL)^{\infty}_{\mathsf{s}^y}(I)$. And then this \BCN\ does not satisfy existing fourth observability.
+ Then there exists an input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ does not satisfy for any distinct states $\mathsf{s}^x, \mathsf{s}^y \in \Delta_N$, $H\ltimes\mathsf{s}^x=H\ltimes\mathsf{s}^y$ implies $(HL)^{\infty}_{\mathsf{s}^x}(I)\neq (HL)^{\infty}_{\mathsf{s}^y}(I)$. Therefore, this \BCN\ does not satisfy existing fourth observability.
  \end{itemize}
 
 \begin{comment}
@@ -321,7 +321,7 @@ After introducing the algorithms to determine the online observability of the \B
 For the \BCN\ mentioned in {\em Example \ref{exa:2}}, the process of determining its initial state is shown in the Fig.\ref{fig:5}. 
 \begin{itemize}
   \item Firstly, we observe the output of \BCN, if the output we observe $\mathsf{o}(0)=\delta_4^1$ then we can derive that the set of possible initial states $\mathsf{S}(0)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$. And then we record them as the initial states and current states of the \BCN\ in the table. 
-  \item Secondly, we decide the input $\mathsf{i}(t-1)$ by $\mathsf{S}(t-1)$ and the directed graph, where $t>0$. With the $\mathsf{i}(t-1)$ and the output $\mathsf{o}(t)$ we observe, we can derive that the set of possible states $\mathsf{S}(t)$. And then we record them in their corresponding positions. 
+  \item Secondly, we decide the input $\mathsf{i}(t-1)$ by $\mathsf{S}(t-1)$ and the directed graph, where $t>0$. With the $\mathsf{i}(t-1)$, the output $\mathsf{o}(t)$ we observe and the directed graph, we can derive that the set of possible states $\mathsf{S}(t)$. And then we record them in their corresponding positions. 
  \item Repeating the second step untill the cardinal number of the set of possible states $|\mathsf{S}(t)|=1$. Then we can determine the state of \BCN\ $\mathsf{s}(t)=\delta_{16}^{6}$ and the corresponding initial state $\mathsf{s}(0)=\delta_{16}^{3}$.
 \end{itemize} 
 \end{example}   
