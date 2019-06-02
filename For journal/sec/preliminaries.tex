@@ -2,15 +2,16 @@
 % !TEX root = ../bare_jrnl.tex
 \section{Preliminaries} 
 \label{sec:pre}
-In this section we introduce the definition of \BCNs\ and their algebraic forms, as well as the four existing types of observability. 
-
-$\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
+In this section we introduce {\BCNs} and their algebraic forms, as well as the four existing types of observability. 
+We write $\mathbb{B}:=\{0,1\}$. %; $t=0,1,\ldots$ represents the discrete time. 
 
 \subsection{Boolean Control Networks}
 
 A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. 
 
-\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of the  topology and the associated updating rules. The topology is captured by a directed graph which consists of input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$), output-nodes ($\mathfrak{o}$), and directed edges which connect nodes. 
+\tl{this def mixes syntax and semantics; need to rewrite}
+\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ consists of %the  topology and the associated updating rules. The topology is captured by 
+	a directed graph which consists of input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$), output-nodes ($\mathfrak{o}$), and directed edges which connect nodes. 
 	\begin{itemize}
 	\item Every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$ 
 	
@@ -35,41 +36,44 @@ where
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 \end{itemize}
 %Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
- 
-
-\end{definition}
+ \end{definition}
 
 
 
-In order to better illustrate the definition of BCN, we give an example as follows.
+%In order to better illustrate the definition of BCN, we give an example as follows.
 
 %Note that one can only know that whether a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, 
 
  
- \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
-	}}
-      
-      \caption{A Boolean control network with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. We use blue, black and orange, to distinguish three types of nodes and three types of edges.}
-      \label{fig:1}
-  \end{figure}
 
 %To better illustrate the concept of {\em BCNs}, we give a simple example to describe it.
 
 \begin{example}
-In Fig.\ref{fig:1} we have a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. The node categories  as follows.  
-\begin{equation*}
-\begin{split}
-&A(t), B(t)\in \mathfrak{i}(t),\\
-&C(t), D(t), E(t), F(t)\in \mathfrak{s}(t),\\
-&G(t), W(t)\in \mathfrak{o}(t)
-\end{split}
-\label{equ:20}
-\end{equation*}
- denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
-The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  For instance, the updating rule of output-node $G$ is 
+	 \begin{figure}[thpb]
+		\centering
+		\framebox{\parbox{3in}{
+				\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
+		}}
+		
+		\caption{A Boolean control network with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. We use blue, black and orange, to distinguish three types of nodes and three types of edges.}
+		\label{fig:1}
+	\end{figure}
+	
+Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. 
+%
+%The node categories  as follows.  
+%\begin{equation*}
+%\begin{split}
+%&A(t), B(t)\in \mathfrak{i}(t),\\
+%&C(t), D(t), E(t), F(t)\in \mathfrak{s}(t),\\
+%&G(t), W(t)\in \mathfrak{o}(t)
+%\end{split}
+%\label{equ:20}
+%\end{equation*}
+% denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
+The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  
+%\tl{why do we need this table?! logic formulae are sufficient!}
+For instance, the updating rule of output-node $G$ is 
 \[G(t)=C(t)\wedge \neg {(\neg {D}(t)\wedge \neg{ E}(t)\wedge \neg{F}(t))}.\]
 Without confusion, we short  logical formula $A\wedge B$ as $AB$, and we use $A+B$ to denote logical formula $A\vee B$.  Hence, 
 \[G(t)=C(t) \neg {(\neg {D}(t) \neg{ E}(t) \neg{F}(t))}.\]
@@ -98,6 +102,7 @@ The reason why we use the truth table to describe the updating rules of the \BCN
 
 %==============================================================================================================
 \subsection{The algebraic forms of \BCNs}
+\tl{is this form essential to present the results?!}
 %\ly{ As mentioned in the {\em Section \ref{sec:intro}}, 
 The \emph{semi-tensor product} (\STP) of matrices is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. With the algebraic form, we can introduce four existing observability of \BCN. The definition of \STP\ is as follows.
 
@@ -128,7 +133,10 @@ where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t
 $L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. $N=2^n$, $M=2^m$, $Q=2^q$ where $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
 \end{definition}
 
-After the introduction of the algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct the algebraic form of \BCN, we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
+%After the introduction of  algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct 
+The algebraic form of a {\BCN} can be constructed as follows: 
+
+we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
 %each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
 Therefore, the value of a node takes value from these two vectors, e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}}, $\tau(A(t))\in \{\delta_2^1, \delta_2^2\}$. Then using the \STP\ of matrices, we have 
 \[\mathsf{i}(t)=\mathsf{i}_1(t)\ltimes {\ldots}\ltimes \mathsf{i}_m(t);\] 
@@ -195,9 +203,11 @@ And then we have its algebraic form shown by table (Fig.\ref{fig:6}) that $\math
    \label{exa:3}
 \end{example}   
 
-
+%=======================================================================
 \subsection{Four existing observability of \BCNs}
-After introducing the algebraic forms of \BCNs, we introduce four existing types of observability of \BCNs\ in this subsection. In order to introduce four existing types of observability of \BCNs, we define the mappings \cite{Zhang2016Observability}:
+%After introducing the algebraic forms of \BCNs, 
+In this section, we introduce the four existing definitions of observability of \BCNs. %. In order to introduce four existing types of observability of \BCNs, 
+We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 L^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_N)^k,\ \mathsf{i}(0)\ldots \mathsf{i}({k-1}) \mapsto \mathsf{s}(1) \ldots\, \mathsf{s}(k)\\
@@ -213,7 +223,7 @@ L^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \m
 \label{equ:6}
 \end{equation}
 
-Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_N$, $k\in \mathbb{Z}_+$ and $\infty$ is the infinite natural numbers. For all  $k\in \mathbb{N}^*$, 
+Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_N$, $k\in \mathbb{Z}_+$ and $\infty$ is the infinite natural numbers. For all  $k\in \mathbb{N}^*$, \tl{where is $N^*$ defined?}
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
 \[L^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
@@ -225,12 +235,19 @@ is an input sequence,
  \[L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \mathsf{s}(2)\ldots  \in(\Delta_N)^{\infty}\] 
  is an infinitely long state sequence, and 
  \[(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1) \mathsf{o}(2)\ldots \in(\Delta_Q)^{\infty}\]
-  is an infinitely long output sequence. From the algebraic forms of \BCNs, in the formula (\ref{equ:5}), for any $1\le t \le |\mathsf{I}|$ we have 
+  is an infinitely long output sequence. 
+  
+ \tl{up to there the explanations are almost trivial; consider removing them?}
+  
+  
+  From the algebraic forms of \BCNs, in the formula (\ref{equ:5}), for any $1\le t \le |\mathsf{I}|$ we have 
  \[\mathsf{s}(t)=L\ltimes\mathsf{i}({t-1})\ltimes\mathsf{s}({t-1}).\] 
  In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le t \le |\mathsf{I}|$ we have  
  \[\mathsf{o}(t)=H\ltimes\mathsf{s}(t)=H\ltimes L\ltimes\mathsf{i}({t-1})\ltimes\mathsf{s}({t-1}).\] 
 
-These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($L^k_{\mathsf{s}(0)}(\mathsf{I})$ and $L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HL)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). Such that, four existing types of observability of BCNs can be defined as follows.
+These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($L^k_{\mathsf{s}(0)}(\mathsf{I})$ and $L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HL)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). 
+
+%Such that, four existing types of observability of BCNs can be defined as follows.
 %And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 \begin{definition} [First Observability]
 The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
