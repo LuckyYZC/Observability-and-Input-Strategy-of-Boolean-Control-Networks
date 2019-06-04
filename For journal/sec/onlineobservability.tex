@@ -35,7 +35,7 @@ then we can determine the initial state too. And in this case, the requirements 
 
 Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for \BCNs\ to meet the requirements to determine their initial state. According to this rule, we propose the online observability. In the online observability we use the $\mathsf{S}(t)$ (which will be defined in the next subsection) we derive at every time step to contruct input sequence to determine the initial state of \BCNs. Such that the requirements to determine the \BCNs' initial statewould be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$.
 
-\tl{do not understand this at all, what does it mean by harsh?}
+%\tl{do not understand this at all, what does it mean by harsh?}
 
 The reason why we called this type of observability online observability because in the process of determining the initial state of \BCNs, we use the outputs we observe to construct the input sequence at every time step. Thus the construction of the input sequence is adaptive. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. %We call this property {\em interactivity}. With the {\em interactivity}, we called this type of observability online observability.
 %\begin{itemize}
@@ -43,7 +43,7 @@ The reason why we called this type of observability online observability because
 %  \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
 %\end{itemize} 
 
-\tl{basically this is to say that the selection of the input string is adaptive?}
+%\tl{basically this is to say that the selection of the input string is adaptive?}
 
 %We need the {\em real-time} property to help us avoid repeating biological experiments, and the {\em real-time} property makes the online observability be the sufficient condition of determine the initial state $s_o$ of \BCNs\ in real time. However, the {\em interactivity} would help us to find the necessary condition by making full use of the outputs and inputs to determine the initial state of \BCNs. 
 
@@ -85,10 +85,10 @@ In a Boolean control network, let
 \end{itemize} 
 A derivation function \[\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}\] %Based on derivation process mentioned before, 
 with the following properties. 
-	\tl{it is quite unusual that a def depends on the process...}
+	%\tl{it is quite unusual that a def depends on the process...}
 	%for every $S\in 2^{\Delta_N}$ 
 	That for each element $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, {o}\right)$ there exists a corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that 
-	\tl{but here you are defining something?!}
+	%\tl{but here you are defining something?!}
 %\[s=L\ltimes i\ltimes s'\ when\ i\neq \varepsilon, \] 
 
 \[\mathsf{s}'=\left\{
@@ -110,7 +110,7 @@ and
   %\item $\Ded\left(S, i, o\right)\in 2^{\Delta_N}$ is the set of possible states determined by derivation function.
 %\end{itemize} 
 
-\tl{for me this def is well-defined, so I could not really understand the rest}
+%\tl{for me this def is well-defined, so I could not really understand the rest}
  
 % We utilize the derivation functon $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$ to represent various kinds of information derived by $ \mathsf{S}$, $ \mathsf{i}$ and $ \mathsf{o}$. 
 \begin{example}
@@ -145,7 +145,7 @@ For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have
 \end{split}
 \label{equ:9}
 \end{equation*}
-\tl{is this an example?}
+%\tl{is this an example?}
  
 In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide which input to enter. In this case we can derive that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
 \begin{equation*}
