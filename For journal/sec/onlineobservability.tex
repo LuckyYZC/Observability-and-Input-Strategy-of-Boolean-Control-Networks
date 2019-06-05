@@ -19,7 +19,7 @@ As we mentioned in {\em Section \ref{sec:pre}}, we can use the third existing ob
 
 However, as we can derive the set of possible initial states $\mathsf{S}(0)$ by initial output $\mathsf{o}(0)$ we observe at time step $0$ that
 \[\mathsf{S}(0)=\{\mathsf{s}(0)|\mathsf{s}(0)\in \Delta_N\ ,\ H\ltimes \mathsf{s}(0)=\mathsf{o}(0)\}.\]
-And for every $\mathsf{S}^{i}(0)$ (corresponding to every $\mathsf{o}^{i}(0)\in \Delta_Q$) we derived, if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HL)^k_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HL)^k_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$. 
+And for every $\mathsf{S}^{i}(0)$ (corresponding to the $\mathsf{o}^{i}(0)\in \Delta_Q$) we derived, if we can find an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HL)^k_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HL)^k_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$. 
 Then we can determine the initial state too. 
 In this case, the requirements for a \BCN\ to determine its initial state would be easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible initial states ($\mathsf{S}^{i}(0)$) can be different. 
 
@@ -33,11 +33,11 @@ And for every $\mathsf{S}^{i}(1)$ we derived,
 \end{itemize} 
 then we can determine the initial state too. And in this case, the requirements for the \BCN\ to determine the initial state would be further easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible states $\mathsf{S}^{i}(1)$ which derived by the same $\mathsf{S}(0)$ can be different. 
 
-Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for \BCNs\ to meet the requirements to determine their initial state. According to this rule, we propose the online observability. In the online observability we use the $\mathsf{S}(t)$ (which will be defined in the next subsection) we derive at every time step to contruct input sequence to determine the initial state of \BCNs. Such that the requirements to determine the \BCNs' initial statewould be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$.
+Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for a \BCN\ to meet the requirements to determine its initial state. According to this rule, we propose the online observability. Instead of finding the input sequence to determine the initial state before we take the procedure of determining the initial state. In the online observability we use the $\mathsf{S}(t)$ (which will be defined in the next subsection) we derive at every time step to adaptively contruct input sequence to determine the initial state of \BCNs. Such that the requirements to determine the \BCNs' initial state would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$.
 
 %\tl{do not understand this at all, what does it mean by harsh?}
 
-The reason why we called this type of observability online observability because in the process of determining the initial state of \BCNs, we use the outputs we observe to construct the input sequence at every time step. Thus the construction of the input sequence is adaptive. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. %We call this property {\em interactivity}. With the {\em interactivity}, we called this type of observability online observability.
+%The reason why we called this type of observability online observability because in the process of determining the initial state of \BCNs, we use the outputs we observe to construct the input sequence at every time step. Thus the construction of the input sequence is adaptive. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. %We call this property {\em interactivity}. With the {\em interactivity}, we called this type of observability online observability.
 %\begin{itemize}
  % \item Firstly, in the online observability, we determine the initial state of \BCNs\ in real time. In other words, we only need one test case to determine the initial state of \BCNs. We call this property {\em real-time} property.%Such that we can determine the initial state of any test case of \BCNs.
 %  \item  Secondly, in the online observability, we use the outputs we observe to derive and decide the input sequence at every time step in the process of determining the initial state of \BCNs. By this way, we can make full use of the outputs and inputs to determine the initial state of \BCNs. We call this property {\em interactivity}.
@@ -53,9 +53,9 @@ The reason why we called this type of observability online observability because
  %Because in the process of determining the initial state every input of the input sequence is decided by the output we observe at every time step. 
 After introducing the property of the online observability, we briefly present how to determine the initial state of a \BCN. At every time setp $t$, 
 \begin{itemize}
-\item firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on the relation $\mathsf{o}(t)= H\ltimes{\mathsf{s}(t)}$ between output and state of \BCN\ we can infer the set of possible states $\mathsf{S}(t)$ by the output $\mathsf{o}(t)$.
-\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\mathsf{I}(t)$, such that for every $\mathsf{i}^{i}(t)\in \mathsf{I}(t)$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, they will not become the same state after being affected by the input $\mathsf{i}^{i}(t)$ i.e., $L\ltimes\mathsf{s}^{x}(t)\ltimes \mathsf{i}^{i}(t)\neq L\ltimes\mathsf{s}^{y}(t) \ltimes\mathsf{i}^{i}(t)$. This principle will be shown in the third subsection.  And then, we choose an input $\mathsf{i}(t)$ from $\mathsf{I}(t)$.
-\item Thirdly, based on the relation between input and state of \BCN\ $\mathsf{s}(t+1)= L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}$, the set of possible states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived by the input $\mathsf{i}(t)$ we chose. 
+\item firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on the relation $\mathsf{o}(t)=h(\mathsf{s}(t))$ between output and state of \BCN\ we can infer the set of possible states $\mathsf{S}(t)$ by the output $\mathsf{o}(t)$.
+\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_x(t),\ldots,\mathsf{i}_y(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_x(t),\ldots,\mathsf{i}_y(t)\}$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, they will not become the same state after being affected by this input $\mathsf{i}^{i}(t)$ i.e., $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. This principle will be shown in the third subsection.  And then, we choose an input $\mathsf{i}(t)$ from $\mathsf{I}(t)$.
+\item Thirdly, based on the relation between input and state of \BCN\ $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, the set of possible states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived by the input $\mathsf{i}(t)$ we chose. 
 \end{itemize} 
  %Then as we can know the possible states set
  The cardinal number of possible states set does not change or decrease in the determining process i.e., $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$ (will be shown in {\em Example \ref{exa:8}}). If the cardinal number of possible states set $|\mathsf{S}(t)|=1$, then we can determine the state, and then determine the initial state of \BCN. 
@@ -93,13 +93,13 @@ with the following properties.
 
 \[\mathsf{s}'=\left\{
 \begin{array}{rcl}
-L\ltimes \mathsf{i}\ltimes \mathsf{s}      &      & {\mathsf{i}\neq \varepsilon}\\
+f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
 \end{array} \right. \]
 
 and 
 
-\[H\ltimes \mathsf{s}'=\mathsf{o}\ when\ \mathsf{o}\neq \varepsilon.\]
+\[h(\mathsf{s}')=\mathsf{o}\ when\ \mathsf{o}\neq \varepsilon.\]
 
 \end{definition}
 %where   
@@ -141,43 +141,43 @@ For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have
  we can not know more information about a \BCN\ than what we knew before before we observe the output and decide which input to enter.
 \begin{equation*}
 \begin{split}
-\Ded\left(\Delta_N,\varepsilon,\delta_4^1\right)=&\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\\
+\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=&\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}\\
 \end{split}
 \label{equ:9}
 \end{equation*}
 %\tl{is this an example?}
  
-In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^1$ before we decide which input to enter. In this case we can derive that the possible states would be $\delta_{16}^1$, $\delta_{16}^2$ or  $\delta_{16}^3$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
+In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^0$ before we decide which input to enter. In this case we can derive that the possible states would be $\delta_{16}^0$, $\delta_{16}^1$ or  $\delta_{16}^2$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
 \begin{equation*}
 \begin{split}
-\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\varepsilon\right)=&\{\delta_{16}^{10},\delta_{16}^4,\delta_{16}^{11}\}\\
+\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\varepsilon\right)=&\{\delta_{16}^{9},\delta_{16}^3,\delta_{16}^{10}\}\\
 \end{split}
 \label{equ:10}
 \end{equation*}
 
-And then, if the possible states set $\mathsf{S}=\{\delta_{16}^1$, $\delta_{16}^2$, $\delta_{16}^3\}$ and we input $\delta_4^1$. Before we observe the output of the \BCN\ we can only derive that the possible states would be $\delta_{16}^{10}$, $\delta_{16}^4$ or  $\delta_{16}^{11}$ shown in this equation. In this equation, the cardinal number of the possible states set does not decrease before we observe the output of this \BCN. %That for every $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, \varepsilon \right)$, there exists only one corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that $\mathsf{s}'=L\ltimes \mathsf{i}\ltimes \mathsf{s}$. 
+And then, if the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$. Before we observe the output of the \BCN\ we can only derive that the possible states would be $\delta_{16}^{9}$, $\delta_{16}^3$ or  $\delta_{16}^{10}$ shown in this equation. In this equation, the cardinal number of the possible states set does not decrease before we observe the output of this \BCN. %That for every $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, \varepsilon \right)$, there exists only one corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that $\mathsf{s}'=L\ltimes \mathsf{i}\ltimes \mathsf{s}$. 
 %Therefore the input $\delta_4^1$ is a suitable input, this equation shows how to derive the set of possible inputs. And it would help us derive the set possible inputs $\mathsf{I}(t)$. Therefore, the derivation function would make the online obervability satisfy the {\em interactivity}.
 \begin{equation*}
 \begin{split}
-D\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_4^1,\delta_4^3\right)=&\{\delta_{16}^{10},\delta_{16}^{11}\}\\
+D\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\delta_4^2\right)=&\{\delta_{16}^{9},\delta_{16}^{10}\}\\
 \end{split}
 \label{equ:11}
 \end{equation*}
 
-And then if we observe that the output of \BCN\ is $\delta_4^3$, we can deduce that the possible state can be $\delta_{16}^{10}$ or  $\delta_{16}^{11}$ shown in this equation. 
+And then if we observe that the output of \BCN\ is $\delta_4^2$, we can deduce that the possible state can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$ shown in this equation. 
 \begin{equation*}
 \begin{split}
-\Ded\left(\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^9,\delta_{16}^{13}\}
+\Ded\left(\{\delta_{16}^3,\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^8,\delta_{16}^{7},\delta_{16}^{10}\}
 \end{split}
 \label{equ:12}
 \end{equation*}
 
- Finally if the set of possible states is $\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^9$ or $\delta_{16}^{13}$ shown in this equation. Because both $\delta_{16}^4$ and $\delta_{16}^5$ are turn into be the same state $\delta_{16}^9$ after affected by $\delta_4^3$.  In this equation, the cardinal number of the possible states set decrease before observing the output of this \BCN.% And if the current state of the \BCN\ is one of them then we can not determine the  state any more. Therefore, the derivation function helps us define the online obervability to satisfy the {\em real-time} property. 
+ Finally if the set of possible states $\mathsf{S}=\{\delta_{16}^3, \delta_{16}^4, \delta_{16}^5, \delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^8$, $\delta_{16}^7$ or $\delta_{16}^{10}$ shown in this equation. Because both $\delta_{16}^3$ and $\delta_{16}^4$ become the same state $\delta_{16}^8$ after affected by $\delta_4^3$.  In this equation, the cardinal number of the possible states set decrease before observing the output of this \BCN.% And if the current state of the \BCN\ is one of them then we can not determine the  state any more. Therefore, the derivation function helps us define the online obervability to satisfy the {\em real-time} property. 
  \label{exa:8}
  \end{example}   
  
- Then we have the set $\mathsf{S}(t)$ of possible states at time step $t$ is defined as follows:
- \begin{definition}[$\mathsf{S}(t)$]
+ Then we have the set $\mathsf{S}(t)$ of possible states of it at time step $t$ is defined as follows:
+ \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(t-1)$ and output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(t)$ we have
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\Delta_N,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
@@ -187,7 +187,7 @@ And then if we observe that the output of \BCN\ is $\delta_4^3$, we can deduce t
  
  As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step. But we need to know how to choose the input at every time step to determine the initial state of \BCNs. Thus we propose the $k$-step determinability for the set of possible states $\mathsf{S}(t)$ to depicted whether we can determine the state $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$.
 \subsection{$k$-step determinability}
-After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\in \mathbb{N}$. % It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
+After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\ge 0$. % It may easier to difine online observability by programming language. But we would like to define its mathematical form for preciseness of concepts. However, before defining the online observability of \BCNs, we need to difine the $k$-step determinability of the states set of \BCNs\ at first.
 \begin{definition}[$k$-Step Determinability] 
 
 When $k=0$, a set of possible states $\mathsf{S}(t)$ is $0$-step determinable if $|\mathsf{S}(t)|=1$. 
@@ -218,22 +218,22 @@ Therefore, the $k$-step determinability is well defined when $k=p+1$.
 
  \end{itemize}
  
-As the $k$-step determinability is well defined when $k=0$. And if for $k=0,\ldots p$ the $k$-step determinability is well defined, the $k$-step determinability is also well defined when $k=p+1$. Therefore, we have the $k$-step determinability is well defined for every $k\in \mathbb{N}$.
+As the $k$-step determinability is well defined when $k=0$. And if for $k=0,\ldots p$ the $k$-step determinability is well defined, the $k$-step determinability is also well defined when $k=p+1$. Therefore, we have the $k$-step determinability is well defined for every $k\ge 0$.
  
  Then, in order to better illustrate this definition, we give the following example.
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble states $\Ded\left(\Delta_N,\varepsilon,\delta_4^1\right)=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$, the cardinality number of this set $|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|=3>1$, and for this set there exists $\delta_{4}^4$ such that 
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble states $\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$, the cardinality number of this set $|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3>1$, and for this set there exists $\delta_{4}^3$ such that 
  \begin{itemize}
- \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\varepsilon\right)|=|\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}|$;
- \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^1\right)|=|\{\delta_{16}^1\}|=1$, that the $\{\delta_{16}^1\}$ is $0$-step deterministic;
- \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^2\right)|=|\{\delta_{16}^7\}|=1$, that the $\{\delta_{16}^7\}$ is $0$-step deterministic;
-  \item  $|\Ded\left(\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\},\delta_{4}^4,\delta_{4}^4\right)|=|\{\delta_{16}^{14}\}|=1$, that the $\{\delta_{16}^{14}\}$ is $0$-step deterministic.
+ \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$;
+ \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^0\right)|=|\{\delta_{16}^0\}|=1$, that the $\{\delta_{16}^0\}$ is $0$-step deterministic;
+ \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^3\right)|=|\{\delta_{16}^{13}\}|=1$, that the $\{\delta_{16}^{13}\}$ is $0$-step deterministic;
+  \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^1\right)|=|\{\delta_{16}^{6}\}|=1$, that the $\{\delta_{16}^{6}\}$ is $0$-step deterministic.
  \end{itemize}
- Therefore the set of states $\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}$ is $1$-step deterministic.
+ Therefore the set of states $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ is $1$-step deterministic.
 \label{exa:9}
 \end{example}  
 
-In addition, we propose some lemma for the $k$-step determinability.
+In addition, we propose some lemmas for the $k$-step determinability.
 \begin{comment}
 \begin{lemma}
  In the time step $t$ and $S$ is the set of current possible states we derived. If $S$ is $k$-step deterministic, then we can determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$).
@@ -364,19 +364,19 @@ if for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  We have that:
  \begin{itemize}
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)|=\{\delta_{16}^1,\delta_{16}^2,\delta_{16}^3\}\neq 0$, and it is $1$-step determinable;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)|=\{\delta_{16}^4,\delta_{16}^5,\delta_{16}^6,\delta_{16}^7\}\neq 0$, and it is $1$-step determinable;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)|=\{\delta_{16}^8,\delta_{16}^9,\delta_{16}^{10},\delta_{16}^{11}\}\neq 0$, and it is $2$-step determinable;
- \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^4\right)|=\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15},\delta_{16}^{16}\}\neq 0$, and it is $2$-step determinable.
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^0\right)|=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}\neq 0$, and it is $1$-step determinable;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)|=\{\delta_{16}^3,\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\}\neq 0$, and it is $1$-step determinable;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)|=\{\delta_{16}^7,\delta_{16}^8,\delta_{16}^{9},\delta_{16}^{10}\}\neq 0$, and it is $2$-step determinable;
+ \item $|\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)|=\{\delta_{16}^{11},\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15}\}\neq 0$, and it is $2$-step determinable.
  \end{itemize}
  
-Therefore we have this \BCN\ is the online observable.
+Therefore we have this \BCN\ is the online observable. And from this example we have that we can use online observability to determine the initial states of some \BCNs\ which can not be determined   by using existing observability
 \label{exa:10}
 \end{example}  
 
 From the informal definition and formal definition of online observability, we propose a theorem for the online observability to solve the problem we proposed in the {\em Section \ref{sec:pre}}.
 \begin{theorem}
-The initial state $\mathsf{s}(0)$ of a \BCN\ can be determined for every $\mathsf{s}(0)\in \Delta_N$ iff this \BCN\ is online observable. 
+A \BCN\ is online observable iff its initial state $\mathsf{s}(0)$ of a \BCN\ can be determined for every $\mathsf{s}(0)\in \Delta_N$. 
 \label{theo:1}
 \end{theorem}
 \begin{proof}
@@ -392,7 +392,7 @@ Thus we have the initial state $\mathsf{s}(0)$ of a \BCN\ can be determined for 
 
 In order to better illustrate the online observability, we propose its related lemma as follows.
 \begin{lemma}
-For the sets of states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there exists a $k^{j}\in \mathbb{N}$ that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable.
+For the sets of possible states $\mathsf{S}^{x}(t)$ and $\mathsf{S}^{y}(t)$, if there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$, then there exists a $k^{j}\in \mathbb{N}$ that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable.
 \label{lemm:3}
 \end{lemma}
 \begin{proof}For the set of states $\mathsf{S}^{y}(t)$, there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{y}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{x}(t)\subseteq \mathsf{S}^{y}(t)$. From the {\em Lemma \ref{lemm:4}}, we have $\mathsf{S}^{x}(t)$ is $k_i$-step deterministic too, thus for the $\mathsf{S}^{x}(t)$ there exists a $k^{j}=k^{i}\in \mathbb{N}$ such that $\mathsf{S}^{x}(t)$ is $k^{j}$-step determinable..
@@ -412,7 +412,7 @@ After defining online observability of \BCNs, we discuss the implication relatio
 The online obervability implies the existing first observability.%, but the existing first observability does not imply the online obervability.
 \label{theo:2}
 \end{theorem}
-\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{i}\in \mathbb{N}$ that $\mathsf{S}(t)$ is $k^{i}$-step determinable, then for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HL)^k_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
+\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{i}\in \mathbb{N}$ that $\mathsf{S}(t)$ is $k^{i}$-step determinable, then for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HF)^k_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
 \begin{itemize}
 \item When $k^{i}=0$, we have $|\mathsf{S}(t)|=1$, then for every state \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any state $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$. Therefore, we have that for any $k\in \mathbb{Z}_+$ for every input sequence $\mathsf{I}\in(\Delta_M)^k$ the propostion is right. 
 \item If for $k^{i}=0,\ldots, p$ the propostion is right. When $k^{i}=p+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
@@ -420,8 +420,8 @@ The online obervability implies the existing first observability.%, but the exis
  \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
  \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0\] and $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(p+1)$.
  \end{itemize}
- Then we have for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HL)^k_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$. Where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. And the input sequence $\mathsf{I}'$ satisfies the following properties, %for every state \State$^{x}(t)$$\in \mathsf{S}(t)$
-  for all states \[\mathsf{s}^{x}(t+1)\neq \mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),H\ltimes\mathsf{s}^{x}(t+1))\] implies \[(HL)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HL)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}').\] Where $\mathsf{s}^{x}(t+1)=L\ltimes\mathsf{s}^{x}(t)\ltimes\mathsf{i}^{i}(t)$. Then we have the propostion is right when $k^{i}=p+1$. 
+ Then we have for every state \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ such that for all states $\mathsf{s}^{x}(t)\neq \mathsf{s}^{y}(t)\in \mathsf{S}(t)$ implies $(HF)^k_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$. Where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. And the input sequence $\mathsf{I}'$ satisfies the following properties, %for every state \State$^{x}(t)$$\in \mathsf{S}(t)$
+  for all states \[\mathsf{s}^{x}(t+1)\neq \mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}^{x}(t+1)))\] implies \[(HL)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HL)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}').\] Where $\mathsf{s}^{x}(t+1)=f(\mathsf{s}^{x}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $k^{i}=p+1$. 
 % And $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$ 
 \end{itemize}
 As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p$ the propostion is right, then the propostion is right when $k^{i}=p+1$. Thus the propostion is right for any $k^{i}\in \mathbb{N}$.
@@ -429,7 +429,7 @@ As the propostion is right when $k^{i}=0$, and we have if for $k^{i}=0,\ldots, p
 Secondly, we have that if a \BCN\ is online observable,
 then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0,\] there exists a $k^{i}\in \mathbb{N}$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. 
 
-Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
+Therefore, we have for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
 
 %However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
@@ -447,12 +447,12 @@ The existing third observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
 \end{theorem}
 \begin{proof}
-Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$, then for the $\mathsf{S}(t)$ there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}(t)$ is $k^{i}$-step determinable.
+Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HF)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$, then for the $\mathsf{S}(t)$ there exists a $k^{i}\in \mathbb{N}$ such that $\mathsf{S}(t)$ is $k^{i}$-step determinable.
 
 
 %If a \BCN\ satisfies the existing third observability, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\mathsf{s}^{i}(0)=H\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$.
 \begin{itemize}
-\item When $k=1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
+\item When $k=1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HF)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
  there exists an input $\mathsf{I}=\mathsf{i}^{i}(t) \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
@@ -461,7 +461,7 @@ Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)
 Thus the $\mathsf{S}(t)$ is $1$-step determinable, then the propostion is right when $k=1$.
 
 %Therefore, we have the {\em Theorem \ref{theo:4}} is right when $k=1$.
-\item If for $k=1,\ldots, p$ the propostion is right. Then when $k=p+1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HL)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
+\item If for $k=1,\ldots, p$ the propostion is right. Then when $k=p+1$, for any distinct states $\mathsf{s}^{i}(t)$, $\mathsf{s}^{j}(t) \in \mathsf{S}(t)$, implies $(HF)^k_{\mathsf{s}^{i}(t)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
  there exists an input $\mathsf{i}^{i}(t) \in \Delta_M$ is the first input of $\mathsf{I}$ such that
  \begin{itemize}
 \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
@@ -471,7 +471,7 @@ Thus the $\mathsf{S}(t)$ is $p+1$-step determinable, then the propostion is righ
 
 As the propostion is right when $k=1$, and we have if for $k=1,\ldots, p$ the propostion is right, then the propostion is right when $k=p+1$. Thus the propostion is right for any $k\in \mathbb{N}$.
 
-Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. 
+Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{Z}_+$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$. 
 
 Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0.\] There exists a $k^{i}\in \mathbb{N}$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{i}$-step determinable. Thus the \BCN\ is online observable.
  \end{itemize}

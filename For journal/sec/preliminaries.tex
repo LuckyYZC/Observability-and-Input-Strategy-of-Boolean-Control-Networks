@@ -20,7 +20,7 @@ A Boolean control network can be defined as a directed graph together with logic
 \end{itemize}
 	
 %Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. 
-And the updating rules of the \BCN:
+And its updating rules:
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -35,14 +35,14 @@ In the definition we have that in the directed graph
 \begin{itemize}
 	\item $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
-	\item every directed edge from a state-node $\mathfrak{s}_i$ (or an input-node $\mathfrak{i}_w$) to a state-node $\mathfrak{s}_j$ means that  $\mathfrak{s}_j(t+1)$ is affected by $\mathfrak{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
-	\item every directed edge from a state-node $\mathfrak{s}_i$ to an output-node $\mathfrak{o}_j$ means that   $\mathfrak{o}_j(t)$  is affected by $\mathfrak{s}_i(t)$.  
+	\item every directed edge from a state-node $\mathsf{s}_i$ (or an input-node $\mathsf{i}_w$) to a state-node $\mathsf{s}_j$ means that  $\mathsf{s}_j(t+1)$ is affected by $\mathsf{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
+	\item every directed edge from a state-node $\mathsf{s}_i$ to an output-node $\mathsf{o}_j$ means that   $\mathsf{o}_j(t)$  is affected by $\mathsf{s}_i(t)$.  
 	\end{itemize}
-And then, the updating rules explain how do nodes affect each other, thus in the updating rules
+And then, the updating rules explain how do the nodes affect each other, thus in the updating rules
 	\begin{itemize}
-	\item $\mathfrak{s}(t)\in \mathbb{B}^n$ is a state which represent the value of all state-nodes at time step $t$; 	
-	\item $\mathfrak{i}(t)\in \mathbb{B}^m$ is an input which represent the value of all input-nodes at time step $t$; 	
-	\item $\mathfrak{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time step $t$;  
+	\item the vector $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the value of all input-nodes at time step $t$; 	
+	\item the vector $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the value of all state-nodes at time step $t$; 	
+	\item the vector $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
 	
 \end{itemize}
@@ -93,7 +93,7 @@ C(t)(B(t)E(t)+F(t)))+(A(t)(\neg{D}(t)(\neg{B}(t)\neg{C}(t)+\neg{E}(t)F(t)+
 D(t)F(t)))(B(t)\neg{E}(t)(\neg{C}(t)F(t)+C(t)\neg{D}(t))).$
 
 %\[C(t+1)=(A(t)\wedge B(t))\vee (C(t)\wedge D(t))\vee (E(t)\wedge F(t))\]
-The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for a \BCN\ to be converted into its abbreviation form. With the abbreviation form, it is easier for us to use this example to explain various concepts.
+
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
@@ -103,7 +103,23 @@ The reason why we use the truth table to describe the updating rules of the \BCN
       \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.\ref{fig:1}.}
       \label{fig:2}
    \end{figure}
-   \begin{figure}[thpb]
+  
+   \label{exa:2}
+\end{example}   
+
+The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for us to convert the $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$ into their abbreviation forms. 
+That:
+\begin{itemize}
+  \item $\delta^i_{2^m}$ represents $\mathsf{i}(t)$ that $i$ is the decimal value of the vector;
+  \item $\delta^j_{2^n}$ represents $\mathsf{s}(t)$ that $j$ is the decimal value of the vector;
+  \item $\delta^w_{2^q}$ represents $\mathsf{o}(t)$ that $w$ is the decimal value of the vector;
+%  \item $\Delta_M$: the set $\{\delta^0_{2^m},\ldots,\delta^{{2^m}-1}_{2^m} \}$; 
+ % \item $\Delta_N$: the set $\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$; 
+%   \item $\Delta_Q$: the set $\{\delta^0_{2^q},\ldots,\delta^{{2^q}-1}_{2^q} \}$; 
+\end{itemize}
+
+For instance if $\mathsf{s}(t)=\begin{vmatrix}0\\1\\0\\1\end{vmatrix}$, then $\mathsf{s}(t)$ can be represented by $\delta^{(1*2^2+1*2^0)}_{2^4}=\delta^5_{16}$. Therefore, the updating rules shown in Fig.\ref{fig:2} can be represented by following form.
+ \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
 		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
@@ -112,10 +128,17 @@ The reason why we use the truth table to describe the updating rules of the \BCN
       \caption{The abbreviation form of the updating rules.}
       \label{fig:6}
    \end{figure}
-   \label{exa:2}
-\end{example}   
-
-
+   
+   With the abbreviation form, it would be easier for us to use this example to explain various concepts. And 
+   \begin{itemize}
+ % \item $\delta^i_{2^m}$ represents $\mathsf{i}(t)$ that $i$ is the decimal value of the vector;
+ % \item $\delta^j_{2^n}$ represents $\mathsf{s}(t)$ that $j$ is the decimal value of the vector;
+ % \item $\delta^w_{2^q}$ represents $\mathsf{o}(t)$ that $w$ is the decimal value of the vector;
+ \item $\Delta_M$ represents the set of inputs $\{\delta^0_{2^m},\ldots,\delta^{{2^m}-1}_{2^m} \}$; 
+ \item $\Delta_N$ represents the set of states $\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$; 
+  \item $\Delta_Q$ represents the set of outputs $\{\delta^0_{2^q},\ldots,\delta^{{2^q}-1}_{2^q} \}$,
+\end{itemize}
+where $M=2^m$, $N=2^n$ and $Q=2^q$.
 %==============================================================================================================
 \begin{comment}
 \subsection{The algebraic forms of \BCNs}
@@ -268,16 +291,16 @@ These mappings describe the relations of initial state ($\mathsf{s}(0)$), input 
 %Such that, four existing types of observability of BCNs can be defined as follows.
 %And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 \begin{definition} [First Observability]
-The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
+The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
-Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{i}(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}\in(\Delta_M)^k$. However, we can only use the corresponding input sequence $\mathsf{I}$ of an initial state $\mathsf{s}^{i}(0)$ to check whether the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
+Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{i}(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}\in(\Delta_M)^k$. However, we can only use the corresponding input sequence $\mathsf{I}$ of a type of initial state $\mathsf{s}^{i}(0)$ to check whether or not the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every initial state of this \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}\in(\Delta_M)^k$.  For instance,
 \begin{itemize}
-  \item the state $\delta_{16}^1$ can be determined by any input sequence which with the prefix $\delta_{4}^4$, $\delta_{4}^1  \delta_{4}^3$ or $\delta_{4}^1 \delta_{4}^4$, etc;
-  \item the state $\delta_{16}^2$ can be determined by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^3$ or $\delta_{4}^4$, etc;
-  \item the state $\delta_{16}^3$ can be determined by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^4$ or $\delta_{4}^1 \delta_{4}^4$, etc.
+  \item the state $\delta_{16}^0$ can be distinguished from other types of initial state by any input sequence which with the prefix $\delta_{4}^3$, $\delta_{4}^2$ or $\delta_{4}^0  \delta_{4}^2$  etc;
+  \item the state $\delta_{16}^1$ can be distinguished from other types of initial state by any input sequence which with the prefix $\delta_{4}^0$, $\delta_{4}^3$ or $\delta_{4}^2 \delta_{4}^3$, etc;
+  \item the state $\delta_{16}^2$ can be distinguished from other types of initial state by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^3$ or $\delta_{4}^0 \delta_{4}^2$, etc.
 \end{itemize} 
 
 Therefore we have this \BCN\ satisfies the existing first observability.
@@ -285,40 +308,48 @@ Therefore we have this \BCN\ satisfies the existing first observability.
 \end{example}   
 
 \begin{definition}[Second Observability]
-	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$, such that $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
+	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
 \end{definition}
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{i}(0), \mathsf{s}^{j}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can distinguish them. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct initial states of the \BCN, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can distinguish them.  For instance,
 \begin{itemize}
-  \item the states $\delta_{16}^1$ and $\delta_{16}^2$ can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2 \delta_{4}^1$ or $\delta_{4}^2 \delta_{4}^2$, etc;
-  \item the states $\delta_{16}^1$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^2$, $\delta_{4}^3$ or $\delta_{4}^4$, etc;
-  \item the states $\delta_{16}^2$ and $\delta_{16}^3$  can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2$ or $\delta_{4}^4$, etc.
+  \item the states $\delta_{16}^0$ and $\delta_{16}^1$ can be distinguished by any input sequence which with the prefix $\delta_{4}^0$, $\delta_{4}^2 $ or $\delta_{4}^3$, etc;
+  \item the states $\delta_{16}^0$ and $\delta_{16}^2$  can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2$ or $\delta_{4}^3$, etc;
+  \item the states $\delta_{16}^1$ and $\delta_{16}^2$  can be distinguished by any input sequence which with the prefix $\delta_{4}^1$, $\delta_{4}^2$ or $\delta_{4}^3$, etc.
 \end{itemize} 
 
 Therefore we have this \BCN\ satisfies the existing second observability.
 \label{exa:5}
 \end{example}   
 \begin{definition}[Third Observability]
-The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
+The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
 The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there is an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. For instance, any input sequence which with the prefix $\delta_{4}^1\delta_{4}^4\delta_{4}^1$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there is not any input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. Because 
+\begin{itemize}
+  \item any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not determine $\mathsf{s}(0)$ of this \BCN\ when $\mathsf{s}(0)=\delta_{16}^9, \delta_{16}^{10}, \delta_{16}^{11}$ or $\delta_{16}^{15}$;
+  \item any $\mathsf{I}$ with prefix $\delta_{4}^1$ can not determine $\mathsf{s}(0)$ of this \BCN\ when $\mathsf{s}(0)=\delta_{16}^0, \delta_{16}^1, \delta_{16}^5, \delta_{16}^6, \delta_{16}^9$ or $\delta_{16}^{10}$;
+  \item any $\mathsf{I}$ with prefix $\delta_{4}^2$ can not determine $\mathsf{s}(0)$ of this \BCN\ when $\mathsf{s}(0)=\delta_{16}^3, \delta_{16}^4, \delta_{16}^5$ or $\delta_{16}^6$;
+  \item any $\mathsf{I}$ with prefix $\delta_{4}^3$ can not determine $\mathsf{s}(0)$ of this \BCN\ when $\mathsf{s}(0)=\delta_{16}^3, \delta_{16}^4, \delta_{16}^{14}$ or $\delta_{16}^{15}$.
+\end{itemize} 
 
-Therefore we have this \BCN\ satisfies the existing third observability.
+
+
+Therefore we have this \BCN\ does not satisfy the existing third observability.
 \label{exa:6}
 \end{example}  
 \begin{definition}[Fourth Observability]
-	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
+	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^{\infty}_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^{\infty}_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, the states $\delta_{16}^4$ and $\delta_{16}^5$  will convert into $\delta_{16}^{13}$ after being affected by $\delta_{4}^3$, therefore any input sequence which with the prefix $\delta_{4}^3$, they can not determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. Any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not determine $\mathsf{s}(0)$ of this \BCN\ when $\mathsf{s}(0)=\delta_{16}^9, \delta_{16}^{10}, \delta_{16}^{11}$ or $\delta_{16}^{15}$.  Therefore any input sequence which with the prefix $\delta_{4}^0$, they can not determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
 
 Therefore we have this \BCN\ does not satisfy the existing fourth observability.
 \label{exa:7}
@@ -357,9 +388,9 @@ So do the existing second observability of \BCNs.
 \item We can use the third existing observability and fourth existing observability to determine the initial state $\mathsf{s}(0)$ of \BCNs. But the requirements for \BCNs\ are very difficult to meet when we use the third observability and fourth observability. Because we do not make full use of the output and input in the process of determining the initial state. As the output of \BCNs\ we observed at every time step can help us further determine the range of the initial state. We can use different input sequence to determine the initial state based on the range of the initial state. But in the third and fourth existing observability, we use the same input sequence to determine the initial state.
 \end{itemize} 
  
-In some biological systems (depicted by \BCNs), the initial state of them can be checked at most once. Therefore, we can not use the first observability and second observability to determine the initial states of them. Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability. Furthermore, we can not use the third observability and fourth observability to determine the initial states of some biological systems if they do not satify the requirements of the third and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
+However, in some biological systems (depicted by \BCNs), the initial state of them can be checked at most once. Therefore, we can not use the first observability and second observability to determine the initial states of them. Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability. Furthermore, we can not use the third observability and fourth observability to determine the initial states of some biological systems if they do not satify the requirements of the third and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
 
  \begin{problem}
 \label{pro:2}
-What is the necessary and sufficient condition of determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$?
+What is the necessary and sufficient condition a \BCN\ should satisfies to determine its initial state $\mathsf{s}(0)$ for every $\mathsf{s}(0)\in\Delta_N$?
 \end{problem}
