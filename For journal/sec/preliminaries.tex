@@ -93,7 +93,7 @@ C(t)(B(t)E(t)+F(t)))+(A(t)(\neg{D}(t)(\neg{B}(t)\neg{C}(t)+\neg{E}(t)F(t)+
 D(t)F(t)))(B(t)\neg{E}(t)(\neg{C}(t)F(t)+C(t)\neg{D}(t))).$
 
 %\[C(t+1)=(A(t)\wedge B(t))\vee (C(t)\wedge D(t))\vee (E(t)\wedge F(t))\]
-The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for a \BCN\ to be converted into its aglebraic form. And we will use this example to explain various concepts throughout this paper.
+The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for a \BCN\ to be converted into its abbreviation form. With the abbreviation form, it is easier for us to use this example to explain various concepts.
   \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
@@ -109,7 +109,7 @@ The reason why we use the truth table to describe the updating rules of the \BCN
 		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
 	}}
       
-      \caption{The algebraic form of the \BCN\ shown in Fig.\ref{fig:1}.}
+      \caption{The abbreviation form of the updating rules.}
       \label{fig:6}
    \end{figure}
    \label{exa:2}
@@ -228,15 +228,15 @@ In this section, we introduce the four existing definitions of observability of 
 We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
-L^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_N)^k,\ \mathsf{i}(0)\ldots \mathsf{i}({k-1}) \mapsto \mathsf{s}(1) \ldots\, \mathsf{s}(k)\\
-L^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \mathsf{i}(0) \mathsf{i}(1) \ldots  \mapsto \mathsf{s}(1) \mathsf{s}(2) \ldots
+F^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_N)^k,\ \mathsf{i}(0)\ldots \mathsf{i}({k-1}) \mapsto \mathsf{s}(1) \ldots\, \mathsf{s}(k)\\
+F^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \mathsf{i}(0) \mathsf{i}(1) \ldots  \mapsto \mathsf{s}(1) \mathsf{s}(2) \ldots
 \end{split}
 \label{equ:5}
 \end{equation}
 \begin{equation}
 \begin{split}
-(HL)^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_Q)^k,\ \mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)\\
-(HL)^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty},\ \mathsf{i}(0) \mathsf{i}(1) \ldots  \mapsto \mathsf{o}(1) \mathsf{o}(2)\ldots
+(HF)^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_Q)^k,\ \mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)\\
+(HF)^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty},\ \mathsf{i}(0) \mathsf{i}(1) \ldots  \mapsto \mathsf{o}(1) \mathsf{o}(2)\ldots
 \end{split}
 \label{equ:6}
 \end{equation}
@@ -244,15 +244,15 @@ L^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \m
 Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets, $s_0\in \Delta_N$, $k\in \mathbb{Z}_+$ and $\infty$ is the infinite natural numbers. For all  $k\in \mathbb{N}^*$, \tl{where is $N^*$ defined?}
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
-\[L^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
+\[F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
  is a state sequence, and 
- \[(HL)^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1)\ldots\, \mathsf{o}(k) \in(\Delta_Q)^k\] 
+ \[(HF)^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1)\ldots\, \mathsf{o}(k) \in(\Delta_Q)^k\] 
  is a output sequence. For the $\infty$, 
  \[\mathsf{I}=\mathsf{i}(0) \mathsf{i}(1)\ldots  \in(\Delta_M)^{\infty}\] 
  is an infinitely long input sequence, 
- \[L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \mathsf{s}(2)\ldots  \in(\Delta_N)^{\infty}\] 
+ \[F^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \mathsf{s}(2)\ldots  \in(\Delta_N)^{\infty}\] 
  is an infinitely long state sequence, and 
- \[(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1) \mathsf{o}(2)\ldots \in(\Delta_Q)^{\infty}\]
+ \[(HF)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1) \mathsf{o}(2)\ldots \in(\Delta_Q)^{\infty}\]
   is an infinitely long output sequence. 
   
  \tl{up to there the explanations are almost trivial; consider removing them?}
@@ -263,12 +263,12 @@ is an input sequence,
  In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le t \le |\mathsf{I}|$ we have  
  \[\mathsf{o}(t)=h(\mathsf{s}(t))=h(f(\mathsf{i}(t-1),\mathsf{s}(t-1))).\] 
 
-These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($L^k_{\mathsf{s}(0)}(\mathsf{I})$ and $L^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HL)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HL)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). 
+These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(0)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). 
 
 %Such that, four existing types of observability of BCNs can be defined as follows.
 %And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 \begin{definition} [First Observability]
-The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $H\ltimes\mathsf{s}^{i}(0)=H\ltimes\mathsf{s}^{j}(0)$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
+The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{i}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k\in \mathbb{N}^*$ such that for all states $\mathsf{s}^{i}(0)\neq \mathsf{s}^{j}(0)\in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}^{j}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
 Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{i}(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}\in(\Delta_M)^k$. However, we can only use the corresponding input sequence $\mathsf{I}$ of an initial state $\mathsf{s}^{i}(0)$ to check whether the initial state $\mathsf{s}(0)$ of this \BCN\ is the state $\mathsf{s}^{i}(0)$.
