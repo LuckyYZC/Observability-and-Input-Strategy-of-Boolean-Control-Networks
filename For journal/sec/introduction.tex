@@ -7,16 +7,16 @@
 %Before introducing the Boolean control networks, we introduce the Boolean networks at first. 
 In 1960s, Nobel Prize laureates Jacob and Monod found that ``Any cell contains a number of `regulatory' genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.''\cite{Jacob1961Genetic} Inspired by these Boolean-type actions in genetic circuits, Boolean networks (\BNs) were firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. 
 
-{\BNs} are a type of discrete systems which are based on a directed graph. In a Boolean network, each node has only two states ``0" and ``1", and
-the node's state can change in different time steps.  For a node $n_i$, we use $n_i(t)$ to denote the state of $n_i$ at time step $t$.
+{\BNs} are a type of discrete systems which are based on a directed graph. In a Boolean network, each node has only two values ``0" and ``1", and
+the node's values can change in different time steps.  For a node $n_i$, we use $n_i(t)$ to denote the value of $n_i$ at time step $t$.
 %
-The value of $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.  % We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
+The $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.  % We call nodes as $n_j,\ldots,n_p$ are the neighboring nodes of $n_i$ %\ly{In \BNs,   $n_i(t+1)$ is obtained through logical operations on the  neighboring nodes' value at time $t$.} 
  The logical operators used in  logical function include: AND, OR, NO, XOR. %\ly{, and so on, "delete"}. 
 Some general descriptions of the \BNs\ and their applications to biological systems can be found in \cite{Kauffman1968Metabolic}.
 There are many natural and artificial systems works \cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi} related to \BNs.
  
 
-\BNs\ can be naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. There are three kinds of nodes in \BCNs, \ly{including input-nodes ($\mathfrak{i}$), state-nodes ($\mathfrak{s}$) and output-nodes ($\mathfrak{o}$).} In \BCNs, we can only control input-nodes and observe output-nodes. 
+\BNs\ can be naturally extended to Boolean control networks (\BCNs) when external regulation or perturbation is considered \cite{Ideker2001A}. There are three kinds of nodes in \BCNs, including input-nodes ($\mathsf{i}$), state-nodes ($\mathsf{s}$) and output-nodes ($\mathsf{o}$). In \BCNs, we can only control input-nodes and observe output-nodes. 
 %While, there is no edge with target in input-nodes, and no edge starts from the output-nodes. 
 For each state-node, $\mathsf{s}_i(t+1)$ is decided by a logical function of  $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t),\mathsf{i}_x(t),\ldots,\mathsf{i}_y(t)\}$  %if there are directed edges from $\mathfrak{s}_j,\ldots,\mathfrak{s}_p,\mathfrak{i}_x,\ldots,\mathfrak{i}_y$ to $\mathfrak{s}_i$ 
 while the value of each output-node $\mathsf{o}_i(t)$ is decided by a logical function of   $\{\mathsf{s}_j(t),\ldots,\mathsf{s}_p(t)\}$. 
@@ -67,7 +67,15 @@ The concept of observability was proposed firstly in \cite{cheng2009controllabil
 % Then, we can use the input to control the state of \BCNs, and then get more information about the new state by the new output we observed. So that, we can get more information about the initial state of \BCN\ by controlling the input.
 
 \tl{do you use  gothic to denote vectors? this paragraph is repeating} 
-For convenience, we use the vectors input $\mathsf{i}(t)$, state $\mathsf{s}(t)$, and output $\mathsf{o}(t)$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively. Then we have $\mathsf{s}(t+1)$ is decided by $\mathsf{i}(t)$ and $\mathsf{s}(t)$, and $\mathsf{o}(t)$ is decided by $\mathsf{o}(t)$ as shown in Fig.\ref{fig:10}.
+For convenience, we use the vectors
+\begin{itemize}
+	\item input $\mathsf{i}(t)=\begin{vmatrix}\mathsf{i}_1(t)\\ \vdots \\\mathsf{i}_m(t)\end{vmatrix}$,
+	\item state $\mathsf{s}(t)=\begin{vmatrix}\mathsf{s}_1(t)\\ \vdots \\\mathsf{s}_n(t)\end{vmatrix}$,
+	\item and output $\mathsf{o}(t)=\begin{vmatrix}\mathsf{o}_1(t)\\ \vdots \\\mathsf{o}_q(t)\end{vmatrix}$
+\end{itemize}
+ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively, where $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively. 
+ 
+ Then we have $\mathsf{s}(t+1)$ is decided by $\mathsf{i}(t)$ and $\mathsf{s}(t)$, and $\mathsf{o}(t)$ is decided by $\mathsf{o}(t)$ as shown in Fig.\ref{fig:10}.
 
 
  \begin{figure}[thpb]
@@ -81,7 +89,7 @@ For convenience, we use the vectors input $\mathsf{i}(t)$, state $\mathsf{s}(t)$
   \end{figure}
    The sequences $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$,  $\mathsf{s}(0)\mathsf{s}(1)\ldots\mathsf{s}(k)$, and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ 
  consists of several inputs, states and outputs in sequential time steps,  respectively, where $k>0$. 
- Such that, for a initial state $\mathsf{s}(0)$ and a $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ of a \BCN, we have their corresponding 
+ Such that, for a initial state $\mathsf{s}(0)$ and a $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ of a \BCN, we have its corresponding 
 $\mathsf{s}(0)\mathsf{s}(1)\ldots\mathsf{s}(k)$ and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$.  
 Then for a given  \BCN\  $\BB$,  $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ is decide by
 $\mathsf{s}(0)$ and sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$. 
@@ -91,7 +99,7 @@ $\mathsf{s}(0)$ and sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$.
 
 %As  mentioned before, there are four types of observability. 
 %\tl{???}
-And we use $\mathsf{s}^{i}(t)$ and $\mathsf{s}^{j}(t)$ to represent different valuations of state-nodes, so do input-nodes and output-nodes. Then four existing observability of \BCNs\ are as follows. 
+And we use $\mathsf{s}^{i}(t)$ and $\mathsf{s}^{j}(t)$ to represent different valuations of $\mathsf{s}(t)$, so do input-nodes and output-nodes. Then four existing observability of \BCNs\ are as follows. 
 %A output can be seen as a vector of the values of all output-nodes of the \BCN\ in a time step as well. Therefore a output sequence also consists of several outputs in sequential time steps. 
 %Moreover,  \cite{cheng2009controllability} gives equivalent conditions for controllability of \BCNs\ and observability of controllable \BCNs. 
 
@@ -100,17 +108,18 @@ And we use $\mathsf{s}^{i}(t)$ and $\mathsf{s}^{j}(t)$ to represent different va
 \tl{from these descriptions, it is hard to tell the differences of the definitions}
 
 \begin{enumerate}
-	\item The first type of observability was proposed in 2009 \cite{cheng2009controllability}, and it states that a \BCN\ $\BB$ is observable if for every $\mathsf{s}^{i}(0)$ there is an $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ that can be used to distinguish $\mathsf{s}^{i}(0)$ from other types of initial states. That is in the $\BB$, for $\mathsf{s}^{i}(0)$ and $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$, for every $\mathsf{s}^{j}(0)\ne$$\mathsf{s}^{i}(0)$, the corresponding $\mathsf{o}^{i}(0)$$\mathsf{o}^{i}(1)\ldots$$\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ is different from the corresponding $\mathsf{o}^{j}(0)$$\mathsf{o}^{j}(1)\ldots$$\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$. %Therefore, we can distinguish the \State$^{i}(0)$  by this input sequence, and then we can determine whether \State$(0)=$\State$^{i}(0)$.
+	\item The first type of observability was proposed in 2009 \cite{cheng2009controllability}, and it states that a \BCN\ $\BB$ is observable if for every $\mathsf{s}^{i}(0)$ there is an $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ that can be used to distinguish $\mathsf{s}^{i}(0)$ from other types of initial states. That is in the $\BB$, for the $\mathsf{s}^{i}(0)$ and $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$, we have for every $\mathsf{s}^{j}(0)\ne$$\mathsf{s}^{i}(0)$, the corresponding $\mathsf{o}^{i}(0)$$\mathsf{o}^{i}(1)\ldots$$\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ is different from the corresponding $\mathsf{o}^{j}(0)$$\mathsf{o}^{j}(1)\ldots$$\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$. %Therefore, we can distinguish the \State$^{i}(0)$  by this input sequence, and then we can determine whether \State$(0)=$\State$^{i}(0)$.
 	%------------------------------
 	\item 
-	The second observability was proposed in 2010 \cite{Zhao2010Input}, and it is determined in \cite{Li2015Controllability}. It stands that a \BCN\ $\BB$ is observable if for every two distinct $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$, there exists an $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$ that can be used to distinguish them. That is in the $\BB$, for $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$ and $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$, the corresponding $\mathsf{o}^{i}(0)\mathsf{o}^{i}(1)\ldots\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ and the corresponding $\mathsf{o}^{j}(0)\mathsf{o}^{j}(1)\ldots\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$ are different. %Therefore, we can distinguish \State$^{i}(0)$ and \State$^{j}(0)$ by this input sequence, and then we can determine whether the initial state \State$(0)$ is \State$^{i}(0)$ or \State$^{j}(0)$.	
-	\item The third observability proposed in 2011 \cite{Cheng2011Identification}, and it states that a \BCN\ $\BB$ is observable if there is an $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$ that determines $\mathsf{s}(0)$. That is in the $\BB$, for $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$, for every two distinct $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$, the corresponding $\mathsf{o}^{i}(0)$$\mathsf{o}^{i}(1)\ldots$$\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ is different from the corresponding $\mathsf{o}^{j}(0)$$\mathsf{o}^{j}(1)\ldots$$\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$.
+	The second observability was proposed in 2010 \cite{Zhao2010Input}, and it is determined in \cite{Li2015Controllability}. It stands that a \BCN\ $\BB$ is observable if for every two distinct $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$, there exists an $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$ that can be used to distinguish them. That is in the $\BB$, for the $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$ and $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$, we have the corresponding $\mathsf{o}^{i}(0)\mathsf{o}^{i}(1)\ldots\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ and the corresponding $\mathsf{o}^{j}(0)\mathsf{o}^{j}(1)\ldots\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$ are different. %Therefore, we can distinguish \State$^{i}(0)$ and \State$^{j}(0)$ by this input sequence, and then we can determine whether the initial state \State$(0)$ is \State$^{i}(0)$ or \State$^{j}(0)$.	
+	\item The third observability proposed in 2011 \cite{Cheng2011Identification}, and it states that a \BCN\ $\BB$ is observable if there is an $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$ that determines $\mathsf{s}(0)$. That is in the $\BB$, for the $\mathsf{i}(0)$$\mathsf{i}(1)\ldots$$\mathsf{i}(k-1)$, we have for every two distinct $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$, the corresponding $\mathsf{o}^{i}(0)$$\mathsf{o}^{i}(1)\ldots$$\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ is different from the corresponding $\mathsf{o}^{j}(0)$$\mathsf{o}^{j}(1)\ldots$$\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$.
 	
 	\item  The fourth observability proposed in 2013 \cite{Fornasini2013Observability} is essentially the observability of linear control systems, i.e., that a \BCN\ $\BB$ is observable if every sufficient long $\mathsf{i}^{x}(0)$$\mathsf{i}^{x}(1)\ldots$$\mathsf{i}^{x}(k-1)$ can determine $\mathsf{s}(0)$. That is for $\mathsf{i}^{x}(0)$$\mathsf{i}^{x}(1)\ldots$ $\mathsf{i}^{x}(k-1)$, for every two distinct $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$, the corresponding $\mathsf{o}^{i}(0)$$\mathsf{o}^{i}(1)\ldots$$\mathsf{o}^{i}(k)$ of $\mathsf{s}^{i}(0)$ is different from the corresponding $\mathsf{o}^{j}(0)$$\mathsf{o}^{j}(1)\ldots$$\mathsf{o}^{j}(k)$ of $\mathsf{s}^{j}(0)$.%Therefore, we can determine the initial state of the \BCN\ by every sufficient long input sequence for every initial state \State$(0)$.
 \end{enumerate}
  The formal definition will be presented completely in {\em Section \ref{sec:pre}}.
 %\tl{can you state the four types observability clearly and formally here?}
- Thus one of the main problems of observability can been described as: 
+ 
+ From the third and fourth observability, we know that one of the main problems of observability can been described as: 
  \tl{this is not a well defined question, because you do not know whether such an input exists or not ;-), and $k$ is unspecified. }
 \begin{problem}
 \label{pro:1}
@@ -122,18 +131,18 @@ For a given \BCN\ $\BB$, whether or not there is a $\mathsf{i}(0)\mathsf{i}(1)\l
 \begin{comment}
 \ly{In the four existing observability, we can not determine the initial state of \BCNs\ by the first and second observability.} Although we can determine the initail state of \BCNs\ by the third and fourth observability, the requirements for \BCNs\ to determine the initail state are difficult to meet. Thus, we consider that whether we can determine the initial state of some \BCNs\ which can not be determined by the third and fourth observability.
 \end{comment}
-Although, four existing observability can help us study some information about $\mathfrak{s}(0)$ we need. \ly{But when the determining procedure can do at most once, only third and fourth observability  can  determine the $\mathfrak{s}(0)$ of \BCNs.}%{\color{blue}{Not clear}} And conditions of third and fourth in above observability are strong.
-In other words, only third and fourth observability can help us solve the {\em Problem \ref{pro:1}}. What's more, in the third observability, if a \BCN\ is observable, then there has to exist an input sequence that determines its initial state $\mathfrak{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger. 
+Although, four existing observability can help us study some information about $\mathsf{s}(0)$ we need. \ly{But when the determining procedure can do at most once, only third and fourth observability  can  determine the $\mathsf{s}(0)$ of \BCNs.}%{\color{blue}{Not clear}} And conditions of third and fourth in above observability are strong.
+In other words, only third and fourth observability can help us solve the {\em Problem \ref{pro:1}}. What's more, in the third observability, if a \BCN\ is observable, then there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger. 
 
 
-However, we found that to determine $\mathfrak{s}(0)$ we only need to complete the following procedure.
+However, we found that to determine $\mathsf{s}(0)$ we only need to complete the following procedure.
 
 %Informly, the procedure of our  online observability as follows. 
-For a given \BCN\  $\BB$.  We use $\mathcal{S}(t)$ to denote the set of potential valuations of $\mathfrak{s}(t)$. \tl{where do you define potential valuations?}
+For a given \BCN\  $\BB$.  We use $\mathsf{S}(t)$ to denote the set of potential valuations of $\mathfrak{s}(t)$. \tl{where do you define potential valuations?}
 \begin{itemize}
-	\item  Firstly, at every time step we infer $\mathcal{S}(t)$ by the $\mathfrak{i}(t-1)$, $\mathcal{S}(t-1)$ and $\mathfrak{o}(t)$ of $\BB$.
-	\item Secondly, the $\mathfrak{i}(t)$ we chose should not make every two distinct $\mathfrak{s}^{i}(t)$ , $\mathfrak{s}^{j}(t)$$\in$ $\mathcal{S}(t)$ become the same state i.e. $\mathfrak{s}^{i}(t+1)=$$\mathfrak{s}^{j}(t+1)$ after affected by $\mathfrak{i}(t)$.  \ly{Therefore, for every $\mathfrak{s}^{i}(t+1)\in $ $\mathcal{S}(t+1)$ there is exact one corresponding $\mathfrak{s}^{i}(t)\in $ $\mathcal{S}(t)$.}
-	\item Thirdly, we have $|$$\mathcal{S}(t)$$|\le|$$\mathcal{S}(t-1)$$|$, and we can determine $\mathfrak{s}(t)$ when $|$$\mathcal{S}(t)$$|=1$. And then, we can determine the $\mathfrak{s}(0)$.
+	\item  Firstly, at every time step we infer $\mathsf{S}(t)$ by the $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and $\mathsf{o}(t)$ of $\BB$.
+	\item Secondly, the $\mathsf{i}(t)$ we chose should not make every two distinct $\mathfrak{s}^{i}(t)$ , $\mathsf{s}^{j}(t)$$\in$ $\mathsf{S}(t)$ become the same state i.e. $\mathsf{s}^{i}(t+1)=$$\mathsf{s}^{j}(t+1)$ after affected by $\mathsf{i}(t)$.  \ly{Therefore, for every $\mathsf{s}^{i}(t+1)\in $ $\mathsf{S}(t+1)$ there is exact one corresponding $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$.}
+	\item Thirdly, we have $|$$\mathsf{S}(t)$$|\le|$$\mathsf{S}(t-1)$$|$, and we can determine $\mathsf{s}(t)$ when $|$$\mathsf{S}(t)$$|=1$. And then, we can determine the $\mathsf{s}(0)$.
 \end{itemize}
 
 \begin{comment}
@@ -145,7 +154,7 @@ For a given \BCN\  $\BB$.  We use $\mathcal{S}(t)$ to denote the set of potentia
 But we can also determine the set of possible initial states \Ustate$(0)$ by initial output \Output$(0)$ we observe, and then we can use different input sequences (\Input$^{1}(0)$\Input$^{1}(1)\ldots$\Input$^{1}(k)$, \Input$^{2}(0)$\Input$^{2}(1)\ldots$\Input$^{2}(k)$, $\ldots$) to determine initial state for different sets of possible initial states (\Ustate$^{1}(0)$, \Ustate$^{2}(0)$, $\ldots$). In this case, the requirements for \BCNs\ to determine the initail state would be easier to satisfy. 
 \end{comment}
 
-Inspired by this, we propose the online observability in this paper. It means that we adaptively construct the input sequence $\mathfrak{i}(0)$$\mathfrak{i}(1)\ldots$$\mathfrak{i}(k-1)$ to determine the initial state $\mathfrak{s}(0)$ by the $\mathcal{S}(t)$ we derived at every time step. %Because we find input sequence by the \Ustate$(t)$ we derived at every time step, we call this type of observability online observability. 
+Inspired by this, we propose the online observability in this paper. It means that we adaptively construct the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ to determine the initial state $\mathsf{s}(0)$ by the $\mathsf{S}(t)$ we derived at every time step. %Because we find input sequence by the \Ustate$(t)$ we derived at every time step, we call this type of observability online observability. 
 
 % With the output we observed at every time step, we can further determine the range of the initial state. As we can further determine the range, we can use different input sequence to determine the initial state. However, in the third and fourth existing observability, we have to use the same input sequence to determine the initial state without utilizing the range of the initial state. In this paper, we propose the concept of online observability which determine the initial state by making full use of the input and output of \BCNs. With the online observability, we can determine the initial state of some \BCNs\ which can not be determined before.
 %we do not utilize the range of the initial state to derive the input at every time step. In the online observability, we make full use of the input and output of \BCNs\ to determine their initial state. 
