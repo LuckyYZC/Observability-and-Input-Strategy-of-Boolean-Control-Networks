@@ -7,8 +7,7 @@ In this section we introduce {\BCNs} and the four existing types of observabilit
 
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. We write $\mathbb{B}:=\{0,1\}$.
-
+A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. 
 %\tl{this def mixes syntax and semantics; need to rewrite}
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ %the  topology and the associated updating rules. The topology is captured by 
 	a directed graph which consists of 
@@ -43,9 +42,9 @@ And then, the updating rules explain how do the nodes affect each other, thus in
 	\item the vector $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the value of all input-nodes at time step $t$; 	
 	\item the vector $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the value of all state-nodes at time step $t$; 	
 	\item the vector $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time step $t$;  
-	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN}. 
-	
+	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN},
 \end{itemize}
+where $\mathbb{B}=\{0,1\}$.
 
 %In order to better illustrate the definition of BCN, we give an example as follows.
 
@@ -78,7 +77,7 @@ Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-n
 %\label{equ:20}
 %\end{equation*}
 % denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
-The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  
+And the updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  
 %\tl{why do we need this table?! logic formulae are sufficient!}
 For instance, from the truth table we have the updating rule of output-node $G$ is 
 \[G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.\]
@@ -111,9 +110,9 @@ D(t)F(t)))(B(t)\neg{E}(t)(\neg{C}(t)F(t)+C(t)\neg{D}(t))).$
 The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for us to convert the $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$ into their abbreviation forms. 
 That we use 
 \begin{itemize}
-  \item $\delta^i_{2^m}$ represents the abbreviation form of $\mathsf{i}(t)$ where $i=\sum_{x=1}^m \mathsf{i}_{x}(t)\times 2^{m-x}$;
-  \item $\delta^j_{2^n}$ represents the abbreviation form of $\mathsf{s}(t)$ that $j=\sum_{x=1}^n \mathsf{s}_{x}(t)\times 2^{n-x}$;
-  \item $\delta^w_{2^q}$ represents the abbreviation form of $\mathsf{o}(t)$ that $w=\sum_{x=1}^q \mathsf{o}_{x}(t)\times 2^{q-x}$.
+  \item $\delta^i_{2^m}$ represents the abbreviation form of $\mathsf{i}(t)$, where $i=\sum_{x=1}^m \mathsf{i}_{x}(t)\times 2^{m-x}$;
+  \item $\delta^j_{2^n}$ represents the abbreviation form of $\mathsf{s}(t)$, where $j=\sum_{x=1}^n \mathsf{s}_{x}(t)\times 2^{n-x}$;
+  \item $\delta^w_{2^q}$ represents the abbreviation form of $\mathsf{o}(t)$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}(t)\times 2^{q-x}$.
 %  \item $\Delta_M$: the set $\{\delta^0_{2^m},\ldots,\delta^{{2^m}-1}_{2^m} \}$; 
  % \item $\Delta_N$: the set $\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$; 
 %   \item $\Delta_Q$: the set $\{\delta^0_{2^q},\ldots,\delta^{{2^q}-1}_{2^q} \}$; 
@@ -121,7 +120,7 @@ That we use
 
 For instance if $\mathsf{s}(t)=\begin{vmatrix}\mathsf{s}_1(t)\\\mathsf{s}_2(t) \\ \mathsf{s}_3(t) \\\mathsf{s}_4(t)\end{vmatrix}=\begin{vmatrix}0\\1\\0\\1\end{vmatrix}$, then $\mathsf{s}(t)$ can be represented by $\delta^{(0\times2^3+1\times2^2+0\times2^1+1\times2^0)}_{2^4}=\delta^5_{16}$. 
 
-In the \BCN\ shown in the Fig.~\ref{fig:1}, we consider 
+In the \BCN\ which shown in the Fig.~\ref{fig:1}, we consider 
 \begin{itemize}
   \item $A(t)$ as $\mathsf{i}_{1}(t)$, $B(t)$ as $\mathsf{i}_{2}(t)$;
   \item $C(t)$ as $\mathsf{s}_{1}(t)$, $D(t)$ as $\mathsf{s}_{2}(t)$;
@@ -139,9 +138,9 @@ Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\r
       \caption{The abbreviation form of the updating rules.}
       \label{fig:6}
    \end{figure}
-   With the abbreviation form, it would be easier for us to use this example to explain various concepts by checking this table.
+   With the abbreviation forms of $\mathsf{s}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
    
-   For instance, in this \BCN\ if we konw $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$ then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
+   For instance, in this \BCN\ if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
    
     What is more, we use 
    \begin{itemize}
@@ -261,7 +260,7 @@ And then we have its algebraic form shown by table (Fig.\ref{fig:6}) that $\math
 
 \subsection{Four existing observability of \BCNs}
 %After introducing the algebraic forms of \BCNs, 
-In this section, we introduce the four existing definitions of observability of \BCNs. %. In order to introduce four existing types of observability of \BCNs, 
+In this subsection, we introduce the four existing definitions of observability of \BCNs. %. In order to introduce four existing types of observability of \BCNs, 
 We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
@@ -278,7 +277,7 @@ F^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \m
 \label{equ:6}
 \end{equation}
 
-Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $s_0\in \Delta_N$, $k>0$ and $\infty$ is the infinite natural numbers. For all  $k>0$,% \tl{where is $N^*$ defined?}
+Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $s_0\in \Delta_N$, $k>0$, and $\infty$ is the infinite natural numbers. For all  $k>0$,% \tl{where is $N^*$ defined?}
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
 \[F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
@@ -295,7 +294,7 @@ is an input sequence,
  %\tl{up to there the explanations are almost trivial; consider removing them?}
   
   
-  From the updating rules of \BCNs, in the formula (\ref{equ:5}), for any $1\le t \le |\mathsf{I}|$ we have 
+  From the updating rules of \BCNs, in the formula (\ref{equ:5}), for every $1\le t \le |\mathsf{I}|$ we have 
  \[\mathsf{s}(t)=f(\mathsf{i}(t-1),\mathsf{s}(t-1)).\] 
  In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le t \le |\mathsf{I}|$ we have  
  \[\mathsf{o}(t)=h(\mathsf{s}(t))=h(f(\mathsf{i}(t-1),\mathsf{s}(t-1))).\] 
@@ -343,7 +342,7 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two distinct $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for any $k>0$, there is not any input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. Because 
