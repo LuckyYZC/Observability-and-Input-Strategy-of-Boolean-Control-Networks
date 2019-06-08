@@ -115,10 +115,11 @@ Therefore, firstly we build child nodes for $\Delta_N$ by the $\Ded\left(\mathsf
 \end{example}   
 
 However, if we want use the supertree-based algorithm to find all paths to determine the initial state of a \BCN\ we need to build all leaf nodes of its supertree. It would take many additional time and space overhead. Because 
-\begin{itemize}
- \item there are many nodes identical set of states in the supertree.
- \item And the same nodes in a path will prevent us from building all leaf nodes of the supertree.
- \end{itemize}
+%\begin{itemize}
+ there are many nodes take identical set of states in the supertree, such that we need to check them many times to determine the online observability of a \BCN. 
+ 
+ What is more, the same nodes in a path will prevent us from building all leaf nodes of the supertree. For instance, there are three nodes take $\{\delta_{16}^1,\delta_{16}^2\}$ in a path as shown in Fig.~\ref{fig:3}. Because $\{\delta_{16}^1,\delta_{16}^2\}$ is one of its child nodes, such that it has infinite number of child nodes. Therefore, we can not build all child nodes for it, and then we can not build supertree for this \BCN\ completely.
+ %\end{itemize}
 %For instance, in the Fig.\ref{fig:3} there are two nodes take $\{\delta_{16}^1,\delta_{16}^{16}\}$ in the fourth layer. And there are the $\{\delta_{16}^2,\delta_{16}^3\}$ in fourth layer and the $\{\delta_{16}^1,\delta_{16}^2\}$ in fifth layer would form a loop.
  
 With the shortcomings of the supertree, we propose the algorithm based on directed graph to help us find all paths to determine the initial state of a \BCN.
