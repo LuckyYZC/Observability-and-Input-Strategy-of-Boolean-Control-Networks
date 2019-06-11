@@ -77,7 +77,7 @@ Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-n
 %\label{equ:20}
 %\end{equation*}
 % denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
-And the updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.\ref{fig:2}).  
+And the updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.~\ref{fig:2}).  
 %\tl{why do we need this table?! logic formulae are sufficient!}
 For instance, from the truth table we have the updating rule of output-node $G$ is 
 \[G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.\]
@@ -100,7 +100,7 @@ D(t)F(t)))(B(t)\neg{E}(t)(\neg{C}(t)F(t)+C(t)\neg{D}(t))).$
 		\centerline{\includegraphics[scale=0.261]{figures/Fig2.png}}
 	}}
       
-      \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.\ref{fig:1}.}
+      \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.~\ref{fig:1}.}
       \label{fig:2}
    \end{figure}
   
@@ -323,7 +323,7 @@ Therefore we have this \BCN\ satisfies the existing first observability.
 \end{example}   
 
 \begin{definition}[Second Observability]
-	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HL)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HL)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
+	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{i}(0))=h(\mathsf{s}^{j}(0))$ implies $(HF)^k_{\mathsf{s}^{i}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{j}(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
 \end{definition}
 
 The second observability means that a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can distinguish them. Therfore, in the second observability we can only use the corresponding input sequence $\mathsf{I}$ of two distinct types of initial state $\mathsf{s}^{i}(0)$ and $\mathsf{s}^{j}(0)$ to check the initial state $\mathsf{s}(0)=\mathsf{s}^{i}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{j}(0)$ when we know that $\mathsf{s}(0)$ is one of them. 

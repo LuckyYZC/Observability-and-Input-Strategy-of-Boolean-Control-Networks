@@ -436,14 +436,15 @@ Therefore, we have for every initial state \State$^{x}(0)$$\in \Delta_N$, there 
 %However, if a \BCN\ satisfies the existing first observability. What is more there exist two state $s, s'\in\Ded\left(\Delta_N,\varepsilon, o_j\right)$ where $|\Ded\left(\Delta_N,\varepsilon, o_j\right)|> 0$, and the $i_0, i_1,\ldots, i_{p-1}$ is the corresponding one unique input sequences to determine $s$, and the $i'_0, i'_1,\ldots, i'_{p-1}$ is the corresponding one unique input sequences to determine $s'$. If the fitst input of the input sequences $I$ and $I'$ are different, then we can not determine the initial state $s_0$ of this \BCN\ in real time for every $s_0\in \{s,s'\}$. Therefore this \BCN\ does not satisfy the online observability.
 \end{proof}
 
-With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state. And in the online obervability, we can also distinguish $\mathsf{s}^{i}(0)$ from other types of initial state. Thus the online obervability implies the existing first observability. But the existing first observability can not be used to determine $\mathsf{s}(0)$, thus the first observability does not imply the online obervability.
+With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state,  and we can also do this by the online obervability,. Thus the online obervability implies the existing first observability. But the existing first observability can not be used to determine $\mathsf{s}(0)$, thus the first observability does not imply the online obervability.
 
- Moreover, from the implication relationship between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
 \begin{theorem}
 %If a \BCN\ satisfies the online obervability then it satisfies the existing first and second observability. If a \BCN\ satisfies the existing first or second observability we can not deduce that it satisfies the online obervability.
 The online obervability implies the existing second observability.%, but the existing second observability does not imply the online obervability.
 \label{theo:4}
 \end{theorem}
+
+ Moreover, from the implication relationship between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
 %In the existing third type of observability, there has to exist an input sequence that can distinguish any distinct states. However in online observability we can use different input sequences to distinguish any distinct states in different sets of state. 
 %Where these different sets of state are classified by their corresponding outputs. Therefore, we have the existing third type of observability implies the online observability of \BCNs, then the existing fourth type of observability implies the online observability too. 
 \begin{theorem}
@@ -483,14 +484,15 @@ Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|
 
 In the existing third type of observability, there has to exist an input sequence $\mathsf{I}$ that can distinguish any distinct two states of the \BCN. But in online observability, we only need to adaptively construct an input sequence to determine $\mathsf{s}(0)$. Thus the online obervability does not imply the existing third observability, but the existing third observability implies the online obervability. 
 
-Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
 \begin{theorem}
 The existing fourth observability implies the online obervability.
 %If a \BCN\ satisfies the existing third or fourth obervability then it satisfies the online observability. But if a \BCN\ satisfies the online obervability, we can neither deduce that it satisfies the third observability nor deduce that it satisfies the fourth observability.
 \label{theo:5}
 \end{theorem}
 
-Therefore, the implication relationships graph between four existing observability and online observability is shown in Fig.\ref{fig:7}.
+Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
+
+Therefore, the implication relationships graph between four existing observability and online observability is shown in Fig.~\ref{fig:7}.
 %\begin{example}
 %For instance, the \BCN\ whose structure is depicted in Fig.\ref{fig:1}, and the updating rules of this \BCN\ is described as truth table in Fig.\ref{fig:2}. This \BCN\ satisfies the existing first, second, third observability, but it is not satisfy the existing fourth observability. Therefore, we have this \BCN\ satisfies the online observability from the implication relationship between the existing third observability and online observability.
 %\end{example}   
