@@ -1,5 +1,5 @@
 
-\documentclass[journal]{IEEEtran}
+\documentclass[10pt,journal,compsoc]{IEEEtran}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
@@ -42,11 +42,14 @@
 	Taolue~Chen,
 	Jun~Pang,
 	Hongyang~Qu
-	\thanks{Guisen Wu, Liyun Dai and Zhiming Liu are with the School of Computer and Information Science, Southwest University
-Chongqing, 400715 China. E-mail: \{wgs233,~dailiyun,~zhimingliu88\}@swu.edu.cn.}
-	 \thanks{Taolue Chen is with the Department of Computer Science and Information Systems, Birkbeck, University of London. E-mail: taolue@dcs.bbk.ac.uk.}
-	 \thanks{Jun Pang is with the Faculty of Science, Technology and Communication, University of Luxembourg e-mail: jun.pang@uni.lu.}
-	 \thanks{Hongyang Qu is with the Department of Automatic Control and Systems Engineering, University of Sheffield. E-mail: h.qu@sheffield.ac.uk.}
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem
+Guisen Wu, Liyun Dai and Zhiming Liu are with the School of Computer and Information Science, Southwest University
+Chongqing, 400715 China. E-mail: \{wgs233,~dailiyun,~zhimingliu88\}@swu.edu.cn.
+%
+Taolue Chen is with the Department of Computer Science and Information Systems, Birkbeck, University of London. E-mail: taolue@dcs.bbk.ac.uk.
+Jun Pang is with the Faculty of Science, Technology and Communication, University of Luxembourg. E-mail: jun.pang@uni.lu.
+Hongyang Qu is with the Department of Automatic Control and Systems Engineering, University of Sheffield. E-mail: h.qu@sheffield.ac.uk.}
+\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}
 }
 %Michael~Shell(\Envelope),~\IEEEmembership{Member,~IEEE,}
  %       John~Doe,~\IEEEmembership{Fellow,~OSA,}
@@ -108,22 +111,22 @@ Chongqing, 400715 China. E-mail: \{wgs233,~dailiyun,~zhimingliu88\}@swu.edu.cn.}
 % in the abstract or keywords.
 \begin{abstract}
 Determining initial states of Boolean control networks (\BCNs)  is import in many applications.  The existing 
-four types of BCNs' observability  have been proposed to study the initial state of \BCNs. However, all of them are offline observability meaning that
+four types of BCNs' observability  have been proposed to study the initial state of \BCNs. However, all of them are offline observability, meaning that
 the input sequence is given before studying the \BCN's initial state and the input sequence  remains unchanged during the process of determining.
  %once the input sequence is determined, it remains unchanged during the process of determining the \BCN's initial state. 
- \ly{Compared with existing four observabilities, we provide an online observability which is more powerful on  determines the initial state.}
+In this paper, we present an online observability which is more powerful in determining the initial state of \BCNs.
  %Employing the existing four observabilities, we can not determine initial state of some \BCNs\ while it  determines by online observability.
  %It makes us can not find the input sequence to determine the initial state of some biological systems. 
   % In order to solve this problem and choose a best input sequence by given measure, we  propose  a new observability which called  online observability. 
-   In online observability,
-    we deriving and deciding input sequence one by one based on the feedback from output in every time step.  %which represents the discrete time. 
+   For online observability,
+    we can derive and decide input sequence one by one based on the feedback from the outputs of the network in every time step.
 Moreover, we also propose determination algorithms and optimization by the online observability to further illustrate its advantages.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
-%\begin{IEEEkeywords}
-%IEEE, IEEEtran, journal, \LaTeX, paper, template.
-%\end{IEEEkeywords}
+\begin{IEEEkeywords}
+Boolean control networks, observability, algorithms
+\end{IEEEkeywords}
 
 
 \IEEEpeerreviewmaketitle
