@@ -3,13 +3,12 @@
 \section{Preliminaries} 
 \label{sec:pre}
 In this section we introduce {\BCNs} and the four existing types of observability. 
- %; $t=0,1,\ldots$ represents the discrete time. 
 
 \subsection{Boolean Control Networks}
 
 A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. 
-%\tl{this def mixes syntax and semantics; need to rewrite}
-\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\ %the  topology and the associated updating rules. The topology is captured by 
+
+\begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\
 	a directed graph which consists of 
 	\begin{itemize}
 	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_m$};
@@ -18,7 +17,6 @@ A Boolean control network can be defined as a directed graph together with logic
 	\item and directed edges which connect nodes. 
 \end{itemize}
 	
-%Assuming that the \BCN\ has $n$ state-nodes, $m$ input-nodes and $q$ output-nodes. 
 And its updating rules:
 \begin{equation}
 \begin{split}
@@ -28,7 +26,6 @@ And its updating rules:
 \label{equ:1}
 \end{equation}
 
-%Where $\mathbb{B}$ : the set $\{0,1\}$; $t=0,1,\ldots$ represents the discrete time. 
  \end{definition}
 In the definition we have that in the directed graph
 \begin{itemize}
@@ -46,14 +43,6 @@ And then, the updating rules explain how do the nodes affect each other, thus in
 \end{itemize}
 where $\mathbb{B}=\{0,1\}$.
 
-%In order to better illustrate the definition of BCN, we give an example as follows.
-
-%Note that one can only know that whether a node is affected by another node from the network graph. Different \BCNs\ may have the same structure, in order to determine a \BCN\ uniquely, 
-
- 
-
-%To better illustrate the concept of {\em BCNs}, we give a simple example to describe it.
-
 \begin{example}
 	 \begin{figure}[thpb]
 		\centering
@@ -66,33 +55,10 @@ where $\mathbb{B}=\{0,1\}$.
 	\end{figure}
 	
 Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. 
-%
-%The node categories  as follows.  
-%\begin{equation*}
-%\begin{split}
-%&A(t), B(t)\in \mathfrak{i}(t),\\
-%&C(t), D(t), E(t), F(t)\in \mathfrak{s}(t),\\
-%&G(t), W(t)\in \mathfrak{o}(t)
-%\end{split}
-%\label{equ:20}
-%\end{equation*}
-% denote the value of input-nodes, state-nodes, output-nodes at time step $t$, respectively.
+
 And the updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.~\ref{fig:2}).  
-%\tl{why do we need this table?! logic formulae are sufficient!}
 For instance, from the truth table we have the updating rule of output-node $G$ is 
 \[G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.\]
-\begin{comment}
-Without confusion, we short  logical formula $A\wedge B$ as $AB$, and we use $A+B$ to denote logical formula $A\vee B$.  Hence, 
-\[G(t)=C(t)+{({D}(t) { E}(t) {F}(t))}.\]
-%\[G(t)=C(t) \neg\left((\neg{D}(t))(\neg{ E}(t))(\neg{F}(t))\right).\]
-And the updating rule of state-node $C$ is 
-
-$C(t+1)=(\neg{A}(t)D(t) (\neg{B}(t) \neg{F}(t) (\neg{C}(t) + \neg{E}(t)) + 
-C(t)(B(t)E(t)+F(t)))+(A(t)(\neg{D}(t)(\neg{B}(t)\neg{C}(t)+\neg{E}(t)F(t)+
-\neg{C}(t)F(t))+B(t)E(t)\neg{F}(t)))+(\neg{B}(t)E(t)(C(t)\neg{D}(t)\neg{F}(t)+
-D(t)F(t)))(B(t)\neg{E}(t)(\neg{C}(t)F(t)+C(t)\neg{D}(t))).$
-\end{comment}
-%\[C(t+1)=(A(t)\wedge B(t))\vee (C(t)\wedge D(t))\vee (E(t)\wedge F(t))\]
 
   \begin{figure}[thpb]
       \centering
@@ -113,9 +79,6 @@ That we use
   \item $\delta^i_{2^m}$ represents the abbreviation form of $\mathsf{i}(t)$, where $i=\sum_{x=1}^m \mathsf{i}_{x}(t)\times 2^{m-x}$;
   \item $\delta^j_{2^n}$ represents the abbreviation form of $\mathsf{s}(t)$, where $j=\sum_{x=1}^n \mathsf{s}_{x}(t)\times 2^{n-x}$;
   \item $\delta^w_{2^q}$ represents the abbreviation form of $\mathsf{o}(t)$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}(t)\times 2^{q-x}$.
-%  \item $\Delta_M$: the set $\{\delta^0_{2^m},\ldots,\delta^{{2^m}-1}_{2^m} \}$; 
- % \item $\Delta_N$: the set $\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$; 
-%   \item $\Delta_Q$: the set $\{\delta^0_{2^q},\ldots,\delta^{{2^q}-1}_{2^q} \}$; 
 \end{itemize}
 
 For instance if $\mathsf{s}(t)=\begin{bmatrix}\mathsf{s}_1(t)\\\mathsf{s}_2(t) \\ \mathsf{s}_3(t) \\\mathsf{s}_4(t)\end{bmatrix}=\begin{bmatrix}0\\1\\0\\1\end{bmatrix}$, then $\mathsf{s}(t)$ can be represented by $\delta^{(0\times2^3+1\times2^2+0\times2^1+1\times2^0)}_{2^4}=\delta^5_{16}$. 
@@ -125,7 +88,7 @@ In the \BCN\ which shown in the Fig.~\ref{fig:1}, we consider
   \item $A(t)$ as $\mathsf{i}_{1}(t)$, $B(t)$ as $\mathsf{i}_{2}(t)$;
   \item $C(t)$ as $\mathsf{s}_{1}(t)$, $D(t)$ as $\mathsf{s}_{2}(t)$;
   \item $E(t)$ as $\mathsf{s}_{3}(t)$, $F(t)$ as $\mathsf{s}_{4}(t)$;
-  \item $G(t)$ as $\mathsf{o}_{1}(t)$, $W(t)$ as $\mathsf{o}_{w}(t)$.
+  \item $G(t)$ as $\mathsf{o}_{1}(t)$, $W(t)$ as $\mathsf{o}_{2}(t)$.
 \end{itemize}
 
 Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
@@ -144,123 +107,15 @@ Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\r
    
     What is more, we use 
    \begin{itemize}
- % \item $\delta^i_{2^m}$ represents $\mathsf{i}(t)$ that $i$ is the decimal value of the vector;
- % \item $\delta^j_{2^n}$ represents $\mathsf{s}(t)$ that $j$ is the decimal value of the vector;
- % \item $\delta^w_{2^q}$ represents $\mathsf{o}(t)$ that $w$ is the decimal value of the vector;
- \item $\Delta_M=\{\delta^0_{2^m},\ldots,\delta^{{2^m}-1}_{2^m} \}$ to represent the set of inputs; 
+ \item $\Delta_M=\{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ to represent the set of inputs; 
  \item $\Delta_N=\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ to represent the set of states; 
-  \item $\Delta_Q=\{\delta^0_{2^q},\ldots,\delta^{{2^q}-1}_{2^q} \}$ to represent the set of outputs,
+  \item $\Delta_Q=\{\delta^0_{2^q},\ldots,\delta^{({2^q}-1)}_{2^q} \}$ to represent the set of outputs,
 \end{itemize}
 where $M=2^m$, $N=2^n$ and $Q=2^q$.
-%==============================================================================================================
-\begin{comment}
-\subsection{The algebraic forms of \BCNs}
-\tl{is this form essential to present the results?!}
-%\ly{ As mentioned in the {\em Section \ref{sec:intro}}, 
-The \emph{semi-tensor product} (\STP) of matrices is one of useful tools to deal with  both \BNs\ and \BCNs\  related problems \cite{cheng2009controllability}. The \STP\ is used to represent the algebraic form of \BCN. With the algebraic form, we can introduce four existing observability of \BCN. The definition of \STP\ is as follows.
-
-\begin{definition}[STP] 
-	\cite{Cheng2011Analysis} Let $X\in\mathbb{R}_{m\times n}$, $Y\in\mathbb{R}_{p\times q}$ and $\alpha={\tt lcm}(n,p)$ be the {\em least common multiple} of $n$ and $p$. The \STP\ of $X$ and $Y$ is defined as \[X\ltimes Y=(X\otimes I_{(\frac{\alpha}{n})})(Y\otimes I_{(\frac{\alpha}{p})}),\] where $\otimes$ denotes the {\em Kronecker product}. 
-\end{definition}
-
-After introducing the definition of \STP\ of matrices,  we introduce some related notations \cite{Zhang2016Observability}:
-\begin{itemize}
-  \item $\delta^i_n$: the $i$-th column of the $n\times n $ {\em identity matrix} $I_n$;
-  \item $\Delta_n$: the set $\{\delta^1_n,\ldots,\delta^n_n \}$; 
-  \item $\delta_n \left[i_1,\ldots,i_s\right]$: $\left[\delta^{i_1}_n,\ldots,\delta^{i_s}_n\right]$ the logical matrix where $i_1,\ldots,i_s\in\left\{1,2,\ldots,n\right\}$;
-  \item  $L_{n\times s}$: the set of $n\times s$ logical matrices.
-\end{itemize}
-
-Using \STP\ of matrices, the updating rules of the \BCN\ (\ref{equ:1}) can be quivalently represented in the following algebraic form:
-\begin{definition}[Algebraic Forms]
-
-\begin{equation}
-\begin{split}
-\mathsf{s}(t+1)=&\ L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\\
-\mathsf{o}(t)=&\ H\ltimes{\mathsf{s}(t)}
-\end{split}
-\label{equ:2}
-\end{equation}
-where $\mathsf{s}(t)\in\Delta_N$, $\mathsf{i}(t)\in\Delta_M$, and  $\mathsf{o}(t)\in\Delta_Q$ denote the states, inputs and outputs respectively.
-% For convenience, we use same notations $\mathsf{s}(t)$, $\mathsf{i}(t)$ and $\mathsf{o}(t)$ in formulas (\ref{equ:1}) and (\ref{equ:2}), but they  are written in different vector forms. 
-$L\in L_{N\times\left(NM\right)}$ and $H\in L_{Q\times N}$ denote the relation matrices. $N=2^n$, $M=2^m$, $Q=2^q$ where $n$, $m$ and $q$ represent the number of state-nodes, input-nodes and output-nodes respectively. 
-\end{definition}
-
-%After the introduction of  algebraic forms of \BCNs, we introduce the process of constructing a \BCN's  algebraic form. In order to construct 
-The algebraic form of a {\BCN} can be constructed as follows: 
-
-we give a mapping \[\tau:\{0,1\}\mapsto \{\delta_2^1, \delta_2^2\},\] that $\tau(0)=\delta_2^2$, $\tau(1)= \delta_2^1$. 
-%each logical value a vector form as: $1 \scriptsize{\sim} \delta_2^1$, $0 \scriptsize{\sim} \delta_2^2$. 
-Therefore, the value of a node takes value from these two vectors, e.g. the input-node $A$ of \BCN\ in {\em Example \ref{exa:2}}, $\tau(A(t))\in \{\delta_2^1, \delta_2^2\}$. Then using the \STP\ of matrices, we have 
-\[\mathsf{i}(t)=\mathsf{i}_1(t)\ltimes {\ldots}\ltimes \mathsf{i}_m(t);\] 
-\[\mathsf{s}(t)=\mathsf{s}_1(t)\ltimes {\ldots}\ltimes \mathsf{s}_n(t);\] 
-\[\mathsf{o}(t)=\mathsf{o}_1(t)\ltimes {\ldots}\ltimes \mathsf{o}_q(t).\] 
-For instance, in the {\em Example \ref{exa:2}}, when $C(t+1)=0$, $D(t+1)=1$, $E(t+1)=1$ and $F(t+1)=0$, we have 
-\begin{equation*}
-\begin{split}
-\mathsf{s}(t+1)=&\tau(0) \ltimes \tau(1) \ltimes \tau(1) \ltimes \tau(0)\\
-=&\delta_{2}^2 \ltimes \delta_{2}^1 \ltimes \delta_{2}^1 \ltimes \delta_{2}^2\\
-=&\delta_{16}^{10}.
-\end{split}
-\end{equation*}
-
-And according to \cite{Cheng2003Semi}, for the logical function $f_i$ of each state-node $\mathfrak{s}_i$ which can be found in the updating rules ( fomula (\ref{equ:1})) that
-\[\mathfrak{s}_i(t+1)=f_i(\mathfrak{i}_1(t),\ldots,\mathfrak{i}_m(t),\mathfrak{s}_1(t),\ldots,\mathfrak{s}_n(t)),\] 
-there exists a logical matrix $L_i\in L_{2\times {N M}}$ such that
-%\begin{equation}
-%\begin{split}
-\[\tau(\mathfrak{s}_i(t+1))= L_i\ltimes\mathsf{i}(t)\ltimes\mathsf{s}(t).\]
-%\end{split}
-%\end{equation}
-%where the left side of equation calculate the truth value and the  right side of equation calculate the vector in $\{\delta_2^1, \delta_2^2\}$. 
-Therefore for state-nodes $\mathsf{s}_1,\ldots,\mathsf{s}_n$, we have $n$ corresponding logical matrices $L_1,\ldots,L_n$ for them, respectively. 
-%We have that
-%when\\
-If for each state-node $\mathsf{s}_i$ the logical matrix has its form
-\[L_i=[\delta_2^{i_1},\ldots,\delta_2^{i_{NM}}],\] 
-then we have that %for the set of all state-nodes $s(t)$ the logical matrix 
-\[L=[\delta_N^{R_1},\ldots,\delta_N^{R_{NM}}]\]  where 
-\[\delta_N^{R_1}=\delta_2^{1_1}\ltimes \ldots \ltimes \delta_2^{n_1};\]\[\vdots\] \[\delta_N^{R_{NM}}=\delta_2^{1_{NM}}\ltimes \ldots \ltimes \delta_2^{n_{NM}}.\] 
-
-%then 
-
-By this relationship we can construct the $L$ for the algebraic forms of \BCNs. And then we can construct the logical matrix $H$ in the similar way. 
-
-%Since \STP\ keeps most properties of the conventional product \cite{Cheng2011Analysis}, the associative law, the distributive law, etc. % We usually omit the symbol ``$\ltimes$'' hereinafter. 
-
-%\ly{For instance, the formula \[\mathsf{s}(t+1)=L\ltimes{\mathsf{i}(t)}\ltimes{\mathsf{s}(t)}\] will be written as  \[\mathsf{s}(t+1)=L{\mathsf{i}(t)}{\mathsf{s}(t)}.\]}
-
-
-To better illustrate the concept of algebraic forms, we give a simple example to describe it.
-\begin{example}
-For instance, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have that the updating rules of this \BCN\ can be represented with the algebraic form:
-\begin{equation*}
-\begin{split}
-\mathsf{s}(t+1) =&\delta_{16}[\alpha]\ltimes\mathsf{i}(t)\ltimes\mathsf{s}(t)\\
-\mathsf{o}(t) =&\delta_4[\beta]\ltimes\mathsf{s}(t)\\
-\end{split}
-\label{equ:4}
-\end{equation*}
-where $\alpha=\{10,4,11,16,9,5,1, 7,15,2,3,12,7,6,8,13,8,9,\\15,10,14,4,3,16,1,14,12,13,5,7,2,6,7,2,3,13,13,9,5,1,\\16,13 ,6,14,11,10,4,15,1,14 ,7,6,9 ,8,11,12,5,5,13,3,10,\\12,16,16\}$, $\beta=\{1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,4\}$, $t\in \mathbb{N}$, $\mathsf{s}(t)\in \Delta_{16}$, $\mathsf{i}(t)\in \Delta_4$ and $\mathsf{o}(t)\in \Delta_4$.
-
-And then we have its algebraic form shown by table (Fig.\ref{fig:6}) that $\mathsf{s}(t)\in \Delta_{16}$, $\mathsf{i}(t)\in \Delta_4$ and $\mathsf{o}(t)\in \Delta_4$. For instance, when $\mathsf{s}(t)=\delta_{16}^1$ and  $\mathsf{i}(t)=\delta_{4}^1$, it means that the values of all state-nodes and all input-nodes in time step $t$ are $1$,  from the true table (Fig.\ref{fig:2}) we have $C(t+1)=0$, $D(t+1)=1$, $E(t+1)=1$ and $F(t+1)=0$. Thus we have \[\mathsf{s}(t+1)=\delta_{2}^2 \ltimes \delta_{2}^1 \ltimes \delta_{2}^1 \ltimes \delta_{2}^2=\delta_{16}^{10}.\]
- \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
-	}}
-      
-      \caption{The algebraic form of the \BCN\ shown in Fig.\ref{fig:1}.}
-      \label{fig:6}
-   \end{figure}
-   \label{exa:3}
-\end{example}   
-\end{comment}
 %=======================================================================
 
 \subsection{Four existing observability of \BCNs}
-%After introducing the algebraic forms of \BCNs, 
-In this subsection, we introduce the four existing definitions of observability of \BCNs. %. In order to introduce four existing types of observability of \BCNs, 
+In this subsection, we introduce the four existing definitions of observability of \BCNs. 
 We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
@@ -277,7 +132,7 @@ F^{\infty}_{\mathsf{s}(0)} &: (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty},\ \m
 \label{equ:6}
 \end{equation}
 
-Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $s_0\in \Delta_N$, $k>0$, and $\infty$ is the infinite natural numbers. For all  $k>0$,% \tl{where is $N^*$ defined?}
+Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $s_0\in \Delta_N$, $k>0$, and $\infty$ is the infinite natural numbers. For all  $k>0$,
 \[\mathsf{I}=\mathsf{i}(0)\ldots \mathsf{i}({k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
 \[F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k) \in(\Delta_N)^k\]
@@ -291,8 +146,6 @@ is an input sequence,
  \[(HF)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(1) \mathsf{o}(2)\ldots \in(\Delta_Q)^{\infty}\]
   is an infinitely long output sequence. 
   
- %\tl{up to there the explanations are almost trivial; consider removing them?}
-  
   
   From the updating rules of \BCNs, in the formula (\ref{equ:5}), for every $1\le t \le |\mathsf{I}|$ we have 
  \[\mathsf{s}(t)=f(\mathsf{i}(t-1),\mathsf{s}(t-1)).\] 
@@ -301,8 +154,6 @@ is an input sequence,
 
 These mappings describe the relations of initial state ($\mathsf{s}(0)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(0)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(0)}(\mathsf{I})$). 
 
-%Such that, four existing types of observability of BCNs can be defined as follows.
-%And for all $1\ge k \ge j \ge |I|$, we use I[k,j] to denote the word $i_k \ldots i_j$ as an input sequence. 
 Then we have the four existing observability definitions are as follows.
 
 \begin{definition} [First Observability]
@@ -364,8 +215,7 @@ Therefore we have this \BCN\ does not satisfy the existing third observability.
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{i}(0)$, $\mathsf{s}^{j}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. % Then any input sequence which with the prefix $\delta_{4}^0$, they can not determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.
-
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
 Therefore we have this \BCN\ does not satisfy the existing fourth observability.
 \label{exa:7}
 \end{example}  
@@ -381,24 +231,12 @@ What is more, we know the implication relationships of four existing types of ob
       \caption{The implication relationships graph between existing observability 1, 2, 3, 4, where ``$\rightarrow$" means ``implies".}
       \label{fig:9}
    \end{figure}
-%\begin{proposition}
-%The implication relationships of four existing types of observability.
-%\begin{itemize}
-%\item The first observability implies the second observability, but the second observability does not imply the first observability.\\
-%\item The third observability implies the second observability, but the second observability does not imply the third observability.\\
-%\item The third observability implies the first observability, but the first observability does not imply the third observability.\\
-%\item The fourth observability implies the third observability, but the third observability does not imply the fourth observability.\\
-%\item The fourth observability implies the second observability, but the second observability does not imply the fourth observability.\\
-%\item The fourth observability implies the first observability, but the first observability does not imply the fourth observability. \\
-%\end{itemize} 
-%\end{proposition}
 
 Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability, then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
-%, when we don't presuppose the initial state of {\em BCNs}
    
 After introducing the definition of four existing observability and their implication relationship, we discuss how to determine the initial state of some \BCNs\ by four existing types of observability. 
 \begin{itemize}
-\item The first and second observability can not help us to determine the initial state of some \BCNs. Because in the first observability, firstly, we need to assume that the initial state $\mathsf{s}(0)=\mathsf{s}^{i}(0)$. Secondly, we check the \BCN\ by the corresponding input sequence $\mathsf{I}$ of $\mathsf{s}^{i}(0)$. If $\mathsf{s}(0)=\mathsf{s}^{i}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{i}(0)$, then we can not determine the initial state of the \BCN. Therefore we need to repeat this determining procedure untill we can determine the initial state. %check several test cases (which with the same initial state $\mathsf{s}(0)$) of this \BCN\  of them. 
+\item The first and second observability can not help us to determine the initial state of some \BCNs. Because in the first observability, firstly, we need to assume that the initial state $\mathsf{s}(0)=\mathsf{s}^{i}(0)$. Secondly, we check the \BCN\ by the corresponding input sequence $\mathsf{I}$ of $\mathsf{s}^{i}(0)$. If $\mathsf{s}(0)=\mathsf{s}^{i}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{i}(0)$, then we can not determine the initial state of the \BCN. Therefore we need to repeat this determining procedure untill we can determine the initial state.
 So do the existing second observability of \BCNs.
 \item We can use the third existing observability and fourth existing observability to determine the initial state $\mathsf{s}(0)$ of \BCNs. But the requirements for \BCNs\ are very difficult to meet when we use the third observability and fourth observability. Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observe at every time step can help us further determine the range of the initial state. We can use different input sequence to determine the initial state based on the range of the initial state. But in the third and fourth existing observability, we use the same input sequence to determine the initial state.
 \end{itemize} 
