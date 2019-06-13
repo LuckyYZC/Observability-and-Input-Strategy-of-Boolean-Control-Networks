@@ -67,13 +67,7 @@ In this paper, we research about the observability of \BCNs. The concept of obse
 % Then, we can use the input to control the state of \BCNs, and then get more information about the new state by the new output we observed. So that, we can get more information about the initial state of \BCN\ by controlling the input.
 
 %\tl{do you use  gothic to denote vectors? this paragraph is repeating} 
-For convenience, we use the vectors
-\begin{itemize}
-	\item input $\mathsf{i}(t)=\begin{vmatrix}\mathsf{i}_1(t)\\ \vdots \\\mathsf{i}_m(t)\end{vmatrix}$,
-	\item state $\mathsf{s}(t)=\begin{vmatrix}\mathsf{s}_1(t)\\ \vdots \\\mathsf{s}_n(t)\end{vmatrix}$,
-	\item and output $\mathsf{o}(t)=\begin{vmatrix}\mathsf{o}_1(t)\\ \vdots \\\mathsf{o}_q(t)\end{vmatrix}$
-\end{itemize}
- to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively, where $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively. 
+For convenience, we use the vectors input $\mathsf{i}(t)=\begin{bmatrix}\mathsf{i}_1(t)\\ \vdots \\\mathsf{i}_m(t)\end{bmatrix}$, state $\mathsf{s}(t)=\begin{bmatrix}\mathsf{s}_1(t)\\ \vdots \\\mathsf{s}_n(t)\end{bmatrix}$ and output $\mathsf{o}(t)=\begin{bmatrix}\mathsf{o}_1(t)\\ \vdots \\\mathsf{o}_q(t)\end{bmatrix}$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively, where $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively. 
  
  Then we have $\mathsf{s}(t+1)$ is decided by $\mathsf{i}(t)$ and $\mathsf{s}(t)$, and $\mathsf{o}(t)$ is decided by $\mathsf{s}(t)$ as shown in Fig.~\ref{fig:10}.
 
