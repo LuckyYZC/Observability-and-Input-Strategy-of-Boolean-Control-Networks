@@ -42,8 +42,8 @@ After introducing the idea of the online observability, we briefly present how t
 
 Therefore, in the definition of online observability, 
 \begin{itemize}
-\item firstly we need to describe how to derive the set $\mathsf{S}(t)$ of possible states of the \BCN\ by the output and input at every time step $t$. So we define the derivation function to solve this problem.
-\item  Secondly, we need to describe with a set of possible initial states $\mathsf{S}(0)$ whether or not we can determine the initial state $\mathsf{s}(0)$ for every $\mathsf{s}(0) \in \mathsf{S}(0)$ by the above mentioned process in $k$ time steps, thus we define the $k$-step determinability for $\mathsf{S}(t)$. 
+\item firstly we need to describe how to derive the set $\mathsf{S}(t)$ of possible states of the \BCN\ by the output $\mathsf{o}(t)$, input $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$. So we define the derivation function to solve this problem.
+\item  Secondly, we need to describe how to derive the input $\mathsf{i}(t)$ of the \BCN\ by the $\mathsf{S}(t)$, thus we define the $k$-step determinability for $\mathsf{S}(t)$. 
 \end{itemize} 
 
 Therefore, we have the definition of the online observability that a \BCN\ is online observable if for every $\mathsf{S}^{i}(0)$ we derived, there exists a $k^i\ge 0$ such that the $\mathsf{S}^{i}(0)$ is $k^i$-step determinable.
@@ -99,7 +99,7 @@ For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have
 \end{equation*}
 
  This equation represents that 
- we can not know more information about a \BCN\ than what we knew before before we observe the output and decide the input.
+ we can not know more information about a \BCN\ than what we knew before before we observe the output and chose the input.
 \begin{equation*}
 \begin{split}
 \Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=&\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}\\
@@ -107,7 +107,7 @@ For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have
 \label{equ:9}
 \end{equation*}
  
-In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^0$ before we decide the input. In this case we can derive that the state can be $\delta_{16}^0$, $\delta_{16}^1$ or  $\delta_{16}^2$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
+In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^0$ before we chose the input. In this case we can derive that the state can be $\delta_{16}^0$, $\delta_{16}^1$ or  $\delta_{16}^2$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
 \begin{equation*}
 \begin{split}
 \Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\varepsilon\right)=&\{\delta_{16}^{9},\delta_{16}^3,\delta_{16}^{10}\}\\
@@ -147,7 +147,7 @@ And then if we observe that the output of \BCN\ is $\delta_4^2$, we can deduce t
  
  As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step. But we need to know how to choose the input at every time step to determine the initial state of \BCNs. Thus we propose the $k$-step determinability for the set of possible states $\mathsf{S}(t)$ to depict whether we can determine the state $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$.
 \subsection{$k$-step determinability}
-After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\ge 0$. 
+After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\ge 0$. With the $k$-step determinability of $\mathsf{S}(t)$, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
 \begin{definition}[$k$-Step Determinability] 
 
 When $k=0$, a set of possible states $\mathsf{S}(t)$ is $0$-step determinable if $|\mathsf{S}(t)|=1$. 
@@ -160,7 +160,7 @@ When $k>0$, a set of states $\mathsf{S}(t)$ is $k$-step determinable
  \end{itemize}
 \end{definition}
 
-After defining the $k$-step determinability, we illustrate why it defined by this way.
+After defining the $k$-step determinability, we illustrate why it defined by this form.
 \begin{itemize}
 \item When $k=0$, and we can determine the state $\mathsf{s}(t)$ at time step $t+k$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. To guarantee this, we have $|\mathsf{S}(t)|=1$. Only in this case we can determine the state $\mathsf{s}(t)$ at time step $t$. 
 
@@ -175,8 +175,8 @@ Therefore, the $k$-step determinability is well defined when $k=p+1$. And the in
 
  \end{itemize}
  
-For $\mathsf{S}(t)$, the $k$-step determinability is well defined when $k=0$. And if for $k=0,\ldots p$ the $k$-step determinability is well defined, the $k$-step determinability is also well defined when $k=p+1$. Therefore, we have the $k$-step determinability is well defined for every $k\ge 0$.
- 
+For $\mathsf{S}(t)$, the $k$-step determinability is well defined when $k=0$. And if for $k=0,\ldots p$ the $k$-step determinability is well defined, the $k$-step determinability is also well defined when $k=p+1$. Therefore, we have the $k$-step determinability is well defined for every $k\ge 0$. 
+
  Then, in order to better illustrate this definition, we give the following example.
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble states $\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$, the cardinality number of this set $|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3>1$, and for this set there exists $\delta_{4}^3$ such that 
@@ -197,14 +197,14 @@ In addition, we propose some lemmas for the $k$-step determinability.
 
 \begin{lemma}
 For the sets of states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if $\mathsf{S}^{2}(t)$ is $k$-step determinable and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then $\mathsf{S}^{1}(t)$ is $k$-step determinable.
-  \label{lemm:4}
+  \label{lemm:1}
 \end{lemma}
 \begin{proof}
 The set of states $\mathsf{S}^{2}(t)$ is $k$-step determinable and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$. 
 
-If $k=0$, we have \[|\mathsf{S}^{1}(t)|=|\mathsf{S}^{2}(t)|=1,\] and \[\mathsf{S}^{1}(t) = \mathsf{S}^{2}(t).\] Therefore, we have $\mathsf{S}^{1}(t)$ is $0$-step determinable, thus we have the {\em Lemma \ref{lemm:4}} is right when $k=0$.
+If $k=0$, we have \[|\mathsf{S}^{1}(t)|=|\mathsf{S}^{2}(t)|=1,\] and \[\mathsf{S}^{1}(t) = \mathsf{S}^{2}(t).\] Therefore, we have $\mathsf{S}^{1}(t)$ is $0$-step determinable, thus we have the {\em Lemma \ref{lemm:1}} is right when $k=0$.
  
- If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:4}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
+ If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}^{2}(t)|$, and 
  \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0,\] the $\Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable, where ${k'}<(p+1)$.
@@ -215,17 +215,17 @@ If $k=0$, we have \[|\mathsf{S}^{1}(t)|=|\mathsf{S}^{2}(t)|=1,\] and \[\mathsf{S
  \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{1}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0,\] the \[\Ded(\mathsf{S}^{1}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\subseteq \Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\] is  $k'$-step deterministic, where ${k'}<(p+1)$.
  \end{itemize}  Then we have the $\mathsf{S}^{1}(t)$ is $(p+1)$-step deterministic. 
  
- Therefore we have if for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:4}} is right, then the {\em Lemma \ref{lemm:4}} is right too when $k=p+1$. 
-And we have the {\em Lemma \ref{lemm:4}} is right when $k=0$. Thus we have the {\em Lemma \ref{lemm:4}} is right for every $k\ge0$.
+ Therefore we have if for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right, then the {\em Lemma \ref{lemm:1}} is right too when $k=p+1$. 
+And we have the {\em Lemma \ref{lemm:1}} is right when $k=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $k\ge0$.
  
 \end{proof}
-With the {\em Lemma \ref{lemm:4}}, it is easy to propose the {\em Lemma \ref{lemm:3}}
+With the {\em Lemma \ref{lemm:1}}, it is easy to propose the {\em Lemma \ref{lemm:2}}
 \begin{lemma}
 For the sets of possible states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}(t)$ is $k^{j}$-step determinable.
-\label{lemm:3}
+\label{lemm:2}
 \end{lemma}
 
-The {\em Lemma \ref{lemm:3}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
+The {\em Lemma \ref{lemm:2}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
 %==========================================================================================
 
 \subsection{Online observability}
@@ -252,10 +252,10 @@ Therefore we have this \BCN\ is the online observable, and then we can determine
 \end{example}  
 
 After defining online observability of \BCNs, we discuss the implication relationships between four existing observability and online observability.
-\begin{theorem}
+\begin{lemma}
 The online obervability implies the existing first observability.
-\label{theo:2}
-\end{theorem}
+\label{lemm:3}
+\end{lemma}
 \begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{1}\ge 0$ that $\mathsf{S}(t)$ is $k^{1}$-step determinable, then for every state \State$^{x}(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$ such that for all states $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
 \begin{itemize}
 \item When $k^{1}=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$ and $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$. Therefore, we have that for any $k^2 >0$, for every input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ the propostion is right. 
@@ -279,15 +279,15 @@ Therefore, we have for every initial state \State$^{x}(0)$$\in \Delta_N$, there 
 
 With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state,  and we can also do this by the online obervability,. Thus the online obervability implies the existing first observability. But the existing first observability can not be used to determine $\mathsf{s}(0)$, thus the first observability does not imply the online obervability.
 
-\begin{theorem}
+\begin{lemma}
 The online obervability implies the existing second observability.
-\label{theo:4}
-\end{theorem}
+\label{lemm:4}
+\end{lemma}
 
  Moreover, from the implication relationship between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
-\begin{theorem}
+\begin{lemma}
 The existing third observability implies the online obervability.
-\end{theorem}
+\end{lemma}
 \begin{proof}
 Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^1}$ for some $k^1 >0$, such that for any distinct states $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, implies $(HF)^{k^1}_{\mathsf{s}^{x}(t)}(\mathsf{I})\neq (HF)^{k^1}_{\mathsf{s}^{y}(t)}(\mathsf{I})$, then for the $\mathsf{S}(t)$ there exists a $k^{2}\ge 0$ such that $\mathsf{S}(t)$ is $k^{2}$-step determinable.
 
@@ -318,10 +318,10 @@ Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|
 
 In the existing third type of observability, there has to exist an input sequence $\mathsf{I}$ that can distinguish any distinct two states of the \BCN. But in online observability, we only need to adaptively construct an input sequence to determine $\mathsf{s}(0)$. Thus the online obervability does not imply the existing third observability, but the existing third observability implies the online obervability. 
 
-\begin{theorem}
+\begin{lemma}
 The existing fourth observability implies the online obervability.
-\label{theo:5}
-\end{theorem}
+\label{lemma:5}
+\end{lemma}
 
 Moreover, from the implication relationships between the existing third and fourth observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the fourth observability
 
