@@ -274,7 +274,7 @@ The {\em Lemma \ref{lemm:7}} is right when $k=0$, and if for $k=0,\ldots k=p$ th
 
 The {\em Lemma \ref{lemm:7}} indicates that for the set of current possible states $S$ we derived, $S$ is $k$-step deterministic is the necessary condition of determine the current state $s(t)$ of this \BCN\ for every $s(t)\in S$ in real time at time step ($t+k$). Therefore, the $k$-step determinability helps us define the online obervability to satisfy the {\em interactivity}. 
 %Therefore if we can determine the infimum of $k$ for a set of states $S$, we would find the length of the shortest path to determine the state of a \BCN\ by this possible states set $S$.
-\end{comment}
+
 
 \begin{lemma}
  If a set of possible states $\mathsf{S}^{x}(t)$ is $k^1$-step determinable and $k^1< k^2$, then $\mathsf{S}^{x}(t)$ is $k^2$-step determinable. %But if the states set $S$ is $k_1$-step deterministic and $k_1> k_2$, we can not deduce that $S$ is $k_2$-step deterministic. 
@@ -320,6 +320,7 @@ In {\em Section \ref{sec:app}}, we will represent the details about finding the 
 %We can consider ``A set of possible states $S$ is $K$-step deterministic'' as ``We can determine the state of a \BCN\ by this possible states set $S$ in finite steps''. Therefore we have some other theorems for the $K$-step determinability.
 
 %We prove the {\em Lemma \ref{lemm:4}} at first.
+\end{comment}
 \begin{lemma}
 For the sets of states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if $\mathsf{S}^{2}(t)$ is $k$-step determinable and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then $\mathsf{S}^{1}(t)$ is $k$-step determinable.
   \label{lemm:4}
@@ -347,7 +348,13 @@ And we have the {\em Lemma \ref{lemm:4}} is right when $k=0$. Thus we have the {
  
 % What is more, we have the {\em Lemma \ref{lemm:4}} is right when $k=1$, thus the {\em Lemma \ref{lemm:4}} is right for every $k\in\mathbb{N}$
 \end{proof}
+With the {\em Lemma \ref{lemm:4}}, it is easy to propose the {\em Lemma \ref{lemm:3}}
+\begin{lemma}
+For the sets of possible states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}(t)$ is $k^{j}$-step determinable.
+\label{lemm:3}
+\end{lemma}
 
+The {\em Lemma \ref{lemm:3}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
 %==========================================================================================
 
 \subsection{Online observability}
@@ -375,7 +382,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  We have that:
 Therefore we have this \BCN\ is the online observable, and then we can determine the initial state of this \BCN\ by online observability. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, we have that we can use online observability to determine the initial states of some \BCNs\ which can not be determined by existing third and fourth observability. Therefore, with the online observability we can use the \BCN\ to analyze real-life systems better.
 \label{exa:10}
 \end{example}  
-
+\begin{comment}
 From the informal definition and formal definition of online observability, we propose a theorem for the online observability to solve the problem we proposed in the {\em Section \ref{sec:pre}}.
 \begin{theorem}
 A \BCN\ is online observable iff its initial state $\mathsf{s}(0)$ of a \BCN\ can be determined for every $\mathsf{s}(0)\in \Delta_N$. 
@@ -405,7 +412,10 @@ For the sets of states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if there doe
 
 The {\em Lemma \ref{lemm:3}} would help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in the {\em Section \ref{sec:deter}}.
 %The {\em Lemma \ref{lemm:3}} will help us to determine whether a \BCN\ is online observable in the {\em Section \ref{sec:deter}}.
+
 \subsection{Online observability and existing observability}
+\end{comment}
+
 After defining online observability of \BCNs, we discuss the implication relationships between four existing observability and online observability. %The implication relationship is about the conditions that the \BCNs\ need to meet to satify these observability. For instance, in the {\em Theorem \ref{theo:2}}, ``The online obervability implies the existing first observability.'' means that ``If a \BCN\ satisfies the online obervability then it satisfies the existing first observability.'' However, ``The existing first observability does not imply the online obervability.'' means that ```A \BCN\ that satisfies the existing first observability does not have to satisfy the online obervability.''
 
 %In the existing first observability, we presuppose the initial state of a \BCN\ at first, and then try to find the input sequence to distinguish it from other types of initial state. But the input sequence determined by the presupposed initial state may make some other types of initial state turn into be the same state (equation \ref{equ:12}). Such that some of other types of initial states can not be distinguished anymore, and if the initial state of this \BCN\ is one of them then the initial state can not be determined anymore. This problem has to be considered in the online obervability of \BCNs. Hence we have a theorem for online observability and the existing first and second observability.
