@@ -162,7 +162,7 @@ These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence
 Then we have the four existing observability definitions are as follows.
 
 \begin{definition} [First Observability]
-The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}^x\in(\Delta_M)^k$ for some $k>0$, such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^x)\neq (HF)^k_{{\mathsf{s}^{y}(0)}}(\mathsf{I}^x)$ \cite{cheng2009controllability}.
+The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}^x\in(\Delta_M)^k$ for some $k>0$, such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{y}(0))=h(\mathsf{s}^{x}(0))$ implies $(HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^x)\neq (HF)^k_{{\mathsf{s}^{x}(0)}}(\mathsf{I}^x)$ \cite{cheng2009controllability}.
 \end{definition}
 
 Hence the first observability means that if a \BCN\ is observable, then every initial state \State$^{x}(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}^x \in(\Delta_M)^k$. Therfore, in the first observability we can only use the corresponding input sequence $\mathsf{I}^x$ of a type of initial state $\mathsf{s}^{x}(0)$ to check whether the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not. 
@@ -179,10 +179,10 @@ Therefore we have this \BCN\ satisfies the existing first observability.
 \end{example}   
 
 \begin{definition}[Second Observability]
-	The second type of observability is that, a \BCN\ is called observable if for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^{xy})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^{xy})$ \cite{Zhao2010Input}.
+	The second type of observability is that, a \BCN\ is called observable if for any distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^{xy})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^{xy})$ \cite{Zhao2010Input}.
 \end{definition}
 
-The second observability means that a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}^{xy} \in(\Delta_M)^k$ which can distinguish them. Therfore, in the second observability we can only use the corresponding input sequence $\mathsf{I}^{xy}$ of two distinct types of initial state $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$ to check the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them. 
+The second observability means that a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}^{xy} \in(\Delta_M)^k$ which can distinguish them. Therfore, in the second observability we can only use the corresponding input sequence $\mathsf{I}^{xy}$ of two distinct initial states $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$ to check the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct initial states $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$ of the \BCN, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ which can distinguish them.  For instance,
 \begin{itemize}
@@ -211,7 +211,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for a
 
 
 
-Therefore we have this \BCN\ does not satisfy the existing third observability.
+Therefore we have this \BCN\ does not satisfy the existing third observability. And we can not determine its initial state $\mathsf{s}(0)$ by third observability. 
 \label{exa:6}
 \end{example}  
 \begin{definition}[Fourth Observability]
@@ -221,7 +221,7 @@ Therefore we have this \BCN\ does not satisfy the existing third observability.
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
-Therefore we have this \BCN\ does not satisfy the existing fourth observability.
+Therefore we have this \BCN\ does not satisfy the existing fourth observability. And we can not determine its initial state $\mathsf{s}(0)$ by third observability either. 
 \label{exa:7}
 \end{example}  
 
