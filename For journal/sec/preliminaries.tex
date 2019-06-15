@@ -102,7 +102,7 @@ Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\r
       \label{fig:6}
    \end{figure}
   
-   With the abbreviation forms of $\mathsf{s}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
+   With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
    
    For instance, in this \BCN\ if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
    
@@ -143,7 +143,7 @@ is an input sequence,
 \[F^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k) \in(\Delta_N)^k\]
  is a state sequence, and 
  \[(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k) \in(\Delta_Q)^k\] 
- is a output sequence. For the $\infty$, 
+ is an output sequence. For the $\infty$, 
  \[\mathsf{I}=\mathsf{i}(t) \mathsf{i}(t+1)\ldots  \in(\Delta_M)^{\infty}\] 
  is an infinitely long input sequence, 
  \[F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \mathsf{s}(t+2)\ldots  \in(\Delta_N)^{\infty}\] 
@@ -198,7 +198,7 @@ Therefore we have this \BCN\ satisfies the existing second observability.
 The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The third observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, the $\mathsf{s}(0)$ can be determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for any $k>0$, there is not any input sequence $\mathsf{I}\in(\Delta_M)^k$ which can determine the initial state of this \BCN. Because 
@@ -221,7 +221,7 @@ Therefore we have this \BCN\ does not satisfy the existing third observability. 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long input sequence that can not determine the initial state of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
-Therefore we have this \BCN\ does not satisfy the existing fourth observability. And we can not determine its initial state $\mathsf{s}(0)$ by third observability either. 
+Therefore we have this \BCN\ does not satisfy the existing fourth observability. And we can not determine its initial state $\mathsf{s}(0)$ by fourth observability either. 
 \label{exa:7}
 \end{example}  
 
@@ -239,14 +239,17 @@ What is more, we know the implication relationships of four existing types of ob
 
 Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability, then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
    
-After introducing the definition of four existing observability and their implication relationship, we discuss how to determine the initial state of some \BCNs\ by four existing types of observability. 
+After introducing the definition of four existing observability and their implication relationship, we discuss whether the initial states of \BCNs\ can be determined by four existing types of observability. 
 \begin{itemize}
-\item The first and second observability can not help us to determine the initial state of some \BCNs. Because in the first observability, firstly, we need to assume that the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$. Secondly, we check the \BCN\ by the corresponding input sequence $\mathsf{I}^x$ of $\mathsf{s}^{x}(0)$. If $\mathsf{s}(0)=\mathsf{s}^{x}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{x}(0)$, then we can not determine the initial state of the \BCN. Therefore we need to repeat this determining procedure untill we can determine the initial state.
-So do the existing second observability of \BCNs.
-\item We can use the third existing observability and fourth existing observability to determine the initial state $\mathsf{s}(0)$ of \BCNs. But the requirements for \BCNs\ are very difficult to meet when we use the third observability and fourth observability. Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observe at every time step can help us further determine the range of the initial state. We can use different input sequence to determine the initial state based on the range of the initial state. But in the third and fourth existing observability, we use the same input sequence to determine the initial state.
+\item With the first and second observability we can not determine the initial states of \BCNs. Because in the first observability, we need to assume that the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$, and then check it by the corresponding input sequence $\mathsf{I}^x$. If $\mathsf{s}(0)=\mathsf{s}^{x}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{x}(0)$, then we can not determine $\mathsf{s}(0)$. %Therefore, in the first observability, we have to repeat the determining procedure to determine the initial state. 
+So do the existing second observability of \BCNs. 
+
+\item With the third and fourth observability we can determine the initial states of \BCNs. But it is very difficult for \BCNs\ to satisfy the third observability and fourth observability. Because for a \BCN\ to satisfy the third observability there has to exist an input sequence $\mathsf{I}$ to determine $\mathsf{s}(0)$. And the condition of fourth observability is even stronger.% Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observe at every time step can help us further determine the range of the initial state. With the range of the initial state, we can use different input sequence to determine the initial state. While in the third and fourth existing observability, we use the same input sequence $\mathsf{I}$ to determine the initial state.
 \end{itemize} 
  
-However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore, we can not use the first observability and second observability to determine the initial states of them. Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability. Furthermore, we can not use the third observability and fourth observability to determine the initial states of some biological systems if they do not satify the requirements of the third and fourth observability. With these disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve this problem.
+%However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
+As we can not use the first observability and second observability to determine the initial states of \BCNs. Furthermore, we can not determine the initial states of \BCNs\ either by the third and fourth observability when \BCNs\ do not satify them. With the disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve the problem.
+%Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
 
  \begin{problem}
 \label{pro:2}
