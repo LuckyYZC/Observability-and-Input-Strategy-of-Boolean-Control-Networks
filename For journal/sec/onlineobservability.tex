@@ -86,11 +86,11 @@ f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \label{equ:11}
 \end{equation*}
 
-If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can deduce that the possible new state can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
+If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
  
- Then for a \BCN, we have the set of possible states of it $\mathsf{S}(t)$ is defined as follows.
+ Then for a \BCN, we have the set of possible states $\mathsf{S}(t)$ is defined as follows.
  \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $0\le t\le k$, we have
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -120,7 +120,7 @@ The $k$-step determinability of $\mathsf{S}$ is recursively defined as follows:
 
  Then, in order to better illustrate this definition, we give the following example.
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble states $\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$, the cardinality number of this set $|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3>1$, and for this set there exists $\delta_{4}^3$ such that 
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}. If \[\mathsf{o}(0)=\delta_4^0\] then we have \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\] the cardinality number of \[\mathsf{S}(0)=|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3>1,\] and for this set there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
@@ -130,7 +130,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble st
   \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^1\right)|=|\{\delta_{16}^{6}\}|=1$, that the $\{\delta_{16}^{6}\}$ is $0$-step determinable.
  \end{itemize}
  \end{itemize}
- Therefore the set of states $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ is $1$-step determinable.
+ Therefore $\mathsf{S}(0)$ is $1$-step determinable, thus we can  input $\delta_{4}^3$ to determine $\mathsf{s}(0)$ at time step $1$.
 \label{exa:9}
 \end{example}  
 
