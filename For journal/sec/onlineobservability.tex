@@ -60,78 +60,33 @@ In a Boolean control network, let
 \item $(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
 \item $(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
 \end{itemize} 
-A derivation function \[\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}\] 
-with the following properties. 
-	That for each element $\mathsf{s}'\in \Ded\left(\mathsf{S}, \mathsf{i}, {o}\right)$ there exists a corresponding $\mathsf{s}\in \mathsf{S}$ of $\mathsf{s}'$ such that 
-	
-\[\mathsf{s}'=\left\{
+
+\[\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}\] 
+is the derivation function that
+\begin{equation*}
+\begin{split}
+&\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)\\
+&=\{ \mathsf{s}'| \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right. \]
-
-and 
-
-\[h(\mathsf{s}')=\mathsf{o}\ when\ \mathsf{o}\neq \varepsilon.\]
+\end{array} \right. ,\ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\}.
+\end{split}
+\end{equation*}
 
 \end{definition}
 
 \begin{example}
  In order to better illustrate the derivation functon $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$, we use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply this function. 
  
- For all $\mathsf{i}^{i}\in \Delta_M$ and for all $\mathsf{o}^{j}\in \Delta_Q$ we have 
-\begin{equation*}
-\begin{split}
-\Ded\left(\emptyset,\mathsf{i}^{i},\mathsf{o}^{j}\right)=\emptyset\\
-\end{split}
-\label{equ:7}
-\end{equation*}
-
-This equation represents that 
-if we don't know any information about the state of a \BCN, then we can not deduce anything no matter what we input and observe.
-
-For all $\mathsf{S}^{i}\in 2^{\Delta_N}$ we have 
-\begin{equation*}
-\begin{split}
-\Ded\left(\mathsf{S}^{i},\varepsilon,\varepsilon\right)=\mathsf{S}^{i}\\
-\end{split}
-\label{equ:8}
-\end{equation*}
-
- This equation represents that 
- we can not know more information about a \BCN\ than what we knew before before we observe the output and chose the input.
-\begin{equation*}
-\begin{split}
-\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=&\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}\\
-\end{split}
-\label{equ:9}
-\end{equation*}
- 
-In this equation, the possible states set $\mathsf{S}=\Delta_N$, and  we observe that the outputs of \BCN\ is $\delta_4^0$ before we chose the input. In this case we can derive that the state can be $\delta_{16}^0$, $\delta_{16}^1$ or  $\delta_{16}^2$. This equation shows how to derive the set of possible states by observing the output at every time step. So we have that the cardinal number of the possible states set may decrease after we observe the output of \BCN. As the cardinal number of the set possible states decreasing, we can further determine the range of values for the initial state. 
-\begin{equation*}
-\begin{split}
-\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\varepsilon\right)=&\{\delta_{16}^{9},\delta_{16}^3,\delta_{16}^{10}\}\\
-\end{split}
-\label{equ:10}
-\end{equation*}
-
-And then, if the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$. Before we observe the output of the \BCN\ we can only derive that the possible states would be $\delta_{16}^{9}$, $\delta_{16}^3$ or  $\delta_{16}^{10}$. In this equation, the cardinal number of the possible states set does not decrease before we observe the output of this \BCN. Thus, for every $\mathsf{s}'\in\{\delta_{16}^{9},\delta_{16}^3,\delta_{16}^{10}\}$ there exists only one corresponding $\mathsf{s}\in\{\delta_{16}^{0},\delta_{16}^1,\delta_{16}^{2}\}$ such that $\mathsf{s}'=f( \delta_4^0, \mathsf{s})$.
-\begin{equation*}
+ \begin{equation*}
 \begin{split}
 \Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\delta_4^2\right)=&\{\delta_{16}^{9},\delta_{16}^{10}\}\\
 \end{split}
 \label{equ:11}
 \end{equation*}
 
-And then if we observe that the output of \BCN\ is $\delta_4^2$, we can deduce that the possible state can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$ shown in this equation. 
-\begin{equation*}
-\begin{split}
-\Ded\left(\{\delta_{16}^3,\delta_{16}^4,\delta_{16}^5,\delta_{16}^6\},\delta_4^3,\varepsilon\right)=&\{\delta_{16}^8,\delta_{16}^{7},\delta_{16}^{10}\}
-\end{split}
-\label{equ:12}
-\end{equation*}
-
- Finally if the set of possible states $\mathsf{S}=\{\delta_{16}^3, \delta_{16}^4, \delta_{16}^5, \delta_{16}^6\}$ and the inputs is $\delta_4^3$. Before we observe the output of \BCN\ we can derive that the possible states should be $\delta_{16}^8$, $\delta_{16}^7$ or $\delta_{16}^{10}$ shown in this equation. Because both $\delta_{16}^3$ and $\delta_{16}^4$ become $\delta_{16}^8$ after affected by $\delta_4^3$, we can not distinguish them anymore. 
+If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can deduce that the possible new state can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
  
@@ -145,37 +100,23 @@ And then if we observe that the output of \BCN\ is $\delta_4^2$, we can deduce t
 
 \end{definition}
  
- As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step. But we need to know how to choose the input at every time step to determine the initial state of \BCNs. Thus we propose the $k$-step determinability for the set of possible states $\mathsf{S}(t)$ to depict whether we can determine the state $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$.
+ 
 \subsection{$k$-step determinability}
-After we difined the derivation function, we present the definition of $k$-step determinability for the set of possible states $\mathsf{S}(t)$, where the $k\ge 0$. With the $k$-step determinability of $\mathsf{S}(t)$, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
+As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step. But we need to know how to choose $\mathsf{i}(t)$. Thus we propose the $k$-step determinability for $\mathsf{S}(t)$ to depict whether we can determine the $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$. With this notion, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
 \begin{definition}[$k$-Step Determinability] 
-
-When $k=0$, a set of possible states $\mathsf{S}(t)$ is $0$-step determinable if $|\mathsf{S}(t)|=1$. 
-
-When $k>0$, a set of states $\mathsf{S}(t)$ is $k$-step determinable
- if $|\mathsf{S}(t)|>0$ and for $\mathsf{S}(t)$ there exists an input $\mathsf{i}^{i}(t) \in \Delta_M$ such that
+The $k$-step determinability of $\mathsf{S}$ is recursively defined as follows:
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)|\neq 0,\] there exists a ${k'}<k$ such that $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)$ is $k'$-step determinable.
+ \item When $k=0$, a set of possible states $\mathsf{S}$ is $0$-step determinable if $|\mathsf{S}|=1$. 
+ \item When $k>0$, a set of states $\mathsf{S}$ is $k$-step determinable
+ if $|\mathsf{S}|>0$ and for $\mathsf{S}$ there exists an input $\mathsf{i}^{i} \in \Delta_M$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}|$, and 
+ \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)|\neq 0,\] there exists a ${k'}\le 
+(k-1)$ such that $\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)$ is $k'$-step determinable.
+ \end{itemize}
+ And the $\mathsf{i}^{i}$ is the input which makes $\mathsf{S}$ $k$-step determinable.
  \end{itemize}
 \end{definition}
-
-After defining the $k$-step determinability, we illustrate why it defined by this form.
-\begin{itemize}
-\item When $k=0$, and we can determine the state $\mathsf{s}(t)$ at time step $t+k$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. To guarantee this, we have $|\mathsf{S}(t)|=1$. Only in this case we can determine the state $\mathsf{s}(t)$ at time step $t$. 
-
-Therefore, the $k$-step determinability is well defined when $k=0$.
-
-\item  If for $k=0,\ldots, p$ the $k$-step determinability is well defined, where $p\ge 0$. When $k=p+1$, and we can determine the state $\mathsf{s}^{i}(t)$ at time step $t+(p+1)$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$. To guarantee this, we have for $\mathsf{S}(t)$ there exists an input $\mathsf{i}^{i}(t) \in \Delta_M$ such that
-\begin{itemize}
-\item $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, only in this case we can determine the state $\mathsf{s}^{i}(t)$ at time step $t+(p+1)$ for every $\mathsf{s}^{i}(t)\in \mathsf{S}(t)$ when we can determine its corresponding state $\mathsf{s}^{i}(t+1)$ at time step $(t+1)+p$.
-\item And we can determine the state $\mathsf{s^{i}}(t+1)$ at time step $(t+1)+p$ for every \[\mathsf{s}^{i}(t+1)\in \Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right).\] To guarantee this we have for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\mathsf{S}^{j}(t+1)|=|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)|\neq 0,\] there exists a ${k'}\le p=k-1$ such that \[\mathsf{S}^{j}(t+1)=\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)\] is $k'$-step determinable. Only in this case we can determine every state $\mathsf{s}^{i}(t+1)$ at time step $(t+1)+p$.
- \end{itemize}
-Therefore, the $k$-step determinability is well defined when $k=p+1$. And the input $\mathsf{i}^{i}(t)$ is an input which makes $\mathsf{S}(t)$ $k$-step determinable, we can chose it to determine $\mathsf{s}(t)$.
-
- \end{itemize}
- 
-For $\mathsf{S}(t)$, the $k$-step determinability is well defined when $k=0$. And if for $k=0,\ldots p$ the $k$-step determinability is well defined, the $k$-step determinability is also well defined when $k=p+1$. Therefore, we have the $k$-step determinability is well defined for every $k\ge 0$. 
 
  Then, in order to better illustrate this definition, we give the following example.
 \begin{example}
@@ -184,36 +125,36 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}. For the set of possilble st
  \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
   \begin{itemize}
-  \item   $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^0\right)|=|\{\delta_{16}^0\}|=1$, that the $\{\delta_{16}^0\}$ is $0$-step deterministic;
- \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^3\right)|=|\{\delta_{16}^{13}\}|=1$, that the $\{\delta_{16}^{13}\}$ is $0$-step deterministic;
-  \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^1\right)|=|\{\delta_{16}^{6}\}|=1$, that the $\{\delta_{16}^{6}\}$ is $0$-step deterministic.
+  \item   $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^0\right)|=|\{\delta_{16}^0\}|=1$, that the $\{\delta_{16}^0\}$ is $0$-step determinable;
+ \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^3\right)|=|\{\delta_{16}^{13}\}|=1$, that the $\{\delta_{16}^{13}\}$ is $0$-step determable;
+  \item  $|\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_{4}^3,\delta_{4}^1\right)|=|\{\delta_{16}^{6}\}|=1$, that the $\{\delta_{16}^{6}\}$ is $0$-step determinable.
  \end{itemize}
  \end{itemize}
- Therefore the set of states $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ is $1$-step deterministic.
+ Therefore the set of states $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ is $1$-step determinable.
 \label{exa:9}
 \end{example}  
 
 In addition, we propose some lemmas for the $k$-step determinability.
 
 \begin{lemma}
-For the sets of states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if $\mathsf{S}^{2}(t)$ is $k$-step determinable and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then $\mathsf{S}^{1}(t)$ is $k$-step determinable.
+For the sets of states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{2}$ is $k$-step determinable and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then $\mathsf{S}^{1}$ is $k$-step determinable.
   \label{lemm:1}
 \end{lemma}
 \begin{proof}
-The set of states $\mathsf{S}^{2}(t)$ is $k$-step determinable and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$. 
+The set of states $\mathsf{S}^{2}$ is $k$-step determinable and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. 
 
-If $k=0$, we have \[|\mathsf{S}^{1}(t)|=|\mathsf{S}^{2}(t)|=1,\] and \[\mathsf{S}^{1}(t) = \mathsf{S}^{2}(t).\] Therefore, we have $\mathsf{S}^{1}(t)$ is $0$-step determinable, thus we have the {\em Lemma \ref{lemm:1}} is right when $k=0$.
+If $k=0$, we have \[|\mathsf{S}^{1}|=|\mathsf{S}^{2}|=1,\] and \[\mathsf{S}^{1} = \mathsf{S}^{2}.\] Therefore, we have $\mathsf{S}^{1}$ is $0$-step determinable, thus we have the {\em Lemma \ref{lemm:1}} is right when $k=0$.
  
- If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
+ If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}$ there exists a $\mathsf{i}^{i}\in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}^{2}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0,\] the $\Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable, where ${k'}<(p+1)$.
+ \item  $|\Ded\left(\mathsf{S}^{2},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{2}|$, and 
+ \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})|\neq 0,\] the $\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})$ is $k'$-step determinable, where ${k'}<(p+1)$.
  \end{itemize}
- Then we have for $\mathsf{S}^{1}(t)$ there exists the same $\mathsf{i}^{i}(t)\in \Delta_M$ such that
+ Then we have for $\mathsf{S}^{1}$ there exists the same $\mathsf{i}^{i}\in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{1}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}^{1}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{1}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))|\neq 0,\] the \[\Ded(\mathsf{S}^{1}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\subseteq \Ded(\mathsf{S}^{2}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\] is  $k'$-step deterministic, where ${k'}<(p+1)$.
- \end{itemize}  Then we have the $\mathsf{S}^{1}(t)$ is $(p+1)$-step deterministic. 
+ \item  $|\Ded\left(\mathsf{S}^{1},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{1}|$, and 
+ \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[|\Ded(\mathsf{S}^{1},\mathsf{i}^{i},\mathsf{o}^{j})|\neq 0,\] the \[\Ded(\mathsf{S}^{1},\mathsf{i}^{i}(t),\mathsf{o}^{j})\subseteq \Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})\] is  $k'$-step deterministic, where ${k'}<(p+1)$.
+ \end{itemize}  Then we have the $\mathsf{S}^{1}$ is $(p+1)$-step deterministic. 
  
  Therefore we have if for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right, then the {\em Lemma \ref{lemm:1}} is right too when $k=p+1$. 
 And we have the {\em Lemma \ref{lemm:1}} is right when $k=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $k\ge0$.
@@ -221,7 +162,7 @@ And we have the {\em Lemma \ref{lemm:1}} is right when $k=0$. Thus we have the {
 \end{proof}
 With the {\em Lemma \ref{lemm:1}}, it is easy to propose the {\em Lemma \ref{lemm:2}}
 \begin{lemma}
-For the sets of possible states $\mathsf{S}^{1}(t)$ and $\mathsf{S}^{2}(t)$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}(t)$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}(t)\subseteq \mathsf{S}^{2}(t)$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}(t)$ is $k^{j}$-step determinable.
+For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
 \label{lemm:2}
 \end{lemma}
 
@@ -229,7 +170,7 @@ The {\em Lemma \ref{lemm:2}} would help us design the algorithm to determine the
 %==========================================================================================
 
 \subsection{Online observability}
-After the previous preparation, we present the formal definition of the online observability in this subsection. The formal definition of the online observability of {\em BCNs} is as follows.
+After the previous preparation, we present the formal definition of the online observability of {\em BCNs} is as follows.
 
 \begin{definition}[Online Observability of  BCNs]
  A \BCN\ is online observable,
