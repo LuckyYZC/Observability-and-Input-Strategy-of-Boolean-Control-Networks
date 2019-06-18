@@ -140,26 +140,7 @@ In addition, we propose some lemmas for the $k$-step determinability.
 For the sets of states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{2}$ is $k$-step determinable and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then $\mathsf{S}^{1}$ is $k$-step determinable.
   \label{lemm:1}
 \end{lemma}
-\begin{proof}
-The set of states $\mathsf{S}^{2}$ is $k$-step determinable and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. 
 
-If $k=0$, we have  \[\mathsf{S}^{1} = \mathsf{S}^{2}.\] Therefore, we have $\mathsf{S}^{1}$ is $0$-step determinable, thus we have the {\em Lemma \ref{lemm:1}} is right when $k=0$.
- 
- If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}$ there exists a $\mathsf{i}^{i}\in \Delta_M$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{2},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{2}|$, and 
- \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})\neq \emptyset,\] the $\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})$ is $k'$-step determinable, where ${k'}<(p+1)$.
- \end{itemize}
- Then we have for $\mathsf{S}^{1}$ there exists the same $\mathsf{i}^{i}\in \Delta_M$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{1},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{1}|$, and 
- \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[\Ded(\mathsf{S}^{1},\mathsf{i}^{i},\mathsf{o}^{j})\neq \emptyset,\] the \[\Ded(\mathsf{S}^{1},\mathsf{i}^{i}(t),\mathsf{o}^{j})\subseteq \Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})\] is  $k'$-step determinable, where ${k'}<(p+1)$.
- \end{itemize}  Then we have the $\mathsf{S}^{1}$ is $(p+1)$-step determinable. 
- 
- Therefore we have if for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right, then the {\em Lemma \ref{lemm:1}} is right too when $k=p+1$. 
-And we have the {\em Lemma \ref{lemm:1}} is right when $k=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $k\ge0$.
- 
-\end{proof}
 With the {\em Lemma \ref{lemm:1}}, it is easy to propose the {\em Lemma \ref{lemm:2}}
 \begin{lemma}
 For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
@@ -197,65 +178,19 @@ After defining online observability of \BCNs, we discuss the implication relatio
 The online obervability implies the existing first observability.
 \label{lemm:3}
 \end{lemma}
-\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{1}\ge 0$ that $\mathsf{S}(t)$ is $k^{1}$-step determinable, then for every state \State$^{x}(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$ such that for every $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
-\begin{itemize}
-\item When $k^{1}=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$ and $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$. Therefore, we have that for any $k^2 >0$, for every input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ the propostion is right. 
-\item If for $k^{1}=0,\ldots, p$ the propostion is right. When $k^{1}=p+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\neq \emptyset\] and $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(p+1)$.
- \end{itemize}
- Then we have for every \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$, such that for all $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. That the input sequence $\mathsf{I}'$ satisfies the following properties,
-  for all states \[\mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}^{x}(t+1))),\]\[\mathsf{s}^{z}(t+1)\neq \mathsf{s}^{x}(t+1)\] implies \[(HF)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HF)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}'),\] where $\mathsf{s}^{x}(t+1)=f(\mathsf{s}^{x}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $k^{1}=p+1$. 
-
-\end{itemize}
-As the propostion is right when $k^{1}=0$, and we have if for $k^{1}=0,\ldots, p$ the propostion is right, then the propostion is right when $k^{1}=p+1$. Thus the propostion is right for any $k^{1}\ge0$.
-
-Secondly, we have that if a \BCN\ is online observable,
-then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne \emptyset,\] there exists a $k^{j}\ge0$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable. 
-
-Therefore, we have for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^i}$ for some $k^i >0$ such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{y}(0))=h(\mathsf{s}^{x}(0))$ implies $(HF)^{k^i}_{\mathsf{s}^{y}(0)}(\mathsf{I})\neq (HF)^{k^i}_{{\mathsf{s}^{x}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
-
-\end{proof}
 
 With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state,  and we can also do this by the online obervability. Thus the online obervability implies the existing first observability. But the existing first observability can not be used to determine $\mathsf{s}(0)$, thus the first observability does not imply the online obervability.
 
 \begin{lemma}
 The online obervability implies the existing second observability.
-\label{lemm:4}
+
 \end{lemma}
 
  Moreover, from the implication relationship between the existing first and second observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between the online observability and the existing second observability
 \begin{lemma}
 The existing third observability implies the online obervability.
+\label{lemm:4}
 \end{lemma}
-\begin{proof}
-Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^1}$ for some $k^1 >0$, such that for any distinct states $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, implies $(HF)^{k^1}_{\mathsf{s}^{x}(t)}(\mathsf{I})\neq (HF)^{k^1}_{\mathsf{s}^{y}(t)}(\mathsf{I})$, then for the $\mathsf{S}(t)$ there exists a $k^{2}\ge 0$ such that $\mathsf{S}(t)$ is $k^{2}$-step determinable.
-
-\begin{itemize}
-\item When $k^1=1$, for any distinct states $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, implies $(HF)^{k^1}_{\mathsf{s}^{x}(t)}(\mathsf{I})\neq (HF)^{k^1}_{\mathsf{s}^{y}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
- there exists an input $\mathsf{i}^{i}(t)=\mathsf{I}$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)|=1,\] the $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{z}(t+1)\right)$ is $0$-step determinable.
- \end{itemize}
-Thus the $\mathsf{S}(t)$ is $1$-step determinable, then the propostion is right when $k^1 =1$.
-
-\item If for $k^1=1,\ldots, p$ the propostion is right. Then when $k^1=p+1$, for any distinct states $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, implies $(HF)^{k^1}_{\mathsf{s}^{x}(t)}(\mathsf{I})\neq (HF)^{k^1}_{\mathsf{s}^{y}(t)}(\mathsf{I})$. Then we have for $\mathsf{S}(t)$,
- there exists an input $\mathsf{i}^{i}(t)$ which is the first input of $\mathsf{I}$, such that
- \begin{itemize}
-\item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)\ne \emptyset,\]  the $\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)\right)$ is $p$-step determinable.
- \end{itemize}
-Thus the $\mathsf{S}(t)$ is $p+1$-step determinable, then the propostion is right when $k^1 =p+1$.
-
-As the propostion is right when $k^1 =1$, and we have if for $k^1=1,\ldots, p$ the propostion is right, then the propostion is right when $k^1=p+1$. Thus the propostion is right for any $k^1>0$.
-
-Secondly, we have that if a \BCN\ satisfies the third observabbility, then there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^i}$ for some $k^i >0$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^{k^i}_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^{k^i}_{\mathsf{s}^{y}(0)}(\mathsf{I})$. 
-
-Therefore, we have the for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[|\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)|> 0.\] There exists a $k^{j}\ge0$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable, and then the \BCN\ is online observable.
- \end{itemize}
-\end{proof}
 
 In the existing third type of observability, there has to exist an input sequence $\mathsf{I}$ that can distinguish any distinct two states of the \BCN. But in online observability, we only need to adaptively construct an input sequence to determine $\mathsf{s}(0)$. Thus the online obervability does not imply the existing third observability, but the existing third observability implies the online obervability. 
 
