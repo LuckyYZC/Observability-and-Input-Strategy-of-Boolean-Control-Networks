@@ -14,7 +14,14 @@ A Boolean control network can be defined as a directed graph together with logic
 	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_m$};
 	\item state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_n$};
 	\item output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_q$};
-	\item and directed edges which connect nodes. 
+	\item and directed edges: 
+		\begin{equation*}
+			\begin{split}
+				\{\mathsf{e}_1,\ldots,\mathsf{e}_l\}\subseteq &\{\mathsf{i}_1,\ldots ,\mathsf{i}_m,\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\} \\
+				\cup &\{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}. 
+			\end{split}
+		\end{equation*}
+	
 \end{itemize}
 	
 And its updating rules:
@@ -50,7 +57,7 @@ where $\mathbb{B}=\{0,1\}$.
 				\centerline{\includegraphics[scale=0.23]{figures/Fig1.png}}
 		}}
 		
-		\caption{A Boolean control network with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$. }%We use blue, black and orange, to distinguish three types of nodes and three types of edges.
+		\caption{A Boolean control network. }%We use blue, black and orange, to distinguish three types of nodes and three types of edges. with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$.
 		\label{fig:1}
 	\end{figure}
 	
@@ -91,7 +98,7 @@ In the \BCN\ which shown in the Fig.~\ref{fig:1}, we consider
   \item $G(t)$ as $\mathsf{o}_{1}(t)$, $W(t)$ as $\mathsf{o}_{2}(t)$.
 \end{itemize}
 
-Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
+Then, the updating rules which shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
  \begin{figure}[thpb]
       \centering
       \framebox{\parbox{3in}{
@@ -104,7 +111,7 @@ Then, the updating rules shown in Fig.~\ref{fig:2} can be represented by Fig.~\r
   
    With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
    
-   For instance, in this \BCN\ if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
+   For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
    
     What is more, we use 
    \begin{itemize}
@@ -121,44 +128,31 @@ We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_M)^k\mapsto(\Delta_N)^k\\
-=&\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
-F^{\infty}_{\mathsf{s}(t)}:& (\Delta_M)^{\infty}\mapsto(\Delta_N)^{\infty}\\
- =&\mathsf{i}(t) \mathsf{i}(t+1) \ldots  \mapsto \mathsf{s}(t+1) \mathsf{s}(t+2) \ldots
+=&\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)
 \end{split}
 \label{equ:5}
 \end{equation}
 \begin{equation}
 \begin{split}
-(HF)^k_{\mathsf{s}(t)}:& (\Delta_M)^k\mapsto(\Delta_Q)^k\\
-=&\mathsf{i}(t)\ldots \mathsf{i}(t+k-1) \mapsto \mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k)\\
-(HF)^{\infty}_{\mathsf{s}(t)}:& (\Delta_M)^{\infty}\mapsto(\Delta_Q)^{\infty}\\
-=&\mathsf{i}(t) \mathsf{i}(t+1) \ldots  \mapsto \mathsf{o}(t+1) \mathsf{o}(t+2)\ldots
+(HF)^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_Q)^k,\ \mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)\\
 \end{split}
 \label{equ:6}
 \end{equation}
 
-Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $\mathsf{s}(t)\in \Delta_N$, $k>0$, and $\infty$ is the infinite natural numbers. For all  $k>0$,
+Where $\Delta_N$, $\Delta_M$ and $\Delta_Q$ are three alphabets which represent states set, inputs set and outputs set respectively, $\mathsf{s}(t)\in \Delta_N$ and $k>0$. For all  $k>0$,
 \[\mathsf{I}=\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \in(\Delta_M)^k\] 
 is an input sequence, 
 \[F^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k) \in(\Delta_N)^k\]
  is a state sequence, and 
  \[(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k) \in(\Delta_Q)^k\] 
- is an output sequence. For the $\infty$, 
- \[\mathsf{I}=\mathsf{i}(t) \mathsf{i}(t+1)\ldots  \in(\Delta_M)^{\infty}\] 
- is an infinitely long input sequence, 
- \[F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \mathsf{s}(t+2)\ldots  \in(\Delta_N)^{\infty}\] 
- is an infinitely long state sequence, and 
- \[(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1) \mathsf{o}(t+2)\ldots \in(\Delta_Q)^{\infty}\]
-  is an infinitely long output sequence. 
+ is an output sequence.
   
-  
-  From the updating rules of \BCNs, in the formula (\ref{equ:5}), for every $1\le p \le |\mathsf{I}|$ we have 
- \[\mathsf{s}(t+p)=f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1)).\] 
- In the formula (\ref{equ:5}) and formula (\ref{equ:6}), for any $1\le p \le |\mathsf{I}|$ we have  
+  From the updating rules of \BCNs, in the formula (\ref{equ:5}) and (\ref{equ:6}), for every $1\le p \le |\mathsf{I}|$ we have 
+ \[\mathsf{s}(t+p)=f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1)),\] 
+and 
  \[\mathsf{o}(t+p)=h(\mathsf{s}(t+p))=h(f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1))).\] 
 
-These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(t)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(t)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$). 
-
+%These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(t)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(t)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$). 
 Then we have the four existing observability definitions are as follows.
 
 \begin{definition} [First Observability]
@@ -215,7 +209,7 @@ Therefore we have this \BCN\ does not satisfy the existing third observability. 
 \label{exa:6}
 \end{example}  
 \begin{definition}[Fourth Observability]
-	The fourth type of observability is that, \BCN\ is called observable, if for any input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$, for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^{\infty}_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^{\infty}_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
+	The fourth type of observability is that, \BCN\ is called observable, if there is a $k$ such that for any input sequence $\mathsf{I}\in(\Delta_M)^{k}$, for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^{k}_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^{k}_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
 The fourth observability means that a \BCN\ is called observable if every sufficient long input sequence $\mathsf{I}\in(\Delta_M)^{\infty}$ can determine the initial state $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$. Because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, the $\mathsf{s}(0)$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
@@ -237,15 +231,10 @@ What is more, we know the implication relationships of four existing types of ob
       \label{fig:9}
    \end{figure}
 
-Where the implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability, then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
+The implication relationship is that ``The first observability implies the second observability.'' means ``If a \BCN\ satisfies the first observability, then it satisfies the second observability.'' For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
    
-After introducing the definition of four existing observability and their implication relationship, we discuss whether the initial states of \BCNs\ can be determined by four existing types of observability. 
-\begin{itemize}
-\item With the first and second observability we can not determine the initial states of \BCNs. Because in the first observability, we need to assume that the initial state $\mathsf{s}(0)=\mathsf{s}^{x}(0)$, and then check it by the corresponding input sequence $\mathsf{I}^x$. If $\mathsf{s}(0)=\mathsf{s}^{x}(0)$, then we can determine the initial state. But if $\mathsf{s}(0)\ne \mathsf{s}^{x}(0)$, then we can not determine $\mathsf{s}(0)$. %Therefore, in the first observability, we have to repeat the determining procedure to determine the initial state. 
-So do the existing second observability of \BCNs. 
+% Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observe at every time step can help us further determine the range of the initial state. With the range of the initial state, we can use different input sequence to determine the initial state. While in the third and fourth existing observability, we use the same input sequence $\mathsf{I}$ to determine the initial state.
 
-\item With the third and fourth observability we can determine the initial states of \BCNs. But it is very difficult for \BCNs\ to satisfy the third observability and fourth observability. Because for a \BCN\ to satisfy the third observability there has to exist an input sequence $\mathsf{I}$ to determine $\mathsf{s}(0)$. And the condition of fourth observability is even stronger.% Because we do not make full use of the output and input in the process of determining the initial state. The output of \BCNs\ we observe at every time step can help us further determine the range of the initial state. With the range of the initial state, we can use different input sequence to determine the initial state. While in the third and fourth existing observability, we use the same input sequence $\mathsf{I}$ to determine the initial state.
-\end{itemize} 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
 As we can not use the first observability and second observability to determine the initial states of \BCNs. Furthermore, we can not determine the initial states of \BCNs\ either by the third and fourth observability when \BCNs\ do not satify them. With the disadvantages of four existing observability, we propose the online observability of \BCNs\ to solve the problem.
@@ -253,5 +242,5 @@ As we can not use the first observability and second observability to determine 
 
  \begin{problem}
 \label{pro:2}
-What is the condition a \BCN\ should satisfies to determine its initial state $\mathsf{s}(0)$ for every $\mathsf{s}(0)\in\Delta_N$?
+What is the condition a \BCN\ should satisfy to determine its initial state $\mathsf{s}(0)$ for every $\mathsf{s}(0)\in\Delta_N$?
 \end{problem}
