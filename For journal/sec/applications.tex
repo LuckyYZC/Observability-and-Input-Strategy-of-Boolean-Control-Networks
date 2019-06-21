@@ -6,11 +6,11 @@
 In the {\em Section \ref{sec:online}}, we present that the online observability can help us determine the initial states of some \BCNs\ which can not be determined by the existing observability. In addition, we can also use the online observability to some optimization in the process of determining the initial states of the \BCNs, including finding the shortest path and avoid entering critical states. 
 
 \subsection{Finding shortest path}
-An important aspect that we would consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely because the output is uncertain. Fortunately, we can use the directed graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to describe the expected value and variance for every node $\mathsf{S}$ of the directed graph, respectively. Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to try to find the shortest path. 
+An important aspect that we would consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely because the output is uncertain. Fortunately, we can use the input-labelled graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to describe the expected value and variance for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to try to find the shortest path. 
 
 We introduce some necessary statements before defining the functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$:
 \begin{itemize}
-  \item $\mathsf{S}$: the set of states of a node in the directed graph;
+  \item $\mathsf{S}$: the set of states of a vertex in the input-labelled graph;
   \item $\{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$ : the inputs set of $\mathsf{S}$;
   \item $\{\mathsf{o}^1,\mathsf{o}^2,\ldots,\mathsf{o}^k\}$: the set of possible outputs of \BCN\ at next time step as we input $\mathsf{ i}^{i}$;
  \item $\{\mathsf{S}^{1},\mathsf{S}^{2},\ldots, \mathsf{S}^{k}\}$ : the set of possible state sets at next time step that for every $\mathsf{S}^{j}$ \[\mathsf{S}^{j}=\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right).\] 
@@ -58,7 +58,7 @@ we have that\\
 
 From the definition of the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$, we have that if the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ of input $\mathsf{ i}^{i}$ is not very large, the risk of choosing $\mathsf{ i}^{i}$ would be not very great either.
 \subsection{Avoiding entering critical states}
-In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states in the process determine the intial state for every node $\mathsf{S}$ of the directed graph, respectively. The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
+In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states in the process determine the intial state for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
 \begin{definition}[$\Lce(\mathsf{S})$] \label{lce}
 \begin{equation}
 \begin{split}
@@ -79,7 +79,7 @@ we have that
 \end{equation}
 \end{definition}
 
-Where $\mathsf{S}_{cri}$ is the set of critical states of the \BCN\ we research. The definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$, because of the critical states set $\mathsf{S}_{cri}$. So that we can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every node in the directed graph, and we can also get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
+Where $\mathsf{S}_{cri}$ is the set of critical states of the \BCN\ we research. The definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$, because of the critical states set $\mathsf{S}_{cri}$. So that we can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every vertex in the input-labelled graph, and we can also get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
 
 \begin{definition}[$\Cv(\mathsf{S}, \mathsf{ i}^{i})$] 
 When the $|\mathsf{S}|=1$, we have that

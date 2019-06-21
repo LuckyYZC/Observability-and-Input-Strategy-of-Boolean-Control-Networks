@@ -8,13 +8,23 @@ The essence of determining the online observability of \BCN\ is to determine the
 We define a directed graph for \BCN\ named input-labelled graph. Based on the input-labelled graph and the way to construct it, we propose determination algorithm for the online observability.
 
 \begin{definition}[Input-labelled Graph]
-Let $V$, $E$ and $L$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
+Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
 \item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=1}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
 \item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an input $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}$;
 \item  $\mathcal{L}=\{\mathcal{E}\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
  \end{itemize}
 \end{definition}
+
+\begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.090]{figures/Fig4.png}}
+	}}
+      
+      \caption{Part of the input-labelled graph, where the green, black, orange, blue edges show the inputs $\delta_4^0$, $\delta_4^1$, $\delta_4^2$ and $\delta_4^3$ respectively.}
+      \label{fig:4}
+\end{figure}
 
 Intuitively, every vertex of the input-labelled graph represents a set of states of the \BCN\ which satisfy $k$-step determinability for some $k>0$ and every state in the set with identical corresponding output. As the input-labelled graph of \BCNs\ can be built completely, we can determine the online observability by checking the input-labelled graph.
 
@@ -68,7 +78,7 @@ The directed graph of \BCN
 \ENDIF
 \ENDFOR
 \STATE $w= w+1$
-\STATE $VertexArray=${\sf buildvertex}(w)
+\STATE $VertexArray=${\sf buildvertex}($w$)
 \ENDWHILE
 \STATE return $\Delta_N$\
 \end{algorithmic}
@@ -80,7 +90,7 @@ The directed graph of \BCN
 \REQUIRE 
 The number of states $w$
 \ENSURE  
-The vertexes with $w$ states which with the same corresponding outputs 
+The vertexes with $w$ states which with identical corresponding outputs 
 \STATE  Build all vertexes with $w$ states 
 \IF{(Failed to build)} 
 \STATE  return Null
@@ -114,14 +124,5 @@ There are some details in {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{al
 \end{itemize} 
 \end{itemize} 
 
-\begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.090]{figures/Fig4.png}}
-	}}
-      
-      \caption{Part of the input-labelled graph, where the green, black, orange, blue edges show the inputs $\delta_4^0$, $\delta_4^1$, $\delta_4^2$ and $\delta_4^3$ respectively.}
-      \label{fig:4}
-   \end{figure}
 
 %With the algorithm based on directed graph we can find all paths to determine the initial state of a \BCN. Thus, at time step $t$, we can use the $\mathsf{S}(t)$ and the directed graph to derive all of the input $\mathsf{i}(t)$ which can help us determine $\mathsf{s}(0)$. While, there comes a problem. Which input is the best input? To solve this problem, in the {\em Section \ref{sec:app}}, we will present how to decide the input to get better performance.
