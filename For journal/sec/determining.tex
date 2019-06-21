@@ -8,11 +8,11 @@ The essence of determining the online observability of \BCN\ is to determine the
 We define a directed graph for \BCN\ named input-labelled graph. Based on the input-labelled graph and the way to construct it, we propose determination algorithm for the online observability.
 
 \begin{definition}[Input-labelled Graph]
-Let $V$, $E$ and $L$ be the vertex set, the edge set and the labelling function of an input-labelled graph $G=(V, E, L)$. $G$ is called the input-labelled graph of the \BCN\, if 
+Let $V$, $E$ and $L$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $V=\{\mathsf{S}\in\bigcup_{j=1}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
-\item  $E=\{(\mathsf{S}_1,\mathsf{S}_2)\in V\times V|$ there is an input $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in V$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}$;
-\item  $L=\{E\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in V$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=1}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
+\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an input $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}$;
+\item  $\mathcal{L}=\{\mathcal{E}\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
  \end{itemize}
 \end{definition}
 
@@ -29,7 +29,7 @@ Moreover, from the {\em Lemma \ref{lemm:2}} in the {\em Section \ref{sec:online}
 
 \begin{itemize}
 \item  Firstly, for every $w>0$ we try to build vertexes with $w$ states which with identical corresponding output. 
-\item Secondly, if the vertexes can  be built, when $w>1$, we check the $k$-step determinability of the vertexes and build edges for them. And, if we can not build any edge for one node, we have the \BCN\ is not online observable.
+\item Secondly, if the vertexes can  be built, when $w>1$, we check the $k$-step determinability of the vertexes and build edges for them. And, if we can not build any edge for one vertex, we have the \BCN\ is not online observable.
 \item Fianlly, if we can not build any vertex with $w$ states, then we have the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ has been checked. Thus the \BCN\ is online observable.
  \end{itemize}
 
@@ -46,7 +46,7 @@ The directed graph of \BCN
 \STATE integer $w=1$
 \STATE array $VertexArray[\ ]$
 \STATE array $InputArray[\ ]$
-\STATE {\sf buildnode}($w$)
+\STATE {\sf buildvertex}($w$)
 \STATE $w= w+1$
 \STATE $VertexArray=${\sf buildvertex}($w$)
 \WHILE {($VertexArray!=$Null)}
@@ -102,15 +102,15 @@ There are some details in {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{al
 \item Secondly, for every $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. If $w>|\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)|$, then we could not get any set with $w$ states from $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. Else we can get $\frac{(|\Ded\left(\Delta_N,\varepsilon,o_j\right)|)!}{w!\times (|\Ded\left(\Delta_N,\varepsilon,o_j\right)|-w)!}$ sets of states, where $w!$ is the factorial of $w$.
 \item Finally, we use all of the sets of states found in second step to build vertexes. 
 \end{itemize} 
- \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the nodes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
+ \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
    For the vertex $VertexArray[i]$ contains $w$ sorted states, we can use the vertex with the first $(w-1)$ states of $\mathsf{S}^i$ and the vertex with the last $(w-1)$ states of $\mathsf{S}^i$ to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} the set of edges from $\{\delta_{16}^0,\delta_{16}^1\}$ is $\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$, and the set of edges from $\{\delta_{16}^1,\delta_{16}^2\}$ is $\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. And then, take the intersection of this two sets to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
-  \item Check $NodeArray[i]$ by $InputArray[j]$:
+  \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
-\item If $|\Ded\left(NodeArray[i],InputArray[j],\varepsilon\right)|<|NodeArray[i]|$, then the $InputArray[j]$ is a wrong input.
-\item Else if every \[\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] already exists in the directed graph, and if $NodeArray[i]$ does not exist in the graph yet, we contruct it, and then connect it to every $\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)$ with the edge $InputArray[j]$.
-\item Else if there exist a node \[\Ded\left(NodeArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] has not been constructed yet, then we check it latter. 
+\item If $|\Ded\left(VertexArray[i],InputArray[j],\varepsilon\right)|<|VertexArray[i]|$, then the $InputArray[j]$ is a wrong input.
+\item Else if every \[\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] already exists in the directed graph, then connect $VertexArray[i]$ to it and labell the edge with $InputArray[j]$.
+\item Else if there exist a vertex \[\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] has not been constructed yet, then we check it latter. 
 \end{itemize} 
 \end{itemize} 
 
@@ -120,7 +120,7 @@ There are some details in {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{al
 		\centerline{\includegraphics[scale=0.090]{figures/Fig4.png}}
 	}}
       
-      \caption{Part of the directed graph which represents $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$. The green, black, orange, blue edges show the inputs $\delta_4^0$, $\delta_4^1$, $\delta_4^2$ and $\delta_4^3$ respectively.}
+      \caption{Part of the input-labelled graph, where the green, black, orange, blue edges show the inputs $\delta_4^0$, $\delta_4^1$, $\delta_4^2$ and $\delta_4^3$ respectively.}
       \label{fig:4}
    \end{figure}
 
