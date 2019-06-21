@@ -1,4 +1,3 @@
-
 \documentclass[10pt,journal,compsoc]{IEEEtran}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -32,10 +31,12 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
+%=======================================================================================
 
 \begin{document}
 
-\title{Online Observability of Boolean Control Networks}
+\title{Online Observability of \\ 
+	Boolean Control Networks}
 \author{Guisen~Wu,
 	Liyun~Dai\Envelope,
 	Zhiming~Liu,
@@ -51,72 +52,14 @@ Jun Pang is with the Faculty of Science, Technology and Communication, Universit
 Hongyang Qu is with the Department of Automatic Control and Systems Engineering, University of Sheffield. E-mail: h.qu@sheffield.ac.uk.}
 \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}
 }
-%Michael~Shell(\Envelope),~\IEEEmembership{Member,~IEEE,}
- %       John~Doe,~\IEEEmembership{Fellow,~OSA,}
-  %      and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
-%\thanks{M. Shell was with the Department
-%of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-%GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
-%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-%\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
-
-
-
-% The paper headers
-%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
-
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
  
 \maketitle
 
-% As a general rule, do not put math, special symbols or citations
-% in the abstract or keywords.
+%=======================================================================================
+
+
 \begin{abstract}
-Determining initial states of Boolean control networks (\BCNs)  is import in many applications.  The existing 
-four types of BCNs' observability  have been proposed to study the initial state of \BCNs. However, all of them are offline observability, meaning that
-the input sequence is given before studying the \BCN's initial state and the input sequence  remains unchanged during the process of determining.
-In this paper, we present an online observability which is more powerful in determining the initial state of \BCNs.
-   For online observability,
-    we can derive and decide input sequence one by one based on the feedback from the outputs of the network in every time step.
-Moreover, we also propose determination algorithms and optimization by the online observability to further illustrate its advantages.
+Determining initial states of Boolean control networks (\BCNs)  is import in many applications. The existing  four types of BCNs' observability  have been proposed to study the initial state of \BCNs. However, all of them are offline observability, meaning that the input sequence is given before studying the \BCN's initial state and the input sequence  remains unchanged during the process of determining. In this paper, we present an online observability which is more powerful in determining the initial state of \BCNs. For online observability, we can derive and decide input sequence one by one based on the feedback from the outputs of the network in every time step. Moreover, we also propose determination algorithms and optimization by the online observability to further illustrate its advantages.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
