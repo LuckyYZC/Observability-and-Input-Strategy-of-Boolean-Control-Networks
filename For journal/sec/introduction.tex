@@ -1,18 +1,17 @@
 % !Mode\dots ``TeX:UTF-8''
 % !TEX root = ../bare_jrnl.tex
+
+
 \section{Introduction}
 \label{sec:intro}
 
 
 \IEEEPARstart{I}n 1960s, Nobel Prize laureates Jacob and Monod~\cite{Jacob1961Genetic} found that ``Any cell contains a number of regulatory genes that act as switches and can turn one another on and off. If genes can turn one another on and off, then you can have genetic circuits.'' Inspired by these Boolean-type actions in genetic circuits, Boolean networks (\BNs) were firstly proposed by Kauffman \cite{Kauffman1968Metabolic} for modeling nonlinear and complex biological systems. 
 
-{\BNs} are a type of discrete systems which are represented as directed graphs. In a Boolean network, each node has only two values ``0" and ``1", and
-the nodes' values can change in different time steps.  For a node $n_i$, we use $n_i(t)$ to denote the value of $n_i$ at time step $t$.
-
-The $n_i(t+1)$ is decided by a logical function of  set of  values  $\{n_j(t),\ldots,n_p(t)\}$ if  there are directed edges from $n_j,\ldots,n_p$ to $n_i$.  
- The logical operators used in  logical function including AND, OR, NO, XOR. 
-Some general descriptions of the \BNs\ and their applications to biological systems can be found in~\cite{Kauffman1968Metabolic}.
-There are many both natural and artificial systems works~\cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi} related to \BNs.
+{\BNs} are a type of discrete-time dynamical systems which can be represented as directed graphs. In a BN, each node has only two values ``0" and ``1", and they can change in different time steps.  For a node $n_i$, we use $n_i(t)$ to denote the value of $n_i$ at the time step $t$.
+In general, $n_i(t+1)$ is determined by a logical function of $n_j(t),\ldots,n_p(t)$ if  there are  edges from $n_j,\ldots,n_p$ to $n_i$.  
+%The logical operators used in  the logical functions include AND, OR, NO, XOR.  
+Some general descriptions of the \BNs\ and their applications to biological systems can be found in~\cite{Kauffman1968Metabolic}. There are many both natural and artificial systems works~\cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi} related to \BNs.
  
 
 \BNs\ can be naturally extended to Boolean control networks (\BCNs) when external regulations or perturbations are considered~\cite{Ideker2001A}. There are three kinds of nodes in \BCNs, including input-nodes ($\mathsf{i}$), state-nodes ($\mathsf{s}$) and output-nodes ($\mathsf{o}$). In \BCNs, we can only control input-nodes and observe output-nodes. 
