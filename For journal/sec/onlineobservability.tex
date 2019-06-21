@@ -111,7 +111,7 @@ For a non-empty  set of states $\mathsf{S}$, the $k$-step determinability of it 
  if there is an input $\mathsf{i}^{i} \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)\neq \emptyset,\] there exists a ${k'}\le 
+ \item  for each \[\mathsf{o}^{j}(t)\in \Delta_Q\] such that \[\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)\neq \emptyset,\] there exists a ${k'}\le 
 (k-1)$ such that $\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)$ is $k'$-step determinable.
  \end{itemize}
  And the $\mathsf{i}^{i}$ is an input which makes $\mathsf{S}$ $k$-step determinable.
@@ -155,7 +155,7 @@ After the previous preparation, we present the formal definition of the online o
 
 \begin{definition}[Online Observability of  BCNs]
  A \BCN\ is online observable,
-if for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne \emptyset.\] There exists a $k^{j}\ge0$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable.
+if for every \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))\ne \emptyset.\] There exists a $k^{j}\ge0$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable.
 \end{definition}
 
  In order to better illustrate the definition of online observability, we give the following example.
