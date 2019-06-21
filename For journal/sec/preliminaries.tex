@@ -1,8 +1,9 @@
 % !Mode\dots ``TeX:UTF-8''
 % !TEX root = ../bare_jrnl.tex
+
 \section{Preliminaries} 
 \label{sec:pre}
-In this section we introduce {\BCNs} and the four existing types of observability. 
+In this section we introduce {\BCNs} and the four existing types of observability. Throughout the paper,  $\mathbb{B}=\{0,1\}$.
 
 \subsection{Boolean Control Networks}
 
@@ -17,14 +18,14 @@ A Boolean control network can be defined as a directed graph together with logic
 	\item and directed edges: 
 		\begin{equation*}
 			\begin{split}
-				\{\mathsf{e}_1,\ldots,\mathsf{e}_l\}\subseteq &\{\{\mathsf{i}_1,\ldots ,\mathsf{i}_m,\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\} \}\\
-				\cup &\{\{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}\}. 
+				\{\mathsf{e}_1,\ldots,\mathsf{e}_l\}\subseteq & \{\mathsf{i}_1,\ldots ,\mathsf{i}_m,\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\} \\
+				\cup & \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}. 
 			\end{split}
 		\end{equation*}
 	
 \end{itemize}
 	
-And its updating rules:
+The updating rules are
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -32,9 +33,10 @@ And its updating rules:
 \end{split}
 \label{equ:1}
 \end{equation}
-
  \end{definition}
-In the definition we have that in the directed graph
+
+%===========================================================
+In the definition, we have that % we have that in the directed graph
 \begin{itemize}
 	\item $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
@@ -48,9 +50,9 @@ And then, the updating rules explain how do the nodes affect each other, thus in
 	\item the vector $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time step $t$;  
 	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN},
 \end{itemize}
-where $\mathbb{B}=\{0,1\}$.
 
-\begin{example}
+%===========================================================
+\begin{example}\label{exa:2}
 	 \begin{figure}[thpb]
 		\centering
 		\framebox{\parbox{3in}{
@@ -60,60 +62,60 @@ where $\mathbb{B}=\{0,1\}$.
 		\caption{A Boolean control network. }%We use blue, black and orange, to distinguish three types of nodes and three types of edges. with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, and two output-nodes $G$, $W$.
 		\label{fig:1}
 	\end{figure}
-	
+%	
 Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. 
-
-And the updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are shown in the truth table (Fig.~\ref{fig:2}).  
-For instance, from the truth table we have the updating rule of output-node $G$ is 
-\[G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.\]
-  
-   \label{exa:2}
-\end{example}   
-
-  \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.261]{figures/Fig2.png}}
-	}}
-      
-      \caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.~\ref{fig:1}.}
-      \label{fig:2}
-   \end{figure}
-
-The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for us to convert the $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$ into their abbreviation forms. 
-That we use 
-\begin{itemize}
-  \item $\delta^i_{2^m}$ represents the abbreviation form of $\mathsf{i}(t)$, where $i=\sum_{x=1}^m \mathsf{i}_{x}(t)\times 2^{m-x}$;
-  \item $\delta^j_{2^n}$ represents the abbreviation form of $\mathsf{s}(t)$, where $j=\sum_{x=1}^n \mathsf{s}_{x}(t)\times 2^{n-x}$;
-  \item $\delta^w_{2^q}$ represents the abbreviation form of $\mathsf{o}(t)$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}(t)\times 2^{q-x}$.
-\end{itemize}
-
-For instance if $\mathsf{s}(t)=\begin{bmatrix}\mathsf{s}_1(t)\\\mathsf{s}_2(t) \\ \mathsf{s}_3(t) \\\mathsf{s}_4(t)\end{bmatrix}=\begin{bmatrix}0\\1\\0\\1\end{bmatrix}$, then $\mathsf{s}(t)$ can be represented by $\delta^{(0\times2^3+1\times2^2+0\times2^1+1\times2^0)}_{2^4}=\delta^5_{16}$. 
-
-In the \BCN\ which shown in the Fig.~\ref{fig:1}, we consider 
-\begin{itemize}
-  \item $A(t)$ as $\mathsf{i}_{1}(t)$, $B(t)$ as $\mathsf{i}_{2}(t)$;
-  \item $C(t)$ as $\mathsf{s}_{1}(t)$, $D(t)$ as $\mathsf{s}_{2}(t)$;
-  \item $E(t)$ as $\mathsf{s}_{3}(t)$, $F(t)$ as $\mathsf{s}_{4}(t)$;
-  \item $G(t)$ as $\mathsf{o}_{1}(t)$, $W(t)$ as $\mathsf{o}_{2}(t)$.
-\end{itemize}
-
-Then, the updating rules which shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
+The updating rules $f:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $h:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the update rule in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
+the updating rule of output-node $G$ is 
+$G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
  \begin{figure}[thpb]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
+	\centering
+	\framebox{\parbox{3in}{
+			\centerline{\includegraphics[scale=0.261]{figures/Fig2.png}}
 	}}
-      
-      \caption{The abbreviation form of the updating rules.}
-      \label{fig:6}
-   \end{figure}
+	\caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.~\ref{fig:1}.}
+	\label{fig:2}
+\end{figure}
+%For instance, from the truth table we have the updating rule of output-node $G$ is 
+%$G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
+ %
+\end{example}   
+%===========================================================
+
+%The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for us to convert the $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$ into their abbreviation forms. 
+%That we use 
+%\begin{itemize}
+%  \item $\delta^i_{2^m}$ represents the abbreviation form of $\mathsf{i}(t)$, where $i=\sum_{x=1}^m \mathsf{i}_{x}(t)\times 2^{m-x}$;
+%  \item $\delta^j_{2^n}$ represents the abbreviation form of $\mathsf{s}(t)$, where $j=\sum_{x=1}^n \mathsf{s}_{x}(t)\times 2^{n-x}$;
+%  \item $\delta^w_{2^q}$ represents the abbreviation form of $\mathsf{o}(t)$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}(t)\times 2^{q-x}$.
+%\end{itemize}
+%
+%For instance if $\mathsf{s}(t)=\begin{bmatrix}\mathsf{s}_1(t)\\\mathsf{s}_2(t) \\ \mathsf{s}_3(t) \\\mathsf{s}_4(t)\end{bmatrix}=\begin{bmatrix}0\\1\\0\\1\end{bmatrix}$, then $\mathsf{s}(t)$ can be represented by $\delta^{(0\times2^3+1\times2^2+0\times2^1+1\times2^0)}_{2^4}=\delta^5_{16}$. 
+%
+%In the \BCN\ which shown in the Fig.~\ref{fig:1}, we consider 
+%\begin{itemize}
+%  \item $A(t)$ as $\mathsf{i}_{1}(t)$, $B(t)$ as $\mathsf{i}_{2}(t)$;
+%  \item $C(t)$ as $\mathsf{s}_{1}(t)$, $D(t)$ as $\mathsf{s}_{2}(t)$;
+%  \item $E(t)$ as $\mathsf{s}_{3}(t)$, $F(t)$ as $\mathsf{s}_{4}(t)$;
+%  \item $G(t)$ as $\mathsf{o}_{1}(t)$, $W(t)$ as $\mathsf{o}_{2}(t)$.
+%\end{itemize}
+%
+%Then, the updating rules which shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
+% \begin{figure}[thpb]
+%      \centering
+%      \framebox{\parbox{3in}{
+%		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
+%	}}
+%      
+%      \caption{The abbreviation form of the updating rules.}
+%      \label{fig:6}
+%   \end{figure}
+%  
+%   With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
+  % 
+%For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
   
-   With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
-   
-   For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
-   
-    What is more, we use 
+  \tl{simplify later?!} 
+Moreover, we use 
    \begin{itemize}
  \item $\Delta_M=\{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ to represent the set of inputs; 
  \item $\Delta_N=\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ to represent the set of states; 
