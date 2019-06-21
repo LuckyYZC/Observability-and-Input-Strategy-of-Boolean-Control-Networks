@@ -11,9 +11,9 @@ In this subsection, we define a directed graph for \BCN\ named input-labelled gr
 \begin{definition}[Input-labelled Graph]
 Let $V$, $E$ and $L$ be the vertex set, the edge set and the labelling function of an input-labelled graph $G=(V, E, L)$. $G$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $V=\{\mathsf{S}\in\bigcup_{j=1}^{2^m} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
+\item  $V=\{\mathsf{S}\in\bigcup_{j=1}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
 \item  $E=\{(\mathsf{S}_1,\mathsf{S}_2)\in V\times V|$ there is an input $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in V$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}$;
-\item  $L=\{E\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in V$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
+\item  $L=\{E\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in V$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
  \end{itemize}
 
 \end{definition}
@@ -27,7 +27,7 @@ From the {\em Lemma \ref{lemm:2}} in the {\em Section \ref{sec:online}}, we have
 \item  Finally, as the $k$-step determinability of the subsets of $\mathsf{S}$ has been checked, it is convenient for us to find the $\mathsf{i}^{i}$ which makes $\mathsf{S}$ $k$-step determinable by the subsets of $\mathsf{S}$.
  \end{itemize}
  \subsection{Determination algorithm}
-With the directed graph and the way to construct it. We propose the algorithm based on directed graph {\bf Algorithm~\ref{alg:1}}, and the {\bf Algorithm~\ref{alg:2}} to build nodes which is used in the {\bf Algorithm~\ref{alg:1}}.
+With the input-labelled graph and the way to construct it. We propose the algorithm based on directed graph {\bf Algorithm~\ref{alg:1}}, and the {\bf Algorithm~\ref{alg:2}} to build nodes which is used in the {\bf Algorithm~\ref{alg:1}}.
 
 \begin{itemize}
 \item  Firstly, for every $w>0$ we try to build nodes with $w$ states, and the states with identical corresponding output. And we use the $NodeArray$ to represent them.
