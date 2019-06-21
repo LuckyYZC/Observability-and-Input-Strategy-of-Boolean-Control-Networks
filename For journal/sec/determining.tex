@@ -5,14 +5,14 @@
 The essence of determining the online observability of \BCN\ is to determine the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$. 
 
 \subsection{Input-labelled graph}
-We define a directed graph for \BCN\ named input-labelled graph. Based on the input-labelled graph and the way to construct it, we propose determination algorithm for the online observability.
+We define a directed graph for \BCN\ named input-labelled graph. Based on the input-labelled graph and the way to construct it, we can propose determination algorithm for the online observability.
 
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
 \item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=1}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
-\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an input $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}$;
-\item  $\mathcal{L}=\{\mathcal{E}\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$$|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\in \mathcal{V}$, $\mathsf{S}_2\subset\Ded(\mathsf{S}_1,\mathsf{i},\varepsilon)\}\}$.
+\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an input $\mathsf{i} \in \Delta_M$ such that \[|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|,\] and for every $\Ded(\mathsf{S}_1,\mathsf{i},\delta^j_{2^m})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, \[\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset, \mathsf{o}^{j}\in \Delta_Q\}\};\]
+\item  $\mathcal{L}=\{\mathcal{E}\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$\[|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|,\] and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, \[\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset, \mathsf{o}^{j}\in \Delta_Q\}\}\}.\]
  \end{itemize}
 \end{definition}
 
@@ -26,21 +26,21 @@ Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge s
       \label{fig:4}
 \end{figure}
 
-Intuitively, every vertex of the input-labelled graph represents a set of states of the \BCN\ which satisfy $k$-step determinability for some $k>0$ and every state in the set with identical corresponding output. As the input-labelled graph of \BCNs\ can be built completely, we can determine the online observability by checking the input-labelled graph.
+Intuitively, the vertex of the input-labelled graph represents the set of states $\mathsf{S}$ of the \BCN\ which satisfy $k$-step determinability for some $k>0$, and every state in $\mathsf{S}$ with identical corresponding output. Thus determine the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ and then determine the online observability by checking the input-labelled graph.
 
-Moreover, from the {\em Lemma \ref{lemm:2}} in the {\em Section \ref{sec:online}}, we have that if for the set of states $\mathsf{S}^x$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{x}$ is $k^{1}$-step determinable, and $\mathsf{S}^{x}\subseteq \mathsf{S}^{y}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{y}$ $k^{2}$-step determinable. Therefore, in the process of building input-labelled graph for a \BCN\ we build the vertexes with fewer states at first, and then build the vertexes with more states.
+From the {\em Lemma \ref{lemm:2}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, in the process of building input-labelled graph for a \BCN\ we build the vertexes with fewer states at first, and then build the vertexes with more states.
 \begin{itemize}
 \item  Because, once we can find vertex $\mathsf{S}^x$, such that there does not exist any $k^{x}\ge0$ makes $\mathsf{S}^{x}$ $k^{x}$-step determinable. And we know that there exists $\mathsf{o}^{j}\in \Delta_Q$ such that $\mathsf{S}^{x}\subseteq \Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}\right)$. We have for $\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}\right)$, there does not exist any $k^{j}\ge 0$ that makes  $\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}\right)$ $k^{j}$-step determinable either, and then the \BCN\ is not online observable.
 \item And as we determine the $k$-step determinability of every $\Ded(\mathsf{S}_x,\mathsf{i}^{x},\mathsf{o}^{j})$, we can determine the $k$-step determinability of $\mathsf{S}_x$ easily.
 \item  Finally, as the $k$-step determinability of the subsets of $\mathsf{S}_x$ has been checked, it is convenient for us to find the $\mathsf{i}_x$ which makes $\mathsf{S}_x$ $k_x$-step determinable by the subsets of $\mathsf{S}_x$.
  \end{itemize}
  \subsection{Determination algorithm}
- Then we propose the algorithm based on input-labelled graph {\bf Algorithm~\ref{alg:1}}, and the {\bf Algorithm~\ref{alg:2}} to build vertexes which is used in the {\bf Algorithm~\ref{alg:1}}.
+ We propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph, and {\bf Algorithm~\ref{alg:1}} can also find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
 
 \begin{itemize}
-\item  Firstly, for every $w>0$ we try to build vertexes with $w$ states which with identical corresponding output. 
-\item Secondly, if the vertexes can  be built, when $w>1$, we check the $k$-step determinability of the vertexes and build edges for them. And, if we can not build any edge for one vertex, we have the \BCN\ is not online observable.
-\item Fianlly, if we can not build any vertex with $w$ states, then we have the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ has been checked. Thus the \BCN\ is online observable.
+\item  Firstly, for every $n>0$ we try to build vertexes with $n$ states which with identical corresponding output. 
+\item Secondly, if the vertexes can  be built, when $n>1$, we check the $k$-step determinability of the vertexes and build edges for them. And, if we can not build any edge for one vertex, we have the \BCN\ is not online observable.
+\item Fianlly, if we can not build any vertex with $n$ states, then we have the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ has been checked. Thus the \BCN\ is online observable.
  \end{itemize}
 
 \begin{algorithm}[h]
@@ -53,12 +53,12 @@ The directed graph of \BCN
 \STATE Boolean value $Ob=$ true 
 \STATE integer $i$ \
 \STATE integer $j$ \
-\STATE integer $w=1$
+\STATE integer $n=1$
 \STATE array $VertexArray[\ ]$
 \STATE array $InputArray[\ ]$
-\STATE {\sf buildvertex}($w$)
-\STATE $w= w+1$
-\STATE $VertexArray=${\sf buildvertex}($w$)
+\STATE {\sf buildvertex}($n$)
+\STATE $n= n+1$
+\STATE $VertexArray=${\sf buildvertex}($n$)
 \WHILE {($VertexArray!=$Null)}
 \FOR{($i=0$; $i<arraysize(VertexArray)$; $i++$)}
 \IF{($p==2$)}
@@ -77,21 +77,21 @@ The directed graph of \BCN
 \STATE return Null
 \ENDIF
 \ENDFOR
-\STATE $w= w+1$
-\STATE $VertexArray=${\sf buildvertex}($w$)
+\STATE $n= n+1$
+\STATE $VertexArray=${\sf buildvertex}($n$)
 \ENDWHILE
 \STATE return $\Delta_N$\
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
 \begin{algorithm}[h!]
-\caption{{\sf buildvertex}(integer w)}
+\caption{{\sf buildvertex}(integer $n$)}
 \begin{algorithmic}[1]
 \REQUIRE 
-The number of states $w$
+The number of states $n$
 \ENSURE  
-The vertexes with $w$ states which with identical corresponding outputs 
-\STATE  Build all vertexes with $w$ states 
+The vertexes with $n$ states which with identical corresponding outputs 
+\STATE  Build all vertexes with $n$ states 
 \IF{(Failed to build)} 
 \STATE  return Null
 \ELSE 
@@ -106,15 +106,15 @@ The vertexes with $w$ states which with identical corresponding outputs
 
 There are some details in {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}} are as follows:
 \begin{itemize}
-\item Build all vertexes with $w$ states:
+\item Build all vertexes with $n$ states:
 \begin{itemize}
 \item Firstly, we construct the sets which contain all states with identical corresponding output i.e. every non-empty $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$.
-\item Secondly, for every $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. If $w>|\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)|$, then we could not get any set with $w$ states from $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. Else we can get $\frac{(|\Ded\left(\Delta_N,\varepsilon,o_j\right)|)!}{w!\times (|\Ded\left(\Delta_N,\varepsilon,o_j\right)|-w)!}$ sets of states, where $w!$ is the factorial of $w$.
+\item Secondly, for every $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. If $n>|\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)|$, then we could not get any set with $n$ states from $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. Else we can get $\frac{(|\Ded\left(\Delta_N,\varepsilon,o_j\right)|)!}{n!\times (|\Ded\left(\Delta_N,\varepsilon,o_j\right)|-n)!}$ sets of states, where $w!$ is the factorial of $n$.
 \item Finally, we use all of the sets of states found in second step to build vertexes. 
 \end{itemize} 
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
-   For the vertex $VertexArray[i]$ contains $w$ sorted states, we can use the vertex with the first $(w-1)$ states of $\mathsf{S}^i$ and the vertex with the last $(w-1)$ states of $\mathsf{S}^i$ to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} the set of edges from $\{\delta_{16}^0,\delta_{16}^1\}$ is $\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$, and the set of edges from $\{\delta_{16}^1,\delta_{16}^2\}$ is $\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. And then, take the intersection of this two sets to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
+   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertex with the first $(n-1)$ states and the vertex with the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} the input set of $\{\delta_{16}^0,\delta_{16}^1\}$ is $\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$, and the input set of $\{\delta_{16}^1,\delta_{16}^2\}$ is $\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of this two sets to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
   \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}

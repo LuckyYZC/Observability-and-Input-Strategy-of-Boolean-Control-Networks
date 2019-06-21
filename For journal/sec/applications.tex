@@ -3,10 +3,11 @@
 \section{Optimization}
 \label{sec:app}
 
-In the {\em Section \ref{sec:online}}, we present that the online observability can help us determine the initial states of some \BCNs\ which can not be determined by the existing observability. In addition, we can also use the online observability to some optimization in the process of determining the initial states of the \BCNs, including finding the shortest path and avoid entering critical states. 
+In the {\em Section \ref{sec:online}}, we present that the online observability can help us determine the initial states of some \BCNs\ which can not be determined by the existing observability. 
+In addition, we can also use the online observability to some optimization in the process of determining the initial states of the \BCNs, including finding the shortest path and avoid entering critical states. 
 
 \subsection{Finding shortest path}
-An important aspect that we would consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely because the output is uncertain. Fortunately, we can use the input-labelled graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to describe the expected value and variance for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to try to find the shortest path. 
+An important aspect that we would consider is to find the shortest path to determine the initial state. In general, we can not find the shortest path definitely because the output is uncertain. Fortunately, we can use the input-labelled graph to make the best decision. For the path to determine the initial state of the \BCNs, we introduce two functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$ to describe the expected value and variance for every vertex $\mathsf{S}$ of the input-labelled graph, respectively.% 
 
 We introduce some necessary statements before defining the functions $\Pe(\mathsf{S},\mathsf{ i}^{i})$ and $\Pv(\mathsf{S},\mathsf{ i}^{i})$:
 \begin{itemize}
@@ -43,7 +44,7 @@ we have that
 
 The function $\Spe(\mathsf{S})$ is used to find the $\mathsf{ i}^{i}$ from $\{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{z}\}$ to calculat least $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ for $\mathsf{S}$. In the definition of $\Pe(\mathsf{S}, \mathsf{ i}^{i})$, if $|\mathsf{S}|=1$ then we can determine $\mathsf{s}$. Thus we no longer need to choose the input to determine the state $\mathsf{s}$ of \BCNs. Therefore, for any input the path expected value $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ would be $0$ and the shortest path expected value $\Spe(\mathsf{S})$ also would be $0$ too. While, if $|\mathsf{S}|>1$, then we still need to choose input and observe the output to determine the state of of \BCNs. Thus we recursively define the $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ and $\Spe(\mathsf{S})$ for $\mathsf{S}$ and each input $\mathsf{ i}^{i}$ in the inputs set of $\mathsf{S}$. 
 
-If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}$ with least $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ by the function $\Spe(\mathsf{S})$. This input $\mathsf{ i}^{i}$ may help us find the shortes path to determine the state. But the output of \BCNs\ we observe is uncertain after we choose the input $\mathsf{ i}^{i}$, hence selecting the $\mathsf{ i}^{i}$ which with least $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ may leads to a very long path to determine the initial state of \BCNs. For better performce, we define the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ to avoid risks.
+Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ to try to find the shortest path. If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}(t)$ with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$. This input $\mathsf{i}^{i}(t)$ may help us find the shortes path to determine $\mathsf{s}(0)$. But the $\mathsf{o}(t)$ of \BCNs\ we observe is uncertain, hence selecting the $\mathsf{ i}^{i}(t)$ may leads to a very long path. For better performce, we define the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ to avoid risks.
 \begin{definition}[$\Pv(\mathsf{S}, \mathsf{ i}^{i})$] 
 When the $|\mathsf{S}|=1$, we have that
 \[\Pv(\mathsf{S}, \mathsf{ i}^{i})=0\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{z}\}.\]  When the $|\mathsf{S}|>1$, 
@@ -56,9 +57,9 @@ we have that\\
 \end{equation}
 \end{definition}
 
-From the definition of the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$, we have that if the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ of input $\mathsf{ i}^{i}$ is not very large, the risk of choosing $\mathsf{ i}^{i}$ would be not very great either.
+From the definition of the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$, we have that if the $\Pv(\mathsf{S}(t), \mathsf{i}^{i}(t))$ not very large, the risk of choosing $\mathsf{ i}^{i}(t)$ would be not very great either.
 \subsection{Avoiding entering critical states}
-In biological systems wich depiected by the \BCNs, some of the genes' states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider is to avoid entering critical states in the process of determining the \BCN's initial state. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states in the process determine the intial state for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
+In biological systems wich depiected by the \BCNs, some of the states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider in the process of determining the \BCN's initial state is to avoid entering critical states. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
 \begin{definition}[$\Lce(\mathsf{S})$] \label{lce}
 \begin{equation}
 \begin{split}
@@ -77,9 +78,10 @@ we have that
 \Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|} 
 \end{split}
 \end{equation}
+where $\mathsf{S}_{cri}$ is the set of critical states.
 \end{definition}
 
-Where $\mathsf{S}_{cri}$ is the set of critical states of the \BCN\ we research. The definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$, because of the critical states set $\mathsf{S}_{cri}$. So that we can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every vertex in the input-labelled graph, and we can also get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
+With the critical states set $\mathsf{S}_{cri}$, the definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$. We can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every vertex in the input-labelled graph. And we get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
 
 \begin{definition}[$\Cv(\mathsf{S}, \mathsf{ i}^{i})$] 
 When the $|\mathsf{S}|=1$, we have that
@@ -93,6 +95,6 @@ we have that  \\
 \end{equation}
 \end{definition}
 
-The use of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ are similar to $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ and $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ respectively. They help us avoid entering critical states of \BCNs\ in the process of determining the initial state of \BCNs. Therefore, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $ \Pe(\mathsf{S}(t), \mathsf{ i}(t))$, $\Pv(\mathsf{S}(t), \mathsf{ i}(t))$, $\Ce(\mathsf{S}(t), \mathsf{ i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}(t))$ to get better performance.
+The use of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ are similar to $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ and $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ respectively. At every time step $t$, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $ \Pe(\mathsf{S}(t), \mathsf{ i}(t))$, $\Pv(\mathsf{S}(t), \mathsf{ i}(t))$, $\Ce(\mathsf{S}(t), \mathsf{ i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}(t))$ to decide the $\mathsf{i}(t)$.
 
 However, in the four existing types of observability, we can not analyze the state of the \BCNs\ dynamically. Hence it would be hard to do some optimization in the process of determining the initial state of the \BCNs. Fortunately, this problem can be solved better by the online observability of the \BCNs, thus it further illustrates the advantages of online observability.
