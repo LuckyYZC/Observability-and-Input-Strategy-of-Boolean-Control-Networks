@@ -131,13 +131,9 @@ We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_M)^k\mapsto(\Delta_N)^k\\
-=&\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)
-\end{split}
-\label{equ:5}
-\end{equation}
-\begin{equation}
-\begin{split}
-(HF)^k_{\mathsf{s}(0)} &: (\Delta_M)^k\mapsto(\Delta_Q)^k,\ \mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)\\
+=&\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
+(HF)^k_{\mathsf{s}(0)} :& (\Delta_M)^k\mapsto(\Delta_Q)^k\\
+ =&\mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)
 \end{split}
 \label{equ:6}
 \end{equation}
@@ -150,7 +146,7 @@ is an input sequence,
  \[(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k) \in(\Delta_Q)^k\] 
  is an output sequence.
   
-  From the updating rules of \BCNs, in (\ref{equ:5}) and (\ref{equ:6}), for every $1\le p \le |\mathsf{I}|$ we have 
+  From the updating rules of \BCNs, in (\ref{equ:6}), for every $1\le p \le |\mathsf{I}|$ we have 
  \[\mathsf{s}(t+p)=f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1)),\] 
 and 
  \[\mathsf{o}(t+p)=h(\mathsf{s}(t+p))=h(f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1))).\] 
