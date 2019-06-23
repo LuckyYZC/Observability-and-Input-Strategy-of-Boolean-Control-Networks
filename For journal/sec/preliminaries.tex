@@ -19,7 +19,7 @@ A Boolean control network can be defined as a directed graph together with logic
 		\begin{equation*}
 			\begin{split}
 				\{\mathsf{e}_1,\ldots,\mathsf{e}_l\}\subseteq & \{\mathsf{i}_1,\ldots ,\mathsf{i}_m,\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\} \\
-				\cup & \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}. 
+				&\cup \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}. 
 			\end{split}
 		\end{equation*}
 	
@@ -117,9 +117,9 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
   \tl{simplify later?!} 
 Moreover, we use 
    \begin{itemize}
- \item $\Delta_M=\{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ to represent the set of inputs; 
- \item $\Delta_N=\{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ to represent the set of states; 
-  \item $\Delta_Q=\{\delta^0_{2^q},\ldots,\delta^{({2^q}-1)}_{2^q} \}$ to represent the set of outputs,
+ \item $\Delta_M = \{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ to represent the set of inputs; 
+ \item $\Delta_N = \{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ to represent the set of states; 
+ \item $\Delta_Q = \{\delta^0_{2^q},\ldots,\delta^{({2^q}-1)}_{2^q} \}$ to represent the set of outputs,
 \end{itemize}
 where $M=2^m$, $N=2^n$ and $Q=2^q$.
 %=======================================================================
@@ -131,9 +131,9 @@ We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_M)^k\mapsto(\Delta_N)^k\\
-=&\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
+&=\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
 (HF)^k_{\mathsf{s}(0)} :& (\Delta_M)^k\mapsto(\Delta_Q)^k\\
- =&\mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)
+ &=\mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)
 \end{split}
 \label{equ:6}
 \end{equation}
