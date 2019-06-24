@@ -56,17 +56,12 @@ $(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty out
 
 $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$
 is the derivation function that
-\begin{equation*}
-\begin{split}
-&\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)\\
-&=\{ \mathsf{s}'| \mathsf{s}'=\left\{
+\[\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)
+=\{ \mathsf{s}'| \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right. ,\ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\}.
-\end{split}
-\end{equation*}
-
+\end{array} \right. ,\ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\}.\]
 \end{definition}
 
 \begin{example}
@@ -75,7 +70,7 @@ f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
  \label{exa:8}
  \end{example}   
  
- Then for a \BCN, we have the set of possible states $\mathsf{S}(t)$ is defined as follows.
+ Then for a \BCN, we have $\mathsf{S}(t)$ is defined as follows.
  \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $0\le t\le k$, we have
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -87,7 +82,7 @@ f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
  
  
 \subsection{$K$-step determinability}
-As the derivation function can only describe the process of deriving the set possible states $\mathsf{S}(t)$ of \BCNs\ at every time step.  We propose the $k$-step determinability for $\mathsf{S}(t)$ to depict whether we can determine the $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$. With this notion, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
+ We propose the $k$-step determinability for $\mathsf{S}(t)$ to depict whether we can determine the $\mathsf{s}(t)$ in $k$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$. With this notion, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
 \begin{definition}[$k$-Step Determinability] 
 For a non-empty  set of states $\mathsf{S}$, the $k$-step determinability of it is recursively defined as follows:
  \begin{itemize}
@@ -99,7 +94,7 @@ For a non-empty  set of states $\mathsf{S}$, the $k$-step determinability of it 
  \item  for each $\mathsf{o}^{j}\in \Delta_Q$ such that $\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)\neq \emptyset$, there exists a ${k'}\le 
 (k-1)$ such that $\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)$ is $k'$-step determinable.
  \end{itemize}
- And the $\mathsf{i}^{i}$ is an input which makes $\mathsf{S}$ $k$-step determinable.
+ And $\mathsf{i}^{i}$ makes $\mathsf{S}$ $k$-step determinable.
  \end{itemize}
 \end{definition}
 
@@ -146,7 +141,7 @@ if for every $\mathsf{o}^{j}(0)\in \Delta_Q$ such that $\Ded(\Delta_N,\varepsilo
  In order to better illustrate the definition of online observability, we give the following example.
 
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  We have that:
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  
  \begin{itemize}
  \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^0\right)$ is $1$-step determinable;
  \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)$ is $1$-step determinable;

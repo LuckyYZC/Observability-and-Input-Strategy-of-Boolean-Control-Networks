@@ -10,11 +10,9 @@ In this section we introduce {\BCNs} and the four existing types of observabilit
 A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. 
 
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\
-	a directed graph which consists of 
+	is a directed graph which consists of 
 	\begin{itemize}
-	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_m$};
-	\item state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_n$};
-	\item output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_q$};
+	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_m$}, state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_n$} and output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_q$};
 	\item and directed edges: 
 		\begin{equation*}
 			\begin{split}
@@ -23,9 +21,8 @@ A Boolean control network can be defined as a directed graph together with logic
 			\end{split}
 		\end{equation*}
 	
-\end{itemize}
-	
-The updating rules are
+\end{itemize}	
+And its updating rules
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -112,14 +109,13 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
 %  
 %   With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
   % 
-%For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table. 
-  
+%For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table.   
   \tl{simplify later?!} 
-Moreover, we use 
+Moreover, 
    \begin{itemize}
- \item $\Delta_M = \{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ to represent the set of inputs; 
- \item $\Delta_N = \{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ to represent the set of states; 
- \item $\Delta_Q = \{\delta^0_{2^q},\ldots,\delta^{({2^q}-1)}_{2^q} \}$ to represent the set of outputs,
+ \item $\Delta_M = \{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ represents the input set; 
+ \item $\Delta_N = \{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ represents the state set; 
+ \item $\Delta_Q = \{\delta^0_{2^q},\ldots,\delta^{({2^q}-1)}_{2^q} \}$ represents the output set,
 \end{itemize}
 where $M=2^m$, $N=2^n$ and $Q=2^q$.
 %=======================================================================
@@ -176,9 +172,9 @@ The second observability means that a \BCN\ is called observable if for every tw
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}\in(\Delta_M)^k$ which can distinguish them.  For instance,
 \begin{itemize}
-  \item $\delta_{16}^0$ and $\delta_{16}^1$ can be distinguished by any $\mathsf{I}^{01}$ with the prefix $\delta_{4}^0$, $\delta_{4}^2 $ or $\delta_{4}^3$;
-  \item $\delta_{16}^0$ and $\delta_{16}^2$ can be distinguished by any $\mathsf{I}^{02}$ with the prefix $\delta_{4}^1$, $\delta_{4}^2$ or $\delta_{4}^3$;
-  \item $\delta_{16}^1$ and $\delta_{16}^2$ can be distinguished by any $\mathsf{I}^{12}$ with the prefix $\delta_{4}^1$, $\delta_{4}^2$ or $\delta_{4}^3$.
+  \item $\mathsf{I}^{01}$ with the prefix $\delta_{4}^0$ can distinguish $\delta_{16}^0$ and $\delta_{16}^1$;
+  \item $\mathsf{I}^{02}$ with the prefix $\delta_{4}^1$ can distinguish $\delta_{16}^0$ and $\delta_{16}^2$;
+  \item $\mathsf{I}^{12}$ with the prefix $\delta_{4}^3$ can distinguish $\delta_{16}^1$ and $\delta_{16}^2$.
 \end{itemize} 
 Therefore this \BCN\ satisfies the second observability.
 \label{exa:5}

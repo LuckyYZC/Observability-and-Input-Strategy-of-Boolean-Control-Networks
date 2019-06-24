@@ -35,12 +35,12 @@ From the {\em Lemma \ref{lemm:2}}, we have that if for the set of states $\maths
 \item  Finally, as the $k$-step determinability of the subsets of $\mathsf{S}_x$ has been checked, it is convenient for us to find the $\mathsf{i}_x$ which makes $\mathsf{S}_x$ $k_x$-step determinable by the subsets of $\mathsf{S}_x$.
  \end{itemize}
  \subsection{Determination algorithm}
- We propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph, and {\bf Algorithm~\ref{alg:1}} can also find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
+ We propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
 
 \begin{itemize}
 \item  Firstly, for every $n>0$ we try to build vertexes with $n$ states which with identical corresponding output. 
 \item Secondly, if the vertexes can  be built, when $n>1$, we check the $k$-step determinability of the vertexes and build edges for them. And, if we can not build any edge for one vertex, we have the \BCN\ is not online observable.
-\item Fianlly, if we can not build any vertex with $n$ states, then we have the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ has been checked. Thus the \BCN\ is online observable.
+\item Fianlly, if we can not build any vertex with $n$ states, then we have the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ has been checked,  thus the \BCN\ is online observable.
  \end{itemize}
 
 \begin{algorithm}[h]
