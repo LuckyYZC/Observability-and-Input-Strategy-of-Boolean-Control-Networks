@@ -11,8 +11,8 @@ We define a directed graph for \BCN\ named input-labelled graph. Based on the in
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
 \item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
-\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an input $\mathsf{i} \in \Delta_M$ such that \[|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|,\] and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, \[\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\};\]
-\item  $\mathcal{L}=\{\mathcal{E}\mapsto 2^{\Delta_M}|(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$\[|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|,\] and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, \[\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}\}.\]
+\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$;
+\item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_M}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$ $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$.
  \end{itemize}
 \end{definition}
 
@@ -51,14 +51,10 @@ The updating rules of \BCN
 \ENSURE  
 The directed graph of \BCN
 \STATE Boolean value $Ob=$ true 
-\STATE integer $i$ \
-\STATE integer $j$ \
-\STATE integer $n=1$
-\STATE array $VertexArray[\ ]$
-\STATE array $InputArray[\ ]$
+\STATE integer $i$ , $j$, $n=1$\
+\STATE array $VertexArray[\ ]$, $InputArray[\ ]$
 \STATE {\sf buildvertex}($n$)
-\STATE $n= n+1$
-\STATE $VertexArray=${\sf buildvertex}($n$)
+\STATE $VertexArray=${\sf buildvertex}($++n$)
 \WHILE {($VertexArray!=$Null)}
 \FOR{($i=0$; $i<arraysize(VertexArray)$; $i++$)}
 \IF{($p==2$)}
@@ -77,8 +73,7 @@ The directed graph of \BCN
 \STATE return Null
 \ENDIF
 \ENDFOR
-\STATE $n= n+1$
-\STATE $VertexArray=${\sf buildvertex}($n$)
+\STATE $VertexArray=${\sf buildvertex}($++n$)
 \ENDWHILE
 \STATE return $\Delta_N$\
 \end{algorithmic}
@@ -109,18 +104,18 @@ There are some details in {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{al
 \item Build all vertexes with $n$ states:
 \begin{itemize}
 \item Firstly, we construct the sets which contain all states with identical corresponding output i.e. every non-empty $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$.
-\item Secondly, for every $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. If $n>|\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)|$, then we could not get any set with $n$ states from $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. Else we can get $\frac{(|\Ded\left(\Delta_N,\varepsilon,o_j\right)|)!}{n!\times (|\Ded\left(\Delta_N,\varepsilon,o_j\right)|-n)!}$ sets of states, where $n!$ is the factorial of $n$.
+\item Secondly, for every $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$, if $n>|\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)|$, then we could not get any set with $n$ states from $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}\right)$. Else we can get $\frac{(|\Ded\left(\Delta_N,\varepsilon,o_j\right)|)!}{n!\times (|\Ded\left(\Delta_N,\varepsilon,o_j\right)|-n)!}$ sets of states, where $n!$ is the factorial of $n$.
 \item Finally, we use all of the sets of states found in second step to build vertexes. 
 \end{itemize} 
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
-   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertex with the first $(n-1)$ states and the vertex with the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} the input set of $\{\delta_{16}^0,\delta_{16}^1\}$ is $\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$, and the input set of $\{\delta_{16}^1,\delta_{16}^2\}$ is $\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of this two sets to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
+   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexes with the first $(n-1)$ states and the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} the input set of $\{\delta_{16}^0,\delta_{16}^1\}$ is $\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$, and the input set of $\{\delta_{16}^1,\delta_{16}^2\}$ is $\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of this two sets to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
   \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
 \item If $|\Ded\left(VertexArray[i],InputArray[j],\varepsilon\right)|<|VertexArray[i]|$, then the $InputArray[j]$ is a wrong input.
-\item Else if every \[\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] already exists in the directed graph, then connect $VertexArray[i]$ to it and labell the edge with $InputArray[j]$.
-\item Else if there exist a vertex \[\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)\ne\emptyset\] has not been constructed yet, then we check it latter. 
+\item Else if every non-empty \\$\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)$ already exists in the directed graph, then connect $VertexArray[i]$ to it and labell the edge with $InputArray[j]$.
+\item Else we check it latter. 
 \end{itemize} 
 \end{itemize} 
 

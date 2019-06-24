@@ -28,7 +28,7 @@ We are mainly interested in the control-theoretic problems of \BCNs. The work~\c
 
 In this paper, we investigate the observability of \BCNs. The concept of observability was proposed firstly in~\cite{cheng2009controllability}. To date, there are four types of observability proposed in the literature. And they are mainly about how to get  information of the initial value of the state-nodes of the \BCNs\ by the value of their input-nodes and output-nodes. 
 
-For convenience, we use the vectors input $\mathsf{i}(t)=\begin{bmatrix}\mathsf{i}_1(t)\\ \vdots \\\mathsf{i}_m(t)\end{bmatrix}$, state $\mathsf{s}(t)=\begin{bmatrix}\mathsf{s}_1(t)\\ \vdots \\\mathsf{s}_n(t)\end{bmatrix}$ and output $\mathsf{o}(t)=\begin{bmatrix}\mathsf{o}_1(t)\\ \vdots \\\mathsf{o}_q(t)\end{bmatrix}$ to represent the value of all input-nodes, all state-nodes and all output-nodes, respectively, where $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes in the network, respectively. 
+The vectors input $\mathsf{i}(t)=[\mathsf{i}_1(t)\ldots\mathsf{i}_m(t)]^T$, state $\mathsf{s}(t)=[\mathsf{s}_1(t) \ldots \mathsf{s}_n(t)]^T$ and output $\mathsf{o}(t)=[\mathsf{o}_1(t) \ldots \mathsf{o}_q(t)]^T$ represent the value of all input-nodes, all state-nodes and all output-nodes, respectively, where $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes in the network, respectively. 
  Then we have $\mathsf{s}(t+1)$ is decided by $\mathsf{i}(t)$ and $\mathsf{s}(t)$, and $\mathsf{o}(t)$ is decided by $\mathsf{s}(t)$ as shown in Fig.~\ref{fig:10}.
 
 
@@ -71,7 +71,6 @@ For a given \BCN\ $\BB$, whether or not there is a $\mathsf{i}(0)\mathsf{i}(1)\l
 Although, these four existing notions of observability can help us study some information about $\mathsf{s}(0)$ we need. But when the determining procedure can do at most once, only third and fourth ones  can  determine the $\mathsf{s}(0)$ of \BCNs.
 In other words, only third and fourth notions of observability can help us solve the {\em Problem~\ref{pro:1}}. What's more, in the third observability, if a \BCN\ is observable, then there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger.
 
-
 However, we find that in order to determine $\mathsf{s}(0)$ we only need to complete the following procedure.
 
 %Informly, the procedure of our  online observability as follows. 
@@ -92,6 +91,8 @@ Firstly, we propose and formally define the concept of online observability of \
 
 The remainder of this paper is organized as follows.
 
- {\em Section \ref{sec:pre}} introduces necessary preliminaries about \BCNs, including the definition of \BCNs\ and four existing observability of \BCNs. {\em Section \ref{sec:online}} presents the definition of online observability of \BCNs. {\em Section \ref{sec:deter}} presents the algorithm to determine the online observability of \BCNs. {\em Section \ref{sec:app}} talks about some optimization brought by the online observability of \BCNs. {\em Section \ref{sec:con}} ends up with the introduction of our future work.
+ {\em Section \ref{sec:pre}} introduces necessary preliminaries about \BCNs, including the definition of \BCNs\ and four existing observability of \BCNs. {\em Section \ref{sec:online}} presents the definition of online observability of \BCNs. {\em Section \ref{sec:deter}} presents the algorithm to determine the online observability of \BCNs. 
+% {\em Section \ref{sec:app}} talks about some optimization brought by the online observability of \BCNs. 
+ {\em Section \ref{sec:con}} ends up with the introduction of our future work.
 
 %==============================================================================================================
