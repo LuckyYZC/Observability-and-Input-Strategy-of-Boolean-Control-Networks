@@ -14,7 +14,7 @@ We introduce some necessary statements before defining the functions $\Pe(\maths
   \item $\mathsf{S}$: the set of states of a vertex in the input-labelled graph;
   \item $\{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$ : the inputs set of $\mathsf{S}$;
   \item $\{\mathsf{o}^1,\mathsf{o}^2,\ldots,\mathsf{o}^k\}$: the set of possible outputs of \BCN\ at next time step as we input $\mathsf{ i}^{i}$;
- \item $\{\mathsf{S}^{1},\mathsf{S}^{2},\ldots, \mathsf{S}^{k}\}$ : the set of possible state sets at next time step that for every $\mathsf{S}^{j}$ \[\mathsf{S}^{j}=\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right).\] 
+ \item $\{\mathsf{S}^{1},\mathsf{S}^{2},\ldots, \mathsf{S}^{k}\}$ : the set of possible state sets at next time step that for every $\mathsf{S}^{j}$, $\mathsf{S}^{j}=\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)$.
   
 \end{itemize} 
 
@@ -30,11 +30,9 @@ Then the definition of $\Spe(\mathsf{S})$ and $\Pe(\mathsf{S},\mathsf{ i}^{i})$ 
 
 \begin{definition}[$\Pe(\mathsf{S}, \mathsf{ i}^{i})$] \label{spe}
 
-When the $|\mathsf{S}|=1$,
-\[\Pe(\mathsf{S}, \mathsf{ i}^{i})=0\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\] According to {\em Definition \ref{lspe}}, $\Spe(\mathsf{S})=0$ if $|\mathsf{S}|=1$. 
-
+When $|\mathsf{S}|=1$,
+$\Pe(\mathsf{S}, \mathsf{ i}^{i})=0$  for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$. %According to {\em Definition \ref{lspe}}, $\Spe(\mathsf{S})=0$ if $|\mathsf{S}|=1$. 
 When the $|\mathsf{S}|>1$, 
-we have that  
 \begin{equation}
 \begin{split}
 \Pe(\mathsf{S}, \mathsf{ i}^{i})=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|}
@@ -46,10 +44,8 @@ The function $\Spe(\mathsf{S})$ is used to find the $\mathsf{ i}^{i}$ from $\{\m
 
 Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ to try to find the shortest path. If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}(t)$ with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$. This input $\mathsf{i}^{i}(t)$ may help us find the shortes path to determine $\mathsf{s}(0)$. But the $\mathsf{o}(t)$ of \BCNs\ we observe is uncertain, hence selecting the $\mathsf{ i}^{i}(t)$ may leads to a very long path. For better performce, we define the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ to avoid risks.
 \begin{definition}[$\Pv(\mathsf{S}, \mathsf{ i}^{i})$] 
-When the $|\mathsf{S}|=1$, we have that
-\[\Pv(\mathsf{S}, \mathsf{ i}^{i})=0\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\]  When the $|\mathsf{S}|>1$, 
-
-we have that\\ 
+When $|\mathsf{S}|=1$, 
+$\Pv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  When the $|\mathsf{S}|>1$, 
 \begin{equation}
 \begin{split}
 \Pv(\mathsf{S}, \mathsf{ i}^{i})=\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j})-\Pe(\mathsf{S}, \mathsf{ i}^{i})+1)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}
@@ -68,11 +64,10 @@ In biological systems wich depiected by the \BCNs, some of the states may corres
 \end{equation}
 \end{definition}
 \begin{definition}[$\Ce(\mathsf{S}, \mathsf{ i}^{i})$] 
-When the $|\mathsf{S}|=1$, we have \[\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |,\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\]  
-According {\em Definition \ref{lce}}, 
-\[\Lce(\mathsf{S})=\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |\] 
-But when the $|\mathsf{S}|>1$ 
-we have that 
+When $|\mathsf{S}|=1$, $\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |$, for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  
+%According {\em Definition \ref{lce}}, 
+%\[\Lce(\mathsf{S})=\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |\] 
+When the $|\mathsf{S}|>1$ 
 \begin{equation}
 \begin{split}
 \Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|} 
@@ -84,10 +79,8 @@ where $\mathsf{S}_{cri}$ is the set of critical states.
 With the critical states set $\mathsf{S}_{cri}$, the definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$. We can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every vertex in the input-labelled graph. And we get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
 
 \begin{definition}[$\Cv(\mathsf{S}, \mathsf{ i}^{i})$] 
-When the $|\mathsf{S}|=1$, we have that
-$\Cv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every  \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\]   When the $|\mathsf{S}|>1$, 
-
-we have that  \\
+When $|\mathsf{S}|=1$, 
+$\Cv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every  $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  When the $|\mathsf{S}|>1$, 
 \begin{equation}
 \begin{split}
 \Cv(\mathsf{S}, \mathsf{ i}^{i})=\sum_{j=1}^k\frac{ (\Lce(\mathsf{S}^{j})-\Ce(\mathsf{S}, \mathsf{ i}^{i})+|\mathsf{S} \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}
