@@ -47,7 +47,7 @@ The function $\Spe(\mathsf{S})$ is used to find the $\mathsf{ i}^{i}$ from $\{\m
 Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ to try to find the shortest path. If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}(t)$ with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$. This input $\mathsf{i}^{i}(t)$ may help us find the shortes path to determine $\mathsf{s}(0)$. But the $\mathsf{o}(t)$ of \BCNs\ we observe is uncertain, hence selecting the $\mathsf{ i}^{i}(t)$ may leads to a very long path. For better performce, we define the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ to avoid risks.
 \begin{definition}[$\Pv(\mathsf{S}, \mathsf{ i}^{i})$] 
 When the $|\mathsf{S}|=1$, we have that
-\[\Pv(\mathsf{S}, \mathsf{ i}^{i})=0\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{z}\}.\]  When the $|\mathsf{S}|>1$, 
+\[\Pv(\mathsf{S}, \mathsf{ i}^{i})=0\]  for every \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\]  When the $|\mathsf{S}|>1$, 
 
 we have that\\ 
 \begin{equation}
@@ -85,7 +85,7 @@ With the critical states set $\mathsf{S}_{cri}$, the definition of $\Ce(\mathsf{
 
 \begin{definition}[$\Cv(\mathsf{S}, \mathsf{ i}^{i})$] 
 When the $|\mathsf{S}|=1$, we have that
-$\Cv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every  \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{z}\}.\]   When the $|\mathsf{S}|>1$, 
+$\Cv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every  \[\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}.\]   When the $|\mathsf{S}|>1$, 
 
 we have that  \\
 \begin{equation}
