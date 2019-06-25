@@ -156,11 +156,12 @@ Lemma \ref{lemm:2} can help us design the algorithm to determine the online obse
 After the previous preparation, we present the formal definition of the online observability of {\em BCNs} is as follows.
 
 \begin{definition}[Online Observability of  BCNs]
+\tl{why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is online observable,
 if for every $\mathsf{o}^{j}(0)\in \Delta_Q$ such that $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))\ne \emptyset$, there exists a $k^{j}\ge0$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable.
 \end{definition}
 
- In order to better illustrate the definition of online observability, we give the following example.
+%In order to better illustrate the definition of online observability, we give the following example.
 
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  
@@ -175,17 +176,17 @@ Therefore we have this \BCN\ is the online observable, and then we can determine
 \label{exa:10}
 \end{example}  
 
-With the defininition of online observability of \BCNs, we have the implication relationships between four existing observability and online observability.
+With the definition of online observability of \BCNs, we have the implication relationships among four existing observability and online observability.
 
 \begin{lemma}
-The online obervability implies the existing first observability.
+The online observability implies the  type-1 observability.
 \label{lemm:3}
 \end{lemma}
 
 With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state, and we can also do this by the online obervability. Thus the online obervability implies the existing first observability. 
 
 \begin{lemma}
-The existing third observability implies the online obervability.
+The  type-3 observability implies the online observability.
 \label{lemm:4}
 \end{lemma}
 
@@ -195,13 +196,11 @@ Moreover, from the implication relationships between the existing four observabi
 
 \begin{figure}[thpb]
       \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.28]{figures/Fig8.png}}
-	}}
-      
+      \framebox{\parbox{3in}{\centerline{\includegraphics[scale=0.28]{figures/Fig8.png}} }} 
       \caption{The implication relationships graph between existing observability 1, 2, 3, 4, and online observability where ``$\rightarrow$" means ``implies".}
       \label{fig:7}
    \end{figure}
 
+\tl{maybe you have done this, but I feel that one needs to highlight the advantages of this def. It is neither the strongest nor the weakest, why one should choose this?}
 
    
