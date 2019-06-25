@@ -18,7 +18,7 @@ We introduce some necessary statements before defining the functions $\Pe(\maths
   
 \end{itemize} 
 
-Then the definition of $\Spe(\mathsf{S})$ and $\Pe(\mathsf{S},\mathsf{ i}^{i})$ are as follows.
+Then $\Spe(\mathsf{S})$ and $\Pe(\mathsf{S},\mathsf{ i}^{i})$ are defined as follows.
 
 \begin{definition}[$\Spe(\mathsf{S})$] \label{lspe}
 \begin{equation}
@@ -30,32 +30,29 @@ Then the definition of $\Spe(\mathsf{S})$ and $\Pe(\mathsf{S},\mathsf{ i}^{i})$ 
 
 \begin{definition}[$\Pe(\mathsf{S}, \mathsf{ i}^{i})$] \label{spe}
 
-When $|\mathsf{S}|=1$,
-$\Pe(\mathsf{S}, \mathsf{ i}^{i})=0$  for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$. %According to {\em Definition \ref{lspe}}, $\Spe(\mathsf{S})=0$ if $|\mathsf{S}|=1$. 
-When $|\mathsf{S}|>1$, 
-\begin{equation}
-\begin{split}
-\Pe(\mathsf{S}, \mathsf{ i}^{i})=1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|}
-\end{split}
-\end{equation}
+\[\Pe(\mathsf{S}, \mathsf{ i}^{i})=\left\{
+\begin{array}{rcl}
+0      &      & {|\mathsf{S}|=1}\\
+1 +\frac{\sum_{j=1}^k \Spe(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|}       &      & {|\mathsf{S}|>1}
+\end{array} \right. \]
+
 \end{definition}
 
 The function $\Spe(\mathsf{S})$ is used to find the $\mathsf{ i}^{i}$ from $\{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{z}\}$ to calculat least $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ for $\mathsf{S}$. In the definition of $\Pe(\mathsf{S}, \mathsf{ i}^{i})$, if $|\mathsf{S}|=1$ then we can determine $\mathsf{s}$. Thus we no longer need to choose the input to determine the state $\mathsf{s}$ of \BCNs. Therefore, for any input the path expected value $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ would be $0$ and the shortest path expected value $\Spe(\mathsf{S})$ also would be $0$ too. While, if $|\mathsf{S}|>1$, then we still need to choose input and observe the output to determine the state of of \BCNs. Thus we recursively define the $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ and $\Spe(\mathsf{S})$ for $\mathsf{S}$ and each input $\mathsf{ i}^{i}$ in the inputs set of $\mathsf{S}$. 
 
 Such that, at every time step, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $\Pe(\mathsf{S}(t),\mathsf{ i}(t))$ to try to find the shortest path. If we want to find the shortest path to determine the initial state of a \BCN, we can choose an input $\mathsf{ i}^{i}(t)$ with least $\Pe(\mathsf{S}(t), \mathsf{ i}^{i}(t))$. This input $\mathsf{i}^{i}(t)$ may help us find the shortes path to determine $\mathsf{s}(0)$. But the $\mathsf{o}(t)$ of \BCNs\ we observe is uncertain, hence selecting the $\mathsf{ i}^{i}(t)$ may leads to a very long path. For better performce, we define the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ to avoid risks.
 \begin{definition}[$\Pv(\mathsf{S}, \mathsf{ i}^{i})$] 
-When $|\mathsf{S}|=1$, 
-$\Pv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  When $|\mathsf{S}|>1$, 
-\begin{equation}
-\begin{split}
-\Pv(\mathsf{S}, \mathsf{ i}^{i})=\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j})-\Pe(\mathsf{S}, \mathsf{ i}^{i})+1)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}
-\end{split}
-\end{equation}
+\[\Pv(\mathsf{S}, \mathsf{ i}^{i})=\left\{
+\begin{array}{rcl}
+0      &      & {|\mathsf{S}|=1}\\
+\frac{\sum_{j=1}^k (\Spe(\mathsf{S}^{j})-\Pe(\mathsf{S}, \mathsf{ i}^{i})+1)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}      &      & {|\mathsf{S}|>1}
+\end{array} \right. \]
 \end{definition}
 
-From the definition of the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$, we have that if the $\Pv(\mathsf{S}(t), \mathsf{i}^{i}(t))$ not very large, the risk of choosing $\mathsf{ i}^{i}(t)$ would be not very great either.
+%From the definition of the $\Pv(\mathsf{S}, \mathsf{ i}^{i})$, we have that if the $\Pv(\mathsf{S}(t), \mathsf{i}^{i}(t))$ not very large, the risk of choosing $\mathsf{ i}^{i}(t)$ would be not very great either.
 \subsection{Avoiding entering critical states}
-In biological systems wich depiected by the \BCNs, some of the states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider in the process of determining the \BCN's initial state is to avoid entering critical states. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
+In biological systems wich depiected by the \BCNs, some of the states may corresponding to unfavorable or even dangerous situations \cite{Li2014Controllability}. So another important aspect that we consider in the process of determining the \BCN's initial state is to avoid entering critical states. Therefore, we also construct two functions $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ to describe expected value and variance of the times of entering critical states for every vertex $\mathsf{S}$ of the input-labelled graph, respectively. 
+%The definition of $\Lce(\mathsf{S})$ and $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ are as follows.\\
 \begin{definition}[$\Lce(\mathsf{S})$] \label{lce}
 \begin{equation}
 \begin{split}
@@ -64,28 +61,22 @@ In biological systems wich depiected by the \BCNs, some of the states may corres
 \end{equation}
 \end{definition}
 \begin{definition}[$\Ce(\mathsf{S}, \mathsf{ i}^{i})$] 
-When $|\mathsf{S}|=1$, $\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |$, for every $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  
-%According {\em Definition \ref{lce}}, 
-%\[\Lce(\mathsf{S})=\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri} |\] 
-When $|\mathsf{S}|>1$ 
-\begin{equation}
-\begin{split}
-\Ce(\mathsf{S}, \mathsf{ i}^{i})=|\mathsf{S} \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|} 
-\end{split}
-\end{equation}
+\[\Ce(\mathsf{S}, \mathsf{ i}^{i})=\left\{
+\begin{array}{rcl}
+|\mathsf{S} \cap \mathsf{S}_{cri} |      &      & {|\mathsf{S}|=1}\\
+|\mathsf{S} \cap \mathsf{S}_{cri}| +\frac{\sum_{j=1}^k \Lce(\mathsf{S}^{j})|\mathsf{S}^{j}|}{ |\mathsf{S}|}     &      & {|\mathsf{S}|>1}
+\end{array} \right. \]
 where $\mathsf{S}_{cri}$ is the set of critical states.
 \end{definition}
 
 With the critical states set $\mathsf{S}_{cri}$, the definition of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ has some difference with $\Pe(\mathsf{S}, \mathsf{ i}^{i})$. We can analyze the possibility of entering the critical states by caculate $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ for every vertex in the input-labelled graph. And we get the definitions of $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ in the similar way.
 
 \begin{definition}[$\Cv(\mathsf{S}, \mathsf{ i}^{i})$] 
-When $|\mathsf{S}|=1$, 
-$\Cv(\mathsf{S}, \mathsf{ i}^{i})=0$ for every  $\mathsf{ i}^{i} \in \{\mathsf{ i}^{1},\mathsf{ i}^{2},\ldots, \mathsf{ i}^{p}\}$.  When $|\mathsf{S}|>1$, 
-\begin{equation}
-\begin{split}
-\Cv(\mathsf{S}, \mathsf{ i}^{i})=\sum_{j=1}^k\frac{ (\Lce(\mathsf{S}^{j})-\Ce(\mathsf{S}, \mathsf{ i}^{i})+|\mathsf{S} \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}
-\end{split}
-\end{equation}
+\[\Cv(\mathsf{S}, \mathsf{ i}^{i})=\left\{
+\begin{array}{rcl}
+0     &      & {|\mathsf{S}|=1}\\
+\sum_{j=1}^k\frac{ (\Lce(\mathsf{S}^{j})-\Ce(\mathsf{S}, \mathsf{ i}^{i})+|\mathsf{S} \cap \mathsf{S}_{cri}|)^2 |\mathsf{S}^{j}|}{ |\mathsf{S}|}    &      & {|\mathsf{S}|>1}
+\end{array} \right. \]
 \end{definition}
 
 The use of $\Ce(\mathsf{S}, \mathsf{ i}^{i})$ and $\Cv(\mathsf{S}, \mathsf{ i}^{i})$ are similar to $\Pe(\mathsf{S}, \mathsf{ i}^{i})$ and $\Pv(\mathsf{S}, \mathsf{ i}^{i})$ respectively. At every time step $t$, with $\mathsf{S}(t)$ we derived, we can decide $\mathsf{i}(t)$ by $ \Pe(\mathsf{S}(t), \mathsf{ i}(t))$, $\Pv(\mathsf{S}(t), \mathsf{ i}(t))$, $\Ce(\mathsf{S}(t), \mathsf{ i}(t))$ and $\Cv(\mathsf{S}(t), \mathsf{ i}(t))$.
