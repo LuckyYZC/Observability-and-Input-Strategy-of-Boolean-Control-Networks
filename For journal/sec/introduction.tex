@@ -69,29 +69,31 @@ For a given \BCN\ $\BB$, whether or not there is a $\mathsf{i}(0)\mathsf{i}(1)\l
 \end{problem}
 
 Although, these four existing notions of observability can help us study some information about $\mathsf{s}(0)$ we need. But when the determining procedure can do at most once, only third and fourth ones  can  determine the $\mathsf{s}(0)$ of \BCNs.
-In other words, only third and fourth notions of observability can help us solve the {\em Problem~\ref{pro:1}}. What's more, in the third observability, if a \BCN\ is observable, then there has to exist an input sequence that determines its initial state $\mathsf{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger.
+In other words, only third and fourth notions of observability can help us solve the {\em Problem~\ref{pro:1}}. What's more, in the third observability, a \BCN\ is observable iff there is an input sequence that determines its initial state $\mathsf{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger.
 
-However, we find that in order to determine $\mathsf{s}(0)$ we only need to complete the following procedure.
+However, we find that to determine $\mathsf{s}(0)$ we only need to complete the following procedure.
 
 %Informly, the procedure of our  online observability as follows. 
-For a given \BCN\  $\BB$. With its output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(t)$ and input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(t-1)$, we can infer the possible valuation of its $\mathsf{s}(t)$ by its updating rules. And  we use $\mathsf{S}(t)$ to denote the set of possible valuations of $\mathsf{s}(t)$. 
+For a given \BCN\  $\BB$, we use $\mathsf{S}(t)$ to denote the set of possible valuations of $\mathsf{s}(t)$. Then $\mathsf{S}(t)$ can be derived by the output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(t)$, input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(t-1)$ and updating rules of $\BB$.
 \begin{itemize}
-	\item  Firstly, at every time step we infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ we observed and the relation $\mathsf{o}(t)$ between $\mathsf{s}(t)$.
+	\item  Firstly, at every time step we infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ and the relation $\mathsf{o}(t)$ between $\mathsf{s}(t)$.
 	\item Secondly, according to the relation of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{s}(t+1)$ we chose a $\mathsf{i}(t)$ which would make every two distinct $\mathsf{s}^{x}(t)$ , $\mathsf{s}^{y}(t)$$\in$ $\mathsf{S}(t)$ become the same state after affected by $\mathsf{i}(t)$ i.e. $\mathsf{s}^{x}(t+1)\ne\mathsf{s}^{y}(t+1)$. Therefore, for every $\mathsf{s}^{x}(t+1)\in $ $\mathsf{S}(t+1)$ there is exact one corresponding $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$.
-	\item Thirdly, we have $|$$\mathsf{S}(t)$$|\le|$$\mathsf{S}(t-1)$$|$. When $|$$\mathsf{S}(t)$$|=1$, we can determine $\mathsf{s}(t)$. And then because for every $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{x}(t-1)\in $ $\mathsf{S}(t-1)$ we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, and $\mathsf{s}(0)$.
+	\item Thirdly, we have $|$$\mathsf{S}(t)$$|\le|$$\mathsf{S}(t-1)$$|$. When $|$$\mathsf{S}(t)$$|=1$, we can determine $\mathsf{s}(t)$. And because for every $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{x}(t-1)\in $ $\mathsf{S}(t-1)$ we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, and $\mathsf{s}(0)$.
 \end{itemize}
 
-In the third observability, we can finish this procedure, so we can determine the initial state \State$(0)$ for a \BCN\ by third observability. What is more, from this procedure, we do not have to get the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ before we take the procedure of determining \State$(0)$. However, we can adaptively construct the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ to determine $\mathsf{s}(0)$ by the $\mathsf{S}(t)$ we derived at every time step. In this case, the requirement for a \BCN\ to determine \State$(0)$ would be easier to satisfy. Inspired by this, we propose the online observability in this paper which states that a \BCN\ $\BB$ is observable if the $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ to determine $\mathsf{s}(0)$ can be adaptively constructed. 
+%In the third observability, we can finish this procedure, thus we can determine the initial state \State$(0)$ for a \BCN. What is more, 
+In this process, we do not have to get $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ before taking the procedure of determining \State$(0)$. In other words, we can adaptively construct $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ by every $\mathsf{S}(t)$ we derived.  
+%Such that, the requirement for a \BCN\ to determine \State$(0)$ would be easist to satisfy. 
+Inspired by this, we propose the online observability in this paper which states that a \BCN\ $\BB$ is observable if the $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ to determine $\mathsf{s}(0)$ can be adaptively constructed. 
 
-Comparing with the existing first and second observability, the online observability can determine the initial states of \BCNs. However, comparing with the existing third and fourth observability, in online observability, the requirements for \BCNs\ to determine the initial state is easier to satisfy.  
-
+Comparing with the third and fourth observability, the online observability provides a dynamic approach to determine the initial states of \BCNs, such that the requirements for \BCNs\ to determine the initial state is easiest to satisfy.  
 Then, in this paper we make the following contributions. 
 \subsubsection*{Contributions}
-Firstly, we propose and formally define the concept of online observability of \BCNs. Comparing with existing observability, the online observability can help to determine the initial states of some \BCNs\ which can not be determined before. Secondly, in addition to theoretical research, we also provide the algorithm to determine the online observability for \BCNs. Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
+Firstly, we propose and formally define the online observability that can help to determine the initial states of some \BCNs\ which can not be determined before. Secondly, in addition to theoretical research, we also provide determination algorithm for the online observability. Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
 
 The remainder of this paper is organized as follows.
 
- {\em Section \ref{sec:pre}} introduces necessary preliminaries about \BCNs, including the definition of \BCNs\ and four existing observability of \BCNs. {\em Section \ref{sec:online}} presents the definition of online observability of \BCNs. {\em Section \ref{sec:deter}} presents the algorithm to determine the online observability of \BCNs. 
+ {\em Section \ref{sec:pre}} introduces necessary preliminaries about \BCNs, including the definition of \BCNs\ and four existing observability. {\em Section \ref{sec:online}} presents the definition of online observability of \BCNs. {\em Section \ref{sec:deter}} presents determination algorithm for the online observability. 
 % {\em Section \ref{sec:app}} talks about some optimization brought by the online observability of \BCNs. 
  {\em Section \ref{sec:con}} ends up with the introduction of our future work.
 
