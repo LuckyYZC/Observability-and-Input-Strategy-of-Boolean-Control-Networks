@@ -67,19 +67,19 @@ Such that the requirements to determine the \BCNs' initial state would be easies
 %-------------------------------------
 In order to describe how to derive $\mathsf{S}(t)$, we define the derivation function. %The definition of it is as follows.
 \begin{definition}[Derivation Function] 
-In a Boolean control network, let
-$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
-$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
-$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
-
+The derivation function 
+%$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
+%$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
+%$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
 $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$
-is the derivation function that
+satisfies
 \[\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)
-=\{ \mathsf{s}'| \mathsf{s}'=\left\{
+=\{ \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right. ,\ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\}.\]
+\end{array} \right |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},\]
+where $\varepsilon$ presents empty input or output.
 \tl{I found hard to read this def.}
 \end{definition}
 
@@ -147,7 +147,7 @@ For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there 
 \label{lemm:2}
 \end{lemma}
 
-All the proofs in the {\bf Appendix}. \tl{give explicit reference.}
+All the proofs in the {\bf Appendix~A~Proof}. \tl{give explicit reference.}
 
 Lemma \ref{lemm:2} can help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in   Section \ref{sec:deter}.
 %==========================================================================================
