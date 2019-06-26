@@ -61,8 +61,12 @@ We use $\mathsf{s}^{x}(t)$ and $\mathsf{s}^{y}(t)$ to represent different valuat
 \end{enumerate}
  Their formal definitions will be presented in Section~\ref{sec:pre}.
 
- From the four notions of observability, we can see that the first and second one determine $\mathsf{s}(0)$ by taking the determining procedure multiple times, and the third and fourth one is by taking the determining procedure once. And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. In this paper, we address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once.
-
+ From the four notions of observability, we can see that the first and second one determine $\mathsf{s}(0)$ by taking the determining procedure multiple times, and the third and fourth one is by taking the determining procedure once. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
+ In this paper, we propose an observability named online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once.
+\begin{itemize}
+	\item It enriches the control-theory of \BCNs, it may help us further researching the identification of \BCNs. 
+	\item And it can help us determine the $\mathsf{s}(0)$ of some \BCNs\ which can not be determined before.
+\end{itemize}
 %\begin{problem}
 %\label{pro:1}
 %For a given \BCN\ $\BB$, whether its initial state $\mathsf{s}(0)$ can be determined by carrying on determining procedure once?
@@ -91,7 +95,8 @@ Inspired by this, we propose the online observability in this paper which states
 Comparing with the third and fourth observability, the online observability provides a dynamic approach to determine the initial states of \BCNs, such that the requirements for \BCNs\ to determine the initial state is easiest to satisfy.  
 Then, in this paper we make the following contributions. 
 \subsubsection*{Contributions}
-Firstly, we propose and formally define the online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$. It enriches the control-theory of \BCNs. Secondly, in addition to theoretical research, we also provide determination algorithm for the online observability. Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
+Firstly, we propose and formally define the online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. %It enriches the control-theory of \BCNs. 
+Secondly, in addition to theoretical research, we also provide determination algorithm for the online observability. Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
 
 The remainder of this paper is organized as follows.
 
