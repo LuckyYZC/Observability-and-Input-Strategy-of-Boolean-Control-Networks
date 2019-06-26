@@ -105,15 +105,15 @@ where $\varepsilon$ presents empty input or output.
 \begin{definition}[$\Ks(\mathsf{S}$)] 
 For a non-empty $\mathsf{S}$
  \begin{itemize}
- \item  $\Ks(\mathsf{S}$)=0   if $|\mathsf{S}|=1$. 
- \item  $\Ks(\mathsf{S})=k>0$
- if there is an input $\mathsf{i}^{i} \in \Delta_M$ such that
+ \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
+ \item  if $|\mathsf{S}|=1$ and there is an input $\mathsf{i}^{i} \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}|$,
  \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right))< k$ for each non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right)$.
- \item and there is a $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right))= k-1$.
+ \item and there is a $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{i},\mathsf{o}^{j}\right))= k-1$,
  \end{itemize}
- The $\mathsf{i}^{i}$ makes $\mathsf{S}$ $k$-step determinable.
+then $\Ks(\mathsf{S})=k>0$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
+ \item else $\Ks(\mathsf{S})=\infty$.
  \end{itemize}
 \end{definition}
 
