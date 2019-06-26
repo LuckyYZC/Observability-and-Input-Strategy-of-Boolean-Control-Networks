@@ -122,7 +122,7 @@ where $M=2^m$, $N=2^n$ and $Q=2^q$.
 
 %=======================================================================
 \subsection{Four existing observability definitions of \BCNs}
-In this subsection, we introduce the four existing definitions of observability of \BCNs. 
+To introduce the four existing definitions of observability of \BCNs. 
 We first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
@@ -193,7 +193,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$
   \item any $\mathsf{I}$ with prefix $\delta_{4}^2$ can not distinguish $\delta_{16}^3$ and $\delta_{16}^{4}$;
   \item any $\mathsf{I}$ with prefix $\delta_{4}^3$ can not distinguish $\delta_{16}^{14}$ and $\delta_{16}^{15}$.
 \end{itemize} 
-Therefore it does not satisfy the existing third observability, and $\mathsf{s}(0)$ can not be determined by taking the determining procedure once. 
+Therefore it does not satisfy the existing third observability. 
 \label{exa:6}
 \end{example}  
 \begin{definition}[Fourth Observability]
@@ -203,11 +203,11 @@ Therefore it does not satisfy the existing third observability, and $\mathsf{s}(
 The fourth observability means that a \BCN\ is called observable if every sufficient long $\mathsf{I}\in(\Delta_M)^{k}$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$, because the $\mathsf{I}$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$.%, the $\mathsf{I}$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long $\mathsf{I}$ that can not determine the $\mathsf{I}$ of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
-Therefore this \BCN\ does not satisfy the fourth observabilityand $\mathsf{s}(0)$ can not be determined by taking the determining procedure once either. 
+Therefore this \BCN\ does not satisfy the fourth observability. 
 \label{exa:7}
 \end{example}  
 
-What is more, we know the implication relationships of four existing types of observability from the definitions of them shown in Fig.~\ref{fig:9}. For the details of the proving process of this proposition, we refer readers to \cite{Zhang2016Observability}.
+The implication relationships of four existing types of observability shown in Fig.~\ref{fig:9}. For the details of its proving process, we refer readers to \cite{Zhang2016Observability}.
 
  \begin{figure}[thpb]
       \centering
@@ -226,10 +226,12 @@ What is more, we know the implication relationships of four existing types of ob
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
 
-As the first observability and second observability are not for determine the initial states of \BCNs. \tl{why this claim?} The third and fourth observability are for determine the initial states of \BCNs, but they are too difficult for \BCNs\ to satisfy. Thus, we propose the online observability of \BCNs\ to solve the problem.
+%As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times. \tl{why this claim?} 
+Only the third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once, but they are too difficult for \BCNs\ to satisfy. And in some systems e.g. reactive systems, we have to determine their initial states by taking the determining procedure once. Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
 
  \begin{problem}
 \label{pro:2}
-What is the condition a \BCN\ should satisfy to determine its initial state $\mathsf{s}(0)$ for every $\mathsf{s}(0)\in\Delta_N$?
+What is the necessary and sufficient condition of determining a \BCN's initial state $\mathsf{s}(0)$ by taking the determining procedure once?
 \end{problem}
+
