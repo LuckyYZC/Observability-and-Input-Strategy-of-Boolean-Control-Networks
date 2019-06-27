@@ -30,6 +30,14 @@ If $\Ks(\mathsf{S}^{2})=0$, we have  \[\mathsf{S}^{1} = \mathsf{S}^{2}.\] Theref
 And we have the {\em Lemma \ref{lemm:1}} is right when $\Ks(\mathsf{S}^{2})=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $\Ks(\mathsf{S}^{2})\ne \infty$.
  
 \end{proof}
+\subsection{Proof of Lemma \ref{lemm:2}}
+\begin{proof}
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$.
+For every $\mathsf{i}^1\in \Ri(\mathsf{S}^2)$, we have  $|\Ded\left(\mathsf{S}^2,\mathsf{i}^1,\varepsilon\right)|=|\mathsf{S}^2|$, and 
+for every $\mathsf{o} \in \Delta_Q$, $\Ded(\mathsf{S}^2,\mathsf{i}^1,\mathsf{o})\ne \emptyset$ implies $\Ks(\Ded(\mathsf{S}^2,\mathsf{i}^1,\mathsf{o}))\ne \infty$. With {\em Lemma \ref{lemm:1}} we have $|\Ded\left(\mathsf{S}^1,\mathsf{i}^1,\varepsilon\right)|=|\mathsf{S}^1|$, and 
+for every $\mathsf{o} \in \Delta_Q$, $\Ded(\mathsf{S}^1,\mathsf{i}^1,\mathsf{o})\ne \emptyset$ implies $\Ks(\Ded(\mathsf{S}^1,\mathsf{i}^1,\mathsf{o}))\le \Ks(\Ded(\mathsf{S}^2,\mathsf{i}^1,\mathsf{o}))$, thus $\mathsf{i}^1\in \Ri(\mathsf{S}^1)$. Therefore, $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
+\end{proof}
+
 
 \subsection{Proof of Lemma \ref{lemm:3}}
 \begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{1}\ge 0$ that $\mathsf{S}(t)$ is $k^{1}$-step determinable, then for every state \State$^{x}(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$ such that for every $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
