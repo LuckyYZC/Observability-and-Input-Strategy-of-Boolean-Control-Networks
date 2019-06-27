@@ -4,21 +4,30 @@
 \subsection{Proof of Lemma \ref{lemm:1}}
 \begin{proof}
 %$\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
-If $\Ks(\mathsf{S}^{2})=0$, we have  \[\mathsf{S}^{1} = \mathsf{S}^{2}.\] Therefore, we have $\Ks(\mathsf{S}^{1})=0\le\Ks(\mathsf{S}^{2})$, thus we have the {\em Lemma \ref{lemm:1}} is right when $k=0$.
+If $\Ks(\mathsf{S}^{2})=0$, we have  \[\mathsf{S}^{1} = \mathsf{S}^{2}.\] Therefore, we have $\Ks(\mathsf{S}^{1})=0\le\Ks(\mathsf{S}^{2})$, thus we have the {\em Lemma \ref{lemm:1}} is right when $\Ks(\mathsf{S}^{2})=0$.
  
- If for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $k=p+1$, we have for $\mathsf{S}^{2}$ there exists a $\mathsf{i}^{i}\in \Delta_M$ such that
+ If for $\Ks(\mathsf{S}^{2})=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right. When $\Ks(\mathsf{S}^{2})=p+1$, we have for $\mathsf{S}^{2}$ there exists a $\mathsf{i}^{x}\in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{2},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{2}|$, and 
- \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})\neq \emptyset,\] the $\Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})$ is $k'$-step determinable, where ${k'}<(p+1)$.
+ \item  $|\Ded\left(\mathsf{S}^{2},\mathsf{i}^{x},\varepsilon\right)|=|\mathsf{S}^{2}|$, and 
+ \item  $\Ks(\Ded(\mathsf{S}^{2},\mathsf{i}^{x},\mathsf{o}^{j}))<(p+1)$, for each non-empty $\Ded(\mathsf{S}^{2},\mathsf{i}^{x},\mathsf{o}^{j})$.
  \end{itemize}
- Then we have for $\mathsf{S}^{1}$ there exists the same $\mathsf{i}^{i}\in \Delta_M$ such that
+ and there is not any $\mathsf{i}^{y} \in \Delta_M$ such that
+  \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}^{2},\mathsf{i}^{y},\varepsilon\right)|=|\mathsf{S}^2|$,
+ \item  $\Ks(\Ded\left(\mathsf{S}^{2},\mathsf{i}^{y},\mathsf{o}^{j}\right))< p$ for each non-empty $\Ded\left(\mathsf{S}^{2},\mathsf{i}^{y},\mathsf{o}^{j}\right)$.
+ \end{itemize} 
+ Then we have for $\mathsf{S}^{1}$ there exists a $\mathsf{i}^{z}\in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}^{1},\mathsf{i}^{i},\varepsilon\right)|=|\mathsf{S}^{1}|$, and 
- \item  for each \[\mathsf{o}^{j}\in \Delta_Q\] such that \[\Ded(\mathsf{S}^{1},\mathsf{i}^{i},\mathsf{o}^{j})\neq \emptyset,\] the \[\Ded(\mathsf{S}^{1},\mathsf{i}^{i}(t),\mathsf{o}^{j})\subseteq \Ded(\mathsf{S}^{2},\mathsf{i}^{i},\mathsf{o}^{j})\] is  $k'$-step determinable, where ${k'}<(p+1)$.
- \end{itemize}  Then we have the $\mathsf{S}^{1}$ is $(p+1)$-step determinable. 
- 
- Therefore we have if for $k=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right, then the {\em Lemma \ref{lemm:1}} is right too when $k=p+1$. 
-And we have the {\em Lemma \ref{lemm:1}} is right when $k=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $k\ge0$.
+ \item  $|\Ded\left(\mathsf{S}^{1},\mathsf{i}^{z},\varepsilon\right)|=|\mathsf{S}^{1}|$, and 
+ \item  $\Ks(\Ded(\mathsf{S}^{1},\mathsf{i}^{z},\mathsf{o}^{j}))<p'$, for each non-empty $\Ded(\mathsf{S}^{1},\mathsf{i}^{z},\mathsf{o}^{j})\subseteq \Ded(\mathsf{S}^{2},\mathsf{i}^{z},\mathsf{o}^{j})$.
+ \end{itemize}
+ and there is not any $\mathsf{i}^{w} \in \Delta_M$ such that
+  \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}^{1},\mathsf{i}^{y},\varepsilon\right)|=|\mathsf{S}^1|$,
+ \item  $\Ks(\Ded\left(\mathsf{S}^{1},\mathsf{i}^{y},\mathsf{o}^{j}\right))< p' -1$ for each non-empty $\Ded\left(\mathsf{S}^{1},\mathsf{i}^{w},\mathsf{o}^{j}\right)\subseteq \Ded\left(\mathsf{S}^{2},\mathsf{i}^{w},\mathsf{o}^{j}\right)$,
+ \end{itemize} 
+ where $p'\le (p+1)$. Therefore we have if for $\Ks(\mathsf{S}^{2})=0,\ldots, p$ the {\em Lemma \ref{lemm:1}} is right, then the {\em Lemma \ref{lemm:1}} is right too when $\Ks(\mathsf{S}^{2})=p+1$. 
+And we have the {\em Lemma \ref{lemm:1}} is right when $\Ks(\mathsf{S}^{2})=0$. Thus we have the {\em Lemma \ref{lemm:1}} is right for every $\Ks(\mathsf{S}^{2})\ne \infty$.
  
 \end{proof}
 
