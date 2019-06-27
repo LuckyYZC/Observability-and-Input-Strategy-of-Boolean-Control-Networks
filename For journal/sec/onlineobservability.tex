@@ -66,24 +66,26 @@ Such that the requirements to determine the \BCNs' initial state would be easies
 \subsection{Derivation function}
 %-------------------------------------
 In order to describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$, we define the derivation function. %The definition of it is as follows.
-\begin{definition}[Derivation Function] 
-The derivation function 
+\begin{definition}[$\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
 %$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
-$\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$,
-\[\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)
+\begin{equation*}
+\begin{split}
+\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)
 =\{ \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},\]
-where $\varepsilon$ presents empty input or output.
+\end{array} \right |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
+\end{split}
+\end{equation*}
+where $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$, and $\varepsilon$ presents empty input or output.
 \tl{(9)I found hard to read this def.}
 \end{definition}
 
 \begin{example}
- In order to better illustrate the derivation function $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$, we use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply this function. \[\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\delta_4^2\right)=\{\delta_{16}^{9},\delta_{16}^{10}\}\]
+We use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply this function. \[\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\delta_4^2\right)=\{\delta_{16}^{9},\delta_{16}^{10}\}\]
 %If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
@@ -94,7 +96,7 @@ where $\varepsilon$ presents empty input or output.
 \begin{array}{rcl}
 \Ded\left(\Delta_N,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
 \Ded\left(\mathsf{S}(t-1),\mathsf{i}(t-1),\mathsf{o}(t)\right)       &      & {t>0}
-\end{array} \right. \]
+\end{array} \right. .\]
 
 \end{definition}
  
@@ -102,26 +104,25 @@ where $\varepsilon$ presents empty input or output.
 \subsection{$K$-step determinability}
 {\color{red} (10)} We propose the $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict we can determine the $\mathsf{s}(t)$ in $\Ks(\mathsf{S}(t)$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
  \tl{(10)$k$-step determinability is a predicate, can you write in this form?}
-\begin{definition}[$\Ks(\mathsf{S}$)] 
+\begin{definition}[$\Ks(\mathsf{S})$] 
 For a non-empty $\mathsf{S}$
  \begin{itemize}
  \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
  \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i}^{x} \in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{x},\varepsilon\right)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right))< k$ for each non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right)$,
+ \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right))< k$ for every non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right)$,
  \end{itemize} 
  and there is not any $\mathsf{i}^{y} \in \Delta_M$ such that
   \begin{itemize}
  \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{y},\varepsilon\right)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right))< k-1$ for each non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right)$,
+ \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right))< k-1$ for every non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right)$,
  \end{itemize} 
 then $\Ks(\mathsf{S})=k>0$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
  \item else $\Ks(\mathsf{S})=\infty$.
  \end{itemize}
 \end{definition}
 
-With this notion, we can know how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then $\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$, $|\mathsf{S}(0)|=3$, and for $\mathsf{S}(0)$ there exists $\delta_{4}^3$ such that 
@@ -134,10 +135,10 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
   \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
  \end{itemize}
  \end{itemize}
- Therefore $\Ks(\mathsf{S}(0))=1$, we can  input $\delta_{4}^3$ to determine $\mathsf{s}(0)$ at time step $1$.
+ Therefore $\Ks(\mathsf{S}(0))=1$.
 \end{example}  
 
-In addition, we propose some lemmas for the $k$-step determinability.
+We propose a lemma for $\Ks(\mathsf{S})$.
 
 \begin{lemma}
 For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ks(\mathsf{S}^{1})\le\Ks(\mathsf{S}^{2})$.%and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
@@ -150,10 +151,24 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 %For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
 %\label{lemm:2}
 %\end{lemma}
-
 All the proofs in the {\bf Appendix~A~Proof}. \tl{(11)give explicit reference.}
 
-Lemma \ref{lemm:2} can help us design the algorithm to determine the online observability of a \BCN, and we will represent the details in   Section \ref{sec:deter}.
+Then, we propose $\Ri(\mathsf{S}(t))$ to depict how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$.
+
+\begin{definition}[$\Ri(\mathsf{S})$] 
+\begin{equation*}
+\begin{split}
+\Ri(\mathsf{S})=\{&\mathsf{i}\in \Delta_M|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
+& \forall \mathsf{o} \in \Delta_Q, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
+\end{split}
+\end{equation*}
+\end{definition}
+\begin{lemma}
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$ then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
+\label{lemm:2}
+\end{lemma}
+
+{\em Lemma \ref{lemm:2}} can help us design the algorithm to determine the online observability of a \BCN.%, and we will represent the details in Section \ref{sec:deter}.
 %==========================================================================================
 
 \subsection{Online observability}
