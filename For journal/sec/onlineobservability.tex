@@ -131,25 +131,25 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
   \begin{itemize}
-  \item   $\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^0\right)=\{\delta_{16}^0\}$ is $0$-step determinable;
- \item  $\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^3\right)=\{\delta_{16}^{13}\}$ is $0$-step determable;
-  \item  $\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right)=\{\delta_{16}^{6}\}$ is $0$-step determinable.
+  \item   $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^0\right))=\Ks(\{\delta_{16}^0\})=0$;
+ \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^3\right))=\Ks(\{\delta_{16}^{13}\})=0$;
+  \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
  \end{itemize}
  \end{itemize}
- Therefore $\mathsf{S}(0)$ is $1$-step determinable, thus we can  input $\delta_{4}^3$ to determine $\mathsf{s}(0)$ at time step $1$.
+ Therefore $\Ks(\mathsf{S}(0))=1$, we can  input $\delta_{4}^3$ to determine $\mathsf{s}(0)$ at time step $1$.
 \end{example}  
 
 In addition, we propose some lemmas for the $k$-step determinability.
 
 \begin{lemma}
-For the sets of states $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, if $\mathsf{S}^{2}$ is $k$-step determinable %and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
-then $\mathsf{S}^{1}$ is $k$-step determinable.
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ then $\Ks(\mathsf{S}^{1})\le\Ks(\mathsf{S}^{2})$.%and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
   \label{lemm:1}
 \end{lemma}
 
 %Because of the length of the article, we put all the proofs in the {\bf Appendix}. With the {\em Lemma \ref{lemm:1}}, it is easy to propose the {\em Lemma \ref{lemm:2}}
 \begin{lemma}
-For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$ then $\Ks(\mathsf{S}^{1})\ne\infty$.
+%For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
 \label{lemm:2}
 \end{lemma}
 
@@ -164,7 +164,7 @@ After the previous preparation, we present the formal definition of the online o
 \begin{definition}[Online Observability of  BCNs]
 \tl{(12)why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is online observable,
-if for every $\mathsf{o}^{j}(0)\in \Delta_Q$ such that $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))\ne \emptyset$, there exists a $k^{j}\ge0$ such that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable.
+if for every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right))\ne\infty$.
 \end{definition}
 
 %In order to better illustrate the definition of online observability, we give the following example.
@@ -172,10 +172,10 @@ if for every $\mathsf{o}^{j}(0)\in \Delta_Q$ such that $\Ded(\Delta_N,\varepsilo
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  
  \begin{itemize}
- \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^0\right)$ is $1$-step determinable;
- \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right)$ is $1$-step determinable;
- \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right)$ is $2$-step determinable;
- \item $\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right)$ is $2$-step determinable.
+ \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^0\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^1\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^2\right))=2\ne \infty$;
+ \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
 Therefore we have this \BCN\ is the online observable, and then we can determine the initial state of this \BCN\ by online observability. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, we can use online observability to determine the initial states of some \BCNs\ which can not be determined by existing observability. Thus with the online observability we can research the \BCNs\ better.
