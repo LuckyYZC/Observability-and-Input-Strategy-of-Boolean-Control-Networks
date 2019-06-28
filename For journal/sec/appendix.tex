@@ -40,22 +40,22 @@ for every $\mathsf{o} \in \Delta_Q$, $\Ded(\mathsf{S}^1,\mathsf{i}^1,\mathsf{o})
 
 
 \subsection{Proof of Lemma \ref{lemm:3}}
-\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if there exists a $k^{1}\ge 0$ that $\mathsf{S}(t)$ is $k^{1}$-step determinable, then for every state \State$^{x}(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$ such that for every $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
+\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if $\Ks(\mathsf{S}(t))\ne\infty$, then for every state \State$^{x}(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k}$ for some $k >0$ such that for every $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$.
 \begin{itemize}
-\item When $k^{1}=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$ and $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$. Therefore, we have that for any $k^2 >0$, for every input sequence $\mathsf{I}\in(\Delta_M)^{k^2}$ the propostion is right. 
-\item If for $k^{1}=0,\ldots, p$ the propostion is right. When $k^{1}=p+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
+\item When $\Ks(\mathsf{S}(t))=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$^{x}(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$ and $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$. Therefore, we have that for any $k >0$, for every input sequence $\mathsf{I}\in(\Delta_M)^{k}$ the propostion is right. 
+\item If for $\Ks(\mathsf{S}(t))=0,\ldots, p$ the propostion is right. When $\Ks(\mathsf{S}(t))=p+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_M$ such that
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for each \[\mathsf{o}^{j}(t+1)\in \Delta_Q\] such that \[\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))\neq \emptyset\] and $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$ is $k'$-step determinable where ${k'}<(p+1)$.
+ \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$, $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)))<(p+1)$.
  \end{itemize}
- Then we have for every \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an $\mathsf{I}\in(\Delta_M)^{k^2}$ for some $k^2 >0$, such that for all $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k^2}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k^2}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. That the input sequence $\mathsf{I}'$ satisfies the following properties,
-  for all states \[\mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}^{x}(t+1))),\]\[\mathsf{s}^{z}(t+1)\neq \mathsf{s}^{x}(t+1)\] implies \[(HF)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HF)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}'),\] where $\mathsf{s}^{x}(t+1)=f(\mathsf{s}^{x}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $k^{1}=p+1$. 
+ Then we have for every \State$^{x}(t)$$\in \mathsf{S}(t)$, there exists an $\mathsf{I}\in(\Delta_M)^{k}$ for some $k >0$, such that for all $\mathsf{s}^{y}(t)\in \mathsf{S}(t)$, $\mathsf{s}^{y}(t)\neq \mathsf{s}^{x}(t)$ implies $(HF)^{k}_{\mathsf{s}^{y}(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}^{x}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}^{i}(t)\mathsf{I}'$. That the input sequence $\mathsf{I}'$ satisfies the following properties,
+  for all states \[\mathsf{s}^{z}(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}^{x}(t+1))),\]\[\mathsf{s}^{z}(t+1)\neq \mathsf{s}^{x}(t+1)\] implies \[(HF)^p_{\mathsf{s}^{z}(t+1)}(\mathsf{I}')\neq (HF)^p_{{\mathsf{s}^{x}(t+1)}}(\mathsf{I}'),\] where $\mathsf{s}^{x}(t+1)=f(\mathsf{s}^{x}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $\Ks(\mathsf{S}(t))=p+1$. 
 
 \end{itemize}
-As the propostion is right when $k^{1}=0$, and we have if for $k^{1}=0,\ldots, p$ the propostion is right, then the propostion is right when $k^{1}=p+1$. Thus the propostion is right for any $k^{1}\ge0$.
+As the propostion is right when $\Ks(\mathsf{S}(t))=0$, and we have if for $\Ks(\mathsf{S}(t))=0,\ldots, p$ the propostion is right, then the propostion is right when $\Ks(\mathsf{S}(t))=p+1$. Thus the propostion is right for any $\Ks(\mathsf{S}(t))\ge0$.
 
 Secondly, we have that if a \BCN\ is online observable,
-then for every  \[\mathsf{o}^{j}(0)\in \Delta_Q\] such that \[\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)\ne \emptyset,\] there exists a $k^{j}\ge0$ that $\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right)$ is $k^{j}$-step determinable. 
+then for every  non-empty $\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right)$, $\Ks(\Ded\left(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)\right))\ne \infty$
 
 Therefore, we have for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}\in(\Delta_M)^{k^i}$ for some $k^i >0$ such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{y}(0))=h(\mathsf{s}^{x}(0))$ implies $(HF)^{k^i}_{\mathsf{s}^{y}(0)}(\mathsf{I})\neq (HF)^{k^i}_{{\mathsf{s}^{x}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the first observability if it is online observable.
 \end{proof}
