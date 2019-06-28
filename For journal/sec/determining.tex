@@ -3,7 +3,7 @@
 
 \section{Algorithm for online observability}
 \label{sec:deter}
-To  determine  online observability of \BCN s, one needs to determine the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$. 
+To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded\left(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)\right))$ for every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$. 
 
 \subsection{Input-labelled graph}
 We define a directed graph for \BCN\ named input-labelled graph. Based on the input-labelled graph and the way to construct it, we provide a algorithm for the online observability.
@@ -11,7 +11,7 @@ We define a directed graph for \BCN\ named input-labelled graph. Based on the in
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|$ there exists a $k\ge0$ such that $\mathsf{S}$ is $k$-step determinable$\}$;
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|\Ks(\mathsf{S})\ne \infty\}$;
 \item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$;
 \item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_M}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$ $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$.
  \end{itemize}
@@ -26,7 +26,7 @@ Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge s
       \label{fig:4}
 \end{figure}
 
-Intuitively, the vertex of the input-labelled graph represents the set of states $\mathsf{S}$ of the \BCN\ which satisfy $k$-step determinability for some $k>0$, and every state in $\mathsf{S}$ with identical corresponding output. Thus determine the $k$-step determinability of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ and then determine the online observability by checking the input-labelled graph.
+Intuitively, a vertex of the input-labelled graph represents a set of states $\mathsf{S}$ of the \BCN\ which satisfy $\Ks(\mathsf{S})\ne \infty$, and every state in $\mathsf{S}$ with identical corresponding output. Thus we can determine $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
 
 From the {\em Lemma \ref{lemm:1}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, in the process of building input-labelled graph for a \BCN\ we build the vertexes with fewer states at first, and then build the vertexes with more states.
 \begin{itemize}
