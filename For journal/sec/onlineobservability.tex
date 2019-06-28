@@ -13,78 +13,73 @@
 
 
 %As we mentioned in {\em Section \ref{sec:pre}}, we can determine the initial states of \BCNs\ by the third existing observability. \tl{(2)why but here?} But i
-{\color{red} (2)}In the third observability, the $\mathsf{s}(0)$ of a \BCN\ can be determined iff there exists an finite input sequence $\mathsf{I}$ that determine $\mathsf{s}(0)$.
+%{\color{red} (2)}In the third observability, the $\mathsf{s}(0)$ of a \BCN\ can be determined iff there exists an finite input sequence $\mathsf{I}$ that determine $\mathsf{s}(0)$.
 
-But we foud that we can derive the set of possible initial states $\mathsf{S}(0)$ by initial output $\mathsf{o}(0)$ we observe
-\[\mathsf{S}(0)=\{\mathsf{s}(0)\in \Delta_N|\ h( \mathsf{s}(0))=\mathsf{o}(0)\}.\]
-\tl{(3)i do not see logical connection here}
-Then if for every $\mathsf{S}^{i}(0)=\{\mathsf{s}(0)\in \Delta_N|\ h( \mathsf{s}(0))=\mathsf{o}^{i}(0)\}$, there is an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$, we can determine the initial $\mathsf{s}(0)$ too. In this case, the requirements for a \BCN\ to determine its initial state would be easier to meet. \tl{(4)this because is connected to the previous sentence?}Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible initial states $\mathsf{S}^{i}(0)$ can be different. While in the third existing observability the $\mathsf{I}^{i}$ has to be identical.
+%But we foud that we can derive the set of possible initial states $\mathsf{S}(0)$ by initial output $\mathsf{o}(0)$ we observe
+%\[\mathsf{S}(0)=\{\mathsf{s}(0)\in \Delta_N|\ h( \mathsf{s}(0))=\mathsf{o}(0)\}.\]
+%\tl{(3)i do not see logical connection here}
+%Then if for every $\mathsf{S}^{i}(0)=\{\mathsf{s}(0)\in \Delta_N|\ h( \mathsf{s}(0))=\mathsf{o}^{i}(0)\}$, there is an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \mathsf{S}^{i}(0)$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I^i})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I^i})$, we can determine the initial $\mathsf{s}(0)$ too. In this case, the requirements for a \BCN\ to determine its initial state would be easier to meet. \tl{(4)this because is connected to the previous sentence?}Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible initial states $\mathsf{S}^{i}(0)$ can be different. While in the third existing observability the $\mathsf{I}^{i}$ has to be identical.
 
-Furthermore, we can derive the set of possible states $\mathsf{S}(1)$ by the outputs $\mathsf{o}(0)$ and $\mathsf{o}(1)$ we observe and the input $\mathsf{i}(0)$ 
-\[\mathsf{S}(1)=\{\mathsf{s}(1)|\mathsf{s}(0)\in \mathsf{S}(0),\ \mathsf{s}(1)=f({\mathsf{i}(0)},{\mathsf{s}(0)}),\ h(\mathsf{s}(1))=\mathsf{o}(1)\}.\]
+%Furthermore, we can derive the set of possible states $\mathsf{S}(1)$ by the outputs $\mathsf{o}(0)$ and $\mathsf{o}(1)$ we observe and the input $\mathsf{i}(0)$ 
+%\[\mathsf{S}(1)=\{\mathsf{s}(1)|\mathsf{s}(0)\in \mathsf{S}(0),\ \mathsf{s}(1)=f({\mathsf{i}(0)},{\mathsf{s}(0)}),\ h(\mathsf{s}(1))=\mathsf{o}(1)\}.\]
 
-And if for every $\mathsf{S}^{i}(1)$ we derived, 
-\begin{itemize}
-  \item  there is an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(1)$, $\mathsf{s}^{y}(1) \in \mathsf{S}^{i}(1)$ implies $(HF)^k_{\mathsf{s}^{x}(1)}(\mathsf{I^i})\neq (HF)^k_{\mathsf{s}^{y}(1)}(\mathsf{I^i})$;
-  \item  and for every $\mathsf{s}^{x}(1)$ $\in \mathsf{S}^{i}(1)$ there exists only one corresponding $\mathsf{s}^{x}(0)$ $\in \mathsf{S}^{i}(0)$ such that $\mathsf{s}^{x}(1)=f({\mathsf{i}(0)},{\mathsf{s}^{x}(0)})$,
-\end{itemize} 
-then we can determine the initial state too. And in this case, the requirements for the \BCN\ to determine the initial state would be further easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible states $\mathsf{S}^{i}(1)$ can be different. 
-
-\tl{(5)this therefore is repeating what was said before?}
-Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for a \BCN\ to meet the requirements to determine its initial state. According to this rule, we propose the online observability. 
-\tl{(6)does this mean that online observability is dependent on a particular rule?}
-
-Instead of finding the input sequence $\mathsf{I}$ before we take the procedure of determining the initial state. In the online observability we use the set of possible states $\mathsf{S}(t)$ (it will be formally defined in the next subsection) we derive at every time step $t$ to adaptively construct the $\mathsf{I}$ to determine the $\mathsf{s}(0)$ of \BCN. 
-\tl{(7)this implies that online is at least as powerful as offline, but why it is stronger?}
-
-Such that the requirements to determine the \BCNs' initial state would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$. And in the definition of online observability, 
-%After introducing the idea of the online observability, we briefly present how to determine the initial state of a \BCN. At every time setp $t$, 
+%And if for every $\mathsf{S}^{i}(1)$ we derived, 
 %\begin{itemize}
-%\item firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on the relation $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
-%\item Secondly, with the set of possible states $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$ we have  for any distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, they will not become the same state after being affected by this input $\mathsf{i}^{i}(t)$ i.e., $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$.  And then, we choose an input $\mathsf{i}(t)$ from $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$.
-%\item Thirdly, based on the relation $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, the set of possible states $\mathsf{S}(t+1)$ of next time step ($t+1$) is preliminarily derived. 
+%  \item  there is an input sequence $\mathsf{I}^{i}\in(\Delta_M)^k$ for some $k>0$, such that for any distinct states $\mathsf{s}^{x}(1)$, $\mathsf{s}^{y}(1) \in \mathsf{S}^{i}(1)$ implies $(HF)^k_{\mathsf{s}^{x}(1)}(\mathsf{I^i})\neq (HF)^k_{\mathsf{s}^{y}(1)}(\mathsf{I^i})$;
+%  \item  and for every $\mathsf{s}^{x}(1)$ $\in \mathsf{S}^{i}(1)$ there exists only one corresponding $\mathsf{s}^{x}(0)$ $\in \mathsf{S}^{i}(0)$ such that $\mathsf{s}^{x}(1)=f({\mathsf{i}(0)},{\mathsf{s}^{x}(0)})$,
 %\end{itemize} 
+%then we can determine the initial state too. And in this case, the requirements for the \BCN\ to determine the initial state would be further easier to meet. Because the corresponding input sequences $\mathsf{I}^{i}$ of different sets of possible states $\mathsf{S}^{i}(1)$ can be different. 
 
-% The cardinal number of possible states set does not change or decrease in the determining process i.e. $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$. % (will be shown in {\em Example \ref{exa:8}}). 
-% If the cardinal number of possible states set $|\mathsf{S}(t)|=1$, then we can determine the $\mathsf{s}(t)$. And then because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, and $\mathsf{s}(0)$.
+%\tl{(5)this therefore is repeating what was said before?}
+%Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for a \BCN\ to meet the requirements to determine its initial state. According to this rule, we propose the online observability. 
+%\tl{(6)does this mean that online observability is dependent on a particular rule?}
+
+ Moreover, we find that to determine $\mathsf{s}(0)$ by taking the determining procedure once, we only need to complete the following procedure.
+
+\begin{itemize}
+\item At every time setp $t$, firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
+\item Secondly, with $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, for any two distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. We choose $\mathsf{i}(t)$ from $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$.
+\item Thirdly, based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, and we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
+\end{itemize} 
+
+As $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$,we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. And because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, and then $\mathsf{s}(0)$.
+And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. Inspired by this, we propose the online observability which states that a \BCN\ is observable if the $\mathsf{I}$ to determine $\mathsf{s}(0)$ can be adaptively constructed. 
+%\tl{(7)this implies that online is at least as powerful as offline, but why it is stronger?}
+%Such that the requirements to determine the \BCNs' initial state would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$. 
+Thus in the formal definition of online observability, 
+%After introducing the idea of the online observability, we briefly present how to determine the initial state of a \BCN. 
 \begin{itemize}
 \item firstly we need to describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$. %So we define the derivation function to solve this problem.
-\item  Secondly, we need to describe how to derive the $\mathsf{i}(t)$ to determine $\mathsf{s}(0)$ by the $\mathsf{S}(t)$. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
+\item  Secondly, we need to describe how to derive every $\mathsf{i}(t)$ by $\mathsf{S}(t)$ such that  we can determine $\mathsf{s}(0)$. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
 \end{itemize} 
 %Therefore, we have the definition of the online observability that a \BCN\ is online observable if for every $\mathsf{S}^{i}(0)$ we derived, there exists a $k^i\ge 0$ such that the $\mathsf{S}^{i}(0)$ is $k^i$-step determinable.
 
-\tl{(8)this means that the "definition" is dependent on a particular way to define $S(t)$ and $i(t)$. In other words, if one gives a different way to define $S(t)$ and $i(t)$, you would have another definition of online observability. This suggests that the def of online observability is not robust.}
+%\tl{(8)this means that the "definition" is dependent on a particular way to define $S(t)$ and $i(t)$. In other words, if one gives a different way to define $S(t)$ and $i(t)$, you would have another definition of online observability. This suggests that the def of online observability is not robust.}
 
 
 %-------------------------------------
 \subsection{Derivation function}
 %-------------------------------------
-{\color{red} (10)} To describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and the updating rules of \BCN, we define the derivation function. %The definition of it is as follows.
+{\color{red} (9)} To describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and the updating rules of \BCN, we define the derivation function $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$. %The definition of it is as follows.
 \begin{definition}[$\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
 %$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
 \begin{equation*}
 \begin{split}
-\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)
-=\{ \mathsf{s}'=\left\{
+&\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)=\\
+&\{ \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
+\end{array} \right   |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 \end{split}
 \end{equation*}
 where $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$, and $\varepsilon$ presents empty input or output.
 \tl{(9)I found hard to read this def.}
 \end{definition}
 
-\begin{example}
-We use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply this function. \[\Ded\left(\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\},\delta_4^0,\delta_4^2\right)=\{\delta_{16}^{9},\delta_{16}^{10}\}\]
-%If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
- \label{exa:8}
- \end{example}   
- 
- Then for a \BCN, we have $\mathsf{S}(t)$ is defined as follows.
+ Then we have $\mathsf{S}(t)$ is defined as follows.{\color{red} (12)}
  \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $0\le t\le k$, we have
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -93,6 +88,13 @@ We use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example to apply t
 \end{array} \right. .\]
 
 \end{definition}
+\begin{example}
+We use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
+%If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
+ \label{exa:8}
+ \end{example}   
+ 
+
  
  
 \subsection{$K$-step determinability}
@@ -119,7 +121,7 @@ then $\Ks(\mathsf{S})=k>0$;%, and we can input $\mathsf{i}^{i}$ to determine mak
 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then $\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$, $|\mathsf{S}(0)|=3$, and for $\mathsf{S}(0)$ there exists $\delta_{4}^3$ such that 
+As the $\mathsf{S}(0)$ mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3$, and there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
@@ -129,7 +131,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
   \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
  \end{itemize}
  \end{itemize}
- Therefore $\Ks(\mathsf{S}(0))=1$.
+ So $\mathsf{S}(0)$ can be determined in $\Ks(\mathsf{S}(0))=1$ time step.
 \end{example}  
 
 We propose a lemma for $\Ks(\mathsf{S})$.
@@ -145,9 +147,9 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 %For the sets of possible states $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if there exists a $k^{i}\ge 0$ such that $\mathsf{S}^{2}$ is $k^{i}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, then there exists a $k^{j}\ge 0$ that $\mathsf{S}^{1}$ is $k^{j}$-step determinable.
 %\label{lemm:2}
 %\end{lemma}
-All the proofs in the {\bf Appendix~A~Proof}. \tl{(11)give explicit reference.}
+All the proofs in the {\bf Appendix~A~Proof}. {\color{red} (11)}\tl{(11)give explicit reference.}
 
-Then, we propose $\Ri(\mathsf{S}(t))$ to depict how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$.
+Then, we propose $\Ri(\mathsf{S}(t))$ to depict how to derive the $\mathsf{i}(t)$ by $\mathsf{S}(t)$ in the process of determining $\mathsf{s}(0)$. We can choose any $\mathsf{i}(t)\in \Ri(\mathsf{S}(t))$ to determine $\mathsf{s}(0)$
 
 \begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation*}
@@ -158,7 +160,7 @@ Then, we propose $\Ri(\mathsf{S}(t))$ to depict how to derive the $\mathsf{i}(t)
 \end{equation*}
 \end{definition}
 \begin{lemma}
-For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$ then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
 \label{lemm:2}
 \end{lemma}
 
@@ -185,27 +187,24 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
-Therefore we have this \BCN\ is the online observable, and then we can determine the initial state of this \BCN\ by online observability. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, we can use online observability to determine the initial states of some \BCNs\ which can not be determined by existing observability. Thus with the online observability we can research the \BCNs\ better.
+Therefore we have this \BCN\ is the online observable, and then we can use online observability to determine the initial state of this \BCN\ by taking the determining procedure once. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by existing observability. Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
 \end{example}  
-
-With the definition of online observability of \BCNs, we have the implication relationships among four existing observability and online observability.
 
 \begin{lemma}
 The online observability implies the  type-1 observability.
 \label{lemm:3}
 \end{lemma}
 
-With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state, and we can also do this by the online obervability. Thus the online obervability implies the existing first observability. 
+%With the existing first observability, we can distinguish every $\mathsf{s}^{i}(0)$ from other types of initial state, and we can also do this by the online obervability. Thus the online obervability implies the existing first observability. 
 
 \begin{lemma}
 The  type-3 observability implies the online observability.
 \label{lemm:4}
 \end{lemma}
 
-In the existing third observability, we can determine the initial state $\mathsf{s}^{i}(0)$ of \BCN\ too. Thus the existing third observability implies the online obervability.
-
-Moreover, from the implication relationships between the existing four observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships between four existing observability and online observability is shown in Fig.~\ref{fig:7}.
+From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication relationships between the existing four observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships among four existing observability and online observability is shown in Fig.~\ref{fig:7}.
+%In the existing third observability, we can determine the initial state $\mathsf{s}^{i}(0)$ of \BCN\ too. Thus the existing third observability implies the online obervability.
 
 \begin{figure}[thpb]
       \centering
@@ -216,4 +215,4 @@ Moreover, from the implication relationships between the existing four observabi
 
 \tl{(13)maybe you have done this, but I feel that one needs to highlight the advantages of this def. It is neither the strongest nor the weakest, why one should choose this?}
 
-   
+  {\color{red} (13)}In conclusion, the online observability enriches the control theory of \BCNs\ by addressing the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. Such that we can determine the initial states of some \BCNs\ which can not be determined before. 
