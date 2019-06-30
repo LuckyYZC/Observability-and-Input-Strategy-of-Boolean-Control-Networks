@@ -37,20 +37,21 @@
  Moreover, we find that to determine $\mathsf{s}(0)$ by taking the determining procedure once, we only need to complete the following procedure.
 
 \begin{itemize}
-\item At every time setp $t$, firstly, we observe the output $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
-\item Secondly, with $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, for any two distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. We choose $\mathsf{i}(t)$ from $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$.
-\item Thirdly, based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, and we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
+\item At every time setp $t$, firstly, we observe the $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
+\item Secondly, with $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, for any two distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$.
+\item Thirdly, based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived because we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
 \end{itemize} 
 
-As $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$,we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. And because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, and then $\mathsf{s}(0)$.
-And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. Inspired by this, we propose the online observability which states that a \BCN\ is observable if the $\mathsf{I}$ to determine $\mathsf{s}(0)$ can be adaptively constructed. 
+$|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
+%And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
+Inspired by this procedure, we propose the online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. It states that a \BCN\ is observable if the previously mentioned procedure to determine $\mathsf{s}(0)$ can be completed {\bf definitely}. It will be formally defined in folllowing subsections.
 %\tl{(7)this implies that online is at least as powerful as offline, but why it is stronger?}
 %Such that the requirements to determine the \BCNs' initial state would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$. 
-Thus in the formal definition of online observability, 
+In the formal definition of online observability, 
 %After introducing the idea of the online observability, we briefly present how to determine the initial state of a \BCN. 
 \begin{itemize}
 \item firstly we need to describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$. %So we define the derivation function to solve this problem.
-\item  Secondly, we need to describe how to derive every $\mathsf{i}(t)$ by $\mathsf{S}(t)$ such that  we can determine $\mathsf{s}(0)$. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
+\item  Secondly, we need to describe how to derive every $\mathsf{i}(t)$ by $\mathsf{S}(t)$ to guarantee that we can determine $\mathsf{s}(0)$. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
 \end{itemize} 
 %Therefore, we have the definition of the online observability that a \BCN\ is online observable if for every $\mathsf{S}^{i}(0)$ we derived, there exists a $k^i\ge 0$ such that the $\mathsf{S}^{i}(0)$ is $k^i$-step determinable.
 
@@ -60,27 +61,27 @@ Thus in the formal definition of online observability,
 %-------------------------------------
 \subsection{Derivation function}
 %-------------------------------------
-{\color{red} (9)} To describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and the updating rules of \BCN, we define the derivation function $\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$. %The definition of it is as follows.
-\begin{definition}[$\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)$] 
+{\color{red} (9)} To describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and the updating rules of \BCN, we define the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$. %The definition of it is as follows.
+\begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
 %$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
 \begin{equation*}
 \begin{split}
-&\Ded\left( \mathsf{S},  \mathsf{i},  \mathsf{o}\right)=\\
-&\{ \mathsf{s}'=\left\{
+&\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \mathsf{s}'\in\Delta_N|\\
+& \mathsf{s}'=\left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right   |\mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
+\end{array} \right. ,  \mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 \end{split}
 \end{equation*}
-where $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\varepsilon) \mapsto 2^{\Delta_N}$, and $\varepsilon$ presents empty input or output.
+where $\mathsf{S}\in 2^{\Delta_N}$, $\mathsf{i} \in (\Delta_M\cup\varepsilon)$, $\mathsf{o} \in (\Delta_Q\cup\varepsilon)$, the $\varepsilon$ presents empty input or output.
 \tl{(9)I found hard to read this def.}
 \end{definition}
 
  Then we have $\mathsf{S}(t)$ is defined as follows.{\color{red} (12)}
- \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $0\le t\le k$, we have
+ \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\Delta_N,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
@@ -89,7 +90,7 @@ where $\Ded:2^{\Delta_N}\times (\Delta_M\cup\varepsilon) \times (\Delta_Q\cup\va
 
 \end{definition}
 \begin{example}
-We use the \BCN\ mentioned in {\em Example \ref{exa:2}} as an example, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\Delta_N,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
 %If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
@@ -106,22 +107,22 @@ For a non-empty $\mathsf{S}$
  \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
  \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i}^{x} \in \Delta_M$ such that
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{x},\varepsilon\right)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right))< k$ for every non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}\right)$,
+ \item  $|\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|$,
+ \item  $\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))< k$ for every non-empty $\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})$,
  \end{itemize} 
  and there is not any $\mathsf{i}^{y} \in \Delta_M$ such that
   \begin{itemize}
- \item  $|\Ded\left(\mathsf{S},\mathsf{i}^{y},\varepsilon\right)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right))< k-1$ for every non-empty $\Ded\left(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}\right)$,
+ \item  $|\Ded(\mathsf{S},\mathsf{i}^{y},\varepsilon)|=|\mathsf{S}|$,
+ \item  $\Ks(\Ded(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}))< k-1$ for every non-empty $\Ded(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j})$,
  \end{itemize} 
-then $\Ks(\mathsf{S})=k>0$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
+then $\Ks(\mathsf{S})=k$, where$k >0$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
  \item else $\Ks(\mathsf{S})=\infty$.
  \end{itemize}
 \end{definition}
 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
-As the $\mathsf{S}(0)$ mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3$, and there exists $\delta_{4}^3$ such that 
+As the $\mathsf{S}(0)$ mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3$, as there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
@@ -131,7 +132,7 @@ As the $\mathsf{S}(0)$ mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(
   \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
  \end{itemize}
  \end{itemize}
- So $\mathsf{S}(0)$ can be determined in $\Ks(\mathsf{S}(0))=1$ time step.
+$\Ks(\mathsf{S}(0))=1$, $\mathsf{s}(0)$ can be determined in $1$ time step.
 \end{example}  
 
 We propose a lemma for $\Ks(\mathsf{S})$.
@@ -149,12 +150,12 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 %\end{lemma}
 All the proofs in the {\bf Appendix~A~Proof}. {\color{red} (11)}\tl{(11)give explicit reference.}
 
-Then, we propose $\Ri(\mathsf{S}(t))$ to depict the set of inputs we can choose to determine $\mathsf{s}(0)$.
+Then, we propose $\Ri(\mathsf{S}(t))$ to depict the set of inputs we can choose from to determine $\mathsf{s}(t)$.
 
 \begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation*}
 \begin{split}
-\Ri(\mathsf{S})&=\{\mathsf{i}\in \Delta_M|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
+&\Ri(\mathsf{S})=\{\mathsf{i}\in \Delta_M|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
 & \forall \mathsf{o} \in \Delta_Q, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
 \end{split}
 \end{equation*}
@@ -164,11 +165,11 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 \label{lemm:2}
 \end{lemma}
 
-{\em Lemma \ref{lemm:2}} can help us design the algorithm to determine the online observability of a \BCN.%, and we will represent the details in Section \ref{sec:deter}.
+{\em Lemma \ref{lemm:1}} and {\em Lemma \ref{lemm:2}} can help us design the algorithm to determine the online observability of a \BCN.%, and we will represent the details in Section \ref{sec:deter}.
 %==========================================================================================
 
 \subsection{Online observability}
-After the previous preparation, we present the formal definition of the online observability of {\em BCNs} is as follows.
+The online observability is formall defined as follows.
 
 \begin{definition}[Online Observability of  BCNs]
 \tl{(12)why $\epsilon$ is in the def? for which purpose?}
@@ -187,7 +188,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\Delta_N,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
-Therefore we have this \BCN\ is the online observable, and then we can use online observability to determine the initial state of this \BCN\ by taking the determining procedure once. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by existing observability. %Thus with the online observability we can research the \BCNs\ better.
+Therefore we have this \BCN\ is the online observable, we can determine the initial state of it by taking the determining procedure once. Comparing with {\em Example \ref{exa:6}} and {\em Example \ref{exa:7}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by existing observability. %Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
 \end{example}  
 
@@ -203,13 +204,13 @@ The  type-3 observability implies the online observability.
 \label{lemm:4}
 \end{lemma}
 
-From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication relationships between the existing four observability which mentioned in the {\em Section \ref{sec:pre}}, we have the implication relationships among four existing observability and online observability is shown in Fig.~\ref{fig:7}.
+From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication relations between the existing four observability which mentioned in the {\em Section \ref{sec:pre}}, we have the relations among all five observability is shown in Fig.~\ref{fig:7}.
 %In the existing third observability, we can determine the initial state $\mathsf{s}^{i}(0)$ of \BCN\ too. Thus the existing third observability implies the online obervability.
 
 \begin{figure}[thpb]
       \centering
-      \framebox{\parbox{3in}{\centerline{\includegraphics[scale=0.28]{figures/Fig8.png}} }} 
-      \caption{The implication relationships graph between existing observability 1, 2, 3, 4, and online observability where ``$\rightarrow$" means ``implies".}
+      \framebox{\parbox{3in}{\centerline{\includegraphics[scale=0.28]{figures/Fig11.png}} }} 
+      \caption{The relationships graph between all five observability, where the area labelled with type of observability means the set of \BCNs\ which satisfy it and  ``U" means all of the \BCNs.}
       \label{fig:7}
    \end{figure}
 
