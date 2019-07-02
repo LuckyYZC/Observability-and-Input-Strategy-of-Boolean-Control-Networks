@@ -72,21 +72,24 @@ While, in this paper, we address the necessary and sufficient condition of deter
 %Only third and fourth notions of observability can help us solve the {\em Problem~\ref{pro:1}}.
 % What is more, in the third observability, a \BCN\ is observable iff there is an input sequence that determines its initial state $\mathsf{s}(0)$. Thus its condition is very strong, and the condition of fourth observability is even stronger.
 %However, 
-We find that to determine $\mathsf{s}(0)$ by taking the determining procedure once we only need to complete the following procedure.
+Using $\mathsf{S}(t)$ to denote the set of possible valuations of $\mathsf{s}(t)$. We find that to determine $\mathsf{s}(0)$ by taking the determining procedure once we only need to complete the following procedure. 
 
 %Informly, the procedure of our  online observability as follows. 
-For a given \BCN\  $\BB$, we use $\mathsf{S}(t)$ to denote the set of possible valuations of $\mathsf{s}(t)$. Then $\mathsf{S}(t)$ can be derived by the output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(t)$, input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(t-1)$ and updating rules of $\BB$.
+ %Then $\mathsf{S}(t)$ can be derived by the output sequence $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(t)$, input sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(t-1)$ and updating rules of $\BB$.
 \begin{itemize}
 	\item  Firstly, at every time step we infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ and the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$.
 	\item Secondly, according to the relation of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{s}(t+1)$ we input an $\mathsf{i}(t)$ which would not make every two distinct $\mathsf{s}^{x}(t)$ , $\mathsf{s}^{y}(t)$$\in$ $\mathsf{S}(t)$ become the same state after affected by $\mathsf{i}(t)$ i.e. $\mathsf{s}^{x}(t+1)\ne\mathsf{s}^{y}(t+1)$. Therefore, for every $\mathsf{s}^{x}(t+1)\in $ $\mathsf{S}(t+1)$ there is exact one corresponding $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$.
-	\item Thirdly, we have $|$$\mathsf{S}(t)$$|\le|$$\mathsf{S}(t-1)$$|$. When $|$$\mathsf{S}(t)$$|=1$, we can determine $\mathsf{s}(t)$. Because for every $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{x}(t-1)\in $ $\mathsf{S}(t-1)$ we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
+	\item Thirdly, we have $|$$\mathsf{S}(t)$$|\le|$$\mathsf{S}(t-1)$$|$, and we can determine $\mathsf{s}(t)$ when $|$$\mathsf{S}(t)$$|=1$. As for every $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{x}(t-1)\in $ $\mathsf{S}(t-1)$ we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
 \end{itemize}
 
 %In the third observability, we can finish this procedure, thus we can determine the initial state \State$(0)$ for a \BCN. What is more, 
 
 
 %Such that, the requirement for a \BCN\ to determine \State$(0)$ would be easist to satisfy. 
-{\color{red} (13)} Inspired by this, we propose the online observability which states that a \BCN\ $\BB$ is observable if the previously mentioned procedure can be completed {\bf definitely}. Its formal definitions will be presented in Section~\ref{sec:online}. It address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. Because in the online observability, we adaptively construct every $\mathsf{i}(t)$ by the $\mathsf{S}(t)$ we derived, with different $\mathsf{S}(t)$, the $\mathsf{i}(t)$ can be different. While in the third observability the $\mathsf{i}(t)$ have to be pre-specified.
+{\color{red} (13)} Inspired by this procedure, we propose an observability named online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. It states that a \BCN\ $\BB$ is observable if the previously mentioned procedure can be completed {\bf definitely}. Its formal definitions will be presented in Section~\ref{sec:online}. 
+
+We call this observability online observability, because we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far at every time step $t$. While in the third and fourth observability we determine $\mathsf{s}(0)$ of \BCN\ by its recorded $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ after we input $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call them offline offline observability \cite{Cassar2017A}.{\color{red} (13)}
+
 Then, in this paper we make the following contributions. 
 \subsubsection*{Contributions}
 Firstly, we propose and formally define the online observability. % to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. %It enriches the control-theory of \BCNs. 

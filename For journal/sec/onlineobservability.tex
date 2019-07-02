@@ -39,19 +39,19 @@
 \begin{itemize}
 \item At every time setp $t$, firstly, we observe the $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
 \item Secondly, with $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$, for any two distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}_z(t),\ldots,\mathsf{i}_w(t)\}$.
-\item Thirdly, based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived because we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
+\item Thirdly, based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
 \end{itemize} 
 
 $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
-Inspired by this procedure, we propose the online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. It states that a \BCN\ is observable if the previously mentioned procedure to determine $\mathsf{s}(0)$ can be completed {\bf definitely}. It will be formally defined in folllowing subsections.
+Inspired by this procedure, we propose the online observability which states that a \BCN\ is observable if the previously mentioned procedure to determine $\mathsf{s}(0)$ can be completed {\bf definitely}.  We will formally define it in folllowing subsections, 
 %\tl{(7)this implies that online is at least as powerful as offline, but why it is stronger?}
 %Such that the requirements to determine the \BCNs' initial state would be easiest to meet. Thus, a \BCN\ satisfies the online observability iff its initial state $\mathsf{s}(0)$ can be determined for every $\mathsf{s}(0) \in \Delta_N$. 
-In the formal definition of online observability, 
+its formal definition should define  
 %After introducing the idea of the online observability, we briefly present how to determine the initial state of a \BCN. 
 \begin{itemize}
-\item firstly we need to describe how to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$. %So we define the derivation function to solve this problem.
-\item  Secondly, we need to describe how to derive every $\mathsf{i}(t)$ by $\mathsf{S}(t)$ to guarantee that we can determine $\mathsf{s}(0)$. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
+\item the way to derive $\mathsf{S}(t)$ by $\mathsf{o}(t)$, $\mathsf{i}(t-1)$ and $\mathsf{S}(t-1)$ should be described, %So we define the derivation function to solve this problem.
+\item  and the way to derive $\mathsf{i}(t)$ by $\mathsf{S}(t)$ to guarantee that $\mathsf{s}(0)$ can be determined. %Thus we define the $k$-step determinability for $\mathsf{S}(t)$ which means that we can determine $\mathsf{s}(t)$ by $\mathsf{S}(t)$ in $k$ time steps.
 \end{itemize} 
 %Therefore, we have the definition of the online observability that a \BCN\ is online observable if for every $\mathsf{S}^{i}(0)$ we derived, there exists a $k^i\ge 0$ such that the $\mathsf{S}^{i}(0)$ is $k^i$-step determinable.
 
@@ -76,12 +76,12 @@ f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \end{array} \right. ,  \mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 \end{split}
 \end{equation*}
-where $\mathsf{S}\in 2^{\Delta_N}$, $\mathsf{i} \in (\Delta_M\cup\varepsilon)$, $\mathsf{o} \in (\Delta_Q\cup\varepsilon)$, the $\varepsilon$ presents empty input or output.
+where $\mathsf{S}\in 2^{\Delta_N}$, $\mathsf{i} \in (\Delta_M\cup\varepsilon)$, $\mathsf{o} \in (\Delta_Q\cup\varepsilon)$, $\varepsilon$ presents empty input or output.
 \tl{(9)I found hard to read this def.}
 \end{definition}
 
  Then we have $\mathsf{S}(t)$ is defined as follows.{\color{red} (12)}
- \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, for every $t\le k$, 
+ \begin{definition}[$\mathsf{S}(t)$] In a \BCN, with the $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, we have for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\Delta_N,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
@@ -122,7 +122,7 @@ then $\Ks(\mathsf{S})=k$, where$k >0$;%, and we can input $\mathsf{i}^{i}$ to de
 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
-As the $\mathsf{S}(0)$ mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=|\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}|=3$, as there exists $\delta_{4}^3$ such that 
+As mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=3$, as there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
  \item   and for each $\mathsf{o}^{j}\in \Delta_Q$
@@ -216,4 +216,4 @@ From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication
 
 \tl{(13)maybe you have done this, but I feel that one needs to highlight the advantages of this def. It is neither the strongest nor the weakest, why one should choose this?}
 
-  {\color{red} (13)}In conclusion, the online observability enriches the control theory of \BCNs\ by addressing the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. Such that we can determine the initial states of some \BCNs\ which can not be determined before. 
+  {\color{red} (13)}In conclusion, the online observability addresses the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once, because at every time step $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. Such that the online observability enriches the control theory of \BCNs\ and determine the initial states of some \BCNs\ which can not be determined before. 

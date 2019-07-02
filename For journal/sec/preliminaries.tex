@@ -168,7 +168,7 @@ Therefore this \BCN\ satisfies the first observability.
 	The second type of observability is that, a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^{xy})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^{xy})$ \cite{Zhao2010Input}.
 \end{definition}
 
-The second observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}$ which can distinguish them. And it is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times in parallel \cite{Zhao2010Input}.%Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
+The second observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}$ which can distinguish them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}\in(\Delta_M)^k$ which can distinguish them.  For instance,
 \begin{itemize}
@@ -225,9 +225,9 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-
-As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
-And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use the third and fourth observability to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
+The first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel, and the third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. What is more, the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times in parallel \cite{Zhao2010Input}.
+%As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
+%And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
 
 % \begin{problem}
