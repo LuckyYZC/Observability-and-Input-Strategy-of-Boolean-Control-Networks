@@ -88,7 +88,7 @@ Let $\mathsf{S}(t)$ denote the set of possible valuations of $\mathsf{s}(t)$. Th
  
  \tl{can you make this a proper algorithm?}\gs{I have corrected this one.}
 \begin{description}
-	\item[Step 1] At every time step we infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ and the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$.
+	\item[Step 1] We infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$.
 	\item[Step 2] According to the relation of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{s}(t+1)$ we choose an $\mathsf{i}(t)$ which would not make every two distinct $\mathsf{s}^{x}(t)$ , $\mathsf{s}^{y}(t)$$\in$ $\mathsf{S}(t)$ become the same state after affected by $\mathsf{i}(t)$ i.e. $\mathsf{s}^{x}(t+1)\ne\mathsf{s}^{y}(t+1)$. Such that, for every $\mathsf{s}^{x}(t+1)\in $ $\mathsf{S}(t+1)$ there is exact one corresponding $\mathsf{s}^{x}(t)\in $ $\mathsf{S}(t)$.
 	\item[Step 3] Repeating Step 1 and Step 2 we can determine $\mathsf{s}(t)$, and for every $t>0$, for every $\mathsf{s}^{x}(t)\in \mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{x}(t-1)\in \mathsf{S}(t-1)$, so we can determine $\mathsf{s}(t-1)$, \ldots, $\mathsf{s}(0)$.
 \end{description}
@@ -98,7 +98,7 @@ Let $\mathsf{S}(t)$ denote the set of possible valuations of $\mathsf{s}(t)$. Th
 
 %Such that, the requirement for a \BCN\ to determine \State$(0)$ would be easist to satisfy. 
 %{\color{red} (13)} 
-Inspired by this procedure, we propose a new notion of observability named online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. It states that a \BCN\ $\BB$ is observable if the previously mentioned procedure would terminates. Its formal definitions will be presented in Section~\ref{sec:online}. 
+Inspired by this procedure, we propose a new notion of observability named online observability to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. It states that a \BCN\ $\BB$ is observable if the previously mentioned procedure would terminates for every \State$(0)$. Its formal definitions will be presented in Section~\ref{sec:online}. 
 
 We call this observability online observability, because we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far at every time step $t$. 
 
