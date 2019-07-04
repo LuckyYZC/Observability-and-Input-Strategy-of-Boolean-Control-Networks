@@ -35,7 +35,7 @@ And its updating rules
 %===========================================================
 In the definition, we have that % we have that in the directed graph
 \begin{itemize}
-	\item $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively and $l$ represents the number of edges;
+	\item $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively, $l$ represents the number of edges;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
 	\item every directed edge from a state-node $\mathsf{s}_i$ (or an input-node $\mathsf{i}_w$) to a state-node $\mathsf{s}_j$ means that  $\mathsf{s}_j(t+1)$ is affected by $\mathsf{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
 	\item every directed edge from a state-node $\mathsf{s}_i$ to an output-node $\mathsf{o}_j$ means that   $\mathsf{o}_j(t)$  is affected by $\mathsf{s}_i(t)$.  
@@ -148,11 +148,11 @@ and
 %These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(t)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(t)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$). 
 Then the four existing observability definitions are as follows.
 
-\begin{definition} [First Observability]
-The first type of observability is that, a \BCN\ is called observable, if for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}^x\in(\Delta_M)^k$ for some $k>0$, such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{y}(0))=h(\mathsf{s}^{x}(0))$ implies $(HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^x)\neq (HF)^k_{{\mathsf{s}^{x}(0)}}(\mathsf{I}^x)$ \cite{cheng2009controllability}.
+\begin{definition} [Type-1 Observability]
+The type-1 observability is that, a \BCN\ is called observable, if for every initial state \State$^{x}(0)$$\in \Delta_N$, there exists an input sequence $\mathsf{I}^x\in(\Delta_M)^k$ for some $k>0$, such that for all states $\mathsf{s}^{y}(0)\neq \mathsf{s}^{x}(0)$, $h(\mathsf{s}^{y}(0))=h(\mathsf{s}^{x}(0))$ implies $(HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^x)\neq (HF)^k_{{\mathsf{s}^{x}(0)}}(\mathsf{I}^x)$ \cite{cheng2009controllability}.
 \end{definition}
 
-The first observability means that a \BCN\ is observable if every \State$^{x}(0)$ of the \BCN\ can be distinguished from other types of initial state by an $\mathsf{I}^x$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. 
+The  type-1 observability means that a \BCN\ is observable if every \State$^{x}(0)$ of the \BCN\ can be distinguished from other types of initial state by an $\mathsf{I}^x$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every \State$^{x}(0)$ can be distinguished from other types of initial state by an $\mathsf{I}^x \in(\Delta_M)^k$.  For instance,
 \begin{itemize}
@@ -160,15 +160,15 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every
   \item $\delta_{16}^1$ can be distinguished from other types of initial state by any $\mathsf{I}^1$ with the prefix $\delta_{4}^0$, $\delta_{4}^3$ or $\delta_{4}^2 \delta_{4}^3$;
   \item $\delta_{16}^2$ can be distinguished from other types of initial state by any $\mathsf{I}^2$ with the prefix $\delta_{4}^1$, $\delta_{4}^3$ or $\delta_{4}^0 \delta_{4}^2$, etc.
 \end{itemize} 
-Therefore this \BCN\ satisfies the first observability.
+Therefore this \BCN\ satisfies the  type-1 observability.
 \label{exa:4}
 \end{example}   
 
-\begin{definition}[Second Observability]
-	The second type of observability is that, a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^{xy})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^{xy})$ \cite{Zhao2010Input}.
+\begin{definition}[ Type-2 Observability]
+	The  type-2 observability is that, a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, there exists an input sequence $\mathsf{I}^{xy}\in(\Delta_M)^k$ for some $k>0$, such that $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I}^{xy})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I}^{xy})$ \cite{Zhao2010Input}.
 \end{definition}
 
-The second observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}$ which can distinguish them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
+The type-2 observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}$ which can distinguish them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}^{x}(0)$ and $\mathsf{s}^{y}(0)$, there exists an $\mathsf{I}^{xy}\in(\Delta_M)^k$ which can distinguish them.  For instance,
 \begin{itemize}
@@ -176,14 +176,14 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for e
   \item $\mathsf{I}^{02}$ with the prefix $\delta_{4}^1$ can distinguish $\delta_{16}^0$ and $\delta_{16}^2$;
   \item $\mathsf{I}^{12}$ with the prefix $\delta_{4}^3$ can distinguish $\delta_{16}^1$ and $\delta_{16}^2$.
 \end{itemize} 
-Therefore this \BCN\ satisfies the second observability.
+Therefore this \BCN\ satisfies the type-2 observability.
 \label{exa:5}
 \end{example}   
-\begin{definition}[Third Observability]
-The third type of observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
+\begin{definition}[Type-3 Observability]
+The type-3 observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_M)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^k_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The third observability means that a \BCN\ is called observable if there exists an $\mathsf{I}\in(\Delta_M)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$, because $\mathsf{I}$ can distinguish any two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The type-3 observability means that a \BCN\ is called observable if there exists an $\mathsf{I}\in(\Delta_M)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$, because $\mathsf{I}$ can distinguish any two distinct $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not any $\mathsf{I}\in(\Delta_M)^k$ which can determine the $\mathsf{s}(0)$ of this \BCN:
@@ -193,17 +193,17 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$
   \item any $\mathsf{I}$ with prefix $\delta_{4}^2$ can not distinguish $\delta_{16}^3$ and $\delta_{16}^{4}$;
   \item any $\mathsf{I}$ with prefix $\delta_{4}^3$ can not distinguish $\delta_{16}^{14}$ and $\delta_{16}^{15}$.
 \end{itemize} 
-Therefore it does not satisfy the existing third observability. 
+Therefore it does not satisfy the type-3 observability. 
 \label{exa:6}
 \end{example}  
-\begin{definition}[Fourth Observability]
-	The fourth type of observability is that, \BCN\ is called observable, if there is a $k$ such that for every input sequence $\mathsf{I}\in(\Delta_M)^{k}$, for any two distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^{k}_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^{k}_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
+\begin{definition}[Type-4 Observability]
+	The type-4 observability is that, \BCN\ is called observable, if there is a $k$ such that for every input sequence $\mathsf{I}\in(\Delta_M)^{k}$, for any two distinct states $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0) \in \Delta_N$, $h(\mathsf{s}^{x}(0))=h(\mathsf{s}^{y}(0))$ implies $(HF)^{k}_{\mathsf{s}^{x}(0)}(\mathsf{I})\neq (HF)^{k}_{\mathsf{s}^{y}(0)}(\mathsf{I})$ \cite{Fornasini2013Observability}.
 \end{definition}
 
-The fourth observability means that a \BCN\ is called observable if every sufficient long $\mathsf{I}\in(\Delta_M)^{k}$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$, because every $\mathsf{s}(0)\in\Delta_N$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$.%, the $\mathsf{I}$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The type-4 observability means that a \BCN\ is called observable if every sufficient long $\mathsf{I}\in(\Delta_M)^{k}$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$, because every $\mathsf{s}(0)\in\Delta_N$ can distinguish any two $\mathsf{s}^{x}(0)$, $\mathsf{s}^{y}(0)$.%, the $\mathsf{I}$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have there exists at least one sufficient long $\mathsf{I}$ that can not determine the $\mathsf{I}$ of this \BCN. For instance, any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
-Therefore this \BCN\ does not satisfy the fourth observability. 
+Therefore this \BCN\ does not satisfy the type-4 observability. 
 \label{exa:7}
 \end{example}  
 
@@ -215,7 +215,7 @@ The implication relationships of four existing types of observability shown in F
 		\centerline{\includegraphics[scale=0.27]{figures/Fig9.png}}
 	}}
       
-      \caption{The implication relationships graph between existing observability 1, 2, 3, 4, where ``$\rightarrow$" means ``implies".}
+      \caption{The implication relationships graph between observability type-1, type-2, type-3 and type-4, where ``$\rightarrow$" means ``implies".}
       \label{fig:9}
    \end{figure}
 
@@ -225,7 +225,7 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-The first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel, and the third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. What is more, the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times in parallel \cite{Zhao2010Input}.
+The type-1 observability and type-2 observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel, and the type-3 and type-4 observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. What is more, the type-2 observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times in parallel \cite{Zhao2010Input}.
 %As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
 %And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
