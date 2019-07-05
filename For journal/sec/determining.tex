@@ -103,18 +103,17 @@ The vertexes with $n$ states which with identical corresponding outputs
 Some details of {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}}:
 \begin{itemize}
 \item Build all vertexes with $n$ states:
-\begin{itemize}
-\item Firstly, we construct the sets which contain all states with identical corresponding output i.e. every non-empty $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$.
-\item Secondly, for every $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$, if $n>|\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $n$ states from $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_N,\varepsilon,o_j)|)!}{n!\times (|\Ded(\Delta_N,\varepsilon,o_j)|-n)!}$ sets of states, where $n!$ is the factorial of $n$.
-\item Finally, we use all of the sets of states found in second step to build vertexes. 
-\end{itemize} 
+\begin{description}
+\item[Step 1] For every non-empty $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$, if $n>|\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $n$ states from $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_N,\varepsilon,o_j)|)!}{n!\times (|\Ded(\Delta_N,\varepsilon,o_j)|-n)!}$ sets of states from $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$, where $n!$ is the factorial of $n$.
+\item[Step 2] Using all of the sets of states got in Step 1 to build vertexes. 
+\end{description}
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
-   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexes with the first $(n-1)$ states and the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, as shown in Fig.~\ref{fig:4} $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
+   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexes with the first $(n-1)$ states and the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, in Fig.~\ref{fig:4}, $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
   \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
-\item If $|\Ded(VertexArray[i],InputArray[j],\varepsilon)|<|VertexArray[i]|$, then the $InputArray[j]$ is a wrong input.
+\item If the $|\Ded(VertexArray[i],InputArray[j],\varepsilon)|<|VertexArray[i]|$, then the $InputArray[j]$ is a wrong input.
 \item Else if every non-empty \\$\Ded\left(VertexArray[i],InputArray[j],\mathsf{o}^{p}\right)$ already exists in the directed graph, then connect $VertexArray[i]$ to it and labell the edge with $InputArray[j]$, else we check it latter. 
 \end{itemize} 
 \end{itemize} 
