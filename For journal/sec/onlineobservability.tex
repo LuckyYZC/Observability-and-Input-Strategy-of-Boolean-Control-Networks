@@ -45,7 +45,7 @@ we utilize the following procedure
 Clearly, $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
 
-Based on this procedure, we propose the online observability, viz., a \BCN\ is observable if the procedure to determine $\mathsf{s}(0)$ would terminates for every \State$(0)\in \Delta_N$.  \tl{do you mean that the procedure terminates?} \gs{Yes} 
+Based on this procedure, we propose the online observability, viz., a \BCN\ is observable if the procedure to determine $\mathsf{s}(0)$ terminates for every \State$(0)\in \Delta_N$.  %\tl{do you mean that the procedure terminates?} \gs{Yes} 
 
 
 %We will formally define it in following subsections, 
@@ -94,7 +94,7 @@ If $\mathsf{o}= \varepsilon$
 %\end{split}
 %\end{equation*}
 where $\mathsf{S}\in 2^{\Delta_N}$, $\mathsf{i} \in (\Delta_M\cup\varepsilon)$, $\mathsf{o} \in (\Delta_Q\cup\varepsilon)$, $\varepsilon$ presents empty input or output.
-\tl{check whether this is what you want!?}\gs{It is ok.}
+%\tl{check whether this is what you want!?}\gs{It is ok.}
 \end{definition}
 
  Then we have $\mathsf{S}(t)$ is defined as follows. 
