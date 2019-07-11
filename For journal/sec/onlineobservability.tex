@@ -118,7 +118,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 %\subsection{$K$-step determinability}
 %{\color{red} (10)} We propose the 
 
-As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict we can determine the $\mathsf{s}(t)$ in $\Ks(\mathsf{S}(t)$ time steps for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
+As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict we can determine the $\mathsf{s}(t)$ at time $(t+\Ks(\mathsf{S}(t))$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
 \begin{definition}[$\Ks(\mathsf{S})$] 
 For a non-empty $\mathsf{S}$
@@ -151,7 +151,7 @@ As mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=3$, as there exi
   \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
  \end{itemize}
  \end{itemize}
-$\Ks(\mathsf{S}(0))=1$, $\mathsf{s}(0)$ can be determined in $1$ time step.
+$\Ks(\mathsf{S}(0))=1$, $\mathsf{s}(0)$ can be determined at time $1$.
 \end{example}  
 
 We propose a lemma for $\Ks(\mathsf{S})$.
@@ -235,4 +235,4 @@ From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication
 
 %\tl{(13)maybe you have done this, but I feel that one needs to highlight the advantages of this def. It is neither the strongest nor the weakest, why one should choose this?}
 
-In conclusion, the online observability addresses the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once, because at every time step $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. Such that the online observability enriches the control theory of \BCNs\ and determine the initial states of some \BCNs\ which can not be determined before. 
+In conclusion, the online observability addresses the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once, because at every time $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. Such that the online observability enriches the control theory of \BCNs\ and determine the initial states of some \BCNs\ which can not be determined before. 
