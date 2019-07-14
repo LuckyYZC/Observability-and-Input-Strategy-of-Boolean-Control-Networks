@@ -11,9 +11,9 @@ We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \math
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_M,\varepsilon,\delta^j_{2^{\ell}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
-\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$;
-\item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_M}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$ $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$.
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^{n} -1)} 2^{\Ded(\Delta_M,\varepsilon,\delta^j_{2^{n}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
+\item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an $\mathsf{i} \in \Delta_L$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_N\}\}$;
+\item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_L}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_L|$ $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_N\}\}$.
  \end{itemize}
 \end{definition}
 
@@ -32,7 +32,7 @@ Intuitively, $\mathcal{V}$ represents all of the state sets $\mathsf{S}$ which s
 
 In the process of building input-labelled graph for a \BCN, we build the vertexes with fewer states at first, and then build the vertexes with more states.
 \begin{itemize}
-\item  Firstly, once we find a $\mathsf{S}^i$ that $\Ks(\mathsf{S}^i)= \infty$, and there exists $\mathsf{o}^{j}\in \Delta_Q$ that $\mathsf{S}^{i}\subseteq \Ded(\Delta_N,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}))= \infty$ based on the {\em Lemma \ref{lemm:1}}, then the \BCN\ is not online observable.
+\item  Firstly, once we find a $\mathsf{S}^i$ that $\Ks(\mathsf{S}^i)= \infty$, and there exists $\mathsf{o}^{j}\in \Delta_N$ that $\mathsf{S}^{i}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$ based on the {\em Lemma \ref{lemm:1}}, then the \BCN\ is not online observable.
 \item  Secondly, from the {\em Lemma \ref{lemm:2}}, as we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$, we can preliminarily determine $\Ri(\mathsf{S})$.
  \end{itemize}
  \subsection{Determination algorithm}
@@ -41,7 +41,7 @@ In the process of building input-labelled graph for a \BCN, we build the vertexe
 \begin{description}
 \item[Step 1]  For every $n>0$ we try to build vertexes with $n$ states which with identical corresponding output. 
 \item[Step 2] If the vertexes can  be built, when $n>1$, we check the $\Ks(\mathsf{S}^i)$ of every vertex and build edges for it. If there is a vertex without any edge, then the \BCN\ is not online observable.
-\item[Step 3] Else if we can not build any vertex with $n$ states, then  for every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0)))\ne\infty$, the \BCN\ is online observable.
+\item[Step 3] Else if we can not build any vertex with $n$ states, then  for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)))\ne\infty$, the \BCN\ is online observable.
  \end{description}
 
 \begin{algorithm}[h]
@@ -76,7 +76,7 @@ The input-labelled graph of \BCN
 \ENDFOR
 \STATE $VertexArray=${\sf buildvertex}($++n$)
 \ENDWHILE
-\STATE return $\Delta_N$\
+\STATE return $\Delta_M$\
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
@@ -104,7 +104,7 @@ Some details of {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}}:
 \begin{itemize}
 \item Build all vertexes with $n$ states:
 \begin{description}
-\item[Step 1] For every non-empty $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$, if $n>|\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $n$ states from $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_N,\varepsilon,o_j)|)!}{n!\times (|\Ded(\Delta_N,\varepsilon,o_j)|-n)!}$ sets of states from $\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j})$, where $n!$ is the factorial of $n$.
+\item[Step 1] For every non-empty $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, if $n>|\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $n$ states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_M,\varepsilon,o_j)|)!}{n!\times (|\Ded(\Delta_M,\varepsilon,o_j)|-n)!}$ sets of states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, where $n!$ is the factorial of $n$.
 \item[Step 2] Using all of the sets of states got in Step 1 to build vertexes. 
 \end{description}
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
