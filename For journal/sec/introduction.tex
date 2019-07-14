@@ -72,10 +72,10 @@ For the {\bf Type-I} observability, if a \BCN\ is observable then we can determi
  For the {\bf Type-III} observability and {\bf Type-IV} observability, if a \BCN\ is observable then we can determine its $s(0)$ by inputing the $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ that distinguish every pair of different initial states and observing the output sequence of \BCN.
 
 %{\color{red} (13)} 
-Loosely speaking, the four types of observability can be classified into two categories: ...
-In the four notions of observability, the type-1 and type-2 determine $\mathsf{s}(0)$ by running the respective procedure multiple times in parallel, and the type-3 and type-4 determine $\mathsf{s}(0)$ by taking the determining procedure once. For the details of these propositions, we refer readers to \cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification,Fornasini2013Observability}. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
+Loosely speaking, the four types of observability can be classified into two categories:
+The {\bf Type-I} and {\bf Type-II} determine $\mathsf{s}(0)$ by repeating the process of inputing $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. While the {\bf Type-III} and {\bf Type-IV} determine $\mathsf{s}(0)$ by taking this process once, because in some applications we can not repeat this process. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
 
-In this paper, we address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. %It enriches the control-theory of \BCNs, it can help us determine the $\mathsf{s}(0)$ of some \BCNs\ which can not be determined before.
+In this paper, we address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications. Naturally there is a procedure to determine $\mathsf{s}(0)$  which is described as follows. %It enriches the control-theory of \BCNs, it can help us determine the $\mathsf{s}(0)$ of some \BCNs\ which can not be determined before.
 
 %\begin{problem}
 %\label{pro:1}
@@ -109,7 +109,7 @@ Inspired by this procedure, we propose a new notion of observability named onlin
 
 We call this observability online observability, because we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far at every time $t$. 
 
-In contrast, in the type-3 and type-4 observability we determine $\mathsf{s}(0)$ of \BCN\ by its recorded $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ after we input $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call them offline observability \cite{Cassar2017A}. %{\color{red} (13)}
+In contrast, in the {\bf Type-III} and {\bf Type-IV} observability we determine $\mathsf{s}(0)$ of \BCN\ by its recorded $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ after we input $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call them offline observability \cite{Cassar2017A}. %{\color{red} (13)}
 
 %Then, in this paper we make the following contributions. 
 \subsubsection*{Contributions}

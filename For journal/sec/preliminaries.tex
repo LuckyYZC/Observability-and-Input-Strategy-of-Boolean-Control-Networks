@@ -12,12 +12,12 @@ A Boolean control network can be defined as a directed graph together with logic
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\
 	is a directed graph which consists of 
 	\begin{itemize}
-	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_m$}, state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_n$} and output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_q$};
+	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_{\ell}$}, state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_m$} and output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_n$};
 	\item and directed edges: 
 		\begin{equation*}
 			\begin{split}
-				\{\mathsf{e}_1,\ldots,\mathsf{e}_l\}\subseteq & \{\mathsf{i}_1,\ldots ,\mathsf{i}_m,\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\} \\
-				&\cup \{\mathsf{s}_1,\ldots ,\mathsf{s}_n\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_q\}. 
+				\{\mathsf{e}_1,\ldots,\mathsf{e}_{\epsilon}\}\subseteq & \{\mathsf{i}_1,\ldots ,\mathsf{i}_{\ell},\mathsf{s}_1,\ldots ,\mathsf{s}_m\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_m\} \\
+				&\cup \{\mathsf{s}_1,\ldots ,\mathsf{s}_m\}\times\{\mathsf{o}_1,\ldots ,\mathsf{o}_n\}. 
 			\end{split}
 		\end{equation*}
 	
@@ -35,17 +35,17 @@ And its updating rules
 %===========================================================
 In the definition, we have that % we have that in the directed graph
 \begin{itemize}
-	\item $m$, $n$ and $q$ represent the number of input-nodes, state-nodes and output-nodes respectively, $l$ represents the number of edges;
+	\item $\ell$, $m$ and $n$ represent the number of input-nodes, state-nodes and output-nodes respectively, $\epsilon$ represents the number of edges;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
 	\item every directed edge from a state-node $\mathsf{s}_i$ (or an input-node $\mathsf{i}_w$) to a state-node $\mathsf{s}_j$ means that  $\mathsf{s}_j(t+1)$ is affected by $\mathsf{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
 	\item every directed edge from a state-node $\mathsf{s}_i$ to an output-node $\mathsf{o}_j$ means that   $\mathsf{o}_j(t)$  is affected by $\mathsf{s}_i(t)$.  
 	\end{itemize}
 And then, the updating rules explain how do the nodes affect each other, thus in the updating rules
 	\begin{itemize}
-	\item the vector $\mathsf{i}(t)\in \mathbb{B}^m$ is an input which represent the value of all input-nodes at time $t$; 	
-	\item the vector $\mathsf{s}(t)\in \mathbb{B}^n$ is a state which represent the value of all state-nodes at time $t$; 	
-	\item the vector $\mathsf{o}(t)\in \mathbb{B}^q$ is an output which represent the value of all output-nodes at time $t$;  
-	\item $f:\mathbb{B}^{n+m}\mapsto \mathbb{B}^n$ and $h:\mathbb{B}^n\mapsto \mathbb{B}^q$ are logical functions that represent the updating rules of the {\em BCN},
+	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represent the value of all input-nodes at time $t$; 	
+	\item the vector $\mathsf{s}(t)\in \mathbb{B}^m$ is a state which represent the value of all state-nodes at time $t$; 	
+	\item the vector $\mathsf{o}(t)\in \mathbb{B}^n$ is an output which represent the value of all output-nodes at time $t$;  
+	\item $f:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $h:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN},
 \end{itemize}
 
 %===========================================================
@@ -111,7 +111,7 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
   % 
 %For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table.   
  % \tl{(1)simplify later?!} 
-Moreover, $\Delta_M $, $\Delta_N$, and $\Delta_Q$ represent the input, state, out set respectively. 
+Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the input, state, out set respectively. 
 %   \begin{itemize}
 % \item $\Delta_M = \{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ represents the input set; 
 % \item $\Delta_N = \{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ represents the state set; 
