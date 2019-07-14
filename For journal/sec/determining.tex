@@ -3,7 +3,7 @@
 
 \section{Algorithm for online observability}
 \label{sec:deter}
-To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ for every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$. 
+To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j}(0)))$ for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$. 
 
 \subsection{Input-labelled graph}
 We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$.
@@ -11,7 +11,7 @@ We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \math
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_N,\varepsilon,\delta^j_{2^m} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^m -1)} 2^{\Ded(\Delta_M,\varepsilon,\delta^j_{2^{\ell}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
 \item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ there is an $\mathsf{i} \in \Delta_M$ such that $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$ $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$;
 \item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_M}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Delta_M|$ $|\Ded\left(\mathsf{S}_1,\mathsf{i},\varepsilon\right)|=|\mathsf{S}_1|$, and for every $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\neq \emptyset$, $\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o}^{j})\in \mathcal{V}$, $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})| \Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})\neq \emptyset, \mathsf{o}\in \Delta_Q\}\}$.
  \end{itemize}
