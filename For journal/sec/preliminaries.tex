@@ -45,7 +45,7 @@ And then, the updating rules explain how do the nodes affect each other, thus in
 	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represent the value of all input-nodes at time $t$; 	
 	\item the vector $\mathsf{s}(t)\in \mathbb{B}^m$ is a state which represent the value of all state-nodes at time $t$; 	
 	\item the vector $\mathsf{o}(t)\in \mathbb{B}^n$ is an output which represent the value of all output-nodes at time $t$;  
-	\item $f:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $h:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN},
+	\item $f:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $h:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN}.
 \end{itemize}
 
 %===========================================================
@@ -128,8 +128,8 @@ We first define the mappings \cite{Zhang2016Observability}:
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_L)^k\mapsto(\Delta_M)^k\\
 &=\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
-(HF)^k_{\mathsf{s}(0)} :& (\Delta_L)^k\mapsto(\Delta_N)^k\\
- &=\mathsf{i}(0)\ldots \mathsf{i}(k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(k)
+(HF)^k_{\mathsf{s}(t)} :& (\Delta_L)^k\mapsto(\Delta_N)^k\\
+ &=\mathsf{i}(t)\ldots \mathsf{i}(t+k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(t+k)
 \end{split}
 \label{equ:6}
 \end{equation}
@@ -186,7 +186,7 @@ The {\bf Type-III} observability is that, a \BCN\ is called observable if there 
 The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an $\mathsf{I}\in(\Delta_L)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}$ can distinguish any two distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not any $\mathsf{I}\in(\Delta_M)^k$ which can determine the $\mathsf{s}(0)$ of this \BCN:
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not any $\mathsf{I}\in(\Delta_L)^k$ which can determine the $\mathsf{s}(0)$ of this \BCN:
 \begin{itemize}
   \item any $\mathsf{I}$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
   \item any $\mathsf{I}$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
@@ -225,7 +225,7 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times, the {\bf Type-III} and {\bf Type-IV} observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. What is more, the {\bf Type-II} observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times in parallel \cite{Zhao2010Input}.
+The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times, the {\bf Type-III} and {\bf Type-IV} observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. What is more, the {\bf Type-II} observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure multiple times \cite{Zhao2010Input}.
 %As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
 %And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.

@@ -26,13 +26,13 @@ Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge s
       \label{fig:4}
 \end{figure}
 
-Intuitively, $\mathcal{V}$ represents all of the state sets $\mathsf{S}$ which satisfy $\Ks(\mathsf{S})\ne \infty$ and every $\mathsf{s}^i\in\mathsf{S}$ with identical corresponding output, $\mathcal{E}$ represents the relation between $\mathcal{V}$, and $\mathcal{L}$ label every $\mathsf{e}^j \in\mathcal{E}$ with a set of inputs based on the definition of $\Ks(\mathsf{S})$. %Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
+Intuitively, $\mathcal{V}$ represents all of the state sets $\mathsf{S}$ which satisfy $\Ks(\mathsf{S})\ne \infty$ and every $\mathsf{s}^i\in\mathsf{S}$ with identical corresponding output. Based on the definition of $\Ks(\mathsf{S})$, $\mathcal{E}$ represents the relation between $\mathcal{V}$ and $\mathcal{L}$ label every $\mathsf{e}^j \in\mathcal{E}$ with a set of inputs. %Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
 
 %From the {\em Lemma \ref{lemm:1}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, i
 
-In the process of building input-labelled graph for a \BCN, we build the vertexes with fewer states at first, and then build the vertexes with more states.
+In the process of constructing input-labelled graph for a \BCN, we build the vertexes with fewer states at first, and then build the vertexes with more states.
 \begin{itemize}
-\item  Firstly, once we find a $\mathsf{S}^i$ that $\Ks(\mathsf{S}^i)= \infty$, and there exists $\mathsf{o}^{j}\in \Delta_N$ that $\mathsf{S}^{i}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$ based on the {\em Lemma \ref{lemm:1}}, then the \BCN\ is not online observable.
+\item  Firstly, once we find a $\mathsf{S}^i$ that $\Ks(\mathsf{S}^i)= \infty$, and as there exists $\mathsf{o}^{j}\in \Delta_N$ that $\mathsf{S}^{i}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$ based on the {\em Lemma \ref{lemm:1}}, and then the \BCN\ is not online observable.
 \item  Secondly, from the {\em Lemma \ref{lemm:2}}, as we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$, we can preliminarily determine $\Ri(\mathsf{S})$.
  \end{itemize}
  \subsection{Determination algorithm}
@@ -41,7 +41,7 @@ In the process of building input-labelled graph for a \BCN, we build the vertexe
 \begin{description}
 \item[Step 1]  For every $n>0$ we try to build vertexes with $n$ states which with identical corresponding output. 
 \item[Step 2] If the vertexes can  be built, when $n>1$, we check the $\Ks(\mathsf{S}^i)$ of every vertex and build edges for it. If there is a vertex without any edge, then the \BCN\ is not online observable.
-\item[Step 3] Else if we can not build any vertex with $n$ states, then  for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)))\ne\infty$, the \BCN\ is online observable.
+\item[Step 3] Else if we can not build any vertex with $n$ states, then we have for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)))\ne\infty$, and then the \BCN\ is online observable.
  \end{description}
 
 \begin{algorithm}[h]
@@ -109,7 +109,7 @@ Some details of {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}}:
 \end{description}
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
-   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexes with the first $(n-1)$ states and the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, in Fig.~\ref{fig:4}, $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
+   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexe with the first $(n-1)$ states and the vertexe with the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, in Fig.~\ref{fig:4}, $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
   \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
