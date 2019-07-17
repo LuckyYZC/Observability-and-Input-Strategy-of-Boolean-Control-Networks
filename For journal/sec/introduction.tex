@@ -78,10 +78,10 @@ For the {\bf type-I} observability, if a \BCN\ is observable then we can determi
 For the {\bf type-IV} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing any sufficient long $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ and observing the output sequence of \BCN.
 %{\color{red} (13)}
 
-Loosely speaking, different ways to determine $\mathsf{s}(0)$ are proposed for different applications, and the four types of observability present whether the \BCNs\ can be determined by these four ways respectively. When the $\mathsf{s}(0)$ of \BCN\ can be reset, we use the way corresponding to {\bf type-I} or {\bf type-II} to determine $\mathsf{s}(0)$. The {\bf type-IV} observability is proposed to research the reconstructibility of \BCN. While the {\bf type-III} observability is proposed to research the identification of \BCN, and the identification problem only requires the $\mathsf{s}(0)$ can not be reset.%And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
+Loosely speaking, different ways to determine $\mathsf{s}(0)$ are proposed for different applications, and the four types of observability present whether a \BCN\ can be determined by these four ways respectively. When the $\mathsf{s}(0)$ of \BCN\ can be reset, we use the way corresponding to {\bf type-I} or {\bf type-II} to determine $\mathsf{s}(0)$. The {\bf type-IV} observability is proposed to research the reconstructibility of \BCN. While the {\bf type-III} observability is proposed to research the identification of \BCN, and the identification problem only requires $\mathsf{s}(0)$ can be determined when it can not be reset.%And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
 \JP{What applications?}
 
-In this paper, we propose a way better than the way corresponding to {\bf type-III} observability to determine $\mathsf{s}(0)$ when the $\mathsf{s}(0)$ can not be reset.%address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
+In this paper, we propose a way better than the way corresponding to {\bf type-III} observability to determine $\mathsf{s}(0)$ when it can not be reset.%address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
 %\JP{Here, `necessary and sufficient condition' appears for the first time. What are their precise definitions?}
 %Naturally there is a procedure to determine $\mathsf{s}(0)$  which is described as follows.
 %\JP{Why in this way it can be applied to more applications?}
@@ -115,7 +115,7 @@ In this paper, we propose a way better than the way corresponding to {\bf type-I
 
 %Such that, the requirement for a \BCN\ to determine \State$(0)$ would be easist to satisfy. 
 %{\color{red} (13)} 
- By this way, we can make full use of the output of \BCN\ to determine $\mathsf{s}(0)$, such that we can determine the \State$(0)$ which can not be determined by the way corresponding to {\bf type-III} observability. This proposition will be proved in Section~\ref{sec:online}. And then we can further research the identification problem of \BCN. 
+ By this way, we can make full use of the output of \BCN\ to determine $\mathsf{s}(0)$, such that we can determine the \State$(0)$ which can not be determined by the way corresponding to {\bf type-III} observability. This proposition will be proved in Section~\ref{sec:online}. Then we can further research the identification problem of \BCN. 
  
  We propose a new notion of observability named online observability which states that a \BCN\ is observable if the previously mentioned procedure would terminates for every \State$(0)$. Its formal definitions will be presented in Section~\ref{sec:online}. 
 
@@ -135,8 +135,8 @@ Can you somehow re-structure the introduction?
 %Then, in this paper we make the following contributions. 
 \medskip\noindent
 {\bf Contributions.}
-Firstly, we propose and formally define the online observability. % to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. %It enriches the control-theory of \BCNs. 
-Secondly, we also provide a determination algorithm for the online observability. Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
+Firstly, we propose and formally define the online observability to help us further the identification problem of \BCN. % to address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. %It enriches the control-theory of \BCNs. 
+Secondly, we also provide a determination algorithm for the online observability. %Finally, we present some optimization brought by the online observability. Including the means to find shortest path and the approach to avoid entering critical states in the process of determining the initial states of \BCNs.  These optimization further explain the advantages of online observability of \BCNs. 
 
 \medskip\noindent
 {\bf Plan of the paper.}
