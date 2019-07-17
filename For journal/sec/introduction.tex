@@ -11,7 +11,7 @@
 {\BNs} are a type of discrete-time dynamical systems which can be represented as directed graphs. In a BN, each node has only two values ``0" and ``1", and they can change in different time points.  For a node $n_i$, we use $n_i(t)$ to denote its value at time $t$.
 In general, $n_i(t+1)$ is determined by a logical function of $n_j(t),\ldots,n_p(t)$ if  there are  edges from $n_j,\ldots,n_p$ to $n_i$.  
 %The logical operators used in  the logical functions include AND, OR, NO, XOR.  
-Some general descriptions of the \BNs\ and their applications to biological systems can be found in~\cite{Kauffman1968Metabolic}. There exists a large number of  system works, both natural and artificial, which are modelled as \BNs, e.g. ~\cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi}.
+Some general descriptions of the \BNs\ and their applications to biological systems can be found in~\cite{Kauffman1968Metabolic}. There exists a large number of  systems, both natural and artificial, which are modelled as \BNs, e.g. ~\cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi}.
  \JP{Here, what do you mean by `systems works'?}
 
 \BNs\ can be naturally extended to Boolean control networks (\BCNs) with external regulations and perturbations~\cite{Ideker2001A}. \BCNs\ have been applied to  various real-life problems. Cases of application can be found in 
@@ -62,15 +62,15 @@ Let $\mathsf{S}(t)$ denote the set of possible valuations of $\mathsf{s}(t)$.
 
 For the {\bf type-I} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by following procedure. 
 \begin{description}
-	\item[Step 1] We infer $\mathsf{S}(0)$ by the $\mathsf{o}(0)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$. Then for every $\mathsf{s}'(0)\in\mathsf{S}(0)$, it has a corresponding $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$.
-	\item[Step 2] We choose a $\mathsf{s}'(0)$ from $\mathsf{S}(0)$, and input its corresponding $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. If $\mathsf{s}(0)=\mathsf{s}'(0)$ we can determine $\mathsf{s}(0)$ from the output sequence of \BCN, else we reset the state of \BCN\ by $\mathsf{s}(0)$. We repeat Step 2 until we can determine $\mathsf{s}(0)$.
+	\item[Step 1] We infer $\mathsf{S}(0)$ by the $\mathsf{o}(0)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$. For every $\mathsf{s}^x (0)\in\mathsf{S}(0)$, there exists an input sequence $\mathsf{i^x }(0),\mathsf{i}^x (1),\ldots,\mathsf{i}^x (k-1)$ which can distinguish $\mathsf{s}^x (0)$ from any other initial state.
+	\item[Step 2] We choose a $\mathsf{s}^x (0)$ from $\mathsf{S}(0)$, and input its corresponding $\mathsf{i}^x (0),\mathsf{i}^x (1),\ldots,\mathsf{i}^x (k-1)$. If the initial state of \BCN\ $\mathsf{s}(0)=\mathsf{s}^x (0)$, we can determine $\mathsf{s}(0)$ from the output sequence of \BCN, else we reset the state of the \BCN\ by $\mathsf{s}(0)$ and repeat this procedure.
 	
 \end{description}
 
  For the {\bf type-II} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by following procedure. 
 \begin{description}
 	\item[Step 1] We infer $\mathsf{S}(0)$ by the $\mathsf{o}(0)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(0)$. 
-	\item[Step 2] We input a $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ which can help us further determine $\mathsf{S}(0)$ by observing the output sequence of \BCN. We repeat step 2 until $|\mathsf{S}(0)|=1$, such that we can determine $\mathsf{s}(0)$.
+	\item[Step 2] We input a $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ which can help us further determine $\mathsf{S}(0)$ by observing the output sequence of \BCN. If $|\mathsf{S}(0)|$ becomes $1$, we can determine $\mathsf{s}(0)$, else reset the state of the \BCN\ by $\mathsf{s}(0)$ and repeat this procedure.
 \end{description}
 
  For the {\bf type-III} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing the $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ that distinguish every pair of different initial states and observing the output sequence of \BCN.
@@ -78,10 +78,10 @@ For the {\bf type-I} observability, if a \BCN\ is observable then we can determi
 For the {\bf type-IV} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing any sufficient long $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ and observing the output sequence of \BCN.
 %{\color{red} (13)}
 
-Loosely speaking, different ways to determine $\mathsf{s}(0)$ are proposed for different applications, and the four types of observability present whether a \BCN\ can be determined by these four ways respectively. When the $\mathsf{s}(0)$ of \BCN\ can be reset, we use the way corresponding to {\bf type-I} or {\bf type-II} to determine $\mathsf{s}(0)$. The {\bf type-IV} observability is proposed to research the reconstructibility of \BCN. While the {\bf type-III} observability is proposed to research the identification of \BCN, and the identification problem only requires $\mathsf{s}(0)$ can be determined when it can not be reset.%And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
+Loosely speaking, different ways to determine $\mathsf{s}(0)$ are proposed for different applications, and the four types of observability present whether a \BCN\ can be determined by these four ways respectively. When the $\mathsf{s}(0)$ of \BCN\ can be reset, we use the way corresponding to {\bf type-I} or {\bf type-II} to determine $\mathsf{s}(0)$. The {\bf type-IV} observability is proposed to research the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCN. And in the identification problem of \BCNs, a \BCN\ is identifiable iff it is controllable and its $\mathsf{s}(0)$ can be determined when $\mathsf{s}(0)$ can not be reset.%And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
 \JP{What applications?}
 
-In this paper, we propose a way better than the way corresponding to {\bf type-III} observability to determine $\mathsf{s}(0)$ when it can not be reset.%address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
+In this paper, we propose a new way to determine $\mathsf{s}(0)$ when it can not be reset. It is better than the way corresponding to {\bf type-III} observability%address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
 %\JP{Here, `necessary and sufficient condition' appears for the first time. What are their precise definitions?}
 %Naturally there is a procedure to determine $\mathsf{s}(0)$  which is described as follows.
 %\JP{Why in this way it can be applied to more applications?}
@@ -107,7 +107,7 @@ In this paper, we propose a way better than the way corresponding to {\bf type-I
 \begin{description}
 	\item[Step 1] We infer $\mathsf{S}(t)$ by the $\mathsf{o}(t)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$.
 	\item[Step 2] According to the relation of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{s}(t+1)$ we choose an $\mathsf{i}(t)$ which would not make every two distinct $\mathsf{s}(t)$ , $\mathsf{s}'(t)$$\in$ $\mathsf{S}(t)$ become the same state after affected by $\mathsf{i}(t)$ i.e. $\mathsf{s}(t+1)\ne\mathsf{s}'(t+1)$. Such that, for every $\mathsf{s}(t+1)\in $ $\mathsf{S}(t+1)$ there is exact one corresponding $\mathsf{s}(t)\in $ $\mathsf{S}(t)$.
-	\item[Step 3] Repeating Step 1 and Step 2 we can determine $\mathsf{s}(t)$, and for every $t>0$, for every $\mathsf{s}(t)\in \mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}(t-1)\in \mathsf{S}(t-1)$, so we can determine $\mathsf{s}(t-1)$, \ldots, $\mathsf{s}(0)$.
+	\item[Step 3] Repeating Step 1 and Step 2 until $|\mathsf{S}(t)|=1$ such that we can determine $\mathsf{s}(t)$, and for every $t>0$, for every $\mathsf{s}(t)\in \mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}(t-1)\in \mathsf{S}(t-1)$, so we can determine $\mathsf{s}(t-1)$, \ldots, $\mathsf{s}(0)$.
 \end{description}
 
 %In the third observability, we can finish this procedure, thus we can determine the initial state \State$(0)$ for a \BCN. What is more, 
@@ -115,7 +115,7 @@ In this paper, we propose a way better than the way corresponding to {\bf type-I
 
 %Such that, the requirement for a \BCN\ to determine \State$(0)$ would be easist to satisfy. 
 %{\color{red} (13)} 
- By this way, we can make full use of the output of \BCN\ to determine $\mathsf{s}(0)$, such that we can determine the \State$(0)$ which can not be determined by the way corresponding to {\bf type-III} observability. This proposition will be proved in Section~\ref{sec:online}. Then we can further research the identification problem of \BCN. 
+ By this way, we can make full use of the output of \BCN\ to determine $\mathsf{s}(0)$, such that we can determine the \State$(0)$ which can not be determined by the way corresponding to {\bf type-III} observability. This proposition will be proved in Section~\ref{sec:online}. Then we can find more identifiable \BCNs\ and then further research the identification problem of \BCN. 
  
  We propose a new notion of observability named online observability which states that a \BCN\ is observable if the previously mentioned procedure would terminates for every \State$(0)$. Its formal definitions will be presented in Section~\ref{sec:online}. 
 
