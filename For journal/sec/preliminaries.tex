@@ -3,17 +3,17 @@
 
 \section{Preliminaries} 
 \label{sec:pre}
-In this section we introduce {\BCNs} and the four existing types of observability. Throughout the paper,  $\mathbb{B}=\{0,1\}$.
+In this section we introduce {\BCNs} and the four existing types of observability. Throughout the paper,  let $\mathbb{B}=\{0,1\}$.
 
 \subsection{Boolean Control Networks}
 
-A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the nodes' value of the directed graph. The formal definition of \BCN\ is given as follows. 
+A Boolean control network can be defined as a directed graph together with logical equations to describe the updating rules of the values of the nodes in  the directed graph. The formal definition of \BCN\ is given as follows. 
 
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\
 	is a directed graph which consists of 
 	\begin{itemize}
 	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_{\ell}$}, state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_m$} and output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_n$};
-	\item and directed edges: 
+	\item  directed edges: 
 		\begin{equation*}
 			\begin{split}
 				\{\mathsf{e}_1,\ldots,\mathsf{e}_{\epsilon}\}\subseteq & \{\mathsf{i}_1,\ldots ,\mathsf{i}_{\ell},\mathsf{s}_1,\ldots ,\mathsf{s}_m\}\times \{\mathsf{s}_1,\ldots ,\mathsf{s}_m\} \\
@@ -22,7 +22,7 @@ A Boolean control network can be defined as a directed graph together with logic
 		\end{equation*}
 	
 \end{itemize}	
-And its updating rules
+The updating rules are given as
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -40,13 +40,16 @@ In the definition, we have that % we have that in the directed graph
 	\item every directed edge from a state-node $\mathsf{s}_i$ (or an input-node $\mathsf{i}_w$) to a state-node $\mathsf{s}_j$ means that  $\mathsf{s}_j(t+1)$ is affected by $\mathsf{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
 	\item every directed edge from a state-node $\mathsf{s}_i$ to an output-node $\mathsf{o}_j$ means that   $\mathsf{o}_j(t)$  is affected by $\mathsf{s}_i(t)$.  
 	\end{itemize}
-And then, the updating rules explain how do the nodes affect each other, thus in the updating rules
+%And then, the updating rules explain how the nodes affect each other, thus in the updating rules
+In general, 
 	\begin{itemize}
-	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represent the value of all input-nodes at time $t$; 	
+	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represents the value of all input-nodes at time $t$; 	
 	\item the vector $\mathsf{s}(t)\in \mathbb{B}^m$ is a state which represent the value of all state-nodes at time $t$; 	
 	\item the vector $\mathsf{o}(t)\in \mathbb{B}^n$ is an output which represent the value of all output-nodes at time $t$;  
 	\item $f:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $h:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN}.
 \end{itemize}
+
+Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the input, state, out set respectively. 
 
 %===========================================================
 \begin{example}\label{exa:2}
@@ -111,7 +114,6 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
   % 
 %For instance, if $\mathsf{s}(t)=\delta^5_{16}$ and $\mathsf{i}(t)=\delta^1_{4}$, then we can know that $\mathsf{s}(t+1)=\delta^4_{16}$  and $\mathsf{s}(t+1)=\delta^1_{4}$ by checking this table.   
  % \tl{(1)simplify later?!} 
-Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the input, state, out set respectively. 
 %   \begin{itemize}
 % \item $\Delta_M = \{\delta^0_{2^m},\ldots,\delta^{({2^m}-1)}_{2^m} \}$ represents the input set; 
 % \item $\Delta_N = \{\delta^0_{2^n},\ldots,\delta^{({2^n}-1)}_{2^n} \}$ represents the state set; 
@@ -122,8 +124,7 @@ Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the input, state, ou
 
 %=======================================================================
 \subsection{Four existing observability definitions of \BCNs}
-To introduce the four existing definitions of observability of \BCNs. 
-We first define the mappings \cite{Zhang2016Observability}:
+To introduce the four existing definitions of observability of \BCNs, we first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_L)^k\mapsto(\Delta_M)^k\\
@@ -146,7 +147,7 @@ and
  \[\mathsf{o}(t+p)=h(\mathsf{s}(t+p))=h(f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1))).\] 
 
 %These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(t)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(t)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$). 
-Then the four existing observability definitions are as follows.
+The four existing observability definitions are given as follows.
 
 \begin{definition} [{\bf Type-I} Observability]
 The {\bf Type-I} observability is that, a \BCN\ is called observable, if for every initial state \State$(0)$$\in \Delta_M$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $h(\mathsf{s}'(0))=h(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
@@ -225,11 +226,14 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability is designed to study the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to replace the {\bf type-III} observability, such that we can further research the identification problem.
+The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability is designed to study the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to replace the {\bf Type-III} observability, such that we can further research the identification problem.
 %As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
 %And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
+
+
 \subsection{Identification of \BCNs}
+\tl{what's the point here?}
 The identification problem is stated as follows. 
 \begin{definition}[Identifiability]
 	A \BCN\ is identifiable if its updating rules 
