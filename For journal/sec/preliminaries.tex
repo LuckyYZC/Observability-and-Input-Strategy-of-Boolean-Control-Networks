@@ -225,7 +225,7 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability are designed the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to further research the identification problem.
+The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability is designed to study the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to replace the {\bf type-III} observability, such that we can further research the identification problem.
 %As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
 %And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
@@ -239,7 +239,7 @@ The identification problem is stated as follows.
 		\mathsf{o}(t)=&h(\mathsf{s}(t))
 		\end{split}
 	\end{equation*}
-	can be determined by its input and output. 
+	can be determined via its input-output data. 
 \end{definition}
 
 The controllability of \BCNs\ is defined as follows.
@@ -247,7 +247,7 @@ The controllability of \BCNs\ is defined as follows.
 	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}^d$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, $\mathsf{s}(k)=\mathsf{s}^d$
 \end{definition}
 
-From the paper \cite{Cheng2011Identification}, we have a \BCN\ is  identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. 
+From the paper \cite{Cheng2011Identification}, we have a \BCN\ is  identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset.  
 % \begin{problem}
 %\label{pro:2}
 %What is the necessary and sufficient condition of determining a \BCN's initial state $\mathsf{s}(0)$ by taking the determining procedure once?
