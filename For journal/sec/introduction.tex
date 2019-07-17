@@ -56,27 +56,29 @@ there exists an input sequence  $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k
  We will give the formal definitions of these four types of observability and discussion their relations in Section~\ref{sec:pre}.
  \JP{So far, I don't see a clear difference among the first three types from the above description.}
 
-\JP{Here, you need an introductory sentence on why algorithms are needed.}
-Four types of observability develop different algorithms to determine $\mathsf{s}(0)$ of \BCN. Let $\mathsf{S}(t)$ denote the set of possible valuations of $\mathsf{s}(t)$.
+%\JP{Here, you need an introductory sentence on why algorithms are needed.}
+%Four types of observability develop different algorithms to determine $\mathsf{s}(0)$ of \BCN. 
+Let $\mathsf{S}(t)$ denote the set of possible valuations of $\mathsf{s}(t)$.
 
 For the {\bf type-I} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by following procedure. 
 \begin{description}
 	\item[Step 1] We infer $\mathsf{S}(0)$ by the $\mathsf{o}(0)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(t)$. Then for every $\mathsf{s}'(0)\in\mathsf{S}(0)$, it has a corresponding $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$.
-	\item[Step 2] We choose a $\mathsf{s}'(0)$ from $\mathsf{S}(0)$, and input its corresponding $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. If $\mathsf{s}(0)=\mathsf{s}'(0)$ we can determine $\mathsf{s}(0)$ from the output sequence of \BCN. Thus we determine $\mathsf{s}(0)$ by repeating this process.
+	\item[Step 2] We choose a $\mathsf{s}'(0)$ from $\mathsf{S}(0)$, and input its corresponding $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. If $\mathsf{s}(0)=\mathsf{s}'(0)$ we can determine $\mathsf{s}(0)$ from the output sequence of \BCN, else we reset the state of \BCN\ by $\mathsf{s}(0)$. We repeat Step 2 until we can determine $\mathsf{s}(0)$.
 	
 \end{description}
 
  For the {\bf type-II} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by following procedure. 
 \begin{description}
 	\item[Step 1] We infer $\mathsf{S}(0)$ by the $\mathsf{o}(0)$ based on the relation of $\mathsf{o}(t)$ and $\mathsf{s}(0)$. 
-	\item[Step 2] We input a $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ which can help us further determine $\mathsf{S}(0)$ from the output sequence of \BCN. Repeating this process until $|\mathsf{S}(0)|=1$, then we can determine $\mathsf{s}(0)$.
+	\item[Step 2] We input a $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ which can help us further determine $\mathsf{S}(0)$ from the output sequence of \BCN. We repeat step 2 until $|\mathsf{S}(0)|=1$, such that we can determine $\mathsf{s}(0)$.
 \end{description}
 
- For the {\bf type-III} observability and {\bf type-IV} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing the $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ that distinguish every pair of different initial states and observing the output sequence of \BCN.
+ For the {\bf type-III} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing the $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ that distinguish every pair of different initial states and observing the output sequence of \BCN.
 
-%{\color{red} (13)} 
-Loosely speaking, the four types of observability can be classified into two categories:
-Both {\bf type-I} and {\bf type-II} determine $\mathsf{s}(0)$ by repeating the process of inputing $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. While {\bf type-III} and {\bf type-IV} determine $\mathsf{s}(0)$ by taking this process once, because in some applications we cannot repeat this process. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
+For the {\bf type-IV} observability, if a \BCN\ is observable then we can determine its $\mathsf{s}(0)$ by inputing any sufficient long $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ and observing the output sequence of \BCN.
+%{\color{red} (13)}
+
+Loosely speaking, different ways to determine $\mathsf{s}(0)$ are proposed for different applications, and the four types of observability present whether the \BCNs\ can be determine by these four ways respectively. Both {\bf type-I} and {\bf type-II} determine $\mathsf{s}(0)$ by repeating the process of inputing $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$. While {\bf type-III} and {\bf type-IV} determine $\mathsf{s}(0)$ by taking this process once, because in some applications we cannot repeat this process. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
 \JP{What applications?}
 
 In this paper, we address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
