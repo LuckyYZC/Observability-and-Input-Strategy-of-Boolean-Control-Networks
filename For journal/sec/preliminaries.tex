@@ -248,10 +248,10 @@ The identification problem is stated as follows.
 
 And the controllability of \BCNs\ is defined as follows.
 \begin{definition}[Controllability]
-	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}^d$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, $\mathsf{s}(k)=\mathsf{s}^d$.
+	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$.
 \end{definition}
 
-From the paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. 
+From the paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. And in this paper, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. But we find that we can replace the {\bf type-III} observability by the online observability in the identification problem.
 
 
 % \begin{problem}

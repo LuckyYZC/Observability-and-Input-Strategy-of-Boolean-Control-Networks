@@ -38,11 +38,11 @@ As mentioned in the introduction, when $\mathsf{s}(0)$ cannot be reset, we can d
 by the following procedure.
 \begin{description}
 \item[Step 1] We observe the $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
-\item[Step 2] With $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, such that for every $\mathsf{i}^{i}(t)\in \{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, for any two distinct $\mathsf{s}^{x}(t)$, $\mathsf{s}^{y}(t) \in \mathsf{S}(t)$, $f(\mathsf{s}^{x}(t), \mathsf{i}^{i}(t))\neq f(\mathsf{s}^{y}(t),\mathsf{i}^{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$.
+\item[Step 2] With $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, such that for every $\mathsf{i}(t)\in \{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, for any two distinct $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $f(\mathsf{s}(t), \mathsf{i}(t))\neq f(\mathsf{s}'(t),\mathsf{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$.
 \item[Step 3] Based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
 \end{description}
 
-Clearly, $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}^{i}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}^{i}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
+Clearly, $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
 
 Based on this procedure, we propose the online observability, viz., a \BCN\ is observable if the procedure to determine $\mathsf{s}(0)$ terminates for every \State$(0)\in \Delta_M$.  %\tl{do you mean that the procedure terminates?} \gs{Yes} 
