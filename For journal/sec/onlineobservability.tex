@@ -38,11 +38,11 @@ As mentioned in the introduction, when $\mathsf{s}(0)$ cannot be reset, we can d
 by the following procedure.
 \begin{description}
 \item[Step 1] We observe the $\mathsf{o}(t)$ of \BCN, then based on $\mathsf{o}(t)=h(\mathsf{s}(t))$ we can infer the set of possible states $\mathsf{S}(t)$ by the $\mathsf{o}(t)$.
-\item[Step 2] With $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, such that for every $\mathsf{i}(t)\in \{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$, for any two distinct $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $f(\mathsf{s}(t), \mathsf{i}(t))\neq f(\mathsf{s}'(t),\mathsf{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}^z(t),\ldots,\mathsf{i}^w(t)\}$.
-\item[Step 3] Based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
+\item[Step 2] With $\mathsf{S}(t)$ we can derive the set of possible inputs $\{\mathsf{i}^i(t),\ldots,\mathsf{i}^k(t)\}$, such that for every $\mathsf{i}(t)\in \{\mathsf{i}^i(t),\ldots,\mathsf{i}^k(t)\}$, for any two distinct $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $f(\mathsf{s}(t), \mathsf{i}(t))\neq f(\mathsf{s}'(t),\mathsf{i}(t))$. And then we choose $\mathsf{i}(t)$ from $\{\mathsf{i}^i(t),\ldots,\mathsf{i}^k(t)\}$.
+\item[Step 3] Based on $\mathsf{s}(t+1)= f({\mathsf{i}(t)},{\mathsf{s}(t)})$, $\mathsf{S}(t+1)$ is preliminarily derived, and we need $\mathsf{o}(t+1)$ to further determine $\mathsf{S}(t+1)$. 
 \end{description}
 
-Clearly, $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}(t-1)\in $ $\mathsf{S}(t-1)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
+Clearly, $|\mathsf{S}(t+1)|\le|\mathsf{S}(t)|$, and we can determine $\mathsf{s}(t)$  when $|\mathsf{S}(t)|$ becomes $1$. Because for every $\mathsf{s}(t)\in $ $\mathsf{S}(t)$ there is exact one corresponding $\mathsf{s}(t-1)\in $ $\mathsf{S}(t-1)$ that $f(\mathsf{i}(t-1),\mathsf{s}(t-1))=\mathsf{s}(t)$, we can determine $\mathsf{s}(t-1)$, $\mathsf{s}(t-2)$, \ldots, $\mathsf{s}(0)$.
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
 
 Based on this procedure, we propose the online observability, viz., a \BCN\ is observable if the procedure to determine $\mathsf{s}(0)$ terminates for every \State$(0)\in \Delta_M$.  %\tl{do you mean that the procedure terminates?} \gs{Yes} 
@@ -73,8 +73,8 @@ We write $\xi(\mathsf{i}, s):= \left\{
 \begin{array}{rcl}
 f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right. $
-
+\end{array} \right. $\\
+where $\varepsilon$ presents empty input.
 \begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
@@ -93,7 +93,7 @@ If $\mathsf{o}= \varepsilon$
 %& \mathsf{s}'=  \mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 %\end{split}
 %\end{equation*}
-where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\Delta_N\cup\varepsilon)$, $\varepsilon$ presents empty input or output.
+where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\Delta_N\cup\varepsilon)$, $\varepsilon$ presents empty output.
 %\tl{check whether this is what you want!?}\gs{It is ok.}
 \end{definition}
 
@@ -124,15 +124,15 @@ As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(
 For a non-empty $\mathsf{S}$
  \begin{itemize}
  \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
- \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i}^{x} \in \Delta_L$ such that % $\Ks(\mathsf{S})=\min(\{\max\{\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))| \Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})\ne \emptyset, \mathsf{o}^{j}\in\Delta_Q\}||\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|, \mathsf{i}^{x} \in \Delta_M\})+1$ 
+ \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i} \in \Delta_L$ such that % $\Ks(\mathsf{S})=\min(\{\max\{\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))| \Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})\ne \emptyset, \mathsf{o}^{j}\in\Delta_Q\}||\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|, \mathsf{i}^{x} \in \Delta_M\})+1$ 
  \begin{itemize}
- \item  $|\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))< k$ for every non-empty $\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})$,
+ \item  $|\Ded(\mathsf{S},\mathsf{i},\varepsilon)|=|\mathsf{S}|$,
+ \item  $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}^{j}))< k$ for every non-empty $\Ded(\mathsf{S},\mathsf{i},\mathsf{o}^{j})$,
  \end{itemize} 
- and there is not any $\mathsf{i}^{y} \in \Delta_L$ such that
+ and there is not any $\mathsf{i} \in \Delta_L$ such that
   \begin{itemize}
- \item  $|\Ded(\mathsf{S},\mathsf{i}^{y},\varepsilon)|=|\mathsf{S}|$,
- \item  $\Ks(\Ded(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j}))< k-1$ for every non-empty $\Ded(\mathsf{S},\mathsf{i}^{y},\mathsf{o}^{j})$,
+ \item  $|\Ded(\mathsf{S},\mathsf{i},\varepsilon)|=|\mathsf{S}|$,
+ \item  $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}^{j}))< k-1$ for every non-empty $\Ded(\mathsf{S},\mathsf{i},\mathsf{o}^{j})$,
  \end{itemize} 
 then $\Ks(\mathsf{S})=k$, where $k >0$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
  \item else $\Ks(\mathsf{S})=\infty$.
@@ -207,7 +207,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
-Therefore we have this \BCN\ is the online observable, we can determine the initial state of it. Comparing with {\em Example \ref{exa:6}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by {\bf Type-III} observability. %Thus with the online observability we can research the \BCNs\ better.
+Therefore we have this \BCN\ is the online observable, we can determine the initial state of it. Comparing with {\em Example \ref{exa:6}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by {\bf Type-III} observability when their initial state cannot be reset. %Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
 \end{example}  
 
@@ -235,4 +235,4 @@ From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}}  and the implication
 
 %\tl{(13)maybe you have done this, but I feel that one needs to highlight the advantages of this def. It is neither the strongest nor the weakest, why one should choose this?}
 
-In conclusion, the online observability addresses the necessary and sufficient condition of determining $\mathsf{s}(0)$ when the $\mathsf{s}(0)$ can not be reset. Because at every time $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. And as a \BCN\ is identifiable from input-output data iff it is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset, the online observability could help us further researching the identification problem of \BCNs. 
+In conclusion, the online observability addresses the necessary and sufficient condition of determining $\mathsf{s}(0)$ when the $\mathsf{s}(0)$ cannot be reset. Because at every time $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. To identify the updating rules of a \BCN\  from its input-output data requires its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. Thus the online observability could help us further researching the identification problem of \BCNs. 

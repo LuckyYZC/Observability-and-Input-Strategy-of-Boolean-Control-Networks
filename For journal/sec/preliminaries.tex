@@ -141,10 +141,10 @@ is an input sequence,
 $F^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k) \in(\Delta_M)^k$
  is a state sequence, and 
  $(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k) \in(\Delta_N)^k$
- is an output sequence. That for every $1\le p \le |\mathsf{I}|$ we have 
- $\mathsf{s}(t+p)=f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1))$,
+ is an output sequence. That for every $1\le i \le |\mathsf{I}|$ we have 
+ $\mathsf{s}(t+i)=f(\mathsf{i}(t+i-1),\mathsf{s}(t+i-1))$,
 and 
- \[\mathsf{o}(t+p)=h(\mathsf{s}(t+p))=h(f(\mathsf{i}(t+p-1),\mathsf{s}(t+p-1))).\] 
+ \[\mathsf{o}(t+i)=h(\mathsf{s}(t+i))=h(f(\mathsf{i}(t+i-1),\mathsf{s}(t+i-1))).\] 
 
 %These mappings describe the relations of state ($\mathsf{s}(t)$), input sequence ($\mathsf{I}$), state sequence ($F^k_{\mathsf{s}(t)}(\mathsf{I})$ and $F^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$) and output sequence ($(HF)^k_{\mathsf{s}(t)}(\mathsf{I})$ and $(HF)^{\infty}_{\mathsf{s}(t)}(\mathsf{I})$). 
 The four existing observability definitions are given as follows.
@@ -226,7 +226,7 @@ The implication relationships of four existing types of observability shown in F
 
  
 %However, in some biological systems which depicted by \BCNs, the initial states of them can be checked at most once. Therefore,
-The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability is designed to study the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to replace the {\bf Type-III} observability, such that we can further research the identification problem.
+The {\bf Type-I} observability and {\bf Type-II} observability are designed to determine the initial states of \BCNs\ when their initial state can be reset. The {\bf Type-IV} observability is designed to study the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCNs. In this paper, we want to use the new observability we propose to replace the {\bf Type-III} observability, such that we can research the identification problem better.
 %As the first observability and second observability are designed to determine the initial states of \BCNs\ by taking the determining procedure multiple times in parallel. %\tl{why this claim?} 
 %And in some applications, we have to determine \BCNs' initial states by taking the determining procedure once. The third and fourth observability are designed to determine the initial states of \BCNs\ by taking the determining procedure once. But if a \BCN\ is not satisfy the third observability, we can not use them to determine its initial states by taking the determining procedure once.  %Thus, we propose the online observability of \BCNs\ to solve the problem.
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
@@ -243,15 +243,15 @@ The identification problem is stated as follows.
 		\mathsf{o}(t)=&h(\mathsf{s}(t))
 		\end{split}
 	\end{equation*}
-	can be determined via its input-output data. 
+	can be determined via its input-output data \cite{Cheng2011Identification}.
 \end{definition}
 
 And the controllability of \BCNs\ is defined as follows.
 \begin{definition}[Controllability]
-	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$.
+	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$ \cite{cheng2009controllability}.
 \end{definition}
 
-From the paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. And in this paper, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. But we find that we can replace the {\bf type-III} observability by the online observability in the identification problem.
+From this paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. And in this paper, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. But we find a new way to determine $\mathsf{s}(0)$ which is better than the way corresponding to {\bf type-III} observability. 
 
 
 % \begin{problem}
