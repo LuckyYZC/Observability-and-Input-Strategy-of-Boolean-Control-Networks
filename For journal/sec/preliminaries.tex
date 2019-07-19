@@ -3,7 +3,7 @@
 
 \section{Preliminaries} 
 \label{sec:pre}
-In this section we introduce {\BCNs} and the four existing types of observability. Throughout the paper,  let $\mathbb{B}=\{0,1\}$.
+In this section we introduce {\BCNs}, the four existing types of observability and the identification problem. Throughout the paper,  let $\mathbb{B}=\{0,1\}$.
 
 \subsection{Boolean Control Networks}
 
@@ -35,7 +35,7 @@ The updating rules are given as
 %===========================================================
 In the definition, we have that % we have that in the directed graph
 \begin{itemize}
-	\item $\ell$, $m$ and $n$ represent the number of input-nodes, state-nodes and output-nodes respectively, $\epsilon$ represents the number of edges;
+	\item $\ell$, $m$ and $n$ represent the number of input-nodes, state-nodes and output-nodes, respectively, $\epsilon$ represents the number of edges;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
 	\item every directed edge from a state-node $\mathsf{s}_i$ (or an input-node $\mathsf{i}_w$) to a state-node $\mathsf{s}_j$ means that  $\mathsf{s}_j(t+1)$ is affected by $\mathsf{s}_i(t)$ (or $\mathfrak{i}_w(t)$);	
 	\item every directed edge from a state-node $\mathsf{s}_i$ to an output-node $\mathsf{o}_j$ means that   $\mathsf{o}_j(t)$  is affected by $\mathsf{s}_i(t)$.  
@@ -153,7 +153,7 @@ The four existing observability definitions are given as follows.
 The {\bf Type-I} observability is that, a \BCN\ is called observable, if for every initial state \State$(0)$$\in \Delta_M$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $h(\mathsf{s}'(0))=h(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I})\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I})$ \cite{cheng2009controllability}.
 \end{definition}
 
-The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an $\mathsf{I}$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. 
+The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every \State$(0)$ can be distinguished from other types of initial state by an $\mathsf{I} \in(\Delta_L)^k$.  For instance,
 \begin{itemize}
@@ -169,7 +169,7 @@ Therefore this \BCN\ satisfies the  {\bf Type-I} observability.
 	The  {\bf Type-II} observability is that, a \BCN\ is called observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that $h(\mathsf{s}(0))=h(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I})$ \cite{Zhao2010Input}.
 \end{definition}
 
-The {\bf Type-II} observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}(0)$, $\mathsf{s}'(0)$, there exists an $\mathsf{I}$ which can distinguish them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
+The {\bf Type-II} observability means that a \BCN\ is called observable if for every two distinct $\mathsf{s}(0)$, $\mathsf{s}'(0)$, there exists an input sequence $\mathsf{I}$ which can distinguish them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}(0)$ and $\mathsf{s}'(0)$, there exists an $\mathsf{I}\in(\Delta_L)^k$ which can distinguish them.  For instance,
 \begin{itemize}
@@ -184,7 +184,7 @@ Therefore this \BCN\ satisfies the {\bf Type-II} observability.
 The {\bf Type-III} observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, $h(\mathsf{s}(0))=h(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an $\mathsf{I}\in(\Delta_L)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}$ can distinguish any two distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}$ can distinguish any two distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not any $\mathsf{I}\in(\Delta_L)^k$ which can determine the $\mathsf{s}(0)$ of this \BCN:
