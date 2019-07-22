@@ -38,12 +38,6 @@ In the process of constructing input-labelled graph for a \BCN, we build the ver
  \subsection{Determination algorithm}
  Then we propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph.%, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
 
-\begin{description}
-\item[Step 1]  For every $n>0$ we try to build vertexes with $n$ states which with the same corresponding output. 
-\item[Step 2] If the vertexes can  be built, when $n>1$, we check the $\Ks(\mathsf{S}^i)$ of every vertex and build edges for it. If there is a vertex without any edge, then the \BCN\ is not online observable.
-\item[Step 3] Else if we can not build any vertex with $n$ states, then we have for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)))\ne\infty$, and then the \BCN\ is online observable.
- \end{description}
-
 \begin{algorithm}[h]
 \caption{Determination algorithm}
 \begin{algorithmic}[1]
@@ -80,6 +74,10 @@ The input-labelled graph of \BCN
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
+
+
+ We build all the vertexes which consist of sets of states producing the same outputs, and build edges for these vertexes. If there is a vertex without any edge, then the \BCN\ is not online observable. Otherwise, the \BCN\ is online observable.
+
 \begin{algorithm}[h!]
 \caption{{\sf buildvertex}(integer $n$)}
 \begin{algorithmic}[1]
