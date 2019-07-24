@@ -56,7 +56,7 @@ Precisely speaking, there is an input sequence $\mathsf{I}=\mathsf{i}(0),\mathsf
 %\item  The  {\bf type-IV}  observability was  proposed in 2013 \cite{Fornasini2013Observability}. It states that a \BCN\ $\BB$ is observable if every sufficient long $\mathsf{i}(0)\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ genertaes different output sequences  from different initial states. Precisely speaking, there is a big enough number $M$, for every  input sequence $\mathsf{i}(0),\mathsf{i}(1),\ldots, \mathsf{i}(k-1)$ which is not shorter than $M$, the output sequences $\mathsf{o}(0), \mathsf{o}(1), \ldots, \mathsf{o}(k)$ and  $\mathsf{o}'(0), \mathsf{o}'(1), \ldots, \mathsf{o}'(k)$ produced by the inout sequence from every two different initial states $\mathsf{s}(0)$ and $\mathsf{s}'(0)$, respectively, are different.
 %\end{enumerate}
  We will give the formal definition of identifiability in Section~\ref{sec:pre}. And in this paper \cite{Cheng2011Identification}, author claims that a \BCN\ is identifiable iff it is controllable and observable. The controllability and observability are described as follows. 
- \JP{So far, I don't see a clear difference among the first three types from the above description.}
+ %\JP{So far, I don't see a clear difference among the first three types from the above description.}
 
 {\em Controllability}: A \BCN\ $\BB$ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there exists an input sequence $\mathsf{i}(0),\mathsf{i}(1),\ldots,\mathsf{i}(k-1)$ for some $k>0$, such that the state sequence $\mathsf{s}(1),\ldots, \mathsf{s}(k)$ can be produced by $\mathsf{I}$.
 
@@ -107,7 +107,7 @@ Assume a \BCN\ $\BB$  with the observability. Then, there is an input sequence $
 %Loosely speaking, different applications require different algorithms to determine $\mathsf{s}(0)$, and the four types of observability present whether a \BCN\ can be determined by these four algorithms respectively. In the algorithms corresponding to {\bf type-I} and {\bf type-II} observability, it requires the $\mathsf{s}(0)$ of \BCN\ can be reset because we need to repeat the Step 2. Thus when the initial state of \BCN\ can be reset, we use these two ways to determine $\mathsf{s}(0)$. The {\bf type-IV} observability is proposed to research the reconstructibility of \BCN. The {\bf type-III} observability is proposed to research the identification of \BCN. 
 
 %Moreover, in the identification problem of \BCNs, a \BCN\ is identifiable iff it is controllable and its $\mathsf{s}(0)$ can be determined when $\mathsf{s}(0)$ cannot be reset \cite{Cheng2011Identification}. And in this paper \cite{Cheng2011Identification}, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. %And the second observability is the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining procedure once. 
-\JP{What applications?}
+%\JP{What applications?}
 
 While, in this paper, we propose a new algorithm to determine $\mathsf{s}(0)$. %address the necessary and sufficient condition of determining $\mathsf{s}(0)$ by taking the determining process once to make \BCN\ be able to apply to more applications.
 %\JP{Here, `necessary and sufficient condition' appears for the first time. What are their precise definitions?}
