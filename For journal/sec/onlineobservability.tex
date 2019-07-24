@@ -34,7 +34,7 @@
 %Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for a \BCN\ to meet the requirements to determine its initial state. According to this rule, we propose the online observability. 
 %\tl{(6)does this mean that online observability is dependent on a particular rule?}
  %by taking the determining procedure once, we only need to complete the following procedure.
-Based on the new algorithm mentioned in {\em Section \ref{sec:intro}}, we propose the online observability, viz., a \BCN\ is observable if its $\mathsf{s}(0)$ can be determined by this algorithm. And we call the observability defined in {\em Section \ref{sec:pre}} offline observability.
+Based on the new algorithm mentioned in {\em Section \ref{sec:intro}}, we propose the online observability, viz., a \BCN\ is online observable if its $\mathsf{s}(0)$ can be determined by this algorithm. And we call the observability defined in {\em Section \ref{sec:pre}} offline observability.
 
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
 
@@ -86,7 +86,7 @@ If $\mathsf{o}= \varepsilon$
 %& \mathsf{s}'=  \mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 %\end{split}
 %\end{equation*}
-where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\Delta_N\cup\varepsilon)$, $\varepsilon$ presents empty output.
+where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\Delta_N\cup\varepsilon)$, and $\varepsilon$ presents empty output.
 %\tl{check whether this is what you want!?}\gs{It is ok.}
 \end{definition}
 
@@ -185,7 +185,7 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 
 \begin{definition}[Online Observability of  BCNs]
 %\tl{(12)why $\epsilon$ is in the def? for which purpose?}
- A \BCN\ is online observable,
+ A \BCN\ $\BB$ is online observable,
 if for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$, $\Ks(\Ded\left(\Delta_M,\varepsilon,\mathsf{o}^{j}(0)\right))\ne\infty$.
 \end{definition}
 
@@ -200,7 +200,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
-Therefore we have this \BCN\ is the online observable, we can determine the initial state of it. Comparing with {\em Example \ref{exa:6}}, the online observability can be used to determine the initial states of some \BCNs\ which can not be determined by offline observability when their initial state cannot be reset. And we have this \BCN\ is controllable, thus it is identifiable too.  %Thus with the online observability we can research the \BCNs\ better.
+Therefore we have this \BCN\ is the online observable, we can determine the initial state of it. And this \BCN\ is controllable, thus it is identifiable too.  %Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
 \end{example}  
 
