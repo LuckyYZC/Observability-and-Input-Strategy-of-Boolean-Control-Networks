@@ -123,6 +123,33 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
 %=======================================================================
 
 %=======================================================================
+
+\subsection{Identification of \BCNs}
+\tl{what's the point here?}
+The identification problem is stated as follows. 
+\begin{definition}[Identifiability]
+	A \BCN\ is identifiable if its updating rules 
+	\begin{equation*}
+    		\begin{split}
+		\mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
+		\mathsf{o}(t)=&h(\mathsf{s}(t))
+		\end{split}
+	\end{equation*}
+	can be determined via its input-output data \cite{Cheng2011Identification}.
+\end{definition}
+
+And the controllability of \BCNs\ is defined as follows.
+\begin{definition}[Controllability]
+	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$ \cite{cheng2009controllability}.
+\end{definition}
+
+\begin{example}
+For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$. For instance, when initial state $\mathsf{s}(0)= \delta_{16}^{1}$, destination state $\mathsf{s}(k)=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that in the $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
+\label{exa:12}
+\end{example}  
+
+From this paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. And in this paper, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. But we find a new way to determine $\mathsf{s}(0)$ which is better than the way corresponding to {\bf type-III} observability. 
+
 \subsection{Four existing observability definitions of \BCNs}
 To introduce the four existing definitions of observability of \BCNs, we first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
@@ -232,31 +259,7 @@ The {\bf Type-I} observability and {\bf Type-II} observability are designed to d
 %Moreover, in some biological systems, it would takes many costs to check these biological systems. Hence it would cost a lot of overhead for us to determine the initial state of them by the first observability and second observability.
 
 
-\subsection{Identification of \BCNs}
-\tl{what's the point here?}
-The identification problem is stated as follows. 
-\begin{definition}[Identifiability]
-	A \BCN\ is identifiable if its updating rules 
-	\begin{equation*}
-    		\begin{split}
-		\mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
-		\mathsf{o}(t)=&h(\mathsf{s}(t))
-		\end{split}
-	\end{equation*}
-	can be determined via its input-output data \cite{Cheng2011Identification}.
-\end{definition}
 
-And the controllability of \BCNs\ is defined as follows.
-\begin{definition}[Controllability]
-	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$ \cite{cheng2009controllability}.
-\end{definition}
-
-\begin{example}
-For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$. For instance, when initial state $\mathsf{s}(0)= \delta_{16}^{1}$, destination state $\mathsf{s}(k)=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that in the $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
-\label{exa:12}
-\end{example}  
-
-From this paper \cite{Cheng2011Identification}, we have a \BCN\ is identifiable from input-output data iff the \BCN\ is controllable and its $\mathsf{s}(0)$ can be determined  when the $\mathsf{s}(0)$ can not be reset. And in this paper, author regards the {\bf type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ cannot be reset. But we find a new way to determine $\mathsf{s}(0)$ which is better than the way corresponding to {\bf type-III} observability. 
 
 
 % \begin{problem}
