@@ -39,26 +39,26 @@ for every $\mathsf{o} \in \Delta_N$, $\Ded(\mathsf{S}^1,\mathsf{i},\mathsf{o})\n
 \end{proof}
 
 
-\subsection{Proof of Lemma \ref{lemm:3}}
-\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if $\Ks(\mathsf{S}(t))\ne\infty$, then for every state \State$(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$ such that for every $\mathsf{s}'(t)\in \mathsf{S}(t)$, $\mathsf{s}'(t)\neq \mathsf{s}(t)$ implies $(HF)^{k}_{\mathsf{s}'(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(t)}}(\mathsf{I})$.
-\begin{itemize}
-\item When $\Ks(\mathsf{S}(t))=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}'(t)\in \mathsf{S}(t)$ and $\mathsf{s}(t)\neq \mathsf{s}(t)$. Therefore, we have that for any $k >0$, for every input sequence $\mathsf{I}\in(\Delta_L)^{k}$ the propostion is right. 
-\item If for $\Ks(\mathsf{S}(t))=0,\ldots, n$ the propostion is right. When $\Ks(\mathsf{S}(t))=n+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_L$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$, $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)))<(n+1)$.
- \end{itemize}
- Then we have for every \State$(t)$$\in \mathsf{S}(t)$, there exists an $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$, such that for all $\mathsf{s}'(t)\in \mathsf{S}(t)$, $\mathsf{s}'(t)\neq \mathsf{s}(t)$ implies $(HF)^{k}_{\mathsf{s}'(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}(t)\mathsf{I}'$. That the input sequence $\mathsf{I}'$ satisfies the following properties,
-  for all states \[\mathsf{s}'(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}(t+1))),\]\[\mathsf{s}'(t+1)\neq \mathsf{s}(t+1)\] implies \[(HF)^p_{\mathsf{s}'(t+1)}(\mathsf{I}')\neq (HF)^p_{{\mathsf{s}(t+1)}}(\mathsf{I}'),\] where $\mathsf{s}(t+1)=f(\mathsf{s}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $\Ks(\mathsf{S}(t))=n+1$. 
+%\subsection{Proof of Lemma \ref{lemm:3}}
+%\begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if $\Ks(\mathsf{S}(t))\ne\infty$, then for every state \State$(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$ such that for every $\mathsf{s}'(t)\in \mathsf{S}(t)$, $\mathsf{s}'(t)\neq \mathsf{s}(t)$ implies $(HF)^{k}_{\mathsf{s}'(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(t)}}(\mathsf{I})$.
+%\begin{itemize}
+%\item When $\Ks(\mathsf{S}(t))=0$, we have $|\mathsf{S}(t)|=1$, then for every \State$(t)$$\in \mathsf{S}(t)$ there does not exist any $\mathsf{s}'(t)\in \mathsf{S}(t)$ and $\mathsf{s}(t)\neq \mathsf{s}(t)$. Therefore, we have that for any $k >0$, for every input sequence $\mathsf{I}\in(\Delta_L)^{k}$ the propostion is right. 
+%\item If for $\Ks(\mathsf{S}(t))=0,\ldots, n$ the propostion is right. When $\Ks(\mathsf{S}(t))=n+1$, we have for $\mathsf{S}(t)$ there exists a $\mathsf{i}^{i}(t)\in \Delta_L$ such that
+% \begin{itemize}
+% \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}^{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+% \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1))$, $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),\mathsf{o}^{j}(t+1)))<(n+1)$.
+% \end{itemize}
+ %Then we have for every \State$(t)$$\in \mathsf{S}(t)$, there exists an $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$, such that for all $\mathsf{s}'(t)\in \mathsf{S}(t)$, $\mathsf{s}'(t)\neq \mathsf{s}(t)$ implies $(HF)^{k}_{\mathsf{s}'(t)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(t)}}(\mathsf{I})$, where the input sequence $\mathsf{I}=\mathsf{i}(t)\mathsf{I}'$. That the input sequence $\mathsf{I}'$ satisfies the following properties,
+%  for all states \[\mathsf{s}'(t+1)\in \Ded(\mathsf{S}(t),\mathsf{i}^{i}(t),h(\mathsf{s}(t+1))),\]\[\mathsf{s}'(t+1)\neq \mathsf{s}(t+1)\] implies \[(HF)^p_{\mathsf{s}'(t+1)}(\mathsf{I}')\neq (HF)^p_{{\mathsf{s}(t+1)}}(\mathsf{I}'),\] where $\mathsf{s}(t+1)=f(\mathsf{s}(t),\mathsf{i}^{i}(t))$. Then we have the propostion is right when $\Ks(\mathsf{S}(t))=n+1$. 
 
-\end{itemize}
-As the propostion is right when $\Ks(\mathsf{S}(t))=0$, and we have if for $\Ks(\mathsf{S}(t))=0,\ldots, n$ the propostion is right, then the propostion is right when $\Ks(\mathsf{S}(t))=n+1$. Thus the propostion is right for any $\Ks(\mathsf{S}(t))\ge0$.
+%\end{itemize}
+%As the propostion is right when $\Ks(\mathsf{S}(t))=0$, and we have if for $\Ks(\mathsf{S}(t))=0,\ldots, n$ the propostion is right, then the propostion is right when $\Ks(\mathsf{S}(t))=n+1$. Thus the propostion is right for any $\Ks(\mathsf{S}(t))\ge0$.
 
-Secondly, we have that if a \BCN\ is online observable,
-then for every  non-empty $\Ded\left(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)\right)$, $\Ks(\Ded\left(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)\right))\ne \infty$
+%Secondly, we have that if a \BCN\ is online observable,
+%then for every  non-empty $\Ded\left(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)\right)$, $\Ks(\Ded\left(\Delta_M,\varepsilon, \mathsf{o}^{j}(0)\right))\ne \infty$
 
-Therefore, we have for every initial state \State$(0)$$\in \Delta_M$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$ such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $h(\mathsf{s}'(0))=h(\mathsf{s}(0))$ implies $(HF)^{k}_{\mathsf{s}'(0)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the  {\bf Type-I} observability if it is online observable.
-\end{proof}
+%Therefore, we have for every initial state \State$(0)$$\in \Delta_M$, there exists an input sequence $\mathsf{I}\in(\Delta_L)^{k}$ for some $k >0$ such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $h(\mathsf{s}'(0))=h(\mathsf{s}(0))$ implies $(HF)^{k}_{\mathsf{s}'(0)}(\mathsf{I})\neq (HF)^{k}_{{\mathsf{s}(0)}}(\mathsf{I})$. Thus the \BCN\ satisfies the  {\bf Type-I} observability if it is online observable.
+%\end{proof}
 
 \subsection{Proof of Lemma \ref{lemm:4}}
 
