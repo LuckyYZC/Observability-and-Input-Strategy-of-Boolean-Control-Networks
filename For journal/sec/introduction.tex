@@ -13,12 +13,13 @@ In general, $n_i(t+1)$ is determined by a logical function of $n_j(t),\ldots,n_p
 %The logical operators used in  the logical functions include AND, OR, NO, XOR.  
 Some general descriptions of the \BNs\ and their applications to biological systems can be found in~\cite{Kauffman1968Metabolic}. There exists a large number of  systems, both natural and artificial, which are modelled as \BNs, e.g. ~\cite{Akutsu2000Inferring, Shmulevich2002From, Faur2006Dynamical,Green2007The,Lou2010Multi}.
 
-\BNs\ can be naturally extended to Boolean control networks (\BCNs) with external regulations and perturbations~\cite{Ideker2001A}. \BCNs\ have been applied to  various real-life problems. Cases of application can be found in 
-structural and functional analysis of signaling and regulatory networks~\cite{Kaufman1999A, Klamt2006A}, 
+\BNs\ can be naturally extended to Boolean control networks (\BCNs) with external regulations and perturbations~\cite{Ideker2001A}. \BCNs\ have been applied to  various real-life problems, %. Cases of application can be found 
+with typical examples from  structural and functional analysis of signaling and regulatory networks~\cite{Kaufman1999A, Klamt2006A}, 
 abduction based drug target discovery~\cite{Biane2017Abduction}, 
 and pursuing evasion problems in polygonal environments~\cite{Thunberg2011A}.
 %
-There are three kinds of nodes in \BCNs:  {\em input-nodes}, {\em state-nodes}  and {\em output-nodes}. At any moment of time each node takes a Boolean value.  The value of an output-node at time point $t$ (where $t\geq 0$)  depends on the values of state-nodes at time $t$, but the value of a  state-node at time point $t+1$  is determined by a  Boolean function of the values of the input-nodes and state-nodes at time point $t$. And these relations between nodes are presented by the updating rules of \BCN.  However,  we can only control the  values of the input-nodes and observe those of the output-nodes. We cannot observe how the values of the state-nodes change from time to time.
+
+In general, there are three kinds of nodes in \BCNs:  {\em input-nodes}, {\em state-nodes}  and {\em output-nodes}. At any  time each node takes a Boolean value.  The value of an output-node at time point $t$ (where $t\geq 0$)  depends on the values of state-nodes at time $t$, but the value of a  state-node at time point $t+1$  is determined by a  Boolean function of the values of the input-nodes and state-nodes at time point $t$.  These relations between nodes are presented by the updating rules of \BCN.  However,  we can only control the  values of the input-nodes and observe those of the output-nodes. We cannot observe how the values of the state-nodes change from time to time.
 %Therefore, it is important to find a way to determine the initial values of the state-nodes at $0$ after observing a sequence of values of  input-nodes and their corresponding  values of the output-nodes. This is in general known as the {\em observability} of a \BCN.
 
 The identification of \BCNs\ was proposed in~\cite{Cheng2011Identification}. It is about how to determine the updating rules of a \BCN\ from the values of  input-nodes  and output-nodes at a sequence of time points $0,\ldots, k$. And it is an important topic, for example, we may be interested in the updating rules of a \BCN\ which presents a real celluar network. 
