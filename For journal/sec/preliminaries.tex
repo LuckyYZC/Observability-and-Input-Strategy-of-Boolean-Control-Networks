@@ -12,7 +12,12 @@ A Boolean control network can be defined as a directed graph together with logic
 \begin{definition}[Boolean Control Networks, \cite{Ideker2001A}] A \BCN\
 	is a directed graph which consists of 
 	\begin{itemize}
-	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_{\ell}$}, state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_m$} and output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_n$};
+	\item nodes:
+	\begin{itemize}
+	\item input-nodes: {$\mathsf{i}_1$,\ldots ,$\mathsf{i}_{\ell}$};  
+	\item state-nodes: {$\mathsf{s}_1$,\ldots ,$\mathsf{s}_m$};
+	\item output-nodes: {$\mathsf{o}_1$,\ldots ,$\mathsf{o}_n$};
+	\end{itemize}	
 	\item  directed edges: 
 		\begin{equation*}
 			\begin{split}
@@ -22,7 +27,7 @@ A Boolean control network can be defined as a directed graph together with logic
 		\end{equation*}
 	
 \end{itemize}	
-The updating rules are given as
+Its updating rules are given as
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&f(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -33,7 +38,7 @@ The updating rules are given as
  \end{definition}
 
 %===========================================================
-In the definition, we have that % we have that in the directed graph
+In the definition, %we have that % we have that in the directed graph
 \begin{itemize}
 	\item $\ell$, $m$ and $n$ represent the number of input-nodes, state-nodes and output-nodes, respectively, $\epsilon$ represents the number of edges;
           \item every node in a \BCN\ can take a value from $\{0,1\}$ at a discrete time $t=0, 1, 2,\ldots$;
@@ -130,23 +135,23 @@ To introduce the definitions of identifiability, controllability and observabili
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& (\Delta_L)^k\mapsto(\Delta_M)^k\\
-&=\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k)\\
+&=\mathsf{i}(t),\ldots ,\mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1), \ldots,\mathsf{s}(t+k)\\
 (HF)^k_{\mathsf{s}(t)} :& (\Delta_L)^k\mapsto(\Delta_N)^k\\
- &=\mathsf{i}(t)\ldots \mathsf{i}(t+k-1) \mapsto \mathsf{o}(1)\ldots\, \mathsf{o}(t+k)
+ &=\mathsf{i}(t),\ldots ,\mathsf{i}(t+k-1) \mapsto \mathsf{o}(1),\ldots,\mathsf{o}(t+k)
 \end{split}
 \label{equ:6}
 \end{equation}
 %\tl{but you have defined $\Delta_N$, $\Delta_M$ and $\Delta_Q$ just now?!}
 where $\mathsf{s}(t)\in \Delta_M$ and $k>0$. For all  $k>0$,
-$\mathsf{I}=\mathsf{i}(t)\ldots \mathsf{i}({t+k-1}) \in(\Delta_L)^k$
+$\mathsf{I}=\mathsf{i}(t),\ldots,\mathsf{i}({t+k-1}) \in(\Delta_L)^k$
 is an input sequence, 
-$F^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1) \ldots\, \mathsf{s}(t+k) \in(\Delta_M)^k$
+$F^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{s}(t+1), \ldots,\mathsf{s}(t+k) \in(\Delta_M)^k$
  is a state sequence, and 
- $(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1)\ldots\, \mathsf{o}(t+k) \in(\Delta_N)^k$
- is an output sequence. That for every $1\le i \le |\mathsf{I}|$ we have 
- $\mathsf{s}(t+i)=f(\mathsf{i}(t+i-1),\mathsf{s}(t+i-1))$,
+ $(HF)^k_{\mathsf{s}(t)}(\mathsf{I})=\mathsf{o}(t+1),\ldots,\mathsf{o}(t+k) \in(\Delta_N)^k$
+ is an output sequence. That for every $1\le x \le |\mathsf{I}|$ we have 
+ $\mathsf{s}(t+x)=f(\mathsf{i}(t+x-1),\mathsf{s}(t+x-1))$,
 and 
- \[\mathsf{o}(t+i)=h(\mathsf{s}(t+i))=h(f(\mathsf{i}(t+i-1),\mathsf{s}(t+i-1))).\] 
+ \[\mathsf{o}(t+x)=h(\mathsf{s}(t+x))=h(f(\mathsf{i}(t+x-1),\mathsf{s}(t+x-1))).\] 
 
 The identifiability, controllability and observability of \BCNs\ is stated as follows. 
 \begin{definition}[Identifiability]%

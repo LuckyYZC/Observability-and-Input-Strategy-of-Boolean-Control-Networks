@@ -34,7 +34,7 @@
 %Therefore, we have that if we utilize sets of possible states we derived more, it would be easier for a \BCN\ to meet the requirements to determine its initial state. According to this rule, we propose the online observability. 
 %\tl{(6)does this mean that online observability is dependent on a particular rule?}
  %by taking the determining procedure once, we only need to complete the following procedure.
-Based on the new algorithm mentioned in {\em Section \ref{sec:intro}}, we propose the online observability, viz., a \BCN\ is online observable if its $\mathsf{s}(0)$ can be determined by this algorithm. And we call the observability defined in {\em Section \ref{sec:pre}} offline observability.
+Based on the new algorithm mentioned in {\em Section \ref{sec:intro}}, we propose the online observability, viz., a \BCN\ is online observable if its $\mathsf{s}(0)$ can be determined by this new algorithm. And we call the observability defined in {\em Section \ref{sec:pre}} offline observability.
 
 %And in this procedure, instead of finding the  $\mathsf{I}$ to determine $\mathsf{s}(0)$ before we take the determining procedure. We use the $\mathsf{S}(t)$ we derive at every time step $t$ to adaptively construct $\mathsf{I}$. 
 
@@ -91,7 +91,7 @@ where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, 
 \end{definition}
 
  Then we have $\mathsf{S}(t)$ is defined as follows. 
- \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$ and $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$, %for every $t\le k$, 
+ \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}=\mathsf{i}(0),\ldots,\mathsf{i}(k-1)$ and $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{o}(0),\ldots,\mathsf{o}(k)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
