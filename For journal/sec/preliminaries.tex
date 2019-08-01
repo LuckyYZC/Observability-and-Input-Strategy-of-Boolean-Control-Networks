@@ -137,7 +137,7 @@ To introduce the definitions of identifiability, controllability and observabili
 F^k_{\mathsf{s}(t)}:& (\Delta_L)^k\mapsto(\Delta_M)^k\\
 &=\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1)\ldots\mathsf{s}(t+k)\\
 (HF)^k_{\mathsf{s}(t)} :& (\Delta_L)^k\mapsto(\Delta_N)^k\\
- &=\mathsf{i}(t)\ldots\mathsf{i}(t+k-1) \mapsto \mathsf{o}(1)\ldots\mathsf{o}(t+k)
+ &=\mathsf{i}(t)\ldots\mathsf{i}(t+k-1) \mapsto \mathsf{o}(t+1)\ldots\mathsf{o}(t+k)
 \end{split}
 \label{equ:6}
 \end{equation}
@@ -192,7 +192,7 @@ Therefore this \BCN\ satisfies the {\bf Type-II} observability.
 The {\bf Type-III} observability is that, a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, $h(\mathsf{s}(0))=h(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$ \cite{Cheng2011Identification}.
 \end{definition}
 
-The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}[k]$ can distinguish any two distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}[k]$ can distinguish all distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not any $\mathsf{I}[k]\in(\Delta_L)^k$ which can determine the $\mathsf{s}(0)$ of this \BCN:
@@ -244,7 +244,7 @@ The identifiability and controllability of \BCNs\ is stated as follows.
 		\mathsf{o}(t)=&h(\mathsf{s}(t))
 		\end{split}
 	\end{equation*}
-	can be determined via the input-output data $\mathsf{I}[k]$ and $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])$ \cite{Cheng2011Identification}.
+	can be determined by $\mathsf{I}[k]$ and $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])$ \cite{Cheng2011Identification}.
 \end{definition}
 
 \begin{definition}[Controllability]
