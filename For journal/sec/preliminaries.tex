@@ -248,11 +248,11 @@ The identifiability and controllability of \BCNs\ is stated as follows.
 \end{definition}
 
 \begin{definition}[Controllability]
-	A \BCN\ $\BB$ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$ \cite{cheng2009controllability}.
+	A \BCN\ $\BB$ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$~\cite{cheng2009controllability}.
 \end{definition}
 
 \begin{example}
-For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}(k)$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$. For instance, when initial state $\mathsf{s}(0)= \delta_{16}^{1}$, destination state $\mathsf{s}(k)=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that in the $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
+For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I})=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, the initial state $\mathsf{s}(0)= \delta_{16}^{1}$, destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
 \label{exa:12}
 \end{example}  
 
