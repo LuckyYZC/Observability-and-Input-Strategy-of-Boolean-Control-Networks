@@ -33,7 +33,7 @@ Intuitively, $\mathcal{V}$ represents all of the state sets $\mathsf{S}$ which s
 In the process of constructing input-labelled graph for a \BCN, we build the vertexes with fewer states at first, and then build the vertexes with more states.
 \begin{itemize}
 \item  Firstly, once we find a $\mathsf{S}^i$ that $\Ks(\mathsf{S}^i)= \infty$, and as there exists $\mathsf{o}^{j}\in \Delta_N$ that $\mathsf{S}^{i}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$ based on the {\em Lemma \ref{lemm:1}}, and then the \BCN\ is not online observable.
-\item  Secondly, from the {\em Lemma \ref{lemm:2}}, as we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$, we can preliminarily determine $\Ri(\mathsf{S})$.
+\item  Secondly, from the {\em Lemma \ref{lemm:2}}, as we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$, we can preliminarily determine $\Ri(\mathsf{S})$ for $\mathsf{S}$.
  \end{itemize}
  \subsection{Determination algorithm}
  Then we propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph.%, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
