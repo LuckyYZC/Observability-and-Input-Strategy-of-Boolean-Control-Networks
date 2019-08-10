@@ -64,7 +64,7 @@ To formally define the online observability, we start with he derivation functio
 
 We write $\xi(\mathsf{i}, s):= \left\{
 \begin{array}{rcl}
-f( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
+\sigma( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
 \end{array} \right. $\\
 where $\varepsilon$ presents empty input.
@@ -74,7 +74,7 @@ where $\varepsilon$ presents empty input.
 %$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
 If $\mathsf{o}\neq \varepsilon$
 \begin{equation*}
- \Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, s ) \mid  \mathsf{s} \in \mathsf{S},  h(\xi(\mathsf{i}, s ))=\mathsf{o}\}
+ \Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, s ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, s ))=\mathsf{o}\}
 \end{equation*}
 If $\mathsf{o}= \varepsilon$
 \begin{equation*}

@@ -46,10 +46,10 @@ The updating rules of \BCN
 \ENSURE  
 The input-labelled graph of \BCN
 \STATE Boolean value $Ob=$ true 
-\STATE integer $i$ , $j$, $n=1$\
+\STATE integer $i$ , $j$, $z=1$\
 \STATE array $VertexArray[\ ]$, $InputArray[\ ]$
-\STATE {\sf buildvertex}($n$)
-\STATE $VertexArray=${\sf buildvertex}($++n$)
+\STATE {\sf buildvertex}($z$)
+\STATE $VertexArray=${\sf buildvertex}($++z$)
 \WHILE {($VertexArray!=$Null)}
 \FOR{($i=0$; $i<arraysize(VertexArray)$; $i++$)}
 \IF{($p==2$)}
@@ -68,7 +68,7 @@ The input-labelled graph of \BCN
 \STATE return Null
 \ENDIF
 \ENDFOR
-\STATE $VertexArray=${\sf buildvertex}($++n$)
+\STATE $VertexArray=${\sf buildvertex}($++z$)
 \ENDWHILE
 \STATE return $\Delta_M$\
 \end{algorithmic}
@@ -79,13 +79,13 @@ The input-labelled graph of \BCN
  We build all the vertexes which consist of sets of states producing the same outputs, and build edges for these vertexes. If there is a vertex without any edge, then the \BCN\ is not online observable. Otherwise, the \BCN\ is online observable.
 
 \begin{algorithm}[h!]
-\caption{{\sf buildvertex}(integer $n$)}
+\caption{{\sf buildvertex}(integer $z$)}
 \begin{algorithmic}[1]
 \REQUIRE 
-The number of states $n$
+The number of states $z$
 \ENSURE  
-The vertexes with $n$ states which with identical corresponding outputs 
-\STATE  Build all vertexes with $n$ states 
+The vertexes with $z$ states which with identical corresponding outputs 
+\STATE  Build all vertexes with $z$ states 
 \IF{(Failed to build)} 
 \STATE  return Null
 \ELSE 
@@ -100,14 +100,14 @@ The vertexes with $n$ states which with identical corresponding outputs
 
 Some details of {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}}:
 \begin{itemize}
-\item Build all vertexes with $n$ states:
+\item Build all vertexes with $z$ states:
 \begin{description}
-\item[Step 1] For every non-empty $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, if $n>|\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $n$ states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_M,\varepsilon,o_j)|)!}{n!\times (|\Ded(\Delta_M,\varepsilon,o_j)|-n)!}$ sets of states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, where $n!$ is the factorial of $n$.
+\item[Step 1] For every non-empty $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, if $z>|\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})|$, then we could not get any set with $z$ states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$. Else we can get $\frac{(|\Ded(\Delta_M,\varepsilon,o_j)|)!}{z!\times (|\Ded(\Delta_M,\varepsilon,o_j)|-z)!}$ sets of states from $\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j})$, where $n!$ is the factorial of $n$.
 \item[Step 2] Using all of the sets of states got in Step 1 to build vertexes. 
 \end{description}
  \item Sort the states in these vertexes and sort these vertexes: We sort the states inside the vertexes at first, and then sort the vertexes by the states of them. For example, in Fig.~\ref{fig:4} the vertexes $\{\delta_{16}^0,\delta_{16}^1\}$, $\{\delta_{16}^0,\delta_{16}^2\}$ and $\{\delta_{16}^1,\delta_{16}^2\}$ are well shorted. 
   \item Find $InputArray$ by other vertexes:
-   For the vertex $VertexArray[i]$ contains $n$ sorted states, we use the vertexe with the first $(n-1)$ states and the vertexe with the last $(n-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, in Fig.~\ref{fig:4}, $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
+   For the vertex $VertexArray[i]$ contains $z$ sorted states, we use the vertexe with the first $(z-1)$ states and the vertexe with the last $(z-1)$ states to find $InputArray$ for $VertexArray[i]$. For example, in Fig.~\ref{fig:4}, $\Ri(\{\delta_{16}^0,\delta_{16}^1\})=\{\delta_{4}^0,\delta_{4}^2,\delta_{4}^3\}$ and $\Ri(\{\delta_{16}^1,\delta_{16}^2\})=\{\delta_{4}^0,\delta_{4}^1,\delta_{4}^3\}$. We take the intersection of them to be $InputArray$ of $\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}$ i.e. $InputArray=\{\delta_{4}^0,\delta_{4}^3\}$. 
   \item Check $VertexArray[i]$ by $InputArray[j]$:
      
 \begin{itemize}
