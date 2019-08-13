@@ -48,13 +48,13 @@ In the definition, %we have that % we have that in the directed graph
 %And then, the updating rules explain how the nodes affect each other, thus in the updating rules
 In general, 
 	\begin{itemize}
-	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represents the value of all input-nodes at time $t$; 	
-	\item the vector $\mathsf{s}(t)\in \mathbb{B}^m$ is a state which represent the value of all state-nodes at time $t$; 	
-	\item the vector $\mathsf{o}(t)\in \mathbb{B}^n$ is an output which represent the value of all output-nodes at time $t$;  
+	\item the vector $\mathsf{i}(t)\in \mathbb{B}^{\ell}$ is an input which represents the values of all input-nodes at time $t$; 	
+	\item the vector $\mathsf{s}(t)\in \mathbb{B}^m$ is a state which represents the values of all state-nodes at time $t$; 	
+	\item the vector $\mathsf{o}(t)\in \mathbb{B}^n$ is an output which represents the values of all output-nodes at time $t$;  
 	\item $\sigma:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $\rho:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN}.
 \end{itemize}
 
-Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the sets of input, state, output respectively. 
+Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the sets of input, state, output, respectively. 
 
 %===========================================================
 \begin{example}\label{exa:2}
@@ -69,7 +69,7 @@ Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the sets of input, s
 	\end{figure}
 %	
 Fig.~\ref{fig:1} presents a \BCN\ with two input-nodes $A$ and $B$, four state-nodes $C$, $D$, $E$ and $F$, two output-nodes $G$, $W$. 
-The updating rules $\sigma:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the update rule in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
+The updating rules $\sigma:\mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
 the updating rule of output-node $G$ is 
 $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
  \begin{figure}[thpb]
@@ -155,10 +155,10 @@ and
 
 
 
-Then, four existing observability definitions are given as follows.
+Then, the four existing observability, controllability and identifiability of \BCNs\ are defined as follows.
 
 \begin{definition} [{\bf Type-I} Observability]
-The {\bf Type-I} observability is that, a \BCN\ is observable, if for every initial state \State$(0)$$\in \Delta_M$, there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I}[k])$\cite{cheng2009controllability}.
+The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \Delta_M$, there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I}[k])$\cite{cheng2009controllability}.
 \end{definition}
 
 The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}[k]$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. %
@@ -169,7 +169,7 @@ For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every
   \item $\delta_{16}^1$ can be distinguished from other types of initial state by any $\mathsf{I}[k]$ with the prefix $\delta_{4}^0$, $\delta_{4}^3$ or $\delta_{4}^2 \delta_{4}^3$;
   \item $\delta_{16}^2$ can be distinguished from other types of initial state by any $\mathsf{I}[k]$ with the prefix $\delta_{4}^1$, $\delta_{4}^3$ or $\delta_{4}^0 \delta_{4}^2$, etc.
 \end{itemize} 
-Therefore this \BCN\ satisfies the  {\bf Type-I} observability.
+Therefore, this \BCN\ satisfies the  {\bf Type-I} observability.
 \label{exa:4}
 \end{example}   
 
@@ -232,17 +232,16 @@ The implication relationships of four existing types of observability shown in F
 
 
 
-\subsection{Controllability and identifiability of \BCNs}
+%\subsection{Controllability and identifiability of \BCNs}
 %\tl{what's the point here?}
 
-The controllability and identifiability of \BCNs\ are stated as follows. 
 
 \begin{definition}[Controllability]
-	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$~\cite{cheng2009controllability}.
+	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that in $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$~\cite{cheng2009controllability}.
 \end{definition}
 
 \begin{example}
-For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$, destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
+For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, because for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$ and destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
 \label{exa:12}
 \end{example}  
 
@@ -275,7 +274,8 @@ For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, b
 %\label{exa:6}
 %\end{example}  
 
-A \BCN\ $\BB$ is identifiable from input-output data iff $\BB$ is controllable and $\BB$'s $\mathsf{s}(0)$ can be determined even if the $\mathsf{s}(0)$ can not be reset~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ can not be reset, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
+A \BCN\ $\BB$ is identifiable from input-output data iff $\BB$ is controllable and $\BB$'s $\mathsf{s}(0)$ can be determined even if the $\mathsf{s}(0)$ can not be reset~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ can not be reset. But we found that the  {\bf Type-III} observability is not the necessary and sufficient condition of determining $\mathsf{s}(0)$ when $\mathsf{s}(0)$ can not be reset, thus, we propose a new type of observability named online observability to present this condition.
+%, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
 
 
    
