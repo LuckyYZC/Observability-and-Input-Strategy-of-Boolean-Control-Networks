@@ -5,7 +5,7 @@
 \label{sec:deter}
 To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\Delta_M,\varepsilon,\mathsf{o}^{j}(0)))$ for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))$. 
 
-\subsection{Input-labelled graph}
+%\subsection{Input-labelled graph}
 We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$.
 
 \begin{definition}[Input-labelled Graph]
@@ -26,17 +26,19 @@ Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge s
       \label{fig:4}
 \end{figure}
 
-Intuitively, $\mathcal{V}$ represents a set of the state sets, that for every $\mathsf{S}\in \mathcal{V}$, $\Ks(\mathsf{S})\ne \infty$ and for every $\mathsf{s}\in\mathsf{S}$, $\mathsf{s}$ produces the same output. $\mathcal{E}$ represents the relation of the state sets which belong to $\mathcal{V}$, and $\mathcal{L}$ labels every $\mathsf{e} \in\mathcal{E}$ with a set of inputs. %Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
+Intuitively, $\mathcal{V}$ represents a set of the state sets, that for every $\mathsf{S}\in \mathcal{V}$, $\Ks(\mathsf{S})\ne \infty$ and for every $\mathsf{s}\in\mathsf{S}$, $\mathsf{s}$ produces the same output. $\mathcal{E}$ represents the relation of the state sets which belong to $\mathcal{V}$, and $\mathcal{L}$ labels every $\mathsf{e} \in\mathcal{E}$ with a set of inputs. %Then, based on the definition of the input-labelled graph, we have a \BCN\ is online observable iff every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\in \mathcal{V}$.%Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
 
 %From the {\em Lemma \ref{lemm:1}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, i
 
-In the process of constructing input-labelled graph for a \BCN\ $\BB$, we build the vertexes with fewer states before building the vertexes with more states.
+% \subsection{Determination algorithm}
+Based on the definition of the input-labelled graph, we have a \BCN\ $\BB$ is online observable iff every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\in \mathcal{V}$.
+ Then, we propose the {\bf Algorithm~\ref{alg:1}} to determine the online observability. We construct the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$ at first., and then check whether every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\in \mathcal{V}$.
+ 
+ In the process of constructing the input-labelled graph for a \BCN\ $\BB$, we build the vertexes which consist of a smaller number of states before building the vertexes which consist of a greater number of states.
 \begin{itemize}
-\item  Because, once we find a $\mathsf{S}$ that $\Ks(\mathsf{S})= \infty$, and as there exists $\mathsf{o}^{j}\in \Delta_N$ that $\mathsf{S}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$. Based on the {\em Lemma \ref{lemm:1}}, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$, and then the \BCN\ $\BB$ is not online observable.
-\item  And, from the {\em Lemma \ref{lemm:2}}, as we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$, we can determine the scope of $\Ri(\mathsf{S})$ for $\mathsf{S}$.
- \end{itemize}
- \subsection{Determination algorithm}
- Then we propose the {\bf Algorithm~\ref{alg:1}} to determine online observability based on input-labelled graph.%, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
+\item  Because, once we find a $\mathsf{S}$ that $\Ks(\mathsf{S})= \infty$, i.e. $\mathsf{S}\notin \mathcal{V}$, and as there exists $\mathsf{o}^{j}\in \Delta_N$, such that $\mathsf{S}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o}^{j})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}))= \infty$, i.e. $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\notin \mathcal{V}$ based on the {\em Lemma \ref{lemm:1}}, i.e. the \BCN\ $\BB$ is not online observable.
+\item  And we can determine the scope of $\Ri(\mathsf{S})$ if we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$ based on the {\em Lemma \ref{lemm:2}}. With the scope of $\Ri(\mathsf{S})$ we can determine the $\Ks(\mathsf{S})$ more easily.
+ \end{itemize} %, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
 
 \begin{algorithm}[h]
 \caption{Determination algorithm}
@@ -75,8 +77,6 @@ The input-labelled graph of this \BCN
  \label{alg:1}
 \end{algorithm}
 
-
- Based on the updating rules of the \BCN, we build all of the vertexes which consist of a set of states producing the same outputs, and build edges for these vertexes. If there is a vertex without any edge, then the \BCN\ is not online observable. Otherwise, the \BCN\ is online observable.
 
 \begin{algorithm}[h!]
 \caption{{\sf buildvertex}(integer $z$)}
