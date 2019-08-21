@@ -110,4 +110,20 @@ Some details of {\bf Algorithm~\ref{alg:1}} and {\bf Algorithm~\ref{alg:2}}:
 \end{itemize} 
 
 
+ If a \BCN\ $\BB$ with the online observability, then its initial state $\mathsf{s}(0)$ can be determined by followng procedures.
+
+\begin{description}
+	\item[Step 1]  Determine the set $\mathsf{S}(0)$ of possible valuations of initial state $\mathsf{s}(0)$ by the initial output $\mathsf{o}(0)$ of $\BB$, i.e. $\mathsf{S}(0)=\Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right)$, and set the set variable $\mathsf{S}=\mathsf{S}(0)$ by $\mathsf{S}(0)$.
+	\item[Step 2] Input to the \BCN\ $\BB$ with an $\mathsf{i}\in\Ri(\mathsf{S})$, and run $\BB$ to generate the new output $\mathsf{o}(t)$. 
+	\item[Step 3] Determine the new $\mathsf{S}(t)$ by the input $\mathsf{i}$, output $\mathsf{o}(t)$ and $\mathsf{S}$, i.e. $\mathsf{S}(t)=\Ded\left(\mathsf{S},\mathsf{i},\mathsf{o}(t)\right)$, and update the set $\mathsf{S}=\mathsf{S}(t)$ by $\mathsf{S}(t)$.
+	\item[Step 4] If the cardinal number of $\mathsf{S}$ equals to $1$, then return $\mathsf{s}'(0)$ which determined by the output sequence $\mathsf{O}[t]=\mathsf{o}(0)\ldots\mathsf{o}(t)$ and input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ of $\BB$ as the initial state. %That is for the input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ of $\BB$,  the output sequence $\mathsf{O}'[t]=\mathsf{o}'(0)\ldots\mathsf{o}'(t)$ produced by $\mathsf{s}'(0)$ and $\mathsf{I}[t]$ equals to $\mathsf{O}[t]$.
+	 Otherwise, go to Step 2.
+\end{description}
+%From the Step 2, we have for every $ k=1,\ldots, t$, for every $\mathsf{s}'(k)\in \mathsf{S}(k)$, there is only one corresponding $\mathsf{s}'(k-1)\in \mathsf{S}(k-1)$ such that the $\mathsf{s}'(k)$ is determined by $\mathsf{s}'(k-1)$ and $\mathsf{i}(k-1)$. Thus %once $|\mathsf{S}|=1$, we can determine $\mathsf{s}(t)$, and then determine $\mathsf{s}(t-1),\dots,\mathsf{s}(0)$.
+  In Step 4, when $|\mathsf{S}|=1$, for the input sequence $\mathsf{I}[t]$, there is only one initial state $\mathsf{s}'(0)$ whose corresponding output sequence  $\mathsf{O}'[t]=\mathsf{o}'(0)\ldots\mathsf{o}'(t)$ equals to the output sequence $\mathsf{O}[t]$ of $\BB$, thus, we can determine the initial state by $\mathsf{I}[t]$ and $\mathsf{O}[t]$. 
+
+ From the {\em Example \ref{exa:6}}  and {\em Example \ref{exa:10}}, we have the \BCN\ mentioned in {\em Example \ref{exa:2}} does satisfies the {\bf Type-III} observability but its initial state $\mathsf{s}(0)$  can be determined without resetting. 
+ This further illustrates that online observability is the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$ of a \BCN\  without  resetting.
+
+
 %With the algorithm based on directed graph we can find all paths to determine the initial state of a \BCN. Thus, at time step $t$, we can use the $\mathsf{S}(t)$ and the directed graph to derive all of the input $\mathsf{i}(t)$ which can help us determine $\mathsf{s}(0)$. While, there comes a problem. Which input is the best input? To solve this problem, in the {\em Section \ref{sec:app}}, we will present how to decide the input to get better performance.
