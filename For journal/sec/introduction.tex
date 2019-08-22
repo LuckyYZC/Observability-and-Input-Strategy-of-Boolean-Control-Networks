@@ -25,7 +25,7 @@ A \BCN\  $\BB$ has three distinguished finite sets of nodes $\{\mathsf{i}_1,\ldo
 
 As a {\BCN} $\BB$, each node of   $\BB$   takes a Boolean value at any time point. We use $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$  to denote the vectors of values $(\mathsf{i}_1(t),\ldots,\mathsf{i}_\ell(t))$ of the input-nodes,  $(\mathsf{s}_1(t),\ldots,\mathsf{s}_m(t))$ of the state-nodes, and $(\mathsf{o}_1,\ldots,\mathsf{o}_\ell(t))$ of the output-nodes  which are called the {\em input}, {\em state} and {\em output} at time $t$, respectively.
 
-A {\em timed run}  (or {\em execution}) up to time point $t$ of  $\BB$ is a sequence $\mathsf{I}[t] = \mathsf{i}(0)\ldots \mathsf{i}(t)$ of inputs, a sequence $\mathsf{S}[t] = \mathsf{s}(0)\ldots \mathsf{s}(t)$ of states, and a sequence $\mathsf{O}[t] = \mathsf{o}(0)\ldots \mathsf{o}(t)$  of outputs, which are related as follows
+A {\em timed run}  (or {\em execution}) up to time point $k$ of  $\BB$ is a sequence $\mathsf{I}[k] = \mathsf{i}(0)\ldots \mathsf{i}(k)$ of inputs, a sequence $\mathsf{S}[k] = \mathsf{s}(0)\ldots \mathsf{s}(k)$ of states, and a sequence $\mathsf{O}[k] = \mathsf{o}(0)\ldots \mathsf{o}(k)$  of outputs, which are related as follows
 
 \begin{itemize}
 \item the {\em initial state} $\mathsf{s}(0)$ is given according to some conditions;
@@ -86,7 +86,7 @@ The study  of these of control-theoretical properties is also important when bui
 %{\em The identifiability problem}: This is about it is possible and how to find the updating rules of a \BCN\ $\BB$ by providing sequence of inputs (and observing the corresponding sequence of outputs), especially when the mechanism for setting $\BB$ with different initial states is not available~ \cite{Cheng2011Identification}.
 
 \paragraph*{\em Controllability}  Controllability of a  \BCN\ $\BB$  is  about if it is possible and how for a given pairs of states $\mathsf{s}$ and $\mathsf{s}'$  to find an input  sequence $\mathsf{I}[t]$  such that  corresponding execution from state $\mathsf{s}$ will reach $\mathsf{s}'$ as the final state ~\cite{Akutsu2007Control}. Formally speaking, $\BB$ is {\em controllable} 
-if for any pair $\mathsf{s}$ and $\mathsf{s}'$ of states, there  exists an input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ for some $t>0$ such that $\mathsf{S}[k]=\mathsf{s}(0)\ldots\mathsf{s}(t)$ is the corresponding sequence of states with $\mathsf{s}(0) =\mathsf{s}$ and $\mathsf{s}(t)=\mathsf{s}'$. The  problem of the controllability of \BCNs\ is known to be {NP}-hard \cite{Akutsu2007Control}. %There, it further states that controllability of \BCNs\ is important to the development of a control theory for complex biological systems.
+if for any pair $\mathsf{s}$ and $\mathsf{s}'$ of states, there  exists an input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ for some $t>0$ such that $\mathsf{S}[t]=\mathsf{s}(0)\ldots\mathsf{s}(t)$ is the corresponding sequence of states with $\mathsf{s}(0) =\mathsf{s}$ and $\mathsf{s}(t)=\mathsf{s}'$. The  problem of the controllability of \BCNs\ is known to be {NP}-hard \cite{Akutsu2007Control}. %There, it further states that controllability of \BCNs\ is important to the development of a control theory for complex biological systems.
 %That is for a given  \BCN\  $\BB$,  $\mathsf{o}(0)\mathsf{o}(1)\ldots\mathsf{o}(k)$ is decide by $\mathsf{s}(0)$ and the sequence $\mathsf{i}(0)\mathsf{i}(1)\ldots\mathsf{i}(k-1)$. 
 %
 
@@ -243,7 +243,7 @@ In the above publications, algorithms for deciding the different types of observ
 \subsection{Our contribution}
 We discover that the observability of {\bf Type-III}, together with the controllability,  is  sufficient but not necessary for the identifiability of a {\BCN}. This means that there are \BCNs\  without {\bf Type-III} observability but their initial states can be determined without  resetting, and thus they can be identified if they are controllable.
 
-In this paper, we propose a new type of observability, which we call {\em online observability} in order to differ it from the above four types  of {\em  offline observability}, and show it is both a sufficient and necessary condition for determining the initial state of a {\BCN} without resetting the initial state. Then a \BCN\ is identifiable iff this \BCN\ has online observability and controllability. We then present the two algorithms, one for deciding if a \BCN\ has this new type of observability , and the other for determining  initial state of a \BCN\ with this type of observability. 
+In this paper, we propose a new type of observability, which we call {\em online observability} in order to differ it from the above four types  of {\em  offline observability}, and show it is both a sufficient and necessary condition for determining the initial state of a {\BCN} without resetting the initial state. Then a \BCN\ is identifiable iff this \BCN\ has online observability and controllability. We then present the two algorithms, one for deciding if a \BCN\ has this new type of observability, and the other for determining  initial state of a \BCN\ with this type of observability. 
 
 
  %We discover that the observability of {\bf Type-III}
@@ -291,7 +291,7 @@ In this paper, we propose a new type of observability, which we call {\em online
 
 \paragraph*{\em Organization of the paper}
 The remainder of this paper is organized as follows.
- In {\em Section \ref{sec:pre}}, we  introduces the necessary preliminarie, including the definition, observability, controllability and identifiability of \BCNs. We presents  the  online  observability of \BCNs\ and the algorithm for determining the initial states of \BCNs\ with this type of observability in {\em Section \ref{sec:online}}. We show  the  decision  algorithm of the online observability in {\em Section \ref{sec:deter}}.  We draw our conclusions in  {\em Section \ref{sec:con}} with discussions on possible future work.
+ In {\em Section \ref{sec:pre}}, we  introduces the necessary preliminarie, including the definition, observability, controllability and identifiability of \BCNs. We presents  the  online  observability of \BCNs\ in {\em Section \ref{sec:online}}. We show  the  decision  algorithm of the online observability and the algorithm for determining the initial states of \BCNs\ with this type of observability in {\em Section \ref{sec:deter}}.  We draw our conclusions in  {\em Section \ref{sec:con}} with discussions on possible future work.
 % {\em Section \ref{sec:app}} talks about some optimization brought by the online observability of \BCNs. 
 
 %==============================================================================================================

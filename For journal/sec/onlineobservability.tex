@@ -59,7 +59,7 @@
 
 %-------------------------------------
 %-------------------------------------
-To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalize how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its $\mathsf{o}(t)$, $\mathsf{i}(t-1)$, $\mathsf{S}(t-1)$ and updating rules.  %The definition of it is as follows.
+To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalize how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its updating rules.  %The definition of it is as follows.
 
 We write $\xi(\mathsf{i}, \mathsf{s}):= \left\{
 \begin{array}{rcl}
@@ -89,7 +89,7 @@ where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, 
 %\tl{check whether this is what you want!?}\gs{It is ok.}
 \end{definition}
 
- Then we have the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
+ Then the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
  \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, $\mathsf{o}(0)$ and $\mathsf{O}[k]=(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{o}(1)\ldots\mathsf{o}(k)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -119,15 +119,15 @@ For a non-empty set $\mathsf{S}\subseteq\Delta_M$
  \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i} \in \Delta_L$ such that % $\Ks(\mathsf{S})=\min(\{\max\{\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))| \Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})\ne \emptyset, \mathsf{o}^{j}\in\Delta_Q\}||\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|, \mathsf{i}^{x} \in \Delta_M\})+1$ 
  \begin{itemize}
  \item  $|\Ded(\mathsf{S},\mathsf{i},\varepsilon)|=|\mathsf{S}|$, and 
- \item  $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))< k$ for every non-empty $\Ded(\mathsf{S},\mathsf{i},\mathsf{o})$, where $\mathsf{o} \in \Delta_N$, 
+ \item   for every $\mathsf{o} \in \Delta_N$, $\Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))< k$;
  \end{itemize} 
  and there is not any $\mathsf{i}' \in \Delta_L$ satisfies that
   \begin{itemize}
  \item  $|\Ded(\mathsf{S},\mathsf{i}',\varepsilon)|=|\mathsf{S}|$, and 
- \item  $\Ks(\Ded(\mathsf{S},\mathsf{i'},\mathsf{o}))< k-1$ for every non-empty $\Ded(\mathsf{S},\mathsf{i}',\mathsf{o})$, where $\mathsf{o} \in \Delta_N$, 
+ \item   for every $\mathsf{o} \in \Delta_N$, $\Ded(\mathsf{S},\mathsf{i}',\mathsf{o})\ne\emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i'},\mathsf{o}))< k-1$, 
  \end{itemize} 
-then $0<\Ks(\mathsf{S})=k\ne \infty$;%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
- \item else $\Ks(\mathsf{S})=\infty$.
+then $0<\Ks(\mathsf{S})=k\ne \infty$.%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
+ \item Otherwise, $\Ks(\mathsf{S})=\infty$.
  \end{itemize}
 \end{definition}
 
@@ -136,7 +136,7 @@ then $0<\Ks(\mathsf{S})=k\ne \infty$;%, and we can input $\mathsf{i}^{i}$ to det
 As mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=3$, and there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
- \item   and for each $\mathsf{o}^{j}\in \Delta_N$
+ \item   and for each $\mathsf{o}\in \Delta_N$
   \begin{itemize}
   \item   $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^0\right))=\Ks(\{\delta_{16}^0\})=0$;
  \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^3\right))=\Ks(\{\delta_{16}^{13}\})=0$;
@@ -186,7 +186,7 @@ In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm fo
 \begin{definition}[Online Observability of  BCNs]
 %\tl{(12)why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is observable,
-if for every $\mathsf{o}^{j}(0)\in  \Delta_N$, $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\ne\emptyset$ implies $\Ks(\Ded\left(\Delta_M,\varepsilon,\mathsf{o}^{j}(0)\right))\ne\infty$.
+if for every $\mathsf{o}(0)\in  \Delta_N$, $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))\ne\emptyset$ implies $\Ks(\Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right))\ne\infty$.
 \end{definition}
 
 %In order to better illustrate the definition of online observability, we give the following example.
