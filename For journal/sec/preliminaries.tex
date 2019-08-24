@@ -54,7 +54,17 @@ In general,
 	\item $\sigma:\mathbb{B}^{\ell +m}\mapsto \mathbb{B}^m$ and $\rho:\mathbb{B}^m\mapsto \mathbb{B}^n$ are logical functions that represent the updating rules of the {\em BCN}.
 \end{itemize}
 
-Moreover, $\Delta_L $, $\Delta_M$, and $\Delta_N$ represent the sets of input, state, output, respectively. 
+\begin{figure}[!t]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.17]{figures/Fig10.png}}
+	}}
+      
+      \caption{The relationship of inputs, states and outputs.}
+      \label{fig:10}
+  \end{figure}
+
+Moreover, we use $\Delta_L=\{\delta_{2^{\ell}}^0,\ldots,\delta_{2^{\ell}}^{{2^{\ell}}-1}\}$, $\Delta_M=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{{2^m}-1}\}$ and $\Delta_N=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{{2^n}-1}\}$ to represent the sets of input, state, output, respectively.
 
 %===========================================================
 \begin{example}\label{exa:2}
@@ -84,6 +94,7 @@ $G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
 %$G(t)=C(t)\vee {({D}(t)\wedge { E}(t)\wedge {F}(t))}.$
  %
 \end{example}   
+
 %===========================================================
 
 %The reason why we use the truth table to describe the updating rules of the \BCN\ is that it would be more convenient for us to convert the $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$ into their abbreviation forms. 

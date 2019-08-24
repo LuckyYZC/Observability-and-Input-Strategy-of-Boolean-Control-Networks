@@ -49,7 +49,7 @@ A {\em timed run}  (or {\em execution}) up to time point $k$ of  $\BB$ is a sequ
 
 \subsection{Related work: control-theoretical properties}
  In general, the updating rules are complex and it is difficult to analyze dynamic properties of systems of a {\BCN} $\BB$, such as if it is possible and how to  find a sequence $\mathsf{I}[t]$ of inputs so that a state $\mathsf{s}'$ is reachable from an initial state $\mathsf{s}$;  and whether it is possible and how to find input sequences so that  they and their corresponding output sequences can  determine the initial state.  These are regarded as control-theoretical issues of {\em controllability, observability} and {\em identifiability} in the study of \BCNs\ as  control theory of dynamic systems~\cite{Akutsu2007Control,cheng2009controllability, Zhao2010Input, Cheng2011Identification, Cheng2011Analysis} and \cite{Fornasini2013Observability}.
-The study  of these of control-theoretical properties is also important when building {\BCN} models of systems which can only be observed as blackboxes that one can only  control the  values of  the input-nodes and observe those of the output-nodes, without knowing  the state changes  from time to time.   We summarize  the notions of controllability, and observability identifiability as follows.
+The study  of these of control-theoretical properties is also important when building {\BCN} models of systems which can only be observed as blackboxes that one can only  control the  values of  the input-nodes and observe those of the output-nodes, without knowing  the state changes  from time to time.   We summarize  the notions of controllability, observability and  identifiability as follows.
   
   %We use an {\em input vector} $\mathsf{i}(t)=(\mathsf{i}_1(t),\ldots,\mathsf{i}_\ell (t))$, a {\em state vector} $\mathsf{s}(t)=(\mathsf{s}_1(t), \ldots, \mathsf{s}_m(t))$ and an {\em output  vector} $\mathsf{o}(t)=(\mathsf{o}_1(t),\ldots, \mathsf{o}_n(t))$  to represent an assignment of Boolean values to the  input-nodes, state-nodes and  output-nodes at $t$, respectively.  We call them an {\em input}, a {\em state} and an {\em output} of the \BCN\ at time time $t$. As  illustrated by Fig.~\ref{fig:10},  the state $\mathsf{s}(t+1)$ at time $t+1$ is determined by the input $\mathsf{i}(t)$ and state $\mathsf{s}(t)$ at $t$  and the output $\mathsf{o}(t)$  is determined by the state  $\mathsf{s}(t)$.  We call a state $\mathsf{s}(0)$ at time $0$ an {\em initial state}. Thus, for any $k>0$, the state sequence  $\mathsf{S}[k]=\mathsf{s}(1)\ldots\mathsf{s}(k)$ and the output sequence $\mathsf{O}[k]=\mathsf{o}(0)\ldots\mathsf{o}(k)$ are  determined by an  input sequence $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$ and initial state $\mathsf{s}(0)$. 
 
@@ -71,16 +71,6 @@ The study  of these of control-theoretical properties is also important when bui
 %Observability is one of the two basic  properties related to  the control-theoretic problems of \BCNs. The other is known as {\em controllability}. The work in ~\cite{Akutsu2007Control} shows that the problem of determining the controllability of \BCNs\ is {NP}-hard. Moreover, it  points out that ``One of the major goals of systems biology is to develop a control theory for complex biological systems.''  Since then, research on  controllability and observability of \BNs\ and \BCNs\ has drawn a great attention, e.g. \cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Cheng2011Analysis} and \cite{Fornasini2013Observability}. %There, it is further noted that the controllability and observability are the basic control-theoretic problems of \BCNs. % Among these studies, \emph{semi-tensor product} (\STP) is one of useful tools to deal with  
 
  %The concept of observability was first proposed in~\cite{cheng2009controllability}. It is mainly about how  to determine  the values of the  state-nodes  of a \BCN\  at time $0$ from the values of  input-nodes  and output-nodes at a sequence of time points $0,\ldots, k$. After that, four types of observability have been investigated in the literature, together with their corresponding determining algorithms, which we will discuss below.
-
-\begin{figure}[!t]
-      \centering
-      \framebox{\parbox{3in}{
-		\centerline{\includegraphics[scale=0.17]{figures/Fig10.png}}
-	}}
-      
-      \caption{The relationship of inputs, states and outputs.}
-      \label{fig:10}
-  \end{figure}
 
 
 %{\em The identifiability problem}: This is about it is possible and how to find the updating rules of a \BCN\ $\BB$ by providing sequence of inputs (and observing the corresponding sequence of outputs), especially when the mechanism for setting $\BB$ with different initial states is not available~ \cite{Cheng2011Identification}.
@@ -291,7 +281,7 @@ In this paper, we propose a new type of observability, which we call {\em online
 
 \paragraph*{\em Organization of the paper}
 The remainder of this paper is organized as follows.
- In {\em Section \ref{sec:pre}}, we  introduces the necessary preliminarie, including the definition, observability, controllability and identifiability of \BCNs. We presents  the  online  observability of \BCNs\ in {\em Section \ref{sec:online}}. We show  the  decision  algorithm of the online observability and the algorithm for determining the initial states of \BCNs\ with this type of observability in {\em Section \ref{sec:deter}}.  We draw our conclusions in  {\em Section \ref{sec:con}} with discussions on possible future work.
+ In {\em Section \ref{sec:pre}}, we  introduces the necessary preliminaries, including the definition, observability, controllability and identifiability of \BCNs. We presents  the  online  observability of \BCNs\ in {\em Section \ref{sec:online}}. We show  the  decision  algorithm of the online observability and the algorithm for determining the initial states of \BCNs\ with this type of observability in {\em Section \ref{sec:deter}}.  We draw our conclusions in  {\em Section \ref{sec:con}} with discussions on possible future work.
 % {\em Section \ref{sec:app}} talks about some optimization brought by the online observability of \BCNs. 
 
 %==============================================================================================================
