@@ -32,7 +32,7 @@ These two functions are called the  {\bf updating rules}  of $\BB$.
  \end{definition}
 It is noted that there are two sets of edges in $E$, that is $(I\cup S)\times S$ and $S\times O$. An edge $(v,v')$ represents that the value of node $v'$ is directly affected by the value of $v$, and the updating rules reflect how a node is affected by the other nodes. 
 
-Furthermore, we use $i$ to represent a vector $(i_1,\ldots i_\ell)$ of input values, $s$ a vector $(s_1,\ldots s_m)$ of state values, and $o$ a vector $(o_1,\ldots o_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $i(t)$, $s(t)$, and $o(t)$ to represent the input $(i_1(t),\ldots i_\ell(t))$, state $(s_1(t),\ldots s_m(t))$  and  output $(o_1(t),\ldots o_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively.
+Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ to represent the input $(\mathsf{i}_1(t),\ldots \mathsf{i}_\ell(t))$, state $(\mathsf{s}_1(t),\ldots \mathsf{s}_m(t))$  and  output $(\mathsf{o}_1(t),\ldots \mathsf{o}_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively.
 
 
 \begin{figure}[!t]
@@ -56,14 +56,14 @@ Furthermore, we use $i$ to represent a vector $(i_1,\ldots i_\ell)$ of input val
 		\label{fig:1}
 	\end{figure}
 %	
-Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{i_1,i_2\}$ , four state-nodes $S=\{s_1, s_2,s_3, s_4\}$ and two output-nodes $O=\{o_1,o_2\}$. 
+Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. 
 The updating rules $\sigma: \mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
-the updating rule of output-node $o_1$ is 
-$o_1(t)=s_1(t)\vee {({s_2}(t)\wedge { s_3}(t)\wedge {s_4}(t))}.$
+the updating rule of output-node $\mathsf{o}_1$ is 
+$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. 
  \begin{figure}[thpb]
 	\centering
 	\framebox{\parbox{3in}{
-			\centerline{\includegraphics[scale=0.261]{figures/Fig2.png}}
+			\centerline{\includegraphics[scale=0.343]{figures/Fig2.png}}
 	}}
 	\caption{The truth table which describe the updating rules of the \BCN\ shown in Fig.~\ref{fig:1}.}
 	\label{fig:2}

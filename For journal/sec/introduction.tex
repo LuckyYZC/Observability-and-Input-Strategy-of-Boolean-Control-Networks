@@ -31,7 +31,7 @@ A {\em timed run}  (or {\em execution}) up to time point $k$ of  $\BB$ is a sequ
 
 \begin{itemize}
 \item the {\em initial state} $\mathsf{s}(0)$ is given according to some conditions;
-	\item the output $\mathsf{o}(t)$ at time $t$ is determined by the state $\mathsf{s}(t)$ at time $t$, that is, there exists a Boolean functions $\rho$ such that $\mathsf{o}(t)=\rho(\mathsf{s}(t))$; 
+	\item the output $\mathsf{o}(t)$ at time $t$ is determined by the state $\mathsf{s}(t)$ at time $t$, that is there exists a Boolean functions $\rho$ such that $\mathsf{o}(t)=\rho(\mathsf{s}(t))$; 
 	\item the state $\mathsf{s}(t+1)$ at time $t+1$ is determined by the input $\mathsf{i}(t)$ and state $\mathsf{s}(t)$ at time point $t$, that is there is a Boolean functions $\sigma$ such that $\mathsf{s}(t+1)=\sigma(\mathsf{i}(t),\mathsf{s}(t))$.
 \end{itemize}
  These functions are called the {\em updating rules} of $\BB$ and an execution from an initial state is driven by the input sequence.
