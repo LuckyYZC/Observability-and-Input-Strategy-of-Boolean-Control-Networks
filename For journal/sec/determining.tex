@@ -54,7 +54,7 @@ The input-labelled graph of this \BCN
 \WHILE {($VertexArray!=$Null)}
 \FOR{($i=0$; $i<arraysize(VertexArray)$; $i++$)}
 \IF{($z==2$)}
-\STATE $InputArray$ = $\Delta_M$ 
+\STATE $InputArray$ = $\mathcal{I}_\BB$ 
 \ELSE
 
 \STATE Determine $InputArray$ by other vertexes
@@ -71,7 +71,7 @@ The input-labelled graph of this \BCN
 \ENDFOR
 \STATE $VertexArray=${\sf constructvertex}($++z$)
 \ENDWHILE
-\STATE Return $\Delta_M$\
+\STATE Return $\mathcal{S}_\BB$\
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
