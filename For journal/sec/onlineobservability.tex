@@ -85,7 +85,7 @@ If $\mathsf{o}= \varepsilon$
 %& \mathsf{s}'=  \mathsf{s} \in \mathsf{S}, \ h(\mathsf{s}')=\mathsf{o}\ if\ \mathsf{o}\neq \varepsilon\},
 %\end{split}
 %\end{equation*}
-where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\Delta_N\cup\varepsilon)$, and $\varepsilon$ presents empty output.
+where $\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}_\BB\cup\varepsilon)$, and $\varepsilon$ presents empty output.
 %\tl{check whether this is what you want!?}\gs{It is ok.}
 \end{definition}
 
@@ -93,13 +93,13 @@ where $\mathsf{S}\in 2^{\Delta_M}$, $\mathsf{i} \in (\Delta_L\cup\varepsilon)$, 
  \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, $\mathsf{o}(0)$ and $\mathsf{O}[k]=(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{o}(1)\ldots\mathsf{o}(k)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
-\Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
+\Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
 \Ded\left(\mathsf{S}(t-1),\mathsf{i}(t-1),\mathsf{o}(t)\right)       &      & 0<t\leq k
 \end{array} \right. .\]
 
 \end{definition}
 \begin{example}
-In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\Delta_M,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
+In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
 %If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
@@ -113,18 +113,18 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that we can determine the $\mathsf{s}(t)$ at time $(t+\Ks(\mathsf{S}(t))$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
 \begin{definition}[$\Ks(\mathsf{S})$] 
-For a non-empty set $\mathsf{S}\subseteq\Delta_M$
+For a non-empty set $\mathsf{S}\subseteq\mathcal{S}_\BB$
  \begin{itemize}
  \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
- \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i} \in \Delta_L$ such that % $\Ks(\mathsf{S})=\min(\{\max\{\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))| \Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})\ne \emptyset, \mathsf{o}^{j}\in\Delta_Q\}||\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|, \mathsf{i}^{x} \in \Delta_M\})+1$ 
+ \item  if $|\mathsf{S}|>1$ and there is an input $\mathsf{i} \in \mathcal{I}_\BB$ such that % $\Ks(\mathsf{S})=\min(\{\max\{\Ks(\Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j}))| \Ded(\mathsf{S},\mathsf{i}^{x},\mathsf{o}^{j})\ne \emptyset, \mathsf{o}^{j}\in\Delta_Q\}||\Ded(\mathsf{S},\mathsf{i}^{x},\varepsilon)|=|\mathsf{S}|, \mathsf{i}^{x} \in \Delta_M\})+1$ 
  \begin{itemize}
  \item  $|\Ded(\mathsf{S},\mathsf{i},\varepsilon)|=|\mathsf{S}|$, and 
- \item   for every $\mathsf{o} \in \Delta_N$, $\Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))< k$;
+ \item   for every $\mathsf{o} \in \mathcal{O}_\BB$, $\Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))< k$;
  \end{itemize} 
- and there is not any $\mathsf{i}' \in \Delta_L$ which satisfies that
+ and there is not any $\mathsf{i}' \in \mathcal{I}_\BB$ which satisfies that
   \begin{itemize}
  \item  $|\Ded(\mathsf{S},\mathsf{i}',\varepsilon)|=|\mathsf{S}|$, and 
- \item   for every $\mathsf{o} \in \Delta_N$, $\Ded(\mathsf{S},\mathsf{i}',\mathsf{o})\ne\emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i'},\mathsf{o}))< k-1$, 
+ \item   for every $\mathsf{o} \in \mathcal{O}_\BB$, $\Ded(\mathsf{S},\mathsf{i}',\mathsf{o})\ne\emptyset$ implies $\Ks(\Ded(\mathsf{S},\mathsf{i'},\mathsf{o}))< k-1$, 
  \end{itemize} 
 then $0<\Ks(\mathsf{S})=k\ne \infty$.%, and we can input $\mathsf{i}^{i}$ to determine makes $\mathsf{S}$ $k$-step determinable.
  \item Otherwise, $\Ks(\mathsf{S})=\infty$.
@@ -136,7 +136,7 @@ then $0<\Ks(\mathsf{S})=k\ne \infty$.%, and we can input $\mathsf{i}^{i}$ to det
 As mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=3$, and there exists $\delta_{4}^3$ such that 
  \begin{itemize}
  \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
- \item   and for each $\mathsf{o}\in \Delta_N$
+ \item   and for each $\mathsf{o}\in \mathcal{O}_\BB$
   \begin{itemize}
   \item   $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^0\right))=\Ks(\{\delta_{16}^0\})=0$;
  \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^3\right))=\Ks(\{\delta_{16}^{13}\})=0$;
@@ -166,8 +166,8 @@ We propose $\Ri(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that we can choose
 \begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation*}
 \begin{split}
-&\Ri(\mathsf{S})=\{\mathsf{i}\in \Delta_L|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
-& \forall \mathsf{o} \in \Delta_N, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
+&\Ri(\mathsf{S})=\{\mathsf{i}\in \mathcal{I}_\BB|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
+& \forall \mathsf{o} \in \mathcal{O}_\BB, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
 \end{split}
 \end{equation*}
 \end{definition}
@@ -186,7 +186,7 @@ In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm fo
 \begin{definition}[Online Observability of  BCNs]
 %\tl{(12)why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is observable
-if for every $\mathsf{o}(0)\in  \Delta_N$, $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))\ne\emptyset$ implies $\Ks(\Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right))\ne\infty$.
+if for every $\mathsf{o}(0)\in  \mathcal{O}_\BB$, $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\ne\emptyset$ implies $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right))\ne\infty$.
 \end{definition}
 
 %In order to better illustrate the definition of online observability, we give the following example.
@@ -194,10 +194,10 @@ if for every $\mathsf{o}(0)\in  \Delta_N$, $\Ded(\Delta_M,\varepsilon, \mathsf{o
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  
  \begin{itemize}
- \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^0\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^1\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^2\right))=2\ne \infty$;
- \item $\Ks(\Ded\left(\Delta_M,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^0\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^1\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^2\right))=2\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
 Therefore this \BCN\ satisfies the online observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.

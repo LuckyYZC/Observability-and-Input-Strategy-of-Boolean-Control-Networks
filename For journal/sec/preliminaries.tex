@@ -32,7 +32,7 @@ These two functions are called the  {\bf updating rules}  of $\BB$.
  \end{definition}
 It is noted that there are two sets of edges in $E$, that is $(I\cup S)\times S$ and $S\times O$. An edge $(v,v')$ represents that the value of node $v'$ is directly affected by the value of $v$, and the updating rules reflect how a node is affected by the other nodes. 
 
-Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ to represent the input $(\mathsf{i}_1(t),\ldots \mathsf{i}_\ell(t))$, state $(\mathsf{s}_1(t),\ldots \mathsf{s}_m(t))$  and  output $(\mathsf{o}_1(t),\ldots \mathsf{o}_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively.
+Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ to represent the input $(\mathsf{i}_1(t),\ldots \mathsf{i}_\ell(t))$, state $(\mathsf{s}_1(t),\ldots \mathsf{s}_m(t))$  and  output $(\mathsf{o}_1(t),\ldots \mathsf{o}_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively, that is $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$.
 
 
 \begin{figure}[!t]
@@ -123,20 +123,20 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 To introduce the observability, controllability and identifiability of \BCNs, we first define the mappings \cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
-F^k_{\mathsf{s}(t)}:& (\Delta_L)^k\mapsto(\Delta_M)^k\\
+F^k_{\mathsf{s}(t)}:& (\mathcal{I}_\BB)^k\mapsto(\mathcal{S}_\BB)^k\\
 &=\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}) \mapsto \mathsf{s}(t+1)\ldots\mathsf{s}(t+k)\\
-(HF)^k_{\mathsf{s}(t)} :& (\Delta_L)^k\mapsto(\Delta_N)^k\\
+(HF)^k_{\mathsf{s}(t)} :& (\mathcal{I}_\BB)^k\mapsto(\mathcal{O}_\BB)^k\\
  &=\mathsf{i}(t)\ldots\mathsf{i}(t+k-1) \mapsto \mathsf{o}(t+1)\ldots\mathsf{o}(t+k)
 \end{split}
 \label{equ:6}
 \end{equation}
 %\tl{but you have defined $\Delta_N$, $\Delta_M$ and $\Delta_Q$ just now?!}
 where $k>0$. For all  $k>0$,
-$\mathsf{I}[k]=\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}) \in(\Delta_L)^k$
+$\mathsf{I}[k]=\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}) \in(\mathcal{I}_\BB)^k$
 is an input sequence, 
-$F^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{s}(t+1)\ldots\mathsf{s}(t+k) \in(\Delta_M)^k$
+$F^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{s}(t+1)\ldots\mathsf{s}(t+k) \in(\mathcal{S}_\BB)^k$
  is a state sequence, and 
- $(HF)^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{o}(t+1)\ldots\mathsf{o}(t+k) \in(\Delta_N)^k$
+ $(HF)^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{o}(t+1)\ldots\mathsf{o}(t+k) \in(\mathcal{O}_\BB)^k$
  is an output sequence. That for every $1\le x \le k$, 
  $\mathsf{s}(t+x)=\sigma(\mathsf{i}(t+x-1),\mathsf{s}(t+x-1))$,
 and 
@@ -147,12 +147,12 @@ and
 Then, the observability, controllability and identifiability of \BCNs\ are defined as follows.
 
 \begin{definition} [{\bf Type-I} Observability~\cite{cheng2009controllability}]
-The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \Delta_M$, there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I}[k])$.
+The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}_\BB$, there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $(HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq (HF)^k_{{\mathsf{s}(0)}}(\mathsf{I}[k])$.
 \end{definition}
 
 The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}[k]$. %Thus, we can only check whether $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or not by $\mathsf{I}^x$. %
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every \State$(0)$ can be distinguished from other types of initial state by an $\mathsf{I}[k] \in(\Delta_L)^k$.  For instance,
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have every \State$(0)$ can be distinguished from other types of initial state by an $\mathsf{I}[k] \in(\mathcal{I}_\BB)^k$.  For instance,
 \begin{itemize}
   \item $\delta_{16}^0$ can be distinguished from other types of initial state by any $\mathsf{I}[k]$ with the prefix $\delta_{4}^3$, $\delta_{4}^2$ or $\delta_{4}^0  \delta_{4}^2$;%
   \item $\delta_{16}^1$ can be distinguished from other types of initial state by any $\mathsf{I}[k]$ with the prefix $\delta_{4}^0$, $\delta_{4}^3$ or $\delta_{4}^2 \delta_{4}^3$;
@@ -163,12 +163,12 @@ Therefore, this \BCN\ satisfies the  {\bf Type-I} observability.
 \end{example}   
 
 \begin{definition}[ {\bf Type-II} Observability~\cite{Zhao2010Input}]
-	The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
+	The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}_\BB$, there is an input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ for some $k>0$, such that $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
 \end{definition}
 
 The {\bf Type-II} observability means that a \BCN\ is observable if for every two distinct $\mathsf{s}(0)$, $\mathsf{s}'(0)$, there is an input sequence $\mathsf{I}[k]$ which distinguishes them. %Therfore, we can only check $\mathsf{s}(0)=\mathsf{s}^{x}(0)$ or $\mathsf{s}(0)=\mathsf{s}^{y}(0)$ when we know that $\mathsf{s}(0)$ is one of them by $\mathsf{I}^{xy}$. 
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}(0)$ and $\mathsf{s}'(0)$, there exists an $\mathsf{I}[k]\in(\Delta_L)^k$ which can distinguish them.  For instance,
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, we have for every two distinct $\mathsf{s}(0)$ and $\mathsf{s}'(0)$, there exists an $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ which can distinguish them.  For instance,
 \begin{itemize}
   \item $\mathsf{I}[k]$ with the prefix $\delta_{4}^0$ can distinguish $\delta_{16}^0$ and $\delta_{16}^1$;
   \item $\mathsf{I}[k]$ with the prefix $\delta_{4}^1$ can distinguish $\delta_{16}^0$ and $\delta_{16}^2$;
@@ -178,13 +178,13 @@ Therefore this \BCN\ satisfies the {\bf Type-II} observability.
 \label{exa:5}
 \end{example}   
 \begin{definition}[{\bf Type-III} Observability~\cite{Cheng2011Identification}]
-The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
+The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}_\BB$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
 \end{definition}
 
 The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_M$, because $\mathsf{I}[k]$ can distinguish all distinct initial states.%, the $\mathsf{s}(0)$ is determined by its corresponding output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 
 \begin{example}
-For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not an $\mathsf{I}[k]\in(\Delta_L)^k$ which determines the $\mathsf{s}(0)$ of this \BCN:
+For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $k>0$, there is not an $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ which determines the $\mathsf{s}(0)$ of this \BCN:
 \begin{itemize}
   \item $\mathsf{I}[k]$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
   \item $\mathsf{I}[k]$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
@@ -195,10 +195,10 @@ Therefore it does not satisfy the {\bf Type-III} observability.
 \label{exa:6}
 \end{example}  
 \begin{definition}[{\bf Type-IV} Observability~\cite{Fornasini2013Observability}]
-	The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[k]\in(\Delta_L)^{k}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$ if  $k\ge N$.
+	The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^{k}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}_\BB$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $(HF)^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq (HF)^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$ if  $k\ge N$.
 \end{definition}
 
-The {\bf Type-IV} observability means that a \BCN\ is observable if every sufficient long $\mathsf{I}[k]$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\Delta_N$.%, because every sufficient long $\mathsf{I}[k]$ can distinguish any two distinct initial states.%, the $\mathsf{I}$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
+The {\bf Type-IV} observability means that a \BCN\ is observable if every sufficient long $\mathsf{I}[k]$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\mathcal{S}_\BB$.%, because every sufficient long $\mathsf{I}[k]$ can distinguish any two distinct initial states.%, the $\mathsf{I}$ can be determined by its output sequence $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})$.
 \begin{example}
 For example, for the \BCN\ mentioned in {\em Example \ref{exa:2}}, any $\mathsf{I}[k]$ with prefix $\delta_{4}^0$ can not can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$. 
 Therefore this \BCN\ does not satisfy the {\bf Type-IV} observability. 
@@ -226,7 +226,7 @@ The implication relationships of four existing types of observability shown in F
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that in $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$.
+	A \BCN\ is controllable if for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ for some $k>0$, such that in $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$.
 \end{definition}
 
 \begin{example}
@@ -235,7 +235,7 @@ For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, t
 \end{example}  
 
 \begin{definition}[Identifiability~\cite{Cheng2011Identification}]%
-	A \BCN\ is identifiable if there exists an input sequence $\mathsf{I}[k]\in(\Delta_L)^k$ for some $k>0$, such that the updating rules
+	A \BCN\ is identifiable if there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I}_\BB)^k$ for some $k>0$, such that the updating rules
 	\begin{equation*}
     		\begin{split}
 		\mathsf{s}(t+1)=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\\

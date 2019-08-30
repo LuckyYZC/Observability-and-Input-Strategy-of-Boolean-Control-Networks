@@ -3,7 +3,7 @@
 
 \section{Algorithms for online observability}
 \label{sec:deter}
-To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\Delta_M,\varepsilon,\mathsf{o}(0)))$ for every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))$. 
+To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)))$ for every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))$. 
 
 %\subsection{Input-labelled graph}
 We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$.
@@ -11,7 +11,7 @@ We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \math
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^{n} -1)} 2^{\Ded(\Delta_M,\varepsilon,\delta^j_{2^{n}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^{n} -1)} 2^{\Ded(\mathcal{S}_\BB,\varepsilon,\delta^j_{2^{n}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
 \item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})|\mathsf{i}\in\Ri(\mathsf{S}_1),\mathsf{o}\in  \Delta_N\}\}$;
 \item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_L}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Ri(\mathsf{S}_1)|\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})|\mathsf{o}\in  \Delta_N\}\}$.
  \end{itemize}
@@ -30,12 +30,12 @@ Intuitively, $\mathcal{V}$ represents a set of the state sets that for every $\m
 %From the {\em Lemma \ref{lemm:1}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, i
 
 % \subsection{Determination algorithm}
-With the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$, we have a \BCN\ $\BB$ is online observable iff every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
- Then, we propose the {\bf Algorithm~\ref{alg:1}} to determine the online observability. That, we construct the input-labelled graph, and check whether every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
+With the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$, we have a \BCN\ $\BB$ is online observable iff every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
+ Then, we propose the {\bf Algorithm~\ref{alg:1}} to determine the online observability. That, we construct the input-labelled graph, and check whether every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
  
  In the process of constructing the input-labelled graph for a \BCN\ $\BB$, we construct the vertexes which consist of a smaller number of states before constructing the vertexes which consist of a greater number of states.
 \begin{itemize}
-\item  Because, once we find a $\mathsf{S}$ that $\Ks(\mathsf{S})= \infty$, i.e. $\mathsf{S}\notin \mathcal{V}$, and as there exists $\mathsf{o}\in \Delta_N$, such that $\mathsf{S}\subseteq \Ded(\Delta_M,\varepsilon, \mathsf{o})$, we have $\Ks(\Ded(\Delta_M,\varepsilon, \mathsf{o}))= \infty$, i.e. $\Ded(\Delta_M,\varepsilon, \mathsf{o}(0))\notin \mathcal{V}$ based on the {\em Lemma \ref{lemm:1}}, i.e. the \BCN\ $\BB$ is not online observable.
+\item  Because, once we find a $\mathsf{S}$ that $\Ks(\mathsf{S})= \infty$, i.e. $\mathsf{S}\notin \mathcal{V}$, and as there exists $\mathsf{o}\in \mathcal{O}_\BB$, such that $\mathsf{S}\subseteq \Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o})$, we have $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}))= \infty$, i.e. $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\notin \mathcal{V}$ based on the {\em Lemma \ref{lemm:1}}, i.e. the \BCN\ $\BB$ is not online observable.
 \item  And we can determine the scope of $\Ri(\mathsf{S})$ if we have determined $\Ri(\mathsf{S}')$ for every $\mathsf{S}'\subset\mathsf{S}$ based on the {\em Lemma \ref{lemm:2}}. With the scope of $\Ri(\mathsf{S})$ we can determine the $\Ks(\mathsf{S})$ more easily.
  \end{itemize} %, and it can find all paths to determine $\mathsf{s}(0)$ if the \BCN\ is online observable.
 
@@ -112,7 +112,7 @@ The vertexes with $z$ states producing the same outputs
  If a \BCN\ $\BB$ with the online observability, then its initial state $\mathsf{s}(0)$ can be determined by followng procedures.
 
 \begin{description}
-	\item[Step 1]  Determine the set $\mathsf{S}(0)$ of possible valuations of initial state $\mathsf{s}(0)$ by the output $\mathsf{o}(0)$ of $\BB$, i.e. $\mathsf{S}(0)=\Ded\left(\Delta_M,\varepsilon,\mathsf{o}(0)\right)$, and set the set variable $\mathsf{S}=\mathsf{S}(0)$ by $\mathsf{S}(0)$.
+	\item[Step 1]  Determine the set $\mathsf{S}(0)$ of possible valuations of initial state $\mathsf{s}(0)$ by the output $\mathsf{o}(0)$ of $\BB$, i.e. $\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right)$, and set the set variable $\mathsf{S}=\mathsf{S}(0)$ by $\mathsf{S}(0)$.
 	\item[Step 2] Input to the \BCN\ $\BB$ with an $\mathsf{i}\in\Ri(\mathsf{S})$, and run $\BB$ to generate the new output $\mathsf{o}(t)$. 
 	\item[Step 3] Determine the new $\mathsf{S}(t)$ by the input $\mathsf{i}$, output $\mathsf{o}(t)$ and $\mathsf{S}$, i.e. $\mathsf{S}(t)=\Ded\left(\mathsf{S},\mathsf{i},\mathsf{o}(t)\right)$, and update the set $\mathsf{S}=\mathsf{S}(t)$ by $\mathsf{S}(t)$.
 	\item[Step 4] If the cardinal number of $\mathsf{S}$ equals to $1$, then return $\mathsf{s}'(0)$ which determined by the output sequence $\mathsf{O}[t]=\mathsf{o}(0)\ldots\mathsf{o}(t)$ and input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ of $\BB$ as the initial state. %That is for the input sequence $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t-1)$ of $\BB$,  the output sequence $\mathsf{O}'[t]=\mathsf{o}'(0)\ldots\mathsf{o}'(t)$ produced by $\mathsf{s}'(0)$ and $\mathsf{I}[t]$ equals to $\mathsf{O}[t]$.
