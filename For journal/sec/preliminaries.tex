@@ -32,7 +32,14 @@ These two functions are called the  {\bf updating rules}  of $\BB$.
  \end{definition}
 It is noted that there are two sets of edges in $E$, that is $(I\cup S)\times S$ and $S\times O$. An edge $(v,v')$ represents that the value of node $v'$ is directly affected by the value of $v$, and the updating rules reflect how a node is affected by the other nodes. 
 
-Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ to represent the input $(\mathsf{i}_1(t),\ldots \mathsf{i}_\ell(t))$, state $(\mathsf{s}_1(t),\ldots \mathsf{s}_m(t))$  and  output $(\mathsf{o}_1(t),\ldots \mathsf{o}_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively, that is $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$.
+Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$, we use $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ to represent the input $(\mathsf{i}_1(t),\ldots \mathsf{i}_\ell(t))$, state $(\mathsf{s}_1(t),\ldots \mathsf{s}_m(t))$  and  output $(\mathsf{o}_1(t),\ldots \mathsf{o}_n(t))$ at time $t$, respectively. We use $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. %Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. %that is $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$. 
+%That we use 
+%\begin{itemize}
+%  \item $\delta^x_{2^m}$ represents the abbreviation form of $\mathsf{i}$, where $i=\sum_{x=1}^m \mathsf{i}_{x}\times 2^{m-x}$;
+ % \item $\delta^y_{2^n}$ represents the abbreviation form of $\mathsf{s}$, where $j=\sum_{x=1}^n \mathsf{s}_{x}\times 2^{n-x}$;
+%  \item $\delta^z_{2^q}$ represents the abbreviation form of $\mathsf{o}$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}\times 2^{q-x}$.
+%\end{itemize}
+
 
 
 \begin{figure}[!t]
@@ -56,8 +63,8 @@ Furthermore, we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \ma
 		\label{fig:1}
 	\end{figure}
 %	
-Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. 
-The updating rules $\sigma: \mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
+Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E  = ((I\cup S)\times S)\cup (S\times O)$, and 
+the updating rules $\sigma: \mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
 the updating rule of output-node $\mathsf{o}_1$ is 
 $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. 
  \begin{figure}[thpb]
@@ -137,7 +144,7 @@ is an input sequence,
 $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{s}(t+1)\ldots\mathsf{s}(t+k) \in(\mathcal{S})^k$
  is the state sequence produced by the $\mathsf{s}(t)$ and the input sequence $ (\mathcal{I})^k$, and 
  $(HF)^k_{\mathsf{s}(t)}(\mathsf{I}[k])=\mathsf{o}(t+1)\ldots\mathsf{o}(t+k) \in(\mathcal{O})^k$
- is the output sequence which is produced by $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])$. That is, for every $1\le x \le k$, 
+ is the output sequence produced by $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])$. That is, for every $1\le x \le k$, 
  $\mathsf{s}(t+x)=\sigma(\mathsf{i}(t+x-1),\mathsf{s}(t+x-1))$,
 and 
  $\mathsf{o}(t+x)=\rho(\mathsf{s}(t+x))=\rho(\sigma(\mathsf{i}(t+x-1),\mathsf{s}(t+x-1)))$. 
@@ -229,7 +236,7 @@ The implication relationships of four existing types of observability shown in F
 \end{definition}
 
 \begin{example}
-For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, that is for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$ and destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\delta_{16}^{1}}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
+For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, that is for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$ and destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\mathsf{s}(0)}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
 \label{exa:12}
 \end{example}  
 
