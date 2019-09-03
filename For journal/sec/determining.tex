@@ -11,7 +11,7 @@ We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \math
 \begin{definition}[Input-labelled Graph]
 Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge set and the labelling function of an input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$. $\mathcal{G}$ is called the input-labelled graph of the \BCN\, if 
 \begin{itemize}
-\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup_{j=0}^{(2^{n} -1)} 2^{\Ded(\mathcal{S}_\BB,\varepsilon,\delta^j_{2^{n}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
+\item  $\mathcal{V}=\{\mathsf{S}\in\bigcup\limits_{j=0}^{(2^{n} -1)} 2^{\Ded(\mathcal{S}_\BB,\varepsilon,\delta^j_{2^{n}} )}|\ \Ks(\mathsf{S})\ne \infty\}$;
 \item  $\mathcal{E}=\{(\mathsf{S}_1,\mathsf{S}_2)\in \mathcal{V}\times \mathcal{V}|$ $\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})|\mathsf{i}\in\Ri(\mathsf{S}_1),\mathsf{o}\in  \mathcal{O}\}\}$;
 \item  $\mathcal{L}:\mathcal{E}\mapsto 2^{\Delta_L}=(\mathsf{S}_1,\mathsf{S}_2)\mapsto\{\mathsf{i}\in \Ri(\mathsf{S}_1)|\mathsf{S}_2\in\{\Ded(\mathsf{S}_1,\mathsf{i},\mathsf{o})|\mathsf{o}\in  \mathcal{O}\}\}$.
  \end{itemize}
@@ -57,7 +57,7 @@ The input-labelled graph of this \BCN
 \STATE $InputArray$ = $\mathcal{I}_\BB$ 
 \ELSE
 
-\STATE $InputArray$=$\bigcap^{\mathsf{S}\in VertexArray[i]} \Ri(\mathsf{S})$ 
+\STATE $InputArray$=$\mathop{\bigcap}\limits_{\mathsf{S}\subset VertexArray[i]} \Ri(\mathsf{S}) $ 
 \ENDIF
 \FOR{($j=0$; $j<arraysize(InputArray)$; $j++$)}
 \STATE Check $VertexArray[i]$ by $InputArray[j]$ 
