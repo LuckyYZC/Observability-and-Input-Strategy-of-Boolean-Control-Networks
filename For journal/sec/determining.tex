@@ -47,7 +47,7 @@ The updating rules of a \BCN
 \ENSURE  
 The input-labelled graph of this \BCN
 \STATE Boolean value $Ob=$ true 
-\STATE integer $i$ , $j$, $z=1$\
+\STATE integer $i$, $z=1$\
 \STATE array $VertexArray[\ ]$, $InputArray[\ ]$
 \STATE {\sf constructvertex}($z$)
 \STATE $VertexArray=${\sf constructvertex}($++z$)
@@ -56,21 +56,22 @@ The input-labelled graph of this \BCN
 \IF{($z==2$)}
 \STATE $InputArray$ = $\mathcal{I}_\BB$ 
 \ELSE
-
 \STATE $InputArray$=$\mathop{\bigcap}\limits_{\mathsf{S}\subset VertexArray[i]} \Ri(\mathsf{S}) $ 
-\ENDIF
-\FOR{($j=0$; $j<arraysize(InputArray)$; $j++$)}
-\STATE Check $VertexArray[i]$ by $InputArray[j]$ 
-\STATE Build edges for $VertexArray[i]$ 
-\ENDFOR
-\IF {($\Ri(VertexArray[i])=\emptyset$)}
+\IF{($InputArray==\emptyset$)}
 \STATE  $Ob=$ false 
 \STATE Return Null
 \ENDIF
+\ENDIF
+\STATE Get $\Ri(VertexArray[i])$ by $InputArray$ 
+\IF {($\Ri(VertexArray[i])==\emptyset$)}
+\STATE  $Ob=$ false 
+\STATE Return Null
+\ENDIF
+\STATE Build edges for $VertexArray[i]$ 
 \ENDFOR
 \STATE $VertexArray=${\sf constructvertex}($++z$)
 \ENDWHILE
-\STATE Return $\mathcal{S}_\BB$\
+\STATE Return {\sf constructvertex}($--z$)
 \end{algorithmic}
  \label{alg:1}
 \end{algorithm}
