@@ -27,8 +27,9 @@ A \BCN\  $\BB$ has three distinguished finite sets of nodes $\{\mathsf{i}_1,\ldo
 As a {\BCN} $\BB$, each node of   $\BB$   takes a Boolean value at any time point. We use $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$  to denote the vectors of values $(\mathsf{i}_1(t),\ldots,\mathsf{i}_\ell(t))$ of the input-nodes,  $(\mathsf{s}_1(t),\ldots,\mathsf{s}_m(t))$ of the state-nodes, and $(\mathsf{o}_1,\ldots,\mathsf{o}_n(t))$ of the output-nodes  which are called the {\em input}, {\em state} and {\em output} at time $t$, respectively.
 \begin{itemize}
 \item The {\em initial state} $\mathsf{s}(0)$ is given according to some conditions;
-	\item the output $\mathsf{o}(t)$ at time $t$ is determined by the state $\mathsf{s}(t)$ at time $t$, that is there exists a Boolean functions $\rho$ such that $\mathsf{o}(t)=\rho(\mathsf{s}(t))$, and  
-	\item the state $\mathsf{s}(t+1)$ at time $t+1$ is determined by the input $\mathsf{i}(t)$ and state $\mathsf{s}(t)$ at time point $t$, that is there is a Boolean functions $\sigma$ such that $\mathsf{s}(t+1)=\sigma(\mathsf{i}(t),\mathsf{s}(t))$.
+\item the state $\mathsf{s}(t+1)$ at time $t+1$ is determined by the input $\mathsf{i}(t)$ and state $\mathsf{s}(t)$ at time point $t$, that is there is a Boolean functions $\sigma$ such that $\mathsf{s}(t+1)=\sigma(\mathsf{i}(t),\mathsf{s}(t))$, 
+	\item and the output $\mathsf{o}(t)$ at time $t$ is determined by the state $\mathsf{s}(t)$ at time $t$, that is there exists a Boolean functions $\rho$ such that $\mathsf{o}(t)=\rho(\mathsf{s}(t))$.
+	
 \end{itemize} 
 
 These two functions are called the {\em updating rules} of $\BB$. And a {\em timed run}  (or {\em execution}) up to any time point $t$ of $\BB$ is a sequence $\mathsf{I}[t] = \mathsf{i}(0)\ldots \mathsf{i}(t)$ of inputs, a sequence $\mathsf{S}[t] = \mathsf{s}(0)\ldots \mathsf{s}(t)$ of states, and a sequence $\mathsf{O}[t] = \mathsf{o}(0)\ldots \mathsf{o}(t)$  of outputs. The sequences $\mathsf{S}[t]$ and $\mathsf{O}[t]$ are produced by the initial state $\mathsf{s}(0)$ and the input sequence $\mathsf{i}(0)\ldots \mathsf{i}(t-1)$.
