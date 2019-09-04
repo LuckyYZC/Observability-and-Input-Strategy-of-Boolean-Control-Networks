@@ -61,24 +61,34 @@
 %-------------------------------------
 To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalize how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its updating rules.  %The definition of it is as follows.
 
-We write $\xi(\mathsf{i}, \mathsf{s}):= \left\{
+We write \begin{equation*}\xi(\mathsf{i}, \mathsf{s}):= \left\{
 \begin{array}{rcl}
 \sigma( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
-\end{array} \right. $\\
-where $\varepsilon$ presents empty input.
-\begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
+\end{array} \right. 
+\end{equation*}
+where $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{s} \in (\mathcal{S})$ and $\varepsilon$ presents empty input.
+%\begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
 %$(\Delta_Q\cup\varepsilon)$ be the set outputs and $\varepsilon$ means empty output.
-If $\mathsf{o}\neq \varepsilon$
-\begin{equation*}
- \Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, \mathsf{s} ))=\mathsf{o}\}
-\end{equation*}
-If $\mathsf{o}= \varepsilon$
-\begin{equation*}
-\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}
-\end{equation*}
+%If $\mathsf{o}\neq \varepsilon$
+%\begin{equation*}
+% \Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, \mathsf{s} ))=\mathsf{o}\}
+%\end{equation*}
+%If $\mathsf{o}= \varepsilon$
+%\begin{equation*}
+%\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}
+%\end{equation*}
+
+Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ is defined as follows.
+\begin{equation}
+\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o}):= \left\{
+\begin{array}{rcl}
+\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, \mathsf{s} ))=\mathsf{o}\}     &      & {\mathsf{o}\neq \varepsilon}\\
+\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}       &      & {\mathsf{o}= \varepsilon}
+\end{array} \right. 
+\end{equation}
 %\begin{equation*}
 %\begin{split}
 %&\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \mathsf{s}'\in\Delta_N|\\
@@ -87,9 +97,9 @@ If $\mathsf{o}= \varepsilon$
 %\end{equation*}
 where $\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}\cup\varepsilon)$, and $\varepsilon$ presents empty output.
 %\tl{check whether this is what you want!?}\gs{It is ok.}
-\end{definition}
+%\end{definition}
 
- Then the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
+ And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
  \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, $\mathsf{o}(0)$ and $\mathsf{O}[k]=(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{o}(1)\ldots\mathsf{o}(k)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -183,6 +193,7 @@ In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm fo
 %\subsection{Online observability}
 %The online observability is formall defined as follows.
 
+Then, the online observability can be defined.
 \begin{definition}[Online Observability of  BCNs]
 %\tl{(12)why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is observable
