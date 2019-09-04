@@ -4,7 +4,7 @@
 \section{Preliminaries} 
 \label{sec:pre}
 We now introduce the formal definition of {\BCNs} and  the control-theoretical problems  of controllability, observability and  identification. Throughout the paper, we use $\mathbb{B}$ to denote the set of Boolean values $\{0,1\}$ and $\mathbb{T}$ to denote the set of discrete time domain  $\{0,1,2, \ldots\}$ which is the set of natural numbers.
-
+%,  $\mathbb{Z}$ to denote the set of integer 
 \subsection{Boolean Control Networks}
 
 We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (BN)  is given a directed graph together with two  logical equations which define the updating rules for the  values of the nodes. 
@@ -138,7 +138,11 @@ Firstly, we define two functions to present the relations among the input sequen
 F^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{S}^k,\\
 F^k_{\mathsf{s}(t)}&(\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}))\\
 %&= \mathsf{s}(t+1)\ldots\mathsf{s}(t+k)\\
-=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\ldots\sigma(\mathsf{i}(t+k-1),\mathsf{s}(t+k-1))\\
+=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\ldots\sigma(\mathsf{i}(t+k-1),\mathsf{s}(t+k-1))
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
 H^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{O}^k,\\
  H^k_{\mathsf{s}(t)}&(\mathsf{i}(t)\ldots\mathsf{i}(t+k-1)) \\%\mapsto \mathsf{o}(t+1)\ldots\mathsf{o}(t+k)
  =&\rho(\sigma(\mathsf{i}(t),\mathsf{s}(t)))\ldots\rho(\sigma(\mathsf{i}(t+k-1),\mathsf{s}(t+k-1)))\\
