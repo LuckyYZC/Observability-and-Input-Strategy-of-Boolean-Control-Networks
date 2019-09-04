@@ -128,7 +128,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 %\subsection{$K$-step determinability}
 %{\color{red} (10)} We propose the 
 
-As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that we can determine the $\mathsf{s}(t)$ at time $(t+\Ks(\mathsf{S}(t))$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
+As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
 \begin{definition}[$\Ks(\mathsf{S})$] $\Ks:2^{\mathcal{S}_\BB} \mapsto (\mathbb{T}\cup\infty)$,
 %For a non-empty set $\mathsf{S}\subseteq\mathcal{S}_\BB$
@@ -179,23 +179,6 @@ For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subs
 %\end{lemma}
 All the proofs in the {\bf Appendix~A~Proof}. 
 
-We propose $\Ri(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that we can choose $\mathsf{i}(t)$ from $\Ri(\mathsf{S}(t))$ to determine $\mathsf{s}(t)$.
-
-%\begin{definition}[$\Ri(\mathsf{S})$] 
-\begin{equation}
-\begin{split}
-\Ri&:2^{\mathcal{S}_\BB} \mapsto2^{\mathcal{I}},\\
-\Ri(\mathsf{S})&=\{\mathsf{i}\in \mathcal{I}|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
-&\forall \mathsf{o} \in \mathcal{O}, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
-\end{split}
-\end{equation}
-%\end{definition}
-\begin{lemma}
-For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
-\label{lemm:2}
-\end{lemma}
-
-In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}}.
 %, and we will represent the details in .
 %==========================================================================================
 
@@ -222,17 +205,36 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  
 Therefore this \BCN\ satisfies the online observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
+\end{example}  
+
+We propose $\Ri(\mathsf{S}(t))$ to depict that we can choose any $\mathsf{i}(t)$ from $\Ri(\mathsf{S}(t))$ to determine $\mathsf{s}(t)$ at time $t$.
+
+%\begin{definition}[$\Ri(\mathsf{S})$] 
+\begin{equation}
+\begin{split}
+\Ri&:2^{\mathcal{S}_\BB} \mapsto2^{\mathcal{I}},\\
+\Ri(\mathsf{S})&=\{\mathsf{i}\in \mathcal{I}|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
+&\forall \mathsf{o} \in \mathcal{O}, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
+\end{split}
+\end{equation}
+%\end{definition}
+
+We call the observability we propose online observability, because we choose every $\mathsf{i}(t)$ to determine initial state $\mathsf{s}(0)$ based on the information of the inputs and outputs of \BCN\ we have collected so far at every time $t$, i.e. $\mathsf{i}(t)\in\Ri(\mathsf{S}(t))$. 
+
+In contrast, in the {\bf type-III} observability, we determine the initial state $\mathsf{s}(0)$ of a \BCN\ by its recorded $\mathsf{O}[k]=\mathsf{o}(0)\ldots\mathsf{o}(k)$ after we input $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call it offline observability.
+
+We also propose a lemma for $\Ri(\mathsf{S})$. In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}}.
+\begin{lemma}
+For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
+\label{lemm:2}
+\end{lemma}
 
 
 
 %its \State$(0)$ can be determined by this new algorithm for every \State$(0)$. Its formal definition will be presented in Section~\ref{sec:online}.  
 
-We call this observability online observability, because we choose every $\mathsf{i}(t)$ to determine initial state $\mathsf{s}(0)$ based on the information of the inputs and outputs of \BCN\ we have collected so far at every time $t$, i.e. $\mathsf{i}(t)\in\Ri(\mathsf{S}(t))$. 
 
-In contrast, in the {\bf type-III} observability, we determine the initial state $\mathsf{s}(0)$ of a \BCN\ by its recorded $\mathsf{O}[k]=\mathsf{o}(0)\ldots\mathsf{o}(k)$ after we input $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call it offline observability.
-
-
-\end{example}  
+And then, we propose two lemmas for online observability. From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}} and the implication relations between the existing four types of observability, we have the relations among all five types of observability shown in Fig.~\ref{fig:7}.
 
 \begin{lemma}
 The {\bf Type-III} observability implies the online observability.
@@ -248,7 +250,7 @@ The online observability implies the  {\bf Type-I} observability.
 
 
 
-From the {\em Lemma \ref{lemm:3}}, {\em Lemma \ref{lemm:4}} and the implication relations between the existing four types of observability, we have the relations among all five types of observability shown in Fig.~\ref{fig:7}.
+
 %In the existing third observability, we can determine the initial state $\mathsf{s}^{i}(0)$ of \BCN\ too. Thus the existing third observability implies the online obervability.
 
 \begin{figure}[thpb]

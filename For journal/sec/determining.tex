@@ -3,7 +3,7 @@
 
 \section{Algorithms for online observability}
 \label{sec:deter}
-To  determine  online observability of \BCN s, one needs to determine $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)))$ for every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))$. 
+After formal defining the online observability, we propose decision algorithm for it. To determine whether a \BCN\ $\BB$ satisfies online observability, one needs to determine $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)))$ of every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))$ for $\BB$. 
 
 %\subsection{Input-labelled graph}
 We start with input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$.
@@ -25,13 +25,15 @@ Let $\mathcal{V}$, $\mathcal{E}$ and $\mathcal{L}$ be the vertex set, the edge s
       \caption{Part of the input-labelled graph, where the green, black, orange, blue edges are labelled with $\{\delta_4^0\}$, $\{\delta_4^1\}$, $\{\delta_4^2\}$ and $\{\delta_4^3\}$ respectively.}
       \label{fig:4}
 \end{figure}
-Intuitively, $\mathcal{V}$ represents a set of the state sets that for every $\mathsf{S}\in \mathcal{V}$, $\Ks(\mathsf{S})\ne \infty$ and for every $\mathsf{s}\in\mathsf{S}$, $\mathsf{s}$ produces the same output. $\mathcal{E}$ represents the relationship between the state sets which belong to $\mathcal{V}$, and $\mathcal{L}$ labels every $\mathsf{e} \in\mathcal{E}$ with a set of inputs. %Then, based on the definition of the input-labelled graph, we have a \BCN\ is online observable iff every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\in \mathcal{V}$.%Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
+Intuitively, $\mathcal{V}$ represents a set of the state sets that for every $\mathsf{S}\in \mathcal{V}$, $\Ks(\mathsf{S})\ne \infty$ and for every $\mathsf{s}\in\mathsf{S}$, $\mathsf{s}$ produces the same output. $\mathcal{E}$ represents the relationship between the state sets which belong to $\mathcal{V}$, and $\mathcal{L}$ labels every $\mathsf{e} \in\mathcal{E}$ with a set of inputs. 
+
+With the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$, we have a \BCN\ $\BB$ is online observable iff every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$. %Then, based on the definition of the input-labelled graph, we have a \BCN\ is online observable iff every non-empty $\Ded(\Delta_M,\varepsilon, \mathsf{o}^{j}(0))\in \mathcal{V}$.%Thus we can determine $\Ks(\Ded(\Delta_N,\varepsilon,\mathsf{o}^{j}(0)))$ of every non-empty $\Ded(\Delta_N,\varepsilon, \mathsf{o}^{j}(0))$ by checking the input-labelled graph.
 
 %From the {\em Lemma \ref{lemm:1}}, we have that if for the set of states $\mathsf{S}^1$ there does not exist any $k^{1}\ge 0$ such that $\mathsf{S}^{1}$ is $k^{1}$-step determinable, and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$. Then there does not exist any $k^{2}\ge 0$ that make $\mathsf{S}^{2}$ $k^{2}$-step determinable. Therefore, i
 
 % \subsection{Determination algorithm}
-With the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$, we have a \BCN\ $\BB$ is online observable iff every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
- Then, we propose the {\bf Algorithm~\ref{alg:1}} to determine the online observability. That, we construct the input-labelled graph, and check whether every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
+
+ Then, we propose the {\bf Algorithm~\ref{alg:1}} to determine the online observability. That is, we construct the input-labelled graph $\mathcal{G}=(\mathcal{V}, \mathcal{E}, \mathcal{L})$ for  \BCN, and then check whether every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\in \mathcal{V}$.
  
  In the process of constructing the input-labelled graph for a \BCN\ $\BB$, we construct the vertexes which consist of a smaller number of states before constructing the vertexes which consist of a greater number of states.
 \begin{itemize}
