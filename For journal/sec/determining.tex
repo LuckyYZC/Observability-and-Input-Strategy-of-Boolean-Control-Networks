@@ -86,14 +86,15 @@ The input-labelled graph of this \BCN
 The number of states $z$
 \ENSURE  
 The vertexes with $z$ states producing the same outputs 
-\STATE  Construct all vertexes with $z$ states producing the same output 
-\IF{(Failed to construct)} 
+\STATE array $VertexArray[\ ]$
+\STATE $VertexArray=\{\mathsf{S}\in\bigcup\limits_{\mathsf{o}\in\mathcal{O}} 2^{\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o} )}|\ |\mathsf{S}|=z\}$
+\IF{($VertexArray==\emptyset$)} 
 \STATE  Return Null
 \ELSE 
-\STATE  Classify these vertexes
-\STATE Sort the states in these vertexes
-\STATE Sort these vertexes
-\STATE Return vertexes
+%\STATE  Classify these vertexes
+%\STATE Sort the states in these vertexes
+%\STATE Sort these vertexes
+\STATE Return $VertexArray$
 \ENDIF 
 \end{algorithmic}
  \label{alg:2}

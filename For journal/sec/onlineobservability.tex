@@ -59,7 +59,7 @@
 
 %-------------------------------------
 %-------------------------------------
-To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalize how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its updating rules.  %The definition of it is as follows.
+To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalizes how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its updating rules.  %The definition of it is as follows.
 
 Firstly, we write 
 
@@ -86,7 +86,7 @@ where $\varepsilon$ presents empty input.
 %\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}
 %\end{equation*}
 
-Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ is defined as follows.
+Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ can be defined as follows.
 \begin{equation}
 \begin{split}
 \Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\varepsilon)\times(\mathcal{O}\cup\varepsilon)\mapsto2^{\mathcal{S}_\BB},\\
@@ -128,7 +128,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 %\subsection{$K$-step determinability}
 %{\color{red} (10)} We propose the 
 
-As the next step, we introduce a predicate $\Ks(\mathsf{S}(t))$ for $\mathsf{S}(t)$ to depict that the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$. 
+As the next step, we define a function $\Ks(\mathsf{S}(t))$ to depict the number of steps we need to determine $\mathsf{s}(t)$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$, that is the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$.
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
 \begin{definition}[$\Ks(\mathsf{S})$] $\Ks:2^{\mathcal{S}_\BB} \mapsto (\mathbb{T}\cup\infty)$,
 %For a non-empty set $\mathsf{S}\subseteq\mathcal{S}_\BB$
@@ -167,7 +167,7 @@ Thus $\Ks(\mathsf{S}(0))=1$, that is $\mathsf{s}(0)$ can be determined at time $
 We propose a lemma for $\Ks(\mathsf{S})$.
 
 \begin{lemma}
-For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ks(\mathsf{S}^{1})\le\Ks(\mathsf{S}^{2})$.%and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
+For any two non-empty state sets $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ks(\mathsf{S}^{1})\le\Ks(\mathsf{S}^{2})$.%and $\mathsf{S}^{1}\subseteq \mathsf{S}^{2}$, 
   \label{lemm:1}
 \end{lemma}
 
@@ -189,7 +189,7 @@ Then, the online observability can be defined.
 \begin{definition}[Online Observability of  BCNs]
 %\tl{(12)why $\epsilon$ is in the def? for which purpose?}
  A \BCN\ is observable
-if for every $\mathsf{o}(0)\in  \mathcal{O}$, $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o}(0))\ne\emptyset$ implies $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right))\ne\infty$.
+if for every $\mathsf{o}\in  \mathcal{O}$, $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o})\ne\emptyset$ implies $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}))\ne\infty$.
 \end{definition}
 
 %In order to better illustrate the definition of online observability, we give the following example.
@@ -207,7 +207,7 @@ Therefore this \BCN\ satisfies the online observability.%, thus we can determine
 \label{exa:10}
 \end{example}  
 
-We propose $\Ri(\mathsf{S}(t))$ to depict that we can choose any $\mathsf{i}(t)$ from $\Ri(\mathsf{S}(t))$ to determine $\mathsf{s}(t)$ at time $t$.
+We propose $\Ri(\mathsf{S}(t))$ to depict the set of possible valuations of $\mathsf{i}(t)$ we can choose from to determine $\mathsf{s}(t)$.
 
 %\begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation}
@@ -223,9 +223,9 @@ We call the observability we propose online observability, because we choose eve
 
 In contrast, in the {\bf type-III} observability, we determine the initial state $\mathsf{s}(0)$ of a \BCN\ by its recorded $\mathsf{O}[k]=\mathsf{o}(0)\ldots\mathsf{o}(k)$ after we input $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call it offline observability.
 
-We also propose a lemma for $\Ri(\mathsf{S})$. In {\em Section \ref{sec:deter}}, we will design the determinnation algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}}.
+We also propose a lemma for $\Ri(\mathsf{S})$, and we will design the determinnation algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}} in {\em Section \ref{sec:deter}}.
 \begin{lemma}
-For the non-empty $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
+For any two non-empty state sets  $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
 \label{lemm:2}
 \end{lemma}
 

@@ -7,7 +7,7 @@ We now introduce the formal definition of {\BCNs} and  the control-theoretical p
 %,  $\mathbb{Z}$ to denote the set of integer 
 \subsection{Boolean Control Networks}
 
-We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (BN)  is given a directed graph together with two  logical equations which define the updating rules for the  values of the nodes. 
+We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (\BCN)  is given a directed graph together with two  logical equations which define the updating rules for the  values of the nodes. 
 
 \begin{definition}[Boolean Control Network] A \BCN\ is a structure $\BB = (I,S,O, E, \sigma, \rho)$. The first four components $(I,S,O, E)$ form a directed graph which consists of 
 	\begin{itemize}
@@ -32,7 +32,7 @@ where $\mathsf{i}(t)$, $\mathsf{s}(t)$, and $\mathsf{o}(t)$ represent the vector
  \end{definition}
 
  
-It is noted that there are two sets of edges in $E$, that is $(I\cup S)\times S$ and $S\times O$. An edge $(v,v')$ represents that the value of node $v'$ is directly affected by the value of $v$, and the updating rules reflect how a node is affected by the other nodes. 
+It is noted that there are two sets of edges in $E$, that is they are the subsets of $(I\cup S)\times S$ and $S\times O$, respectively. An edge $(v,v')$ represents that the value of node $v'$ is directly affected by the value of $v$, and the updating rules reflect how a node is affected by the other nodes. 
 
 Furthermore, we use $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. 
 %we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$,  %Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. %that is $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$. 
@@ -130,9 +130,7 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 
 
 \subsection{Four existing observability definitions of \BCNs}
-%To introduce the observability, controllability and identifiability of \BCNs, 
-
-Firstly, we define two functions to present the relations among the input sequence, state squence and output sequence~\cite{Zhang2016Observability}:
+To introduce the observability, controllability and identifiability of \BCNs, we first define two functions to present the relations among the input sequence, state squence and output sequence~\cite{Zhang2016Observability}:
 \begin{equation}
 \begin{split}
 F^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{S}^k,\\
@@ -152,7 +150,7 @@ H^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{O}^k,\\
 %\tl{but you have defined $\Delta_N$, $\Delta_M$ and $\Delta_Q$ just now?!}
 where $k>0$ presents the length of input sequence.
 
-For any time $t\in  \mathbb{T}$ and any $k>0$, using $\mathsf{I}[k]$ to presents the input sequence $\mathsf{i}(t)\ldots\mathsf{i}({t+k-1})$, the state sequence $\mathsf{s}(t+1)\ldots\mathsf{s}(t+k)$ and  output sequence $\mathsf{o}(t+1)\ldots\mathsf{o}(t+k)$ produced by $\mathsf{I}[k]$ from $\mathsf{s}(t)$ can be presented by $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])$ and
+Such that, for any time $t\in  \mathbb{T}$ and any $k>0$, using $\mathsf{I}[k]$ to presents the input sequence $\mathsf{i}(t)\ldots\mathsf{i}({t+k-1})$, the state sequence $\mathsf{s}(t+1)\ldots\mathsf{s}(t+k)$ and  output sequence $\mathsf{o}(t+1)\ldots\mathsf{o}(t+k)$ produced by $\mathsf{I}[k]$ from $\mathsf{s}(t)$ can be presented by $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])$ and
  $H^k_{\mathsf{s}(t)}(\mathsf{I}[k])$, respectively. 
  
  Then, the observability, controllability and identifiability of \BCNs\ are defined as follows.
@@ -284,7 +282,7 @@ The implication relationships of four existing types of observability is that, {
 %\label{exa:6}
 %\end{example}  
 
-A \BCN\ $\BB$ is identifiable iff $\BB$ is controllable and $\BB$'s initial state $\mathsf{s}(0)$ can be determined  without  resetting~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$  without  resetting. But we discover that the  {\bf Type-III} observability is sufficient but not necessary condition. Thus, we propose the online observability to present the necessary and sufficient condition.
+Furthermore, a \BCN\ $\BB$ is identifiable iff this \BCN\ $\BB$ is controllable and $\BB$'s initial state $\mathsf{s}(0)$ can be determined  without  resetting~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$  without  resetting. But we discover that the  {\bf Type-III} observability is sufficient but not necessary condition. Thus, we propose the online observability to present the necessary and sufficient condition.
 %, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
 
 
