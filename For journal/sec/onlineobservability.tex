@@ -203,7 +203,15 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
-Therefore this \BCN\ satisfies the online observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
+ And for any $k>0$, there is not an $\mathsf{I}[k]\in(\mathcal{I})^k$ which determines the $\mathsf{s}(0)$ of this \BCN:
+\begin{itemize}
+  \item $\mathsf{I}[k]$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
+  \item $\mathsf{I}[k]$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
+  \item $\mathsf{I}[k]$ with prefix $\delta_{4}^2$ can not distinguish $\delta_{16}^3$ and $\delta_{16}^{4}$;
+  \item $\mathsf{I}[k]$ with prefix $\delta_{4}^3$ can not distinguish $\delta_{16}^{14}$ and $\delta_{16}^{15}$.
+\end{itemize} 
+%Therefore it does not satisfy the {\bf Type-III} observability. 
+Therefore this \BCN\ satisfies the online observability but does not satisfy the {\bf Type-III} observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
 \label{exa:10}
 \end{example}  
 
