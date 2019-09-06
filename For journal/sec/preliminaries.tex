@@ -18,9 +18,9 @@ We take the definition in ~\cite{Ideker2001A} in which a Boolean control network
 	\item {\bf output nodes}: $O= \{\mathsf{o}_1$,\ldots ,$\mathsf{o}_n\}$.
 	\end{itemize}	
 \item  $E \subseteq ((I\cup S)\times S)\cup (S\times O)$ is a set of edges among the nodes, and we say node $v$ directly affects node  $v'$  when $(v,v')$ is an edge in $E$.
-\item The Boolean valued functions $\sigma: \mathbb{B}^m \mapsto \mathbb{B}^\ell$ and $\rho: \mathbb{B}^\ell\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimensionand $m$-dimension vectors  of Boolean values to  the $\ell$-dimension vectors Boolean values and from the  $\ell$-dimension vectors to the  $n$-dimension vectors  of Boolean values, respectively. 
+\item The Boolean valued functions $\sigma: \mathbb{B}^\ell \mathbb{B}^m \mapsto \mathbb{B}^m$ and $\rho: \mathbb{B}^m\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimension and $m$-dimension vectors  of Boolean values to  the $m$-dimension vectors Boolean values and from the  $m$-dimension vectors to the  $n$-dimension vectors  of Boolean values, respectively. 
 \item {\em Timed behavior}: each node $v\in I\cup S\cup O$ represents a Boolean variable, and we use 
- $i= (i_1,\ldots, i_\ell)$, $s= (s_1,\ldots, s_m)$ and $o= (o_1,\ldots, o_n)$ to denote the three variables Boolean vectors corresponding  to the input nodes, state nodes and output nodes. At any time $t\in \mathbb{T}$ during the execution 
+ $i= (i_1,\ldots, i_\ell)$, $s= (s_1,\ldots, s_m)$ and $o= (o_1,\ldots, o_n)$ to denote the three Boolean variables vectors corresponding  to the input nodes, state nodes and output nodes. At any time $t\in \mathbb{T}$ during the execution 
  of $\BB$, each of the variables  $i$, $s$ and $o$  (thus every node of $\BB$ too) take a vector of Boolean values $i(t)$, $s(t)$, $o(t)$  in  $\mathbb{B}^\ell$, $\mathbb{B}^m$ and $\mathbb{B}^n$, respectively, such that the following equations are satisfied
 \begin{equation}
 \begin{split}
