@@ -63,7 +63,7 @@ To formally define the online observability, we start with the derivation functi
 
 Firstly, we write 
 
-\begin{equation*}
+\begin{equation}
 \begin{split}
 \xi :  (\mathcal{I}\cup\varepsilon) \times\mathcal{S} \mapsto\mathcal{S},\ \xi (\mathsf{i}, \mathsf{s})= \left\{
 \begin{array}{rcl}
@@ -71,7 +71,7 @@ Firstly, we write
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
 \end{array} \right. 
 \end{split}
-\end{equation*}
+\end{equation}
 where $\varepsilon$ presents empty input.
 %\begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
@@ -130,7 +130,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 
 As the next step, we define a function $\Ks(\mathsf{S}(t))$ to depict the number of steps we need to determine $\mathsf{s}(t)$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$, that is the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$.
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
-\begin{definition}[$\Ks(\mathsf{S})$] $\Ks:2^{\mathcal{S}_\BB} \mapsto (\mathbb{T}\cup\infty)$,
+\begin{definition}[$\Ks(\mathsf{S})$] $\Ks:2^{\mathcal{S}_\BB} \mapsto (\mathbb{T}\cup\{\infty\})$,
 %For a non-empty set $\mathsf{S}\subseteq\mathcal{S}_\BB$
  \begin{itemize}
  \item   if $|\mathsf{S}|=1$ then $\Ks(\mathsf{S}$)=0;
@@ -203,7 +203,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}.
  \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
  \end{itemize}
  
- And for any $k>0$, there is not an $\mathsf{I}[k]\in(\mathcal{I})^k$ which determines the $\mathsf{s}(0)$ of this \BCN:
+ And for any $k>0$, there is not an $\mathsf{I}[k]\in(\mathcal{I})^k$ which can distinguish every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0)$:
 \begin{itemize}
   \item $\mathsf{I}[k]$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
   \item $\mathsf{I}[k]$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
@@ -215,7 +215,7 @@ Therefore this \BCN\ satisfies the online observability but does not satisfy the
 \label{exa:10}
 \end{example}  
 
-We propose $\Ri(\mathsf{S}(t))$ to depict the set of possible valuations of $\mathsf{i}(t)$ we can choose from to determine $\mathsf{s}(t)$.
+And we define $\Ri(\mathsf{S}(t))$ to depict the set of possible valuations of input $\mathsf{i}(t)$ we can choose from to determine the state $\mathsf{s}(t)$.
 
 %\begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation}
