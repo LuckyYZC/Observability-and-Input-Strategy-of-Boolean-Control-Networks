@@ -144,7 +144,7 @@ Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho,\theta)$, let $\mathcal{I}$, $\mat
 \end{array}
 \]} such that each for any $\mathsf{s}(k)$ and $\mathsf{o}(k)$ of any $\mathsf{S}[t]$ and 
 $\mathsf{O}[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
-\item Let $\mathsf{S}(t) = \{ s(t)~|~ s(0)\ldots s(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ o(t)~|~ o(0)\ldots o(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
+\item Let $\mathsf{S}(t) = \{ \mathsf{s}(t)~|~ \mathsf{s}(0)\ldots \mathsf{s}(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ \mathsf{o}(t)~|~ \mathsf{o}(0)\ldots \mathsf{o}(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
 \item For any interval  $[t_0,t]$ of time $\mathbb{T}$, where $t\geq t_0$, we define the following sets 
 \[\begin{array}{llllll}
 \mathcal{I}^{[t]} &=& \{\mathsf{I}[t] ~|~ \mathsf{I}[t]\in \mathcal{I}^T\}\\
@@ -277,7 +277,7 @@ The implication relationships of four existing types of observability is that, {
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that in the  $F^{[0,t]}(\mathsf{I}[k])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$, the $\mathsf{s}(0)=\mathsf{s}$ and $\mathsf{s}(t+1)=\mathsf{s}'$.
+	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that in the  $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$, the $\mathsf{s}(0)=\mathsf{s}$ and $\mathsf{s}(t+1)=\mathsf{s}'$.
 \end{definition}
 
 %\begin{example}
@@ -293,7 +293,7 @@ The implication relationships of four existing types of observability is that, {
 		\mathsf{o}(t)=&\rho(\mathsf{s}(t))
 		\end{split}
 	\end{equation*}
-	can be determined by $\mathsf{I}[t]$ and $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])$.
+	can be determined by $\mathsf{I}[t]$ and $H^{[0,t]}(\mathsf{s}(0),\mathsf{I}[t])$.
 \end{definition}
 
 %\begin{definition}[Observability]

@@ -59,7 +59,7 @@
 
 %-------------------------------------
 %-------------------------------------
-To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalizes how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its updating rules.  %The definition of it is as follows.
+To formally define the online observability, we start with the derivation function $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ which formalizes how to determine the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ by its inputs and outputs.  %The definition of it is as follows.
 
 Firstly, we write 
 
@@ -108,11 +108,11 @@ where  $\varepsilon$ presents empty input or empty output.
 %\end{definition}$\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}\cup\varepsilon)$, and
 
  And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
- \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[k]=\mathsf{i}(0)\ldots\mathsf{i}(k-1)$, $\mathsf{o}(0)$ and $\mathsf{O}[k]=(HF)^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{o}(1)\ldots\mathsf{o}(k)$, %for every $t\le k$, 
+ \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[t_k]=\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $\mathsf{O}[t_k]= H^{[0,t_k]}(\mathsf{s}(0),\mathsf{I}[t_k])=\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
-\Ded\left(\mathsf{S}(t-1),\mathsf{i}(t-1),\mathsf{o}(t)\right)       &      & 0<t\leq k
+\Ded\left(\mathsf{S}(t-1),\mathsf{i}(t-1),\mathsf{o}(t)\right)       &      & 0<t\leq t_k+1
 \end{array} \right. .\]
 
 \end{definition}
