@@ -138,43 +138,51 @@ Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho,\theta)$, let $\mathcal{I}$, $\mat
 \begin{itemize}
 \item $\mathcal{B}^T = (\mathcal{I}^T, \mathcal{S}^T, \mathcal{O}^T)$,  where 
 {\small \[\begin{array}{llll}
-\mathcal{I}^T =\{I[t]~|~ t\in \mathbb{T}, I[t]=i(0)\ldots i(t)\}\\
-\mathcal{S}^T =\{S[t]~|~ t\in \mathbb{T}, s[t]=s(0)\ldots s(t)\}\\
-\mathcal{O}^T =\{O[t]~|~ t\in \mathbb{T}, O[t]=o(0)\ldots o(t)\}\\
+\mathcal{I}^T =\{\mathsf{I}[t]~|~ t\in \mathbb{T}, \mathsf{I}[t]=\mathsf{i}(0)\ldots \mathsf{i}(t)\}\\
+\mathcal{S}^T =\{\mathsf{S}[t]~|~ t\in \mathbb{T}, \mathsf{S}[t]=\mathsf{s}(0)\ldots \mathsf{s}(t)\}\\
+\mathcal{O}^T =\{\mathsf{O}[t]~|~ t\in \mathbb{T}, \mathsf{O}[t]=\mathsf{o}(0)\ldots \mathsf{o}(t)\}\\
 \end{array}
-\]}
-such that each for any $s(k)$ and $o(k)$ of any $S[t]$ and 
-$O[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
-\item Let $S(t) = \{ s(t)~|~ s(0)\ldots s(t) \in \mathcal{S}^T\}$ and $O(t) = \{ o(t)~|~ o(0)\ldots o(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
-\item For any interval  $[t_0,t]$ of time $\mathbb{T}$, whener $t\geq t_0$, we define the following sets 
+\]} such that each for any $\mathsf{s}(k)$ and $\mathsf{o}(k)$ of any $\mathsf{S}[t]$ and 
+$\mathsf{O}[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
+\item Let $\mathsf{S}(t) = \{ s(t)~|~ s(0)\ldots s(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ o(t)~|~ o(0)\ldots o(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
+\item For any interval  $[t_0,t]$ of time $\mathbb{T}$, where $t\geq t_0$, we define the following sets 
 \[\begin{array}{llllll}
-\mathcal{I}^{[t]} &=& \{I[t] ~|~ I[t]\in \mathcal{I}^T\}\\
-\mathcal{I}^{[t_0,t]} &=& \{i(t_0)\ldots i(t)~|\exists i(0)\ldots i(t)\in I^{[t_0]}\cdot\\
-&& i(0)\ldots i(t_0) \ldots i(t)\in \mathcal{I}^{[t]} \\
-\mathcal{S}^{[t]} &=& \{S[t] ~|~ S[t]\in \mathcal{S}^T\}\\
-\mathcal{S}^{[t_0,t]} &=& \{s(t_0)\ldots s(t+1)~|\exists s(0)\ldots s(t_0)\in S^{[t_0]}\cdot\\
-&& s(0)\ldots s(t_0) \ldots s(t+1)\in \mathcal{S}^{[t+1]} \\
-\mathcal{O}^{[t]} &=& \{O[t] ~|~ O[t]\in \mathcal{O}^T\}\\
-\mathcal{O}^{[t_0,t]} &=& \{o(t)\ldots o(t_0)~|\exists o(0)\ldots o(t_o)\in S^{[t_0]}\cdot\\
-&& o(0)\ldots o(t_o) \ldots s(t+1)\in \mathcal{O}^{[t+1]} \\
+\mathcal{I}^{[t]} &=& \{\mathsf{I}[t] ~|~ \mathsf{I}[t]\in \mathcal{I}^T\}\\
+\mathcal{I}^{[t_0,t]} &=& \{\mathsf{i}(t_0)\ldots \mathsf{i}(t)~|\exists \mathsf{i}(0)\ldots \mathsf{i}(t)\in \mathsf{I}^{[t_0]}\cdot\\
+&& \mathsf{i}(0)\ldots \mathsf{i}(t_0) \ldots \mathsf{i}(t)\in \mathcal{I}^{[t]} \\
+\mathcal{S}^{[t]} &=& \{\mathsf{S}[t] ~|~ \mathsf{S}[t]\in \mathcal{S}^T\}\\
+\mathcal{S}^{[t_0,t]} &=& \{\mathsf{s}(t_0)\ldots \mathsf{s}(t+1)~|\exists \mathsf{s}(0)\ldots \mathsf{s}(t_0)\in \mathcal{S}^{[t_0]}\cdot\\
+&& \mathsf{s}(0)\ldots \mathsf{s}(t_0) \ldots \mathsf{s}(t+1)\in \mathcal{S}^{[t+1]} \\
+\mathcal{O}^{[t]} &=& \{\mathsf{O}[t] ~|~ \mathsf{O}[t]\in \mathcal{O}^T\}\\
+\mathcal{O}^{[t_0,t]} &=& \{\mathsf{o}(t)\ldots \mathsf{o}(t_0)~|\exists \mathsf{o}(0)\ldots \mathsf{o}(t_o)\in \mathcal{O}^{[t_0]}\cdot\\
+&& \mathsf{o}(0)\ldots \mathsf{o}(t_o) \ldots \mathsf{o}(t+1)\in \mathcal{O}^{[t+1]} \\
 \end{array}
 \]
 \end{itemize} 
-The sets $I^{[t_0,t]}$, $S^{[t_0,t]}$ and $O^{[t_0,t]}$ are the possible inputs, states and outputs of the execution of $\BB$ in the interval $[t_0,t]$ of observing time. 
+The sets $\mathcal{I}^{[t_0,t]}$, $\mathcal{S}^{[t_0,t]}$ and $\mathcal{O}^{[t_0,t]}$ are the possible inputs, states and outputs of the execution of $\BB$ in the interval $[t_0,t]$ of observing time. 
 
-We now define the following two functions which define,  for any interval $[t_0,t]$ of observing time from $t_0$ to $t$,  the sequence of states and sequence of outputs produced, respectively,  in the interval by a state $s(t_0)$ at time $t_0$ and a sequence of inputs in the interval. Formally, the two functions are defined as:
+		We now define the following two functions which define,  for any interval $[t_0,t]$ of observing time from $t_0$ to $t$,  the sequence of states and sequence of outputs produced, respectively,  in the interval by a state $\mathsf{s}(t_0)$ at time $t_0$ and a sequence of inputs in the interval. Formally, the two functions are defined as:
 
+
+\begin{equation}
+\begin{split}
+F^{[t_0,t]}&: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{S}^{[t_0,t+1]}\\
+F^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{s}(t_0+1)\ldots \mathsf{s}(t+1)\\
+ \end{split}
+\end{equation}
+ \begin{equation}
+\begin{split}
+ H^{[t_0,t]}&: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{O}^{[t_0,t+1]}\\
+H^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{o}(t_0+1)\ldots \mathsf{o}(t+1)\\
+\end{split}
+\end{equation}
 
 \[
 \begin{array}{llllll}
-F^{[t_0,t]}: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{S}^{[t_0,t+1]}\\
- H^{[t_0,t]}: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{O}^{[t_0,t+1]}\\
-F^{[t_0,t]}(s, i(t_0)\ldots i(t))= s(t_0+1)\ldots s(t+1)\\
-H^{[t_0,t]}(s, i(t_0)\ldots i(t))= o(t_0+1)\ldots o(t+1)\\
 \mbox{such that the following conditions are satisfied}\\
- (s(t_0)=s)\wedge \\
- \forall t'=t_0+1..(t+1)\cdot (s(t')=\sigma(i(t'-1),s(t'-1)))\wedge \\
- \forall t'=t_0..t+1\cdot (o(t')=\rho(s(t'))
+ (\mathsf{s}(t_0)=\mathsf{s})\wedge \\
+ \forall t'=(t_0+1),\ldots,(t+1)\cdot (\mathsf{s}(t')=\sigma(\mathsf{i}(t'-1),\mathsf{s}(t'-1)))\wedge \\
+ \forall t'=t_0,\ldots,(t+1)\cdot (\mathsf{o}(t')=\rho(\mathsf{s}(t'))
 \end{array}
 \]
 
@@ -182,10 +190,10 @@ These functions generalize the two functions given in ~\cite{Zhang2016Observabil
 \begin{definition} [Observability~\cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Fornasini2013Observability}]
 We define the four types of observability below. 
 \begin{itemize}
-  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$,  $H^{[0,t]}(s'(0),I[t])\neq H^{[0,t]}(s(0), I[t])$.
-  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
-  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
-  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[k]\in(\mathcal{I})^{k}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$ if  $k\ge N$.
+  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $k>0$, such that $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ if  $t\ge N$.
 \end{itemize} 
 \end{definition}
 
