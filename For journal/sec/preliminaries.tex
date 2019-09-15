@@ -3,25 +3,29 @@
 
 \section{Preliminaries} 
 \label{sec:pre}
-We now introduce the formal definition of {\BCNs} and  the control-theoretical problems  of controllability, observability and  identification. Throughout the paper, we use $\mathbb{B}$ to denote the set of Boolean values $\{0,1\}$ and $\mathbb{T}$ to denote the set of discrete time domain  $\{0,1,2, \ldots\}$ which is the set of natural numbers.
-%,  $\mathbb{Z}$ to denote the set of integer 
+We now introduce the formal definition of {\BCNs} and its control theoretical properties. Throughout the paper, we use $\mathbb{B}$ to denote the set of Boolean values $\{0,1\}$ and $\mathbb{T}$ to denote the set of discrete time domain represented by the set of  natural numbers.
+
 \subsection{Boolean Control Networks}
 
-We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (\BCN)  is given a directed graph together with two  logical equations which define the updating rules for the  values of the nodes. 
+We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (\BCN)  is given a directed graph together with two  Boolean valued functions which define the updating rules for the  values of the nodes. 
 
-\begin{definition}[Boolean Control Network] A \BCN\ is a tuple $\BB = (I,S,O, E, \sigma, \rho)$, where 
+\begin{definition}[Boolean Control Network] 
+\label{def:BCN}
+A \BCN\ is a tuple $\BB = (I,S,O, E, \sigma, \rho, \theta)$, where 
 \begin{itemize}
-\item $I$, $S$ and $O$ are three finite nonempty disjoint sets nodes (or vertices)
+\item $I$, $S$ and $O$ are three finite nonempty disjoint sets of nodes (or vertices)
 \begin{itemize}
 	\item {\bf input nodes} $I=\{\mathsf{i}_1$,\ldots ,$\mathsf{i}_{\ell}\}$
 	\item {\bf state nodes}  $S= \{\mathsf{s}_1$,\ldots ,$\mathsf{s}_m\}$, and 
 	\item {\bf output nodes}: $O= \{\mathsf{o}_1$,\ldots ,$\mathsf{o}_n\}$.
 	\end{itemize}	
+	Each node is a Boolean variable which can take values in $\mathbb{B}$.
 \item  $E \subseteq ((I\cup S)\times S)\cup (S\times O)$ is a set of edges among the nodes, and we say node $v$ directly affects node  $v'$  when $(v,v')$ is an edge in $E$.
-\item The Boolean valued functions $\sigma: \mathbb{B}^{\ell+m} \mapsto \mathbb{B}^m$ and $\rho: \mathbb{B}^m\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimension and $m$-dimension vectors  of Boolean values to  the $m$-dimension vectors Boolean values and from the  $m$-dimension vectors to the  $n$-dimension vectors  of Boolean values, respectively. 
-\item {\em Timed behavior}: each node $v\in I\cup S\cup O$ represents a Boolean variable, and we use 
- $i= (i_1,\ldots, i_\ell)$, $s= (s_1,\ldots, s_m)$ and $o= (o_1,\ldots, o_n)$ to denote the three Boolean variable vectors corresponding  to the input nodes, state nodes and output nodes. At any time $t\in \mathbb{T}$ during the execution 
- of $\BB$, each of the variables  $i$, $s$ and $o$  (thus every node of $\BB$ too) take a vector of Boolean values $i(t)$, $s(t)$, $o(t)$  in  $\mathbb{B}^\ell$, $\mathbb{B}^m$ and $\mathbb{B}^n$, respectively, such that the following equations are satisfied
+\item The Boolean valued functions $\sigma: \mathbb{B}^\ell\times  \mathbb{B}^m \mapsto \mathbb{B}^m$ and $\rho: \mathbb{B}^m\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimension and $m$-dimension vectors  of Boolean values to  the $m$-dimension vectors Boolean values and from the  $m$-dimension vectors to the  $n$-dimension vectors  of Boolean values, respectively. 
+\item $\theta$ is a Boolean expression of the state nodes.
+\item {\em Updating rules }:  We use 
+ $\mathsf{i}= (\mathsf{i}_1,\ldots, \mathsf{i}_\ell)$, $\mathsf{s}= (\mathsf{s}_1,\ldots, \mathsf{s}_m)$ and $\mathsf{o}= (\mathsf{o}_1,\ldots, \mathsf{o}_n)$ to denote the three variables Boolean vectors corresponding  to the input nodes, state nodes and output nodes. At any time $t\in \mathbb{T}$ during the execution 
+ of $\BB$, each of the variables  $\mathsf{i}$, $\mathsf{s}$ and $\mathsf{o}$  (thus each every node of $\BB$ too) take a vector of Boolean values $\mathsf{i}(t)$, $\mathsf{s}(t)$, $\mathsf{o}(t)$  in  $\mathbb{B}^\ell$, $\mathbb{B}^m$ and $\mathbb{B}^n$, respectively, such that the following equations are satisfied
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -29,24 +33,16 @@ We take the definition in ~\cite{Ideker2001A} in which a Boolean control network
 \end{split}
 \label{equ:1}
 \end{equation}
-The above equations are also assumed to satisfy the conditions that 
+The above equations are also assumed to satisfy the following three conditions
 \begin{enumerate}
-\item the value of $s_k(t+1)$ in $s(t+1)$ is affected by the value  $i_j(t)$ of an input node $i_j \in I$ (or by the value $s_j(t)$ of a state node $s_j\in S$) at time $t$ only when $(i_j, s_k)\in E$ (or $(s_j, s_k)\in E$, respectively); and
-\item the value $o_k(t)$ in $o(t)$ of an output node $o_k\in O$ is affected by the value $s_j(t)$ of a state node $s_j\in S$ only wen $(s_j,o_k)\in E$.
+\item $\mathsf{s}(0)$ satisfies the initial condition $\theta$;
+\item the value of $\mathsf{s}_k(t+1)$ in $\mathsf{s}(t+1)$ is affected by the value  $\mathsf{i}_j(t)$ of an input node $\mathsf{i}_j \in I$ (or by the value $\mathsf{s}_j(t)$ of a state node $\mathsf{s}_j\in S$) at time $t$ only when $(\mathsf{i}_j, \mathsf{s}_k)\in E$ (or $(\mathsf{s}_j, \mathsf{s}_k)\in E$, respectively); and
+\item the value $\mathsf{o}_k(t)$ in $\mathsf{o}(t)$ of an output node $\mathsf{o}_k\in O$ is affected by the value $\mathsf{s}_j(t)$ of a state node $\mathsf{s}_j\in S$ only wen $(\mathsf{s}_j,\mathsf{o}_k)\in E$.
 \end{enumerate}
 \end{itemize}
- The two updating functions are also called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. 
+
 \end{definition}
-
-Furthermore, we use $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$ to represent the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. 
-%we use $\mathsf{i}$ to represent a vector $(\mathsf{i}_1,\ldots \mathsf{i}_\ell)$ of input values, $\mathsf{s}$ a vector $(\mathsf{s}_1,\ldots \mathsf{s}_m)$ of state values, and $\mathsf{o}$ a vector $(\mathsf{o}_1,\ldots \mathsf{o}_n)$ of output values, which called an {\em input}, a {\em state} and an {\em output} for simplicity.  And at any time $t\in \mathbb{T}$ during the execution of $\BB$,  %Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. %that is $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^{2^\ell -1}\}$, $\mathcal{S}_\BB=\{\delta_{2^m}^0,\ldots,\delta_{2^m}^{2^m -1}\}$ and $\mathcal{O}_\BB=\{\delta_{2^n}^0,\ldots,\delta_{2^n}^{2^n -1}\}$. 
-%That we use 
-%\begin{itemize}
-%  \item $\delta^x_{2^m}$ represents the abbreviation form of $\mathsf{i}$, where $i=\sum_{x=1}^m \mathsf{i}_{x}\times 2^{m-x}$;
- % \item $\delta^y_{2^n}$ represents the abbreviation form of $\mathsf{s}$, where $j=\sum_{x=1}^n \mathsf{s}_{x}\times 2^{n-x}$;
-%  \item $\delta^z_{2^q}$ represents the abbreviation form of $\mathsf{o}$, where  $w=\sum_{x=1}^q \mathsf{o}_{x}\times 2^{q-x}$.
-%\end{itemize}
-
+ The two updating functions are also called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. We use $\mathcal{I}_\BB$, $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ tp denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. 
 
 
 \begin{figure}[!t]
@@ -70,10 +66,11 @@ Furthermore, we use $\mathcal{I}_\BB=\{\delta_{2^\ell}^0,\ldots,\delta_{2^\ell}^
 		\label{fig:1}
 	\end{figure}
 %	
-Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E  = ((I\cup S)\times S)\cup (S\times O)$, and 
-the updating rules $\sigma: \mathbb{B}^{6}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
+Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E$ and 
+the updating rules $\sigma: \mathbb{B}^{2}\times \mathbb{B}^{4}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
 the updating rule of output-node $\mathsf{o}_1$ is 
-$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. The set of all possible inputs $\mathcal{I}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$, the set of all states $\mathcal{S}_\BB=\{\delta_{16}^0,\ldots,\delta_{16}^{15}\}$ and the set of all outputs $\mathcal{O}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$.
+$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. 
+%The set of all possible inputs $\mathcal{I}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$, the set of all states $\mathcal{S}_\BB=\{\delta_{16}^0,\ldots,\delta_{16}^{15}\}$ and the set of all outputs $\mathcal{O}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$.
  \begin{figure}[thpb]
 	\centering
 	\framebox{\parbox{3in}{
@@ -133,39 +130,62 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 %=======================================================================
 
 
-\subsection{Four existing observability definitions of \BCNs}
-To introduce the observability, controllability and identifiability of \BCNs, we first define two functions to present the relations among the input sequence, state squence and output sequence:
-\begin{equation}
-\begin{split}
-F^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{S}^k,\\
-F^k_{\mathsf{s}(t)}&(\mathsf{i}(t)\ldots\mathsf{i}({t+k-1}))\\
-%&= \mathsf{s}(t+1)\ldots\mathsf{s}(t+k)\\
-=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\ldots\sigma(\mathsf{i}(t+k-1),\mathsf{s}(t+k-1))
-\end{split}
-\end{equation}
-\begin{equation}
-\begin{split}
-H^k_{\mathsf{s}(t)}:& \mathcal{I}^k\mapsto\mathcal{O}^k,\\
- H^k_{\mathsf{s}(t)}&(\mathsf{i}(t)\ldots\mathsf{i}(t+k-1)) \\%\mapsto \mathsf{o}(t+1)\ldots\mathsf{o}(t+k)
- =&\rho(\sigma(\mathsf{i}(t),\mathsf{s}(t)))\ldots\rho(\sigma(\mathsf{i}(t+k-1),\mathsf{s}(t+k-1)))\\
-\end{split}
-\label{equ:6}
-\end{equation}
-%\tl{but you have defined $\Delta_N$, $\Delta_M$ and $\Delta_Q$ just now?!}
-where $k>0$ presents the length of input sequence.
+\subsection{Control theoretical properties of \BCNs}
+In this subsection, we introduce the notations controllability, observability and identifiability of {\BCNs} and their relations. 
+In particular, we will give a summary about the existing work on observability in order to motivate our work. To this end, first define some notations below.
 
-Such that, for any time $t\in  \mathbb{T}$ and any $k>0$, using $\mathsf{I}[k]$ to presents the input sequence $\mathsf{i}(t)\ldots\mathsf{i}({t+k-1})$, the state sequence $\mathsf{s}(t+1)\ldots\mathsf{s}(t+k)$ and  output sequence $\mathsf{o}(t+1)\ldots\mathsf{o}(t+k)$ produced by $\mathsf{I}[k]$ from $\mathsf{s}(t)$ can be presented by $F^k_{\mathsf{s}(t)}(\mathsf{I}[k])$ and
- $H^k_{\mathsf{s}(t)}(\mathsf{I}[k])$, respectively. 
- 
- Then, the observability, controllability and identifiability of \BCNs\ are defined as follows.
+Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho,\theta)$, let $\mathcal{I}$, $\mathcal{S}$ and $\mathcal{O}$ be the sets of all possible inputs, states and outputs of $\BB$, respectively. For any $t,t' \in \mathbb{T}$, we define the timed behavior of $\BB$
+\begin{itemize}
+\item $\mathcal{B}^T = (\mathcal{I}^T, \mathcal{S}^T, \mathcal{O}^T)$,  where 
+{\small \[\begin{array}{llll}
+\mathcal{I}^T =\{I[t]~|~ t\in \mathbb{T}, I[t]=i(0)\ldots i(t)\}\\
+\mathcal{S}^T =\{S[t]~|~ t\in \mathbb{T}, s[t]=s(0)\ldots s(t)\}\\
+\mathcal{O}^T =\{O[t]~|~ t\in \mathbb{T}, O[t]=o(0)\ldots o(t)\}\\
+\end{array}
+\]}
+such that each for any $s(k)$ and $o(k)$ of any $S[t]$ and 
+$O[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
+\item Let $S(t) = \{ s(t)~|~ s(0)\ldots s(t) \in \mathcal{S}^T\}$ and $O(t) = \{ o(t)~|~ o(0)\ldots o(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
+\item For any interval  $[t_0,t]$ of time $\mathbb{T}$, whener $t\geq t_0$, we define the following sets 
+\[\begin{array}{llllll}
+\mathcal{I}^{[t]} &=& \{I[t] ~|~ I[t]\in \mathcal{I}^T\}\\
+\mathcal{I}^{[t_0,t]} &=& \{i(t_0)\ldots i(t)~|\exists i(0)\ldots i(t)\in I^{[t_0]}\cdot\\
+&& i(0)\ldots i(t_0) \ldots i(t)\in \mathcal{I}^{[t]} \\
+\mathcal{S}^{[t]} &=& \{S[t] ~|~ S[t]\in \mathcal{S}^T\}\\
+\mathcal{S}^{[t_0,t]} &=& \{s(t_0)\ldots s(t+1)~|\exists s(0)\ldots s(t_0)\in S^{[t_0]}\cdot\\
+&& s(0)\ldots s(t_0) \ldots s(t+1)\in \mathcal{S}^{[t+1]} \\
+\mathcal{O}^{[t]} &=& \{O[t] ~|~ O[t]\in \mathcal{O}^T\}\\
+\mathcal{O}^{[t_0,t]} &=& \{o(t)\ldots o(t_0)~|\exists o(0)\ldots o(t_o)\in S^{[t_0]}\cdot\\
+&& o(0)\ldots o(t_o) \ldots s(t+1)\in \mathcal{O}^{[t+1]} \\
+\end{array}
+\]
+\end{itemize} 
+The sets $I^{[t_0,t]}$, $S^{[t_0,t]}$ and $O^{[t_0,t]}$ are the possible inputs, states and outputs of the execution of $\BB$ in the interval $[t_0,t]$ of observing time. 
 
+We now define the following two functions which define,  for any interval $[t_0,t]$ of observing time from $t_0$ to $t$,  the sequence of states and sequence of outputs produced, respectively,  in the interval by a state $s(t_0)$ at time $t_0$ and a sequence of inputs in the interval. Formally, the two functions are defined as:
+
+
+\[
+\begin{array}{llllll}
+F^{[t_0,t]}: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{S}^{[t_0,t+1]}\\
+ H^{[t_0,t]}: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{O}^{[t_0,t+1]}\\
+F^{[t_0,t]}(s, i(t_0)\ldots i(t))= s(t_0+1)\ldots s(t+1)\\
+H^{[t_0,t]}(s, i(t_0)\ldots i(t))= o(t_0+1)\ldots o(t+1)\\
+\mbox{such that the following conditions are satisfied}\\
+ (s(t_0)=s)\wedge \\
+ \forall t'=t_0+1..(t+1)\cdot (s(t')=\sigma(i(t'-1),s(t'-1)))\wedge \\
+ \forall t'=t_0..t+1\cdot (o(t')=\rho(s(t'))
+\end{array}
+\]
+
+These functions generalize the two functions given in ~\cite{Zhang2016Observability} for observability,  where only the special case of $F^{[0,t]}$ and $H^{[0,t]}$ are given. The their extensions  will be used when we present the the new observability.
 \begin{definition} [Observability~\cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Fornasini2013Observability}]
 We define the four types of observability below. 
 \begin{itemize}
-  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^k$ for some $k>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq H^k_{{\mathsf{s}(0)}}(\mathsf{I}[k])$.
-  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[k]\in\mathcal{I}^k$ for some $k>0$, such that $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
-  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
-  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[k]\in\mathcal{I}^{k}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$ if  $k\ge N$.
+  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$,  $H^{[0,t]}(s'(0),I[t])\neq H^{[0,t]}(s(0), I[t])$.
+  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
+  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^k_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^k_{\mathsf{s}'(0)}(\mathsf{I}[k])$.
+  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[k]\in(\mathcal{I})^{k}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$ if  $k\ge N$.
 \end{itemize} 
 \end{definition}
 
@@ -249,7 +269,7 @@ The implication relationships of four existing types of observability is that, {
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[k]\in\mathcal{I}^k$ for some $k>0$, such that in the  $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(0)=\mathsf{s}$ and $\mathsf{s}(k)=\mathsf{s}'$.
+	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that in the  $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(0)=\mathsf{s}$ and $\mathsf{s}(k)=\mathsf{s}'$.
 \end{definition}
 
 %\begin{example}
@@ -258,7 +278,7 @@ The implication relationships of four existing types of observability is that, {
 %\end{example}  
 
 \begin{definition}[Identifiability~\cite{Cheng2011Identification}]%
-	A \BCN\ is identifiable if there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^k$ for some $k>0$, such that the updating rules
+	A \BCN\ is identifiable if there exists an input sequence $\mathsf{I}[k]\in(\mathcal{I})^k$ for some $k>0$, such that the updating rules
 	\begin{equation*}
     		\begin{split}
 		\mathsf{s}(t+1)=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -286,7 +306,7 @@ The implication relationships of four existing types of observability is that, {
 %\label{exa:6}
 %\end{example}  
 
-Furthermore, a \BCN\ $\BB$ is identifiable iff this \BCN\ $\BB$ is controllable and $\BB$'s initial state $\mathsf{s}(0)$ can be determined  without  resetting~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$  without  resetting. But we discover that the  {\bf Type-III} observability is sufficient but not necessary condition. Thus, we propose the online observability to present the necessary and sufficient condition.
+A \BCN\ $\BB$ is identifiable iff $\BB$ is controllable and $\BB$'s initial state $\mathsf{s}(0)$ can be determined  without  resetting~\cite{Cheng2011Identification}. And in \cite{Cheng2011Identification}, the authors regard the {\bf Type-III} observability as the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$  without  resetting. But we discover that the  {\bf Type-III} observability is sufficient but not necessary condition. Thus, we propose the online observability to present the necessary and sufficient condition.
 %, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
 
 
