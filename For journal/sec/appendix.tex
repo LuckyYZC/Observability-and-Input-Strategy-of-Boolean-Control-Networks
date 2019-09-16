@@ -39,6 +39,38 @@ for every $\mathsf{o} \in \mathcal{O}$, $\Ded(\mathsf{S}^1,\mathsf{i},\mathsf{o}
 \end{proof}
 
 
+
+
+\subsection{Proof of Lemma \ref{lemm:4}}
+
+\begin{proof}
+Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}[t,t_k]\in\mathcal{I}^{[t,t_k]}$ for some $t_k >t$, such that for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $H^{[t,t_k]}(\mathsf{s}'(t),\mathsf{I}[t,t_k])\neq H^{[t,t_k]}(\mathsf{s}(t), \mathsf{I}[t,t_k])$, then $\Ks(\mathsf{S}(t))\ne\infty$.
+
+\begin{itemize}
+\item When $t_k=t+1$, for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $H^{[t,t_k]}(\mathsf{s}'(t),\mathsf{I}[t,t_k])\neq H^{[t,t_k]}(\mathsf{s}(t), \mathsf{I}[t,t_k])$. Then we have for $\mathsf{S}(t)$,
+ there exists an input $\mathsf{i}(t)=\mathsf{I}[t,t_k]$ such that
+ \begin{itemize}
+ \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1))$, the $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1)))=0$.
+ \end{itemize}
+Thus the $\Ks(\mathsf{S}(t))=1$, then the propostion is right when $t_k =t+1$.
+
+\item If for $k=(t+1),\ldots, (t+n)$ the propostion is right. Then when $t_k=t+n+1$, for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, $H^{[t,t_k]}(\mathsf{s}'(t),\mathsf{I}[t,t_k])\neq H^{[t,t_k]}(\mathsf{s}(t), \mathsf{I}[t,t_k])$. Then we have for $\mathsf{S}(t)$,
+ there exists an input $\mathsf{i}(t)$ which is the first input of $\mathsf{I}[t,t_k]$, such that
+ \begin{itemize}
+\item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
+ \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1))$, $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1)))\ne \infty$.
+ \end{itemize}
+Thus the $\Ks(\mathsf{S}(t))\ne \infty$, then the propostion is right when $t_k =t+n+1$.
+
+As the propostion is right when $t_k =t+1$, and we have if for $t_k=(t+1),\ldots, (t+n)$ the propostion is right, then the propostion is right when $t_k=t+n+1$. Thus the propostion is right for any $t_k>t$.
+
+Secondly, we have that if a \BCN\ satisfies the {\bf Type-III} observability, then there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+
+Therefore, we have the for every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o})$, $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}))\ne \infty$, and then the \BCN\ is online observable.
+ \end{itemize}
+\end{proof}
+
 \subsection{Proof of Lemma \ref{lemm:3}}
 \begin{proof} Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$ if $\Ks(\mathsf{S}(t))\ne\infty$, then for every state \State$(t)\in \mathsf{S}(t)$, there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^{k}$ for some $k >0$ such that for every $\mathsf{s}'(t)\in \mathsf{S}(t)$, $\mathsf{s}'(t)\neq \mathsf{s}(t)$ implies $H^{k}_{\mathsf{s}'(t)}(\mathsf{I}[k])\neq H^{k}_{{\mathsf{s}(t)}}(\mathsf{I}[k])$.
 \begin{itemize}
@@ -59,35 +91,4 @@ then for every  non-empty $\Ded\left(\mathcal{S}_\BB,\varepsilon, \mathsf{o}\rig
 
 Therefore, we have for every initial state \State$(0)$$\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^{k}$ for some $k >0$ such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $\rho(\mathsf{s}'(0))=\rho(\mathsf{s}(0))$ implies $H^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])\neq H^{k}_{{\mathsf{s}(0)}}(\mathsf{I}[k])$. Thus the \BCN\ satisfies the  {\bf Type-I} observability if it is online observable.
 \end{proof}
-
-\subsection{Proof of Lemma \ref{lemm:4}}
-
-\begin{proof}
-Firsrly, we prove the propostion that for a set of possible state $\mathsf{S}(t)$, if there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^{k}$ for some $k >0$, such that for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, implies $H^{k}_{\mathsf{s}(t)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(t)}(\mathsf{I}[k])$, then $\Ks(\mathsf{S}(t))\ne\infty$.
-
-\begin{itemize}
-\item When $k=1$, for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, implies $H^{k}_{\mathsf{s}(t)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(t)}(\mathsf{I}[k])$. Then we have for $\mathsf{S}(t)$,
- there exists an input $\mathsf{i}(t)=\mathsf{I}[k]$ such that
- \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1))$, the $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1)))=0$.
- \end{itemize}
-Thus the $\Ks(\mathsf{S}(t))=1$, then the propostion is right when $k =1$.
-
-\item If for $k=1,\ldots, n$ the propostion is right. Then when $k=n+1$, for any distinct states $\mathsf{s}(t)$, $\mathsf{s}'(t) \in \mathsf{S}(t)$, implies $H^{k}_{\mathsf{s}(t)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(t)}(\mathsf{I}[k])$. Then we have for $\mathsf{S}(t)$,
- there exists an input $\mathsf{i}(t)$ which is the first input of $\mathsf{I}[k]$, such that
- \begin{itemize}
-\item  $|\Ded\left(\mathsf{S}(t),\mathsf{i}(t),\varepsilon\right)|=|\mathsf{S}(t)|$, and 
- \item  for every non-empty $\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1))$, $\Ks(\Ded(\mathsf{S}(t),\mathsf{i}(t),\mathsf{o}(t+1)))\ne \infty$.
- \end{itemize}
-Thus the $\Ks(\mathsf{S}(t))\ne \infty$, then the propostion is right when $k =n+1$.
-
-As the propostion is right when $k =1$, and we have if for $k=1,\ldots, n$ the propostion is right, then the propostion is right when $k=n+1$. Thus the propostion is right for any $k>0$.
-
-Secondly, we have that if a \BCN\ satisfies the {\bf Type-III} observability, then there exists an input sequence $\mathsf{I}[k]\in\mathcal{I}^{k}$ for some $k >0$, such that for any distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $\rho(\mathsf{s}(0))=\rho(\mathsf{s}'(0))$ implies $H^{k}_{\mathsf{s}(0)}(\mathsf{I}[k])\neq H^{k}_{\mathsf{s}'(0)}(\mathsf{I}[k])$. 
-
-Therefore, we have the for every non-empty $\Ded(\mathcal{S}_\BB,\varepsilon, \mathsf{o})$, $\Ks(\Ded(\mathcal{S}_\BB,\varepsilon,\mathsf{o}))\ne \infty$, and then the \BCN\ is online observable.
- \end{itemize}
-\end{proof}
-
 \end{appendices}
