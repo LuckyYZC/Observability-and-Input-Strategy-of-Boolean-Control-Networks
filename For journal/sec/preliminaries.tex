@@ -191,7 +191,7 @@ These functions generalize the two functions given in ~\cite{Zhang2016Observabil
 We define the four types of observability below. 
 \begin{itemize}
   \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
-  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $k>0$, such that $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
   \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
   \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ if  $t\ge N$.
 \end{itemize} 
@@ -286,14 +286,14 @@ The implication relationships of four existing types of observability is that, {
 %\end{example}  
 
 \begin{definition}[Identifiability~\cite{Cheng2011Identification}]%
-	A \BCN\ is identifiable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that the updating rules
+	Assume that we have a Boolean control network, the identification problem involves finding the functions % \BCN\ is identifiable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that the updating rules
 	\begin{equation*}
     		\begin{split}
 		\mathsf{s}(t+1)=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\\
 		\mathsf{o}(t)=&\rho(\mathsf{s}(t))
 		\end{split}
 	\end{equation*}
-	can be determined by $\mathsf{I}[t]$ and $H^{[0,t]}(\mathsf{s}(0),\mathsf{I}[t])$.
+	via certain input-output data $\mathsf{i}(0)\ldots \mathsf{i}(t)$ and $\mathsf{o}(0)\ldots \mathsf{o}(t)$. Then, a \BCN\ is identifiable if $\sigma$ and $\rho$ can be uniquely determined by using designed inputs $\mathsf{i}(0)\ldots \mathsf{i}(t)$. 
 \end{definition}
 
 %\begin{definition}[Observability]
