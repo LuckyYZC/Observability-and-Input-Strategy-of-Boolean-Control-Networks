@@ -65,7 +65,7 @@ Firstly, we write
 
 \begin{equation}
 \begin{split}
-\xi :  (\mathcal{I}\cup\varepsilon) \times\mathcal{S} \mapsto\mathcal{S},\ \xi (\mathsf{i}, \mathsf{s})= \left\{
+\xi :  (\mathcal{I}\cup\{\varepsilon\}) \times\mathcal{S} \mapsto\mathcal{S},\ \xi (\mathsf{i}, \mathsf{s})= \left\{
 \begin{array}{rcl}
 \sigma( \mathsf{i}, \mathsf{s})      &      & {\mathsf{i}\neq \varepsilon}\\
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
@@ -89,7 +89,7 @@ where $\varepsilon$ presents empty input.
 Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ can be defined as follows.
 \begin{equation}
 \begin{split}
-\Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\varepsilon)\times(\mathcal{O}\cup\varepsilon)\mapsto2^{\mathcal{S}_\BB},\\
+\Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\{\varepsilon\})\times(\mathcal{O}\cup\{\varepsilon\})\mapsto2^{\mathcal{S}_\BB},\\
 \Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})&= \left\{
 \begin{array}{rcl}
 \{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, \mathsf{s} ))=\mathsf{o}\}     &      & {\mathsf{o}\neq \varepsilon}\\
@@ -108,7 +108,7 @@ where  $\varepsilon$ presents empty input or empty output.
 %\end{definition}$\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}\cup\varepsilon)$, and
 
  And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
- \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[t_k]=\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $\mathsf{O}[t_k]= H^{[0,t_k]}(\mathsf{s}(0),\mathsf{I}[t_k])=\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
+ \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[t_k]=\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $\mathsf{O}[t_k+1]= H^{[0,t_k]}(\mathsf{s}(0),\mathsf{I}[t_k])=\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
@@ -229,9 +229,9 @@ And we define $\Ri(\mathsf{S}(t))$ to depict the set of possible of inputs we ca
 
 We call the observability we propose online observability, because we choose every $\mathsf{i}(t)$ to determine initial state $\mathsf{s}(0)$ based on the information of the inputs and outputs of \BCN\ we have collected so far at every time $t$, i.e. $\mathsf{i}(t)\in\Ri(\mathsf{S}(t))$. 
 
-In contrast, in the {\bf type-III} observability, we determine the initial state $\mathsf{s}(0)$ of a \BCN\ by its recorded $\mathsf{O}[t]= H^{[0,t]}(\mathsf{s}(0),\mathsf{I}[t])=\mathsf{o}(0)\ldots\mathsf{o}(t+1)$ after we input $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call it offline observability.
+In contrast, in the {\bf type-III} observability, we determine the initial state $\mathsf{s}(0)$ of a \BCN\ by its recorded $\mathsf{O}[t+1]= H^{[0,t]}(\mathsf{s}(0),\mathsf{I}[t])=\mathsf{o}(0)\ldots\mathsf{o}(t+1)$ after we input $\mathsf{I}[t]=\mathsf{i}(0)\ldots\mathsf{i}(t)$, and  we do not interfere with \BCN\ except for the logging of its inputs and outputs, thus we call it offline observability.
 
-We also propose a lemma for $\Ri(\mathsf{S})$, and we will design the determinnation algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}} in {\em Section \ref{sec:deter}}.
+We also propose a lemma for $\Ri(\mathsf{S})$, and we will design the decision algorithm for the online observability based on {\em Lemma \ref{lemm:1}, \ref{lemm:2}} in {\em Section \ref{sec:deter}}.
 \begin{lemma}
 For any two non-empty state sets  $\mathsf{S}^{1}$ and $\mathsf{S}^{2}$, if $\mathsf{S}^{1}\subseteq\mathsf{S}^{2}$ and $\Ks(\mathsf{S}^{2})\ne\infty$, then $\Ri(\mathsf{S}^2)\subseteq\Ri(\mathsf{S}^1)$.
 \label{lemm:2}
@@ -269,7 +269,7 @@ The online observability implies the  {\bf Type-I} observability.
    \end{figure}
 
 In conclusion, the online observability is the necessary and sufficient condition of determining the initial state $\mathsf{s}(0)$ of a \BCN\  without  resetting, %Because at every time $t$, we observe $\mathsf{o}(t)$ of \BCN\ and choose $\mathsf{i}(t)$ based on the information we have collected so far. 
-and the identifiiability requires this condition. Thus, we can research the identification problem by the online observability instead of the {\bf Type-III} observability. 
+and the identification problem requires this condition. Thus, we can research the identification problem by the online observability instead of the {\bf Type-III} observability. 
 %\subsection{Determining the intial state}
 
 

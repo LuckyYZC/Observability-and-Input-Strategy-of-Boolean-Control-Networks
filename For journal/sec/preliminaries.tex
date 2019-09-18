@@ -42,7 +42,7 @@ The above equations are also assumed to satisfy the following three conditions
 \end{itemize}
 
 \end{definition}
- The two updating functions are also called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. We use $\mathcal{I}_\BB$, $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ tp denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. 
+ The two updating functions are called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. We use $\mathcal{I}_\BB$, $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ tp denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. And we will omit the subscript $\BB$ when there is no confusion. Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. 
 
 
 \begin{figure}[!t]
@@ -149,13 +149,13 @@ $\mathsf{O}[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfie
 \[\begin{array}{llllll}
 \mathcal{I}^{[t]} &=& \{\mathsf{I}[t] ~|~ \mathsf{I}[t]\in \mathcal{I}^T\}\\
 \mathcal{I}^{[t_0,t]} &=& \{\mathsf{i}(t_0)\ldots \mathsf{i}(t)~|\exists \mathsf{i}(0)\ldots \mathsf{i}(t_0)\in \mathcal{I}^{[t_0]}\cdot\\
-&& \mathsf{i}(0)\ldots \mathsf{i}(t_0) \ldots \mathsf{i}(t)\in \mathcal{I}^{[t]} \\
+&& \mathsf{i}(0)\ldots \mathsf{i}(t_0) \ldots \mathsf{i}(t)\in \mathcal{I}^{[t]}\} \\
 \mathcal{S}^{[t]} &=& \{\mathsf{S}[t] ~|~ \mathsf{S}[t]\in \mathcal{S}^T\}\\
 \mathcal{S}^{[t_0,t]} &=& \{\mathsf{s}(t_0)\ldots \mathsf{s}(t+1)~|\exists \mathsf{s}(0)\ldots \mathsf{s}(t_0)\in \mathcal{S}^{[t_0]}\cdot\\
-&& \mathsf{s}(0)\ldots \mathsf{s}(t_0) \ldots \mathsf{s}(t+1)\in \mathcal{S}^{[t+1]} \\
+&& \mathsf{s}(0)\ldots \mathsf{s}(t_0) \ldots \mathsf{s}(t)\in \mathcal{S}^{[t]} \\
 \mathcal{O}^{[t]} &=& \{\mathsf{O}[t] ~|~ \mathsf{O}[t]\in \mathcal{O}^T\}\\
 \mathcal{O}^{[t_0,t]} &=& \{\mathsf{o}(t)\ldots \mathsf{o}(t_0)~|\exists \mathsf{o}(0)\ldots \mathsf{o}(t_o)\in \mathcal{O}^{[t_0]}\cdot\\
-&& \mathsf{o}(0)\ldots \mathsf{o}(t_o) \ldots \mathsf{o}(t+1)\in \mathcal{O}^{[t+1]} \\
+&& \mathsf{o}(0)\ldots \mathsf{o}(t_o) \ldots \mathsf{o}(t)\in \mathcal{O}^{[t]} \}\\
 \end{array}
 \]
 \end{itemize} 
@@ -167,13 +167,13 @@ The sets $\mathcal{I}^{[t_0,t]}$, $\mathcal{S}^{[t_0,t]}$ and $\mathcal{O}^{[t_0
 \begin{equation}
 \begin{split}
 F^{[t_0,t]}&: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{S}^{[t_0,t+1]}\\
-F^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{s}(t_0+1)\ldots \mathsf{s}(t+1)\\
+F^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{s}(t_0)\ldots \mathsf{s}(t+1)\\
  \end{split}
 \end{equation}
  \begin{equation}
 \begin{split}
  H^{[t_0,t]}&: S(t_0)\times \mathcal{I}^{[t_0,t]} \mapsto \mathcal{O}^{[t_0,t+1]}\\
-H^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{o}(t_0+1)\ldots \mathsf{o}(t+1)\\
+H^{[t_0,t]}&(\mathsf{s}, \mathsf{i}(t_0)\ldots \mathsf{i}(t))= \mathsf{o}(t_0)\ldots \mathsf{o}(t+1)\\
 \end{split}
 \end{equation}
 
@@ -190,13 +190,13 @@ These functions generalize the two functions given in ~\cite{Zhang2016Observabil
 \begin{definition} [Observability~\cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Fornasini2013Observability}]
 We define the four types of observability below. 
 \begin{itemize}
-  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state \State$(0)\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for all states $\mathsf{s}'(0)\neq \mathsf{s}(0)$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
-  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
-  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
-  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$, for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ if  $t\ge N$.
+  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state $\mathsf{s}\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\ge0$, such that for all states $\mathsf{s}'$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ if $\mathsf{s}\ne\mathsf{s}'$.
+  \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}$ and $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\ge0$, such that $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$.
+  \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\ge0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
+  \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ with $t\ge N$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ holds for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$.
 \end{itemize} 
 \end{definition}
-
+It is noted in ~\cite{Zhang2016Observability} that {\bf Type-I} observability is stronger than {\bf Type-II} observability; {\bf Type-III} observability is stronger than {\bf Type-I} observability;  and while {\bf Type-IV} observability is the strongest. 
 %The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}[k]$. The {\bf Type-II} observability means that a \BCN\ is observable if for every two distinct $\mathsf{s}(0)$, $\mathsf{s}'(0)$, there is an input sequence $\mathsf{I}[k]$ which distinguishes them.
  %The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\mathcal{S}$, because $\mathsf{I}[k]$ can distinguish all distinct initial states. The {\bf Type-IV} observability means that a \BCN\ is observable if every sufficient long $\mathsf{I}[k]$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\mathcal{S}$.
 
@@ -256,7 +256,7 @@ We define the four types of observability below.
 %\label{exa:7}
 %\end{example}  
 
-The implication relationships of four existing types of observability is that, {\bf Type-I} observability is stronger than {\bf Type-II} observability, {\bf Type-III} observability is stronger than {\bf Type-I} observability and {\bf Type-II} observability, while {\bf Type-IV} observability is strongest~\cite{Zhang2016Observability}. If a \BCN\ satisfies {\bf Type-I} observability, then for every initial state $\mathsf{s}(0)$ there exists an input sequence $\mathsf{I}[t]$ which can distinguish $\mathsf{s}(0)$ from other initial states, and then in this \BCN, for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) $ there exists an input sequence $\mathsf{I}'[t]$ which can distinguish them, thus it satisfies {\bf Type-II} observability. Therefore, {\bf Type-I} observability is stronger than {\bf Type-II} observability. If a \BCN\ satisfies {\bf Type-III} observability, then there exists an input sequence $\mathsf{I}[t]$ which can distinguish every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0)$, and then in this \BCN, for every initial state $\mathsf{s}(0)$ the input sequence $\mathsf{I}[t]$ can distinguish $\mathsf{s}(0)$ from other initial states, thus it satisfies {\bf Type-II} observability. Therefore, {\bf Type-III} observability is stronger than {\bf Type-I} observability and {\bf Type-II} observability. If a \BCN\ satisfies {\bf Type-IV} observability, then every sufficient long input sequence $\mathsf{I}[t]$ can distinguish every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0)$, thus it satisfies {\bf Type-III} observability too. Therefore, {\bf Type-IV} observability is strongest. 
+%The implication relationships of four existing types of observability is that, {\bf Type-I} observability is stronger than {\bf Type-II} observability, {\bf Type-III} observability is stronger than {\bf Type-I} observability and {\bf Type-II} observability, while {\bf Type-IV} observability is strongest~\cite{Zhang2016Observability}. If a \BCN\ satisfies {\bf Type-I} observability, then for every initial state $\mathsf{s}(0)$ there exists an input sequence $\mathsf{I}[t]$ which can distinguish $\mathsf{s}(0)$ from other initial states, and then in this \BCN, for every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0) $ there exists an input sequence $\mathsf{I}'[t]$ which can distinguish them, thus it satisfies {\bf Type-II} observability. Therefore, {\bf Type-I} observability is stronger than {\bf Type-II} observability. If a \BCN\ satisfies {\bf Type-III} observability, then there exists an input sequence $\mathsf{I}[t]$ which can distinguish every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0)$, and then in this \BCN, for every initial state $\mathsf{s}(0)$ the input sequence $\mathsf{I}[t]$ can distinguish $\mathsf{s}(0)$ from other initial states, thus it satisfies {\bf Type-II} observability. Therefore, {\bf Type-III} observability is stronger than {\bf Type-I} observability and {\bf Type-II} observability. If a \BCN\ satisfies {\bf Type-IV} observability, then every sufficient long input sequence $\mathsf{I}[t]$ can distinguish every two distinct initial states $\mathsf{s}(0)$, $\mathsf{s}'(0)$, thus it satisfies {\bf Type-III} observability too. Therefore, {\bf Type-IV} observability is strongest. 
 
 % \begin{figure}[thpb]
    %  \centering
@@ -277,7 +277,7 @@ The implication relationships of four existing types of observability is that, {
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that in the  $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$, the $\mathsf{s}(0)=\mathsf{s}$ and $\mathsf{s}(t+1)=\mathsf{s}'$.
+	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t>0$, such that the last state $\mathsf{s}(t+1)$ of $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$ is $\mathsf{s}'$.
 \end{definition}
 
 %\begin{example}
