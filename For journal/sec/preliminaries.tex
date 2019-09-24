@@ -196,6 +196,7 @@ We define the four types of observability below.
   \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ with $t\ge N$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ holds for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$.
 \end{itemize} 
 \end{definition}
+
 It is noted in ~\cite{Zhang2016Observability} that {\bf Type-I} observability is stronger than {\bf Type-II} observability; {\bf Type-III} observability is stronger than {\bf Type-I} observability;  and while {\bf Type-IV} observability is the strongest. 
 %The  {\bf Type-I} observability means that a \BCN\ is observable if every \State$(0)$ of the \BCN\ can be distinguished from other types of initial state by an input sequence $\mathsf{I}[k]$. The {\bf Type-II} observability means that a \BCN\ is observable if for every two distinct $\mathsf{s}(0)$, $\mathsf{s}'(0)$, there is an input sequence $\mathsf{I}[k]$ which distinguishes them.
  %The {\bf Type-III} observability means that a \BCN\ is called observable if there exists an input sequence $\mathsf{I}[k]$ which determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\mathcal{S}$, because $\mathsf{I}[k]$ can distinguish all distinct initial states. The {\bf Type-IV} observability means that a \BCN\ is observable if every sufficient long $\mathsf{I}[k]$ can determine the $\mathsf{s}(0)$ of the \BCN\ for every $\mathsf{s}(0)\in\mathcal{S}$.
@@ -277,9 +278,10 @@ It is noted in ~\cite{Zhang2016Observability} that {\bf Type-I} observability is
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that the last state $\mathsf{s}(t+1)$ of $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$ is $\mathsf{s}'$.
+	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$,  for some $t\in\mathbb{T}$, such that  $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$ and the last state  $\mathsf{s}(t+1)$ is $\mathsf{s}'$.
 \end{definition}
-Thus, if a \BCN\  $\BB$ is  controllable,  any state $\mathsf{s}'$ is reachable from an initial  from a state $\mathsf{s}$, and  we use an input  sequence $\mathsf{I}[t]$ make $\BB$ reach $\mathsf{s}'$ from $\mathsf{s}$.
+
+Thus, if a \BCN\  $\BB$ is  controllable,  any state $\mathsf{s}'$ is reachable from an initial state $\mathsf{s}$, and  we use an input  sequence $\mathsf{I}[t]$ make $\BB$ reach $\mathsf{s}'$ from $\mathsf{s}$.
 %\begin{example}
 %For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, that is for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$ and destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\mathsf{s}(0)}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
 %\label{exa:12}
@@ -295,7 +297,9 @@ A \BCN\ is identifiable if  there exists an input sequence $\mathsf{I}[t]\in\mat
 	\end{equation*}
 	can be constructed by the input  sequence  $\mathsf{I}[t]$ and its corresponding output sequence  $\mathsf{O}[t+1]$. 
 \end{definition}
+
 Thus, a \BCN\  $\BB$ is identifiable if the updating functions $\sigma$ and $\rho$ can be uniquely determined by a  designed input sequence  $\mathsf{i}(0)\ldots \mathsf{i}(t)$.
+
 %\begin{definition}[Observability]
 %A \BCN\ $\BB$ is observable if there exists an input sequence $\mathsf{I}\in(\Delta_L)^k$ for some $k>0$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \Delta_M$, $h(\mathsf{s}(0))=h(\mathsf{s}'(0))$ implies $(HF)^k_{\mathsf{s}(0)}(\mathsf{I})\neq (HF)^k_{\mathsf{s}'(0)}(\mathsf{I})$ \cite{Cheng2011Identification}.
 %\end{definition}
@@ -314,7 +318,47 @@ Thus, a \BCN\  $\BB$ is identifiable if the updating functions $\sigma$ and $\rh
 %\label{exa:6}
 %\end{example}  
 
-The properties of observability, controllability and identifiability are closely related. In particular, it is proven in~\cite{Cheng2011Identification} that a \BCN\ is identifiable iff  it is controllable and its initial state can be determined through experiments with input sequences without the need of (or without knowing the mechanism for) resetting the initial state. Furthermore in ~\cite{Cheng2011Identification}, it states that the observability of  {\bf Type-III}  is both sufficient and necessary for determining the initial state of a \BCN\  without  resetting.  However, we find this is not right because we discover there are some \BCNs\ (such as the {\em Example \ref{exa:2}}) which do not satisfy the {\bf Type-III} but their initial states can be determined without resetting. More precisely, the observability of  {\bf Type-III}  is sufficient but {\bf not necessary} for its initial state being determined without resetting.
+The properties of observability, controllability and identifiability are closely related. In particular, it is proven in~\cite{Cheng2011Identification} that a \BCN\ is identifiable iff  it is controllable and its initial state can be determined through experiments with input sequences without the need of (or without knowing the mechanism for) resetting the initial state. Furthermore in ~\cite{Cheng2011Identification}, it states that the observability of  {\bf Type-III}  is both sufficient and necessary for determining the initial state of a \BCN\  without  resetting.  
+
+However, we discover there are some \BCNs\ which do not satisfy the {\bf Type-III} but their initial states can be determined without resetting. 
+
+\begin{example}
+For instance, in the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $t\in \mathbb{T}$, there is not an $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ which can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'$:
+\begin{itemize}
+  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
+  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
+  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^2$ can not distinguish $\delta_{16}^3$ and $\delta_{16}^{4}$;
+  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^3$ can not distinguish $\delta_{16}^{14}$ and $\delta_{16}^{15}$.
+\end{itemize} 
+%Therefore it does not satisfy the {\bf Type-III} observability. 
+Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN,%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
+
+\begin{itemize}
+  \item we can distinguish the sets of states 
+  \begin{itemize}
+   \item $\{\delta_{16}^0,\delta_{16}^{1},\delta_{16}^{2}\}$,
+   \item $\{\delta_{16}^3,\delta_{16}^{4},\delta_{16}^{5},\delta_{16}^{6}\}$,
+   \item $\{\delta_{16}^7,\delta_{16}^{8},\delta_{16}^{9},\delta_{16}^{10}\}$
+   \item and $\{\delta_{16}^{11},\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15}\}$
+  \end{itemize} 
+    by their corresponding outputs.  
+  \item And the $\mathsf{I}[0]=\delta_{4}^3$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\delta_{16}^0,\delta_{16}^{1},\delta_{16}^{2}\}$, 
+  \item the $\mathsf{I}[0]=\delta_{4}^0$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\delta_{16}^3,\delta_{16}^{4},\delta_{16}^{5},\delta_{16}^{6}\}$,
+  \item we can distinguish the sets of states $\{\delta_{16}^{8}\}$, $\{\delta_{16}^{9}\}$ and $\{\delta_{16}^7,\delta_{16}^{10}\}$ by the outputs of $\sigma (\delta_{4}^3, \delta_{16}^{8})$, $\sigma (\delta_{4}^3, \delta_{16}^{9})$, $\sigma (\delta_{4}^3, \delta_{16}^{7})$ and $\sigma (\delta_{4}^3, \delta_{16}^{10})$ after we input $\delta_{4}^3$,
+  \begin{itemize}
+  \item  and the $\mathsf{I}[0]=\delta_{4}^3$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^3, \delta_{16}^{7}),\sigma (\delta_{4}^3, \delta_{16}^{10})\}$,
+  \end{itemize}
+  \item we can distinguish the sets of states $\{\delta_{16}^{11},\delta_{16}^{15}\}$ and $\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14}\}$ by the outputs of $\sigma (\delta_{4}^1, \delta_{16}^{11})$, $\sigma (\delta_{4}^1, \delta_{16}^{15})$, $\sigma (\delta_{4}^1, \delta_{16}^{12})$, $\sigma (\delta_{4}^1, \delta_{16}^{13})$ and $\sigma (\delta_{4}^1, \delta_{16}^{14})$ after we input $\delta_{4}^1$,
+  \begin{itemize}
+  \item  and the $\mathsf{I}[0]=\delta_{4}^0$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^1, \delta_{16}^{12}),\sigma (\delta_{4}^1, \delta_{16}^{13}), \sigma (\delta_{4}^1, \delta_{16}^{14})\}$,
+   \item  the $\mathsf{I}[0]=\delta_{4}^2$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^1, \delta_{16}^{11}),\sigma (\delta_{4}^1, \delta_{16}^{15})\}$.
+  \end{itemize}
+\end{itemize} 
+Thus we can determine its initial state by its outputs and inputs without resetting the initial state.
+\label{exa:9}
+\end{example}  
+
+Therefore we find the observability of  {\bf Type-III}  is sufficient but {\bf not necessary} for its initial state being determined without resetting. And the propose a new type of observability named online observability to present the sufficient and necessary condition for determining the initial state of a \BCN\  without  resetting.
 %, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
 
 
