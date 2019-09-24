@@ -89,8 +89,8 @@ where $\varepsilon$ presents empty input.
 Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ can be defined as follows.
 \begin{equation}
 \begin{split}
-\Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\{\varepsilon\})\times(\mathcal{O}\cup\{\varepsilon\})\mapsto2^{\mathcal{S}_\BB},\\
-\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})&= \left\{
+\Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\{\varepsilon\})\times(\mathcal{O}\cup\{\varepsilon\})\mapsto2^{\mathcal{S}_\BB}\\
+\Ded&( \mathsf{S},  \mathsf{i},  \mathsf{o})= \left\{
 \begin{array}{rcl}
 \{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S},  \rho(\xi(\mathsf{i}, \mathsf{s} ))=\mathsf{o}\}     &      & {\mathsf{o}\neq \varepsilon}\\
 \{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}       &      & {\mathsf{o}= \varepsilon}
@@ -212,8 +212,8 @@ And we define $\Ri(\mathsf{S}(t))$ to depict the set of possible of inputs we ca
 %\begin{definition}[$\Ri(\mathsf{S})$] 
 \begin{equation}
 \begin{split}
-\Ri&:2^{\mathcal{S}_\BB} \mapsto2^{\mathcal{I}},\\
-\Ri(\mathsf{S})&=\{\mathsf{i}\in \mathcal{I}|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
+\Ri&:2^{\mathcal{S}_\BB} \mapsto2^{\mathcal{I}}\\
+\Ri&(\mathsf{S})=\{\mathsf{i}\in \mathcal{I}|\  |\Ded\left(\mathsf{S},\mathsf{i},\varepsilon\right)|=|\mathsf{S}|, \\
 &\forall \mathsf{o} \in \mathcal{O}, \Ded(\mathsf{S},\mathsf{i},\mathsf{o})\ne \emptyset \rightarrow \Ks(\Ded(\mathsf{S},\mathsf{i},\mathsf{o}))\ne \infty\}
 \end{split}
 \end{equation}
