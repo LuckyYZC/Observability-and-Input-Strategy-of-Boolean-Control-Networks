@@ -107,7 +107,7 @@ where  $\varepsilon$ presents empty input or empty output.
 %\tl{check whether this is what you want!?}\gs{It is ok.}
 %\end{definition}$\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}\cup\varepsilon)$, and
 
- And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is defined as follows. 
+ And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is recursively defined as follows. 
  \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{I}[t_k]=\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $\mathsf{O}[t_k+1]= H^{[0,t_k]}(\mathsf{s}(0),\mathsf{I}[t_k])=\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
@@ -128,7 +128,7 @@ In the \BCN\ mentioned in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^
 %\subsection{$K$-step determinability}
 %{\color{red} (10)} We propose the 
 
-As the next step, we define a function $\Ks(\mathsf{S}(t))$ to depict the number of steps we need to determine $\mathsf{s}(t)$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$, that is the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$.
+As the next step, we  recursively define a function $\Ks(\mathsf{S}(t))$ to depict the number of steps we need to determine $\mathsf{s}(t)$ for every $\mathsf{s}(t)\in \mathsf{S}(t)$, that is the $\mathsf{s}(t)$ can be determined at time $(t+\Ks(\mathsf{S}(t))$.
  %\tl{(10)$k$-step determinability is a predicate, can you write in this form?}
 \begin{definition}[$\Ks(\mathsf{S})$] $\Ks:2^{\mathcal{S}_\BB} \mapsto (\mathbb{T}\cup\{\infty\})$,
 %For a non-empty set $\mathsf{S}\subseteq\mathcal{S}_\BB$
