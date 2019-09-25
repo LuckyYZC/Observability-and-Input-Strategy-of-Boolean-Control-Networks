@@ -190,7 +190,7 @@ These functions generalize the two functions given in ~\cite{Zhang2016Observabil
 \begin{definition} [Observability~\cite{cheng2009controllability, Zhao2010Input, Cheng2011Identification, Fornasini2013Observability}]
 We define the four types of observability below. 
 \begin{itemize}
-  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state $\mathsf{s}\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that for all states $\mathsf{s}'$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ if $\mathsf{s}\ne\mathsf{s}'$.
+  \item The {\bf Type-I} observability is that, a \BCN\ is observable if for every initial state $\mathsf{s}\in \mathcal{S}$, there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that for all states $\mathsf{s}'$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$ if $\mathsf{s}\ne\mathsf{s}'$.
   \item The  {\bf Type-II} observability is that, a \BCN\ is observable if for every two distinct initial states $\mathsf{s}$ and $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$.
   \item The {\bf Type-III} observability is that, a \BCN\ is observable if there exists an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that for any two distinct states $\mathsf{s}(0)$, $\mathsf{s}'(0) \in \mathcal{S}$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$.
   \item The {\bf Type-IV} observability is that, a \BCN\ is observable, if there is a  natural number $N$, such that for every input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ with $t\ge N$, $H^{[0,t]}(\mathsf{s}'(0),\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}(0), \mathsf{I}[t])$ holds for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$.
@@ -322,41 +322,51 @@ The properties of observability, controllability and identifiability are closely
 
 However, we discover there are some \BCNs\ which do not satisfy the {\bf Type-III} but their initial states can be determined without resetting. 
 
-\begin{example}
-For instance, in the \BCN\ mentioned in {\em Example \ref{exa:2}}, for any $t\in \mathbb{T}$, there is not an $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ which can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'$:
+For instance, in the \BCN\ in {\em Example \ref{exa:2}}, for any $t\in \mathbb{T}$, there is not an $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ which can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'$. Because for any $t\in \mathbb{T}$,%For example, any input sequence $\mathsf{I}[t]$ starting with the input $(00)$ can not distinguish the distinct states $(1001)$ and $(1010)$, because 
 \begin{itemize}
-  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^0$ can not distinguish $\delta_{16}^9$ and $\delta_{16}^{10}$;
-  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^1$ can not distinguish $\delta_{16}^0$ and $\delta_{16}^{1}$;
-  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^2$ can not distinguish $\delta_{16}^3$ and $\delta_{16}^{4}$;
-  \item $\mathsf{I}[t]$ with prefix $\delta_{4}^3$ can not distinguish $\delta_{16}^{14}$ and $\delta_{16}^{15}$.
+\item for any $\mathsf{I}[t]$ starting with $(00)$, $H^{[0,t]}((1001),\mathsf{I}[t])= H^{[0,t]}((1010), \mathsf{I}[t])$;
+  \item for any $\mathsf{I}[t]$ starting with $(01)$, $H^{[0,t]}((0000),\mathsf{I}[t])= H^{[0,t]}((0001), \mathsf{I}[t])$;
+  \item for any $\mathsf{I}[t]$ starting with $(10)$, $H^{[0,t]}((0100),\mathsf{I}[t])= H^{[0,t]}((0011), \mathsf{I}[t])$;
+  \item for any $\mathsf{I}[t]$ starting with $(11)$, $H^{[0,t]}((1110),\mathsf{I}[t])= H^{[0,t]}((1111), \mathsf{I}[t])$.
 \end{itemize} 
 %Therefore it does not satisfy the {\bf Type-III} observability. 
 Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN,%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
 
-\begin{itemize}\label{exa:3}
-  \item we can distinguish the sets of states 
+\begin{itemize}
+  \item we can classify all states into four sets 
   \begin{itemize}
-   \item $\{\delta_{16}^0,\delta_{16}^{1},\delta_{16}^{2}\}$,
-   \item $\{\delta_{16}^3,\delta_{16}^{4},\delta_{16}^{5},\delta_{16}^{6}\}$,
-   \item $\{\delta_{16}^7,\delta_{16}^{8},\delta_{16}^{9},\delta_{16}^{10}\}$
-   \item and $\{\delta_{16}^{11},\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14},\delta_{16}^{15}\}$
+   \item $\{(0000),(0001),(0010)\}$,
+   \item $\{(0011),(0100),(0101),(0110)\}$,
+   \item $\{(0111),(1000),(1001),(1010)\}$
+   \item and $\{(1011),(1100),(1101),(1110),(1111)\}$
   \end{itemize} 
     by their corresponding outputs.  
-  \item And the $\mathsf{I}[0]=\delta_{4}^3$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\delta_{16}^0,\delta_{16}^{1},\delta_{16}^{2}\}$, 
-  \item the $\mathsf{I}[0]=\delta_{4}^0$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\delta_{16}^3,\delta_{16}^{4},\delta_{16}^{5},\delta_{16}^{6}\}$,
-  \item we can distinguish the sets of states $\{\delta_{16}^{8}\}$, $\{\delta_{16}^{9}\}$ and $\{\delta_{16}^7,\delta_{16}^{10}\}$ by the outputs of $\sigma (\delta_{4}^3, \delta_{16}^{8})$, $\sigma (\delta_{4}^3, \delta_{16}^{9})$, $\sigma (\delta_{4}^3, \delta_{16}^{7})$ and $\sigma (\delta_{4}^3, \delta_{16}^{10})$ after we input $\delta_{4}^3$,
+  \item And the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0000),(0001),(0010)\}$, 
+  \item the $\mathsf{I}[0]=(00)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0011),(0100),(0101),(0110)\}$,
+  \item we can classify the states $(0111)$, $(1000)$, $(1001)$ and $(1010)$ into four sets 
+   \begin{itemize}
+   \item $\{(1000)\}$;
+   \item  $\{(1001)\}$
+   \item and $\{(0111),(1010)\}$
+   \end{itemize} 
+  by the outputs of $\sigma ((11), (1000))$, $\sigma ((11), (1001))$, $\sigma ((11), (0111))$ and $\sigma ((11), (1010))$,
   \begin{itemize}
-  \item  and the $\mathsf{I}[0]=\delta_{4}^3$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^3, \delta_{16}^{7}),\sigma (\delta_{4}^3, \delta_{16}^{10})\}$,
+  \item  and the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((11), (0111)),\sigma ((11), (1010))\}$,
   \end{itemize}
-  \item we can distinguish the sets of states $\{\delta_{16}^{11},\delta_{16}^{15}\}$ and $\{\delta_{16}^{12},\delta_{16}^{13},\delta_{16}^{14}\}$ by the outputs of $\sigma (\delta_{4}^1, \delta_{16}^{11})$, $\sigma (\delta_{4}^1, \delta_{16}^{15})$, $\sigma (\delta_{4}^1, \delta_{16}^{12})$, $\sigma (\delta_{4}^1, \delta_{16}^{13})$ and $\sigma (\delta_{4}^1, \delta_{16}^{14})$ after we input $\delta_{4}^1$,
+  \item we can classify the states $(1011)$, $(1100)$, $(1101)$, $(1110)$ and $(1111)$  into two sets 
+    \begin{itemize}
+   \item  $\{(1011),(1111)\}$
+   \item and $\{(1100),(1101),(1110)\}$
+  \end{itemize}
+    by the outputs of $\sigma ((01), (1011))$, $\sigma ((01), (1111))$, $\sigma ((01), (1100))$, $\sigma ((01), (1101))$ and $\sigma ((01), (1110))$,
   \begin{itemize}
-  \item  and the $\mathsf{I}[0]=\delta_{4}^0$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^1, \delta_{16}^{12}),\sigma (\delta_{4}^1, \delta_{16}^{13}), \sigma (\delta_{4}^1, \delta_{16}^{14})\}$,
-   \item  the $\mathsf{I}[0]=\delta_{4}^2$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\delta_{4}^1, \delta_{16}^{11}),\sigma (\delta_{4}^1, \delta_{16}^{15})\}$.
+  \item  and the $\mathsf{I}[0]=(00)$ can distinguish every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1100)),\sigma ((01), (1101)), \sigma ((01), (1110))\}$,
+   \item  the $\mathsf{I}[0]=(10)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1011)),\sigma ((01), (1111))\}$.
   \end{itemize}
 \end{itemize} 
-Thus we can determine its initial state by its outputs and inputs without resetting the initial state.
+Thus we can determine its initial state by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=(1111)$, from the output $\mathsf{o}(0)=(11)$ we have $\mathsf{s}(0)\in \{(1011),(1100),(1101),(1110),(1111)\}$, then we can input $\mathsf{i}(0)=(01)$. From the output $\mathsf{o}(1)=10$ we have $\mathsf{s}(1)=1001$ and then determine $\mathsf{s}(0)$. In this procedure, we do not need to reset the initial state. And evern if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
 
-\end{example}  
+
 
 Therefore we find the observability of  {\bf Type-III}  is sufficient but {\bf not necessary} for its initial state being determined without resetting. And the propose a new type of observability named online observability to present the sufficient and necessary condition for determining the initial state of a \BCN\  without  resetting.
 %, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
