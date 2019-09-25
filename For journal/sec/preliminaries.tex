@@ -341,9 +341,9 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
    \item and $\{(1011),(1100),(1101),(1110),(1111)\}$
   \end{itemize} 
     by their corresponding outputs.  
-  \item And the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0000),(0001),(0010)\}$, 
-  \item the $\mathsf{I}[0]=(00)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0011),(0100),(0101),(0110)\}$,
-  \item we can classify the states $(0111)$, $(1000)$, $(1001)$ and $(1010)$ into four sets 
+  \item For the $\{(0000),(0001),(0010)\}$, the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0000),(0001),(0010)\}$;
+  \item For the $\{(0011),(0100),(0101),(0110)\}$, the $\mathsf{I}[0]=(00)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{(0011),(0100),(0101),(0110)\}$;
+  \item For the $\{(0111),(1000),(1001),(1010)\}$, we can classify the states $(0111)$, $(1000)$, $(1001)$ and $(1010)$ into four sets 
    \begin{itemize}
    \item $\{(1000)\}$;
    \item  $\{(1001)\}$
@@ -351,20 +351,20 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
    \end{itemize} 
   by the outputs of $\sigma ((11), (1000))$, $\sigma ((11), (1001))$, $\sigma ((11), (0111))$ and $\sigma ((11), (1010))$,
   \begin{itemize}
-  \item  and the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((11), (0111)),\sigma ((11), (1010))\}$,
+  \item  and for the $\{(0111),(1010)\}$, the $\mathsf{I}[0]=(11)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((11), (0111)),\sigma ((11), (1010))\}$,
   \end{itemize}
-  \item we can classify the states $(1011)$, $(1100)$, $(1101)$, $(1110)$ and $(1111)$  into two sets 
+  \item For the $\{(1011),(1100),(1101),(1110),(1111)\}$, we can classify the states $(1011)$, $(1100)$, $(1101)$, $(1110)$ and $(1111)$  into two sets 
     \begin{itemize}
    \item  $\{(1011),(1111)\}$
    \item and $\{(1100),(1101),(1110)\}$
   \end{itemize}
     by the outputs of $\sigma ((01), (1011))$, $\sigma ((01), (1111))$, $\sigma ((01), (1100))$, $\sigma ((01), (1101))$ and $\sigma ((01), (1110))$,
   \begin{itemize}
-  \item  and the $\mathsf{I}[0]=(00)$ can distinguish every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1100)),\sigma ((01), (1101)), \sigma ((01), (1110))\}$,
-   \item  the $\mathsf{I}[0]=(10)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1011)),\sigma ((01), (1111))\}$.
+  \item  for the $\{(1100),(1101),(1110)\}$, the $\mathsf{I}[0]=(00)$ can distinguish every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1100)),\sigma ((01), (1101)), \sigma ((01), (1110))\}$,
+   \item for the $\{(1100),(1101),(1110)\}$, the $\mathsf{I}[0]=(10)$ can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma ((01), (1011)),\sigma ((01), (1111))\}$.
   \end{itemize}
 \end{itemize} 
-Thus we can determine its initial state by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=(1111)$, from the output $\mathsf{o}(0)=(11)$ we have $\mathsf{s}(0)\in \{(1011),(1100),(1101),(1110),(1111)\}$, then we can input $\mathsf{i}(0)=(01)$. From the output $\mathsf{o}(1)=10$ we have $\mathsf{s}(1)=1001$ and then determine $\mathsf{s}(0)$. In this procedure, we do not need to reset the initial state. And evern if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
+Thus we can determine the initial state of this \BCN\ by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=(1111)$, from the output $\mathsf{o}(0)=(11)$ we have $\mathsf{s}(0)\in \{(1011),(1100),(1101),(1110),(1111)\}$, then we can input $\mathsf{i}(0)=(01)$. From the output $\mathsf{o}(1)=(10)$ we have $\mathsf{s}(0)\in\{(1011),(1111)\}$ and then we input $\mathsf{i}(1)=(10)$, such that we determine $\mathsf{s}(0)=(1111)$ by the output $\mathsf{o}(2)=(11)$. In this procedure, we do not need to reset the initial state. And even if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
 
 
 
