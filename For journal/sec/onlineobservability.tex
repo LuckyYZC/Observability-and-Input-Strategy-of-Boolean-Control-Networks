@@ -158,14 +158,14 @@ then $0<\Ks(\mathsf{S})=k\ne \infty$.%, and we can input $\mathsf{i}^{i}$ to det
 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
-As mentioned in the {\em Example \ref{exa:8}}, $|\mathsf{S}(0)|=3$, and there exists $\delta_{4}^3$ such that 
+In the \BCN\ in {\em Example \ref{exa:2}}, if \[\mathsf{S}(0)=\{(0000),(0001),(0010)\},\] then $|\mathsf{S}(0)|=3$, and there exists $(11)$ such that 
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(0),\delta_{4}^3,\varepsilon\right)|=|\{\delta_{16}^0,\delta_{16}^{13},\delta_{16}^6\}|$,
+ \item  $|\Ded\left(\mathsf{S}(0),(11),\varepsilon\right)|=|\{(0000),(1101),(0110)\}|$,
  \item   and for each $\mathsf{o}\in \mathcal{O}$
   \begin{itemize}
-  \item   $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^0\right))=\Ks(\{\delta_{16}^0\})=0$;
- \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^3\right))=\Ks(\{\delta_{16}^{13}\})=0$;
-  \item  $\Ks(\Ded\left(\mathsf{S}(0),\delta_{4}^3,\delta_{4}^1\right))=\Ks(\{\delta_{16}^{6}\})=0$.
+  \item   $\Ks(\Ded\left(\mathsf{S}(0),(11),(00)\right))=\Ks(\{(0000)\})=0$;
+ \item  $\Ks(\Ded\left(\mathsf{S}(0),(11),(11)\right))=\Ks(\{(1101)\})=0$;
+  \item  $\Ks(\Ded\left(\mathsf{S}(0),(11),(01)\right))=\Ks(\{(0110)\})=0$.
  \end{itemize}
  \end{itemize}
 Thus $\Ks(\mathsf{S}(0))=1$, that is $\mathsf{s}(0)$ can be determined at time $1$ for every $\mathsf{s}(0)\in \mathsf{S}(0)$. 
@@ -204,10 +204,10 @@ if for every $\mathsf{o}\in  \mathcal{O}$, $\Ded(\mathcal{S}_\BB,\varepsilon, \m
 \begin{example}
 In the \BCN\ mentioned in {\em Example \ref{exa:2}}.  
  \begin{itemize}
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^0\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^1\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^2\right))=2\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \delta_{4}^3\right))=2\ne \infty$.
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (00)\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (01)\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (10)\right))=2\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (11)\right))=2\ne \infty$.
  \end{itemize}
 %Therefore it does not satisfy the {\bf Type-III} observability. 
 Therefore this \BCN\ satisfies the online observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.
