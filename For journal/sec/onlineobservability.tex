@@ -63,7 +63,7 @@ To formally define the online observability, we start with the derivation functi
 
 Firstly, we write 
 
-\begin{equation}
+\begin{equation*}
 \begin{split}
 \xi :  (\mathcal{I}\cup\{\varepsilon\}) \times\mathcal{S} \mapsto\mathcal{S},\ \xi (\mathsf{i}, \mathsf{s})= \left\{
 \begin{array}{rcl}
@@ -71,8 +71,8 @@ Firstly, we write
 \mathsf{s}       &      & {\mathsf{i}= \varepsilon}
 \end{array} \right. 
 \end{split}
-\end{equation}
-where $\varepsilon$ presents empty input.
+\end{equation*}
+where $\varepsilon$ presents empty input. Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ can be defined as follows.
 %\begin{definition}[$\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$] 
 %$2^{\Delta_N}$ be the power set of states; \tl{in a def, please do not introduce notations}
 %$(\Delta_M\cup\varepsilon)$ be the set of inputs and $\varepsilon$ means empty input; 
@@ -86,7 +86,7 @@ where $\varepsilon$ presents empty input.
 %\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})=\{  \xi(\mathsf{i}, \mathsf{s} ) \mid  \mathsf{s} \in \mathsf{S}\}
 %\end{equation*}
 
-Then the $\Ded( \mathsf{S},  \mathsf{i},  \mathsf{o})$ can be defined as follows.
+
 \begin{equation}
 \begin{split}
 \Ded&:2^{\mathcal{S}_\BB}\times(\mathcal{I}\cup\{\varepsilon\})\times(\mathcal{O}\cup\{\varepsilon\})\mapsto2^{\mathcal{S}_\BB}\\
@@ -108,7 +108,7 @@ where  $\varepsilon$ presents empty input or empty output.
 %\end{definition}$\mathsf{S}\in 2^{\mathcal{S}_\BB}$, $\mathsf{i} \in (\mathcal{I}\cup\varepsilon)$, $\mathsf{o} \in (\mathcal{O}\cup\varepsilon)$, and
 
  And then, the set $\mathsf{S}(t)$ of possible valuations of $\mathsf{s}(t)$ of a \BCN\ $\BB$ is recursively defined as follows. 
- \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $ \mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
+ \begin{definition}[$\mathsf{S}(t)$] Given $\mathsf{i}(0)\ldots\mathsf{i}(t_k)$ and $\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)$, %for every $t\le k$, 
 	\[\mathsf{S}(t)=\left\{
 \begin{array}{rcl}
 \Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}(0)\right)      &      & {t=0}\\
@@ -117,7 +117,14 @@ where  $\varepsilon$ presents empty input or empty output.
 
 \end{definition}
 \begin{example}
-In the \BCN\ in {\em Example \ref{exa:2}}, if $\mathsf{o}(0)=\delta_4^0$, then \[\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,\delta_4^0\right)=\{\delta_{16}^0,\delta_{16}^1,\delta_{16}^2\}.\]
+In the \BCN\ in {\em Example \ref{exa:2}}, if $\mathsf{i}(0)\ldots\mathsf{i}(t_k)=(10)(11)$ and $\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)=(00)(00)(01)$ then 
+\begin{equation*}
+\begin{split}
+&\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,(00)\right)=\{(0000),(0001),(0010)\}\\
+&\mathsf{S}(1)=\Ded\left(\mathsf{S}(0),(10),(00)\right)=\{(0001),(0010)\}\\
+&\mathsf{S}(2)=\Ded\left(\mathsf{S}(1),(11),(01)\right)=\{(0110)\}
+ \end{split}
+\end{equation*}
 %If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
  \label{exa:8}
  \end{example}   
