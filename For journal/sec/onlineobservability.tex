@@ -117,12 +117,12 @@ where  $\varepsilon$ presents empty input or empty output.
 
 \end{definition}
 \begin{example}
-In the \BCN\ in {\em Example \ref{exa:2}}, if $\mathsf{i}(0)\ldots\mathsf{i}(t_k)=(10)(11)$ and $\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)=(00)(00)(01)$ then 
+In the \BCN\ in {\em Example \ref{exa:2}}, if $\mathsf{i}(0)\ldots\mathsf{i}(t_k)=\mathsf{i}^2 \mathsf{i}^3$ and $\mathsf{o}(0)\ldots\mathsf{o}(t_k+1)=\mathsf{o}^0 \mathsf{o}^0 \mathsf{o}^1$ then 
 \begin{equation*}
 \begin{split}
-&\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,(00)\right)=\{(0000),(0001),(0010)\}\\
-&\mathsf{S}(1)=\Ded\left(\mathsf{S}(0),(10),(00)\right)=\{(0001),(0010)\}\\
-&\mathsf{S}(2)=\Ded\left(\mathsf{S}(1),(11),(01)\right)=\{(0110)\}
+&\mathsf{S}(0)=\Ded\left(\mathcal{S}_\BB,\varepsilon,\mathsf{o}^0\right)=\{\mathsf{s}^0,\mathsf{s}^1,\mathsf{s}^2\}\\
+&\mathsf{S}(1)=\Ded\left(\mathsf{S}(0),\mathsf{i}^2,\mathsf{o}^0\right)=\{\mathsf{s}^1,\mathsf{s}^2\}\\
+&\mathsf{S}(2)=\Ded\left(\mathsf{S}(1),\mathsf{i}^3,\mathsf{o}^1\right)=\{\mathsf{s}^6\}
  \end{split}
 \end{equation*}
 %If the possible states set $\mathsf{S}=\{\delta_{16}^0$, $\delta_{16}^1$, $\delta_{16}^2\}$ and we input $\delta_4^0$ observe $\delta_4^2$, then we can derive that the set of possible new states can be $\delta_{16}^{9}$ or  $\delta_{16}^{10}$.
@@ -158,14 +158,14 @@ then $0<\Ks(\mathsf{S})=k\ne \infty$.%, and we can input $\mathsf{i}^{i}$ to det
 
 %Then, in order to better illustrate this definition, we give the following example.
 \begin{example}\label{exa:9}
-In the \BCN\ in {\em Example \ref{exa:2}}, if \[\mathsf{S}(0)=\{(0000),(0001),(0010)\},\] then $|\mathsf{S}(0)|=3$, and there exists an input $(11)$ such that 
+In the \BCN\ in {\em Example \ref{exa:2}}, if \[\mathsf{S}(0)=\{\mathsf{s}^0,\mathsf{s}^1,\mathsf{s}^2\},\] then $|\mathsf{S}(0)|=3$, and there exists an input $\mathsf{i}^3$ such that 
  \begin{itemize}
- \item  $|\Ded\left(\mathsf{S}(0),(11),\varepsilon\right)|=|\{(0000),(1101),(0110)\}|$,
+ \item  $|\Ded\left(\mathsf{S}(0),\mathsf{i}^3,\varepsilon\right)|=|\{\mathsf{s}^0,\mathsf{s}^{13},\mathsf{s}^6\}|=|\mathsf{S}(0)|$,
  \item   and for each $\mathsf{o}\in \mathcal{O}$
   \begin{itemize}
-  \item   $\Ks(\Ded\left(\mathsf{S}(0),(11),(00)\right))=\Ks(\{(0000)\})=0$;
- \item  $\Ks(\Ded\left(\mathsf{S}(0),(11),(11)\right))=\Ks(\{(1101)\})=0$;
-  \item  $\Ks(\Ded\left(\mathsf{S}(0),(11),(01)\right))=\Ks(\{(0110)\})=0$.
+  \item   $\Ks(\Ded\left(\mathsf{S}(0),\mathsf{i}^3,\mathsf{o}^0\right))=\Ks(\{\mathsf{s}^0\})=0$;
+ \item  $\Ks(\Ded\left(\mathsf{S}(0),\mathsf{i}^3,\mathsf{o}^3\right))=\Ks(\{\mathsf{s}^{13}\})=0$;
+  \item  $\Ks(\Ded\left(\mathsf{S}(0),\mathsf{i}^3,\mathsf{o}^1\right))=\Ks(\{\mathsf{s}^6\})=0$.
  \end{itemize}
  \end{itemize}
 Thus $\Ks(\mathsf{S}(0))=1$, that is $\mathsf{s}(0)$ can be determined at time $1$ for every $\mathsf{s}(0)\in \mathsf{S}(0)$. 
@@ -204,10 +204,10 @@ if for every $\mathsf{o}\in  \mathcal{O}$, $\Ded(\mathcal{S}_\BB,\varepsilon, \m
 \begin{example}
 In the \BCN\ in {\em Example \ref{exa:2}}.  
  \begin{itemize}
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (00)\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (01)\right))=1\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (10)\right))=2\ne \infty$;
- \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, (11)\right))=2\ne \infty$.
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \mathsf{o}^0\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \mathsf{o}^1\right))=1\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \mathsf{o}^2\right))=2\ne \infty$;
+ \item $\Ks(\Ded\left(\mathcal{S}_\BB,\varepsilon, \mathsf{o}^3\right))=2\ne \infty$.
  \end{itemize}
 %Therefore it does not satisfy the {\bf Type-III} observability. 
 Therefore this \BCN\ satisfies the online observability.%, thus we can determine the initial state of it even if its initial state can not be reset. And this \BCN\ is controllable, thus it is identifiable.  %Thus with the online observability we can research the \BCNs\ better.

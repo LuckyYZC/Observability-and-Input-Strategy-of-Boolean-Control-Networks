@@ -326,7 +326,7 @@ The properties of observability, controllability and identifiability are closely
 
 However, we discover there are some \BCNs\ which do not satisfy the {\bf Type-III} but their initial states can be determined without resetting. 
 
-For instance, in the \BCN\ in {\em Example \ref{exa:2}}, for any $t\in \mathbb{T}$, there is not an $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ which can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'$. Because for any $t\in \mathbb{T}$,%For example, any input sequence $\mathsf{I}[t]$ starting with the input $(00)$ can not distinguish the distinct states $(1001)$ and $(1010)$, because 
+For instance, in the \BCN\ in {\em Example \ref{exa:2}}, for any $t\in \mathbb{T}$, %, there is not an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ which can distinguish every two distinct initial states $\mathsf{s}$, $\mathsf{s}'$. Because for any $t\in \mathbb{T}$,%For example, any input sequence $\mathsf{I}[t]$ starting with the input $(00)$ can not distinguish the distinct states $(1001)$ and $(1010)$, because 
 \begin{itemize}
 \item for any $\mathsf{I}[t]$ starting with $\mathsf{i}^0$, $H^{[0,t]}(\mathsf{s}^9,\mathsf{I}[t])= H^{[0,t]}(\mathsf{s}^{10}, \mathsf{I}[t])$;
   \item for any $\mathsf{I}[t]$ starting with $\mathsf{i}^1$, $H^{[0,t]}(\mathsf{s}^0,\mathsf{I}[t])= H^{[0,t]}(\mathsf{s}^1, \mathsf{I}[t])$;
@@ -345,9 +345,9 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
    \item for any $\mathsf{s}\in\{\mathsf{s}^{11},\mathsf{s}^{12},\mathsf{s}^{13},\mathsf{s}^{14},\mathsf{s}^{15}\}$, $\rho(\mathsf{s})=\mathsf{o}^3$.
   \end{itemize} 
     
-  \item For the $\mathsf{I}[t]=\mathsf{i}^3$, for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\mathsf{s}^0,\mathsf{s}^1,\mathsf{s}^2\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;
-  \item For the  $\mathsf{I}[t]=\mathsf{i}^0$, for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\mathsf{s}^3,\mathsf{s}^4,\mathsf{s}^5, \mathsf{s}^5\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;  
-  \item For the $\{\mathsf{s}^7,\mathsf{s}^8,\mathsf{s}^9,\mathsf{s}^{10}\}$, we can classify the states belonging to it into three sets by the outputs of $\sigma (\mathsf{i}^3,\mathsf{s}^8)$, $\sigma (\mathsf{i}^3, \mathsf{s}^9)$, $\sigma (\mathsf{i}^3, \mathsf{s}^7)$ and $\sigma (\mathsf{i}^3, \mathsf{s}^{10})$, that  
+  \item For the $\{\mathsf{s}^0,\mathsf{s}^1,\mathsf{s}^2\}$, there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^3$, such that for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\mathsf{s}^0,\mathsf{s}^1,\mathsf{s}^2\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;
+  \item For the  $\{\mathsf{s}^3,\mathsf{s}^4,\mathsf{s}^5, \mathsf{s}^6\}$, there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^0$, such that for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\mathsf{s}^3,\mathsf{s}^4,\mathsf{s}^5, \mathsf{s}^6\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;  
+  \item For the $\{\mathsf{s}^7,\mathsf{s}^8,\mathsf{s}^9,\mathsf{s}^{10}\}$, we can classify the states belonging to it into three sets by the outputs of  $\sigma (\mathsf{i}^3, \mathsf{s}^7)$, $\sigma (\mathsf{i}^3,\mathsf{s}^8)$, $\sigma (\mathsf{i}^3, \mathsf{s}^9)$ and $\sigma (\mathsf{i}^3, \mathsf{s}^{10})$, that  
    \begin{itemize}
    \item  for any $\mathsf{s}\in\{\mathsf{s}^8\}$, $\rho(\sigma (\mathsf{i}^3,\mathsf{s}))=\mathsf{o}^1$;
    \item  for any $\mathsf{s}\in\{\mathsf{s}^9\}$, $\rho(\sigma (\mathsf{i}^3,\mathsf{s}))=\mathsf{o}^2$;
@@ -364,8 +364,8 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
   \end{itemize}
   And 
   \begin{itemize}
-   \item for the $\mathsf{I}[t]=\mathsf{i}^2$, for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^1, \mathsf{s}^{11}),\sigma (\mathsf{i}^1, \mathsf{s}^{15})\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;
-  \item  for the $\mathsf{I}[t]=\mathsf{i}^0$, for every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^1,\mathsf{s}^{12}),\sigma (\mathsf{i}^1, \mathsf{s}^{13}), \sigma (\mathsf{i}^1, \mathsf{s}^{14})\}$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$.
+   \item for the $ \{\sigma (\mathsf{i}^1, \mathsf{s}^{11}),\sigma (\mathsf{i}^1, \mathsf{s}^{15})\}$, there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^2$, such that for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^1, \mathsf{s}^{11}),\sigma (\mathsf{i}^1, \mathsf{s}^{15})\}$,  $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$;
+  \item  for the $\{\sigma (\mathsf{i}^1,\mathsf{s}^{12}),\sigma (\mathsf{i}^1, \mathsf{s}^{13}), \sigma (\mathsf{i}^1, \mathsf{s}^{14})\}$,  there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^0$, such that for every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^1,\mathsf{s}^{12}),\sigma (\mathsf{i}^1, \mathsf{s}^{13}), \sigma (\mathsf{i}^1, \mathsf{s}^{14})\}$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$.
   \end{itemize}
 \end{itemize} 
 Thus we can determine the initial state of this \BCN\ by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=\mathsf{s}^{15}$, from the output $\mathsf{o}(0)=\mathsf{o}^3$ we have $\mathsf{s}(0)\in \{\mathsf{s}^{11},\mathsf{s}^{12},\mathsf{s}^{13},\mathsf{s}^{14},\mathsf{s}^{15}\}$, then we can input $\mathsf{i}(0)=\mathsf{i}^1$. From the output $\mathsf{o}(1)=\mathsf{o}^2$ we have $\mathsf{s}(0)\in\{\mathsf{s}^{11},\mathsf{s}^{15}\}$, and then we input $\mathsf{i}(1)=\mathsf{i}^2$, such that we determine $\mathsf{s}(0)=\mathsf{s}^{15}$ by the output $\mathsf{o}(2)=\mathsf{o}^3$. In this procedure, we do not need to reset the initial state. And even if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
