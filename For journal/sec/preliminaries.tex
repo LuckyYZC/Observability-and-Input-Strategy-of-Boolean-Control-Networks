@@ -43,9 +43,9 @@ The above equations are also assumed to satisfy the following three conditions
 
 \end{definition}
  The two updating functions are called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. We use 
- \[\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{2^{l}-1} \},\] 
- \[\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{2^{m}-1}\},\] 
- \[ \mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{2^{n}-1}\}\] to denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. For instance if \[\mathsf{s}(t)=(\mathsf{s}_1(t)\mathsf{s}_2(t) \mathsf{s}_3(t) \mathsf{s}_4(t))=(0101),\] then %$\mathsf{s}(t)$ can be represented by 
+ $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{2^{l}-1} \}$,
+ $\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{2^{m}-1}\}$,
+ and $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{2^{n}-1}\}$ to denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. For instance if \[\mathsf{s}(t)=(\mathsf{s}_1(t)\mathsf{s}_2(t) \mathsf{s}_3(t) \mathsf{s}_4(t))=(0101),\] then %$\mathsf{s}(t)$ can be represented by 
  \[\mathsf{s}(t)=\mathsf{s}^{(0\times2^3+1\times2^2+0\times2^1+1\times2^0)}=\mathsf{s}^5.\] And we will omit the subscript $\BB$ of $\mathcal{I}_\BB$, $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ when there is no confusion. %Obviously, $\mathcal{I}_\BB$, and $\mathcal{S}_\BB$ and $\mathcal{O}_\BB$ are finite with $2^\ell$, $2^m$ and $2^n$ elements, respectively. 
 
 
@@ -73,7 +73,9 @@ The above equations are also assumed to satisfy the following three conditions
 Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E$ and 
 the updating rules $\sigma: \mathbb{B}^{2}\times \mathbb{B}^{4}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily recovered.   For instance, %from the truth table we have 
 the updating rule of output-node $\mathsf{o}_1$ is 
-$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. 
+$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{3}\}$,  
+ $\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{15}\}$,  
+ $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{3}\}$, and the updating rules of this \BCN\ can also be represented by Fig.~\ref{fig:2}.
 %The set of all possible inputs $\mathcal{I}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$, the set of all states $\mathcal{S}_\BB=\{\delta_{16}^0,\ldots,\delta_{16}^{15}\}$ and the set of all outputs $\mathcal{O}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$.
  \begin{figure}[thpb]
 	\centering
@@ -109,15 +111,15 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 %\end{itemize}
 %
 %Then, the updating rules which shown in Fig.~\ref{fig:2} can be represented by Fig.~\ref{fig:6}.
-% \begin{figure}[thpb]
-%      \centering
-%      \framebox{\parbox{3in}{
-%		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
-%	}}
-%      
-%      \caption{The abbreviation form of the updating rules.}
-%      \label{fig:6}
-%   \end{figure}
+ \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{
+		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
+	}}
+      
+      \caption{The abbreviation form of the updating rules.}
+      \label{fig:6}
+   \end{figure}
 %  
 %   With the abbreviation forms of $\mathsf{i}(t)$, $\mathsf{s}(t)$ and $\mathsf{o}(t)$, it would be easier for us to use this \BCN\ to explain various concepts by checking this table.
   % 
@@ -355,7 +357,7 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
    \end{itemize} 
 
  
-  And for the $\mathsf{I}[t]=\mathsf{i}^3$, for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^3, \mathsf{s}^7),\sigma (\mathsf{i}^3, \mathsf{s}^{10})\}$ the $\{\mathsf{s}^7,\mathsf{s}^{10}\}$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$.
+  And for the $\{\sigma (\mathsf{i}^3, \mathsf{s}^7),\sigma (\mathsf{i}^3, \mathsf{s}^{10})\}$, there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^3$, such that for every two distinct initial states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^3, \mathsf{s}^7),\sigma (\mathsf{i}^3, \mathsf{s}^{10})\}$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$.
   
   \item For the $\{\mathsf{s}^{11},\mathsf{s}^{12},\mathsf{s}^{13},\mathsf{s}^{14},\mathsf{s}^{15}\}$, we can classify the states belonging to it into two sets  by the outputs of $\sigma (\mathsf{i}^1,\mathsf{s}^{11})$, $\sigma (\mathsf{i}^1, \mathsf{s}^{12})$, $\sigma (\mathsf{i}^1, \mathsf{s}^{13})$, $\sigma (\mathsf{i}^1, \mathsf{s}^{14})$ and $\sigma (\mathsf{i}^1, \mathsf{s}^{15})$, that  
     \begin{itemize}
@@ -368,7 +370,7 @@ Therefore it does not satisfy the {\bf Type-III} observability. But in this \BCN
   \item  for the $\{\sigma (\mathsf{i}^1,\mathsf{s}^{12}),\sigma (\mathsf{i}^1, \mathsf{s}^{13}), \sigma (\mathsf{i}^1, \mathsf{s}^{14})\}$,  there exists an input sequence $\mathsf{I}[t]=\mathsf{i}^0$, such that for every two distinct states $\mathsf{s}$, $\mathsf{s}'\in \{\sigma (\mathsf{i}^1,\mathsf{s}^{12}),\sigma (\mathsf{i}^1, \mathsf{s}^{13}), \sigma (\mathsf{i}^1, \mathsf{s}^{14})\}$, $H^{[0,t]}(\mathsf{s}',\mathsf{I}[t])\neq H^{[0,t]}(\mathsf{s}, \mathsf{I}[t])$, where $t=0$.
   \end{itemize}
 \end{itemize} 
-Thus we can determine the initial state of this \BCN\ by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=\mathsf{s}^{15}$, from the output $\mathsf{o}(0)=\mathsf{o}^3$ we have $\mathsf{s}(0)\in \{\mathsf{s}^{11},\mathsf{s}^{12},\mathsf{s}^{13},\mathsf{s}^{14},\mathsf{s}^{15}\}$, then we can input $\mathsf{i}(0)=\mathsf{i}^1$. From the output $\mathsf{o}(1)=\mathsf{o}^2$ we have $\mathsf{s}(0)\in\{\mathsf{s}^{11},\mathsf{s}^{15}\}$, and then we input $\mathsf{i}(1)=\mathsf{i}^2$, such that we determine $\mathsf{s}(0)=\mathsf{s}^{15}$ by the output $\mathsf{o}(2)=\mathsf{o}^3$. In this procedure, we do not need to reset the initial state. And even if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
+Thus we can determine the initial state of this \BCN\ by its outputs and inputs without resetting the initial state. For instance, when $\mathsf{s}(0)=\mathsf{s}^{15}$, from the output $\mathsf{o}(0)=\mathsf{o}^3$ we have $\mathsf{s}(0)\in \{\mathsf{s}^{11},\mathsf{s}^{12},\mathsf{s}^{13},\mathsf{s}^{14},\mathsf{s}^{15}\}$, then we can input $\mathsf{i}(0)=\mathsf{i}^1$. From the output $\mathsf{o}(1)=\mathsf{o}^2$ we have $\mathsf{s}(1)\in\{\mathsf{s}^{10},\mathsf{s}^{9}\}$. With $\mathsf{s}(1)\in\{\mathsf{s}^{10},\mathsf{s}^{9}\}$, we can input $\mathsf{i}(1)=\mathsf{i}^2$, such that we determine $\mathsf{s}(2)=\mathsf{s}^{12}$ by the output $\mathsf{o}(2)=\mathsf{o}^3$ because $\mathsf{s}(2)\in\{\sigma (\mathsf{i}^1, \mathsf{s}^{11}),\sigma (\mathsf{i}^1, \mathsf{s}^{15})\}$ and $\rho(\mathsf{s}(2)=\mathsf{o}^3$. And then we can determine $\mathsf{s}(1)=\mathsf{s}^{9}$ by $\mathsf{s}(2)=\sigma (\mathsf{i}^2,\mathsf{s}(1))=\mathsf{s}^{12}$, and $\mathsf{s}(0)=\mathsf{s}^{15}$ by $\mathsf{s}(1)=\sigma (\mathsf{i}^1,\mathsf{s}(0))=\mathsf{s}^{9}$. In this procedure, we do not need to reset the initial state. And even if the $\mathsf{s}(0)$ with other values, we can determine it by similar procedure without resetting the initial state.
 
 
 
