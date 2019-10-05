@@ -7,7 +7,7 @@ We now introduce the formal definition of {\BCNs} and its control theoretical pr
 
 \subsection{Boolean Control Networks}
 
-We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (\BCN)  is given a directed graph together with two  Boolean valued functions which define the updating rules for the  values of the nodes. 
+We take the definition in ~\cite{Ideker2001A} in which a Boolean control network (\BCN)  is given as a directed graph together with two  Boolean valued functions which define the updating rules for the  values of the nodes. 
 
 \begin{definition}[Boolean Control Network] 
 \label{def:BCN}
@@ -21,11 +21,11 @@ A \BCN\ is a tuple $\BB = (I,S,O, E, \sigma, \rho)$, where
 	\end{itemize}	
 	Each node is a Boolean variable which can take values in $\mathbb{B}$.
 \item  $E \subseteq ((I\cup S)\times S)\cup (S\times O)$ is a set of edges among the nodes, and we say node $v$ directly affects node  $v'$  when $(v,v')$ is an edge in $E$.
-\item The Boolean valued functions $\sigma: \mathbb{B}^\ell\times  \mathbb{B}^m \mapsto \mathbb{B}^m$ and $\rho: \mathbb{B}^m\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimension and $m$-dimension vectors  of Boolean values to  the $m$-dimension vector of Boolean values and from the  $m$-dimension vector to the  $n$-dimension vector of Boolean values, respectively. 
+\item The Boolean valued functions $\sigma: \mathbb{B}^\ell\times  \mathbb{B}^m \mapsto \mathbb{B}^m$ and $\rho: \mathbb{B}^m\mapsto \mathbb{B}^n$ are functions from the pairs of $\ell$-dimension and $m$-dimension vectors  of Boolean values to  the $m$-dimension vector of Boolean values and from the  $m$-dimension vectors to the  $n$-dimension vectors of Boolean values, respectively. 
 %\item $\theta$ is a Boolean expression of the state nodes.
 \item {\em Updating rules }:  We use 
  $\mathsf{i}= (\mathsf{i}_1,\ldots, \mathsf{i}_\ell)$, $\mathsf{s}= (\mathsf{s}_1,\ldots, \mathsf{s}_m)$ and $\mathsf{o}= (\mathsf{o}_1,\ldots, \mathsf{o}_n)$ to denote the three variables Boolean vectors corresponding  to the input-nodes, state-nodes and output-nodes. At any time $t\in \mathbb{T}$ during the execution 
- of $\BB$, each of the variables  $\mathsf{i}$, $\mathsf{s}$ and $\mathsf{o}$  (thus each every node of $\BB$ too) take a vector of Boolean values $\mathsf{i}(t)$, $\mathsf{s}(t)$, $\mathsf{o}(t)$  in  $\mathbb{B}^\ell$, $\mathbb{B}^m$ and $\mathbb{B}^n$, respectively, such that the following equations are satisfied
+ of $\BB$, each of the variables  $\mathsf{i}$, $\mathsf{s}$ and $\mathsf{o}$ take a vector of Boolean values $\mathsf{i}(t)$, $\mathsf{s}(t)$, $\mathsf{o}(t)$  in  $\mathbb{B}^\ell$, $\mathbb{B}^m$ and $\mathbb{B}^n$, respectively, such that the following equations are satisfied
 \begin{equation}
 \begin{split}
 \mathsf{s}(t+1)=&\sigma(\mathsf{i}(t),\mathsf{s}(t))\\
@@ -42,7 +42,7 @@ The above equations are also assumed to satisfy the following two conditions
 \end{itemize}
 
 \end{definition}
- The two updating functions are called the  {\bf updating rules}  of $\BB$. They define the value of the state nodes at any time by the values of the inout nodes and state nodes at the previous time point, and the the values of the output nodes by the value of the state nodes, respectively. And we use 
+ The two updating functions are called the  {\bf updating rules}  of $\BB$. They define the value of the state-nodes at any time by the values of the inout-nodes and state-nodes at the previous time point, and the the values of the output-nodes by the value of the state-nodes, respectively. And we use 
  $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{2^{l}-1} \}$,
  $\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{2^{m}-1}\}$,
  and $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{2^{n}-1}\}$ to denote  the sets of all possible inputs, states and outputs of $\BB$, respectively. That is for any $\mathsf{i}^j$ (or $\mathsf{s}^j$, $\mathsf{o}^j$) of  $\mathcal{I}_\BB$ (or  $\mathcal{S}_\BB$,  $\mathcal{O}_\BB$), the  subscript $j$ is the decimal expression of $\mathsf{i}^j$ (or $\mathsf{s}^j$, $\mathsf{o}^j$). For instance if \[\mathsf{s}^5=(0,1,0,1),\] where the number of state-nodes $m=4$, the subscript $5$ of $\mathsf{s}^5$ is the decimal expression of $(0,1,0,1)$. %$\mathsf{s}(t)$ can be represented by 
@@ -70,12 +70,12 @@ The above equations are also assumed to satisfy the following two conditions
 		\label{fig:1}
 	\end{figure}
 %	
-Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$ , four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E$ and 
+Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$, four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E$ and 
 the updating rules $\sigma: \mathbb{B}^{2}\times \mathbb{B}^{4}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily constructed.   For instance, %from the truth table we have 
 the updating rule of output-node $\mathsf{o}_1$ is 
 $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{3}\}$,  
  $\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{15}\}$,  
- $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{3}\}$, and the updating rules of this \BCN\ can also be represented by Fig.~\ref{fig:2}.
+ $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{3}\}$, thus the updating rules of this \BCN\ can also be represented by Fig.~\ref{fig:2}.
 %The set of all possible inputs $\mathcal{I}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$, the set of all states $\mathcal{S}_\BB=\{\delta_{16}^0,\ldots,\delta_{16}^{15}\}$ and the set of all outputs $\mathcal{O}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$.
  \begin{figure}[thpb]
 	\centering
@@ -140,7 +140,7 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 In this subsection, we introduce the notations controllability, observability and identifiability of {\BCNs} and their relations. 
 In particular, we will give a summary about the existing work on observability in order to motivate our work. To this end, first define some notations below.
 
-Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho)$, let $\mathcal{I}$, $\mathcal{S}$ and $\mathcal{O}$ be the sets of all possible inputs, states and outputs of $\BB$, respectively. For any $t,t' \in \mathbb{T}$, we define the timed behavior of $\BB$
+Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho)$, let $\mathcal{I}$, $\mathcal{S}$ and $\mathcal{O}$ be the sets of all possible inputs, states and outputs of $\BB$, respectively. For any $t \in \mathbb{T}$, we define the timed behavior of $\BB$
 \begin{itemize}
 \item $\mathcal{B}^T = (\mathcal{I}^T, \mathcal{S}^T, \mathcal{O}^T)$,  where 
 {\small \[\begin{array}{llll}
@@ -150,17 +150,17 @@ Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho)$, let $\mathcal{I}$, $\mathcal{S}
 \end{array}
 \]} such that each for any $\mathsf{s}(k)$ and $\mathsf{o}(k)$ of any $\mathsf{S}[t]$ and 
 $\mathsf{O}[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
-%\item Let $\mathsf{S}(t) = \{ \mathsf{s}(t)~|~ \mathsf{s}(0)\ldots \mathsf{s}(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ \mathsf{o}(t)~|~ \mathsf{o}(0)\ldots \mathsf{o}(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. Note that at any time the input node can take any value in $\mathbb{B}$.
+\item Let $\mathsf{S}(t) = \{ \mathsf{s}(t)~|~ \mathsf{s}(0)\ldots \mathsf{s}(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ \mathsf{o}(t)~|~ \mathsf{o}(0)\ldots \mathsf{o}(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. And the $\mathsf{S}(t)$ will be formally defined in {\em Section \ref{sec:online}}. Note that at any time the input node can take any value in $\mathbb{B}$.
 \item For any interval  $[t_0,t]$ of time $\mathbb{T}$, where $t\geq t_0$, we define the following sets 
 \[\begin{array}{llllll}
 \mathcal{I}^{[t]} &=& \{\mathsf{I}[t] ~|~ \mathsf{I}[t]\in \mathcal{I}^T\}\\
 \mathcal{I}^{[t_0,t]} &=& \{\mathsf{i}(t_0)\ldots \mathsf{i}(t)~|\exists \mathsf{i}(0)\ldots \mathsf{i}(t_0)\in \mathcal{I}^{[t_0]}\cdot\\
 && \mathsf{i}(0)\ldots \mathsf{i}(t_0) \ldots \mathsf{i}(t)\in \mathcal{I}^{[t]}\} \\
 \mathcal{S}^{[t]} &=& \{\mathsf{S}[t] ~|~ \mathsf{S}[t]\in \mathcal{S}^T\}\\
-\mathcal{S}^{[t_0,t]} &=& \{\mathsf{s}(t_0)\ldots \mathsf{s}(t+1)~|\exists \mathsf{s}(0)\ldots \mathsf{s}(t_0)\in \mathcal{S}^{[t_0]}\cdot\\
+\mathcal{S}^{[t_0,t]} &=& \{\mathsf{s}(t_0)\ldots \mathsf{s}(t)~|\exists \mathsf{s}(0)\ldots \mathsf{s}(t_0)\in \mathcal{S}^{[t_0]}\cdot\\
 && \mathsf{s}(0)\ldots \mathsf{s}(t_0) \ldots \mathsf{s}(t)\in \mathcal{S}^{[t]} \}\\
 \mathcal{O}^{[t]} &=& \{\mathsf{O}[t] ~|~ \mathsf{O}[t]\in \mathcal{O}^T\}\\
-\mathcal{O}^{[t_0,t]} &=& \{\mathsf{o}(t)\ldots \mathsf{o}(t_0)~|\exists \mathsf{o}(0)\ldots \mathsf{o}(t_o)\in \mathcal{O}^{[t_0]}\cdot\\
+\mathcal{O}^{[t_0,t]} &=& \{\mathsf{o}(t_0)\ldots \mathsf{o}(t)~|\exists \mathsf{o}(0)\ldots \mathsf{o}(t_o)\in \mathcal{O}^{[t_0]}\cdot\\
 && \mathsf{o}(0)\ldots \mathsf{o}(t_o) \ldots \mathsf{o}(t)\in \mathcal{O}^{[t]} \}\\
 \end{array}
 \]
@@ -375,7 +375,7 @@ Thus we can determine the initial state of this \BCN\ by its outputs and inputs 
 
 
 
-Therefore we find the observability of  {\bf Type-III}  is sufficient but {\bf not necessary} for its initial state being determined without resetting. And the propose a new type of observability named online observability to present the sufficient and necessary condition for determining the initial state of a \BCN\  without  resetting.
+Therefore we find the observability of  {\bf Type-III}  is sufficient but {\bf not necessary} for its initial state being determined without resetting. And we propose a new type of observability named online observability to present the sufficient and necessary condition for determining the initial state of a \BCN\  without  resetting.
 %, because the initial state $\mathsf{s}(0)$ of a \BCN\ $\BB$ can be determined by the algorithm (mentioned in {\em Section \ref{sec:intro}}) corresponding to {\bf Type-III} observability when $\BB$ satisfies the {\bf Type-III} observability.
 
 
