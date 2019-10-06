@@ -70,10 +70,10 @@ The above equations are also assumed to satisfy the following two conditions
 		\label{fig:1}
 	\end{figure}
 %	
-Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$, four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E$ and 
+Let $\BB$ be the \BCN\  shown in Fig.~\ref{fig:1} which has two  input-nodes $I=\{\mathsf{i}_1,\mathsf{i}_2\}$, four state-nodes $S=\{\mathsf{s}_1, \mathsf{s}_2,\mathsf{s}_3, \mathsf{s}_4\}$ and two output-nodes $O=\{\mathsf{o}_1,\mathsf{o}_2\}$. The set of edges $E=((I\cup S)\times S)\cup (S\times O)$ and 
 the updating rules $\sigma: \mathbb{B}^{2}\times \mathbb{B}^{4}\mapsto \mathbb{B}^4$ and $\rho:\mathbb{B}^4\mapsto \mathbb{B}^2$ are given in the truth table (Fig.~\ref{fig:2}) from which the updating rules in terms of logic functions can be easily constructed.   For instance, %from the truth table we have 
 the updating rule of output-node $\mathsf{o}_1$ is 
-$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{3}\}$,  
+$\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t)\wedge {\mathsf{s}_4}(t))}$. And $\mathcal{I}_\BB=\{\mathsf{i}^0,\ldots,\mathsf{i}^{3}\}$,  
  $\mathcal{S}_\BB=\{\mathsf{s}^0,\ldots,\mathsf{s}^{15}\}$,  
  $\mathcal{O}_\BB=\{\mathsf{o}^0,\ldots,\mathsf{o}^{3}\}$, thus the updating rules of this \BCN\ can also be represented by Fig.~\ref{fig:2}.
 %The set of all possible inputs $\mathcal{I}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$, the set of all states $\mathcal{S}_\BB=\{\delta_{16}^0,\ldots,\delta_{16}^{15}\}$ and the set of all outputs $\mathcal{O}_\BB=\{\delta_{4}^0,\ldots,\delta_{4}^{3}\}$.
@@ -117,7 +117,7 @@ $\mathsf{o}_1(t)=\mathsf{s}_1(t)\vee {({\mathsf{s}_2}(t)\wedge { \mathsf{s}_3}(t
 		\centerline{\includegraphics[scale=0.122]{figures/Fig7.png}}
 	}}
       
-      \caption{The abbreviation form of the updating rules.}
+      \caption{The simplified  form of the updating rules.}
       \label{fig:6}
    \end{figure}
 %  
@@ -148,7 +148,7 @@ Given a {\BCN} $\BB = (I,S,O, E, \sigma, \rho)$, let $\mathcal{I}$, $\mathcal{S}
 \mathcal{S}^T =\{\mathsf{S}[t]~|~ t\in \mathbb{T}, \mathsf{S}[t]=\mathsf{s}(0)\ldots \mathsf{s}(t)\}\\
 \mathcal{O}^T =\{\mathsf{O}[t]~|~ t\in \mathbb{T}, \mathsf{O}[t]=\mathsf{o}(0)\ldots \mathsf{o}(t)\}\\
 \end{array}
-\]} such that each for any $\mathsf{s}(k)$ and $\mathsf{o}(k)$ of any $\mathsf{S}[t]$ and 
+\]} such that each for any $\mathsf{s}(t)$ and $\mathsf{o}(t)$ of any $\mathsf{S}[t]$ and 
 $\mathsf{O}[t]$ in $\mathcal{S}^T$ and $\mathcal{O}^T$, respectively,   satisfies the updating rules in Definition~\ref{def:BCN}.
 \item Let $\mathsf{S}(t) = \{ \mathsf{s}(t)~|~ \mathsf{s}(0)\ldots \mathsf{s}(t) \in \mathcal{S}^T\}$ and $\mathsf{O}(t) = \{ \mathsf{o}(t)~|~ \mathsf{o}(0)\ldots \mathsf{o}(t) \in \mathcal{O}^T\}$, which do not necessarily have all the possible $2^m$ and $2^n$ as they are generated in the timed behavior according to the updating rules. And the $\mathsf{S}(t)$ will be formally defined in {\em Section \ref{sec:online}}. Note that at any time the input node can take any value in $\mathbb{B}$.
 \item For any interval  $[t_0,t]$ of time $\mathbb{T}$, where $t\geq t_0$, we define the following sets 
@@ -284,10 +284,10 @@ It is noted in ~\cite{Zhang2016Observability} that {\bf Type-I} observability is
 
 
 \begin{definition}[Controllability~\cite{cheng2009controllability}]
-	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$,  for some $t\in\mathbb{T}$, such that  $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$ and the last state  $\mathsf{s}(t+1)$ is $\mathsf{s}'$.
+	A \BCN\ is controllable if for any two distinct states $\mathsf{s}$, $\mathsf{s}' \in \mathcal{S}$, there is an input sequence $\mathsf{I}[t]\in\mathcal{I}^{[t]}$ for some $t\in\mathbb{T}$, such that  $F^{[0,t]}(\mathsf{s}, \mathsf{I}[t])=\mathsf{s}(0) \ldots\, \mathsf{s}(t+1)$ and the last state  $\mathsf{s}(t+1)=\mathsf{s}'$.
 \end{definition}
 
-Thus, if a \BCN\  $\BB$ is  controllable,  any state $\mathsf{s}'$ is reachable from an initial state $\mathsf{s}$, and  we use an input  sequence $\mathsf{I}[t]$ make $\BB$ reach $\mathsf{s}'$ from $\mathsf{s}$.
+Thus, if a \BCN\  $\BB$ is  controllable,  any state $\mathsf{s}'$ is reachable from any initial state $\mathsf{s}$, and  we use an input  sequence $\mathsf{I}[t]$ make $\BB$ reach $\mathsf{s}'$ from $\mathsf{s}$.
 %\begin{example}
 %For example, the \BCN\ mentioned in {\em Example \ref{exa:2}} is controllable, that is for any initial state $\mathsf{s}(0)$ and destination state $\mathsf{s}'$, there is an input sequence $\mathsf{I}[k]$, such that in the $F^k_{\mathsf{s}(0)}(\mathsf{I}[k])=\mathsf{s}(1) \ldots\, \mathsf{s}(k)$, the $\mathsf{s}(k)=\mathsf{s}'$. For instance, for the initial state $\mathsf{s}(0)= \delta_{16}^{1}$ and destination state $\mathsf{s}'=\delta_{16}^{2}$, there is an input sequence $\mathsf{I}[3]=\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3}$, such that $F^3_{\mathsf{s}(0)}(\delta_{4}^{3}\delta_{4}^{3}\delta_{4}^{3})=\delta_{16}^{13}\delta_{16}^{11}\delta_{16}^{2}$.
 %\label{exa:12}
